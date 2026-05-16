@@ -1,0 +1,237 @@
+/* =============================================================================
+   ABOUT
+   Template for the about page.
+   ============================================================================= */
+
+
+/* -------------------------------------------------------------------------
+   HERO — eyebrow, headline, lede
+   ------------------------------------------------------------------------- */
+
+.about-hero {
+  padding-top:    var(--space-12);
+  padding-bottom: var(--space-16);
+  border-top:     1px solid var(--color-border);
+}
+
+@media (min-width: 768px) {
+  .about-hero {
+    padding-top:    var(--space-16);
+    padding-bottom: var(--space-20);
+  }
+}
+
+.about-hero__eyebrow {
+  font-size:      var(--text-xs);
+  font-weight:    var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color:          var(--color-accent-accessible);
+  margin-bottom:  var(--space-3);
+}
+
+.about-hero__title {
+  font-size:      var(--text-4xl);
+  font-weight:    var(--font-weight-bold);
+  line-height:    var(--leading-tight);
+  letter-spacing: -0.02em;
+  color:          var(--color-text-primary);
+  max-width:      22ch;
+  margin-bottom:  var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .about-hero__title {
+    font-size: var(--text-5xl);
+  }
+}
+
+.about-hero__lede {
+  font-size:   var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color:       var(--color-text-secondary);
+  max-width:   58ch;
+  font-style:  italic;
+}
+
+@media (min-width: 768px) {
+  .about-hero__lede {
+    font-size: var(--text-xl);
+  }
+}
+
+.about-hero__skills {
+  display:    flex;
+  flex-wrap:  wrap;
+  gap:        var(--space-2);
+  list-style: none;
+  padding:    0;
+  margin-top: var(--space-8);
+}
+
+.about-hero__skill {
+  font-size:        var(--text-xs);
+  font-weight:      var(--font-weight-medium);
+  letter-spacing:   0.05em;
+  text-transform:   uppercase;
+  color:            var(--color-text-secondary);
+  background-color: var(--color-surface);
+  border:           1px solid var(--color-border);
+  border-radius:    var(--radius-full);
+  padding:          var(--space-1) var(--space-3);
+  line-height:      var(--leading-normal);
+}
+
+
+/* -------------------------------------------------------------------------
+   SECTION — alternating content blocks
+   ------------------------------------------------------------------------- */
+
+.about-section {
+  padding-block: var(--space-12);
+  border-top:    1px solid var(--color-border);
+}
+
+@media (min-width: 768px) {
+  .about-section {
+    padding-block: var(--space-16);
+  }
+}
+
+.about-section--surface {
+  background-color: var(--color-surface);
+}
+
+.about-section__heading {
+  font-size:      var(--text-2xl);
+  font-weight:    var(--font-weight-bold);
+  line-height:    var(--leading-tight);
+  letter-spacing: -0.01em;
+  color:          var(--color-text-primary);
+  max-width:      24ch;
+  margin-bottom:  var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .about-section__heading {
+    font-size: var(--text-3xl);
+  }
+}
+
+.about-section__body {
+  max-width: 68ch;
+}
+
+.about-section__body p {
+  font-size:     var(--text-base);
+  line-height:   var(--leading-relaxed);
+  color:         var(--color-text-secondary);
+  max-width:     none;
+  margin-bottom: var(--space-5);
+}
+
+.about-section__body p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* -------------------------------------------------------------------------
+   EDUCATION — credential card
+   ------------------------------------------------------------------------- */
+
+.about-education {
+  max-width:  68ch;
+  border-top: 1px solid var(--color-border);
+}
+
+.about-education__item {
+  padding-block:  var(--space-6);
+  border-bottom:  1px solid var(--color-border);
+}
+
+.about-education__org {
+  font-size:      var(--text-xs);
+  font-weight:    var(--font-weight-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color:          var(--color-accent-accessible);
+  margin-bottom:  var(--space-1);
+}
+
+.about-education__credential {
+  font-size:     var(--text-base);
+  font-weight:   var(--font-weight-semibold);
+  color:         var(--color-text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.about-education__skills {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       var(--space-2);
+  list-style: none;
+  padding:   0;
+  margin:    0;
+}
+
+.about-education__skills li {
+  font-size:        var(--text-xs);
+  font-weight:      var(--font-weight-medium);
+  letter-spacing:   0.05em;
+  text-transform:   uppercase;
+  color:            var(--color-text-secondary);
+  background-color: var(--color-surface);
+  border:           1px solid var(--color-border);
+  border-radius:    var(--radius-full);
+  padding:          var(--space-1) var(--space-3);
+  line-height:      var(--leading-normal);
+}
+
+
+/* -------------------------------------------------------------------------
+   CTA — contact block
+   ------------------------------------------------------------------------- */
+
+.cta-section {
+  background-color: var(--color-surface);
+  border-top:       1px solid var(--color-border);
+  border-bottom:    1px solid var(--color-border);
+  padding-block:    var(--space-16);
+  text-align:       center;
+}
+
+@media (min-width: 768px) {
+  .cta-section {
+    padding-block: var(--space-20);
+  }
+}
+
+.cta-section__heading {
+  font-size:      var(--text-3xl);
+  font-weight:    var(--font-weight-bold);
+  line-height:    var(--leading-tight);
+  letter-spacing: -0.015em;
+  color:          var(--color-text-primary);
+  margin-bottom:  var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .cta-section__heading {
+    font-size: var(--text-4xl);
+  }
+}
+
+.cta-section__body {
+  font-size:     var(--text-lg);
+  line-height:   var(--leading-relaxed);
+  color:         var(--color-text-secondary);
+  max-width:     52ch;
+  margin:        0 auto var(--space-8);
+}
+
+.cta-section__actions {
+  display:         flex;
+  flex-wrap:       wrap;
+  gap:             var(--space-4);
+  justify-content: center;
+}

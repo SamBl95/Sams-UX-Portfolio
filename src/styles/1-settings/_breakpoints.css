@@ -1,0 +1,24 @@
+/* =============================================================================
+   BREAKPOINTS
+   Reference values as custom properties. Use the pixel values directly in
+   @media queries — CSS custom properties cannot be interpolated inside
+   @media() expressions in the current spec.
+
+   Usage:
+     @media (min-width: 768px) { … }   → tablet and up
+     @media (min-width: 1280px) { … }  → desktop and up
+   ============================================================================= */
+
+:root {
+  --breakpoint-mobile:  375px;   /* Small phones — design starts here (mobile-first) */
+  --breakpoint-tablet:  768px;   /* Tablets and large phones in landscape            */
+  --breakpoint-desktop: 1280px;  /* Laptops and desktop monitors                     */
+}
+
+/*
+  Convenience reference (read-only — actual @media rules use hard values):
+
+  Mobile-first  →  default styles (no @media wrapper needed)
+  Tablet+       →  @media (min-width: 768px)  { … }
+  Desktop+      →  @media (min-width: 1280px) { … }
+*/

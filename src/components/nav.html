@@ -1,0 +1,48 @@
+<!-- NAV COMPONENT
+     Sticky site header with logo, navigation links, and mobile hamburger.
+     Mobile menu toggle requires JavaScript — JS should add .nav--open to
+     .nav and toggle aria-expanded on .nav__toggle when the button is clicked.
+     Usage: included at the top of every page.
+-->
+
+<header class="nav">
+  <div class="nav__inner container">
+
+    <!-- COPY: Your name or a wordmark — keep short -->
+    <a href="/" class="nav__logo" aria-label="Sam Blake — back to home">Sam Blake</a>
+
+    <!-- Hamburger — visible on mobile only. JS toggles .nav--open on .nav -->
+    <button
+      class="nav__toggle"
+      aria-expanded="false"
+      aria-controls="nav-menu"
+      aria-label="Open navigation menu"
+    >
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+    </button>
+
+    <nav id="nav-menu" class="nav__menu" aria-label="Main navigation">
+      <ul class="nav__list" role="list">
+
+        <li class="nav__item">
+          <!-- COPY: Update href to /work or a dedicated work page when created -->
+          <a href="#case-studies" class="nav__link">Work</a>
+        </li>
+
+        <li class="nav__item">
+          <!-- COPY: Update href to /about when that page exists -->
+          <a href="#about" class="nav__link">About</a>
+        </li>
+
+        <li class="nav__item">
+          <!-- COPY: Update href to /contact or mailto: when confirmed -->
+          <a href="#contact" class="nav__link nav__link--cta">Get in touch</a>
+        </li>
+
+      </ul>
+    </nav>
+
+  </div>
+</header>

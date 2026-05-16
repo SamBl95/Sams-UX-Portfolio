@@ -1,0 +1,99 @@
+/* =============================================================================
+   BUTTON
+   Two variants: primary (gold fill) and ghost (outline).
+   Apply to <button> or <a> via .btn + modifier class.
+
+   States: default · hover (pointer devices only) · focus-visible · active · disabled
+   ============================================================================= */
+
+
+/* -------------------------------------------------------------------------
+   BASE — shared structure, resets, and states
+   ------------------------------------------------------------------------- */
+
+.btn {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  gap:             var(--space-2);
+  font-size:       var(--text-base);
+  font-weight:     var(--font-weight-semibold);
+  line-height:     var(--leading-normal);
+  border-radius:   var(--radius-lg);
+  padding:         var(--space-3) var(--space-6);
+  border:          2px solid transparent;
+  text-decoration: none;
+  cursor:          pointer;
+  user-select:     none;
+  white-space:     nowrap;
+  transition:
+    background-color var(--transition-fast),
+    border-color     var(--transition-fast),
+    color            var(--transition-fast),
+    transform        var(--transition-fast);
+}
+
+/* Keyboard focus — visible ring using accessible amber (6.25:1 light, 7.2:1 dark) */
+.btn:focus-visible {
+  outline:        2px solid var(--color-accent-accessible);
+  outline-offset: 3px;
+}
+
+/* Press state — applies on touch and pointer alike.
+   Scale collapses instantly under prefers-reduced-motion
+   (transition zeroed globally by _reset.css). */
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity:        0.45;
+  pointer-events: none;
+}
+
+
+/* -------------------------------------------------------------------------
+   PRIMARY — gold fill, near-black text
+   ------------------------------------------------------------------------- */
+
+.btn--primary {
+  background-color: var(--color-accent);
+  color:            var(--color-text-on-accent);
+  border-color:     var(--color-accent);
+}
+
+/* Hover scoped to pointer devices — prevents sticky hover state on touch */
+@media (hover: hover) {
+  .btn--primary:hover {
+    opacity: 0.85;
+  }
+}
+
+.btn--primary:active {
+  opacity: 0.7;
+}
+
+
+/* -------------------------------------------------------------------------
+   GHOST — transparent outline, inherits surface and border tokens
+   ------------------------------------------------------------------------- */
+
+.btn--ghost {
+  background-color: transparent;
+  color:            var(--color-text-primary);
+  border-color:     var(--color-border);
+}
+
+@media (hover: hover) {
+  .btn--ghost:hover {
+    background-color: var(--color-surface);
+    border-color:     var(--color-text-secondary);
+  }
+}
+
+/* Active — fills to surface so the press is clearly distinct from hover */
+.btn--ghost:active {
+  background-color: var(--color-border);
+  border-color:     var(--color-text-secondary);
+}

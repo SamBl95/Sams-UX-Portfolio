@@ -1,0 +1,35 @@
+/* =============================================================================
+   SECTION
+   Vertical rhythm and spacing for page sections. Controls padding between
+   major content blocks and section-level background variants.
+
+   Usage: add class="section" to every <section> that needs standard vertical
+   breathing room. Combine with a modifier for background variants.
+   ============================================================================= */
+
+.section {
+  padding-block: var(--space-16); /* 64px — mobile */
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: var(--space-20); /* 80px — tablet */
+  }
+}
+
+@media (min-width: 1280px) {
+  .section {
+    padding-block: var(--space-24); /* 96px — desktop */
+  }
+}
+
+
+/* Background variants */
+
+.section--subtle {
+  background-color: var(--color-surface);
+}
+
+.section--accent {
+  background-color: var(--color-accent-light);
+}

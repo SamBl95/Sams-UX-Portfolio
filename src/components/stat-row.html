@@ -1,0 +1,49 @@
+<!-- STAT-ROW COMPONENT
+     Horizontal strip of scannable outcome metrics. Sits directly below the hero.
+     Uses .stat-block for each individual metric — the same block is used inside
+     case studies (see stat-block.html).
+
+     Copy note: items 3 and 4 both measure "hours saved per month". Once you know
+     which project each figure comes from, update the labels to attribute them
+     (e.g. "hours saved monthly — i-Exchange") so visitors understand the context.
+-->
+
+<section class="stat-row" aria-label="Key outcomes">
+  <div class="stat-row__inner container">
+    <ul class="stat-row__list" role="list">
+
+      <li class="stat-row__item">
+        <div class="stat-block">
+          <span class="stat-block__value">12%</span>
+          <!-- COPY: Clarify which project this NPS uplift is from -->
+          <span class="stat-block__label">NPS uplift</span>
+        </div>
+      </li>
+
+      <li class="stat-row__item">
+        <div class="stat-block">
+          <span class="stat-block__value">35%</span>
+          <!-- COPY: Clarify which project this search accuracy figure is from -->
+          <span class="stat-block__label">Search accuracy improvement</span>
+        </div>
+      </li>
+
+      <li class="stat-row__item">
+        <div class="stat-block">
+          <span class="stat-block__value">200+</span>
+          <!-- COPY: Attribute to the correct project — currently ambiguous alongside the 97hr stat -->
+          <span class="stat-block__label">Hours saved monthly</span>
+        </div>
+      </li>
+
+      <li class="stat-row__item">
+        <div class="stat-block">
+          <span class="stat-block__value">97</span>
+          <!-- COPY: Attribute to the correct project — currently ambiguous alongside the 200+ stat -->
+          <span class="stat-block__label">Hours saved per month</span>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>

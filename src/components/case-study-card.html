@@ -1,0 +1,40 @@
+<!-- CASE STUDY CARD COMPONENT — reference template for one card
+     Three instances of this component are used in index.html.
+     Sector tag classes (.card__sector) are card-scoped BEM elements for now.
+     When _badge.css is built, refactor to use .badge instead.
+-->
+
+<article class="card">
+
+  <div class="card__metric-chip">
+    <span class="card__metric-value">35%</span>
+    <span class="card__metric-label">Search accuracy improvement</span>
+  </div>
+
+  <div class="card__body">
+    <!-- COPY: Project title — specific, not generic -->
+    <h3 class="card__title">i-Exchange Knowledge Base Overhaul</h3>
+
+    <!-- COPY: Outcome-led subtitle — lead with what changed, not what was done -->
+    <p class="card__subtitle">
+      Overhauling Santander's 6,000-article internal knowledge base to fix broken search —
+      delivering a 35% accuracy improvement across 5 million annual searches.
+    </p>
+  </div>
+
+  <footer class="card__footer">
+    <ul class="card__sectors" role="list" aria-label="Sectors">
+      <li class="card__sector">Financial Services</li>
+      <li class="card__sector">Internal Tooling</li>
+    </ul>
+
+    <div class="card__meta">
+      <span class="card__read-time">8 min read</span>
+      <a href="./src/pages/case-studies/i-exchange.html" class="card__link">
+        Read case study
+        <span class="card__link-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </footer>
+
+</article>

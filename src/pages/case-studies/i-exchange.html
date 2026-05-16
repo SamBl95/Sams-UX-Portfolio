@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="i-Exchange Knowledge Base Overhaul — Sam Blake overhauled Santander's 6,000-article internal knowledge base, improving search accuracy by 35% and NPS by 12% across 5 million annual searches." />
+    <title>i-Exchange Knowledge Base Overhaul — Sam Blake</title>
+
+    <!-- Sets data-theme before CSS renders to prevent flash of wrong theme -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('portfolio-theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (_) {}
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../../styles/main.css" />
+  </head>
+  <body>
+
+    <header class="nav">
+      <div class="nav__inner container">
+        <a href="../../index.html" class="nav__logo" aria-label="Sam Blake — back to home">Sam Blake</a>
+
+        <nav id="nav-menu" class="nav__menu" aria-label="Main navigation">
+          <ul class="nav__list" role="list">
+            <li class="nav__item">
+              <a href="../../index.html#case-studies" class="nav__link">Work</a>
+            </li>
+            <li class="nav__item">
+              <a href="../about.html" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="../../index.html#contact" class="nav__link nav__link--cta">Get in touch</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="nav__theme-controls" role="group" aria-label="Theme controls">
+          <button class="nav__theme-btn" aria-label="Light mode" aria-pressed="false" data-theme-btn="light">☀</button>
+          <button class="nav__theme-btn" aria-label="Dark mode" aria-pressed="false" data-theme-btn="dark">☾</button>
+          <button class="nav__theme-btn" aria-label="High contrast mode" aria-pressed="false" data-theme-btn="high-contrast">HC</button>
+        </div>
+
+        <button
+          class="nav__toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Open navigation menu"
+        >
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+
+    <!-- =====================================================================
+         CASE STUDY HERO
+         ===================================================================== -->
+
+    <section class="cs-hero" aria-labelledby="cs-title">
+      <div class="cs-hero__inner container">
+
+        <a href="../../index.html#case-studies" class="cs-hero__back">
+          <span aria-hidden="true">←</span> Back to work
+        </a>
+
+        <ul class="cs-hero__tags" role="list" aria-label="Sectors">
+          <li class="cs-hero__tag">Financial Services</li>
+          <li class="cs-hero__tag">Internal Tooling</li>
+          <li class="cs-hero__tag">Santander UK</li>
+        </ul>
+
+        <h1 id="cs-title" class="cs-hero__title">i-Exchange Knowledge Base Overhaul</h1>
+
+        <p class="cs-hero__lede">
+          "I joined the team as a user, pitched my own ideas and spent a year overhauling
+          a knowledge base handling 5 million annual searches, improving NPS by 12% and
+          saving 200+ hours a month."
+        </p>
+
+        <ul class="cs-hero__metrics" role="list" aria-label="Key outcomes">
+          <li class="cs-hero__metric">
+            <span class="cs-hero__metric-value">35%</span>
+            <span class="cs-hero__metric-label">Search accuracy improvement</span>
+          </li>
+          <li class="cs-hero__metric">
+            <span class="cs-hero__metric-value">12%</span>
+            <span class="cs-hero__metric-label">NPS uplift</span>
+          </li>
+          <li class="cs-hero__metric">
+            <span class="cs-hero__metric-value">200+</span>
+            <span class="cs-hero__metric-label">Hours saved every month</span>
+          </li>
+          <li class="cs-hero__metric">
+            <span class="cs-hero__metric-value">5M</span>
+            <span class="cs-hero__metric-label">Annual searches affected</span>
+          </li>
+        </ul>
+
+        <dl class="cs-hero__meta">
+          <div class="cs-hero__meta-item">
+            <dt class="cs-hero__meta-label">Organisation</dt>
+            <dd class="cs-hero__meta-value">Santander UK</dd>
+          </div>
+          <div class="cs-hero__meta-item">
+            <dt class="cs-hero__meta-label">Role</dt>
+            <dd class="cs-hero__meta-value">UX Designer / Business Analyst</dd>
+          </div>
+          <div class="cs-hero__meta-item">
+            <dt class="cs-hero__meta-label">Timeline</dt>
+            <dd class="cs-hero__meta-value">12 months</dd>
+          </div>
+          <div class="cs-hero__meta-item">
+            <dt class="cs-hero__meta-label">Platform</dt>
+            <dd class="cs-hero__meta-value">ServiceNow</dd>
+          </div>
+        </dl>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================================
+         SUMMARY
+         ===================================================================== -->
+
+    <section class="cs-summary" aria-labelledby="cs-summary-heading">
+      <div class="container">
+
+        <h2 id="cs-summary-heading" class="cs-summary__heading">Project summary</h2>
+
+        <dl class="cs-summary__grid">
+
+          <div class="cs-summary__item">
+            <dt class="cs-summary__label">What's i-Exchange?</dt>
+            <dd class="cs-summary__answer">
+              i-Exchange (information exchange) is a process knowledge base used by frontline
+              colleagues at Santander during every customer interaction. It's a big instruction
+              manual for banking processes — 6,000 articles covering everything from fraud
+              procedures to product information.
+            </dd>
+          </div>
+
+          <div class="cs-summary__item">
+            <dt class="cs-summary__label">How did I get involved?</dt>
+            <dd class="cs-summary__answer">
+              I used i-Exchange daily in a previous fraud prevention role. It was full of bugs
+              and usability problems. Rather than accept it, I pitched my ideas directly to the
+              Product Owner — who offered me a UX Designer / Business Analyst role on the team.
+            </dd>
+          </div>
+
+          <div class="cs-summary__item">
+            <dt class="cs-summary__label">Problem statement</dt>
+            <dd class="cs-summary__answer">
+              i-Exchange is not effectively providing colleagues with the information they need
+              to carry out their work, preventing customers from receiving the support they need.
+            </dd>
+          </div>
+
+          <div class="cs-summary__item">
+            <dt class="cs-summary__label">What did research show?</dt>
+            <dd class="cs-summary__answer">
+              Two major pain points: a broken search engine that failed on minor spelling errors,
+              and difficulty finding audience-relevant content across 6,000 articles.
+              Navigation was confusing and the UI was significantly outdated.
+            </dd>
+          </div>
+
+          <div class="cs-summary__item">
+            <dt class="cs-summary__label">What did I do?</dt>
+            <dd class="cs-summary__answer">
+              Over 12 months I drove the adoption of an AI-powered search engine, introduced
+              saved audience personalisation, overhauled the homepage and article UI, and
+              resolved 34 usability issues and bugs using a dual-track agile approach.
+            </dd>
+          </div>
+
+          <div class="cs-summary__item">
+            <dt class="cs-summary__label">What was the result?</dt>
+            <dd class="cs-summary__answer">
+              12% NPS increase, 35% improvement in search accuracy, a 50% drop in total
+              searches (fewer repeat attempts), and 200+ hours saved per month across
+              the business.
+            </dd>
+          </div>
+
+        </dl>
+      </div>
+    </section>
+
+
+    <!-- =====================================================================
+         CASE STUDY BODY
+         ===================================================================== -->
+
+    <article class="cs-body">
+      <div class="container">
+
+
+        <!-- -----------------------------------------------------------------
+             BACKGROUND
+             ----------------------------------------------------------------- -->
+
+        <section class="cs-phase" aria-labelledby="phase-background">
+          <p class="cs-phase__eyebrow">Background</p>
+          <h2 id="phase-background" class="cs-phase__heading">Let's set the scene</h2>
+
+          <div class="cs-phase__body">
+            <p>
+              i-Exchange is the central knowledge base for Santander UK's frontline colleagues.
+              During every customer call or branch interaction, colleagues rely on it to look up
+              the correct processes — from handling a disputed payment to opening a new account.
+              It handles around 5 million searches a year.
+            </p>
+            <p>
+              Before joining the product team, I used i-Exchange daily as a fraud prevention
+              colleague. The system was slow, buggy, and routinely failed me at the worst
+              possible moment — mid-call with a customer waiting. I knew it could be better,
+              so I approached the Product Owner directly, pitched my observations, and was
+              brought in as a UX Designer and Business Analyst.
+            </p>
+            <p>
+              This gave me an unusual advantage: genuine user empathy built from first-hand
+              frustration, rather than a secondhand account. I wasn't parachuted in — I lived
+              the problem before I solved it.
+            </p>
+          </div>
+        </section>
+
+
+        <!-- -----------------------------------------------------------------
+             EMPATHISE
+             ----------------------------------------------------------------- -->
+
+        <section class="cs-phase" aria-labelledby="phase-empathise">
+          <p class="cs-phase__eyebrow">Empathise</p>
+          <h2 id="phase-empathise" class="cs-phase__heading">Understanding the problem properly</h2>
+
+          <div class="cs-phase__body">
+            <p>
+              Despite having first-hand experience, I didn't let my own assumptions drive the
+              work. I teamed up with a UX researcher and built a formal research plan to
+              understand the full picture — covering users, content, constraints, and
+              competing knowledge base platforms.
+            </p>
+
+            <h3>Research methods</h3>
+            <ul>
+              <li><strong>Surveys</strong> — Quantified colleague experience with the current system at scale</li>
+              <li><strong>Interviews</strong> — In-depth conversations to surface pain points beneath survey data</li>
+              <li><strong>Shadowing</strong> — Observed colleagues in live interactions to understand real-world usage</li>
+              <li><strong>Workshops</strong> — Facilitated sessions to generate user-led ideas for improvement</li>
+              <li><strong>Competitor analysis</strong> — Audited other knowledge base platforms for best practices</li>
+              <li><strong>Journey mapping</strong> — Mapped the full site to understand where users lost confidence</li>
+              <li><strong>Content audit</strong> — Reviewed all 6,000+ articles to understand structure and gaps</li>
+              <li><strong>Heuristic analysis</strong> — Evaluated the existing UI against usability principles</li>
+            </ul>
+
+            <h3>What the heuristic analysis found</h3>
+            <p>
+              The heuristic review surfaced problems across every major area of the product.
+              On the homepage: a cluttered navigation bar, no audience filters, a wasted hero
+              section used only for decoration, and a communications list that mixed incident
+              alerts with general updates — making both harder to read.
+            </p>
+            <p>
+              In search: the engine used exact-match logic with no tolerance for spelling errors,
+              no natural language interpretation, and no autocorrect. A single typo returned zero
+              results with no suggestions. Article metadata in search results was limited to
+              title and ID — not enough to judge relevance before clicking.
+            </p>
+            <p>
+              Within articles: there was no version history, no feedback mechanism, broken
+              breadcrumb navigation, and content hidden inside collapsed accordions that the
+              search engine couldn't index. Users had to manually expand every section before
+              searching a page.
+            </p>
+          </div>
+        </section>
+
+
+        <!-- -----------------------------------------------------------------
+             DEFINE
+             ----------------------------------------------------------------- -->
+
+        <section class="cs-phase" aria-labelledby="phase-define">
+          <p class="cs-phase__eyebrow">Define</p>
+          <h2 id="phase-define" class="cs-phase__heading">Two pain points, one overarching problem</h2>
+
+          <div class="cs-phase__body">
+            <p>
+              The research consolidated around a clear problem statement that became the
+              anchor for everything that followed.
+            </p>
+          </div>
+
+          <blockquote class="cs-callout" aria-label="Problem statement">
+            <p class="cs-callout__text">
+              "i-Exchange is not effectively providing colleagues with the information they need
+              to carry out their work, preventing customers from receiving the support they need."
+            </p>
+          </blockquote>
+
+          <div class="cs-phase__body">
+            <h3>Pain point 1 — Trouble searching</h3>
+            <p>
+              The search engine was the most reported problem. It used outdated exact-match
+              logic: one spelling mistake voided the search entirely, returning no results and
+              no suggestions. There was no natural language processing, no autocorrect, and
+              no "genius" result to surface the most likely answer.
+            </p>
+          </div>
+
+          <blockquote class="cs-callout">
+            <p class="cs-callout__text">
+              45% of colleagues reported problems with the search engine in the survey.
+            </p>
+          </blockquote>
+
+          <div class="cs-phase__body">
+            <h3>Pain point 2 — Finding relevant information</h3>
+            <p>
+              i-Exchange held over 6,000 articles across multiple audience groups — branch,
+              contact centre, specialist teams. The majority of content was irrelevant to any
+              given colleague, but audience filters weren't available from the homepage where
+              most searches started.
+            </p>
+            <p>
+              Less than 10% of colleagues were applying audience filters. That wasn't laziness
+              — it was a design failure. The filters were buried, inconsistent, and required
+              manual reapplication after every search. As I dug deeper, it became clear the
+              navigation problem was really a personalisation problem: if the system knew who
+              you were and what team you worked in, it could filter content automatically.
+            </p>
+          </div>
+        </section>
+
+
+        <!-- -----------------------------------------------------------------
+             IDEATE
+             ----------------------------------------------------------------- -->
+
+        <section class="cs-phase" aria-labelledby="phase-ideate">
+          <p class="cs-phase__eyebrow">Ideate</p>
+          <h2 id="phase-ideate" class="cs-phase__heading">Finding the right solutions</h2>
+
+          <div class="cs-phase__body">
+            <h3>Solving search — AI already in the building</h3>
+            <p>
+              The search problem couldn't be fixed by rewriting content or tweaking metadata.
+              I dived into ServiceNow's technical documentation and discovered that Santander
+              was already paying for an AI-powered search engine — it just hadn't been deployed.
+            </p>
+            <p>
+              The AI search offered machine learning, natural language interpretation,
+              autocorrect, genius result suggestions, and full analytics reporting on failed
+              searches and knowledge gaps. Exactly what was needed.
+            </p>
+            <p>
+              The catch: any change to how ServiceNow works globally required a vote from all
+              Santander countries using the platform. I built a business case, secured alignment
+              from IT, HR, and Customer Interactions teams, and submitted the ideation request
+              to the international forum — offering to make the UK the pilot country.
+              It passed the vote.
+            </p>
+
+            <h3>Solving relevance — workshops and personalisation</h3>
+            <p>
+              For the navigation and relevance problem, I ran workshops with contact centre and
+              branch colleagues. I started each session with a simple exercise — how do you
+              make toast? — to warm people up to the idea that we all do things differently,
+              before asking what frustrated them about finding information on i-Exchange.
+            </p>
+            <p>
+              Affinity mapping the responses revealed three themes: personalisation, system
+              issues, and content quality. With system issues being addressed through the search
+              upgrade and a parallel content project already in flight, I focused the design
+              work on personalisation.
+            </p>
+            <p>
+              When I asked "if you could change i-Exchange however you wanted, what would you
+              do to make it more personal?" every participant independently described some form
+              of saved audience: their business area's content surfaced by default, without
+              having to apply filters manually every single time.
+            </p>
+            <p>
+              That became the design direction. I started wireframing a new homepage built
+              around saved audience data, personalised communications, and a "My processes"
+              section pulling from each user's most-viewed articles.
+            </p>
+          </div>
+        </section>
+
+
+        <!-- -----------------------------------------------------------------
+             TEST
+             ----------------------------------------------------------------- -->
+
+        <section class="cs-phase" aria-labelledby="phase-test">
+          <p class="cs-phase__eyebrow">Test</p>
+          <h2 id="phase-test" class="cs-phase__heading">Validating before building</h2>
+
+          <div class="cs-phase__body">
+            <h3>Search testing at scale</h3>
+            <p>
+              Before committing to the AI search deployment, I needed hard evidence that it
+              would genuinely outperform the existing engine — not just in theory, but on
+              the real queries Santander colleagues were typing.
+            </p>
+            <p>
+              I set up a team of business analysts to run 4,000 manual searches in the test
+              environment. Each query was tested on both search engines, with and without
+              audience filters applied. Results were graded as promoter (top 3), neutral
+              (positions 4–5), or detractor (position 6 and beyond) — the same NPS framing
+              used to measure the live system.
+            </p>
+          </div>
+
+          <blockquote class="cs-callout">
+            <p class="cs-callout__text">
+              AI search improved NPS by 5% on day one, without any machine learning optimisation.
+              Applying an audience filter cut failed searches by a third and delivered a top-3
+              result 66–70% of the time — regardless of which search engine was used.
+            </p>
+          </blockquote>
+
+          <div class="cs-phase__body">
+            <p>
+              The data confirmed two things: the AI engine was meaningfully better, and the
+              audience filter was the single highest-impact change available — even before
+              any machine learning kicked in.
+            </p>
+
+            <h3>User testing</h3>
+            <p>
+              Moderated testing with colleagues validated the homepage wireframes and helped
+              me refine the tab structure and footer navigation. The communications and
+              incidents team confirmed the new separation of message types worked, and gave
+              approval for a customisable banner space. Showing colleagues how their saved
+              audience would automatically filter their entire experience — searches,
+              communications, processes — landed well. They were enthusiastic.
+            </p>
+            <p>
+              Testing was more constrained than ideal: a required browser plug-in couldn't
+              be approved by IT, which ruled out unmoderated remote testing. I persevered
+              with in-person moderated sessions, but it reduced the sample size and the
+              confidence I could take into production. More on that in the retrospective.
+            </p>
+          </div>
+        </section>
+
+
+        <!-- -----------------------------------------------------------------
+             SOLUTION
+             ----------------------------------------------------------------- -->
+
+        <section class="cs-phase" aria-labelledby="phase-solution">
+          <p class="cs-phase__eyebrow">Solution</p>
+          <h2 id="phase-solution" class="cs-phase__heading">The final product</h2>
+
+          <div class="cs-phase__body">
+            <p>
+              A key constraint shaped the whole delivery: colleagues were apprehensive about
+              change. Many had used i-Exchange for years and feared a disruptive overhaul
+              would make their jobs harder during the transition. The design had to feel
+              immediately familiar, even when the functionality underneath was completely new.
+            </p>
+
+            <h3>Home</h3>
+            <ul>
+              <li><strong>Saved audience and AI search</strong> — Audience selector surfaced on the homepage for the first time, with a temporary prompt to drive adoption at launch. All searches, communications, and content filtered automatically once set.</li>
+              <li><strong>My processes</strong> — A personalised section showing each colleague's favourite and most-viewed articles, eliminating the need to search for regularly-used content.</li>
+              <li><strong>Communications and incidents separated</strong> — Previously mixed in a single list; now colour-coded and icon-differentiated. Saved audiences apply to both lists automatically.</li>
+              <li><strong>Clickable banner space</strong> — The decorative hero section replaced with a flexible, customisable banner for internal initiatives and announcements.</li>
+              <li><strong>Simplified navigation</strong> — Cluttered "kitchen drawer" menu replaced with a clear navbar and a new footer containing frequently used system links.</li>
+            </ul>
+
+            <h3>Search</h3>
+            <ul>
+              <li><strong>AI-powered engine</strong> — Machine learning, natural language interpretation, and full analytics reporting on top queries, knowledge gaps, and failed searches.</li>
+              <li><strong>Autocorrect and genius suggestions</strong> — Typos no longer void a search. The engine now suggests corrections and surfaces the most likely article directly.</li>
+              <li><strong>Audience filter in search</strong> — Saved audience persists into the search page and can be toggled off to see cross-audience results when needed.</li>
+              <li><strong>Richer result cards</strong> — View count, share link, and open-in-new-tab now available directly from the search results list.</li>
+            </ul>
+
+            <h3>Articles</h3>
+            <ul>
+              <li><strong>Version history</strong> — Full history for every article, enabling QA teams to review interactions against the version of the process that was live at that time.</li>
+              <li><strong>Feedback mechanism</strong> — Colleagues can now flag articles that need improving, giving knowledge managers a direct signal from the people using the content daily.</li>
+              <li><strong>Digital adoption banners</strong> — Processes that can be self-served digitally are flagged with a banner, supporting the business goal of reducing assisted channel demand.</li>
+              <li><strong>Fixed article features</strong> — Copy to clipboard, link sharing, expand-all accordions, and add-to-favourites all implemented consistently across the platform.</li>
+            </ul>
+          </div>
+        </section>
+
+
+        <!-- -----------------------------------------------------------------
+             IMPLEMENTATION
+             ----------------------------------------------------------------- -->
+
+        <section class="cs-phase" aria-labelledby="phase-implementation">
+          <p class="cs-phase__eyebrow">Implementation</p>
+          <h2 id="phase-implementation" class="cs-phase__heading">Dual-track delivery</h2>
+
+          <div class="cs-phase__body">
+            <p>
+              I owned the full development lifecycle. With the AI search upgrade requiring
+              nearly a year of back-end work, I adopted a dual-track agile approach to keep
+              the product moving in the meantime.
+            </p>
+            <p>
+              <strong>Long track — AI search.</strong> The search upgrade ran in the
+              background for close to a year, complicated by bugs discovered during
+              development on the ServiceNow platform. I kept this from blocking everything
+              else by shipping a minimum viable product with an interim UI on launch day,
+              which I iterated on as the back-end work completed. In November 2024 the
+              new AI search engine went live on i-Exchange.
+            </p>
+            <p>
+              <strong>Short track — UI and personalisation.</strong> Saved audiences, the
+              new homepage, search page, and article improvements were broken into small
+              sprints with deployments every two weeks. Saved audiences shipped incrementally:
+              first the data layer, then the selection UI, then the display, then the
+              automatic filtering. By keeping releases small and frequent, colleagues
+              experienced continuous improvement rather than one disruptive big bang.
+            </p>
+          </div>
+        </section>
+
+
+        <!-- -----------------------------------------------------------------
+             RESULTS
+             ----------------------------------------------------------------- -->
+
+        <section class="cs-phase" aria-labelledby="phase-results">
+          <p class="cs-phase__eyebrow">Results</p>
+          <h2 id="phase-results" class="cs-phase__heading">What changed</h2>
+
+          <ul class="cs-results" role="list" aria-label="Outcome metrics">
+            <li class="stat-block">
+              <span class="stat-block__value">35%</span>
+              <span class="stat-block__label">Search accuracy improvement</span>
+            </li>
+            <li class="stat-block">
+              <span class="stat-block__value">12%</span>
+              <span class="stat-block__label">NPS uplift in one year</span>
+            </li>
+            <li class="stat-block">
+              <span class="stat-block__value">200+</span>
+              <span class="stat-block__label">Hours saved every month</span>
+            </li>
+          </ul>
+
+          <div class="cs-phase__body">
+            <p>
+              Once the AI search engine deployed, total search queries fell rapidly — a clear
+              signal that colleagues were finding what they needed on the first attempt rather
+              than repeating searches. Spellcheck, genius suggestions, and machine learning
+              were all working. The analytics dashboard surfaced emerging search trends and
+              knowledge gaps that the content team could act on directly.
+            </p>
+            <p>
+              Saved audiences reached 50% adoption in the first month after launch — without
+              any mandatory training — and tripled the proportion of filtered searches almost
+              immediately. Santander estimates the saved audience feature alone saves at least
+              120 hours every month across the business, with the true benefit likely much
+              higher when customer time, error reduction, and cognitive load are factored in.
+            </p>
+            <p>
+              Over the 12-month period, i-Exchange NPS increased by 11.7% — turning around
+              a long-declining trend and bringing user sentiment back on track.
+            </p>
+          </div>
+        </section>
+
+
+      </div>
+    </article>
+
+
+    <!-- =====================================================================
+         RETROSPECTIVE
+         ===================================================================== -->
+
+    <section class="cs-retro" aria-labelledby="cs-retro-heading">
+      <div class="container">
+
+        <p class="cs-retro__eyebrow">Retrospective</p>
+        <h2 id="cs-retro-heading" class="cs-retro__heading">What I'd do differently</h2>
+
+        <ul class="cs-retro__grid" role="list">
+
+          <li class="cs-retro__item">
+            <h3 class="cs-retro__item-title">Workshop facilitation</h3>
+            <p class="cs-retro__item-body">
+              My first workshop ran off track — I spent the opening half explaining context
+              instead of running the session. I invalidated the findings and had to repeat it
+              with a written handout to set expectations before people arrived. In future I'll
+              invest in formal facilitation training to keep sessions focused and productive,
+              regardless of how well I know the topic.
+            </p>
+          </li>
+
+          <li class="cs-retro__item">
+            <h3 class="cs-retro__item-title">Unmoderated testing</h3>
+            <p class="cs-retro__item-body">
+              A required browser plug-in couldn't get IT approval, which meant I was limited
+              to in-person moderated testing with a smaller sample than I'd have liked. I went
+              into production with less confidence than was ideal. Going forward I'll investigate
+              testing tool options and IT approval processes much earlier — before the design is
+              ready to test, not after.
+            </p>
+          </li>
+
+          <li class="cs-retro__item">
+            <h3 class="cs-retro__item-title">Figma and design systems</h3>
+            <p class="cs-retro__item-body">
+              I wasted significant time on formatting and developer handoffs in Figma before
+              I really understood auto-layout and component structure. Mid-project I was
+              onboarded onto Santander's Flame design system, which accelerated things
+              considerably. The lesson: invest in Figma skills before the project, not
+              during it, and never become dependent on a design system without understanding
+              the principles beneath it.
+            </p>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- =====================================================================
+         NEXT CASE STUDY
+         ===================================================================== -->
+
+    <nav class="cs-pagination" aria-label="Case study navigation">
+      <div class="cs-pagination__inner container">
+        <a href="./cassi.html" class="cs-pagination__link">
+          <div class="cs-pagination__text">
+            <span class="cs-pagination__direction">Next case study</span>
+            <span class="cs-pagination__title">Cassi — AI Chatbot Feedback Redesign</span>
+          </div>
+          <span class="cs-pagination__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </nav>
+
+    </main>
+
+    <!-- =====================================================================
+         FOOTER
+         ===================================================================== -->
+
+    <footer class="footer" id="contact">
+      <div class="footer__inner container">
+
+        <div class="footer__identity">
+          <p class="footer__name">Sam Blake</p>
+          <p class="footer__bio">Product designer making complex things simpler for real people.</p>
+        </div>
+
+        <nav class="footer__links" aria-label="Contact links">
+          <a href="https://www.linkedin.com/in/samuel-blake-224605186" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:hello@samblake.co.uk" class="footer__link">hello@samblake.co.uk</a>
+        </nav>
+
+        <p class="footer__copyright">&copy; 2026 Sam Blake</p>
+
+      </div>
+    </footer>
+
+    <script type="module" src="../../theme.js"></script>
+  </body>
+</html>

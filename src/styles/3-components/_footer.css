@@ -1,0 +1,106 @@
+/* =============================================================================
+   FOOTER
+   Simple site footer: name, one-line bio, contact links, copyright.
+   Mobile: stacked. Desktop: identity left, links right, copyright below.
+   ============================================================================= */
+
+
+.footer {
+  background-color: var(--color-surface);
+  border-top:       1px solid var(--color-border);
+  padding-block:    var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding-block: var(--space-16);
+  }
+}
+
+
+/* Inner — stacks on mobile, two-column on desktop */
+.footer__inner {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .footer__inner {
+    display:               grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "identity links"
+      "copyright copyright";
+    align-items:           start;
+    gap:                   var(--space-8) var(--space-16);
+  }
+}
+
+
+/* Identity — name and bio */
+.footer__identity {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-2);
+  grid-area:      identity;
+}
+
+.footer__name {
+  font-size:      var(--text-base);
+  font-weight:    var(--font-weight-semibold);
+  color:          var(--color-accent-accessible);
+  letter-spacing: -0.01em;
+  max-width:      none;
+}
+
+.footer__bio {
+  font-size:   var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color:       var(--color-text-secondary);
+  max-width:   42ch;
+}
+
+
+/* Links — LinkedIn and email */
+.footer__links {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-3);
+  grid-area:      links;
+}
+
+@media (min-width: 768px) {
+  .footer__links {
+    align-items: flex-end;
+  }
+}
+
+.footer__link {
+  font-size:       var(--text-sm);
+  font-weight:     var(--font-weight-medium);
+  color:           var(--color-text-secondary);
+  text-decoration: none;
+  transition:      color var(--transition-fast);
+}
+
+.footer__link:hover {
+  color: var(--color-accent-accessible);
+}
+
+.footer__link:focus-visible {
+  outline:        2px solid var(--color-accent-accessible);
+  outline-offset: 2px;
+  border-radius:  var(--radius-sm);
+}
+
+
+/* Copyright */
+.footer__copyright {
+  font-size:   var(--text-xs);
+  color:       var(--color-text-secondary);
+  max-width:   none;
+  grid-area:   copyright;
+  padding-top: var(--space-8);
+  border-top:  1px solid var(--color-border);
+}

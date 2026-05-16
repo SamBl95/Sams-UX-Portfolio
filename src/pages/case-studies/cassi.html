@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cassi AI Chatbot Feedback Redesign — Sam Blake fixed Santander's AI colleague assistant in three weeks at zero development cost, taking audience filter adherence from 1-in-3 to near 100%." />
+    <title>Cassi — AI Chatbot Feedback Redesign — Sam Blake</title>
+
+    <!-- Sets data-theme before CSS renders to prevent flash of wrong theme -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('portfolio-theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (_) {}
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../../styles/main.css" />
+  </head>
+  <body>
+
+    <header class="nav">
+      <div class="nav__inner container">
+        <a href="../../index.html" class="nav__logo" aria-label="Sam Blake — back to home">Sam Blake</a>
+
+        <nav id="nav-menu" class="nav__menu" aria-label="Main navigation">
+          <ul class="nav__list" role="list">
+            <li class="nav__item">
+              <a href="../../index.html#case-studies" class="nav__link">Work</a>
+            </li>
+            <li class="nav__item">
+              <a href="../about.html" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="../../index.html#contact" class="nav__link nav__link--cta">Get in touch</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="nav__theme-controls" role="group" aria-label="Theme controls">
+          <button class="nav__theme-btn" aria-label="Light mode" aria-pressed="false" data-theme-btn="light">☀</button>
+          <button class="nav__theme-btn" aria-label="Dark mode" aria-pressed="false" data-theme-btn="dark">☾</button>
+          <button class="nav__theme-btn" aria-label="High contrast mode" aria-pressed="false" data-theme-btn="high-contrast">HC</button>
+        </div>
+
+        <button
+          class="nav__toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Open navigation menu"
+        >
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+
+    <!-- =====================================================================
+         CASE STUDY HERO
+         ===================================================================== -->
+
+    <section class="cs-hero" aria-labelledby="cs-title">
+      <div class="cs-hero__inner container">
+
+        <a href="../../index.html#case-studies" class="cs-hero__back">
+          <span aria-hidden="true">←</span> Back to work
+        </a>
+
+        <ul class="cs-hero__tags" role="list" aria-label="Sectors">
+          <li class="cs-hero__tag">Financial Services</li>
+          <li class="cs-hero__tag">AI</li>
+          <li class="cs-hero__tag">Santander UK</li>
+        </ul>
+
+        <h1 id="cs-title" class="cs-hero__title">Cassi — AI Chatbot Feedback Redesign</h1>
+
+        <p class="cs-hero__lede">
+          "Three weeks, zero budget and a graphic design competition later, I improved
+          feedback submissions by 30% and took audience filter adherence from 1-in-3
+          to near 100% on Santander's AI colleague assistant."
+        </p>
+
+        <ul class="cs-hero__metrics" role="list" aria-label="Key outcomes">
+          <li class="cs-hero__metric">
+            <span class="cs-hero__metric-value">~100%</span>
+            <span class="cs-hero__metric-label">Filter adherence achieved</span>
+          </li>
+          <li class="cs-hero__metric">
+            <span class="cs-hero__metric-value">+30%</span>
+            <span class="cs-hero__metric-label">Feedback submissions</span>
+          </li>
+          <li class="cs-hero__metric">
+            <span class="cs-hero__metric-value">3 wks</span>
+            <span class="cs-hero__metric-label">Delivery window</span>
+          </li>
+          <li class="cs-hero__metric">
+            <span class="cs-hero__metric-value">£0</span>
+            <span class="cs-hero__metric-label">Additional development cost</span>
+          </li>
+        </ul>
+
+        <dl class="cs-hero__meta">
+          <div class="cs-hero__meta-item">
+            <dt class="cs-hero__meta-label">Organisation</dt>
+            <dd class="cs-hero__meta-value">Santander UK</dd>
+          </div>
+          <div class="cs-hero__meta-item">
+            <dt class="cs-hero__meta-label">Role</dt>
+            <dd class="cs-hero__meta-value">UX Designer</dd>
+          </div>
+          <div class="cs-hero__meta-item">
+            <dt class="cs-hero__meta-label">Timeline</dt>
+            <dd class="cs-hero__meta-value">3 weeks</dd>
+          </div>
+          <div class="cs-hero__meta-item">
+            <dt class="cs-hero__meta-label">Platform</dt>
+            <dd class="cs-hero__meta-value">Colleague Assist (web)</dd>
+          </div>
+        </dl>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================================
+         SUMMARY
+         ===================================================================== -->
+
+    <section class="cs-summary" aria-labelledby="cs-summary-heading">
+      <div class="container">
+
+        <h2 id="cs-summary-heading" class="cs-summary__heading">Project summary</h2>
+
+        <dl class="cs-summary__grid">
+
+          <div class="cs-summary__item">
+            <dt class="cs-summary__label">What's Colleague Assist?</dt>
+            <dd class="cs-summary__answer">
+              Colleague Assist — later renamed Cassi — is an AI chatbot that provides Santander
+              colleagues with guidance on how to serve customers. It's a bit like ChatGPT for
+              banking, using i-Exchange as its source of truth to answer colleague queries in real time.
+            </dd>
+          </div>
+
+          <div class="cs-summary__item">
+            <dt class="cs-summary__label">How did I get involved?</dt>
+            <dd class="cs-summary__answer">
+              I spotted the tool while conducting user research with a frontline colleague.
+              It looked underserved and I was looking for a new challenge after i-Exchange,
+              so I approached the Product Owner directly and offered to help.
+            </dd>
+          </div>
+
+          <div class="cs-summary__item">
+            <dt class="cs-summary__label">Problem statement</dt>
+            <dd class="cs-summary__answer">
+              Colleagues were not selecting their business area when querying Cassi, and
+              feedback rates were extremely low. This made responses less accurate and
+              prevented the data science team from improving the model.
+            </dd>
+          </div>
+
+          <div class="cs-summary__item">
+            <dt class="cs-summary__label">What did research show?</dt>
+            <dd class="cs-summary__answer">
+              Users didn't know their feedback directly improved Cassi's responses.
+              The feedback journey offered only three vague options causing drop-off.
+              The audience filter was positioned far from the query input, so most
+              colleagues ignored it entirely.
+            </dd>
+          </div>
+
+          <div class="cs-summary__item">
+            <dt class="cs-summary__label">What did I do?</dt>
+            <dd class="cs-summary__answer">
+              Within the constraints — no development budget, three weeks before a change
+              freeze — I improved feedback signalling, repositioned the audience filter,
+              added a tooltip for new users, opened a dedicated Community forum for
+              long-form feedback, and ran an internal rebrand competition.
+            </dd>
+          </div>
+
+          <div class="cs-summary__item">
+            <dt class="cs-summary__label">What was the result?</dt>
+            <dd class="cs-summary__answer">
+              Cassi launched with a new name, logo, and improved UX. Audience filter adherence
+              reached near 100% in month one. Feedback submissions increased by 30%.
+              All delivered at zero additional development cost.
+            </dd>
+          </div>
+
+        </dl>
+      </div>
+    </section>
+
+
+    <!-- =====================================================================
+         CASE STUDY BODY
+         ===================================================================== -->
+
+    <article class="cs-body">
+      <div class="container">
+
+
+        <!-- -----------------------------------------------------------------
+             BACKGROUND
+             ----------------------------------------------------------------- -->
+
+        <section class="cs-phase" aria-labelledby="phase-background">
+          <p class="cs-phase__eyebrow">Background</p>
+          <h2 id="phase-background" class="cs-phase__heading">A new problem, tight constraints</h2>
+
+          <div class="cs-phase__body">
+            <p>
+              After delivering the main updates for i-Exchange, I was looking for the next
+              problem worth solving. I found it by accident — while conducting user research
+              with a frontline colleague, I noticed them switching between i-Exchange and
+              a tool called Colleague Assist: an AI chatbot that answered colleague questions
+              using i-Exchange content as its source.
+            </p>
+            <p>
+              The product looked interesting and clearly underserved. I introduced myself to
+              the Product Owner and offered to help. They were glad of it — two problems were
+              stalling the tool's rollout: colleagues weren't selecting their business area
+              before querying, and almost nobody was leaving feedback. Both were essential
+              for the data science team to improve the model's responses.
+            </p>
+            <p>
+              There was one significant constraint: no money left in the project budget.
+              The development team agreed that front-end changes — copy, styles, layout —
+              counted as business as usual and could ship without additional cost. But any
+              back-end functionality was off the table. On top of that, a change freeze was
+              coming in three weeks. Whatever I was going to do, it had to ship within that window.
+            </p>
+          </div>
+        </section>
+
+
+        <!-- -----------------------------------------------------------------
+             EMPATHISE
+             ----------------------------------------------------------------- -->
+
+        <section class="cs-phase" aria-labelledby="phase-empathise">
+          <p class="cs-phase__eyebrow">Empathise</p>
+          <h2 id="phase-empathise" class="cs-phase__heading">There's always time for research</h2>
+
+          <div class="cs-phase__body">
+            <p>
+              There was no time for workshops or a formal research plan. But there were
+              plenty of colleagues already using the tool who I could speak to quickly.
+              I organised a town hall meeting to understand why users weren't leaving
+              feedback or selecting their audience — and what came back was clear and consistent.
+            </p>
+
+            <h3>What the town hall revealed</h3>
+            <ul>
+              <li><strong>Feedback options were too vague</strong> — Only three discrete choices were available. Users found them too broad to accurately describe their experience, so they gave up and left nothing at all.</li>
+              <li><strong>Users didn't understand the model</strong> — Nobody had told colleagues that their feedback directly trained and improved Cassi's responses. Once they knew, they were far more motivated to contribute.</li>
+              <li><strong>The audience filter was easy to miss</strong> — It sat at the top of the screen, far from the query input at the bottom. With no prompt or guidance, most users simply forgot it existed.</li>
+            </ul>
+
+            <h3>Heuristic analysis</h3>
+            <p>
+              A quick pass against usability principles confirmed what the town hall surfaced.
+              There was no onboarding guidance — colleagues joining through training might retain
+              the basics initially, but knowledge fade was inevitable. The audience filter was
+              poorly positioned with no supporting prompt. The feedback icons were squeezed
+              between responses without enough visual separation to read as clearly interactive.
+              The UI felt like a prototype that had never been handed to a designer — functional,
+              but not ready for the scale of rollout being planned.
+            </p>
+          </div>
+        </section>
+
+
+        <!-- -----------------------------------------------------------------
+             DEFINE
+             ----------------------------------------------------------------- -->
+
+        <section class="cs-phase" aria-labelledby="phase-define">
+          <p class="cs-phase__eyebrow">Define</p>
+          <h2 id="phase-define" class="cs-phase__heading">Three distinct problems</h2>
+
+          <div class="cs-phase__body">
+            <p>
+              The research consolidated around a clear problem statement and three
+              distinct failure modes beneath it.
+            </p>
+          </div>
+
+          <blockquote class="cs-callout" aria-label="Problem statement">
+            <p class="cs-callout__text">
+              "Colleagues are not selecting their business area when querying Colleague Assist
+              and feedback rates are really low. This causes responses to be less accurate and
+              prevents the data science team from improving the model."
+            </p>
+          </blockquote>
+
+          <div class="cs-phase__body">
+            <h3>Problem 1 — The feedback journey</h3>
+            <p>
+              Users wanted to leave feedback when Cassi got something wrong, but the three
+              available options were too broad to capture what they actually meant. Faced with
+              choices that didn't fit their experience, they abandoned the journey entirely.
+              Because Cassi uses negative feedback to guard-rail poor responses, low feedback
+              rates had a direct impact on model safety — not just data quality.
+            </p>
+            <p>
+              The feedback entry point was also poorly signalled. The thumbs up and down icons
+              were visually buried between responses, easy to overlook entirely.
+            </p>
+
+            <h3>Problem 2 — The understanding gap</h3>
+            <p>
+              Users had no mental model of how Cassi actually worked. They didn't know that
+              their feedback directly trained the model's responses — for themselves and every
+              colleague using the tool. Once that connection was made explicit in the town hall,
+              motivation to leave feedback increased immediately. This was a communication
+              failure, not a missing feature.
+            </p>
+
+            <h3>Problem 3 — Audience selection</h3>
+            <p>
+              Prior to the update, 1-in-3 guard-railed responses had no audience selected —
+              meaning the model was being penalised for giving the right answer to the wrong
+              person, rather than a genuinely bad response. The audience filter needed
+              repositioning, prompting, and making impossible to miss.
+            </p>
+          </div>
+        </section>
+
+
+        <!-- -----------------------------------------------------------------
+             IDEATE
+             ----------------------------------------------------------------- -->
+
+        <section class="cs-phase" aria-labelledby="phase-ideate">
+          <p class="cs-phase__eyebrow">Ideate</p>
+          <h2 id="phase-ideate" class="cs-phase__heading">Working within the constraints</h2>
+
+          <div class="cs-phase__body">
+            <p>
+              With three days before designs needed to go to developers, I moved quickly.
+              No back-end changes, no new user journeys — front-end only. Each solution
+              had to solve a real problem without adding development cost.
+            </p>
+
+            <h3>Solving feedback — the Community forum</h3>
+            <p>
+              The three vague feedback options couldn't be replaced with a richer form without
+              back-end work. But I had an existing relationship with the team running Santander's
+              internal Community forum from my work on i-Exchange. I asked if they could open
+              a dedicated Cassi channel where colleagues could leave longer-form feedback.
+              They said yes — and it was free.
+            </p>
+            <p>
+              Community moderators would triage submissions to the Cassi team. The discrete
+              feedback options were replaced with a direct route to the forum. Problem solved
+              at zero additional cost.
+            </p>
+
+            <h3>Closing the understanding gap — tooltip and introduction screen</h3>
+            <p>
+              When a colleague first opens Cassi, the chat window is empty. That blank space
+              was an opportunity. I proposed using it for a brief introduction: what Cassi is
+              for, how to get the best results, and — critically — that their feedback directly
+              improves the model's responses for everyone on the platform.
+            </p>
+            <p>
+              A persistent tooltip would also keep key guidance accessible without interrupting
+              experienced users who already knew what they were doing.
+            </p>
+
+            <h3>Fixing audience selection — the law of proximity</h3>
+            <p>
+              The audience filter sat at the top of the screen. The query input was at the
+              bottom. That physical distance was enough for users to forget the filter
+              existed. Moving the selector directly above the query box — where the user's
+              attention already was — applied a basic principle: related elements belong
+              close together.
+            </p>
+            <p>
+              As a fallback, a prompt would appear if a user submitted a query without
+              selecting an audience first.
+            </p>
+
+            <h3>Driving engagement — the rebrand competition</h3>
+            <p>
+              Alongside the UX fixes, I ran an internal competition inviting colleagues
+              to design a new logo and suggest a new name. The goal: give colleagues a
+              reason to care about the tool before they'd even experienced the improvements.
+              Dozens of submissions came in. The winning design — by Aishat Arowosegbe —
+              gave the tool a visual identity closer to the customer-facing systems
+              colleagues already knew. Colleague Assist became Cassi.
+            </p>
+          </div>
+        </section>
+
+
+        <!-- -----------------------------------------------------------------
+             TEST
+             ----------------------------------------------------------------- -->
+
+        <section class="cs-phase" aria-labelledby="phase-test">
+          <p class="cs-phase__eyebrow">Test</p>
+          <h2 id="phase-test" class="cs-phase__heading">Rapid validation on the final day</h2>
+
+          <div class="cs-phase__body">
+            <p>
+              With one day left before handover, I ran group calls with users to pressure-test
+              the design decisions. The reaction was positive — the upgrade felt like a
+              significant improvement to people who'd been using the original daily.
+            </p>
+
+            <h3>The responsive breakpoint catch</h3>
+            <p>
+              Testing surfaced something I hadn't designed for: many colleagues run Cassi as
+              a narrow side panel so they can use other windows while serving a customer.
+              The layout broke at that width. I introduced a tighter breakpoint — reducing
+              the logo and tightening spacing at the bottom — to keep the chat window
+              functional in the reduced view without affecting larger screens.
+              It went to the wire, but it shipped.
+            </p>
+
+            <h3>Toast or overlay?</h3>
+            <p>
+              I'd designed two versions of the post-feedback experience: an overlay modal
+              that blocked the screen until dismissed, and a toast notification that appeared
+              briefly at the top of the chat window before fading.
+            </p>
+          </div>
+
+          <blockquote class="cs-callout">
+            <p class="cs-callout__text">
+              "I'd have much preferred the overlay — but when colleagues explained that a modal
+              blocking their screen mid-customer-call would genuinely get in the way of their
+              work, it was an easy choice."
+            </p>
+          </blockquote>
+
+          <div class="cs-phase__body">
+            <p>
+              Users were unanimous on the toast. When you're mid-call with a customer,
+              a dismissal-required modal is a real problem. The toast let colleagues
+              acknowledge the feedback prompt and carry on serving the customer without
+              any friction.
+            </p>
+          </div>
+        </section>
+
+
+        <!-- -----------------------------------------------------------------
+             SOLUTION
+             ----------------------------------------------------------------- -->
+
+        <section class="cs-phase" aria-labelledby="phase-solution">
+          <p class="cs-phase__eyebrow">Solution</p>
+          <h2 id="phase-solution" class="cs-phase__heading">The final product</h2>
+
+          <div class="cs-phase__body">
+            <h3>Audience filter</h3>
+            <p>
+              Moved directly above the query input field, with a prompt appearing if a query
+              is submitted without a selection. Proximity does the work that instructions
+              and training never could.
+            </p>
+
+            <h3>Tooltip and introduction screen</h3>
+            <p>
+              A persistent tooltip holds key guidance for new users without cluttering
+              the experience for experienced ones. The empty opening screen now provides
+              a brief introduction to best practice — including the explicit statement that
+              feedback improves Cassi's responses for everyone.
+            </p>
+
+            <h3>Feedback journey</h3>
+            <p>
+              Thumbs up and down redesigned to read clearly as interactive elements.
+              Selecting one triggers a toast notification — brief, unobtrusive, and
+              surfaced without interrupting a live customer interaction. The toast links
+              to the dedicated Community forum for colleagues who want to leave
+              more detailed context.
+            </p>
+
+            <h3>Cassi rebrand</h3>
+            <p>
+              New name, new logo, visual identity aligned with customer-facing systems.
+              The rebrand gave Cassi credibility with colleagues who'd previously
+              dismissed it as an unfinished internal tool.
+            </p>
+          </div>
+        </section>
+
+
+        <!-- -----------------------------------------------------------------
+             RESULTS
+             ----------------------------------------------------------------- -->
+
+        <section class="cs-phase" aria-labelledby="phase-results">
+          <p class="cs-phase__eyebrow">Results</p>
+          <h2 id="phase-results" class="cs-phase__heading">Delivered in three weeks, at zero cost</h2>
+
+          <ul class="cs-results" role="list" aria-label="Outcome metrics">
+            <li class="stat-block">
+              <span class="stat-block__value">~100%</span>
+              <span class="stat-block__label">Filter adherence in month one</span>
+            </li>
+            <li class="stat-block">
+              <span class="stat-block__value">+30%</span>
+              <span class="stat-block__label">Feedback submissions</span>
+            </li>
+            <li class="stat-block">
+              <span class="stat-block__value">£0</span>
+              <span class="stat-block__label">Additional development cost</span>
+            </li>
+          </ul>
+
+          <div class="cs-phase__body">
+            <p>
+              The changes shipped just before the change freeze and received immediate
+              positive feedback via the new Community forum. In the first month after launch,
+              there were 30 guard-railed responses — and in every single case the user had
+              selected their audience. Before the update, 1-in-3 had not.
+            </p>
+            <p>
+              The Community forum added a dimension the original feedback mechanism never
+              had: context. Colleagues started explaining <em>why</em> a response was wrong,
+              not just that it was. Experienced colleagues began helping newer ones. And a
+              recurring pattern emerged — many "bad" Cassi responses were actually accurate
+              answers based on outdated i-Exchange articles, giving the content team a
+              new stream of actionable improvement signals.
+            </p>
+            <p>
+              Combined with improved signalling, the repositioned filter, and the new
+              tooltip and toast, feedback submissions increased 30% in the weeks following launch.
+            </p>
+          </div>
+        </section>
+
+
+      </div>
+    </article>
+
+
+    <!-- =====================================================================
+         RETROSPECTIVE
+         ===================================================================== -->
+
+    <section class="cs-retro" aria-labelledby="cs-retro-heading">
+      <div class="container">
+
+        <p class="cs-retro__eyebrow">Retrospective</p>
+        <h2 id="cs-retro-heading" class="cs-retro__heading">What I'd do differently</h2>
+
+        <ul class="cs-retro__grid" role="list">
+
+          <li class="cs-retro__item">
+            <h3 class="cs-retro__item-title">Being adaptable</h3>
+            <p class="cs-retro__item-body">
+              This project reinforced that good outcomes don't require a perfect process.
+              Given more time I'd have run proper research and structured testing — but the
+              constraints were real, and working within them delivered genuine value quickly.
+              Knowing when to adapt rather than wait for ideal conditions is a skill in itself,
+              and one worth practising deliberately.
+            </p>
+          </li>
+
+          <li class="cs-retro__item">
+            <h3 class="cs-retro__item-title">Design for every viewport from the start</h3>
+            <p class="cs-retro__item-body">
+              I assumed Cassi was a full-width web product. It wasn't — many colleagues run
+              it as a narrow side panel alongside other windows. Finding that out on the final
+              day before handover nearly caused a problem. Going forward: always understand
+              how a product is actually used before designing, not after. Real usage patterns
+              matter more than standard device breakpoints.
+            </p>
+          </li>
+
+          <li class="cs-retro__item">
+            <h3 class="cs-retro__item-title">Putting my bias aside</h3>
+            <p class="cs-retro__item-body">
+              I personally preferred the overlay for the feedback journey — it felt more
+              deliberate and harder to miss. But colleagues explained that a modal blocking
+              their screen mid-customer-call was genuinely disruptive to their work.
+              The right call was obvious. The best design works for the user's actual
+              context, not the designer's preference.
+            </p>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- =====================================================================
+         CASE STUDY NAVIGATION
+         ===================================================================== -->
+
+    <nav class="cs-pagination" aria-label="Case study navigation">
+      <div class="cs-pagination__inner container">
+        <a href="./community.html" class="cs-pagination__link">
+          <div class="cs-pagination__text">
+            <span class="cs-pagination__direction">Next case study</span>
+            <span class="cs-pagination__title">Community Support Forum Redesign</span>
+          </div>
+          <span class="cs-pagination__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </nav>
+
+    </main>
+
+    <!-- =====================================================================
+         FOOTER
+         ===================================================================== -->
+
+    <footer class="footer" id="contact">
+      <div class="footer__inner container">
+
+        <div class="footer__identity">
+          <p class="footer__name">Sam Blake</p>
+          <p class="footer__bio">Product designer making complex things simpler for real people.</p>
+        </div>
+
+        <nav class="footer__links" aria-label="Contact links">
+          <a href="https://www.linkedin.com/in/samuel-blake-224605186" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:hello@samblake.co.uk" class="footer__link">hello@samblake.co.uk</a>
+        </nav>
+
+        <p class="footer__copyright">&copy; 2026 Sam Blake</p>
+
+      </div>
+    </footer>
+
+    <script type="module" src="../../theme.js"></script>
+  </body>
+</html>

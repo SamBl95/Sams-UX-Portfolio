@@ -1,0 +1,59 @@
+/* =============================================================================
+   GRID
+   CSS Grid layout primitives: multi-column grids, auto-fit patterns,
+   and named grid areas for page-level layouts.
+   ============================================================================= */
+
+
+/* -------------------------------------------------------------------------
+   CASE STUDIES SECTION — moved from _card.css
+   ------------------------------------------------------------------------- */
+
+.case-studies {
+  padding-block:    var(--space-16);
+  background-color: var(--color-bg);
+}
+
+@media (min-width: 768px) {
+  .case-studies {
+    padding-block: var(--space-20);
+  }
+}
+
+@media (min-width: 1280px) {
+  .case-studies {
+    padding-block: var(--space-24);
+  }
+}
+
+.case-studies__header {
+  margin-bottom: var(--space-10);
+}
+
+.case-studies__heading {
+  font-size:      var(--text-3xl);
+  font-weight:    var(--font-weight-bold);
+  line-height:    var(--leading-tight);
+  letter-spacing: -0.01em;
+  color:          var(--color-text-primary);
+  margin-bottom:  var(--space-3);
+}
+
+.case-studies__subheading {
+  font-size: var(--text-lg);
+  color:     var(--color-text-secondary);
+  max-width: 52ch;
+}
+
+/* Card grid — single column → 2 columns (2×2 layout for 4 cards) */
+.case-studies__grid {
+  display:               grid;
+  grid-template-columns: 1fr;
+  gap:                   var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .case-studies__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

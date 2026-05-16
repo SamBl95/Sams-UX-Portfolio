@@ -1,0 +1,27 @@
+/* =============================================================================
+   CONTAINER
+   Max-width wrapper with responsive horizontal padding. Provides the central
+   column that constrains content width across breakpoints.
+
+   Usage: add class="container" to any inner wrapper that needs width-capping.
+   Never set max-width inside component files — use this class instead.
+   ============================================================================= */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--space-5); /* 20px — mobile */
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: var(--space-8); /* 32px — tablet */
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding-inline: var(--space-10); /* 40px — desktop */
+  }
+}

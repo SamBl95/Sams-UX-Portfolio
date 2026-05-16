@@ -1,0 +1,189 @@
+/* =============================================================================
+   BASE TYPOGRAPHY
+   Element-selector styles only. No classes. Sets reading rhythm for raw HTML.
+   Fonts loaded via Google Fonts in index.html:
+     Fraunces — headings (h1–h4), optical sizing enabled
+     Urbanist — body and UI text
+     Caveat   — hero animation span only (applied via .hero__accent-word in _hero.css)
+   ============================================================================= */
+
+/* Headings — Fraunces with optical sizing */
+h1 {
+  font-family:        var(--font-heading);
+  font-size:          var(--text-5xl);
+  font-weight:        var(--font-weight-bold);
+  line-height:        var(--leading-tight);
+  letter-spacing:     -0.02em;
+  font-optical-sizing: auto;
+  color:              var(--color-text-primary);
+}
+
+h2 {
+  font-family:        var(--font-heading);
+  font-size:          var(--text-4xl);
+  font-weight:        var(--font-weight-bold);
+  line-height:        var(--leading-tight);
+  letter-spacing:     -0.015em;
+  font-optical-sizing: auto;
+  color:              var(--color-text-primary);
+}
+
+h3 {
+  font-family:        var(--font-heading);
+  font-size:          var(--text-3xl);
+  font-weight:        var(--font-weight-semibold);
+  line-height:        var(--leading-tight);
+  letter-spacing:     -0.01em;
+  font-optical-sizing: auto;
+  color:              var(--color-text-primary);
+}
+
+h4 {
+  font-family:        var(--font-heading);
+  font-size:          var(--text-2xl);
+  font-weight:        var(--font-weight-semibold);
+  line-height:        var(--leading-normal);
+  font-optical-sizing: auto;
+  color:              var(--color-text-primary);
+}
+
+h5 {
+  font-size:   var(--text-xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--leading-normal);
+  color:       var(--color-text-primary);
+}
+
+h6 {
+  font-size:   var(--text-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--leading-normal);
+  color:       var(--color-text-primary);
+}
+
+/* Body copy */
+p {
+  font-family: var(--font-body);
+  font-size:   var(--text-base);
+  line-height: var(--leading-relaxed);
+  color:       var(--color-text-secondary);
+  max-width:   65ch;
+}
+
+/* Links */
+a {
+  color:      var(--color-accent-accessible);
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--color-accent-accessible) 80%, #000);
+}
+
+a:focus-visible {
+  outline:        2px solid var(--color-accent-accessible);
+  outline-offset: 2px;
+  border-radius:  var(--radius-sm);
+}
+
+/* Inline emphasis */
+strong,
+b {
+  font-weight: var(--font-weight-semibold);
+  color:       var(--color-text-primary);
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+/* Inline code */
+code {
+  font-family:      var(--font-mono);
+  font-size:        0.875em;
+  background-color: var(--color-surface);
+  border:           1px solid var(--color-border);
+  border-radius:    var(--radius-sm);
+  padding:          2px 6px;
+}
+
+/* Code blocks */
+pre {
+  font-family:      var(--font-mono);
+  font-size:        var(--text-sm);
+  line-height:      var(--leading-relaxed);
+  background-color: var(--color-surface);
+  border:           1px solid var(--color-border);
+  border-radius:    var(--radius-lg);
+  padding:          var(--space-6);
+  overflow-x:       auto;
+}
+
+pre code {
+  background: none;
+  border:     none;
+  padding:    0;
+  font-size:  inherit;
+}
+
+/* Lists */
+ul,
+ol {
+  padding-left: var(--space-6);
+  line-height:  var(--leading-relaxed);
+  color:        var(--color-text-secondary);
+}
+
+li + li {
+  margin-top: var(--space-2);
+}
+
+/* Blockquote */
+blockquote {
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-6);
+  color:        var(--color-text-secondary);
+  font-style:   italic;
+}
+
+/* Horizontal rule */
+hr {
+  border:      none;
+  border-top:  1px solid var(--color-border);
+  margin-block: var(--space-8);
+}
+
+/* Small / caption text */
+small {
+  font-size: var(--text-sm);
+  color:     var(--color-text-secondary);
+}
+
+/* Tables */
+table {
+  width:           100%;
+  border-collapse: collapse;
+  font-size:       var(--text-sm);
+}
+
+th {
+  font-weight:   var(--font-weight-semibold);
+  text-align:    left;
+  padding:       var(--space-3) var(--space-4);
+  border-bottom: 2px solid var(--color-border);
+  color:         var(--color-text-primary);
+}
+
+td {
+  padding:       var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  color:         var(--color-text-secondary);
+}
+
+/* Tablet+ — scale headings up */
+@media (min-width: 768px) {
+  h1 { font-size: var(--text-5xl); }
+  h2 { font-size: var(--text-4xl); }
+  h3 { font-size: var(--text-3xl); }
+}

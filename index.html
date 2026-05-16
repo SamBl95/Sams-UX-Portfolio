@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sam Blake — Product Designer based in the North West of England, specialising in financial services, retail and property." />
+    <title>Sam Blake | Product Designer</title>
+
+    <!-- Typefaces: Fraunces (headings), Urbanist (body), Caveat (hero accent) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&family=Caveat:wght@400&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./src/styles/main.css" />
+  </head>
+  <body>
+
+    <header class="nav">
+      <div class="nav__inner container">
+
+        <a href="/" class="nav__logo" aria-label="Sam Blake — back to home">Sam Blake</a>
+
+        <!-- Nav links — hidden on mobile, revealed at 768px -->
+        <nav id="nav-menu" class="nav__menu" aria-label="Main navigation">
+          <ul class="nav__list" role="list">
+            <li class="nav__item">
+              <a href="#case-studies" class="nav__link">Work</a>
+            </li>
+            <li class="nav__item">
+              <a href="./src/pages/about.html" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link nav__link--cta">Get in touch</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Hamburger — mobile only, JS (theme.js) handles toggle -->
+        <button
+          class="nav__toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Open navigation menu"
+        >
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+
+      </div>
+    </header>
+
+    <main>
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero__inner container">
+        <div class="hero__content">
+
+          <p class="hero__eyebrow">Product Designer</p>
+
+          <h1 id="hero-heading" class="hero__headline">
+            The designer who
+            <!-- Typewriter: aria-hidden — AT reads the sr span below instead -->
+            <span class="hero__typewriter" aria-hidden="true">
+              <span class="hero__typewriter-text"></span><span class="hero__typewriter-cursor"></span>
+            </span>
+            <!-- Static text for screen readers; JS updates on each completed phrase -->
+            <span class="hero__typewriter-sr">asks why so you don't have to</span>
+          </h1>
+
+          <p class="hero__subheadline">
+            Product designer at Matalan and previously Santander UK, with outcome-led work across
+            financial services, retail, and property, and first-hand domain knowledge from running
+            an investment property business.
+          </p>
+
+          <ul class="hero__sectors" role="list" aria-label="Sectors">
+            <li class="hero__sector">Financial Services</li>
+            <li class="hero__sector">Retail</li>
+            <li class="hero__sector">Property</li>
+          </ul>
+
+          <div class="hero__actions">
+            <a href="#case-studies" class="btn btn--primary">See my work</a>
+            <a href="#contact" class="btn btn--ghost">Get in touch</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="stat-row" aria-label="Key outcomes">
+      <div class="stat-row__inner container">
+        <ul class="stat-row__list" role="list">
+
+          <li class="stat-row__item">
+            <div class="stat-block">
+              <span class="stat-block__value">300+</span>
+              <span class="stat-block__label">Design system components</span>
+            </div>
+          </li>
+
+          <li class="stat-row__item">
+            <div class="stat-block">
+              <span class="stat-block__value">35%</span>
+              <span class="stat-block__label">Search accuracy improvement</span>
+            </div>
+          </li>
+
+          <li class="stat-row__item">
+            <div class="stat-block">
+              <span class="stat-block__value">200+</span>
+              <span class="stat-block__label">Hours saved every month</span>
+            </div>
+          </li>
+
+          <li class="stat-row__item">
+            <div class="stat-block">
+              <span class="stat-block__value">50%</span>
+              <span class="stat-block__label">Load time reduction</span>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <section class="case-studies" id="case-studies" aria-labelledby="case-studies-heading">
+      <div class="container">
+
+        <div class="case-studies__header">
+          <h2 id="case-studies-heading" class="case-studies__heading">Selected work</h2>
+          <p class="case-studies__subheading">Outcome-led design across financial services, retail, and property — at Matalan and Santander UK.</p>
+        </div>
+
+        <div class="case-studies__grid">
+
+          <!-- CARD 1: Matalan -->
+          <article class="card">
+            <div class="card__metric-chip">
+              <span class="card__metric-value">26%</span>
+              <span class="card__metric-label">Of cart abandonments linked to broken promo codes</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Project Phoenix — Redesigning Matalan.co.uk from the Ground Up</h3>
+              <p class="card__subtitle">An 8-phase solo discovery and design programme to exit Matalan's legacy platform — surfacing eight problem themes in week one and building toward fully validated, RFP-ready designs.</p>
+            </div>
+            <footer class="card__footer">
+              <ul class="card__sectors" role="list" aria-label="Sectors">
+                <li class="card__sector">Retail</li>
+                <li class="card__sector">Discovery</li>
+                <li class="card__sector">In Progress</li>
+              </ul>
+              <div class="card__meta">
+                <span class="card__read-time">7 min read</span>
+                <a href="./src/pages/case-studies/matalan.html" class="card__link">
+                  Read case study <span class="card__link-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </footer>
+          </article>
+
+          <!-- CARD 2: i-Exchange -->
+          <article class="card">
+            <div class="card__metric-chip">
+              <span class="card__metric-value">35%</span>
+              <span class="card__metric-label">Search accuracy improvement</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">i-Exchange Knowledge Base Overhaul</h3>
+              <p class="card__subtitle">Overhauling Santander's 6,000-article internal knowledge base to fix broken search — delivering a 35% accuracy improvement across 5 million annual searches.</p>
+            </div>
+            <footer class="card__footer">
+              <ul class="card__sectors" role="list" aria-label="Sectors">
+                <li class="card__sector">Financial Services</li>
+                <li class="card__sector">Internal Tooling</li>
+              </ul>
+              <div class="card__meta">
+                <span class="card__read-time">8 min read</span>
+                <a href="./src/pages/case-studies/i-exchange.html" class="card__link">
+                  Read case study <span class="card__link-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </footer>
+          </article>
+
+          <!-- CARD 2: Cassi -->
+          <article class="card">
+            <div class="card__metric-chip">
+              <span class="card__metric-value">30%</span>
+              <span class="card__metric-label">Increase in feedback submissions</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Cassi — AI Chatbot Feedback Redesign</h3>
+              <p class="card__subtitle">Fixing Santander's AI colleague assistant in three weeks at zero development cost — increasing feedback submission rates by 30%.</p>
+            </div>
+            <footer class="card__footer">
+              <ul class="card__sectors" role="list" aria-label="Sectors">
+                <li class="card__sector">Financial Services</li>
+                <li class="card__sector">AI</li>
+              </ul>
+              <div class="card__meta">
+                <span class="card__read-time">5 min read</span>
+                <a href="./src/pages/case-studies/cassi.html" class="card__link">
+                  Read case study <span class="card__link-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </footer>
+          </article>
+
+          <!-- CARD 3: Community -->
+          <article class="card">
+            <div class="card__metric-chip">
+              <span class="card__metric-value">97 hrs</span>
+              <span class="card__metric-label">Saved every month</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Community Support Forum Redesign</h3>
+              <p class="card__subtitle">Halving homepage load times and saving 97 hours a month by scaling Santander's internal community forum — without a complete rebuild.</p>
+            </div>
+            <footer class="card__footer">
+              <ul class="card__sectors" role="list" aria-label="Sectors">
+                <li class="card__sector">Financial Services</li>
+                <li class="card__sector">Community</li>
+              </ul>
+              <div class="card__meta">
+                <span class="card__read-time">6 min read</span>
+                <a href="./src/pages/case-studies/community.html" class="card__link">
+                  Read case study <span class="card__link-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </footer>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS: not yet built — see src/components/testimonial.html -->
+
+
+    <!-- =====================================================================
+         CONTACT
+         ===================================================================== -->
+
+    <section class="cta-section" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 id="contact-heading" class="cta-section__heading">Want to work together?</h2>
+        <p class="cta-section__body">
+          I'm open to hybrid and remote product design roles in the North West of England.
+          I'm also happy to chat mentorship, community events, or just swap notes on design.
+        </p>
+        <div class="cta-section__actions">
+          <a href="https://www.linkedin.com/in/samuel-blake-224605186" class="btn btn--primary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:sam.blake@outlook.com" class="btn btn--ghost">sam.blake@outlook.com</a>
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner container">
+
+        <div class="footer__identity">
+          <p class="footer__name">Sam Blake</p>
+          <p class="footer__bio">Product designer making complex things simpler for real people.</p>
+        </div>
+
+        <nav class="footer__links" aria-label="Contact links">
+          <a href="https://www.linkedin.com/in/samuel-blake-224605186" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:sam.blake@outlook.com" class="footer__link">sam.blake@outlook.com</a>
+        </nav>
+
+        <p class="footer__copyright">&copy; 2026 Sam Blake</p>
+
+      </div>
+    </footer>
+
+    <script type="module" src="./src/theme.js"></script>
+    <script type="module" src="./src/typewriter.js"></script>
+  </body>
+</html>
