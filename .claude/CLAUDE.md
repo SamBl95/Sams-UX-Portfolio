@@ -195,6 +195,46 @@ About:      https://samsux.webflow.io/about
 - adamhickey.com — quality bar for visual finish and craft
 
 
+## Skills to apply
+
+Before any task, read and apply the relevant skills:
+
+- Design and aesthetics: `.agents/skills/frontend-design/SKILL.md`
+- Animation and motion: `.agents/skills/web-animation-design/SKILL.md`
+- UI polish and detail: `.agents/skills/emil-design-eng/SKILL.md`
+- UI baseline quality: `.agents/skills/baseline-ui/SKILL.md`
+- Planning: `.agents/skills/plan-mode/SKILL.md`
+
+For design tasks apply `frontend-design` and `emil-design-eng` together.
+For animation tasks apply `web-animation-design` and `emil-design-eng` together.
+For new features apply `plan-mode` before writing any code.
+
+Note: this project uses a fixed design system (tokens, BEM, ITCSS, vanilla CSS). Apply each skill's quality bar within those constraints — never override the palette, fonts, or spacing tokens. Translate any Tailwind-specific guidance from `baseline-ui` into BEM/custom properties.
+
+
+## GSD — workflow commands
+
+GSD (Get Shit Done) is installed at `.claude/` and available as `/gsd:*` slash commands.
+It is NOT a read-and-apply skill — it is a project planning and execution framework invoked by the user.
+
+Key commands:
+```
+/gsd:help               — full command reference
+/gsd:new-project        — initialise project: research → requirements → roadmap
+/gsd:plan-phase <N>     — create a detailed execution plan for a phase
+/gsd:execute-phase <N>  — execute all plans in a phase
+/gsd:progress           — check status and route to next action
+/gsd:quick              — ad-hoc task with GSD guarantees, no full phase overhead
+/gsd:fast "<task>"      — trivial inline task (≤ 3 file edits), no planning files
+/gsd:debug "<issue>"    — systematic debugging with persistent state
+/gsd:sketch "<idea>"    — rapid UI exploration with HTML mockups
+/gsd:capture            — capture a todo, note, or idea mid-conversation
+/gsd:resume-work        — restore context from a previous session
+```
+
+Do not invoke GSD commands autonomously — wait for the user to trigger them.
+
+
 ## Working style
 - One component or section at a time — confirm before moving on
 - Explain significant architectural decisions

@@ -15,7 +15,7 @@
   border-top:     1px solid var(--color-border);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .cs-hero {
     padding-top:    var(--space-16);
     padding-bottom: var(--space-20);
@@ -75,11 +75,10 @@
   line-height:    var(--leading-tight);
   letter-spacing: -0.02em;
   color:          var(--color-text-primary);
-  max-width:      20ch;
   margin-bottom:  var(--space-6);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .cs-hero__title {
     font-size: var(--text-5xl);
   }
@@ -90,12 +89,11 @@
   font-size:     var(--text-lg);
   line-height:   var(--leading-relaxed);
   color:         var(--color-text-secondary);
-  max-width:     58ch;
   margin-bottom: var(--space-10);
   font-style:    italic;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .cs-hero__lede {
     font-size: var(--text-xl);
   }
@@ -114,7 +112,7 @@
   border-top:            1px solid var(--color-border);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .cs-hero__metrics {
     grid-template-columns: repeat(4, 1fr);
     gap:                   0;
@@ -153,7 +151,6 @@
   font-size:   var(--text-xs);
   line-height: var(--leading-normal);
   color:       var(--color-text-secondary);
-  max-width:   16ch;
 }
 
 
@@ -166,7 +163,7 @@
   border-top:     1px solid var(--color-border);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .cs-hero__meta {
     flex-direction: row;
     gap:            var(--space-10);
@@ -205,7 +202,7 @@
   padding-block:    var(--space-12);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .cs-summary {
     padding-block: var(--space-16);
   }
@@ -226,7 +223,7 @@
   gap:            var(--space-0);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .cs-summary__grid {
     display:               grid;
     grid-template-columns: repeat(2, 1fr);
@@ -265,7 +262,7 @@
   padding-block: var(--space-16);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .cs-body {
     padding-block: var(--space-20);
   }
@@ -286,7 +283,7 @@
   padding-top: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .cs-phase {
     padding-block: var(--space-16);
   }
@@ -308,13 +305,11 @@
   line-height:    var(--leading-tight);
   letter-spacing: -0.015em;
   color:          var(--color-text-primary);
-  max-width:      22ch;
   margin-bottom:  var(--space-8);
 }
 
-/* Prose container — constrains reading width */
 .cs-phase__body {
-  max-width: 72ch;
+  width: 100%;
 }
 
 .cs-phase__body p {
@@ -368,7 +363,6 @@
   border-radius:    0 var(--radius-md) var(--radius-md) 0;
   padding:          var(--space-5) var(--space-6);
   margin-block:     var(--space-8);
-  max-width:        72ch;
 }
 
 .cs-callout__text {
@@ -403,7 +397,7 @@
   margin-block:          var(--space-10);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .cs-results {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -422,7 +416,7 @@
   margin-top:       var(--space-4);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .cs-retro {
     padding-block: var(--space-16);
   }
@@ -444,7 +438,6 @@
   line-height:    var(--leading-tight);
   letter-spacing: -0.015em;
   color:          var(--color-text-primary);
-  max-width:      24ch;
   margin-bottom:  var(--space-10);
 }
 
@@ -454,7 +447,7 @@
   gap:            var(--space-8);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .cs-retro__grid {
     display:               grid;
     grid-template-columns: repeat(3, 1fr);
@@ -493,7 +486,7 @@
   border-top:    1px solid var(--color-border);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .cs-pagination {
     padding-block: var(--space-16);
   }

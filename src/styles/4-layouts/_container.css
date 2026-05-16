@@ -1,39 +1,79 @@
 /* =============================================================================
-   CONTAINER
-   Four width variants. All use clamp() for fluid horizontal padding so there
-   are no hard jumps between breakpoints.
+   CONTAINER — MD3 margin scale
+   Horizontal padding follows the MD3 window size class margin values.
 
-   .container-full    — 100% width, no max-width. Full-bleed backgrounds.
-   .container-wide    — 1600px max. Most page sections.
-   .container-content — 1200px max. Text-heavy sections, nav. Aliased as .container.
-   .container-reading — 720px max. Long-form body copy, case study text.
+   Compact  (<600px):  16px  → --space-2
+   Medium   (600px+):  24px  → --space-3
+   Expanded (905px+):  32px  → --space-4
+   Large    (1240px+): 48px  → --space-6
+   Ultra    (1440px+): 80px  → --space-10, max-width 1800px
 
-   All variants: centered with margin-inline: auto.
+   .container        — standard container for most content
+   .container-content — alias for .container
+   .container-wide   — same margins, 1800px max at ultra
+   .container-reading — max-width 720px for long-form prose, centered
+   .container-full   — 100% width, no max-width, no padding (full-bleed)
    ============================================================================= */
 
 .container-full {
   width: 100%;
 }
 
-.container-wide {
-  width:            100%;
-  max-width:        1600px;
-  margin-inline:    auto;
-  padding-inline:   clamp(24px, 5vw, 120px);
-}
-
-/* .container kept as alias — existing HTML using .container continues to work */
+.container-wide,
 .container-content,
 .container {
   width:          100%;
-  max-width:      1200px;
   margin-inline:  auto;
-  padding-inline: clamp(24px, 5vw, 120px);
+  padding-inline: var(--space-2); /* 16px compact */
 }
 
 .container-reading {
   width:          100%;
   max-width:      720px;
   margin-inline:  auto;
-  padding-inline: clamp(24px, 5vw, 120px);
+  padding-inline: var(--space-2); /* 16px compact */
+}
+
+/* --- 600px — medium (tablet) ----------------------------------------------- */
+@media (min-width: 600px) {
+  .container-wide,
+  .container-content,
+  .container,
+  .container-reading {
+    padding-inline: var(--space-3); /* 24px */
+  }
+}
+
+/* --- 905px — expanded (desktop) -------------------------------------------- */
+@media (min-width: 905px) {
+  .container-wide,
+  .container-content,
+  .container,
+  .container-reading {
+    padding-inline: var(--space-4); /* 32px */
+  }
+}
+
+/* --- 1240px — large (large desktop) ---------------------------------------- */
+@media (min-width: 1240px) {
+  .container-wide,
+  .container-content,
+  .container,
+  .container-reading {
+    padding-inline: var(--space-6); /* 48px */
+  }
+}
+
+/* --- 1440px — ultra (wide desktop) ----------------------------------------- */
+@media (min-width: 1440px) {
+  .container-wide,
+  .container-content,
+  .container {
+    max-width:      1800px;
+    padding-inline: var(--space-10); /* 80px */
+  }
+
+  .container-reading {
+    padding-inline: var(--space-10); /* 80px */
+  }
 }

@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "skills": {
+    "baseline-ui": {
+      "source": "vercel-labs/open-agents",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/baseline-ui/SKILL.md",
+      "computedHash": "7ea3616b6660818e764fbf8d5c10456439229b1194e3358d0f505644474e4ff4"
+    },
+    "emil-design-eng": {
+      "source": "emilkowalski/skill",
+      "sourceType": "github",
+      "skillPath": "skills/emil-design-eng/SKILL.md",
+      "computedHash": "ac3fc5b4e206488ffc408a2806f829bb2e5eaf518fded09be34790685c2b3a0d"
+    },
+    "frontend-design": {
+      "source": "vercel-labs/open-agents",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/frontend-design/SKILL.md",
+      "computedHash": "89a54ba7fcf22ca2e394ebc0c040c23158c2e8a0acfd63a3dfaa8436135553a2"
+    },
+    "plan-mode": {
+      "source": "vercel-labs/open-agents",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/plan-mode/SKILL.md",
+      "computedHash": "fccffcb9ca28c7b716eb237036b13f394d422b7fbf5d508515f199154713a1fd"
+    },
+    "web-animation-design": {
+      "source": "vercel-labs/open-agents",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/web-animation-design/SKILL.md",
+      "computedHash": "dcd3f6da245643cd00ef93ad73ea62edc3ae925c6d7763c0675892441d6ba6c3"
+    }
+  }
+}

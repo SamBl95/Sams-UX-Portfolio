@@ -51,6 +51,16 @@
   --text-5xl:  3rem;      /* 48px */
   --text-6xl:  4.5rem;   /* 72px */
 
+  /* Extended scale — 5-breakpoint type system */
+  --text-22:   1.375rem;  /* 22px */
+  --text-28:   1.75rem;   /* 28px */
+  --text-32:   2rem;      /* 32px */
+  --text-40:   2.5rem;    /* 40px */
+  --text-56:   3.5rem;    /* 56px */
+  --text-64:   4rem;      /* 64px */
+  --text-80:   5rem;      /* 80px */
+  --text-96:   6rem;      /* 96px */
+
 
   /* ---------------------------------------------------------------------------
      TYPOGRAPHY — Line heights
@@ -73,26 +83,23 @@
 
 
   /* ---------------------------------------------------------------------------
-     SPACING — 4pt scale (all values multiples of 4px)
-     No arbitrary spacing values. Every margin, padding and gap must reference
-     one of these tokens.
+     SPACING — 8pt scale (all values multiples of 8px)
+     Token number = px value ÷ 8. No arbitrary spacing values.
+     Every margin, padding and gap must reference one of these tokens.
      --------------------------------------------------------------------------- */
 
-  --space-1:  4px;
-  --space-2:  8px;
-  --space-3:  12px;
-  --space-4:  16px;
-  --space-5:  20px;
-  --space-6:  24px;
-  --space-8:  32px;
-  --space-10: 40px;
-  --space-12: 48px;
-  --space-16: 64px;
-  --space-20: 80px;
-  --space-24: 96px;
-  --space-32: 128px;
-  --space-40: 160px;
-  --space-64: 256px;
+  --space-1:  8px;
+  --space-2:  16px;
+  --space-3:  24px;
+  --space-4:  32px;
+  --space-5:  40px;
+  --space-6:  48px;
+  --space-8:  64px;
+  --space-10: 80px;
+  --space-12: 96px;
+  --space-16: 128px;
+  --space-20: 160px;
+  --space-24: 192px;
 
 
   /* ---------------------------------------------------------------------------
@@ -123,6 +130,10 @@
   --transition-fast: 150ms ease;
   --transition-base: 200ms ease;
   --transition-slow: 300ms ease;
+
+  /* Easing curves — use instead of bare `ease` on transform/movement */
+  --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);          /* user-initiated: button press, hover scale */
+  --ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);    /* on-screen movement: card lift, bar morph */
 
 
   /* ---------------------------------------------------------------------------

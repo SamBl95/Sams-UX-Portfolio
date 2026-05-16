@@ -13,17 +13,28 @@
   border:           1px solid var(--color-border);
   border-radius:    var(--radius-xl);
   overflow:         hidden;
-  transition:       border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition:
+    border-color     var(--transition-base),
+    box-shadow       var(--transition-base),
+    background-color var(--transition-base),
+    transform        200ms var(--ease-in-out);
 }
 
-.card:hover {
-  border-color: var(--color-border-strong, var(--color-text-secondary));
-  box-shadow:   var(--shadow-md);
+@media (hover: hover) {
+  .card:hover {
+    transform:        translateY(-6px);
+    background-color: var(--color-surface);
+    border-color:     var(--color-accent);
+    box-shadow:
+      0 24px 48px -12px rgba(0, 0, 0, 0.5),
+      0 0 32px -8px rgba(79, 209, 165, 0.14);
+  }
 }
 
 
 /* -------------------------------------------------------------------------
    METRIC CHIP — headline outcome, pulled out visually at the top of the card
+   Teal top accent border makes the number land before the title is read.
    ------------------------------------------------------------------------- */
 
 .card__metric-chip {
@@ -31,6 +42,7 @@
   flex-direction:   column;
   gap:              var(--space-1);
   background-color: var(--color-accent-light);
+  border-top:       3px solid var(--color-accent);
   border-bottom:    1px solid var(--color-border);
   padding:          var(--space-5) var(--space-6);
 }
@@ -93,9 +105,7 @@
 }
 
 
-/* Sector tags
-   Note: card-scoped BEM elements for now. Refactor to .badge when _badge.css
-   is built. */
+/* Sector tags */
 .card__sectors {
   display:    flex;
   flex-wrap:  wrap;
@@ -128,8 +138,8 @@
 }
 
 .card__read-time {
-  font-size:  var(--text-xs);
-  color:      var(--color-text-secondary);
+  font-size:   var(--text-xs);
+  color:       var(--color-text-secondary);
   white-space: nowrap;
 }
 
@@ -141,11 +151,10 @@
   font-weight:     var(--font-weight-semibold);
   color:           var(--color-accent-accessible);
   text-decoration: none;
-  transition:      gap var(--transition-fast), color var(--transition-fast);
+  transition:      color var(--transition-fast);
 }
 
 .card__link:hover {
-  gap:   var(--space-3); /* arrow nudges right on hover */
   color: color-mix(in srgb, var(--color-accent-accessible) 82%, #000);
 }
 
@@ -156,11 +165,9 @@
 }
 
 .card__link-arrow {
-  transition: transform var(--transition-fast);
+  transition: transform 150ms var(--ease-out);
 }
 
 .card__link:hover .card__link-arrow {
   transform: translateX(var(--space-1));
 }
-
-

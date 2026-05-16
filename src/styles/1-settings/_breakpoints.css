@@ -1,24 +1,25 @@
 /* =============================================================================
-   BREAKPOINTS
-   Reference values as custom properties. Use the pixel values directly in
-   @media queries — CSS custom properties cannot be interpolated inside
-   @media() expressions in the current spec.
+   BREAKPOINTS — Material Design 3 window size classes
+   CSS custom properties are reference-only — @media rules must use
+   the raw pixel values listed below.
 
    Usage:
-     @media (min-width: 768px) { … }   → tablet and up
-     @media (min-width: 1280px) { … }  → desktop and up
+     @media (min-width: 600px)  { … }   → medium (tablet) and up
+     @media (min-width: 905px)  { … }   → expanded (desktop) and up
+     @media (min-width: 1240px) { … }   → large (large desktop) and up
+     @media (min-width: 1440px) { … }   → ultra (wide desktop) and up
+
+   Compact  0–599px     mobile,       4-col grid,  16px margins
+   Medium   600–904px   tablet,       8-col grid,  24px margins
+   Expanded 905–1239px  desktop,      12-col grid, 32px margins
+   Large    1240–1439px large desktop 12-col grid, 48px margins
+   Ultra    1440px+     wide desktop, 12-col grid, max 1800px, 80px margins
    ============================================================================= */
 
 :root {
-  --breakpoint-mobile:  375px;   /* Small phones — design starts here (mobile-first) */
-  --breakpoint-tablet:  768px;   /* Tablets and large phones in landscape            */
-  --breakpoint-desktop: 1024px;  /* Laptops and desktop monitors                     */
+  --bp-compact:  0px;     /* reference only */
+  --bp-medium:   600px;
+  --bp-expanded: 905px;
+  --bp-large:    1240px;
+  --bp-ultra:    1440px;
 }
-
-/*
-  Convenience reference (read-only — actual @media rules use hard values):
-
-  Mobile-first  →  default styles (no @media wrapper needed)
-  Tablet+       →  @media (min-width: 768px)  { … }
-  Desktop+      →  @media (min-width: 1024px) { … }
-*/

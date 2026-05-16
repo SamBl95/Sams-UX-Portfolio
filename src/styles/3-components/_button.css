@@ -1,6 +1,6 @@
 /* =============================================================================
    BUTTON
-   Two variants: primary (gold fill) and ghost (outline).
+   Two variants: primary (teal fill) and ghost (outline).
    Apply to <button> or <a> via .btn + modifier class.
 
    States: default · hover (pointer devices only) · focus-visible · active · disabled
@@ -30,18 +30,15 @@
     background-color var(--transition-fast),
     border-color     var(--transition-fast),
     color            var(--transition-fast),
-    transform        var(--transition-fast);
+    box-shadow       var(--transition-fast),
+    transform        150ms var(--ease-out);
 }
 
-/* Keyboard focus — visible ring using accessible amber (6.25:1 light, 7.2:1 dark) */
 .btn:focus-visible {
   outline:        2px solid var(--color-accent-accessible);
   outline-offset: 3px;
 }
 
-/* Press state — applies on touch and pointer alike.
-   Scale collapses instantly under prefers-reduced-motion
-   (transition zeroed globally by _reset.css). */
 .btn:active {
   transform: scale(0.97);
 }
@@ -54,7 +51,7 @@
 
 
 /* -------------------------------------------------------------------------
-   PRIMARY — gold fill, near-black text
+   PRIMARY — teal fill, near-black text
    ------------------------------------------------------------------------- */
 
 .btn--primary {
@@ -63,20 +60,23 @@
   border-color:     var(--color-accent);
 }
 
-/* Hover scoped to pointer devices — prevents sticky hover state on touch */
 @media (hover: hover) {
   .btn--primary:hover {
-    opacity: 0.85;
+    transform:  scale(1.03);
+    box-shadow: 0 8px 24px -4px rgba(79, 209, 165, 0.4);
+    opacity:    0.92;
   }
 }
 
 .btn--primary:active {
-  opacity: 0.7;
+  transform:  scale(0.97);
+  box-shadow: none;
+  opacity:    0.7;
 }
 
 
 /* -------------------------------------------------------------------------
-   GHOST — transparent outline, inherits surface and border tokens
+   GHOST — transparent outline
    ------------------------------------------------------------------------- */
 
 .btn--ghost {
@@ -89,10 +89,10 @@
   .btn--ghost:hover {
     background-color: var(--color-surface);
     border-color:     var(--color-text-secondary);
+    color:            var(--color-text-primary);
   }
 }
 
-/* Active — fills to surface so the press is clearly distinct from hover */
 .btn--ghost:active {
   background-color: var(--color-border);
   border-color:     var(--color-text-secondary);

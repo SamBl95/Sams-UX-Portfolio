@@ -1,34 +1,34 @@
 /* =============================================================================
-   SECTION
-   Five vertical spacing utilities using clamp() for fluid scaling.
-   Apply one class directly to the <section> element in HTML.
+   SECTION — vertical spacing utilities
+   Apply one class to the <section> element.
 
-   .section-xs  — smallest gap, 32–64px
-   .section-sm  — small gap, 48–96px    (footer, compact blocks)
-   .section-md  — standard gap, 64–128px (case studies, about sections)
-   .section-lg  — generous gap, 80–160px (about hero, sub-hero sections)
-   .section-xl  — maximum gap, 96–200px  (hero)
+   Mobile (compact/medium):    one size smaller than desktop
+   Desktop (905px+, expanded): full desktop values
 
-   Background variants apply independently as modifiers.
+   .section-sm  —  48px mobile →  64px desktop   (footer/CTA)
+   .section-md  —  64px mobile →  96px desktop   (body sections)
+   .section-lg  —  96px mobile → 128px desktop   (case studies, about content)
+   .section-xl  — 128px mobile → 160px desktop   (hero)
+   .section      — alias for .section-md
    ============================================================================= */
 
-.section-xs { padding-block: clamp(32px, 4vw, 64px); }
-.section-sm { padding-block: clamp(48px, 6vw, 96px); }
-.section-md { padding-block: clamp(64px, 8vw, 128px); }
-.section-lg { padding-block: clamp(80px, 10vw, 160px); }
-.section-xl { padding-block: clamp(96px, 12vw, 200px); }
+/* --- defaults (< 905px) ---------------------------------------------------- */
+.section-sm  { padding-block: var(--space-6);  }   /* 48px */
+.section-md  { padding-block: var(--space-8);  }   /* 64px */
+.section-lg  { padding-block: var(--space-12); }   /* 96px */
+.section-xl  { padding-block: var(--space-16); }   /* 128px */
+.section     { padding-block: var(--space-8);  }   /* 64px — alias */
+
+/* --- 905px — expanded (desktop) -------------------------------------------- */
+@media (min-width: 905px) {
+  .section-sm  { padding-block: var(--space-8);  }   /* 64px */
+  .section-md  { padding-block: var(--space-12); }   /* 96px */
+  .section-lg  { padding-block: var(--space-16); }   /* 128px */
+  .section-xl  { padding-block: var(--space-20); }   /* 160px */
+  .section     { padding-block: var(--space-12); }
+}
 
 
 /* Background variants — combine with any spacing utility */
-.section--subtle {
-  background-color: var(--color-surface);
-}
-
-.section--accent {
-  background-color: var(--color-accent-light);
-}
-
-/* Legacy alias — maps to section-md for backward compatibility */
-.section {
-  padding-block: clamp(64px, 8vw, 128px);
-}
+.section--subtle { background-color: var(--color-surface);     }
+.section--accent  { background-color: var(--color-accent-light); }

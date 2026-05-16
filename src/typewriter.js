@@ -14,8 +14,8 @@ const phrases = [
   "repairs the relationships between siloed teams",
 ];
 
-const TYPE_SPEED   = 50;
-const DELETE_SPEED = 30;
+const TYPE_SPEED   = 28;
+const DELETE_SPEED = 18;
 const PAUSE_AFTER  = 1500;
 
 const container = document.querySelector('.hero__typewriter');
@@ -31,6 +31,14 @@ if (container && display) {
   }
 }
 
+function getMaxChars() {
+  const w = window.innerWidth;
+  if (w >= 1240) return 50;
+  if (w >= 905)  return 44;
+  if (w >= 600)  return 36;
+  return 28;
+}
+
 function initTypewriter() {
   // Reveal the blinking cursor
   container.classList.add('hero__typewriter--active');
@@ -40,16 +48,17 @@ function initTypewriter() {
   let isDeleting  = false;
 
   function tick() {
-    const phrase = phrases[phraseIndex];
+    const phrase  = phrases[phraseIndex];
+    const maxChar = Math.min(phrase.length, getMaxChars());
 
     if (!isDeleting) {
       // Type next character
       charIndex++;
       display.textContent = phrase.slice(0, charIndex);
 
-      if (charIndex === phrase.length) {
-        // Phrase complete — update screen reader text, then pause before deleting
-        if (sr) sr.textContent = phrase;
+      if (charIndex === maxChar) {
+        // Reached the limit — update screen reader text, then pause before deleting
+        if (sr) sr.textContent = phrase.slice(0, maxChar);
         setTimeout(() => {
           isDeleting = true;
           tick();

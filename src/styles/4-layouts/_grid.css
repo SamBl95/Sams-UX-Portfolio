@@ -1,60 +1,79 @@
 /* =============================================================================
    GRID
-   Utility grid classes and case-study section layout.
+   12-column CSS grid with MD3-aligned column gaps.
+
+   Gutter widths by breakpoint:
+     Compact  (<600px):  16px → --space-2
+     Medium   (600px+):  24px → --space-3
+     Expanded (905px+):  32px → --space-4
+
+   .grid-2   — 1 col compact/medium, 2 cols expanded (905px+)
+   .grid-3   — 1 col compact, 2 cols medium (600px+), 3 cols expanded (905px+)
+   .grid-12  — full 12-column grid for custom layouts
    ============================================================================= */
 
 
 /* -------------------------------------------------------------------------
    UTILITY GRIDS
-   Gap uses clamp() to scale fluidly from mobile to wide desktop.
    ------------------------------------------------------------------------- */
 
-/* Two equal columns on desktop, single column on mobile */
 .grid-2 {
   display:               grid;
   grid-template-columns: 1fr;
-  gap:                   clamp(16px, 3vw, 48px);
+  gap:                   var(--space-2);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 600px) {
+  .grid-2 { gap: var(--space-3); }
+}
+
+@media (min-width: 905px) {
   .grid-2 {
     grid-template-columns: repeat(2, 1fr);
+    gap:                   var(--space-4);
   }
 }
 
 
-/* Three columns on desktop, two on tablet, one on mobile */
 .grid-3 {
   display:               grid;
   grid-template-columns: 1fr;
-  gap:                   clamp(16px, 3vw, 48px);
+  gap:                   var(--space-2);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
+    gap:                   var(--space-3);
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 905px) {
   .grid-3 {
     grid-template-columns: repeat(3, 1fr);
+    gap:                   var(--space-4);
   }
 }
 
 
-/* Auto-fill: as many columns as fit at minimum 320px each */
-.grid-auto {
+.grid-12 {
   display:               grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap:                   clamp(16px, 3vw, 48px);
+  grid-template-columns: repeat(12, 1fr);
+  gap:                   var(--space-2);
+}
+
+@media (min-width: 600px) {
+  .grid-12 { gap: var(--space-3); }
+}
+
+@media (min-width: 905px) {
+  .grid-12 { gap: var(--space-4); }
 }
 
 
 /* -------------------------------------------------------------------------
    CASE STUDIES SECTION
-   Padding delegated to .section-md utility class applied in HTML.
-   Background and border handled here.
+   Vertical padding from .section-lg utility class applied in HTML.
    ------------------------------------------------------------------------- */
 
 .case-studies {
@@ -62,7 +81,15 @@
 }
 
 .case-studies__header {
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 905px) {
+  .case-studies__header { margin-bottom: var(--space-8); }
+}
+
+@media (min-width: 1440px) {
+  .case-studies__header { margin-bottom: var(--space-10); }
 }
 
 .case-studies__heading {
@@ -74,24 +101,23 @@
 }
 
 .case-studies__subheading {
-  font-size: var(--text-lg);
   color:     var(--color-text-secondary);
-  max-width: 52ch;
 }
 
-/* Card grid — uses .grid-2 pattern directly */
+/* Card grid — 1 column until expanded (905px), then 2 */
 .case-studies__grid {
   display:               grid;
   grid-template-columns: 1fr;
-  gap:                   clamp(16px, 3vw, 48px);
+  gap:                   var(--space-2);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 600px) {
+  .case-studies__grid { gap: var(--space-3); }
+}
+
+@media (min-width: 905px) {
   .case-studies__grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .card {
-    max-width: 560px;
+    gap:                   var(--space-4);
   }
 }

@@ -3,7 +3,11 @@
     "allow": [
       "PowerShell(Get-ChildItem \"C:\\\\Users\\\\sambl\\\\OneDrive\\\\Documents\\\\my-portfolio-v2\\\\src\\\\styles\" -Force | ForEach-Object { $_.Name })",
       "WebFetch(domain:samsux.webflow.io)",
-      "Bash(Remove-Item *)"
+      "Bash(Remove-Item *)",
+      "Bash(npx skills *)",
+      "Bash(rm \"C:/Users/sambl/OneDrive/Documents/my-portfolio-v2/.claude/skills/frontend-design.md\")",
+      "Bash(rmdir \"C:/Users/sambl/OneDrive/Documents/my-portfolio-v2/.claude/skills\")",
+      "Bash(npm run *)"
     ]
   }
 }

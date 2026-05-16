@@ -3,7 +3,7 @@
    Individual statistic display: large number with a label beneath.
    Used in two contexts:
      1. .stat-row — horizontal homepage metrics strip
-     2. Inline inside case study pages (see stat-block.html)
+     2. Inline inside case study pages
    ============================================================================= */
 
 
@@ -18,7 +18,7 @@
   padding-block:    var(--space-12); /* 48px */
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .stat-row {
     padding-block: var(--space-16); /* 64px */
   }
@@ -35,13 +35,13 @@
 .stat-row__list {
   display:               grid;
   grid-template-columns: repeat(2, 1fr);
-  gap:                   var(--space-10) var(--space-8); /* row gap / col gap */
+  gap:                   var(--space-10) var(--space-8);
   list-style:            none;
   padding:               0;
   margin:                0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .stat-row__list {
     grid-template-columns: repeat(4, 1fr);
     gap:                   0;
@@ -49,12 +49,12 @@
 }
 
 
-/* Individual item — adds a left border as a divider on tablet+ */
+/* Individual item — divider on tablet+ */
 .stat-row__item {
   /* nothing needed on mobile */
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .stat-row__item {
     padding-inline: var(--space-8);
     border-left:    1px solid var(--color-border);
@@ -78,20 +78,33 @@
 .stat-block {
   display:        flex;
   flex-direction: column;
-  gap:            var(--space-2);
+  gap:            var(--space-3);
 }
 
 
-/* The number — large, bold, accessible amber in light mode / brand gold in dark */
+/* The number — teal accent with a short underline that punctuates the figure */
 .stat-block__value {
   font-size:      var(--text-4xl);
   font-weight:    var(--font-weight-bold);
-  line-height:    var(--leading-none, 1);
+  line-height:    1;
   letter-spacing: -0.02em;
   color:          var(--color-accent-accessible);
+  position:       relative;
+  padding-bottom: var(--space-3);
 }
 
-@media (min-width: 768px) {
+.stat-block__value::after {
+  content:          '';
+  position:         absolute;
+  bottom:           0;
+  left:             0;
+  width:            var(--space-8);   /* 32px — deliberate, not full-width */
+  height:           2px;
+  background-color: var(--color-accent);
+  border-radius:    var(--radius-full);
+}
+
+@media (min-width: 905px) {
   .stat-block__value {
     font-size: var(--text-5xl);
   }

@@ -1,32 +1,83 @@
 /* =============================================================================
    HERO
-   Homepage hero section. Vertical padding delegated to .section-xl applied in
-   HTML. Min-height and flex centering applied at desktop only.
+   Homepage hero section. Single-column, full-width content.
+   Vertical padding from .section-xl applied in HTML.
+   Min-height 90vh at 905px+.
    ============================================================================= */
 
 
-/* Section wrapper — background and border only; spacing from .section-xl */
+/* -------------------------------------------------------------------------
+   ENTRANCE ANIMATION
+   Zeroed globally under prefers-reduced-motion by _reset.css.
+   ------------------------------------------------------------------------- */
+
+@keyframes hero-enter {
+  from {
+    opacity:   0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity:   1;
+    transform: translateY(0);
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   SECTION WRAPPER
+   ------------------------------------------------------------------------- */
+
 .hero {
   background-color: var(--color-bg);
   border-top:       1px solid var(--color-border);
 }
 
+@media (min-width: 905px) {
+  .hero {
+    min-height:  90vh;
+    display:     flex;
+    align-items: center;
+  }
+}
 
-/* Inner — max-width and centering from .container-wide */
+
+/* -------------------------------------------------------------------------
+   INNER
+   ------------------------------------------------------------------------- */
+
 .hero__inner {
   width: 100%;
 }
 
 
-/* Content column — constrained to 900px on desktop */
+/* -------------------------------------------------------------------------
+   CONTENT — full width, left-aligned
+   ------------------------------------------------------------------------- */
+
 .hero__content {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
+  width:          100%;
 }
 
+/* Stagger children — each element enters 60ms after the previous */
+.hero__eyebrow,
+.hero__headline,
+.hero__subheadline,
+.hero__sectors,
+.hero__actions {
+  animation: hero-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
 
-/* Eyebrow — role label above the headline */
+.hero__eyebrow    { animation-delay:   0ms; }
+.hero__headline   { animation-delay:  60ms; }
+.hero__subheadline{ animation-delay: 120ms; }
+.hero__sectors    { animation-delay: 180ms; }
+.hero__actions    { animation-delay: 240ms; }
+
+
+/* Eyebrow */
 .hero__eyebrow {
   font-size:      var(--text-sm);
   font-weight:    var(--font-weight-semibold);
@@ -38,14 +89,13 @@
 }
 
 
-/* Headline — font-size from h1 typography rule (clamp 40px → 88px) */
+/* Headline — font-size from h1 element rule in _typography.css */
 .hero__headline {
   font-weight:    var(--font-weight-bold);
   line-height:    1.1;
   letter-spacing: -0.02em;
   text-wrap:      wrap;
   color:          var(--color-text-primary);
-  max-width:      800px;
   margin-bottom:  var(--space-6);
 }
 
@@ -55,8 +105,11 @@
   font-size:     var(--text-lg);
   line-height:   1.7;
   color:         var(--color-text-secondary);
-  max-width:     52ch;
   margin-bottom: var(--space-8);
+}
+
+@media (min-width: 905px) {
+  .hero__subheadline { font-size: var(--text-xl); }
 }
 
 
@@ -84,12 +137,25 @@
 }
 
 
+/* CTA group */
+.hero__actions {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-3);
+}
+
+@media (min-width: 600px) {
+  .hero__actions { flex-direction: row; }
+}
+
+
 /* -------------------------------------------------------------------------
    TYPEWRITER
    ------------------------------------------------------------------------- */
 
 .hero__typewriter {
-  display: block;
+  display:    block;
+  min-height: 2.2em; /* always reserve 2 lines — inherits h1 font-size at every breakpoint */
 }
 
 .hero__typewriter-text {
@@ -128,57 +194,4 @@
   clip:        rect(0, 0, 0, 0);
   white-space: nowrap;
   border:      0;
-}
-
-
-/* CTA group */
-.hero__actions {
-  display:        flex;
-  flex-direction: column;
-  gap:            var(--space-3);
-}
-
-
-/* -------------------------------------------------------------------------
-   TABLET+  768px
-   ------------------------------------------------------------------------- */
-
-@media (min-width: 768px) {
-
-  .hero__actions {
-    flex-direction: row;
-  }
-
-}
-
-
-/* -------------------------------------------------------------------------
-   DESKTOP+  1024px
-   ------------------------------------------------------------------------- */
-
-@media (min-width: 1024px) {
-
-  /* Fill viewport height, centre content vertically */
-  .hero {
-    min-height: 90vh;
-    display:    flex;
-    align-items: center;
-  }
-
-  .hero__inner {
-    width: 100%;
-  }
-
-  .hero__content {
-    max-width: 900px;
-  }
-
-  .hero__subheadline {
-    font-size: var(--text-xl);
-  }
-
-  .hero__actions {
-    flex-direction: row;
-  }
-
 }

@@ -82,7 +82,7 @@
   background-color: var(--color-text-primary);
   border-radius:    var(--radius-full);
   transition:
-    transform var(--transition-base),
+    transform 200ms var(--ease-in-out),
     opacity   var(--transition-base);
 }
 
@@ -90,6 +90,17 @@
 /* Mobile nav menu — hidden until .nav--open is added by JS */
 .nav__menu {
   display: none;
+}
+
+@keyframes nav-menu-enter {
+  from {
+    opacity:   0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity:   1;
+    transform: translateY(0);
+  }
 }
 
 /* Open state — JS adds .nav--open to .nav */
@@ -102,6 +113,7 @@
   background-color: var(--color-bg);
   border-bottom:    1px solid var(--color-border);
   padding-block:    var(--space-3);
+  animation:        nav-menu-enter 120ms var(--ease-out) both;
 }
 
 .nav--open .nav__toggle-bar:nth-child(1) {
@@ -143,8 +155,10 @@
   transition:      color var(--transition-fast);
 }
 
-.nav__link:hover {
-  color: var(--color-text-primary);
+@media (hover: hover) and (pointer: fine) {
+  .nav__link:hover {
+    color: var(--color-text-primary);
+  }
 }
 
 .nav__link:focus-visible {
@@ -170,10 +184,10 @@
 
 
 /* -------------------------------------------------------------------------
-   TABLET+  768px — horizontal nav, hamburger hidden
+   MEDIUM+  905px — horizontal nav, hamburger hidden
    ------------------------------------------------------------------------- */
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
 
   .nav__toggle {
     display: none;
@@ -199,9 +213,11 @@
     border-radius: var(--radius-md);
   }
 
-  .nav__link:hover {
-    background-color: var(--color-surface);
-    color:            var(--color-text-primary);
+  @media (hover: hover) and (pointer: fine) {
+    .nav__link:hover {
+      background-color: var(--color-surface);
+      color:            var(--color-text-primary);
+    }
   }
 
   .nav__link[aria-current="page"] {

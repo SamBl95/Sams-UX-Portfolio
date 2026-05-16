@@ -6,20 +6,10 @@
     <meta name="description" content="Cassi AI Chatbot Feedback Redesign — Sam Blake fixed Santander's AI colleague assistant in three weeks at zero development cost, taking audience filter adherence from 1-in-3 to near 100%." />
     <title>Cassi — AI Chatbot Feedback Redesign — Sam Blake</title>
 
-    <!-- Sets data-theme before CSS renders to prevent flash of wrong theme -->
-    <script>
-      (function () {
-        try {
-          var t = localStorage.getItem('portfolio-theme') ||
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-          document.documentElement.setAttribute('data-theme', t);
-        } catch (_) {}
-      })();
-    </script>
-
+    <!-- Typefaces: Fraunces (headings), Urbanist (body), Caveat (hero accent) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&family=Caveat:wght@400&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="../../styles/main.css" />
   </head>
@@ -42,12 +32,6 @@
             </li>
           </ul>
         </nav>
-
-        <div class="nav__theme-controls" role="group" aria-label="Theme controls">
-          <button class="nav__theme-btn" aria-label="Light mode" aria-pressed="false" data-theme-btn="light">☀</button>
-          <button class="nav__theme-btn" aria-label="Dark mode" aria-pressed="false" data-theme-btn="dark">☾</button>
-          <button class="nav__theme-btn" aria-label="High contrast mode" aria-pressed="false" data-theme-btn="high-contrast">HC</button>
-        </div>
 
         <button
           class="nav__toggle"
