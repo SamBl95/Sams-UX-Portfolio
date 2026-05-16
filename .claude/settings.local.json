@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "PowerShell(Get-ChildItem \"C:\\\\Users\\\\sambl\\\\OneDrive\\\\Documents\\\\my-portfolio-v2\\\\src\\\\styles\" -Force | ForEach-Object { $_.Name })",
-      "WebFetch(domain:samsux.webflow.io)"
+      "WebFetch(domain:samsux.webflow.io)",
+      "Bash(Remove-Item *)"
     ]
   }
 }
