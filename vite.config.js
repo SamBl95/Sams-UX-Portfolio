@@ -20,7 +20,6 @@ export default defineConfig({
         iexchange: r('./src/pages/case-studies/i-exchange.html'),
         cassi:     r('./src/pages/case-studies/cassi.html'),
         community: r('./src/pages/case-studies/community.html'),
-        matalan:   r('./src/pages/case-studies/matalan.html'),
       },
     },
   },
