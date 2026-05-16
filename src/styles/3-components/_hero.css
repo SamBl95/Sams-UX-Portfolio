@@ -1,25 +1,24 @@
 /* =============================================================================
    HERO
-   Homepage hero section. Mobile-first. All values reference tokens only.
+   Homepage hero section. Vertical padding delegated to .section-xl applied in
+   HTML. Min-height and flex centering applied at desktop only.
    ============================================================================= */
 
 
-/* Section wrapper — full-width, controls vertical breathing room */
+/* Section wrapper — background and border only; spacing from .section-xl */
 .hero {
-  padding-top:      var(--space-40);
-  padding-bottom:   var(--space-40);
   background-color: var(--color-bg);
   border-top:       1px solid var(--color-border);
 }
 
 
-/* Inner — max-width and centering delegated to .container (from _container.css) */
+/* Inner — max-width and centering from .container-wide */
 .hero__inner {
   width: 100%;
 }
 
 
-/* Content column */
+/* Content column — constrained to 900px on desktop */
 .hero__content {
   display:        flex;
   flex-direction: column;
@@ -34,28 +33,27 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color:          var(--color-accent-accessible);
-  max-width:      none; /* override the 65ch cap set on p in _typography.css */
+  max-width:      none;
   margin-bottom:  var(--space-4);
 }
 
 
-/* Headline — contains static prefix + typewriter phrase */
+/* Headline — font-size from h1 typography rule (clamp 40px → 88px) */
 .hero__headline {
-  font-size:      var(--text-4xl);
   font-weight:    var(--font-weight-bold);
-  line-height:    var(--leading-tight);
+  line-height:    1.1;
   letter-spacing: -0.02em;
-  text-wrap:      wrap;  /* override reset's balance — interferes with dynamic content */
+  text-wrap:      wrap;
   color:          var(--color-text-primary);
-  max-width:      none;  /* typewriter phrase length varies; can't constrain */
+  max-width:      800px;
   margin-bottom:  var(--space-6);
 }
 
 
-/* Subheadline — cross-sector context, secondary colour, readable measure */
+/* Subheadline */
 .hero__subheadline {
   font-size:     var(--text-lg);
-  line-height:   var(--leading-relaxed);
+  line-height:   1.7;
   color:         var(--color-text-secondary);
   max-width:     52ch;
   margin-bottom: var(--space-8);
@@ -87,19 +85,13 @@
 
 
 /* -------------------------------------------------------------------------
-   TYPEWRITER — animated phrase beneath the static prefix
-   JS adds .hero__typewriter--active once animation starts (not for
-   reduced-motion users), which is what makes the cursor visible.
-   The global @media (prefers-reduced-motion) in _reset.css kills the
-   cursor blink animation automatically — no per-component override needed.
+   TYPEWRITER
    ------------------------------------------------------------------------- */
 
-/* Block span so the phrase sits on its own line */
 .hero__typewriter {
   display: block;
 }
 
-/* Typed text — Caveat font, accent colour, weight/tracking reset */
 .hero__typewriter-text {
   font-family:    var(--font-accent);
   font-weight:    var(--font-weight-normal);
@@ -107,7 +99,6 @@
   letter-spacing: normal;
 }
 
-/* Cursor — hidden until JS activates animation via the --active modifier */
 .hero__typewriter-cursor {
   display: none;
 }
@@ -127,21 +118,20 @@
   50%       { opacity: 0; }
 }
 
-/* Visually hidden — readable by screen readers, invisible to sighted users */
 .hero__typewriter-sr {
-  position:   absolute;
-  width:      1px;
-  height:     1px;
-  padding:    0;
-  margin:     -1px;
-  overflow:   hidden;
-  clip:       rect(0, 0, 0, 0);
+  position:    absolute;
+  width:       1px;
+  height:      1px;
+  padding:     0;
+  margin:      -1px;
+  overflow:    hidden;
+  clip:        rect(0, 0, 0, 0);
   white-space: nowrap;
-  border:     0;
+  border:      0;
 }
 
 
-/* CTA group — layout only. Button styles from _button.css (.btn, .btn--primary, .btn--ghost). */
+/* CTA group */
 .hero__actions {
   display:        flex;
   flex-direction: column;
@@ -155,15 +145,6 @@
 
 @media (min-width: 768px) {
 
-  .hero {
-    padding-top:    var(--space-64);
-    padding-bottom: var(--space-64);
-  }
-
-  .hero__headline {
-    font-size: var(--text-5xl);
-  }
-
   .hero__actions {
     flex-direction: row;
   }
@@ -172,15 +153,32 @@
 
 
 /* -------------------------------------------------------------------------
-   DESKTOP+  1280px
+   DESKTOP+  1024px
    ------------------------------------------------------------------------- */
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
 
-  /* max-width intentionally removed — typewriter phrase length is dynamic */
+  /* Fill viewport height, centre content vertically */
+  .hero {
+    min-height: 90vh;
+    display:    flex;
+    align-items: center;
+  }
+
+  .hero__inner {
+    width: 100%;
+  }
+
+  .hero__content {
+    max-width: 900px;
+  }
 
   .hero__subheadline {
     font-size: var(--text-xl);
+  }
+
+  .hero__actions {
+    flex-direction: row;
   }
 
 }

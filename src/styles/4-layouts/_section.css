@@ -1,35 +1,34 @@
 /* =============================================================================
    SECTION
-   Vertical rhythm and spacing for page sections. Controls padding between
-   major content blocks and section-level background variants.
+   Five vertical spacing utilities using clamp() for fluid scaling.
+   Apply one class directly to the <section> element in HTML.
 
-   Usage: add class="section" to every <section> that needs standard vertical
-   breathing room. Combine with a modifier for background variants.
+   .section-xs  — smallest gap, 32–64px
+   .section-sm  — small gap, 48–96px    (footer, compact blocks)
+   .section-md  — standard gap, 64–128px (case studies, about sections)
+   .section-lg  — generous gap, 80–160px (about hero, sub-hero sections)
+   .section-xl  — maximum gap, 96–200px  (hero)
+
+   Background variants apply independently as modifiers.
    ============================================================================= */
 
-.section {
-  padding-block: var(--space-16); /* 64px — mobile */
-}
-
-@media (min-width: 768px) {
-  .section {
-    padding-block: var(--space-20); /* 80px — tablet */
-  }
-}
-
-@media (min-width: 1280px) {
-  .section {
-    padding-block: var(--space-24); /* 96px — desktop */
-  }
-}
+.section-xs { padding-block: clamp(32px, 4vw, 64px); }
+.section-sm { padding-block: clamp(48px, 6vw, 96px); }
+.section-md { padding-block: clamp(64px, 8vw, 128px); }
+.section-lg { padding-block: clamp(80px, 10vw, 160px); }
+.section-xl { padding-block: clamp(96px, 12vw, 200px); }
 
 
-/* Background variants */
-
+/* Background variants — combine with any spacing utility */
 .section--subtle {
   background-color: var(--color-surface);
 }
 
 .section--accent {
   background-color: var(--color-accent-light);
+}
+
+/* Legacy alias — maps to section-md for backward compatibility */
+.section {
+  padding-block: clamp(64px, 8vw, 128px);
 }

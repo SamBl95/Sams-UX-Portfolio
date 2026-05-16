@@ -1,29 +1,64 @@
 /* =============================================================================
    GRID
-   CSS Grid layout primitives: multi-column grids, auto-fit patterns,
-   and named grid areas for page-level layouts.
+   Utility grid classes and case-study section layout.
    ============================================================================= */
 
 
 /* -------------------------------------------------------------------------
-   CASE STUDIES SECTION — moved from _card.css
+   UTILITY GRIDS
+   Gap uses clamp() to scale fluidly from mobile to wide desktop.
    ------------------------------------------------------------------------- */
 
-.case-studies {
-  padding-block:    var(--space-16);
-  background-color: var(--color-bg);
+/* Two equal columns on desktop, single column on mobile */
+.grid-2 {
+  display:               grid;
+  grid-template-columns: 1fr;
+  gap:                   clamp(16px, 3vw, 48px);
+}
+
+@media (min-width: 1024px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* Three columns on desktop, two on tablet, one on mobile */
+.grid-3 {
+  display:               grid;
+  grid-template-columns: 1fr;
+  gap:                   clamp(16px, 3vw, 48px);
 }
 
 @media (min-width: 768px) {
-  .case-studies {
-    padding-block: var(--space-20);
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1280px) {
-  .case-studies {
-    padding-block: var(--space-24);
+@media (min-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
   }
+}
+
+
+/* Auto-fill: as many columns as fit at minimum 320px each */
+.grid-auto {
+  display:               grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap:                   clamp(16px, 3vw, 48px);
+}
+
+
+/* -------------------------------------------------------------------------
+   CASE STUDIES SECTION
+   Padding delegated to .section-md utility class applied in HTML.
+   Background and border handled here.
+   ------------------------------------------------------------------------- */
+
+.case-studies {
+  background-color: var(--color-bg);
 }
 
 .case-studies__header {
@@ -31,9 +66,8 @@
 }
 
 .case-studies__heading {
-  font-size:      var(--text-3xl);
   font-weight:    var(--font-weight-bold);
-  line-height:    var(--leading-tight);
+  line-height:    1.1;
   letter-spacing: -0.01em;
   color:          var(--color-text-primary);
   margin-bottom:  var(--space-3);
@@ -45,15 +79,19 @@
   max-width: 52ch;
 }
 
-/* Card grid — single column → 2 columns (2×2 layout for 4 cards) */
+/* Card grid — uses .grid-2 pattern directly */
 .case-studies__grid {
   display:               grid;
   grid-template-columns: 1fr;
-  gap:                   var(--space-6);
+  gap:                   clamp(16px, 3vw, 48px);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .case-studies__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    max-width: 560px;
   }
 }

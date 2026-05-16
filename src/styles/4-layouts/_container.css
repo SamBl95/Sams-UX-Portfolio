@@ -1,27 +1,39 @@
 /* =============================================================================
    CONTAINER
-   Max-width wrapper with responsive horizontal padding. Provides the central
-   column that constrains content width across breakpoints.
+   Four width variants. All use clamp() for fluid horizontal padding so there
+   are no hard jumps between breakpoints.
 
-   Usage: add class="container" to any inner wrapper that needs width-capping.
-   Never set max-width inside component files — use this class instead.
+   .container-full    — 100% width, no max-width. Full-bleed backgrounds.
+   .container-wide    — 1600px max. Most page sections.
+   .container-content — 1200px max. Text-heavy sections, nav. Aliased as .container.
+   .container-reading — 720px max. Long-form body copy, case study text.
+
+   All variants: centered with margin-inline: auto.
    ============================================================================= */
 
-.container {
+.container-full {
   width: 100%;
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: var(--space-5); /* 20px — mobile */
 }
 
-@media (min-width: 768px) {
-  .container {
-    padding-inline: var(--space-8); /* 32px — tablet */
-  }
+.container-wide {
+  width:            100%;
+  max-width:        1600px;
+  margin-inline:    auto;
+  padding-inline:   clamp(24px, 5vw, 120px);
 }
 
-@media (min-width: 1280px) {
-  .container {
-    padding-inline: var(--space-10); /* 40px — desktop */
-  }
+/* .container kept as alias — existing HTML using .container continues to work */
+.container-content,
+.container {
+  width:          100%;
+  max-width:      1200px;
+  margin-inline:  auto;
+  padding-inline: clamp(24px, 5vw, 120px);
+}
+
+.container-reading {
+  width:          100%;
+  max-width:      720px;
+  margin-inline:  auto;
+  padding-inline: clamp(24px, 5vw, 120px);
 }

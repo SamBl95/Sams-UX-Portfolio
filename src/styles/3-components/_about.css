@@ -1,24 +1,17 @@
 /* =============================================================================
    ABOUT
-   Template for the about page.
+   About page layout and typography. Section vertical padding is delegated to
+   .section-lg / .section-md / .section-sm utility classes applied in HTML.
    ============================================================================= */
 
 
 /* -------------------------------------------------------------------------
    HERO — eyebrow, headline, lede
+   Padding from .section-lg in HTML.
    ------------------------------------------------------------------------- */
 
 .about-hero {
-  padding-top:    var(--space-12);
-  padding-bottom: var(--space-16);
-  border-top:     1px solid var(--color-border);
-}
-
-@media (min-width: 768px) {
-  .about-hero {
-    padding-top:    var(--space-16);
-    padding-bottom: var(--space-20);
-  }
+  border-top: 1px solid var(--color-border);
 }
 
 .about-hero__eyebrow {
@@ -27,28 +20,23 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color:          var(--color-accent-accessible);
+  max-width:      none;
   margin-bottom:  var(--space-3);
 }
 
+/* Title font-size from h1 typography rule (clamp 40px → 88px) */
 .about-hero__title {
-  font-size:      var(--text-4xl);
   font-weight:    var(--font-weight-bold);
-  line-height:    var(--leading-tight);
+  line-height:    1.1;
   letter-spacing: -0.02em;
   color:          var(--color-text-primary);
   max-width:      22ch;
   margin-bottom:  var(--space-6);
 }
 
-@media (min-width: 768px) {
-  .about-hero__title {
-    font-size: var(--text-5xl);
-  }
-}
-
 .about-hero__lede {
   font-size:   var(--text-lg);
-  line-height: var(--leading-relaxed);
+  line-height: 1.7;
   color:       var(--color-text-secondary);
   max-width:   58ch;
   font-style:  italic;
@@ -85,48 +73,36 @@
 
 /* -------------------------------------------------------------------------
    SECTION — alternating content blocks
+   Padding from .section-md in HTML.
    ------------------------------------------------------------------------- */
 
 .about-section {
-  padding-block: var(--space-12);
-  border-top:    1px solid var(--color-border);
-}
-
-@media (min-width: 768px) {
-  .about-section {
-    padding-block: var(--space-16);
-  }
+  border-top: 1px solid var(--color-border);
 }
 
 .about-section--surface {
   background-color: var(--color-surface);
 }
 
+/* Heading font-size from h2 typography rule (clamp 32px → 56px) */
 .about-section__heading {
-  font-size:      var(--text-2xl);
   font-weight:    var(--font-weight-bold);
-  line-height:    var(--leading-tight);
+  line-height:    1.1;
   letter-spacing: -0.01em;
   color:          var(--color-text-primary);
   max-width:      24ch;
   margin-bottom:  var(--space-6);
 }
 
-@media (min-width: 768px) {
-  .about-section__heading {
-    font-size: var(--text-3xl);
-  }
-}
-
 .about-section__body {
-  max-width: 68ch;
+  max-width: 680px;
 }
 
 .about-section__body p {
-  font-size:     var(--text-base);
-  line-height:   var(--leading-relaxed);
+  font-size:     clamp(16px, 1.25vw, 18px);
+  line-height:   1.7;
   color:         var(--color-text-secondary);
-  max-width:     none;
+  max-width:     68ch;
   margin-bottom: var(--space-5);
 }
 
@@ -140,13 +116,13 @@
    ------------------------------------------------------------------------- */
 
 .about-education {
-  max-width:  68ch;
+  max-width:  680px;
   border-top: 1px solid var(--color-border);
 }
 
 .about-education__item {
-  padding-block:  var(--space-6);
-  border-bottom:  1px solid var(--color-border);
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .about-education__org {
@@ -166,12 +142,12 @@
 }
 
 .about-education__skills {
-  display:   flex;
-  flex-wrap: wrap;
-  gap:       var(--space-2);
+  display:    flex;
+  flex-wrap:  wrap;
+  gap:        var(--space-2);
   list-style: none;
-  padding:   0;
-  margin:    0;
+  padding:    0;
+  margin:     0;
 }
 
 .about-education__skills li {
@@ -190,40 +166,28 @@
 
 /* -------------------------------------------------------------------------
    CTA — contact block
+   Padding from .section-sm in HTML.
    ------------------------------------------------------------------------- */
 
 .cta-section {
   background-color: var(--color-surface);
   border-top:       1px solid var(--color-border);
   border-bottom:    1px solid var(--color-border);
-  padding-block:    var(--space-16);
   text-align:       center;
 }
 
-@media (min-width: 768px) {
-  .cta-section {
-    padding-block: var(--space-20);
-  }
-}
-
+/* Heading font-size from h2 typography rule */
 .cta-section__heading {
-  font-size:      var(--text-3xl);
   font-weight:    var(--font-weight-bold);
-  line-height:    var(--leading-tight);
+  line-height:    1.1;
   letter-spacing: -0.015em;
   color:          var(--color-text-primary);
   margin-bottom:  var(--space-4);
 }
 
-@media (min-width: 768px) {
-  .cta-section__heading {
-    font-size: var(--text-4xl);
-  }
-}
-
 .cta-section__body {
   font-size:     var(--text-lg);
-  line-height:   var(--leading-relaxed);
+  line-height:   1.7;
   color:         var(--color-text-secondary);
   max-width:     52ch;
   margin:        0 auto var(--space-8);
