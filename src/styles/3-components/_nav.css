@@ -126,6 +126,11 @@
   margin:         0;
 }
 
+/* Reset the global li + li margin-top — flex alignment handles spacing */
+.nav__item + .nav__item {
+  margin-top: 0;
+}
+
 
 /* Nav links — mobile: full-width tap targets */
 .nav__link {
