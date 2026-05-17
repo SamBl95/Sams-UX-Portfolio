@@ -2,10 +2,10 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Polish & Refinement
-status: planning
-stopped_at: Milestone v2.0 initialized — ready to plan Phase 2
+status: ready_to_execute
+stopped_at: Phase 2 planned — 1 plan ready to execute
 last_updated: "2026-05-17T00:00:00.000Z"
-last_activity: 2026-05-17 -- Milestone v2.0 started
+last_activity: 2026-05-17 -- Phase 2 Foundation & Infrastructure planned
 progress:
   total_phases: 6
   completed_phases: 0
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-17)
 
 **Core value:** A recruiter or hiring manager can understand Sam's work and reach out — every page exists, every link works, and the structure is solid enough to build content on top of.
-**Current focus:** Phase 2 — Interaction Polish
+**Current focus:** Phase 2 — Foundation & Infrastructure
 
 ## Current Position
 
-Phase: Not started (defining phase plans)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-05-17 — Milestone v2.0 started
+Phase: 2 — Foundation & Infrastructure
+Plan: Ready to execute (1 plan)
+Status: Ready to execute
+Last activity: 2026-05-17 — Phase 2 planned: token expansion, scroll-reveal, button fixes, nav/card bugs
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -82,5 +82,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-05-17
-Stopped at: Milestone v2.0 scope finalized — 6 phases, 12 plans, 45 requirements. Full UI audit with delight focus and case study component library. Ready to plan Phase 2.
-Resume file: .planning/ROADMAP.md
+Stopped at: Phase 2 planned — 1 plan (02-01-PLAN-foundation.md) covering all 10 requirements. Ready to execute.
+Resume file: .planning/phases/02-foundation-infrastructure/02-01-PLAN-foundation.md
