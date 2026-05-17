@@ -26,7 +26,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Contact page and Blog (index + one post example) exist with complete structure: nav, content section, footer
   3. No broken internal links anywhere in the site — every anchor href resolves to a real page
   4. The CSS is coherent: no inline styles, no raw hex values, spacing tokens used throughout — adding a new page follows the same pattern as existing ones
-**Plans**: TBD
+**Plans:** 4 plans
+Plans:
+- [ ] 01-PLAN-design-foundation.md — Light palette token swap + h1/h2 weight + responsive scale correction (Plans wave 1)
+- [ ] 01-PLAN-shared-shell.md — Install vite-plugin-handlebars; rewrite nav/footer as partials; convert 5 existing pages; remove homepage #contact (wave 2)
+- [ ] 01-PLAN-new-pages.md — Create contact.html, stories/index.html, stories/[post].html; add _contact.css and _stories.css; register in vite.config.js (wave 3)
+- [ ] 01-PLAN-foundation-audit.md — Link audit, structural audit, CSS coherence audit; document "adding a new page" in CLAUDE.md; update STATE.md (wave 4)
 **UI hint**: yes
 
 ## Progress
@@ -36,4 +41,4 @@ Phases execute in numeric order: 1
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/? | Not started | - |
+| 1. Foundation | 0/4 | Not started | - |
