@@ -174,16 +174,38 @@
   font-weight: var(--font-weight-semibold);
 }
 
-/* CTA variant — accessible amber on mobile */
+/* CTA link — "Get in touch" pill button treatment */
 .nav__link--cta {
-  color:       var(--color-accent-accessible);
-  font-weight: var(--font-weight-semibold);
+  display:          block;
+  background-color: var(--color-accent);
+  color:            var(--color-text-on-accent);
+  font-weight:      var(--font-weight-semibold);
+  border-radius:    var(--radius-full);
+  padding:          var(--space-2) var(--space-4);
+  margin-inline:    var(--space-5);
+  margin-block:     var(--space-2);
+  text-align:       center;
+  transition:       background-color var(--transition-fast), color var(--transition-fast);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .nav__link--cta:hover {
-    color: color-mix(in srgb, var(--color-accent-accessible) 82%, #000);
+    background-color: var(--color-text-primary);
+    color:            var(--color-text-on-accent);
   }
+}
+
+.nav__link--cta:focus-visible {
+  outline:        2px solid var(--color-accent-accessible);
+  outline-offset: 2px;
+}
+
+/* Mobile: btn inside nav list (Get in touch) fills nav width */
+.nav__list .btn {
+  display:         flex;
+  justify-content: center;
+  margin-inline:   var(--space-5);
+  margin-block:    var(--space-2);
 }
 
 
@@ -228,17 +250,23 @@
     background-color: var(--color-surface);
   }
 
-  /* CTA becomes a filled gold button — dark text for WCAG AA (7.5:1) */
+  /* CTA pill: reset mobile margins for inline horizontal nav */
   .nav__link--cta {
-    background-color: var(--color-accent);
-    color:            var(--color-text-on-accent);
-    border-radius:    var(--radius-lg);
-    padding:          var(--space-2) var(--space-5);
-    transition:       background-color var(--transition-fast);
+    display:       inline-block;
+    margin-inline: 0;
+    margin-block:  0;
   }
 
-  .nav__link--cta:hover {
-    opacity: 0.85;
+  @media (hover: hover) and (pointer: fine) {
+    .nav__link--cta:hover {
+      background-color: var(--color-text-primary);
+    }
+  }
+
+  /* Revert mobile full-width override — btn is inline in the horizontal nav */
+  .nav__list .btn {
+    display: inline-flex;
+    margin:  0;
   }
 
 }
