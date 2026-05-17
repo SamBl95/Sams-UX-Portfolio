@@ -15,6 +15,11 @@
   border-bottom: 1px solid var(--color-border);
 }
 
+/* Scroll shadow — JS adds .nav--scrolled when window.scrollY > 8 */
+.nav--scrolled {
+  box-shadow: 0 1px 0 var(--color-border), 0 4px 16px -4px rgb(0 0 0 / 0.06);
+}
+
 
 /* Inner row — logo pushes everything else right via margin-right: auto */
 .nav__inner {
@@ -27,14 +32,16 @@
 
 /* Logo */
 .nav__logo {
-  font-size:       var(--text-base);
-  font-weight:     var(--font-weight-semibold);
-  letter-spacing:  -0.01em;
-  color:           var(--color-text-primary);
-  text-decoration: none;
-  transition:      color var(--transition-fast);
-  flex-shrink:     0;
-  margin-right:    auto; /* pushes all remaining items to the right */
+  font-family:         var(--font-heading);
+  font-size:           var(--text-xl);
+  font-weight:         var(--font-weight-normal);
+  font-optical-sizing: auto;
+  letter-spacing:      -0.02em;
+  color:               var(--color-text-primary);
+  text-decoration:     none;
+  transition:          color var(--transition-fast);
+  flex-shrink:         0;
+  margin-right:        auto; /* pushes all remaining items to the right */
 }
 
 .nav__logo:hover {
@@ -115,7 +122,7 @@
   background-color: var(--color-bg);
   border-bottom:    1px solid var(--color-border);
   padding-block:    var(--space-3);
-  animation:        nav-menu-enter 120ms var(--ease-out) both;
+  animation:        nav-menu-enter 200ms var(--ease-out) both;
 }
 
 .nav--open .nav__toggle-bar:nth-child(1) {
@@ -150,11 +157,11 @@
 .nav__link {
   display:         block;
   font-size:       var(--text-sm);
-  font-weight:     var(--font-weight-medium);
+  font-weight:     var(--font-weight-normal);
   color:           var(--color-text-secondary);
   text-decoration: none;
   padding:         var(--space-3) var(--space-5);
-  transition:      color var(--transition-fast);
+  transition:      background-color var(--transition-fast), color var(--transition-fast);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -212,12 +219,13 @@
   .nav__list {
     flex-direction: row;
     align-items:    center;
-    gap:            var(--space-1);
+    gap:            var(--space-2);
   }
 
   .nav__link {
     padding:       var(--space-2) var(--space-3);
     border-radius: var(--radius-md);
+    border-bottom: 2px solid transparent; /* reserve 2px so active border-bottom doesn't shift row height */
   }
 
   @media (hover: hover) and (pointer: fine) {
@@ -229,19 +237,26 @@
 
   .nav__link[aria-current="page"] {
     background-color: var(--color-surface);
+    border-bottom:    2px solid var(--color-accent);
   }
 
-  /* CTA: reset mobile flex/margins so btn sits inline */
+  /* CTA: reset mobile flex/margins so btn sits inline; margin-left separates from text links */
   .nav__link--cta {
     display:       inline-flex;
     margin-inline: 0;
     margin-block:  0;
+    margin-left:   var(--space-3);
   }
 
   /* Revert mobile full-width override — btn is inline in the horizontal nav */
   .nav__list .btn {
     display: inline-flex;
     margin:  0;
+  }
+
+  /* CTA height constrained within nav context only — button transitions owned by _button.css */
+  .nav .btn {
+    height: 36px;
   }
 
 }
