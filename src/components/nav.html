@@ -1,18 +1,19 @@
-<!-- NAV PARTIAL — single canonical nav, included by every page via Handlebars.
-     Usage:
-       {{> nav}}                  — Homepage, all case study pages (no active item)
-       {{> nav navAbout=true}}    — About page
-       {{> nav navStories=true}}  — Stories index and stories post pages
-       {{> nav navContact=true}}  — Contact page
-       {{> nav navWork=true}}     — Reserved; homepage does not currently set this flag
+{{!--
+  NAV PARTIAL — single canonical nav, included by every page via Handlebars.
+  Usage:
+    > nav                  — Homepage, all case study pages (no active item)
+    > nav navAbout=true    — About page
+    > nav navStories=true  — Stories index and stories post pages
+    > nav navContact=true  — Contact page
+    > nav navWork=true     — Reserved; homepage does not currently set this flag
 
-     Active-state rule: exactly zero or one flag may be true per page.
-     When a flag is true, the matching link receives class nav__link--active
-     AND aria-current="page". All other links receive neither.
+  Active-state rule: exactly zero or one flag may be true per page.
+  When a flag is true, the matching link receives class nav__link--active
+  AND aria-current="page". All other links receive neither.
 
-     JS for the hamburger toggle lives in /src/theme.js (unchanged).
-     Mobile menu: JS adds .nav--open to .nav and toggles aria-expanded on .nav__toggle.
--->
+  JS for the hamburger toggle lives in /src/theme.js (unchanged).
+  Mobile menu: JS adds .nav--open to .nav and toggles aria-expanded on .nav__toggle.
+--}}
 
 <header class="nav">
   <div class="nav__inner container">

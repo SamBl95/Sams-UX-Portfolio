@@ -13,40 +13,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&family=Caveat:wght@400&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="../../styles/main.css" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
   <body>
 
-    <header class="nav">
-      <div class="nav__inner container">
-        <a href="../../index.html" class="nav__logo" aria-label="Sam Blake — back to home">Sam Blake</a>
-
-        <nav id="nav-menu" class="nav__menu" aria-label="Main navigation">
-          <ul class="nav__list" role="list">
-            <li class="nav__item">
-              <a href="../../index.html#case-studies" class="nav__link">Work</a>
-            </li>
-            <li class="nav__item">
-              <a href="../about.html" class="nav__link">About</a>
-            </li>
-            <li class="nav__item">
-              <a href="../../index.html#contact" class="nav__link nav__link--cta">Get in touch</a>
-            </li>
-          </ul>
-        </nav>
-
-        <button
-          class="nav__toggle"
-          aria-expanded="false"
-          aria-controls="nav-menu"
-          aria-label="Open navigation menu"
-        >
-          <span class="nav__toggle-bar"></span>
-          <span class="nav__toggle-bar"></span>
-          <span class="nav__toggle-bar"></span>
-        </button>
-      </div>
-    </header>
+    {{> nav}}
 
     <main>
 
@@ -57,15 +28,9 @@
     <section class="cs-hero" aria-labelledby="cs-title">
       <div class="cs-hero__inner container">
 
-        <a href="../../index.html#case-studies" class="cs-hero__back">
+        <a href="/#case-studies" class="cs-hero__back">
           <span aria-hidden="true">←</span> Back to work
         </a>
-
-        <ul class="cs-hero__tags" role="list" aria-label="Sectors">
-          <li class="cs-hero__tag">Financial Services</li>
-          <li class="cs-hero__tag">Community</li>
-          <li class="cs-hero__tag">Santander UK</li>
-        </ul>
 
         <h1 id="cs-title" class="cs-hero__title">Community Support Forum Redesign</h1>
 
@@ -624,28 +589,8 @@
 
     </main>
 
-    <!-- =====================================================================
-         FOOTER
-         ===================================================================== -->
+    {{> footer}}
 
-    <footer class="footer" id="contact">
-      <div class="footer__inner container">
-
-        <div class="footer__identity">
-          <p class="footer__name">Sam Blake</p>
-          <p class="footer__bio">Product designer making complex things simpler for real people.</p>
-        </div>
-
-        <nav class="footer__links" aria-label="Contact links">
-          <a href="https://www.linkedin.com/in/samuel-blake-224605186" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="mailto:hello@samblake.co.uk" class="footer__link">hello@samblake.co.uk</a>
-        </nav>
-
-        <p class="footer__copyright">&copy; 2026 Sam Blake</p>
-
-      </div>
-    </footer>
-
-    <script type="module" src="../../theme.js"></script>
+    <script type="module" src="/src/theme.js"></script>
   </body>
 </html>

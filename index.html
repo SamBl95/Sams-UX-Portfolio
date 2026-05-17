@@ -13,44 +13,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&family=Caveat:wght@400&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="./src/styles/main.css" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
   <body>
 
-    <header class="nav">
-      <div class="nav__inner container">
-
-        <a href="/" class="nav__logo" aria-label="Sam Blake — back to home">Sam Blake</a>
-
-        <!-- Nav links — hidden on mobile, revealed at 905px -->
-        <nav id="nav-menu" class="nav__menu" aria-label="Main navigation">
-          <ul class="nav__list" role="list">
-            <li class="nav__item">
-              <a href="#case-studies" class="nav__link">Work</a>
-            </li>
-            <li class="nav__item">
-              <a href="./src/pages/about.html" class="nav__link">About</a>
-            </li>
-            <li class="nav__item">
-              <a href="#contact" class="nav__link nav__link--cta">Get in touch</a>
-            </li>
-          </ul>
-        </nav>
-
-        <!-- Hamburger — mobile only, JS (theme.js) handles toggle -->
-        <button
-          class="nav__toggle"
-          aria-expanded="false"
-          aria-controls="nav-menu"
-          aria-label="Open navigation menu"
-        >
-          <span class="nav__toggle-bar"></span>
-          <span class="nav__toggle-bar"></span>
-          <span class="nav__toggle-bar"></span>
-        </button>
-
-      </div>
-    </header>
+    {{> nav}}
 
     <main>
 
@@ -75,15 +42,9 @@
             financial services, retail and property.
           </p>
 
-          <ul class="hero__sectors" role="list" aria-label="Sectors">
-            <li class="hero__sector">Financial Services</li>
-            <li class="hero__sector">Retail</li>
-            <li class="hero__sector">Property</li>
-          </ul>
-
           <div class="hero__actions">
             <a href="#case-studies" class="btn btn--primary">See my work</a>
-            <a href="#contact" class="btn btn--ghost">Get in touch</a>
+            <a href="/src/pages/contact.html" class="btn btn--secondary">Get in touch</a>
           </div>
 
         </div>
@@ -112,13 +73,9 @@
               <p class="card__subtitle">Overhauling Santander's 6,000-article internal knowledge base to fix broken search — delivering a 35% accuracy improvement across 5 million annual searches.</p>
             </div>
             <footer class="card__footer">
-              <ul class="card__sectors" role="list" aria-label="Sectors">
-                <li class="card__sector">Financial Services</li>
-                <li class="card__sector">Internal Tooling</li>
-              </ul>
               <div class="card__meta">
                 <span class="card__read-time">8 min read</span>
-                <a href="./src/pages/case-studies/i-exchange.html" class="card__link">
+                <a href="/src/pages/case-studies/i-exchange.html" class="btn btn--ghost">
                   Read case study <span class="card__link-arrow" aria-hidden="true">→</span>
                 </a>
               </div>
@@ -136,13 +93,9 @@
               <p class="card__subtitle">Fixing Santander's AI colleague assistant in three weeks at zero development cost — increasing feedback submission rates by 30%.</p>
             </div>
             <footer class="card__footer">
-              <ul class="card__sectors" role="list" aria-label="Sectors">
-                <li class="card__sector">Financial Services</li>
-                <li class="card__sector">AI</li>
-              </ul>
               <div class="card__meta">
                 <span class="card__read-time">5 min read</span>
-                <a href="./src/pages/case-studies/cassi.html" class="card__link">
+                <a href="/src/pages/case-studies/cassi.html" class="btn btn--ghost">
                   Read case study <span class="card__link-arrow" aria-hidden="true">→</span>
                 </a>
               </div>
@@ -160,13 +113,9 @@
               <p class="card__subtitle">Halving homepage load times and saving 97 hours a month by scaling Santander's internal community forum — without a complete rebuild.</p>
             </div>
             <footer class="card__footer">
-              <ul class="card__sectors" role="list" aria-label="Sectors">
-                <li class="card__sector">Financial Services</li>
-                <li class="card__sector">Community</li>
-              </ul>
               <div class="card__meta">
                 <span class="card__read-time">6 min read</span>
-                <a href="./src/pages/case-studies/community.html" class="card__link">
+                <a href="/src/pages/case-studies/community.html" class="btn btn--ghost">
                   Read case study <span class="card__link-arrow" aria-hidden="true">→</span>
                 </a>
               </div>
@@ -179,46 +128,11 @@
 
     <!-- TESTIMONIALS: not yet built — see src/components/testimonial.html -->
 
-
-    <!-- =====================================================================
-         CONTACT
-         ===================================================================== -->
-
-    <section class="cta-section section-md" id="contact" aria-labelledby="contact-heading">
-      <div class="container">
-        <h2 id="contact-heading" class="cta-section__heading">Want to work together?</h2>
-        <p class="cta-section__body">
-          I'm open to hybrid and remote product design roles in the North West of England.
-          I'm also happy to chat mentorship, community events, or just swap notes on design.
-        </p>
-        <div class="cta-section__actions">
-          <a href="https://www.linkedin.com/in/samuel-blake-224605186" class="btn btn--primary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="mailto:sam.blake@outlook.com" class="btn btn--ghost">sam.blake@outlook.com</a>
-        </div>
-      </div>
-    </section>
-
     </main>
 
-    <footer class="footer">
-      <div class="footer__inner container">
+    {{> footer}}
 
-        <div class="footer__identity">
-          <p class="footer__name">Sam Blake</p>
-          <p class="footer__bio">Product designer based in Liverpool, asking why so you don't have to</p>
-        </div>
-
-        <nav class="footer__links" aria-label="Contact links">
-          <a href="https://www.linkedin.com/in/samuel-blake-224605186" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="mailto:sam.blake@outlook.com" class="footer__link">sam.blake@outlook.com</a>
-        </nav>
-
-        <p class="footer__copyright">&copy; 2026 Sam Blake</p>
-
-      </div>
-    </footer>
-
-    <script type="module" src="./src/theme.js"></script>
-    <script type="module" src="./src/typewriter.js"></script>
+    <script type="module" src="/src/theme.js"></script>
+    <script type="module" src="/src/typewriter.js"></script>
   </body>
 </html>
