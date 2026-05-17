@@ -104,7 +104,8 @@
   --space-24: 192px;
 
   /* Component tokens — semantic values outside the 8pt scale */
-  --nav-height: 56px;   /* nav bar height; also used for mobile menu top offset */
+  --nav-height:             56px;   /* nav bar height; also used for mobile menu top offset */
+  --hero-content-max-width: 860px;  /* hero content column constraint at 1440px+ */
 
 
   /* ---------------------------------------------------------------------------
