@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Stories by Sam Blake — reflections on product design, career transitions, and building things." />
+    <title>Stories — Sam Blake | Product Designer</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+
+    <!-- Typefaces: Fraunces (headings), Urbanist (body), Caveat (hero accent) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&family=Caveat:wght@400&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+
+    {{> nav navStories=true}}
+
+    <main>
+
+      <section class="stories section-lg" aria-labelledby="stories-heading">
+        <div class="container-reading">
+          <h1 id="stories-heading" class="stories__heading">Stories</h1>
+          <ul class="stories__list" role="list">
+            <li class="stories__item">
+              <a href="./design-systems-and-portfolio-sites.html" class="stories__link">
+                <span class="stories__title">Design systems and portfolio sites</span>
+                <span class="stories__date">May 2026</span>
+              </a>
+              <p class="stories__summary">What building this portfolio taught me about design systems in miniature.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+
+    {{> footer}}
+
+    <script type="module" src="/src/theme.js"></script>
+  </body>
+</html>

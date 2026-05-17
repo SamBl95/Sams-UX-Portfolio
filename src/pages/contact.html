@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Get in touch with Sam Blake — product designer open to hybrid and remote roles in the North West of England." />
+    <title>Get in touch — Sam Blake | Product Designer</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+
+    <!-- Typefaces: Fraunces (headings), Urbanist (body), Caveat (hero accent) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&family=Caveat:wght@400&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+
+    {{> nav navContact=true}}
+
+    <main>
+
+      <section class="contact section-lg" aria-labelledby="contact-heading">
+        <div class="container-reading">
+          <h1 id="contact-heading" class="contact__heading">Get in touch</h1>
+          <p class="contact__intro">I'm open to hybrid and remote product design roles in the North West of England. Also happy to talk mentorship, community events, or swap notes on design.</p>
+          <div class="contact__links">
+            <a href="mailto:sam.blake@outlook.com" class="btn btn--primary">Email me</a>
+            <a href="https://www.linkedin.com/in/samuel-blake-224605186" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+          </div>
+          <div class="contact__interests">
+            <h2 class="contact__interests-heading">What I'm interested in hearing about</h2>
+            <ul class="contact__interests-list">
+              <li>Product design roles — hybrid or remote, North West England</li>
+              <li>Mentorship conversations for career changers</li>
+              <li>Community events: NUX, design meetups</li>
+              <li>Interesting problems in fintech, retail, or property</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+
+    {{> footer}}
+
+    <script type="module" src="/src/theme.js"></script>
+  </body>
+</html>
