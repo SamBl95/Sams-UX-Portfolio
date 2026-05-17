@@ -1,0 +1,39 @@
+/* =============================================================================
+   CONTACT
+   Editorial contact page layout — heading, intro, action buttons, interests list.
+   Button styles come entirely from _button.css. No button overrides here.
+   ============================================================================= */
+
+
+.contact__heading {
+  margin-bottom: var(--space-4);
+}
+
+.contact__intro {
+  color:         var(--color-text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.contact__links {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-3);
+  margin-bottom:  var(--space-8);
+}
+
+@media (min-width: 600px) {
+  .contact__links {
+    flex-direction: row;
+  }
+}
+
+.contact__interests-heading {
+  margin-bottom: var(--space-3);
+}
+
+.contact__interests-list {
+  font-size:   var(--text-sm);
+  color:       var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  padding-left: var(--space-3);
+}

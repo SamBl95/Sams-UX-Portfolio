@@ -1,0 +1,136 @@
+/* =============================================================================
+   STORIES
+   Covers both the stories index page (.stories__*) and the stories post
+   article layout (.post__*). Shared in one file because the two pages are
+   tightly coupled and the total rule count is small.
+   ============================================================================= */
+
+
+/* ---------------------------------------------------------------------------
+   STORIES INDEX
+   --------------------------------------------------------------------------- */
+
+.stories__heading {
+  margin-bottom: var(--space-8);
+}
+
+.stories__list {
+  list-style: none;
+  padding:    0;
+  margin:     0;
+}
+
+.stories__item {
+  border-bottom: 1px solid var(--color-border);
+  padding-block: var(--space-3);
+}
+
+.stories__item:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.stories__link {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     baseline;
+  gap:             var(--space-4);
+  text-decoration: none;
+  padding:         var(--space-2) 0;
+  border-radius:   var(--radius-sm);
+  transition:      background-color var(--transition-fast);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .stories__link:hover {
+    background-color: var(--color-accent-light);
+    padding-inline:   var(--space-2);
+    margin-inline:    calc(var(--space-2) * -1);
+  }
+}
+
+.stories__link:focus-visible {
+  outline:        2px solid var(--color-accent-accessible);
+  outline-offset: 2px;
+  border-radius:  var(--radius-sm);
+}
+
+.stories__title {
+  font-size:   var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color:       var(--color-text-primary);
+}
+
+.stories__date {
+  font-size:   var(--text-sm);
+  font-weight: var(--font-weight-normal);
+  color:       var(--color-text-secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.stories__summary {
+  font-size:  var(--text-base);
+  color:      var(--color-text-secondary);
+  margin-top: var(--space-1);
+}
+
+
+/* ---------------------------------------------------------------------------
+   STORIES POST
+   --------------------------------------------------------------------------- */
+
+.post__date {
+  font-size:     var(--text-sm);
+  font-weight:   var(--font-weight-normal);
+  color:         var(--color-text-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.post__title {
+  font-size:     var(--text-32);
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 600px) {
+  .post__title {
+    font-size: var(--text-40);
+  }
+}
+
+.post__body p + p {
+  margin-top: var(--space-3);
+}
+
+.post__body h2 {
+  margin-top: var(--space-6);
+}
+
+.post__back {
+  display:       inline-flex;
+  align-items:   center;
+  gap:           var(--space-1);
+  font-size:     var(--text-sm);
+  color:         var(--color-text-secondary);
+  text-decoration: none;
+  margin-bottom: var(--space-6);
+  transition:    color var(--transition-fast);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .post__back:hover {
+    color: var(--color-accent-accessible);
+  }
+}
+
+
+/* ---------------------------------------------------------------------------
+   REDUCED MOTION
+   Collapse all transitions to instant when user prefers reduced motion.
+   --------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .stories__link,
+  .post__back {
+    transition: none;
+  }
+}
