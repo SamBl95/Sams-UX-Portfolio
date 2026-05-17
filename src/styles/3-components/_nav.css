@@ -190,8 +190,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .nav__link--cta:hover {
-    background-color: var(--color-text-primary);
-    color:            var(--color-text-on-accent);
+    background-color: color-mix(in srgb, var(--color-accent) 88%, white);
   }
 }
 
@@ -259,7 +258,7 @@
 
   @media (hover: hover) and (pointer: fine) {
     .nav__link--cta:hover {
-      background-color: var(--color-text-primary);
+      background-color: color-mix(in srgb, var(--color-accent) 88%, white);
     }
   }
 
