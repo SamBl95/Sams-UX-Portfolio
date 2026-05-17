@@ -1,0 +1,51 @@
+/* =============================================================================
+   CASE STUDIES SECTION
+   Homepage section that contains the case study card grid.
+   Vertical padding from .section-lg utility class applied in HTML.
+   ============================================================================= */
+
+.case-studies {
+  background-color: var(--color-bg);
+}
+
+.case-studies__header {
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 905px) {
+  .case-studies__header { margin-bottom: var(--space-8); }
+}
+
+@media (min-width: 1440px) {
+  .case-studies__header { margin-bottom: var(--space-10); }
+}
+
+.case-studies__heading {
+  font-weight:    var(--font-weight-bold);
+  line-height:    1.1;
+  letter-spacing: -0.01em;
+  color:          var(--color-text-primary);
+  margin-bottom:  var(--space-3);
+}
+
+.case-studies__subheading {
+  color: var(--color-text-secondary);
+}
+
+/* Card grid — 1 column until expanded (905px), then 2 */
+.case-studies__grid {
+  display:               grid;
+  grid-template-columns: 1fr;
+  gap:                   var(--space-2);
+}
+
+@media (min-width: 600px) {
+  .case-studies__grid { gap: var(--space-3); }
+}
+
+@media (min-width: 905px) {
+  .case-studies__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap:                   var(--space-4);
+  }
+}

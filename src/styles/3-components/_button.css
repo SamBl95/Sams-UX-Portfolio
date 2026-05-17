@@ -63,7 +63,7 @@
 @media (hover: hover) {
   .btn--primary:hover {
     transform:  scale(1.03);
-    box-shadow: 0 8px 24px -4px rgba(79, 209, 165, 0.4);
+    box-shadow: var(--shadow-accent);
     opacity:    0.92;
   }
 }

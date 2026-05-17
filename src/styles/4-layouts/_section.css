@@ -9,7 +9,6 @@
    .section-md  —  64px mobile →  96px desktop   (body sections)
    .section-lg  —  96px mobile → 128px desktop   (case studies, about content)
    .section-xl  — 128px mobile → 160px desktop   (hero)
-   .section      — alias for .section-md
    ============================================================================= */
 
 /* --- defaults (< 905px) ---------------------------------------------------- */
@@ -17,7 +16,6 @@
 .section-md  { padding-block: var(--space-8);  }   /* 64px */
 .section-lg  { padding-block: var(--space-12); }   /* 96px */
 .section-xl  { padding-block: var(--space-16); }   /* 128px */
-.section     { padding-block: var(--space-8);  }   /* 64px — alias */
 
 /* --- 905px — expanded (desktop) -------------------------------------------- */
 @media (min-width: 905px) {
@@ -25,7 +23,6 @@
   .section-md  { padding-block: var(--space-12); }   /* 96px */
   .section-lg  { padding-block: var(--space-16); }   /* 128px */
   .section-xl  { padding-block: var(--space-20); }   /* 160px */
-  .section     { padding-block: var(--space-12); }
 }
 
 

@@ -84,7 +84,6 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color:          var(--color-accent-accessible);
-  max-width:      none;
   margin-bottom:  var(--space-4);
 }
 
@@ -103,7 +102,7 @@
 /* Subheadline */
 .hero__subheadline {
   font-size:     var(--text-lg);
-  line-height:   1.7;
+  line-height:   var(--leading-body);
   color:         var(--color-text-secondary);
   margin-bottom: var(--space-8);
 }

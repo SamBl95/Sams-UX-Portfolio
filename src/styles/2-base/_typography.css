@@ -77,7 +77,7 @@ h6 {
 p {
   font-family: var(--font-body);
   font-size:   var(--text-base);  /* 16px — mobile */
-  line-height: 1.7;
+  line-height: var(--leading-body);
   color:       var(--color-text-secondary);
 }
 

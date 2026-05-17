@@ -66,8 +66,10 @@
   flex-shrink:     0;
 }
 
-.nav__toggle:hover {
-  background-color: var(--color-surface);
+@media (hover: hover) and (pointer: fine) {
+  .nav__toggle:hover {
+    background-color: var(--color-surface);
+  }
 }
 
 .nav__toggle:focus-visible {
@@ -178,8 +180,10 @@
   font-weight: var(--font-weight-semibold);
 }
 
-.nav__link--cta:hover {
-  color: color-mix(in srgb, var(--color-accent-accessible) 82%, #000);
+@media (hover: hover) and (pointer: fine) {
+  .nav__link--cta:hover {
+    color: color-mix(in srgb, var(--color-accent-accessible) 82%, #000);
+  }
 }
 
 

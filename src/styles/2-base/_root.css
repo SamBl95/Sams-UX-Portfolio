@@ -3,6 +3,10 @@
    All components inherit colour and typography via token names.
    ============================================================================= */
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   font-family:      var(--font-body);
   font-size:        var(--text-base);
@@ -10,12 +14,4 @@
   line-height:      var(--leading-relaxed);
   color:            var(--color-text-primary);
   background-color: var(--color-bg);
-  scroll-behavior:  smooth;
-}
-
-body {
-  background-color: var(--color-bg);
-  color:            var(--color-text-primary);
-  font-family:      var(--font-body);
-  line-height:      var(--leading-relaxed);
 }

@@ -22,15 +22,15 @@
 
 /* 3. COMPONENTS */
 @import './3-components/_button.css';
-@import './3-components/_badge.css';
-@import './3-components/_tag.css';
 @import './3-components/_card.css';
 @import './3-components/_stat-block.css';
 @import './3-components/_hero.css';
 @import './3-components/_nav.css';
 @import './3-components/_footer.css';
 @import './3-components/_case-study.css';
+@import './3-components/_case-studies.css';
 @import './3-components/_about.css';
+@import './3-components/_cta.css';
 
 
 /* 4. LAYOUTS */
@@ -39,7 +39,3 @@
 @import './4-layouts/_section.css';
 
 
-/* 5. UTILITIES */
-@import './5-utilities/_spacing.css';
-@import './5-utilities/_text.css';
-@import './5-utilities/_visibility.css';

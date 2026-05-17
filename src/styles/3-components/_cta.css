@@ -1,0 +1,35 @@
+/* =============================================================================
+   CTA SECTION
+   Contact / call-to-action block. Used on homepage and about page.
+   Padding from .section-md utility class applied in HTML.
+   ============================================================================= */
+
+.cta-section {
+  background-color: var(--color-surface);
+  border-top:       1px solid var(--color-border);
+  border-bottom:    1px solid var(--color-border);
+  text-align:       center;
+}
+
+/* Heading font-size from h2 typography rule */
+.cta-section__heading {
+  font-weight:    var(--font-weight-bold);
+  line-height:    1.1;
+  letter-spacing: -0.015em;
+  color:          var(--color-text-primary);
+  margin-bottom:  var(--space-4);
+}
+
+.cta-section__body {
+  font-size:     var(--text-lg);
+  line-height:   var(--leading-body);
+  color:         var(--color-text-secondary);
+  margin:        0 auto var(--space-8);
+}
+
+.cta-section__actions {
+  display:         flex;
+  flex-wrap:       wrap;
+  gap:             var(--space-4);
+  justify-content: center;
+}

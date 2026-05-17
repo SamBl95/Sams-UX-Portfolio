@@ -16,10 +16,10 @@
    Ultra    1440px+     wide desktop, 12-col grid, max 1800px, 80px margins
    ============================================================================= */
 
-:root {
-  --bp-compact:  0px;     /* reference only */
-  --bp-medium:   600px;
-  --bp-expanded: 905px;
-  --bp-large:    1240px;
-  --bp-ultra:    1440px;
-}
+/*
+   Breakpoint reference — use these raw values directly in @media rules:
+     @media (min-width: 600px)  { … }   medium    (tablet)
+     @media (min-width: 905px)  { … }   expanded  (desktop)
+     @media (min-width: 1240px) { … }   large     (large desktop)
+     @media (min-width: 1440px) { … }   ultra     (wide desktop)
+*/
