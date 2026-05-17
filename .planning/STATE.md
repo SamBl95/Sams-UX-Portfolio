@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-stopped_at: Phase 1 UI-SPEC approved — ready to plan Phase 1
+status: complete
+stopped_at: Phase 1 complete — foundation shipped
 last_updated: "2026-05-17T14:34:11.102Z"
-last_activity: 2026-05-17 -- Phase 01 planning complete
+last_activity: 2026-05-17 -- Phase 1 audit passed
 progress:
   total_phases: 1
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 4
-  completed_plans: 0
-  percent: 0
+  completed_plans: 4
+  percent: 100
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-05-17)
 ## Current Position
 
 Phase: 1 of 1 (Foundation)
-Plan: 0 of ? in current phase
-Status: Ready to execute
-Last activity: 2026-05-17 -- Phase 01 planning complete
+Plan: 4 of 4 in current phase
+Status: Complete — all 4 plans shipped
+Last activity: 2026-05-17 -- Phase 1 audit passed
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -59,6 +59,8 @@ Progress: [░░░░░░░░░░] 0%
 
 - [Init]: Blog implemented as static HTML pages — fits Vite MPA constraint, no server needed
 - [Init]: Blog index + individual post pages from the start, not just placeholders
+- [Phase 1]: Light palette locked — warm off-white base (#f5f2ed) with deep teal accent (#1a6b52). Tokens in src/styles/1-settings/_variables.css are the single source.
+- [Phase 1]: Page scaffold pattern documented in .claude/CLAUDE.md — Vite MPA + Handlebars partials + ITCSS + 4 active-state flags. All pages use container (not container-reading) per user preference.
 
 ### Pending Todos
 
@@ -66,7 +68,7 @@ None yet.
 
 ### Blockers/Concerns
 
-- Duplicate page files exist at `src/pages/` root (cassi.html, community.html, i-exchange.html) — need cleanup before nav links can be confirmed correct (NAV-05)
+- [Phase 1, resolved]: NAV-05 was a false alarm — duplicate page files at src/pages/ root did not exist. Case study pages were already correctly located at src/pages/case-studies/. No cleanup required.
 
 ## Deferred Items
 
@@ -80,5 +82,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-17
-Stopped at: Phase 1 UI-SPEC approved — ready to plan Phase 1
-Resume file: .planning/phases/01-foundation/01-UI-SPEC.md
+Stopped at: Phase 1 complete — foundation shipped; site is end-to-end walkable; ready for Phase 2 when defined
+Resume file: .planning/phases/01-foundation/01-04-SUMMARY.md
