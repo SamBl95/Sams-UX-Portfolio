@@ -8,6 +8,20 @@ A personal portfolio site for Sam Blake, a product designer with 3 years of expe
 
 A recruiter or hiring manager can understand Sam's work and reach out — every page exists, every link works, and the structure is solid enough to build content on top of.
 
+## Current Milestone: v2.0 Polish & Refinement
+
+**Goal:** Make the existing 8 pages visually exceptional — every interaction feels intentional, every layout holds at any viewport, every value earns its token.
+
+**Target areas:**
+- Typewriter layout shift eliminated
+- Button system: sizing, press feedback, hierarchy
+- Typography & spacing audit across all 8 pages
+- Hero wide-screen composition
+- Case study card grid (3 columns)
+- Token cleanup: em dashes, hardcoded values, stale refs
+
+---
+
 ## Current State (v1.0)
 
 **Shipped:** 2026-05-17
@@ -37,9 +51,15 @@ A recruiter or hiring manager can understand Sam's work and reach out — every 
 - ✓ CSS coherent — ITCSS, BEM, no hex outside variables
 - ✓ New page scaffold documented
 
-### Active (v2.0 candidates)
+### Active (v2.0)
 
-Not yet defined. Run `/gsd:new-milestone` to set scope.
+- [ ] Typewriter height reservation — no layout shift
+- [ ] Button press feedback (`scale(0.97)` on active)
+- [ ] Button sizing proportional on desktop
+- [ ] Hero content max-width at 1440px+
+- [ ] Case study grid 3-column at 1240px+
+- [ ] Em dashes removed from all HTML source
+- [ ] Zero hardcoded values outside `_variables.css`
 
 ### Out of Scope
 
@@ -75,4 +95,4 @@ Not yet defined. Run `/gsd:new-milestone` to set scope.
 - **Design tokens**: No hex values outside `_variables.css`, no inline styles, no arbitrary spacing
 
 ---
-*Last updated: 2026-05-17 after v1.0 milestone completion*
+*Last updated: 2026-05-17 after v2.0 milestone initialization*
