@@ -55,10 +55,12 @@ All values from `--space-*` tokens in `src/styles/1-settings/_variables.css`. Mu
 
 All values from `_variables.css` type scale. No hardcoded `px` or `rem` values in component CSS.
 
+**Weights in use: exactly 2 — `--font-weight-normal` (400) and `--font-weight-semibold` (600).**
+
 | Role | Token | Computed | Weight Token | Line Height Token | Font |
 |------|-------|----------|-------------|-------------------|------|
 | Eyebrow label | `--text-sm` | 14px | `--font-weight-semibold` (600) | n/a — single line, uppercase | Urbanist |
-| Nav link / UI | `--text-sm` | 14px | `--font-weight-medium` (500) | n/a — single line | Urbanist |
+| Nav link / UI | `--text-sm` | 14px | `--font-weight-normal` (400) | n/a — single line | Urbanist |
 | Nav logo wordmark | `--text-xl` | 20px | `--font-weight-normal` (400) | n/a — single line | Fraunces |
 | Body / subheadline | `--text-lg` → `--text-xl` (905px+) | 18px → 20px | `--font-weight-normal` (400) | `--leading-body` (1.7) | Urbanist |
 | Hero headline (h1) | Responsive — see below | — | `--font-weight-semibold` (600) | `1.1` (fixed, tighter than tokens) | Fraunces |
