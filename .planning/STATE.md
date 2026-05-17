@@ -62,5 +62,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-17
-Stopped at: Roadmap created — ready to plan Phase 1
-Resume file: None
+Stopped at: Phase 1 UI-SPEC approved — ready to plan Phase 1
+Resume file: .planning/phases/01-foundation/01-UI-SPEC.md
