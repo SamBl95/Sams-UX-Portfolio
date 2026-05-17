@@ -1,14 +1,22 @@
-<!-- NAV COMPONENT
-     Sticky site header with logo, navigation links, and mobile hamburger.
-     Mobile menu toggle requires JavaScript — JS should add .nav--open to
-     .nav and toggle aria-expanded on .nav__toggle when the button is clicked.
-     Usage: included at the top of every page.
+<!-- NAV PARTIAL — single canonical nav, included by every page via Handlebars.
+     Usage:
+       {{> nav}}                  — Homepage, all case study pages (no active item)
+       {{> nav navAbout=true}}    — About page
+       {{> nav navStories=true}}  — Stories index and stories post pages
+       {{> nav navContact=true}}  — Contact page
+       {{> nav navWork=true}}     — Reserved; homepage does not currently set this flag
+
+     Active-state rule: exactly zero or one flag may be true per page.
+     When a flag is true, the matching link receives class nav__link--active
+     AND aria-current="page". All other links receive neither.
+
+     JS for the hamburger toggle lives in /src/theme.js (unchanged).
+     Mobile menu: JS adds .nav--open to .nav and toggles aria-expanded on .nav__toggle.
 -->
 
 <header class="nav">
   <div class="nav__inner container">
 
-    <!-- COPY: Your name or a wordmark — keep short -->
     <a href="/" class="nav__logo" aria-label="Sam Blake — back to home">Sam Blake</a>
 
     <!-- Hamburger — visible on mobile only. JS toggles .nav--open on .nav -->
@@ -27,18 +35,19 @@
       <ul class="nav__list" role="list">
 
         <li class="nav__item">
-          <!-- COPY: Update href to /work or a dedicated work page when created -->
-          <a href="#case-studies" class="nav__link">Work</a>
+          <a href="/#case-studies" class="nav__link{{#if navWork}} nav__link--active{{/if}}"{{#if navWork}} aria-current="page"{{/if}}>Work</a>
         </li>
 
         <li class="nav__item">
-          <!-- COPY: Update href to /about when that page exists -->
-          <a href="#about" class="nav__link">About</a>
+          <a href="/src/pages/about.html" class="nav__link{{#if navAbout}} nav__link--active{{/if}}"{{#if navAbout}} aria-current="page"{{/if}}>About</a>
         </li>
 
         <li class="nav__item">
-          <!-- COPY: Update href to /contact or mailto: when confirmed -->
-          <a href="#contact" class="nav__link nav__link--cta">Get in touch</a>
+          <a href="/src/pages/stories/index.html" class="nav__link{{#if navStories}} nav__link--active{{/if}}"{{#if navStories}} aria-current="page"{{/if}}>Stories</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="/src/pages/contact.html" class="nav__link nav__link--cta{{#if navContact}} nav__link--active{{/if}}"{{#if navContact}} aria-current="page"{{/if}}>Get in touch</a>
         </li>
 
       </ul>
