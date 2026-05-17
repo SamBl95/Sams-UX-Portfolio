@@ -5,7 +5,7 @@
 
 ## v1 Requirements
 
-Requirements for the foundation milestone. Goal: a scalable, consistent, fully-linked site structure.
+Requirements for the foundation milestone. Goal: a scalable, consistent, fully-linked site with a confident design foundation — colour, type, layout, and structure settled before content is added.
 
 ### Structure & Navigation
 
@@ -21,6 +21,12 @@ Requirements for the foundation milestone. Goal: a scalable, consistent, fully-l
 - [ ] **PAGE-02**: Blog index page exists at `/blog` with proper section structure
 - [ ] **PAGE-03**: Blog post template exists with complete section structure (at least one working example)
 - [ ] **PAGE-04**: All new pages registered in `vite.config.js` rollupOptions.input
+
+### Design Foundation
+
+- [ ] **DESIGN-01**: Colour palette replaced with a light/neutral theme — all tokens updated in `_variables.css`, no dark forest green remaining
+- [ ] **DESIGN-02**: Type scale and weight application reviewed and corrected — Fraunces and Urbanist stay, but sizing/weight hierarchy feels intentional across h1–h4, body, and UI text
+- [ ] **DESIGN-03**: Overall page layout explored and decided — section proportions, container widths, and vertical rhythm feel considered and consistent
 
 ### Foundation Audit
 
@@ -46,7 +52,7 @@ Deferred to content refinement phase.
 |---------|--------|
 | CMS or dynamic content | Static HTML only — Vite MPA constraint |
 | Content strategy & copywriting | Separate phase after structure is solid |
-| Design token changes | System already established |
+| Design token changes | ~~System already established~~ — **moved to v1, design foundation is in scope** |
 | Analytics / third-party integrations | Post-foundation |
 | Mobile-specific layout changes | ITCSS breakpoints in place, detailed responsive polish is later |
 
@@ -63,14 +69,17 @@ Deferred to content refinement phase.
 | PAGE-02 | Phase 1 | Pending |
 | PAGE-03 | Phase 1 | Pending |
 | PAGE-04 | Phase 1 | Pending |
+| DESIGN-01 | Phase 1 | Pending |
+| DESIGN-02 | Phase 1 | Pending |
+| DESIGN-03 | Phase 1 | Pending |
 | AUDIT-01 | Phase 1 | Pending |
 | AUDIT-02 | Phase 1 | Pending |
 | AUDIT-03 | Phase 1 | Pending |
 | AUDIT-04 | Phase 1 | Pending |
 
 **Coverage:**
-- v1 requirements: 13 total
-- Mapped to phases: 13
+- v1 requirements: 16 total
+- Mapped to phases: 16
 - Unmapped: 0 ✓
 
 ---

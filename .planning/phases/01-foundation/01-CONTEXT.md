@@ -6,7 +6,7 @@
 <domain>
 ## Phase Boundary
 
-Deliver a fully-linked, structurally consistent site: all pages exist, nav and footer are identical across every page via a shared include mechanism, no broken internal links, and a clear repeatable pattern for adding future pages. Content and copy are out of scope — structure only.
+Deliver a fully-linked, structurally consistent site with a confident design foundation. All pages exist, nav and footer are identical across every page via a shared include mechanism, no broken internal links, and the colour palette, type application, and layout are settled and intentional. Content and copy are out of scope — design foundation and structure only.
 
 </domain>
 
@@ -36,6 +36,12 @@ Deliver a fully-linked, structurally consistent site: all pages exist, nav and f
 - **D-10:** Stories **index page** uses a **date/title list** layout — post title, date, one-line summary. Minimal, editorial, fast to scan.
 - **D-11:** Stories **post page** layout — Claude's discretion. Should be appropriate for long-form reading (comfortable line length, good vertical rhythm). Reuse existing CSS custom properties and spacing tokens.
 - **D-12:** URL structure: `/src/pages/stories/index.html` for the listing, `/src/pages/stories/[slug].html` for individual posts. At least one working post example required.
+
+### Design Foundation
+
+- **D-13:** **Colour palette: go light.** Replace the dark forest green theme with a light/neutral palette. All tokens in `_variables.css` are in scope for replacement. Direction: clean, warm-neutral or off-white base — not pure white, not dark.
+- **D-14:** **Typography: keep Fraunces + Urbanist, fix the application.** The typefaces are right. The sizing, weight, and hierarchy across h1–h4, body, and UI text needs to feel intentional rather than default. This is a type scale and weight audit, not a font swap.
+- **D-15:** **Layout: to be explored.** Sam couldn't pinpoint the issue without seeing options. The UI design contract (`/gsd:ui-phase 1`) should present layout directions — section proportions, container widths, vertical rhythm — before locking anything.
 
 ### Claude's Discretion
 
