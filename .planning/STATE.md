@@ -2,10 +2,10 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Polish & Refinement
-status: phase_complete
-stopped_at: Phase 2 complete — all plans executed
+status: ready_to_execute
+stopped_at: Phase 3 planned — 2 plans ready to execute
 last_updated: "2026-05-17T00:00:00.000Z"
-last_activity: 2026-05-17 -- Phase 2 Plan 01 executed
+last_activity: 2026-05-17 -- Phase 3 First Impression planned
 progress:
   total_phases: 6
   completed_phases: 1
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-17)
 
 **Core value:** A recruiter or hiring manager can understand Sam's work and reach out — every page exists, every link works, and the structure is solid enough to build content on top of.
-**Current focus:** Phase 2 — Foundation & Infrastructure
+**Current focus:** Phase 3 — First Impression
 
 ## Current Position
 
-Phase: 2 — Foundation & Infrastructure
-Plan: 01 complete
-Status: Phase 2 complete — ready to plan Phase 3
-Last activity: 2026-05-17 — Phase 2 Plan 01 executed: easing tokens, nav fix, button corrections, scroll-reveal utility, card shadow fix
+Phase: 3 — First Impression
+Plan: Ready to execute (2 plans)
+Status: Ready to execute
+Last activity: 2026-05-17 — Phase 3 planned: hero entrance stagger, nav audit (logo, active border, scroll shadow, mobile timing)
 
 Progress: [█░░░░░░░░░] 8%
 
@@ -85,5 +85,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-05-17
-Stopped at: Phase 2 complete — 02-01-PLAN-foundation.md executed. All 10 requirements satisfied.
-Resume file: None — ready to plan Phase 3
+Stopped at: Phase 3 planned — 03-01-PLAN-hero.md and 03-02-PLAN-nav.md ready. Both Wave 1 (parallel). 12/12 requirements covered.
+Resume file: .planning/phases/03-first-impression/03-01-PLAN-hero.md
