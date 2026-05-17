@@ -100,6 +100,70 @@ For new features apply `plan-mode` before writing code.
 Translate any Tailwind-specific guidance into BEM/custom properties.
 
 
+## Adding a new page
+
+Every page in this site follows the same scaffold. To add a new page, do these four things in order, then ship.
+
+1. Create the `.html` file under `src/pages/` (or `src/pages/<sub>/`). Start from the structure shown below.
+2. Register the page in `vite.config.js` `rollupOptions.input` with a unique key and `r('./src/pages/...')`.
+3. If the page deserves a dedicated nav active state, set the matching boolean flag when including the partial: one of `navWork`, `navAbout`, `navStories`, `navContact`. If none applies, include `{{> nav}}` with no flag.
+4. If the page introduces page-specific BEM classes, add a new file `src/styles/3-components/_<page>.css` and import it in `src/styles/main.css` inside the `/* 3. COMPONENTS */` block.
+
+### Canonical page scaffold
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="<one-sentence page description>" />
+    <title><Page Title> — Sam Blake | Product Designer</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&family=Caveat:wght@400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    {{> nav <navFlag=true if applicable>}}
+    <main>
+      <section class="<block> section-lg" aria-labelledby="<block>-heading">
+        <div class="container">
+          <h1 id="<block>-heading" class="<block>__heading"><Heading></h1>
+          <!-- page content -->
+        </div>
+      </section>
+    </main>
+    {{> footer}}
+    <script type="module" src="/src/theme.js"></script>
+  </body>
+</html>
+```
+
+### Container choice
+
+Use `container` for all pages — consistent full-width layout across the site.
+
+### Active nav state
+
+| Page type | Include |
+|-----------|---------|
+| Homepage / case studies | `{{> nav}}` |
+| About | `{{> nav navAbout=true}}` |
+| Stories index or post | `{{> nav navStories=true}}` |
+| Contact | `{{> nav navContact=true}}` |
+
+### What NOT to do
+
+- Don't copy nav or footer markup inline — always use the partial
+- Don't add hex values outside `_variables.css`
+- Don't use inline `style="..."` attributes
+- Don't use `../` relative paths for CSS, JS, or assets — use root-relative `/src/...`
+- Don't add a page to the filesystem without registering it in `vite.config.js`
+
+
 ## GSD — workflow commands
 
 GSD is installed at `.claude/` and available as `/gsd:*` slash commands.
