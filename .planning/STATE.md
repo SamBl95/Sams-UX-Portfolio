@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Polish & Refinement
-status: ready_to_execute
-stopped_at: Phase 2 planned — 1 plan ready to execute
+status: phase_complete
+stopped_at: Phase 2 complete — all plans executed
 last_updated: "2026-05-17T00:00:00.000Z"
-last_activity: 2026-05-17 -- Phase 2 Foundation & Infrastructure planned
+last_activity: 2026-05-17 -- Phase 2 Plan 01 executed
 progress:
   total_phases: 6
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 12
-  completed_plans: 0
-  percent: 0
+  completed_plans: 1
+  percent: 8
 ---
 
 # Project State
@@ -26,29 +26,29 @@ See: .planning/PROJECT.md (updated 2026-05-17)
 ## Current Position
 
 Phase: 2 — Foundation & Infrastructure
-Plan: Ready to execute (1 plan)
-Status: Ready to execute
-Last activity: 2026-05-17 — Phase 2 planned: token expansion, scroll-reveal, button fixes, nav/card bugs
+Plan: 01 complete
+Status: Phase 2 complete — ready to plan Phase 3
+Last activity: 2026-05-17 — Phase 2 Plan 01 executed: easing tokens, nav fix, button corrections, scroll-reveal utility, card shadow fix
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█░░░░░░░░░] 8%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 0
-- Average duration: -
-- Total execution time: -
+- Total plans completed: 1
+- Average duration: 25 min
+- Total execution time: 25 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
+| 02-foundation-infrastructure | 1 | 25 min | 25 min |
 
 **Recent Trend:**
 
-- Last 5 plans: -
+- Last 5 plans: 25 min
 - Trend: -
 
 *Updated after each plan completion*
@@ -61,6 +61,9 @@ Progress: [░░░░░░░░░░] 0%
 - [v1.0]: Light palette locked — warm off-white base (#f5f2ed) with deep teal accent (#1a6b52). Tokens in src/styles/1-settings/_variables.css are the single source.
 - [v1.0]: Page scaffold pattern documented in .claude/CLAUDE.md — Vite MPA + Handlebars partials + ITCSS + 4 active-state flags. All pages use container (not container-reading) per user preference.
 - [v2.0]: UI refinement before content — no new pages or features until polish is complete
+- [02-01]: reveal.js uses IIFE (not ES module default export) to match typewriter.js project convention
+- [02-01]: State-layer pattern documented as commented-out CSS in _reveal.css — Phase 4 copies the block when applying to .card
+- [02-01]: Reduced-motion opacity:1 set explicitly in _reveal.css — global reset only zeros animation-duration, not initial opacity
 
 ### Pending Todos
 
@@ -82,5 +85,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-05-17
-Stopped at: Phase 2 planned — 1 plan (02-01-PLAN-foundation.md) covering all 10 requirements. Ready to execute.
-Resume file: .planning/phases/02-foundation-infrastructure/02-01-PLAN-foundation.md
+Stopped at: Phase 2 complete — 02-01-PLAN-foundation.md executed. All 10 requirements satisfied.
+Resume file: None — ready to plan Phase 3
