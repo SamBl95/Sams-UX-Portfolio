@@ -1,0 +1,98 @@
+/* =============================================================================
+   REVEAL — Scroll-reveal utility
+   Apply .js-reveal to any element you want to animate in on scroll.
+   JS (reveal.js) adds .js-reveal--visible when the element enters the viewport.
+   Use data-reveal-delay="100|200|300" for staggered entrance within a group.
+
+   Example:
+     <div class="js-reveal" data-reveal-delay="100">...</div>
+   ============================================================================= */
+
+
+@keyframes reveal-enter {
+  from {
+    opacity:   0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity:   1;
+    transform: translateY(0);
+  }
+}
+
+/* Hidden before JS fires — prevents flash of un-animated content */
+.js-reveal {
+  opacity: 0;
+}
+
+/* Triggered by IntersectionObserver in reveal.js */
+.js-reveal--visible {
+  animation: reveal-enter 500ms var(--ease-out-quint) both;
+}
+
+/* Stagger delays — apply via data-reveal-delay attribute */
+.js-reveal[data-reveal-delay="100"] { animation-delay: 100ms; }
+.js-reveal[data-reveal-delay="200"] { animation-delay: 200ms; }
+.js-reveal[data-reveal-delay="300"] { animation-delay: 300ms; }
+
+
+/* =============================================================================
+   REDUCED MOTION
+   WHY this block exists: The global reset (prefers-reduced-motion: reduce) only
+   zeroes out animation-duration and transition-duration — it does NOT reset the
+   initial opacity: 0 we set on .js-reveal. Without this block, users who prefer
+   reduced motion would see a blank, invisible element on page load that never
+   becomes visible (because the 500ms animation is suppressed but opacity stays 0).
+   This block explicitly restores opacity and disables animation entirely.
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal,
+  .js-reveal--visible {
+    opacity:   1;
+    animation: none;
+  }
+}
+
+
+/* =============================================================================
+   STATE-LAYER HOVER PATTERN (FOUND-03)
+   Phase 4 applies this to .card. Copy the ::after block into any component
+   that needs state-layer hover feedback. Provides accessible, token-consistent
+   hover and active tinting without altering background-color directly.
+
+   Requirements:
+     - position: relative on the component root (so ::after can fill it)
+     - border-radius: inherit on ::after so the layer respects the component shape
+
+   Usage: uncomment and adapt the block below when applying to a new component.
+   ============================================================================= */
+
+/*
+
+.your-component {
+  position: relative;
+}
+
+.your-component::after {
+  content:          '';
+  position:         absolute;
+  inset:            0;
+  border-radius:    inherit;
+  background-color: var(--color-text-primary);
+  opacity:          0;
+  transition:       opacity 150ms var(--ease-out);
+  pointer-events:   none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .your-component:hover::after {
+    opacity: 0.08;
+  }
+}
+
+.your-component:active::after {
+  opacity: 0.12;
+}
+
+*/
