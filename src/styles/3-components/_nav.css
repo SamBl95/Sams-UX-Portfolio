@@ -174,32 +174,14 @@
   font-weight: var(--font-weight-semibold);
 }
 
-/* CTA link — "Get in touch" pill button treatment */
+/* CTA link — mobile: full-width, centred in the open nav */
 .nav__link--cta {
-  display:          block;
-  background-color: var(--color-accent);
-  color:            var(--color-text-on-accent);
-  font-weight:      var(--font-weight-semibold);
-  border-radius:    var(--radius-full);
-  padding:          var(--space-2) var(--space-4);
-  margin-inline:    var(--space-5);
-  margin-block:     var(--space-2);
-  text-align:       center;
-  transition:       background-color var(--transition-fast), color var(--transition-fast);
+  display:       flex;
+  margin-inline: var(--space-5);
+  margin-block:  var(--space-2);
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .nav__link--cta:hover {
-    background-color: color-mix(in srgb, var(--color-accent) 88%, white);
-  }
-}
-
-.nav__link--cta:focus-visible {
-  outline:        2px solid var(--color-accent-accessible);
-  outline-offset: 2px;
-}
-
-/* Mobile: btn inside nav list (Get in touch) fills nav width */
+/* Mobile: btn inside nav list (Get in touch) fills nav width — legacy selector kept */
 .nav__list .btn {
   display:         flex;
   justify-content: center;
@@ -249,17 +231,11 @@
     background-color: var(--color-surface);
   }
 
-  /* CTA pill: reset mobile margins for inline horizontal nav */
+  /* CTA: reset mobile flex/margins so btn sits inline */
   .nav__link--cta {
-    display:       inline-block;
+    display:       inline-flex;
     margin-inline: 0;
     margin-block:  0;
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    .nav__link--cta:hover {
-      background-color: color-mix(in srgb, var(--color-accent) 88%, white);
-    }
   }
 
   /* Revert mobile full-width override — btn is inline in the horizontal nav */
