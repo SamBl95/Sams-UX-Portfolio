@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import { fileURLToPath } from 'url'
+import handlebars from 'vite-plugin-handlebars'
 
 const r = (p) => fileURLToPath(new URL(p, import.meta.url))
 
@@ -9,6 +10,10 @@ export default defineConfig({
 
   // 'mpa' disables the SPA index.html fallback — each page is served directly
   appType: 'mpa',
+
+  plugins: [
+    handlebars({ partialDirectory: r('./src/components') }),
+  ],
 
   build: {
     outDir: 'dist',
