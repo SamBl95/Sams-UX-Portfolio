@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Polish & Refinement
-status: ready_to_execute
-stopped_at: Phase 3 planned — 2 plans ready to execute
-last_updated: "2026-05-17T00:00:00.000Z"
-last_activity: 2026-05-17 -- Phase 3 First Impression planned
+status: in_progress
+stopped_at: Phase 3 Plan 01 complete — 03-02-PLAN-nav.md ready to execute
+last_updated: "2026-05-17T00:08:00.000Z"
+last_activity: 2026-05-17 -- Phase 3 Plan 01 executed (ANIM-02, LAY-01)
 progress:
   total_phases: 6
   completed_phases: 1
   total_plans: 12
-  completed_plans: 1
-  percent: 8
+  completed_plans: 2
+  percent: 17
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-05-17)
 ## Current Position
 
 Phase: 3 — First Impression
-Plan: Ready to execute (2 plans)
-Status: Ready to execute
-Last activity: 2026-05-17 — Phase 3 planned: hero entrance stagger, nav audit (logo, active border, scroll shadow, mobile timing)
+Plan: 02 (nav audit) — next to execute
+Status: In progress
+Last activity: 2026-05-17 — Plan 01 complete: 5-element hero stagger (ANIM-02) + --hero-content-max-width token (LAY-01)
 
-Progress: [█░░░░░░░░░] 8%
+Progress: [██░░░░░░░░] 17%
 
 ## Performance Metrics
 
@@ -45,6 +45,7 @@ Progress: [█░░░░░░░░░] 8%
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 02-foundation-infrastructure | 1 | 25 min | 25 min |
+| 03-first-impression          | 1 | 8 min  | 8 min  |
 
 **Recent Trend:**
 
@@ -64,6 +65,8 @@ Progress: [█░░░░░░░░░] 8%
 - [02-01]: reveal.js uses IIFE (not ES module default export) to match typewriter.js project convention
 - [02-01]: State-layer pattern documented as commented-out CSS in _reveal.css — Phase 4 copies the block when applying to .card
 - [02-01]: Reduced-motion opacity:1 set explicitly in _reveal.css — global reset only zeros animation-duration, not initial opacity
+- [03-01]: animation-fill-mode: both (not forwards) — both covers pre-animation invisibility AND post-animation hold
+- [03-01]: Hero 1440px max-width uses margin-inline: 0 (not auto) — hero is left-aligned, centering conflicts with flex-start layout
 
 ### Pending Todos
 
@@ -85,5 +88,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-05-17
-Stopped at: Phase 3 planned — 03-01-PLAN-hero.md and 03-02-PLAN-nav.md ready. Both Wave 1 (parallel). 12/12 requirements covered.
-Resume file: .planning/phases/03-first-impression/03-01-PLAN-hero.md
+Stopped at: Phase 3 Plan 01 complete — 03-02-PLAN-nav.md ready to execute next.
+Resume file: .planning/phases/03-first-impression/03-02-PLAN-nav.md
