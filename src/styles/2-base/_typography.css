@@ -20,8 +20,8 @@
 
 h1 {
   font-family:         var(--font-heading);
-  font-size:           var(--text-4xl);     /* 36px — mobile */
-  font-weight:         var(--font-weight-bold);
+  font-size:           var(--text-40);      /* 40px — mobile */
+  font-weight:         var(--font-weight-semibold);
   line-height:         1.1;
   letter-spacing:      -0.02em;
   font-optical-sizing: auto;
@@ -31,7 +31,7 @@ h1 {
 h2 {
   font-family:         var(--font-heading);
   font-size:           var(--text-28);      /* 28px — mobile */
-  font-weight:         var(--font-weight-bold);
+  font-weight:         var(--font-weight-semibold);
   line-height:         1.1;
   letter-spacing:      -0.015em;
   font-optical-sizing: auto;
@@ -85,7 +85,7 @@ p {
 /* --- 600px — medium (tablet) ----------------------------------------------- */
 
 @media (min-width: 600px) {
-  h1 { font-size: var(--text-5xl); }   /* 48px */
+  h1 { font-size: var(--text-56); }    /* 56px */
   h2 { font-size: var(--text-4xl); }   /* 36px */
   h3 { font-size: var(--text-28);  }   /* 28px */
   h4 { font-size: var(--text-2xl); }   /* 24px */
@@ -113,7 +113,6 @@ p {
 /* --- 1440px — ultra (wide desktop) ----------------------------------------- */
 
 @media (min-width: 1440px) {
-  h1 { font-size: var(--text-96); }    /* 96px */
   h2 { font-size: var(--text-64); }    /* 64px */
   h3 { font-size: var(--text-5xl); }   /* 48px */
   h4 { font-size: var(--text-4xl); }   /* 36px */

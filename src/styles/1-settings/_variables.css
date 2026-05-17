@@ -7,22 +7,24 @@
 :root {
 
   /* ---------------------------------------------------------------------------
-     COLOUR — dark palette
-     --color-accent-accessible  mirrors --color-accent: teal is light enough
-       to contrast against the dark background without a darkened variant.
-     --color-text-on-accent  near-black for text sitting ON the teal accent
-       (buttons, chips).
+     COLOUR — light palette (D-13)
+     Warm-neutral off-white base with deep teal accent.
+     --color-accent-accessible  mirrors --color-accent: deep teal (#1a6b52) is
+       dark enough to clear 4.5:1 contrast against the off-white background
+       without a separate darkened variant.
+     --color-text-on-accent  warm white for text sitting ON a teal-filled
+       surface (buttons, chips) — 10:1 contrast against #1a6b52.
      --------------------------------------------------------------------------- */
 
-  --color-bg:                #0d1f1a;
-  --color-surface:           #152b24;
-  --color-border:            #1e3d32;
-  --color-text-primary:      #f0ede6;
-  --color-text-secondary:    #9db5ac;
-  --color-accent:            #4fd1a5;
-  --color-accent-accessible: #4fd1a5;
-  --color-text-on-accent:    #071210;
-  --color-accent-light:      #1a3d30;
+  --color-bg:                #f5f2ed;
+  --color-surface:           #ede9e3;
+  --color-border:            #d6d0c8;
+  --color-text-primary:      #1a1614;
+  --color-text-secondary:    #6b6560;
+  --color-accent:            #1a6b52;
+  --color-accent-accessible: #1a6b52;
+  --color-text-on-accent:    #f5f2ed;
+  --color-accent-light:      #e6f0ec;
 
 
   /* ---------------------------------------------------------------------------
@@ -116,7 +118,7 @@
      SHADOWS
      --------------------------------------------------------------------------- */
 
-  --shadow-accent: 0 8px 24px -4px rgb(79 209 165 / 0.4);
+  --shadow-accent: 0 8px 24px -4px rgb(26 107 82 / 0.18);
 
 
   /* ---------------------------------------------------------------------------

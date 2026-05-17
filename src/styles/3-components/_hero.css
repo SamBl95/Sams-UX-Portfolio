@@ -65,7 +65,6 @@
 .hero__eyebrow,
 .hero__headline,
 .hero__subheadline,
-.hero__sectors,
 .hero__actions {
   animation: hero-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -73,8 +72,7 @@
 .hero__eyebrow    { animation-delay:   0ms; }
 .hero__headline   { animation-delay:  60ms; }
 .hero__subheadline{ animation-delay: 120ms; }
-.hero__sectors    { animation-delay: 180ms; }
-.hero__actions    { animation-delay: 240ms; }
+.hero__actions    { animation-delay: 180ms; }
 
 
 /* Eyebrow */
@@ -90,7 +88,7 @@
 
 /* Headline — font-size from h1 element rule in _typography.css */
 .hero__headline {
-  font-weight:    var(--font-weight-bold);
+  font-weight:    var(--font-weight-semibold);
   line-height:    1.1;
   letter-spacing: -0.02em;
   text-wrap:      wrap;
@@ -112,28 +110,7 @@
 }
 
 
-/* Sector tag strip */
-.hero__sectors {
-  display:       flex;
-  flex-wrap:     wrap;
-  gap:           var(--space-2);
-  list-style:    none;
-  padding:       0;
-  margin-bottom: var(--space-10);
-}
 
-.hero__sector {
-  font-size:        var(--text-xs);
-  font-weight:      var(--font-weight-medium);
-  letter-spacing:   0.04em;
-  text-transform:   uppercase;
-  color:            var(--color-text-secondary);
-  background-color: var(--color-surface);
-  border:           1px solid var(--color-border);
-  border-radius:    var(--radius-full);
-  padding:          var(--space-1) var(--space-3);
-  line-height:      var(--leading-normal);
-}
 
 
 /* CTA group */
@@ -154,7 +131,7 @@
 
 .hero__typewriter {
   display:    block;
-  min-height: 2.2em; /* always reserve 2 lines — inherits h1 font-size at every breakpoint */
+  min-height: 2.2em; /* CSS fallback (2 lines at line-height 1.1) — JS overrides with exact measured value after fonts load */
 }
 
 .hero__typewriter-text {
