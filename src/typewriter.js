@@ -23,20 +23,45 @@ const display   = document.querySelector('.hero__typewriter-text');
 const sr        = document.querySelector('.hero__typewriter-sr');
 
 if (container && display) {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    // Reduced motion: show first phrase statically, no cursor, no animation
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReducedMotion) {
+    // Show first phrase statically, no cursor, no animation
     display.textContent = phrases[0];
-  } else {
-    initTypewriter();
   }
+
+  // Wait for Caveat to load before measuring — font metrics determine line count.
+  // reserveHeight() runs sync between frames so there is no visual flicker.
+  document.fonts.ready.then(() => {
+    reserveHeight();
+    if (!prefersReducedMotion) {
+      initTypewriter();
+    }
+  });
+
+  // Update on resize — debounced at 150ms
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(reserveHeight, 150);
+  });
 }
 
-function getMaxChars() {
-  const w = window.innerWidth;
-  if (w >= 1240) return 50;
-  if (w >= 905)  return 44;
-  if (w >= 600)  return 36;
-  return 28;
+/**
+ * Measures the rendered height of the longest phrase at the current viewport
+ * and pins container.style.minHeight to that value, eliminating layout shift.
+ * Full phrase length is always used — wrapping is fine, truncation is not.
+ */
+function reserveHeight() {
+  const longestText = phrases.reduce((a, b) => a.length >= b.length ? a : b, '');
+
+  const prev = display.textContent;
+  container.style.minHeight = '';
+  display.textContent = longestText;
+  const h = container.getBoundingClientRect().height;
+  display.textContent = prev;
+
+  if (h > 0) container.style.minHeight = h + 'px';
 }
 
 function initTypewriter() {
@@ -48,17 +73,14 @@ function initTypewriter() {
   let isDeleting  = false;
 
   function tick() {
-    const phrase  = phrases[phraseIndex];
-    const maxChar = Math.min(phrase.length, getMaxChars());
+    const phrase = phrases[phraseIndex];
 
     if (!isDeleting) {
-      // Type next character
       charIndex++;
       display.textContent = phrase.slice(0, charIndex);
 
-      if (charIndex === maxChar) {
-        // Reached the limit — update screen reader text, then pause before deleting
-        if (sr) sr.textContent = phrase.slice(0, maxChar);
+      if (charIndex === phrase.length) {
+        if (sr) sr.textContent = phrase;
         setTimeout(() => {
           isDeleting = true;
           tick();
