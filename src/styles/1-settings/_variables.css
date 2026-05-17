@@ -103,6 +103,9 @@
   --space-20: 160px;
   --space-24: 192px;
 
+  /* Component tokens — semantic values outside the 8pt scale */
+  --nav-height: 56px;   /* nav bar height; also used for mobile menu top offset */
+
 
   /* ---------------------------------------------------------------------------
      BORDER RADIUS
@@ -132,6 +135,10 @@
   /* Easing curves — use instead of bare `ease` on transform/movement */
   --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);          /* user-initiated: button press, hover scale */
   --ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);    /* on-screen movement: card lift, bar morph */
+
+  --ease-out-quint:    cubic-bezier(0.22, 1, 0.36, 1);    /* strong deceleration — entrances, scroll reveals */
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);    /* symmetric acceleration — on-screen morphs */
+  --ease-emphasized:   cubic-bezier(0.2, 0, 0, 1);         /* MD3 emphasized easing — standard component motion */
 
 
   /* ---------------------------------------------------------------------------

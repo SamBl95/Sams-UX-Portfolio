@@ -21,7 +21,7 @@
   display:     flex;
   align-items: center;
   gap:         var(--space-3);
-  height:      var(--space-16); /* 64px */
+  height:      var(--nav-height); /* 56px — matches --nav-height token */
 }
 
 
@@ -109,7 +109,7 @@
 .nav--open .nav__menu {
   display:          block;
   position:         absolute;
-  top:              var(--space-16); /* flush below the 64px header */
+  top:              var(--nav-height); /* flush below nav header */
   left:             0;
   right:            0;
   background-color: var(--color-bg);
