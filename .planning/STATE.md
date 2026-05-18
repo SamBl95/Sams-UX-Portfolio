@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Polish & Refinement
-status: executing
-stopped_at: Phase 4 executed — 2/2 plans complete, build passes.
+status: ready
+stopped_at: Phase 4 complete — verification passed, ready for Phase 5.
 last_updated: "2026-05-18T00:00:00.000Z"
-last_activity: "2026-05-18 — Phase 4 executed (2/2 plans, COMP-01–05 + LAY-02 + ANIM-03 + TOK-01 delivered)"
+last_activity: "2026-05-18 — Phase 4 verified (COMP-01–05, LAY-02, ANIM-03, TOK-01 — 5/5 must-haves passed)"
 progress:
   total_phases: 6
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 6
-  percent: 17
+  completed_plans: 8
+  percent: 33
 ---
 
 # Project State
@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-05-17)
 
 ## Current Position
 
-Phase: 4 — Cards & Homepage
-Plan: 2/2 complete — 04-01 + 04-02 executed, build passes
-Status: Executed — ready for verification
-Last activity: 2026-05-18 — Phase 4 executed (COMP-01–05, LAY-02, ANIM-03, TOK-01 delivered)
+Phase: 5 — Case Study Components
+Plan: 0/2 complete
+Status: Not started — Phase 4 complete, ready to plan Phase 5
+Last activity: 2026-05-18 — Phase 4 verified (COMP-01–05, LAY-02, ANIM-03, TOK-01 — 5/5 must-haves passed)
 
-Progress: [██░░░░░░░░] 17%
+Progress: [████░░░░░░] 33%
 
 ## Performance Metrics
 
@@ -90,6 +90,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-05-17
-Stopped at: Phase 3 Plan 02 complete — nav audit done, all NAV-01–09 and ANIM-04 requirements met.
-Resume file: .planning/phases/03-first-impression/03-03-PLAN-cta-section.md (if exists)
+Last session: 2026-05-18
+Stopped at: Phase 4 complete — verification passed. Phase 5 (Case Study Components) is next.
+Resume with: /gsd:plan-phase 5
