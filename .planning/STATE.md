@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Polish & Refinement
-status: phase_complete
-stopped_at: Phase 7 complete — 2/2 plans executed. v2.0 milestone complete.
+status: milestone_complete
+stopped_at: v2.0 milestone archived 2026-05-18
 last_updated: "2026-05-18T00:00:00.000Z"
-last_activity: "2026-05-18 — Phase 7 executed (footer hover guard, nav gap token, reduced-motion, em dash cleanup, typography comment fix)"
+last_activity: "2026-05-18 — v2.0 milestone complete and archived. 6 phases, 15 plans, 45 requirements delivered."
 progress:
   total_phases: 6
-  completed_phases: 4
-  total_plans: 2
+  completed_phases: 6
+  total_plans: 15
   completed_plans: 15
   percent: 100
 ---
@@ -18,17 +18,16 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-05-17)
+See: .planning/PROJECT.md (updated 2026-05-18)
 
-**Core value:** A recruiter or hiring manager can understand Sam's work and reach out — every page exists, every link works, and the structure is solid enough to build content on top of.
-**Current focus:** v2.0 milestone complete
+**Core value:** A recruiter or hiring manager can understand Sam's work and reach out — every page exists, every link works, and every component is polished enough that adding content is the only remaining task.
+**Current focus:** v2.0 archived. Start v3.0 content milestone with /gsd:new-milestone
 
 ## Current Position
 
-Phase: 7 — Footer + Global Audit — COMPLETE
-Plan: 2/2 executed
-Status: v2.0 milestone complete
-Last activity: 2026-05-18 — Phase 7 executed. Footer hover guard, reduced-motion sweeps, em dash cleanup, typography comment corrected.
+Milestone: v2.0 Polish & Refinement — COMPLETE AND ARCHIVED
+Status: Ready for v3.0 planning
+Last activity: 2026-05-18 — Milestone archived. REQUIREMENTS.md removed. Tag v2.0 created.
 
 Progress: [██████████] 100%
 
@@ -36,40 +35,33 @@ Progress: [██████████] 100%
 
 **Velocity:**
 
-- Total plans completed: 1
-- Average duration: 25 min
-- Total execution time: 25 min
+- Total plans completed: 15
+- Average duration: ~15 min/plan
+- Total execution time: ~3.5 hours
 
 **By Phase:**
 
-| Phase | Plans | Total | Avg/Plan |
-|-------|-------|-------|----------|
-| 02-foundation-infrastructure | 1 | 25 min | 25 min |
-| 03-first-impression          | 2 | 26 min | 13 min |
-
-**Recent Trend:**
-
-- Last 5 plans: 25 min
-- Trend: -
-
-*Updated after each plan completion*
+| Phase | Plans | Approx Duration |
+|-------|-------|-----------------|
+| 02-foundation-infrastructure | 1 | 25 min |
+| 03-first-impression | 2 | 26 min |
+| 04-cards-homepage | 2 | 24 min |
+| 05-case-study-components | 2 | ~20 min |
+| 06-content-pages | 3 | ~30 min |
+| 07-footer-global-audit | 2 | ~20 min |
 
 ## Accumulated Context
 
-### Decisions (carried from v1.0)
+### Decisions (from v2.0)
 
-- [v1.0]: Blog implemented as static HTML pages — fits Vite MPA constraint, no server needed
-- [v1.0]: Light palette locked — warm off-white base (#f5f2ed) with deep teal accent (#1a6b52). Tokens in src/styles/1-settings/_variables.css are the single source.
-- [v1.0]: Page scaffold pattern documented in .claude/CLAUDE.md — Vite MPA + Handlebars partials + ITCSS + 4 active-state flags. All pages use container (not container-reading) per user preference.
-- [v2.0]: UI refinement before content — no new pages or features until polish is complete
-- [02-01]: reveal.js uses IIFE (not ES module default export) to match typewriter.js project convention
-- [02-01]: State-layer pattern documented as commented-out CSS in _reveal.css — Phase 4 copies the block when applying to .card
-- [02-01]: Reduced-motion opacity:1 set explicitly in _reveal.css — global reset only zeros animation-duration, not initial opacity
-- [03-01]: animation-fill-mode: both (not forwards) — both covers pre-animation invisibility AND post-animation hold
-- [03-01]: Hero 1440px max-width uses margin-inline: 0 (not auto) — hero is left-aligned, centering conflicts with flex-start layout
-- [03-02]: Transparent border reserve pattern — add border-bottom: 2px solid transparent to resting state before adding colored border on active state; prevents height shift in flex row
-- [03-02]: Passive scroll listener pattern — { passive: true } + immediate onScroll() call after addEventListener; handles Chrome scroll performance warnings and pre-scrolled page state (bfcache, anchor links)
-- [03-02]: Two-layer nav shadow — 1px border layer (--color-border) + ambient alpha layer (rgb(0 0 0 / 0.06)); raw alpha permitted in shadow layers per UI-SPEC, no token needed
+- IIFE pattern for reveal.js — matches typewriter.js project convention
+- State-layer `::after` overlay documented in _reveal.css — copy the block when applying to new components
+- animation-fill-mode: both covers pre-delay invisibility AND post-animation hold
+- Hero 1440px max-width uses margin-inline: 0 — hero is left-aligned, not centered
+- Transparent border reserve: add 2px solid transparent to resting nav links — prevents height shift
+- Passive scroll listener with immediate onScroll() call — handles bfcache + Chrome perf warnings
+- Two-layer shadow: 1px border + ambient alpha; raw alpha in shadow layers is permitted
+- Hover gate: always (hover: hover) and (pointer: fine) — never bare (hover: hover)
 
 ### Pending Todos
 
@@ -87,9 +79,11 @@ None.
 | Content | Contact form with backend | v3 | v1.0 Init |
 | Content | Case study imagery and copy | v3 | v1.0 Init |
 | SEO | Meta tags and Open Graph | v3 | v1.0 Init |
+| Verification | VERIFICATION.md for phases 2, 3, 5, 6, 7 | v3 or skip | v2.0 close |
+| Tracking | Nyquist VALIDATION.md files | v3 or skip | v2.0 close |
 
 ## Session Continuity
 
 Last session: 2026-05-18
-Stopped at: Phase 6 complete — 3/3 plans executed. Phase 7 (Footer + Global Audit) is next.
-Resume with: /gsd:plan-phase 7
+Stopped at: v2.0 milestone archived and tagged.
+Resume with: /gsd:new-milestone
