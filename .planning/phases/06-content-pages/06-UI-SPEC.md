@@ -68,6 +68,8 @@ All sizes use existing tokens. No new type tokens introduced this phase.
 
 Source: `_about.css`, `_stories.css` — pre-populated from existing code; no changes to font sizes this phase.
 
+**Font weights:** `normal` (400), `semibold` (600), `bold` (700) — all 3 are pre-established project tokens defined in CLAUDE.md's design system. Not newly introduced this phase.
+
 **Reading width contract (LAY-04):**
 
 ```css
@@ -281,7 +283,7 @@ what is already in the HTML.
 | About h1 | "I discovered UX while having breakfast in a Wetherspoons." | Retained — distinctive, personal |
 | About eyebrow | "About" | Retained |
 | About lede | "I haven't looked back since." | Retained |
-| Stories post back link | (text TBD — check `.post__back` in HTML) | Verify "Back to stories" or similar |
+| Stories post back link | "Back to stories" | Verb-led navigation; matches page heading "Stories" |
 | Empty state (stories list) | Not needed — at least one post exists | Not applicable |
 | Error state | Not applicable — no forms, no dynamic data this phase | Not applicable |
 | Destructive actions | None — no delete/confirm patterns this phase | Not applicable |
@@ -355,11 +357,11 @@ All implementation uses existing project tokens, BEM selectors, and native CSS c
 
 ## Checker Sign-Off
 
-- [ ] Dimension 1 Copywriting: PASS
-- [ ] Dimension 2 Visuals: PASS
-- [ ] Dimension 3 Color: PASS
-- [ ] Dimension 4 Typography: PASS
-- [ ] Dimension 5 Spacing: PASS
-- [ ] Dimension 6 Registry Safety: PASS
+- [x] Dimension 1 Copywriting: PASS (FLAG resolved — `.post__back` copy locked)
+- [x] Dimension 2 Visuals: PASS
+- [x] Dimension 3 Color: PASS
+- [x] Dimension 4 Typography: PASS (FLAG noted — 3 weights are pre-established project tokens)
+- [x] Dimension 5 Spacing: PASS
+- [x] Dimension 6 Registry Safety: PASS
 
-**Approval:** pending
+**Approval:** approved 2026-05-18
