@@ -10,7 +10,19 @@ Every interaction feels intentional: premium card hover overlays, staggered scro
 
 A recruiter or hiring manager can understand Sam's work and reach out — every page exists, every link works, and every component is polished enough that adding content is the only remaining task.
 
-## Current State (v2.0)
+## Current Milestone: v3.0 Content & SEO
+
+**Goal:** Finish the UI, fill the site with real content, and make every page discoverable.
+
+**Target features:**
+- UI Polish: flex-based container widths, nav redesign (flat tabs, left-to-right hover, Home link, no name/stroke), dedicated case studies /work page, hero copy restructure
+- Case study content: real copy for I-Exchange, CASSI, Community (pulled from Webflow, narrative preserved)
+- About page: work history and skills
+- Contact form: FormSubmit/EmailJS (static, no backend)
+- Stories: at least one real article
+- SEO: unique title + meta description per page, canonical URLs, Open Graph, theme-color, JSON-LD Person schema, sitemap.xml, robots.txt
+
+## Previous State (v2.0)
 
 **Shipped:** 2026-05-18
 
@@ -56,13 +68,28 @@ A recruiter or hiring manager can understand Sam's work and reach out — every 
 - ✓ Accessibility: prefers-reduced-motion in every animated file; pointer-fine gate on all hover — v2.0
 - ✓ Token audit: zero hardcoded values, zero em dashes in titles/h1s, typography comment corrected — v2.0
 
-### Active (v3.0 — Content)
+### Active (v3.0 — Content & SEO)
 
-- [ ] Case study pages: real copy, imagery, full content audit per page
+**UI Polish:**
+- [ ] Flex-based width for hero content and body copy on content pages (remove fixed container widths)
+- [ ] Nav: flat tab style, left-to-right underline hover animation, bold on active, add "Home", remove name from left, remove bottom stroke
+- [ ] Dedicated case studies page (/work), linked from nav
+- [ ] Hero copy: "Sam Blake" h2 (accent colour) + "A Product Designer who..." subhead, remove one-liner below typewriter
+
+**Content:**
+- [ ] Case study pages: real copy for I-Exchange, CASSI, Community (from samsux.webflow.io)
 - [ ] About page: detailed work history and skills
-- [ ] Contact form with email integration
-- [ ] Blog/Stories: real articles
-- [ ] SEO meta tags and Open Graph per page
+- [ ] Contact form with email integration (FormSubmit/EmailJS, static)
+- [ ] Blog/Stories: at least one real article
+
+**SEO:**
+- [ ] Unique title + meta description (150–160 chars) per page
+- [ ] Canonical URL per page (samsux.co.uk)
+- [ ] Open Graph tags: og:title, og:description, og:url, og:type, og:site_name, og:locale en_GB
+- [ ] theme-color: #0d1f1a on all pages
+- [ ] JSON-LD Person schema on index.html and about.html
+- [ ] sitemap.xml in public/
+- [ ] robots.txt in public/
 
 ### Out of Scope
 
@@ -104,5 +131,22 @@ A recruiter or hiring manager can understand Sam's work and reach out — every 
 - **Build**: Every page must be declared in `vite.config.js` rollupOptions.input
 - **Design tokens**: No hex values outside `_variables.css`, no inline styles, no arbitrary spacing
 
+## Evolution
+
+This document evolves at phase transitions and milestone boundaries.
+
+**After each phase transition** (via `/gsd-transition`):
+1. Requirements invalidated? → Move to Out of Scope with reason
+2. Requirements validated? → Move to Validated with phase reference
+3. New requirements emerged? → Add to Active
+4. Decisions to log? → Add to Key Decisions
+5. "What This Is" still accurate? → Update if drifted
+
+**After each milestone** (via `/gsd:complete-milestone`):
+1. Full review of all sections
+2. Core Value check — still the right priority?
+3. Audit Out of Scope — reasons still valid?
+4. Update Context with current state
+
 ---
-*Last updated: 2026-05-18 after v2.0 milestone completion*
+*Last updated: 2026-05-18 after v3.0 milestone start*

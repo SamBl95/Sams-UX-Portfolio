@@ -1,17 +1,17 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.0
-milestone_name: Polish & Refinement
-status: milestone_complete
-stopped_at: v2.0 milestone archived 2026-05-18
+milestone: v3.0
+milestone_name: Content & SEO
+status: planning
+stopped_at: ""
 last_updated: "2026-05-18T00:00:00.000Z"
-last_activity: "2026-05-18 — v2.0 milestone complete and archived. 6 phases, 15 plans, 45 requirements delivered."
+last_activity: "2026-05-18 — Milestone v3.0 started"
 progress:
-  total_phases: 6
-  completed_phases: 6
-  total_plans: 15
-  completed_plans: 15
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -21,15 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-18)
 
 **Core value:** A recruiter or hiring manager can understand Sam's work and reach out — every page exists, every link works, and every component is polished enough that adding content is the only remaining task.
-**Current focus:** v2.0 archived. Start v3.0 content milestone with /gsd:new-milestone
+**Current focus:** v3.0 Content & SEO
 
 ## Current Position
 
-Milestone: v2.0 Polish & Refinement — COMPLETE AND ARCHIVED
-Status: Ready for v3.0 planning
-Last activity: 2026-05-18 — Milestone archived. REQUIREMENTS.md removed. Tag v2.0 created.
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-05-18 — Milestone v3.0 started
 
-Progress: [██████████] 100%
+Progress: [░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
