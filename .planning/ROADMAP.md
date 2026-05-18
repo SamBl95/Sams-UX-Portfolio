@@ -115,8 +115,8 @@ Plans:
   5. No raw pixel spacing values outside `_variables.css`
 **Plans:** 2 plans
 Plans:
-- [ ] 07-01-PLAN-footer.md — Footer component audit: spacing, hover states, layout (Wave 1)
-- [ ] 07-02-PLAN-audit.md — Global prefers-reduced-motion sweep, em dash removal, token coherence (Wave 2)
+- [x] 07-01-PLAN-footer.md — Footer component audit: spacing, hover states, layout (Wave 1)
+- [x] 07-02-PLAN-audit.md — Global prefers-reduced-motion sweep, em dash removal, token coherence (Wave 2)
 
 ## Progress
 
@@ -129,4 +129,4 @@ Plans:
 | 4. Cards & Homepage | 0/2 | Not started | - |
 | 5. Case Study Components | 2/2 | Complete | 2026-05-18 |
 | 6. Content Pages | 3/3 | Complete | 2026-05-18 |
-| 7. Footer + Global Audit | 0/2 | Not started | - |
+| 7. Footer + Global Audit | 2/2 | Complete | 2026-05-18 |

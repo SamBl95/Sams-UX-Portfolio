@@ -60,7 +60,7 @@
   display:         flex;
   flex-direction:  column;
   justify-content: center;
-  gap:             5px;
+  gap:             var(--space-1);
   width:           var(--space-10); /* 40px — minimum tap target */
   height:          var(--space-10);
   padding:         var(--space-2);
@@ -259,4 +259,23 @@
     height: 36px;
   }
 
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav__toggle-bar {
+    transition: none;
+  }
+
+  .nav--open .nav__menu {
+    animation: none;
+  }
+
+  .nav--open .nav__toggle-bar:nth-child(1),
+  .nav--open .nav__toggle-bar:nth-child(3) {
+    transform: none;
+  }
+
+  .nav--open .nav__toggle-bar:nth-child(2) {
+    opacity: 1;
+  }
 }

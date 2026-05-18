@@ -503,3 +503,9 @@
   flex-shrink: 0;
   transition:  transform 150ms var(--ease-out);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-pagination__arrow {
+    transition: none;
+  }
+}
