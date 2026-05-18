@@ -66,8 +66,8 @@ Plans:
   5. At 1240px+: three cards in a row, equal width, no orphaned card
 **Plans:** 2 plans
 Plans:
-- [ ] 04-01-PLAN-cards.md — Card component audit: metric font, state-layer hover, link arrow, active press (Wave 1)
-- [ ] 04-02-PLAN-grid.md — Case study grid 3-column at 1240px+; scroll-reveal stagger on cards (Wave 1 parallel)
+- [x] 04-01-PLAN-cards.md — Card component audit: metric font, state-layer hover, link arrow, active press (Wave 1)
+- [x] 04-02-PLAN-grid.md — Case study grid 3-column at 1240px+; scroll-reveal stagger on cards (Wave 1 parallel)
 
 ### Phase 5: Case Study Components
 **Goal:** 7 storytelling components built, polished, and ready — case study content can drop in without further CSS work
