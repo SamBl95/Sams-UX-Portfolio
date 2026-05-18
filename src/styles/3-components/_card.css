@@ -13,21 +13,49 @@
   border:           1px solid var(--color-border);
   border-radius:    var(--radius-xl);
   overflow:         hidden;
+  position:         relative;
   transition:
-    border-color     var(--transition-base),
-    box-shadow       var(--transition-base),
-    background-color var(--transition-base),
-    transform        200ms var(--ease-in-out);
+    border-color var(--transition-base),
+    box-shadow   var(--transition-base),
+    transform    200ms var(--ease-in-out);
 }
 
-@media (hover: hover) {
+/* State-layer overlay — translucent tint on hover and press (COMP-02) */
+.card::after {
+  content:          '';
+  position:         absolute;
+  inset:            0;
+  border-radius:    inherit;
+  background-color: var(--color-text-primary);
+  opacity:          0;
+  transition:       opacity 150ms var(--ease-out);
+  pointer-events:   none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover::after { opacity: 0.08; }
+}
+
+.card:active::after { opacity: 0.12; }
+
+/* Active press scale feedback (COMP-04) */
+.card:active { transform: scale(0.97); }
+
+@media (hover: hover) and (pointer: fine) {
   .card:hover {
-    transform:        translateY(-6px);
-    background-color: var(--color-surface);
-    border-color:     var(--color-accent);
+    transform:    translateY(-6px);
+    border-color: var(--color-accent);
     box-shadow:
       0 24px 48px -12px rgb(0 0 0 / 0.08),
-      0 0 32px -8px rgb(26 107 82 / 0.14);
+      0 0 32px -8px rgb(79 209 165 / 0.10);
+  }
+}
+
+/* Reduced motion — disable all transitions on card and overlay (COMP-02, COMP-05) */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card::after {
+    transition: none;
   }
 }
 
@@ -48,6 +76,7 @@
 }
 
 .card__metric-value {
+  font-family:    var(--font-heading);
   font-size:      var(--text-3xl);
   font-weight:    var(--font-weight-bold);
   line-height:    var(--leading-tight);
@@ -124,7 +153,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .btn--ghost:hover .card__link-arrow {
+  .card:hover .card__link-arrow {
     transform: translateX(var(--space-1));
   }
 }
