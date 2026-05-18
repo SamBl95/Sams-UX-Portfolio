@@ -2,10 +2,10 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Polish & Refinement
-status: ready
-stopped_at: Phase 4 complete — verification passed, ready for Phase 5.
+status: planned
+stopped_at: Phase 5 planned — 2 plans ready, execute to build 7 case study components.
 last_updated: "2026-05-18T00:00:00.000Z"
-last_activity: "2026-05-18 — Phase 4 verified (COMP-01–05, LAY-02, ANIM-03, TOK-01 — 5/5 must-haves passed)"
+last_activity: "2026-05-18 — Phase 5 planned (CS-01–08, 2 plans, Wave 1 parallel)"
 progress:
   total_phases: 6
   completed_phases: 1
@@ -27,7 +27,7 @@ See: .planning/PROJECT.md (updated 2026-05-17)
 
 Phase: 5 — Case Study Components
 Plan: 0/2 complete
-Status: Not started — Phase 4 complete, ready to plan Phase 5
+Status: Planned — 2 plans created, ready for execution
 Last activity: 2026-05-18 — Phase 4 verified (COMP-01–05, LAY-02, ANIM-03, TOK-01 — 5/5 must-haves passed)
 
 Progress: [████░░░░░░] 33%
