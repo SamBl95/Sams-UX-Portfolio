@@ -153,7 +153,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .btn--ghost:hover .card__link-arrow {
+  .card:hover .card__link-arrow {
     transform: translateX(var(--space-1));
   }
 }
