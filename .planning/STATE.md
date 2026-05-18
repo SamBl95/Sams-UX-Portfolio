@@ -3,9 +3,9 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Polish & Refinement
 status: executing
-stopped_at: Phase 3 Plan 02 complete — 03-02-PLAN-nav.md executed.
-last_updated: "2026-05-17T20:32:00.000Z"
-last_activity: "2026-05-17 — Plan 02 complete: nav audit — Fraunces logo, scroll shadow, active border, passive scroll listener (NAV-01–09, ANIM-04)"
+stopped_at: Phase 4 UI-SPEC approved — ready for plan-phase 4.
+last_updated: "2026-05-18T00:00:00.000Z"
+last_activity: "2026-05-18 — Phase 4 UI-SPEC created and approved (6/6 dimensions, 1 non-blocking flag)"
 progress:
   total_phases: 6
   completed_phases: 0
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-17)
 
 **Core value:** A recruiter or hiring manager can understand Sam's work and reach out — every page exists, every link works, and the structure is solid enough to build content on top of.
-**Current focus:** Phase 3 — First Impression
+**Current focus:** Phase 4 — Cards & Homepage
 
 ## Current Position
 
-Phase: 3 — First Impression
-Plan: 02 complete — Plan 03 (CTA section) next
-Status: In progress
-Last activity: 2026-05-17 — Plan 02 complete: nav audit — Fraunces logo, scroll shadow, active border, passive scroll listener (NAV-01–09, ANIM-04)
+Phase: 4 — Cards & Homepage
+Plan: UI-SPEC approved — ready for plan-phase 4
+Status: Planning
+Last activity: 2026-05-18 — Phase 4 UI-SPEC created and approved (6/6 dimensions, 1 non-blocking flag)
 
 Progress: [██░░░░░░░░] 17%
 
