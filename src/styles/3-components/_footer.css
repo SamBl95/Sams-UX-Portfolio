@@ -82,6 +82,12 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .footer__link {
+    transition: none;
+  }
+}
+
 .footer__link:focus-visible {
   outline:        2px solid var(--color-accent-accessible);
   outline-offset: 2px;
