@@ -53,17 +53,16 @@ Exceptions:
 
 ## Typography
 
-All four active roles are pre-populated from the established token set.
+Six roles across four base sizes. Responsive step-ups noted in the Size column; no separate row per breakpoint.
 
-| Role | Token | Size | Weight | Line Height | Font | Component Usage |
-|------|-------|------|--------|-------------|------|-----------------|
-| Pull-quote display | --text-3xl → --text-4xl (905px+) | 30px → 36px | --font-weight-semibold (600) | --leading-tight (1.25) | --font-heading (Fraunces) | `.pull-quote__text` |
-| Section heading (inside step/callout) | --text-xl | 20px | --font-weight-semibold (600) | --leading-tight (1.25) | --font-body (Urbanist) | `.process-steps__heading` |
-| Body / caption | --text-base | 16px | --font-weight-normal (400) | --leading-relaxed (1.6) | --font-body (Urbanist) | `.image-block__caption`, `.callout__body`, `.process-steps__body` |
-| Label / chip | --text-xs | 12px | --font-weight-semibold (600) | --leading-normal (1.5) | --font-body (Urbanist) | `.before-after__label`, `.callout__eyebrow` |
-| Metrics value | --text-4xl → --text-5xl (905px+) | 36px → 48px | --font-weight-bold (700) | 1 (unitless tight) | --font-heading (Fraunces) | `.metrics-row__value` |
-| Metrics label | --text-sm | 14px | --font-weight-normal (400) | --leading-normal (1.5) | --font-body (Urbanist) | `.metrics-row__label` |
-| Pull-quote cite | --text-sm | 14px | --font-weight-medium (500) | --leading-normal (1.5) | --font-body (Urbanist) | `.pull-quote__cite` |
+| Role | Token | Size | Weight | Line Height | Font | Breakpoint | Component Usage |
+|------|-------|------|--------|-------------|------|-----------|-----------------|
+| Pull-quote display | --text-3xl (mob) / --text-4xl (905px+) | 30px (mob) / 36px (905px+) | --font-weight-semibold (600) | --leading-tight (1.25) | --font-heading (Fraunces) | 905px+ | `.pull-quote__text` |
+| Body / caption | --text-base | 16px | --font-weight-normal (400) | --leading-relaxed (1.6) | --font-body (Urbanist) | — | `.image-block__caption`, `.callout__body`, `.process-steps__body`, `.process-steps__heading` |
+| Label / chip | --text-xs | 12px | --font-weight-semibold (600) | --leading-normal (1.5) | --font-body (Urbanist) | — | `.before-after__label`, `.callout__eyebrow` |
+| Metrics value | --text-4xl (mob) / --text-5xl (905px+) | 36px (mob) / 48px (905px+) | --font-weight-bold (700) | 1 (unitless tight) | --font-heading (Fraunces) | 905px+ | `.metrics-row__value` |
+| Metrics label | --text-sm | 14px | --font-weight-normal (400) | --leading-normal (1.5) | --font-body (Urbanist) | — | `.metrics-row__label` |
+| Pull-quote cite | --text-sm | 14px | --font-weight-medium (500) | --leading-normal (1.5) | --font-body (Urbanist) | — | `.pull-quote__cite` |
 
 **Letter spacing:**
 - Metrics value: `-0.02em` (matches `_stat-block.css` and `_card.css` established patterns)
