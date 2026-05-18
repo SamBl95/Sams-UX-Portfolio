@@ -3,9 +3,9 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Polish & Refinement
 status: planned
-stopped_at: Phase 5 complete — 7 case study CSS components built and wired into main.css.
+stopped_at: Phase 6 planned — 3 plans across About, Contact, and Stories pages.
 last_updated: "2026-05-18T00:00:00.000Z"
-last_activity: "2026-05-18 — Phase 5 executed (CS-01–08, 2/2 plans complete, 7 components)"
+last_activity: "2026-05-18 — Phase 6 planned (ANIM-05, LAY-03, LAY-04, 3/3 plans, 1 wave)"
 progress:
   total_phases: 6
   completed_phases: 2
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-05-17)
 
 ## Current Position
 
-Phase: 5 — Case Study Components
-Plan: 2/2 complete
-Status: Complete — 7 case study components built, all imported in main.css
-Last activity: 2026-05-18 — Phase 5 executed (image-block, callout, pull-quote, process-steps, before-after, metrics-row, two-column)
+Phase: 6 — Content Pages
+Plan: 0/3 complete
+Status: Planned — 3 plans ready: About reading width + reveal, Contact column + reveal, Stories border animation + reveal
+Last activity: 2026-05-18 — Phase 6 planned (06-01-PLAN-about, 06-02-PLAN-contact, 06-03-PLAN-stories)
 
 Progress: [█████░░░░░] 50%
 
@@ -92,4 +92,4 @@ None.
 
 Last session: 2026-05-18
 Stopped at: Phase 4 complete — verification passed. Phase 5 (Case Study Components) is next.
-Resume with: /gsd:plan-phase 6
+Resume with: /gsd:execute-phase 6
