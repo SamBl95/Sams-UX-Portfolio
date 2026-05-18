@@ -278,7 +278,7 @@ Typography comment correction (D-07):
     - Body prose em dashes are untouched: `grep -c "—" src/pages/case-studies/cassi.html` returns a non-zero count (body prose preserved)
   </acceptance_criteria>
   <verify>
-    <automated>grep -rn "—" index.html src/pages/ | grep -E "&lt;title&gt;|meta name|&lt;h1"</automated>
+    <automated>grep -rn "—" index.html src/pages/ | grep -E "<title>|<meta name|<h1"</automated>
   </verify>
   <done>Zero em dashes remain in `<title>`, `<meta name="description">`, or `<h1>` elements across all 9 HTML files. Body prose em dashes are untouched. All replacement text is natural and un-AI-sounding.</done>
 </task>
