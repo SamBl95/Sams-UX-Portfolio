@@ -4,10 +4,10 @@ milestone: v3.0
 milestone_name: Content & SEO
 status: planning
 stopped_at: ""
-last_updated: "2026-05-18T00:00:00.000Z"
-last_activity: "2026-05-18 — Milestone v3.0 started"
+last_updated: "2026-05-19T00:00:00.000Z"
+last_activity: "2026-05-19 — Roadmap created for v3.0 (Phases 8-11)"
 progress:
-  total_phases: 0
+  total_phases: 4
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-05-18)
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 8 — UI Polish (next to execute)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-05-18 — Milestone v3.0 started
+Status: Roadmap defined, ready for planning
+Last activity: 2026-05-19 — Roadmap created for v3.0 (Phases 8-11)
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -64,27 +64,38 @@ Progress: [░░░░░░░░░░] 0%
 - Two-layer shadow: 1px border + ambient alpha; raw alpha in shadow layers is permitted
 - Hover gate: always (hover: hover) and (pointer: fine) — never bare (hover: hover)
 
+### Decisions (from v3.0 planning)
+
+- FormSubmit chosen over EmailJS — no SDK, no account cap, plain HTML form action
+- og:image placed in public/ (not src/) — Vite fingerprints src/ assets, breaking stable og:image URL
+- JSON-LD Person schema goes inline in page head only — not in Handlebars partials (fires on every page)
+- FormSubmit honeypot must use opacity:0 + position:absolute, not display:none — display:none silently bypasses spam protection
+- SEO phase (11) depends on Content phase (9) — meta descriptions must reflect real copy
+- vercel.json clean URL rewrites are part of Phase 11 (SEO), not standalone
+- No new npm dependencies for this milestone — FormSubmit is a plain form action; all SEO is static HTML
+
 ### Pending Todos
 
 None.
 
 ### Blockers/Concerns
 
-None.
+- Production URL structure (samsux.co.uk) must be confirmed before writing canonical tags and sitemap — confirm at start of Phase 11
+- FormSubmit endpoint requires a one-click activation email on first POST — this is an activation step, not a code bug
 
 ## Deferred Items
 
 | Category | Item | Status | Deferred At |
 |----------|------|--------|-------------|
-| Content | Blog post copy (real articles) | v3 | v1.0 Init |
-| Content | Contact form with backend | v3 | v1.0 Init |
-| Content | Case study imagery and copy | v3 | v1.0 Init |
-| SEO | Meta tags and Open Graph | v3 | v1.0 Init |
-| Verification | VERIFICATION.md for phases 2, 3, 5, 6, 7 | v3 or skip | v2.0 close |
-| Tracking | Nyquist VALIDATION.md files | v3 or skip | v2.0 close |
+| Content | Per-case-study og:image thumbnails | Future | v3.0 planning |
+| SEO | og:type article on Stories post pages | Future | v3.0 planning |
+| SEO | vite-plugin-sitemap auto-generation | Future | v3.0 planning |
+| SEO | Google Search Console submission | Post-deploy step | v3.0 planning |
+| Verification | VERIFICATION.md for phases 2, 3, 5, 6, 7 | Skip | v2.0 close |
+| Tracking | Nyquist VALIDATION.md files | Skip | v2.0 close |
 
 ## Session Continuity
 
-Last session: 2026-05-18
-Stopped at: v2.0 milestone archived and tagged.
-Resume with: /gsd:new-milestone
+Last session: 2026-05-19
+Stopped at: v3.0 roadmap created (Phases 8-11).
+Resume with: /gsd:plan-phase 8

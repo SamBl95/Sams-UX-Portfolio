@@ -76,16 +76,43 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| UI-01–UI-11 | — | Pending |
-| CONT-01–CONT-05 | — | Pending |
-| FORM-01–FORM-05 | — | Pending |
-| SEO-01–SEO-10 | — | Pending |
+| UI-01 | Phase 8 | Pending |
+| UI-02 | Phase 8 | Pending |
+| UI-03 | Phase 8 | Pending |
+| UI-04 | Phase 8 | Pending |
+| UI-05 | Phase 8 | Pending |
+| UI-06 | Phase 8 | Pending |
+| UI-07 | Phase 8 | Pending |
+| UI-08 | Phase 8 | Pending |
+| UI-09 | Phase 8 | Pending |
+| UI-10 | Phase 8 | Pending |
+| UI-11 | Phase 8 | Pending |
+| CONT-01 | Phase 9 | Pending |
+| CONT-02 | Phase 9 | Pending |
+| CONT-03 | Phase 9 | Pending |
+| CONT-04 | Phase 9 | Pending |
+| CONT-05 | Phase 9 | Pending |
+| FORM-01 | Phase 10 | Pending |
+| FORM-02 | Phase 10 | Pending |
+| FORM-03 | Phase 10 | Pending |
+| FORM-04 | Phase 10 | Pending |
+| FORM-05 | Phase 10 | Pending |
+| SEO-01 | Phase 11 | Pending |
+| SEO-02 | Phase 11 | Pending |
+| SEO-03 | Phase 11 | Pending |
+| SEO-04 | Phase 11 | Pending |
+| SEO-05 | Phase 11 | Pending |
+| SEO-06 | Phase 11 | Pending |
+| SEO-07 | Phase 11 | Pending |
+| SEO-08 | Phase 11 | Pending |
+| SEO-09 | Phase 11 | Pending |
+| SEO-10 | Phase 11 | Pending |
 
 **Coverage:**
 - v3.0 requirements: 31 total
-- Mapped to phases: 0
-- Unmapped: 31 ⚠️
+- Mapped to phases: 31
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-05-19*
-*Last updated: 2026-05-19 after initial definition*
+*Last updated: 2026-05-19 after roadmap creation*
