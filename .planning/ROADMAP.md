@@ -98,9 +98,9 @@ Plans:
   4. All three pages have scroll-triggered section entrances
 **Plans:** 3 plans
 Plans:
-- [ ] 06-01-PLAN-about.md — About page spacing, typography, section entrance (Wave 1)
-- [ ] 06-02-PLAN-contact.md — Contact layout column, CTA hierarchy, entrance (Wave 1 parallel)
-- [ ] 06-03-PLAN-stories.md — Stories list hover interaction, post reading width, entrances (Wave 1 parallel)
+- [x] 06-01-PLAN-about.md — About page spacing, typography, section entrance (Wave 1)
+- [x] 06-02-PLAN-contact.md — Contact layout column, CTA hierarchy, entrance (Wave 1 parallel)
+- [x] 06-03-PLAN-stories.md — Stories list hover interaction, post reading width, entrances (Wave 1 parallel)
 
 ### Phase 7: Footer + Global Audit
 **Goal:** Footer polished; every animated element covered by prefers-reduced-motion; zero hardcoded values anywhere
@@ -128,5 +128,5 @@ Plans:
 | 3. First Impression | 0/2 | Not started | - |
 | 4. Cards & Homepage | 0/2 | Not started | - |
 | 5. Case Study Components | 2/2 | Complete | 2026-05-18 |
-| 6. Content Pages | 0/3 | Not started | - |
+| 6. Content Pages | 3/3 | Complete | 2026-05-18 |
 | 7. Footer + Global Audit | 0/2 | Not started | - |

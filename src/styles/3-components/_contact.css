@@ -5,6 +5,10 @@
    ============================================================================= */
 
 
+.contact__column {
+  max-width: var(--contact-column-max-width);
+}
+
 .contact__heading {
   margin-bottom: var(--space-4);
 }

@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Polish & Refinement
-status: planned
-stopped_at: Phase 6 planned — 3 plans across About, Contact, and Stories pages.
+status: phase_complete
+stopped_at: Phase 6 complete — prose reading widths, Contact column constraint, Stories clip-path hover, scroll-reveal on About/Contact/Stories.
 last_updated: "2026-05-18T00:00:00.000Z"
-last_activity: "2026-05-18 — Phase 6 planned (ANIM-05, LAY-03, LAY-04, 3/3 plans, 1 wave)"
+last_activity: "2026-05-18 — Phase 6 executed (3/3 plans, Wave 1 parallel)"
 progress:
   total_phases: 6
-  completed_phases: 2
-  total_plans: 2
-  completed_plans: 10
-  percent: 50
+  completed_phases: 3
+  total_plans: 3
+  completed_plans: 13
+  percent: 67
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-05-17)
 ## Current Position
 
 Phase: 6 — Content Pages
-Plan: 0/3 complete
-Status: Planned — 3 plans ready: About reading width + reveal, Contact column + reveal, Stories border animation + reveal
-Last activity: 2026-05-18 — Phase 6 planned (06-01-PLAN-about, 06-02-PLAN-contact, 06-03-PLAN-stories)
+Plan: 3/3 complete
+Status: Complete — all 3 plans executed in Wave 1 parallel
+Last activity: 2026-05-18 — Phase 6 complete. Next: Phase 7 Footer + Global Audit
 
-Progress: [█████░░░░░] 50%
+Progress: [███████░░░] 67%
 
 ## Performance Metrics
 
@@ -91,5 +91,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-05-18
-Stopped at: Phase 4 complete — verification passed. Phase 5 (Case Study Components) is next.
-Resume with: /gsd:execute-phase 6
+Stopped at: Phase 6 complete — 3/3 plans executed. Phase 7 (Footer + Global Audit) is next.
+Resume with: /gsd:plan-phase 7

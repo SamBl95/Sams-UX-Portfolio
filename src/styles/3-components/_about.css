@@ -72,6 +72,7 @@
   line-height:   var(--leading-body);
   color:         var(--color-text-secondary);
   margin-bottom: var(--space-5);
+  max-width:     72ch;
 }
 
 @media (min-width: 905px) {
