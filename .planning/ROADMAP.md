@@ -83,8 +83,8 @@ Plans:
   6. `_before-after.css` labels readable, stacks cleanly on mobile
 **Plans:** 2 plans
 Plans:
-- [ ] 05-01-PLAN-content-components.md — image-block, callout, pull-quote (Wave 1)
-- [ ] 05-02-PLAN-layout-components.md — process-steps, before-after, metrics-row, two-column (Wave 1 parallel)
+- [ ] 05-01-PLAN.md — image-block, callout, pull-quote + main.css wiring (Wave 1)
+- [ ] 05-02-PLAN.md — process-steps, before-after, metrics-row, two-column + main.css wiring (Wave 1 parallel)
 
 ### Phase 6: Content Pages
 **Goal:** About, Contact, and Stories pages feel considered — spacing rhythmic, typography correct, interactions present
