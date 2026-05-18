@@ -1,0 +1,61 @@
+/* =============================================================================
+   BEFORE / AFTER
+   Two-column comparison with labelled chips. Stacks on mobile,
+   side-by-side grid at 905px+. Used in case studies to show state changes.
+   ============================================================================= */
+
+
+/* Outer wrapper */
+.before-after {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-4);
+}
+
+@media (min-width: 905px) {
+  .before-after {
+    display:               grid;
+    grid-template-columns: 1fr 1fr;
+    gap:                   var(--space-8);
+    align-items:           start;
+  }
+}
+
+
+/* Column */
+.before-after__col {
+  background-color: var(--color-surface);
+  border:           1px solid var(--color-border);
+  border-radius:    var(--radius-xl);
+  padding:          var(--space-6);
+  display:          flex;
+  flex-direction:   column;
+  gap:              var(--space-3);
+}
+
+
+/* Label chip — base */
+.before-after__label {
+  display:        inline-flex;
+  align-items:    center;
+  padding:        4px var(--space-2);
+  border-radius:  var(--radius-full);
+  font-size:      var(--text-xs);
+  font-weight:    var(--font-weight-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Before chip — neutral */
+.before-after__col--before .before-after__label {
+  border:           1px solid var(--color-border);
+  color:            var(--color-text-secondary);
+  background-color: transparent;
+}
+
+/* After chip — teal */
+.before-after__col--after .before-after__label {
+  border:           1px solid var(--color-accent);
+  color:            var(--color-accent-accessible);
+  background-color: var(--color-accent-light);
+}

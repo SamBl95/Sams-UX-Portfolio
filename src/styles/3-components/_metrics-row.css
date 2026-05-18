@@ -1,0 +1,84 @@
+/* =============================================================================
+   METRICS ROW
+   Inline metric display for case study body prose. Mirrors the .stat-block
+   value pattern (Fraunces, teal, -0.02em tracking, accent underline).
+   Mobile: 2-col grid. Desktop: flex row with border-left dividers.
+   ============================================================================= */
+
+
+/* List reset — 2-col grid on mobile */
+.metrics-row {
+  list-style:            none;
+  padding:               0;
+  margin:                0;
+  display:               grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:                   var(--space-8) var(--space-6);
+}
+
+@media (min-width: 905px) {
+  .metrics-row {
+    display:        flex;
+    flex-direction: row;
+    gap:            0;
+  }
+}
+
+
+/* Item — border-left dividers at 905px+ */
+@media (min-width: 905px) {
+  .metrics-row__item {
+    padding-inline: var(--space-8);
+    border-left:    1px solid var(--color-border);
+  }
+
+  .metrics-row__item:first-child {
+    padding-left: 0;
+    border-left:  none;
+  }
+
+  .metrics-row__item:last-child {
+    padding-right: 0;
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   ELEMENTS — value pattern matches .stat-block__value exactly
+   ------------------------------------------------------------------------- */
+
+.metrics-row__value {
+  font-family:    var(--font-heading);
+  font-size:      var(--text-4xl);
+  font-weight:    var(--font-weight-bold);
+  line-height:    1;
+  letter-spacing: -0.02em;
+  color:          var(--color-accent-accessible);
+  position:       relative;
+  padding-bottom: var(--space-3);
+}
+
+.metrics-row__value::after {
+  content:          '';
+  position:         absolute;
+  bottom:           0;
+  left:             0;
+  width:            var(--space-8);
+  height:           2px;
+  background-color: var(--color-accent);
+  border-radius:    var(--radius-full);
+}
+
+@media (min-width: 905px) {
+  .metrics-row__value {
+    font-size: var(--text-5xl);
+  }
+}
+
+.metrics-row__label {
+  font-size:   var(--text-sm);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-normal);
+  color:       var(--color-text-secondary);
+  max-width:   18ch;
+}

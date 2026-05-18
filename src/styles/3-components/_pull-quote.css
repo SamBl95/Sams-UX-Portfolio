@@ -1,0 +1,54 @@
+/* =============================================================================
+   PULL QUOTE
+   Blockquote with Fraunces display type and 3px teal left accent bar.
+   Used in case study pages to surface an impactful statement from the narrative.
+   ============================================================================= */
+
+
+.pull-quote {
+  position:    relative;
+  padding-left: var(--space-6);
+  margin-block: var(--space-10);
+  border:       none;
+}
+
+/* 3px teal left accent bar */
+.pull-quote::before {
+  content:          '';
+  position:         absolute;
+  left:             0;
+  top:              0;
+  width:            3px;
+  height:           100%;
+  background-color: var(--color-accent);
+}
+
+
+/* -------------------------------------------------------------------------
+   ELEMENTS
+   ------------------------------------------------------------------------- */
+
+.pull-quote__text {
+  font-family:    var(--font-heading);
+  font-size:      var(--text-3xl);
+  font-weight:    var(--font-weight-semibold);
+  line-height:    var(--leading-tight);
+  letter-spacing: -0.02em;
+  color:          var(--color-text-primary);
+  margin:         0;
+}
+
+@media (min-width: 905px) {
+  .pull-quote__text {
+    font-size: var(--text-4xl);
+  }
+}
+
+.pull-quote__cite {
+  display:      block;
+  margin-top:   var(--space-3);
+  font-size:    var(--text-sm);
+  font-weight:  var(--font-weight-medium);
+  font-style:   normal;
+  color:        var(--color-text-secondary);
+}

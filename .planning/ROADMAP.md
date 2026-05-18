@@ -15,7 +15,7 @@
 - [ ] **Phase 2: Foundation & Infrastructure** — Tokens, scroll-reveal utility, button fixes, token bugs
 - [ ] **Phase 3: First Impression** — Hero entrance animation + full nav component audit
 - [ ] **Phase 4: Cards & Homepage** — Card interactions, state layers, grid layout
-- [ ] **Phase 5: Case Study Components** — 7 storytelling components built from scratch
+- [x] **Phase 5: Case Study Components** — 7 storytelling components built from scratch
 - [ ] **Phase 6: Content Pages** — About, Contact, Stories — spacing, typography, interactions
 - [ ] **Phase 7: Footer + Global Audit** — Footer component, scroll-reveal pass, token/motion sweep
 
@@ -83,8 +83,8 @@ Plans:
   6. `_before-after.css` labels readable, stacks cleanly on mobile
 **Plans:** 2 plans
 Plans:
-- [ ] 05-01-PLAN.md — image-block, callout, pull-quote + main.css wiring (Wave 1)
-- [ ] 05-02-PLAN.md — process-steps, before-after, metrics-row, two-column + main.css wiring (Wave 1 parallel)
+- [x] 05-01-PLAN.md — image-block, callout, pull-quote + main.css wiring (Wave 1)
+- [x] 05-02-PLAN.md — process-steps, before-after, metrics-row, two-column + main.css wiring (Wave 1 parallel)
 
 ### Phase 6: Content Pages
 **Goal:** About, Contact, and Stories pages feel considered — spacing rhythmic, typography correct, interactions present
@@ -127,6 +127,6 @@ Plans:
 | 2. Foundation & Infrastructure | 0/1 | Not started | - |
 | 3. First Impression | 0/2 | Not started | - |
 | 4. Cards & Homepage | 0/2 | Not started | - |
-| 5. Case Study Components | 0/2 | Not started | - |
+| 5. Case Study Components | 2/2 | Complete | 2026-05-18 |
 | 6. Content Pages | 0/3 | Not started | - |
 | 7. Footer + Global Audit | 0/2 | Not started | - |

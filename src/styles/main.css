@@ -34,6 +34,13 @@
 @import './3-components/_contact.css';
 @import './3-components/_stories.css';
 @import './3-components/_reveal.css';
+@import './3-components/_image-block.css';
+@import './3-components/_callout.css';
+@import './3-components/_pull-quote.css';
+@import './3-components/_process-steps.css';
+@import './3-components/_before-after.css';
+@import './3-components/_metrics-row.css';
+@import './3-components/_two-column.css';
 
 
 /* 4. LAYOUTS */

@@ -1,0 +1,98 @@
+/* =============================================================================
+   IMAGE BLOCK
+   Figure element with three layout variants: contained, full-bleed, aside float.
+   Used in case study body prose to embed images with optional captions.
+   ============================================================================= */
+
+
+/* Base figure reset */
+.image-block {
+  list-style: none;
+  margin:     0;
+  padding:    0;
+  display:    block;
+}
+
+
+/* -------------------------------------------------------------------------
+   CONTAINED — default image with rounded corners, vertical rhythm spacing
+   ------------------------------------------------------------------------- */
+
+.image-block--contained {
+  margin-block: var(--space-8);
+}
+
+.image-block--contained img {
+  display:       block;
+  width:         100%;
+  height:        auto;
+  border-radius: var(--radius-lg);
+}
+
+@media (min-width: 905px) {
+  .image-block--contained {
+    margin-block: var(--space-10);
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   FULL — edge-to-edge within the container, no radius
+   ------------------------------------------------------------------------- */
+
+.image-block--full {
+  width:        100%;
+  margin-block: var(--space-12);
+}
+
+.image-block--full img {
+  display:       block;
+  width:         100%;
+  height:        auto;
+  border-radius: 0;
+}
+
+
+/* -------------------------------------------------------------------------
+   ASIDE — floats right at 905px+, stacks on mobile
+   ------------------------------------------------------------------------- */
+
+.image-block--aside {
+  margin-block: var(--space-8);
+}
+
+.image-block--aside img {
+  display:       block;
+  width:         100%;
+  height:        auto;
+  border-radius: var(--radius-lg);
+}
+
+.image-block--aside::after {
+  content: '';
+  display: table;
+  clear:   both;
+}
+
+@media (min-width: 905px) {
+  .image-block--aside {
+    float:        right;
+    width:        40%;
+    margin-left:  var(--space-8);
+    margin-block: var(--space-2);
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   CAPTION — below the image in all variants
+   ------------------------------------------------------------------------- */
+
+.image-block__caption {
+  display:     block;
+  margin-top:  var(--space-2);
+  font-size:   var(--text-sm);
+  font-style:  italic;
+  line-height: var(--leading-relaxed);
+  color:       var(--color-text-secondary);
+}

@@ -1,0 +1,108 @@
+/* =============================================================================
+   PROCESS STEPS
+   Numbered process list with CSS counter, 40px circle pseudo-elements,
+   and a connector line between steps at 905px+.
+   ============================================================================= */
+
+
+/* List — counter reset and flex column */
+.process-steps {
+  counter-reset:  step;
+  list-style:     none;
+  padding:        0;
+  margin:         0;
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-6);
+}
+
+@media (min-width: 905px) {
+  .process-steps {
+    gap: var(--space-8);
+  }
+}
+
+
+/* Item — counter increment and mobile stack layout */
+.process-steps__item {
+  counter-increment: step;
+  position:          relative;
+  display:           flex;
+  flex-direction:    column;
+  gap:               var(--space-3);
+}
+
+@media (min-width: 905px) {
+  .process-steps__item {
+    display:               grid;
+    grid-template-columns: var(--space-5) 1fr;
+    gap:                   var(--space-6);
+    align-items:           start;
+  }
+}
+
+
+/* Counter circle */
+.process-steps__item::before {
+  content:         counter(step);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  width:           var(--space-5);
+  height:          var(--space-5);
+  border-radius:   var(--radius-full);
+  border:          2px solid var(--color-accent);
+  color:           var(--color-accent-accessible);
+  font-family:     var(--font-heading);
+  font-size:       var(--text-base);
+  font-weight:     var(--font-weight-semibold);
+  letter-spacing:  -0.01em;
+  flex-shrink:     0;
+  margin-bottom:   var(--space-3);
+}
+
+@media (min-width: 905px) {
+  .process-steps__item::before {
+    margin-bottom: 0;
+  }
+}
+
+
+/* Connector line — links items together at 905px+, hidden on last item */
+@media (min-width: 905px) {
+  .process-steps__item::after {
+    content:          '';
+    position:         absolute;
+    left:             calc(var(--space-5) / 2 - 1px);
+    top:              var(--space-5);
+    width:            2px;
+    height:           calc(100% + var(--space-6));
+    background-color: var(--color-accent);
+    opacity:          0.3;
+  }
+
+  .process-steps__item:last-child::after {
+    display: none;
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   ELEMENTS
+   ------------------------------------------------------------------------- */
+
+.process-steps__heading {
+  font-size:   var(--text-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-normal);
+  color:       var(--color-text-primary);
+  margin:      0 0 var(--space-1) 0;
+}
+
+.process-steps__body {
+  font-size:   var(--text-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-relaxed);
+  color:       var(--color-text-secondary);
+  margin:      0;
+}
