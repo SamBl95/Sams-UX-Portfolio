@@ -49,3 +49,10 @@
     gap:                   var(--space-4);
   }
 }
+
+@media (min-width: 1240px) {
+  .case-studies__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap:                   var(--space-8);
+  }
+}
