@@ -118,10 +118,6 @@
   margin-top: var(--space-3);
 }
 
-.post__body p {
-  max-width: 72ch;
-}
-
 .post__body h2 {
   margin-top: var(--space-6);
 }
