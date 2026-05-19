@@ -60,6 +60,17 @@
   border-color:   var(--color-accent-accessible);
 }
 
+.form__input--error,
+.form__textarea--error {
+  border-color: var(--color-error);
+}
+
+.form__error-msg {
+  font-size:  var(--text-xs);
+  color:      var(--color-error);
+  min-height: 1em;
+}
+
 .form__textarea {
   resize:     vertical;
   min-height: 120px;

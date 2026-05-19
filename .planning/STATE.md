@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v3.0
 milestone_name: Content & SEO
 status: in progress
-stopped_at: Phase 10 executed (2/2 plans complete)
+stopped_at: Phase 11 executed — ready to verify
 last_updated: "2026-05-19T00:00:00.000Z"
-last_activity: 2026-05-19 — Phase 10 executed (contact form built; switched to Web3Forms; end-to-end verified)
+last_activity: 2026-05-19 — Phase 11 SEO executed (2/2 plans complete, build passing)
 progress:
   total_phases: 4
   completed_phases: 2
-  total_plans: 9
+  total_plans: 11
   completed_plans: 7
   percent: 75
 ---
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-05-18)
 
 ## Current Position
 
-Phase: 10 — Contact Form (EXECUTED)
+Phase: 11 — SEO (EXECUTED)
 Plan: 2/2 plans executed
-Status: All plans done — ready for verification
-Last activity: 2026-05-19 — Phase 10 executed (contact form built; switched to Web3Forms; end-to-end verified)
+Status: Ready to verify
+Last activity: 2026-05-19 — Phase 11 executed (both waves complete, build passing)
 
 Progress: [███████░░░] 75%
 
@@ -82,7 +82,8 @@ None.
 
 ### Blockers/Concerns
 
-- Production URL structure (samsux.co.uk) must be confirmed before writing canonical tags and sitemap — confirm at start of Phase 11
+- Production URL confirmed as https://www.samsux.co.uk — used in all canonical tags and sitemap in Phase 11 plans
+- public/og-image.png must exist before deploying — plans include a preflight check; create a placeholder if absent
 
 ## Deferred Items
 

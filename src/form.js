@@ -7,17 +7,59 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitBtn = form.querySelector('[type="submit"]');
   const honeypot = form.querySelector('[name="_honey"]');
 
+  const nameInput    = form.querySelector('#contact-name');
+  const emailInput   = form.querySelector('#contact-email');
+  const messageInput = form.querySelector('#contact-message');
+  const nameError    = document.getElementById('contact-name-error');
+  const emailError   = document.getElementById('contact-email-error');
+  const messageError = document.getElementById('contact-message-error');
+
+  function clearFieldError(input, errorEl) {
+    errorEl.textContent = '';
+    input.classList.remove('form__input--error', 'form__textarea--error');
+  }
+
+  nameInput.addEventListener('input',    () => clearFieldError(nameInput,    nameError));
+  emailInput.addEventListener('input',   () => clearFieldError(emailInput,   emailError));
+  messageInput.addEventListener('input', () => clearFieldError(messageInput, messageError));
+
+  function validate(name, email, message) {
+    let valid = true;
+    if (!name) {
+      nameError.textContent = 'Please enter your name';
+      nameInput.classList.add('form__input--error');
+      valid = false;
+    }
+    if (!email) {
+      emailError.textContent = 'Please enter your email address';
+      emailInput.classList.add('form__input--error');
+      valid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      emailError.textContent = 'Please enter a valid email address';
+      emailInput.classList.add('form__input--error');
+      valid = false;
+    }
+    if (!message) {
+      messageError.textContent = 'Please write a message';
+      messageInput.classList.add('form__textarea--error');
+      valid = false;
+    }
+    return valid;
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     if (honeypot && honeypot.value) return;
 
+    const name    = nameInput.value.trim();
+    const email   = emailInput.value.trim();
+    const message = messageInput.value.trim();
+
+    if (!validate(name, email, message)) return;
+
     form.classList.add('form--loading');
     submitBtn.disabled = true;
-
-    const name = form.querySelector('#contact-name').value.trim();
-    const email = form.querySelector('#contact-email').value.trim();
-    const message = form.querySelector('#contact-message').value.trim();
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {

@@ -26,6 +26,7 @@
   --color-accent-accessible: #1a6b52;
   --color-text-on-accent:    #f5f2ed;
   --color-accent-light:      #e6f0ec;
+  --color-error:             #b83c28;
   --color-black:             #000000;
 
 
@@ -107,7 +108,6 @@
   /* Component tokens — semantic values outside the 8pt scale */
   --nav-height:             56px;   /* nav bar height; also used for mobile menu top offset */
   --hero-content-max-width: 860px;  /* hero content column constraint at 1440px+ */
-  --contact-column-max-width: 600px;
 
 
   /* ---------------------------------------------------------------------------

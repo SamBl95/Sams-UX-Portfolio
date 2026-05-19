@@ -64,7 +64,9 @@
       "Bash(node *)",
       "Bash(py --version)",
       "Bash(/c/WINDOWS/System32/WindowsPowerShell/v1.0/powershell.exe *)",
-      "Skill(gsd:verify-work)"
+      "Skill(gsd:verify-work)",
+      "PowerShell(New-Item *)",
+      "Bash(npx vite *)"
     ]
   }
 }
