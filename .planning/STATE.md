@@ -1,17 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v3.0
-milestone_name: Content & SEO
-status: complete
-stopped_at: v3.0 milestone archived — ready for /gsd:new-milestone
-last_updated: "2026-05-19T00:00:00.000Z"
-last_activity: 2026-05-19 — v3.0 milestone closed, archived, tagged
+milestone: v4.0
+milestone_name: Content & Visuals
+status: planning
+last_updated: "2026-05-19T22:49:39.176Z"
+last_activity: 2026-05-19
 progress:
-  total_phases: 4
-  completed_phases: 4
-  total_plans: 9
-  completed_plans: 9
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -25,12 +24,10 @@ See: .planning/PROJECT.md (updated 2026-05-18)
 
 ## Current Position
 
-Phase: 11 — SEO (COMPLETE)
-Plan: 2/2 plans executed
-Status: Verified — v3.0 milestone complete
-Last activity: 2026-05-19 — Phase 11 UAT passed (cleanUrls conflict fixed, deployed)
-
-Progress: [██████████] 100%
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-05-19 — Milestone v4.0 started
 
 ## Performance Metrics
 

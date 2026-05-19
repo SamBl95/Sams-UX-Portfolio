@@ -85,9 +85,24 @@ All four phases complete. The site has real content, a working contact form, and
 - ✓ JSON-LD Person schema on index.html and about.html — v3.0
 - ✓ sitemap.xml (10 clean-path entries), robots.txt, vercel.json clean URL rewrites — v3.0
 
-### Active (v4.0 — Next Milestone)
+## Current Milestone: v4.0 Content & Visuals
 
-*(To be defined via /gsd:new-milestone)*
+**Goal:** Fill the remaining content gaps — CV copy, PDF download button, and real images across every visual placeholder in the site.
+
+**Target features:**
+- CV page: 3 work history descriptions + download PDF button
+- About page: wire up existing TODO download CV button
+- /work page: real images for each feature row (sourced from Webflow)
+- Homepage: real thumbnail images on case study cards (sourced from Webflow)
+- Case study pages: images in image-block, before-after, and process-steps components
+
+### Active (v4.0)
+
+- [ ] CV-01: CV page work history descriptions — Matalan, Santander UK, Self-employed (3 roles)
+- [ ] CV-02: Download PDF button on CV page and About page CTA
+- [ ] IMG-01: Real images on homepage case study cards
+- [ ] IMG-02: Real images on /work feature rows (per case study)
+- [ ] IMG-03: Case study visual content — I-Exchange, CASSI, Community image components
 
 ### Out of Scope
 
@@ -154,4 +169,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-19 after v3.0 milestone complete*
+*Last updated: 2026-05-19 after v4.0 milestone started*
