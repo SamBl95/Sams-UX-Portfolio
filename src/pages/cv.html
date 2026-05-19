@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CV — Sam Blake, Product Designer with experience at Matalan and Santander UK." />
+    <title>CV — Sam Blake | Product Designer</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&family=Caveat:wght@400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+
+    {{> nav navCV=true}}
+
+    <main>
+
+      <!-- =====================================================================
+           HERO
+           ===================================================================== -->
+
+      <section class="about-hero section-lg js-reveal" aria-labelledby="cv-heading">
+        <div class="container-content">
+          <p class="about-hero__eyebrow">CV</p>
+          <h1 id="cv-heading" class="about-hero__title">Sam Blake</h1>
+          <p class="about-hero__lede js-reveal" data-reveal-delay="100">Product Designer · North West England · Open to hybrid and remote roles</p>
+        </div>
+      </section>
+
+
+      <!-- =====================================================================
+           WORK HISTORY
+           ===================================================================== -->
+
+      <section class="about-section section-md js-reveal" aria-labelledby="cv-history-heading">
+        <div class="container-content">
+          <h2 id="cv-history-heading" class="about-section__heading">Work history</h2>
+          <ul class="about-timeline" role="list">
+            <li class="about-timeline__item">
+              <div class="about-timeline__meta">
+                <span class="about-timeline__org">Matalan</span>
+                <span class="about-timeline__period">2024 — present</span>
+              </div>
+              <h3 class="about-timeline__role">Product Designer</h3>
+              <p class="about-timeline__desc">[PLACEHOLDER — Sam to add 2–3 sentences: role scope, key projects, what you built or shipped at Matalan]</p>
+            </li>
+            <li class="about-timeline__item">
+              <div class="about-timeline__meta">
+                <span class="about-timeline__org">Santander UK</span>
+                <span class="about-timeline__period">2022 — 2024</span>
+              </div>
+              <h3 class="about-timeline__role">Product Designer</h3>
+              <p class="about-timeline__desc">[PLACEHOLDER — Sam to add 2–3 sentences: how you joined, i-Exchange and colleague platforms, measurable outcomes]</p>
+            </li>
+            <li class="about-timeline__item">
+              <div class="about-timeline__meta">
+                <span class="about-timeline__org">Self-employed</span>
+                <span class="about-timeline__period">2020 — 2022</span>
+              </div>
+              <h3 class="about-timeline__role">Property Director</h3>
+              <p class="about-timeline__desc">[PLACEHOLDER — Sam to add 1–2 sentences: what this involved, why it matters as context]</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+
+      <!-- =====================================================================
+           SKILLS & TOOLS
+           ===================================================================== -->
+
+      <section class="about-section about-section--surface section-md js-reveal" aria-labelledby="cv-skills-heading">
+        <div class="container-content">
+          <h2 id="cv-skills-heading" class="about-section__heading">Skills &amp; tools</h2>
+          <dl class="about-skills">
+            <div class="about-skills__group">
+              <dt class="about-skills__label">Craft</dt>
+              <dd class="about-skills__items">User research, interaction design, prototyping, usability testing, design systems</dd>
+            </div>
+            <div class="about-skills__group">
+              <dt class="about-skills__label">Process</dt>
+              <dd class="about-skills__items">Double diamond, jobs-to-be-done, service blueprinting, accessibility auditing, stakeholder facilitation</dd>
+            </div>
+            <div class="about-skills__group">
+              <dt class="about-skills__label">Tools</dt>
+              <dd class="about-skills__items">Figma, FigJam, Jira, Confluence, Maze, Dovetail, VS Code</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+
+      <!-- =====================================================================
+           EDUCATION
+           ===================================================================== -->
+
+      <section class="about-section section-md js-reveal" aria-labelledby="cv-education-heading">
+        <div class="container-content">
+          <h2 id="cv-education-heading" class="about-section__heading">Education</h2>
+          <ul class="about-timeline" role="list">
+            <li class="about-timeline__item">
+              <div class="about-timeline__meta">
+                <span class="about-timeline__org">University of Liverpool</span>
+                <span class="about-timeline__period">2015 — 2018</span>
+              </div>
+              <h3 class="about-timeline__role">BSc Biological Sciences</h3>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+
+      <!-- =====================================================================
+           GET IN TOUCH
+           ===================================================================== -->
+
+      <section class="cta-section section-md" id="contact" aria-labelledby="cv-contact-heading">
+        <div class="container-content">
+          <h2 id="cv-contact-heading" class="cta-section__heading">Get in touch</h2>
+          <p class="cta-section__body">Open to hybrid and remote product design roles in the North West.</p>
+          <div class="cta-section__actions">
+            <a href="mailto:sam.blake@outlook.com" class="btn btn--secondary">sam.blake@outlook.com</a>
+            <a href="https://www.linkedin.com/in/samuel-blake-224605186/" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    {{> footer}}
+
+    <script type="module" src="/src/theme.js"></script>
+    <script type="module" src="/src/reveal.js"></script>
+  </body>
+</html>

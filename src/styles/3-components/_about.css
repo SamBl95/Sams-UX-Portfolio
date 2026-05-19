@@ -86,3 +86,111 @@
 }
 
 
+/* -------------------------------------------------------------------------
+   TIMELINE
+   ------------------------------------------------------------------------- */
+
+.about-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.about-timeline__item {
+  position: relative;
+  padding-left: var(--space-6);
+  border-left: 2px solid var(--color-border);
+}
+
+.about-timeline__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.about-timeline__org {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.about-timeline__period {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.about-timeline__role {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-accent-accessible);
+  margin-bottom: var(--space-2);
+}
+
+.about-timeline__desc {
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+
+/* -------------------------------------------------------------------------
+   SKILLS
+   ------------------------------------------------------------------------- */
+
+.about-skills {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+.about-skills__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.about-skills__label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent-accessible);
+}
+
+.about-skills__items {
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+@media (min-width: 600px) {
+  .about-skills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 905px) {
+  .about-timeline__org {
+    font-size: var(--text-lg);
+  }
+
+  .about-timeline__desc {
+    font-size: var(--text-lg);
+  }
+
+  .about-skills {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-skills__items {
+    font-size: var(--text-lg);
+  }
+}
+

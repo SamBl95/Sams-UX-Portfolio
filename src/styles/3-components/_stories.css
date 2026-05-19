@@ -102,6 +102,54 @@
 
 
 /* ---------------------------------------------------------------------------
+   POST MEDIA BLOCK
+   Side-by-side text + image widget. Stacks on mobile, splits at 905px.
+   Usage:  <div class="post__media-block">          — text left, image right
+           <div class="post__media-block--reverse">  — image left, text right
+   --------------------------------------------------------------------------- */
+
+.post__media-block {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-6);
+  margin-top:     var(--space-6);
+  margin-bottom:  var(--space-6);
+}
+
+.post__media-block__figure {
+  margin: 0;
+}
+
+.post__media-block__figure img {
+  display:       block;
+  width:         100%;
+  height:        auto;
+  border-radius: 4px;
+  border:        1px solid var(--color-border);
+}
+
+.post__media-block__figcaption {
+  margin-top:  var(--space-2);
+  font-size:   var(--text-sm);
+  color:       var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+@media (min-width: 905px) {
+  .post__media-block {
+    display:               grid;
+    grid-template-columns: 1fr 1fr;
+    align-items:           center;
+    gap:                   var(--space-8);
+  }
+
+  .post__media-block--reverse .post__media-block__figure {
+    order: -1;
+  }
+}
+
+
+/* ---------------------------------------------------------------------------
    REDUCED MOTION
    Collapse all transitions to instant when user prefers reduced motion.
    --------------------------------------------------------------------------- */

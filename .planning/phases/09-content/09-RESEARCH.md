@@ -277,22 +277,16 @@ New `.about-timeline__*` and `.about-skills__*` rules append to this file.
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **What is Sam's copy for the About work history section?**
-   - What we know: The REQUIREMENTS say "work history and skills from Webflow"; the current About has a narrative paragraph that mentions Matalan, Santander, and property but no formal timeline
-   - What's unclear: Whether the Webflow site has structured work history copy that Sam can provide, or whether the planner should scaffold the structure and leave copy as Sam's task
-   - Recommendation: Planner creates the HTML structure with clearly labelled placeholder entries; execution step confirms copy with Sam before shipping
+1. **What is Sam's copy for the About work history section?** (RESOLVED)
+   - Resolution: Scaffold the HTML structure with clearly labelled `[PLACEHOLDER — Sam to add...]` copy in each timeline entry description. The structure itself is the deliverable; Sam replaces placeholders before shipping. Section headings, org names, titles, and dates are real and in place.
 
-2. **Does property director appear as a formal timeline entry?**
-   - What we know: The ROADMAP says "Santander UK, Matalan, property" as work sectors; the About narrative says "tried a few things across property, customer service and pest control"
-   - What's unclear: Whether Sam ran a property business formally (with title and dates) or whether it's background context only
-   - Recommendation: Include it as a timeline entry with a question mark on dates; Sam confirms during execution
+2. **Does property director appear as a formal timeline entry?** (RESOLVED)
+   - Resolution: Yes — included as a formal timeline entry under "Self-employed / Property Director" with placeholder dates and description. Matches ROADMAP requirement to include all three sectors (Santander UK, Matalan, property).
 
-3. **Should CONT-01/02/03 verification be explicit plan tasks?**
-   - What we know: The requirements are already met
-   - What's unclear: Whether the planner should create explicit "verify case study copy is complete" tasks or treat them as implicit
-   - Recommendation: Create one verification task per case study as a light audit step — confirms no regressions from Phase 8 work page linking
+3. **Should CONT-01/02/03 verification be explicit plan tasks?** (RESOLVED)
+   - Resolution: Yes — plan 09-02 is a dedicated audit plan that verifies CONT-01, CONT-02, CONT-03, and CONT-05 with explicit PASS/FAIL criteria. Any FAIL is a blocking issue that must be escalated to Sam before the phase is marked complete.
 
 ---
 

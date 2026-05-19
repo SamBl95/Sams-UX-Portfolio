@@ -4,6 +4,7 @@
     > nav                  — Homepage, all case study pages (no active item)
     > nav navHome=true     — Home page active state (reserved, no existing page sets this)
     > nav navAbout=true    — About page
+    > nav navCV=true       — CV page
     > nav navStories=true  — Stories index and stories post pages
     > nav navContact=true  — Contact page
     > nav navWork=true     — Reserved; homepage does not currently set this flag
@@ -44,6 +45,10 @@
 
         <li class="nav__item">
           <a href="/src/pages/about.html" class="nav__link{{#if navAbout}} nav__link--active{{/if}}"{{#if navAbout}} aria-current="page"{{/if}}>About</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="/src/pages/cv.html" class="nav__link{{#if navCV}} nav__link--active{{/if}}"{{#if navCV}} aria-current="page"{{/if}}>CV</a>
         </li>
 
         <li class="nav__item">

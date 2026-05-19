@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v3.0
 milestone_name: Content & SEO
-status: phase complete — verify then advance
-stopped_at: Phase 8 executed (3/3 plans complete)
-last_updated: "2026-05-19T10:00:00.000Z"
-last_activity: 2026-05-19 — Phase 8 executed (08-01 Hero, 08-02 Nav, 08-03 Work page)
+status: ready to verify
+stopped_at: Phase 9 executed (2/2 plans complete)
+last_updated: "2026-05-19T14:00:00.000Z"
+last_activity: 2026-05-19 — Phase 9 executed (09-01 About sections, 09-02 Content audit passed)
 progress:
   total_phases: 4
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
-  percent: 25
+  total_plans: 7
+  completed_plans: 5
+  percent: 50
 ---
 
 # Project State
@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-05-18)
 
 ## Current Position
 
-Phase: 8 — UI Polish (COMPLETE)
-Plan: 3/3 plans executed
+Phase: 9 — Content (EXECUTED)
+Plan: 2/2 plans executed
 Status: All plans done — ready for verification
-Last activity: 2026-05-19 — Phase 8 executed (hero restructure, nav redesign, work page created)
+Last activity: 2026-05-19 — Phase 9 executed (About work history + skills added; content audit all PASS)
 
-Progress: [██░░░░░░░░] 25%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
@@ -51,6 +51,7 @@ Progress: [██░░░░░░░░] 25%
 | 06-content-pages | 3 | ~30 min |
 | 07-footer-global-audit | 2 | ~20 min |
 | 08-ui-polish | 3 | ~30 min |
+| 09-content | 2 | ~15 min |
 
 ## Accumulated Context
 
@@ -97,6 +98,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-05-19T10:00:00.000Z
-Stopped at: Phase 8 complete
-Resume with: /gsd:verify-work 8
+Last session: 2026-05-19T14:00:00.000Z
+Stopped at: Phase 9 executed
+Resume with: /gsd:verify-work 9

@@ -29,6 +29,7 @@ export default defineConfig({
         storiesIndex: r('./src/pages/stories/index.html'),
         storiesPost:  r('./src/pages/stories/design-systems-and-portfolio-sites.html'),
         work:         r('./src/pages/work.html'),
+        cv:           r('./src/pages/cv.html'),
       },
     },
   },
