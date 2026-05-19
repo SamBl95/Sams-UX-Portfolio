@@ -8,6 +8,15 @@
    SECTION HEADER
    ------------------------------------------------------------------------- */
 
+.work__header {
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 905px) {
+  .work__header { margin-bottom: var(--space-8); }
+}
+
+
 /* Font-size from h1 element rule in _typography.css */
 .work__heading {
   font-weight:    var(--font-weight-semibold);
