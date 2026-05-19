@@ -47,7 +47,11 @@
   2. Nav has a "Home" link as the first item, no designer name on the left, no bottom stroke, and links animate left-to-right underline on hover with the active link bolded
   3. A /work page exists with a feature section layout and is reachable from the "Work" nav link
   4. Hero content and body copy paragraphs expand to fill available width — no fixed pixel or character-count constraints
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [ ] 08-01-PLAN.md — Hero restructure: h2.hero__name, revised h1, subheadline removal, 1440px width fix
+- [ ] 08-02-PLAN.md — Nav redesign: Home link, logo removal, border removal, underline hover animation
+- [ ] 08-03-PLAN.md — Work page creation + 72ch paragraph width removal
 **UI hint**: yes
 
 ### Phase 9: Content
@@ -95,7 +99,7 @@
 | 5. Case Study Components | v2.0 | 2/2 | Complete | 2026-05-18 |
 | 6. Content Pages | v2.0 | 3/3 | Complete | 2026-05-18 |
 | 7. Footer + Global Audit | v2.0 | 2/2 | Complete | 2026-05-18 |
-| 8. UI Polish | v3.0 | 0/? | Not started | - |
+| 8. UI Polish | v3.0 | 0/3 | Not started | - |
 | 9. Content | v3.0 | 0/? | Not started | - |
 | 10. Contact Form | v3.0 | 0/? | Not started | - |
 | 11. SEO | v3.0 | 0/? | Not started | - |
