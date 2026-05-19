@@ -62,7 +62,10 @@ Plans:
   1. I-Exchange, CASSI, and Community case study pages each have their real narrative, problem statement, and outcome copy in place
   2. The About page shows Sam's full work history (Santander UK, Matalan, property) and skills section
   3. The Stories section contains at least one article page with a real or placeholder narrative structure ready for copy
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 09-01-PLAN.md — About page: add work history timeline and skills/tools sections to about.html and _about.css
+- [ ] 09-02-PLAN.md — Content audit: verify CONT-01/02/03/05 are met across case studies and Stories
 **UI hint**: yes
 
 ### Phase 10: Contact Form
@@ -100,6 +103,6 @@ Plans:
 | 6. Content Pages | v2.0 | 3/3 | Complete | 2026-05-18 |
 | 7. Footer + Global Audit | v2.0 | 2/2 | Complete | 2026-05-18 |
 | 8. UI Polish | v3.0 | 0/3 | Not started | - |
-| 9. Content | v3.0 | 0/? | Not started | - |
+| 9. Content | v3.0 | 0/2 | Not started | - |
 | 10. Contact Form | v3.0 | 0/? | Not started | - |
 | 11. SEO | v3.0 | 0/? | Not started | - |
