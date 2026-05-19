@@ -57,7 +57,14 @@
       "Bash(git worktree *)",
       "Bash(git branch *)",
       "Skill(gsd:code-review)",
-      "Bash(grep -rn \"#[0-9a-fA-F]\\\\{3,6\\\\}\" src/styles/ --include=\"*.css\")"
+      "Bash(grep -rn \"#[0-9a-fA-F]\\\\{3,6\\\\}\" src/styles/ --include=\"*.css\")",
+      "Bash(python3 -c ' *)",
+      "Bash(node /tmp/write_summary.js)",
+      "Bash(pwsh *)",
+      "Bash(node *)",
+      "Bash(py --version)",
+      "Bash(/c/WINDOWS/System32/WindowsPowerShell/v1.0/powershell.exe *)",
+      "Skill(gsd:verify-work)"
     ]
   }
 }
