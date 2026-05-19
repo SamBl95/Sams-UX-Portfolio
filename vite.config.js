@@ -28,6 +28,7 @@ export default defineConfig({
         community:   r('./src/pages/case-studies/community.html'),
         storiesIndex: r('./src/pages/stories/index.html'),
         storiesPost:  r('./src/pages/stories/design-systems-and-portfolio-sites.html'),
+        work:         r('./src/pages/work.html'),
       },
     },
   },

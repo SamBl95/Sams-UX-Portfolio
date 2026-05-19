@@ -1,0 +1,103 @@
+/* =============================================================================
+   WORK
+   Work index page — hero header and feature-section article layout.
+   ============================================================================= */
+
+
+/* -------------------------------------------------------------------------
+   SECTION HEADER
+   ------------------------------------------------------------------------- */
+
+/* Font-size from h1 element rule in _typography.css */
+.work__heading {
+  font-weight:    var(--font-weight-semibold);
+  letter-spacing: -0.02em;
+  color:          var(--color-text-primary);
+  margin-bottom:  var(--space-3);
+}
+
+.work__subheading {
+  font-size:   var(--text-lg);
+  color:       var(--color-text-secondary);
+  line-height: var(--leading-body);
+  margin-bottom: 0;
+}
+
+
+/* -------------------------------------------------------------------------
+   FEATURE ARTICLE — mobile: single column, stacked
+   ------------------------------------------------------------------------- */
+
+.work__feature {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-6);
+}
+
+.work__feature + .work__feature {
+  margin-top: var(--space-12);
+}
+
+
+/* -------------------------------------------------------------------------
+   IMAGE PLACEHOLDER
+   ------------------------------------------------------------------------- */
+
+.work__feature-image {
+  background-color: var(--color-surface);
+  border-radius:    var(--radius-lg);
+  aspect-ratio:     16 / 9;
+  width:            100%;
+}
+
+
+/* -------------------------------------------------------------------------
+   COPY COLUMN
+   ------------------------------------------------------------------------- */
+
+.work__feature-copy {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-4);
+}
+
+.work__feature-title {
+  font-family:         var(--font-heading);
+  font-weight:         var(--font-weight-semibold);
+  font-optical-sizing: auto;
+  letter-spacing:      -0.015em;
+  color:               var(--color-text-primary);
+  line-height:         var(--leading-tight);
+  font-size:           var(--text-2xl);
+}
+
+.work__feature-desc {
+  font-size:   var(--text-base);
+  line-height: var(--leading-body);
+  color:       var(--color-text-secondary);
+}
+
+
+/* -------------------------------------------------------------------------
+   DESKTOP 905px+ — two-column flex row
+   ------------------------------------------------------------------------- */
+
+@media (min-width: 905px) {
+  .work__feature {
+    flex-direction: row;
+    align-items:    flex-start;
+    gap:            var(--space-8);
+  }
+
+  .work__feature-image {
+    flex: 0 0 40%;
+  }
+
+  .work__feature-copy {
+    flex: 1;
+  }
+
+  .work__feature-title {
+    font-size: var(--text-3xl);
+  }
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Three product design case studies from Santander UK — delivering measurable outcomes across search, AI tooling, and community support." />
+    <title>Work — Sam Blake | Product Designer</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&family=Caveat:wght@400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    {{> nav navWork=true}}
+    <main>
+      <section class="work section-lg" aria-labelledby="work-heading">
+        <div class="container">
+          <h1 id="work-heading" class="work__heading">Selected work</h1>
+          <p class="work__subheading">Three case studies from Santander UK</p>
+        </div>
+      </section>
+
+      <section class="work__cases section-lg">
+        <div class="container">
+
+          <article class="work__feature">
+            <div class="work__feature-image" aria-hidden="true"></div>
+            <div class="work__feature-copy">
+              <div class="card__metric-chip">
+                <span class="card__metric-value">35%</span>
+                <span class="card__metric-label">Search accuracy improvement</span>
+              </div>
+              <h2 class="work__feature-title">i-Exchange Knowledge Base Overhaul</h2>
+              <p class="work__feature-desc">Overhauling Santander's 6,000-article internal knowledge base to fix broken search — delivering a 35% accuracy improvement across 5 million annual searches.</p>
+              <a href="/src/pages/case-studies/i-exchange.html" class="btn btn--ghost">Read case study <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="work__feature">
+            <div class="work__feature-image" aria-hidden="true"></div>
+            <div class="work__feature-copy">
+              <div class="card__metric-chip">
+                <span class="card__metric-value">30%</span>
+                <span class="card__metric-label">Increase in feedback submissions</span>
+              </div>
+              <h2 class="work__feature-title">Cassi — AI Chatbot Feedback Redesign</h2>
+              <p class="work__feature-desc">Fixing Santander's AI colleague assistant in three weeks at zero development cost — increasing feedback submission rates by 30%.</p>
+              <a href="/src/pages/case-studies/cassi.html" class="btn btn--ghost">Read case study <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="work__feature">
+            <div class="work__feature-image" aria-hidden="true"></div>
+            <div class="work__feature-copy">
+              <div class="card__metric-chip">
+                <span class="card__metric-value">97 hrs</span>
+                <span class="card__metric-label">Saved every month</span>
+              </div>
+              <h2 class="work__feature-title">Community Support Forum Redesign</h2>
+              <p class="work__feature-desc">Halving homepage load times and saving 97 hours a month by scaling Santander's internal community forum — without a complete rebuild.</p>
+              <a href="/src/pages/case-studies/community.html" class="btn btn--ghost">Read case study <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+    </main>
+    {{> footer}}
+    <script type="module" src="/src/theme.js"></script>
+  </body>
+</html>
