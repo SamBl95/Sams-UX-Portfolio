@@ -14,11 +14,6 @@
   background-color: var(--color-bg);
 }
 
-/* Scroll shadow — JS adds .nav--scrolled when window.scrollY > 8 */
-.nav--scrolled {
-  box-shadow: 0 4px 16px -4px rgb(0 0 0 / 0.06);
-}
-
 
 /* Inner row */
 .nav__inner {
