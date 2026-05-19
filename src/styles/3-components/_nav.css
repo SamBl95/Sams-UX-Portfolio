@@ -16,7 +16,7 @@
 
 /* Scroll shadow — JS adds .nav--scrolled when window.scrollY > 8 */
 .nav--scrolled {
-  box-shadow: 0 1px 0 var(--color-border), 0 4px 16px -4px rgb(0 0 0 / 0.06);
+  box-shadow: 0 4px 16px -4px rgb(0 0 0 / 0.06);
 }
 
 
@@ -133,7 +133,7 @@
   position:        relative;
   font-size:       var(--text-sm);
   font-weight:     var(--font-weight-normal);
-  color:           var(--color-text-secondary);
+  color:           var(--color-text-nav);
   text-decoration: none;
   padding:         var(--space-3) var(--space-5);
   transition:      color var(--transition-fast);
@@ -156,20 +156,6 @@
   font-weight: var(--font-weight-semibold);
 }
 
-/* CTA link — mobile: full-width, centred in the open nav */
-.nav__link--cta {
-  display:       flex;
-  margin-inline: var(--space-5);
-  margin-block:  var(--space-2);
-}
-
-/* Mobile: btn inside nav list (Get in touch) fills nav width — legacy selector kept */
-.nav__list .btn {
-  display:         flex;
-  justify-content: center;
-  margin-inline:   var(--space-5);
-  margin-block:    var(--space-2);
-}
 
 
 /* -------------------------------------------------------------------------
@@ -236,25 +222,6 @@
 
   .nav__link[aria-current="page"] {
     font-weight: var(--font-weight-semibold);
-  }
-
-  /* CTA: reset mobile flex/margins so btn sits inline; margin-left separates from text links */
-  .nav__link--cta {
-    display:       inline-flex;
-    margin-inline: 0;
-    margin-block:  0;
-    margin-left:   var(--space-3);
-  }
-
-  /* Revert mobile full-width override — btn is inline in the horizontal nav */
-  .nav__list .btn {
-    display: inline-flex;
-    margin:  0;
-  }
-
-  /* CTA height constrained within nav context only — button transitions owned by _button.css */
-  .nav .btn {
-    height: 36px;
   }
 
 }
