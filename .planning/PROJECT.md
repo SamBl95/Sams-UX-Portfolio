@@ -10,17 +10,17 @@ Every interaction feels intentional: premium card hover overlays, staggered scro
 
 A recruiter or hiring manager can understand Sam's work and reach out — every page exists, every link works, and every component is polished enough that adding content is the only remaining task.
 
-## Current Milestone: v3.0 Content & SEO
+## Current State: v3.0 Shipped 2026-05-19
 
-**Goal:** Finish the UI, fill the site with real content, and make every page discoverable.
+All four phases complete. The site has real content, a working contact form, and full SEO metadata.
 
-**Target features:**
-- UI Polish: flex-based container widths, nav redesign (flat tabs, left-to-right hover, Home link, no name/stroke), dedicated case studies /work page, hero copy restructure
-- Case study content: real copy for I-Exchange, CASSI, Community (pulled from Webflow, narrative preserved)
-- About page: work history and skills
-- Contact form: FormSubmit/EmailJS (static, no backend)
-- Stories: at least one real article
-- SEO: unique title + meta description per page, canonical URLs, Open Graph, theme-color, JSON-LD Person schema, sitemap.xml, robots.txt
+**Shipped in v3.0:**
+- Hero redesigned: "Sam Blake" h2 accent + "A Product Designer who" subhead, 4-element stagger
+- Nav: Home link, logo removed, flat tab underline animation, no bottom border
+- /work page with measurable outcome chips for all 3 case studies
+- About: work history timeline + skills sections
+- Contact form: Web3Forms AJAX, in-page feedback, JS validation, honeypot
+- 10-page SEO suite: titles, descriptions, canonical URLs, OG tags, JSON-LD, sitemap, robots.txt
 
 ## Previous State (v2.0)
 
@@ -68,28 +68,26 @@ A recruiter or hiring manager can understand Sam's work and reach out — every 
 - ✓ Accessibility: prefers-reduced-motion in every animated file; pointer-fine gate on all hover — v2.0
 - ✓ Token audit: zero hardcoded values, zero em dashes in titles/h1s, typography comment corrected — v2.0
 
-### Active (v3.0 — Content & SEO)
+### Validated (v3.0)
 
-**UI Polish:**
-- [ ] Flex-based width for hero content and body copy on content pages (remove fixed container widths)
-- [ ] Nav: flat tab style, left-to-right underline hover animation, bold on active, add "Home", remove name from left, remove bottom stroke
-- [ ] Dedicated case studies page (/work), linked from nav
-- [ ] Hero copy: "Sam Blake" h2 (accent colour) + "A Product Designer who..." subhead, remove one-liner below typewriter
+- ✓ Hero: "Sam Blake" h2 accent + "A Product Designer who" subhead, 4-element stagger — v3.0
+- ✓ Hero content width uses flex/available-space, no fixed pixel constraint — v3.0
+- ✓ Paragraph elements on content pages use available-space width — v3.0
+- ✓ Nav: Home link, logo removed, flat tab underline animation, no bottom border — v3.0
+- ✓ Active nav link: semibold + persistent underline — v3.0
+- ✓ /work page with feature-row layout, linked from nav — v3.0
+- ✓ I-Exchange, CASSI, Community case studies: real narrative copy and measurable outcomes — v3.0
+- ✓ About page: work history (Matalan, Santander UK, Self-employed) + skills sections — v3.0
+- ✓ Stories: placeholder article with date, headings, real copy — v3.0
+- ✓ Contact form: Web3Forms AJAX, success/error states, JS validation, honeypot — v3.0
+- ✓ Email delivery to sam.blake@outlook.com confirmed — v3.0
+- ✓ 10-page SEO suite: unique titles, meta descriptions, canonical URLs, OG tags, theme-color — v3.0
+- ✓ JSON-LD Person schema on index.html and about.html — v3.0
+- ✓ sitemap.xml (10 clean-path entries), robots.txt, vercel.json clean URL rewrites — v3.0
 
-**Content:**
-- [ ] Case study pages: real copy for I-Exchange, CASSI, Community (from samsux.webflow.io)
-- [ ] About page: detailed work history and skills
-- [ ] Contact form with email integration (FormSubmit/EmailJS, static)
-- [ ] Blog/Stories: at least one real article
+### Active (v4.0 — Next Milestone)
 
-**SEO:**
-- [ ] Unique title + meta description (150–160 chars) per page
-- [ ] Canonical URL per page (samsux.co.uk)
-- [ ] Open Graph tags: og:title, og:description, og:url, og:type, og:site_name, og:locale en_GB
-- [ ] theme-color: #0d1f1a on all pages
-- [ ] JSON-LD Person schema on index.html and about.html
-- [ ] sitemap.xml in public/
-- [ ] robots.txt in public/
+*(To be defined via /gsd:new-milestone)*
 
 ### Out of Scope
 
@@ -115,15 +113,22 @@ A recruiter or hiring manager can understand Sam's work and reach out — every 
 | Transparent border reserve on nav links | Prevents 2px height shift in flex row when active border applied | ✓ v2.0 |
 | Passive scroll listener + immediate call | Chrome performance + handles pre-scrolled bfcache state | ✓ v2.0 |
 | Raw alpha in shadow layers permitted | Documented exception per UI-SPEC; no token needed | ✓ v2.0 |
+| Web3Forms over FormSubmit | FormSubmit unreachable site-wide (HTTP 522); Web3Forms has no activation step | ✓ v3.0 |
+| og:image in public/ not src/ | Vite fingerprints src/ assets, breaking stable og:image URL | ✓ v3.0 |
+| JSON-LD inline in page head only | Handlebars partials fire on every page; schema belongs on index + about only | ✓ v3.0 |
+| cleanUrls removed from vercel.json | Conflicted with rewrites — caused 404s on Vercel; rewrites alone sufficient | ✓ v3.0 |
+| Metric chips over lede outcomes | Visual chip treatment beats outcome buried in lede text | ✓ v3.0 |
 
 ## Context
 
 - Stack: Vite MPA, vanilla HTML + CSS, BEM, ITCSS, vite-plugin-handlebars, no frameworks
-- 8 pages: Home, About, 3 case studies, Contact, Stories index, Stories post
+- 10 pages: Home, About, CV, Work, 3 case studies, Contact, Stories index, Stories post
 - Nav/footer: single canonical Handlebars partials in `src/components/`
 - Font stack: Fraunces (headings + display metrics), Urbanist (body/UI), Caveat (typewriter only)
 - Design tokens: dark palette, 8pt spacing scale, 5-breakpoint type scale, 3 easing tokens
-- ~9,150 LOC across CSS, JS, HTML
+- Contact form: Web3Forms AJAX (no backend), JS validation, honeypot
+- SEO: full OG + canonical + JSON-LD + sitemap across all 10 pages
+- Deployment: Vercel with clean URL rewrites in vercel.json
 
 ## Constraints
 
@@ -149,4 +154,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-18 after v3.0 milestone start*
+*Last updated: 2026-05-19 after v3.0 milestone complete*

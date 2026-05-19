@@ -4,7 +4,7 @@
 
 - ✅ **v1.0 Foundation** — Phases 1 (shipped 2026-05-17) — [Archive](.planning/milestones/v1.0-ROADMAP.md)
 - ✅ **v2.0 Polish & Refinement** — Phases 2–7 (shipped 2026-05-18) — [Archive](.planning/milestones/v2.0-ROADMAP.md)
-- 🚧 **v3.0 Content & SEO** — Phases 8–11 (in progress)
+- ✅ **v3.0 Content & SEO** — Phases 8–11 (shipped 2026-05-19) — [Archive](.planning/milestones/v3.0-ROADMAP.md)
 
 ## Phases
 
@@ -27,14 +27,15 @@
 
 </details>
 
-### 🚧 v3.0 Content & SEO (In Progress)
+<details>
+<summary>✅ v3.0 Content & SEO — SHIPPED 2026-05-19</summary>
 
-**Milestone Goal:** Every page carries real content, a working contact form delivers email without a backend, and complete SEO metadata makes every page discoverable and shareable.
+- [x] Phase 8: UI Polish (3/3 plans) — completed 2026-05-19
+- [x] Phase 9: Content (2/2 plans) — completed 2026-05-19
+- [x] Phase 10: Contact Form (2/2 plans) — completed 2026-05-19
+- [x] Phase 11: SEO (2/2 plans) — completed 2026-05-19
 
-- [ ] **Phase 8: UI Polish** — Nav and hero redesigned; /work page created and linked from nav
-- [ ] **Phase 9: Content** — Real case study copy, About work history, and Stories placeholder in place
-- [x] **Phase 10: Contact Form** — FormSubmit AJAX form with success/error states and spam protection
-- [x] **Phase 11: SEO** — Full meta suite, Open Graph, JSON-LD, sitemap, robots.txt, and vercel.json
+</details>
 
 ## Phase Details
 
@@ -108,7 +109,7 @@ Plans:
 | 5. Case Study Components | v2.0 | 2/2 | Complete | 2026-05-18 |
 | 6. Content Pages | v2.0 | 3/3 | Complete | 2026-05-18 |
 | 7. Footer + Global Audit | v2.0 | 2/2 | Complete | 2026-05-18 |
-| 8. UI Polish | v3.0 | 0/3 | Not started | - |
-| 9. Content | v3.0 | 0/2 | Not started | - |
+| 8. UI Polish | v3.0 | 3/3 | Complete | 2026-05-19 |
+| 9. Content | v3.0 | 2/2 | Complete | 2026-05-19 |
 | 10. Contact Form | v3.0 | 2/2 | Complete | 2026-05-19 |
 | 11. SEO | v3.0 | 2/2 | Complete | 2026-05-19 |

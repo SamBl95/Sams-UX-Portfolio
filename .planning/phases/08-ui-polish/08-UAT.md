@@ -1,5 +1,5 @@
 ---
-status: diagnosed
+status: complete
 phase: 08-ui-polish
 source: 08-01-SUMMARY.md, 08-02-SUMMARY.md, 08-03-SUMMARY.md
 started: 2026-05-19T00:00:00Z
