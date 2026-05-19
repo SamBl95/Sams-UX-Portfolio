@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v3.0
 milestone_name: Content & SEO
-status: ready to verify
-stopped_at: Phase 9 executed (2/2 plans complete)
-last_updated: "2026-05-19T14:00:00.000Z"
-last_activity: 2026-05-19 — Phase 9 executed (09-01 About sections, 09-02 Content audit passed)
+status: in progress
+stopped_at: Phase 10 executed (2/2 plans complete)
+last_updated: "2026-05-19T00:00:00.000Z"
+last_activity: 2026-05-19 — Phase 10 executed (contact form built; switched to Web3Forms; end-to-end verified)
 progress:
   total_phases: 4
-  completed_phases: 1
-  total_plans: 7
-  completed_plans: 5
-  percent: 50
+  completed_phases: 2
+  total_plans: 9
+  completed_plans: 7
+  percent: 75
 ---
 
 # Project State
@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-05-18)
 
 ## Current Position
 
-Phase: 9 — Content (EXECUTED)
+Phase: 10 — Contact Form (EXECUTED)
 Plan: 2/2 plans executed
 Status: All plans done — ready for verification
-Last activity: 2026-05-19 — Phase 9 executed (About work history + skills added; content audit all PASS)
+Last activity: 2026-05-19 — Phase 10 executed (contact form built; switched to Web3Forms; end-to-end verified)
 
-Progress: [█████░░░░░] 50%
+Progress: [███████░░░] 75%
 
 ## Performance Metrics
 
@@ -68,10 +68,10 @@ Progress: [█████░░░░░] 50%
 
 ### Decisions (from v3.0 planning)
 
-- FormSubmit chosen over EmailJS — no SDK, no account cap, plain HTML form action
+- Web3Forms chosen for contact form (FormSubmit was unreachable — HTTP 522 site-wide on 2026-05-19); Web3Forms has proper CORS, no activation step, boolean success response
 - og:image placed in public/ (not src/) — Vite fingerprints src/ assets, breaking stable og:image URL
 - JSON-LD Person schema goes inline in page head only — not in Handlebars partials (fires on every page)
-- FormSubmit honeypot must use opacity:0 + position:absolute, not display:none — display:none silently bypasses spam protection
+- Contact form honeypot uses opacity:0 + position:absolute, not display:none — display:none silently bypasses spam protection
 - SEO phase (11) depends on Content phase (9) — meta descriptions must reflect real copy
 - vercel.json clean URL rewrites are part of Phase 11 (SEO), not standalone
 - No new npm dependencies for this milestone — FormSubmit is a plain form action; all SEO is static HTML
@@ -83,7 +83,6 @@ None.
 ### Blockers/Concerns
 
 - Production URL structure (samsux.co.uk) must be confirmed before writing canonical tags and sitemap — confirm at start of Phase 11
-- FormSubmit endpoint requires a one-click activation email on first POST — this is an activation step, not a code bug
 
 ## Deferred Items
 
@@ -100,4 +99,4 @@ None.
 
 Last session: 2026-05-19T14:00:00.000Z
 Stopped at: Phase 9 executed
-Resume with: /gsd:verify-work 9
+Resume with: /gsd:verify-work 10
