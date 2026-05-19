@@ -41,13 +41,15 @@
 
 .hero {
   background-color: var(--color-bg);
+  padding-block:    var(--space-10); /* 80px — override section-xl 128px to keep CTAs above fold */
 }
 
 @media (min-width: 905px) {
   .hero {
-    min-height:  90vh;
-    display:     flex;
-    align-items: center;
+    padding-block: var(--space-20); /* 160px — matches section-xl desktop */
+    min-height:    90vh;
+    display:       flex;
+    align-items:   center;
   }
 }
 

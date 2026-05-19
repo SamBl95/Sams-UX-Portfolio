@@ -30,11 +30,11 @@
   flex-direction:  column;
   justify-content: center;
   gap:             var(--space-1);
-  width:           var(--space-10); /* 40px — minimum tap target */
-  height:          var(--space-10);
-  padding:         var(--space-2);
+  width:           var(--space-5);  /* 40px — minimum tap target */
+  height:          var(--space-5);
+  padding:         var(--space-1);
   margin-left:     auto;            /* push toggle to right edge when no logo present */
-  margin-right:    calc(var(--space-2) * -1); /* flush with container edge */
+  margin-right:    calc(var(--space-1) * -1); /* flush with container edge */
   background:      none;
   border:          none;
   cursor:          pointer;
@@ -96,7 +96,7 @@
 }
 
 .nav--open .nav__toggle-bar:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(10px) rotate(45deg);
 }
 
 .nav--open .nav__toggle-bar:nth-child(2) {
@@ -104,7 +104,7 @@
 }
 
 .nav--open .nav__toggle-bar:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
 }
 
 
