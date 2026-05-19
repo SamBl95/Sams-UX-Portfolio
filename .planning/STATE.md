@@ -2,11 +2,11 @@
 gsd_state_version: 1.0
 milestone: v4.0
 milestone_name: Content & Visuals
-status: planning
-last_updated: "2026-05-19T22:49:39.176Z"
+status: roadmap_complete
+last_updated: "2026-05-19T00:00:00.000Z"
 last_activity: 2026-05-19
 progress:
-  total_phases: 0
+  total_phases: 3
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -17,17 +17,21 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-05-18)
+See: .planning/PROJECT.md (updated 2026-05-19)
 
 **Core value:** A recruiter or hiring manager can understand Sam's work and reach out — every page exists, every link works, and every component is polished enough that adding content is the only remaining task.
-**Current focus:** Planning next milestone
+**Current focus:** v4.0 — roadmap complete, ready to plan Phase 12
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 12 (CV Page) — not started
 Plan: —
-Status: Defining requirements
-Last activity: 2026-05-19 — Milestone v4.0 started
+Status: Roadmap complete — awaiting /gsd:plan-phase 12
+Last activity: 2026-05-19 — v4.0 roadmap defined (phases 12–14)
+
+```
+v4.0 Progress: [░░░░░░░░░░░░░░░░░░░░] 0% — 0/3 phases complete
+```
 
 ## Performance Metrics
 
@@ -73,14 +77,20 @@ Last activity: 2026-05-19 — Milestone v4.0 started
 - vercel.json clean URL rewrites are part of Phase 11 (SEO), not standalone
 - No new npm dependencies for this milestone — FormSubmit is a plain form action; all SEO is static HTML
 
+### Decisions (from v4.0 planning)
+
+- Images sourced from samsux.webflow.io — execution requires crawling the site to discover available image assets
+- Above-fold images (homepage cards + /work feature rows) split into their own phase (13) from case study image depth (14) — different discovery and execution risk profiles
+- PDF file (Samuel-Blake-CV.pdf) already exists in public/ — Phase 12 only wires the button, not the file
+
 ### Pending Todos
 
 None.
 
 ### Blockers/Concerns
 
-- Production URL confirmed as https://www.samsux.co.uk — used in all canonical tags and sitemap in Phase 11 plans
-- public/og-image.png must exist before deploying — plans include a preflight check; create a placeholder if absent
+- Image availability from samsux.webflow.io is unverified — Phase 13 and 14 execution must begin with a crawl to identify available assets before editing HTML
+- CV page current structure needs reading before Phase 12 execution to understand existing timeline markup
 
 ## Deferred Items
 
@@ -92,9 +102,11 @@ None.
 | SEO | Google Search Console submission | Post-deploy step | v3.0 planning |
 | Verification | VERIFICATION.md for phases 2, 3, 5, 6, 7 | Skip | v2.0 close |
 | Tracking | Nyquist VALIDATION.md files | Skip | v2.0 close |
+| Images | Real photography or illustration for About page | Future | v4.0 planning |
+| Content | Stories section with real articles | Future | v4.0 planning |
 
 ## Session Continuity
 
 Last session: 2026-05-19T00:00:00.000Z
-Stopped at: v3.0 archived and tagged
-Resume with: /gsd:new-milestone
+Stopped at: v4.0 roadmap defined
+Resume with: /gsd:plan-phase 12

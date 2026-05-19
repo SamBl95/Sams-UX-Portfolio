@@ -5,6 +5,7 @@
 - ✅ **v1.0 Foundation** — Phases 1 (shipped 2026-05-17) — [Archive](.planning/milestones/v1.0-ROADMAP.md)
 - ✅ **v2.0 Polish & Refinement** — Phases 2–7 (shipped 2026-05-18) — [Archive](.planning/milestones/v2.0-ROADMAP.md)
 - ✅ **v3.0 Content & SEO** — Phases 8–11 (shipped 2026-05-19) — [Archive](.planning/milestones/v3.0-ROADMAP.md)
+- 🚧 **v4.0 Content & Visuals** — Phases 12–14 (in progress)
 
 ## Phases
 
@@ -37,6 +38,14 @@
 
 </details>
 
+### 🚧 v4.0 Content & Visuals (In Progress)
+
+**Milestone Goal:** Fill the remaining content gaps — CV copy, PDF download buttons, and real images across every visual placeholder in the site.
+
+- [ ] **Phase 12: CV Page** — Work history complete, education updated, PDF download wired on CV and About pages
+- [ ] **Phase 13: Above-Fold Images** — Homepage cards and /work feature rows display real images
+- [ ] **Phase 14: Case Study Image Depth** — I-Exchange, CASSI, and Community visual components filled with real images
+
 ## Phase Details
 
 ### Phase 8: UI Polish
@@ -50,9 +59,9 @@
   4. Hero content and body copy paragraphs expand to fill available width — no fixed pixel or character-count constraints
 **Plans**: 3 plans
 Plans:
-- [ ] 08-01-PLAN.md — Hero restructure: h2.hero__name, revised h1, subheadline removal, 1440px width fix
-- [ ] 08-02-PLAN.md — Nav redesign: Home link, logo removal, border removal, underline hover animation
-- [ ] 08-03-PLAN.md — Work page creation + 72ch paragraph width removal
+- [x] 08-01-PLAN.md — Hero restructure: h2.hero__name, revised h1, subheadline removal, 1440px width fix
+- [x] 08-02-PLAN.md — Nav redesign: Home link, logo removal, border removal, underline hover animation
+- [x] 08-03-PLAN.md — Work page creation + 72ch paragraph width removal
 **UI hint**: yes
 
 ### Phase 9: Content
@@ -65,8 +74,8 @@ Plans:
   3. The Stories section contains at least one article page with a real or placeholder narrative structure ready for copy
 **Plans**: 2 plans
 Plans:
-- [ ] 09-01-PLAN.md — About page: add work history timeline and skills/tools sections to about.html and _about.css
-- [ ] 09-02-PLAN.md — Content audit: verify CONT-01/02/03/05 are met across case studies and Stories
+- [x] 09-01-PLAN.md — About page: add work history timeline and skills/tools sections to about.html and _about.css
+- [x] 09-02-PLAN.md — Content audit: verify CONT-01/02/03/05 are met across case studies and Stories
 **UI hint**: yes
 
 ### Phase 10: Contact Form
@@ -80,8 +89,8 @@ Plans:
   4. The FormSubmit endpoint is activated and delivers submitted messages to sam.blake@outlook.com
 **Plans**: 2 plans
 Plans:
-- [ ] 10-01-PLAN.md — Form markup, CSS, and AJAX JS: contact.html form, _form.css, form.js (FORM-01/02/03/04)
-- [ ] 10-02-PLAN.md — FormSubmit activation: trigger endpoint, click confirmation email, verify delivery (FORM-05)
+- [x] 10-01-PLAN.md — Form markup, CSS, and AJAX JS: contact.html form, _form.css, form.js (FORM-01/02/03/04)
+- [x] 10-02-PLAN.md — FormSubmit activation: trigger endpoint, click confirmation email, verify delivery (FORM-05)
 
 ### Phase 11: SEO
 **Goal**: Every page is discoverable — correct titles, meta descriptions, Open Graph tags, canonical URLs, JSON-LD schema, sitemap, robots.txt, and clean URL rewrites are all in place
@@ -98,6 +107,42 @@ Plans:
 - [x] 11-01-PLAN.md — SEO head block for all 10 pages: title, description, canonical, OG tags, theme-color (SEO-01/02/03/04/05/06)
 - [x] 11-02-PLAN.md — JSON-LD Person schema + sitemap.xml + robots.txt + vercel.json (SEO-07/08/09/10)
 
+### Phase 12: CV Page
+**Goal**: The CV page presents a complete and accurate employment history, updated education, and a working PDF download; the About page CTA also links to the PDF
+**Depends on**: Phase 11
+**Requirements**: CV-01, CV-02, CV-03, CV-04, CV-05
+**Success Criteria** (what must be TRUE):
+  1. The CV page lists all 5 roles (Matalan, NUX Volunteer, Santander PD/BA, Santander UX Researcher rotation, Blake's Estates) with correct titles, dates, and descriptions
+  2. NUX Volunteer and UX Researcher (rotation) appear as distinct timeline entries alongside the existing 3 roles
+  3. Google UX Professional Certificate is visible in the education section of the CV page
+  4. Clicking "Download CV" on the CV page opens or downloads /Samuel-Blake-CV.pdf
+  5. Clicking "Download CV" on the About page CTA opens or downloads /Samuel-Blake-CV.pdf
+**Plans**: TBD
+**UI hint**: yes
+
+### Phase 13: Above-Fold Images
+**Goal**: Every above-fold visual placeholder on the homepage and /work page is replaced with a real image sourced from samsux.webflow.io
+**Depends on**: Phase 12
+**Requirements**: IMG-01, IMG-02
+**Success Criteria** (what must be TRUE):
+  1. Homepage case study cards each display a real thumbnail image — no placeholder or empty image slot visible
+  2. /work page feature rows each display a real case study image — no placeholder or empty image slot visible
+  3. All images render at correct aspect ratios across mobile (375px), tablet (600px), and desktop (1240px+) breakpoints
+**Plans**: TBD
+**UI hint**: yes
+
+### Phase 14: Case Study Image Depth
+**Goal**: Every image-block, before-after, and process-steps component inside the three case study pages contains real visual content sourced from samsux.webflow.io
+**Depends on**: Phase 13
+**Requirements**: IMG-03, IMG-04, IMG-05
+**Success Criteria** (what must be TRUE):
+  1. I-Exchange case study page has real images in every image-block, before-after, and/or process-steps component that was previously empty
+  2. CASSI case study page has real images in every image-block, before-after, and/or process-steps component that was previously empty
+  3. Community case study page has real images in every image-block, before-after, and/or process-steps component that was previously empty
+  4. No empty or broken image slots remain across all three case study pages
+**Plans**: TBD
+**UI hint**: yes
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -113,3 +158,6 @@ Plans:
 | 9. Content | v3.0 | 2/2 | Complete | 2026-05-19 |
 | 10. Contact Form | v3.0 | 2/2 | Complete | 2026-05-19 |
 | 11. SEO | v3.0 | 2/2 | Complete | 2026-05-19 |
+| 12. CV Page | v4.0 | 0/TBD | Not started | - |
+| 13. Above-Fold Images | v4.0 | 0/TBD | Not started | - |
+| 14. Case Study Image Depth | v4.0 | 0/TBD | Not started | - |
