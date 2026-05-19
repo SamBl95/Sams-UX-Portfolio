@@ -29,13 +29,54 @@
    ------------------------------------------------------------------------- */
 
 .work__feature {
-  display:        flex;
-  flex-direction: column;
-  gap:            var(--space-6);
+  display:         flex;
+  flex-direction:  column;
+  border:          1px solid var(--color-border);
+  border-radius:   var(--radius-xl);
+  overflow:        hidden;
+  position:        relative;
+  text-decoration: none;
+  color:           inherit;
+  transition:
+    border-color var(--transition-base),
+    box-shadow   var(--transition-base),
+    transform    200ms var(--ease-in-out);
 }
 
 .work__feature + .work__feature {
-  margin-top: var(--space-12);
+  margin-top: var(--space-8);
+}
+
+.work__feature::after {
+  content:          '';
+  position:         absolute;
+  inset:            0;
+  border-radius:    inherit;
+  background-color: var(--color-text-primary);
+  opacity:          0;
+  transition:       opacity 150ms var(--ease-out);
+  pointer-events:   none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .work__feature:hover::after { opacity: 0.08; }
+  .work__feature:hover {
+    transform:    translateY(-6px);
+    border-color: var(--color-accent);
+    box-shadow:
+      0 24px 48px -12px rgb(0 0 0 / 0.08),
+      0 0 32px -8px rgb(26 107 82 / 0.10);
+  }
+}
+
+.work__feature:active::after { opacity: 0.12; }
+.work__feature:active        { transform: scale(0.97); }
+
+@media (prefers-reduced-motion: reduce) {
+  .work__feature,
+  .work__feature::after {
+    transition: none;
+  }
 }
 
 
@@ -45,9 +86,9 @@
 
 .work__feature-image {
   background-color: var(--color-surface);
-  border-radius:    var(--radius-lg);
   aspect-ratio:     16 / 9;
   width:            100%;
+  flex-shrink:      0;
 }
 
 
@@ -59,6 +100,7 @@
   display:        flex;
   flex-direction: column;
   gap:            var(--space-4);
+  padding:        var(--space-6);
 }
 
 .work__feature-title {
@@ -98,8 +140,7 @@
 @media (min-width: 905px) {
   .work__feature {
     flex-direction: row;
-    align-items:    flex-start;
-    gap:            var(--space-8);
+    align-items:    stretch;
   }
 
   .work__feature-image {
