@@ -117,7 +117,9 @@ Plans:
   3. Google UX Professional Certificate is visible in the education section of the CV page
   4. Clicking "Download CV" on the CV page opens or downloads /Samuel-Blake-CV.pdf
   5. Clicking "Download CV" on the About page CTA opens or downloads /Samuel-Blake-CV.pdf
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 12-01-PLAN.md — Update cv.html (work history, education, Download CV button) and about.html (Download CV button)
 **UI hint**: yes
 
 ### Phase 13: Above-Fold Images
@@ -158,6 +160,6 @@ Plans:
 | 9. Content | v3.0 | 2/2 | Complete | 2026-05-19 |
 | 10. Contact Form | v3.0 | 2/2 | Complete | 2026-05-19 |
 | 11. SEO | v3.0 | 2/2 | Complete | 2026-05-19 |
-| 12. CV Page | v4.0 | 0/TBD | Not started | - |
+| 12. CV Page | v4.0 | 0/1 | Not started | - |
 | 13. Above-Fold Images | v4.0 | 0/TBD | Not started | - |
 | 14. Case Study Image Depth | v4.0 | 0/TBD | Not started | - |
