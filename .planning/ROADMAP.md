@@ -33,7 +33,7 @@
 
 - [ ] **Phase 8: UI Polish** — Nav and hero redesigned; /work page created and linked from nav
 - [ ] **Phase 9: Content** — Real case study copy, About work history, and Stories placeholder in place
-- [ ] **Phase 10: Contact Form** — FormSubmit AJAX form with success/error states and spam protection
+- [x] **Phase 10: Contact Form** — FormSubmit AJAX form with success/error states and spam protection
 - [ ] **Phase 11: SEO** — Full meta suite, Open Graph, JSON-LD, sitemap, robots.txt, and vercel.json
 
 ## Phase Details
@@ -92,7 +92,10 @@ Plans:
   3. index.html and about.html contain valid JSON-LD Person schema, verifiable via Google Rich Results Test
   4. public/sitemap.xml lists all pages with clean Vercel-rewritten URLs; public/robots.txt allows all crawlers and points to the sitemap
   5. vercel.json is present with clean URL rewrites so /about serves the page without a .html extension in the address bar
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 11-01-PLAN.md — SEO head block for all 10 pages: title, description, canonical, OG tags, theme-color (SEO-01/02/03/04/05/06)
+- [ ] 11-02-PLAN.md — JSON-LD Person schema + sitemap.xml + robots.txt + vercel.json (SEO-07/08/09/10)
 
 ## Progress
 
@@ -107,5 +110,5 @@ Plans:
 | 7. Footer + Global Audit | v2.0 | 2/2 | Complete | 2026-05-18 |
 | 8. UI Polish | v3.0 | 0/3 | Not started | - |
 | 9. Content | v3.0 | 0/2 | Not started | - |
-| 10. Contact Form | v3.0 | 0/2 | Not started | - |
-| 11. SEO | v3.0 | 0/? | Not started | - |
+| 10. Contact Form | v3.0 | 2/2 | Complete | 2026-05-19 |
+| 11. SEO | v3.0 | 0/2 | Not started | - |
