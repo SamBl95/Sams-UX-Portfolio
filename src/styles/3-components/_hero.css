@@ -46,7 +46,7 @@
 
 @media (min-width: 905px) {
   .hero {
-    padding-block: var(--space-20); /* 160px — matches section-xl desktop */
+    padding-block: var(--space-8); /* 64px — flex centering handles visual breathing room */
     min-height:    90vh;
     display:       flex;
     align-items:   center;
