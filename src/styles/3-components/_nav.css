@@ -12,7 +12,6 @@
   top: 0;
   z-index: var(--z-sticky);
   background-color: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
 }
 
 /* Scroll shadow — JS adds .nav--scrolled when window.scrollY > 8 */
@@ -21,37 +20,12 @@
 }
 
 
-/* Inner row — logo pushes everything else right via margin-right: auto */
+/* Inner row */
 .nav__inner {
   display:     flex;
   align-items: center;
   gap:         var(--space-3);
   height:      var(--nav-height); /* 56px — matches --nav-height token */
-}
-
-
-/* Logo */
-.nav__logo {
-  font-family:         var(--font-heading);
-  font-size:           var(--text-xl);
-  font-weight:         var(--font-weight-normal);
-  font-optical-sizing: auto;
-  letter-spacing:      -0.02em;
-  color:               var(--color-text-primary);
-  text-decoration:     none;
-  transition:          color var(--transition-fast);
-  flex-shrink:         0;
-  margin-right:        auto; /* pushes all remaining items to the right */
-}
-
-.nav__logo:hover {
-  color: var(--color-accent-accessible);
-}
-
-.nav__logo:focus-visible {
-  outline:       2px solid var(--color-accent-accessible);
-  outline-offset: 3px;
-  border-radius: var(--radius-sm);
 }
 
 
@@ -156,12 +130,13 @@
 /* Nav links — mobile: full-width tap targets */
 .nav__link {
   display:         block;
+  position:        relative;
   font-size:       var(--text-sm);
   font-weight:     var(--font-weight-normal);
   color:           var(--color-text-secondary);
   text-decoration: none;
   padding:         var(--space-3) var(--space-5);
-  transition:      background-color var(--transition-fast), color var(--transition-fast);
+  transition:      color var(--transition-fast);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -209,11 +184,12 @@
 
   /* Always show nav menu, reset mobile absolute positioning */
   .nav__menu {
-    display:    flex;
-    position:   static;
-    background: none;
-    border:     none;
-    padding:    0;
+    display:     flex;
+    position:    static;
+    background:  none;
+    border:      none;
+    padding:     0;
+    margin-left: auto; /* pushes nav cluster right — no logo anchor */
   }
 
   .nav__list {
@@ -223,21 +199,43 @@
   }
 
   .nav__link {
-    padding:       var(--space-2) var(--space-3);
-    border-radius: var(--radius-md);
-    border-bottom: 2px solid transparent; /* reserve 2px so active border-bottom doesn't shift row height */
+    padding: var(--space-2) var(--space-3);
   }
 
   @media (hover: hover) and (pointer: fine) {
     .nav__link:hover {
-      background-color: var(--color-surface);
-      color:            var(--color-text-primary);
+      color: var(--color-text-primary);
+    }
+
+    .nav__link:hover::after {
+      transform: scaleX(1);
     }
   }
 
+  .nav__link::after {
+    content:          '';
+    position:         absolute;
+    bottom:           0;
+    left:             0;
+    width:            100%;
+    height:           2px;
+    background-color: var(--color-accent-accessible);
+    transform:        scaleX(0);
+    transform-origin: left center;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .nav__link::after {
+      transition: transform 200ms var(--ease-out);
+    }
+  }
+
+  .nav__link[aria-current="page"]::after {
+    transform: scaleX(1);
+  }
+
   .nav__link[aria-current="page"] {
-    background-color: var(--color-surface);
-    border-bottom:    2px solid var(--color-accent);
+    font-weight: var(--font-weight-semibold);
   }
 
   /* CTA: reset mobile flex/margins so btn sits inline; margin-left separates from text links */
@@ -263,6 +261,10 @@
 
 @media (prefers-reduced-motion: reduce) {
   .nav__toggle-bar {
+    transition: none;
+  }
+
+  .nav__link::after {
     transition: none;
   }
 
