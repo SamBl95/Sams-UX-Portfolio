@@ -77,7 +77,10 @@ Plans:
   2. A network failure or FormSubmit error shows a visible error message in the page
   3. The form includes a honeypot field hidden via opacity and position (not display:none) with tabindex=-1 and aria-hidden=true
   4. The FormSubmit endpoint is activated and delivers submitted messages to sam.blake@outlook.com
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 10-01-PLAN.md — Form markup, CSS, and AJAX JS: contact.html form, _form.css, form.js (FORM-01/02/03/04)
+- [ ] 10-02-PLAN.md — FormSubmit activation: trigger endpoint, click confirmation email, verify delivery (FORM-05)
 
 ### Phase 11: SEO
 **Goal**: Every page is discoverable — correct titles, meta descriptions, Open Graph tags, canonical URLs, JSON-LD schema, sitemap, robots.txt, and clean URL rewrites are all in place
@@ -104,5 +107,5 @@ Plans:
 | 7. Footer + Global Audit | v2.0 | 2/2 | Complete | 2026-05-18 |
 | 8. UI Polish | v3.0 | 0/3 | Not started | - |
 | 9. Content | v3.0 | 0/2 | Not started | - |
-| 10. Contact Form | v3.0 | 0/? | Not started | - |
+| 10. Contact Form | v3.0 | 0/2 | Not started | - |
 | 11. SEO | v3.0 | 0/? | Not started | - |
