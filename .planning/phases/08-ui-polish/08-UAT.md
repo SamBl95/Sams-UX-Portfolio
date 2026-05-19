@@ -1,5 +1,5 @@
 ---
-status: complete
+status: diagnosed
 phase: 08-ui-polish
 source: 08-01-SUMMARY.md, 08-02-SUMMARY.md, 08-03-SUMMARY.md
 started: 2026-05-19T00:00:00Z
@@ -78,9 +78,12 @@ blocked: 0
   reason: "User reported: Home does not have the active underline"
   severity: major
   test: 6
-  root_cause: ""
-  artifacts: []
-  missing: []
+  root_cause: "index.html uses {{> nav}} without navHome=true flag, so Home link never receives aria-current='page' or nav__link--active class"
+  artifacts:
+    - path: "index.html"
+      issue: "{{> nav}} missing navHome=true"
+  missing:
+    - "Add navHome=true to nav partial include in index.html"
   debug_session: ""
 
 - truth: "'Get in touch' is a plain nav link item styled like Home/Work/About/Stories"
@@ -88,9 +91,15 @@ blocked: 0
   reason: "User reported: Get in touch is still a button but should be a tab item"
   severity: major
   test: 6
-  root_cause: ""
-  artifacts: []
-  missing: []
+  root_cause: "nav.html line 54 uses class='btn btn--primary nav__link--cta' — btn classes override nav__link styling, rendering it as a filled button"
+  artifacts:
+    - path: "src/components/nav.html"
+      issue: "Get in touch anchor uses btn btn--primary instead of nav__link"
+    - path: "src/styles/3-components/_nav.css"
+      issue: ".nav__link--cta and .nav__list .btn rules exist for old button treatment"
+  missing:
+    - "Change Get in touch anchor class to nav__link (remove btn btn--primary nav__link--cta)"
+    - "Remove .nav__link--cta and .nav__list .btn CSS rules (no longer needed)"
   debug_session: ""
 
 - truth: "Nav bar has no bottom border line"
@@ -98,9 +107,12 @@ blocked: 0
   reason: "User reported: border is still visible"
   severity: minor
   test: 7
-  root_cause: ""
-  artifacts: []
-  missing: []
+  root_cause: ".nav--scrolled box-shadow uses '0 1px 0 var(--color-border)' as first layer, rendering a solid 1px line identical to a border whenever window.scrollY > 8"
+  artifacts:
+    - path: "src/styles/3-components/_nav.css"
+      issue: ".nav--scrolled box-shadow first value creates a visible border-like line"
+  missing:
+    - "Remove or soften the '0 1px 0 var(--color-border)' layer from .nav--scrolled box-shadow"
   debug_session: ""
 
 - truth: "Each work__feature row has a small metric chip element"
@@ -108,7 +120,13 @@ blocked: 0
   reason: "User reported: can't see a chip — it does have the stats in a big header section"
   severity: minor
   test: 9
-  root_cause: ""
-  artifacts: []
-  missing: []
+  root_cause: "work.html uses card__metric-chip which is a full-width stat block (padding: 40px 48px, text-3xl heading, teal top border) — not a small inline chip. Wrong component reused."
+  artifacts:
+    - path: "src/pages/work.html"
+      issue: "card__metric-chip used where a small inline chip is expected"
+    - path: "src/styles/3-components/_card.css"
+      issue: "card__metric-chip is a large stat panel, not a small chip"
+  missing:
+    - "Replace card__metric-chip markup in work.html with a proper small chip element (e.g. work__feature-chip)"
+    - "Add .work__feature-chip styles to _work.css — small pill, compact padding, small text"
   debug_session: ""
