@@ -13,6 +13,26 @@ export default defineConfig({
 
   plugins: [
     handlebars({ partialDirectory: r('./src/components') }),
+    {
+      name: 'clean-url-rewrite',
+      configureServer(server) {
+        server.middlewares.use((req, _res, next) => {
+          const rewrites = {
+            '/work':    '/src/pages/work.html',
+            '/about':   '/src/pages/about.html',
+            '/cv':      '/src/pages/cv.html',
+            '/stories': '/src/pages/stories/index.html',
+            '/contact': '/src/pages/contact.html',
+            '/case-studies/i-exchange':  '/src/pages/case-studies/i-exchange.html',
+            '/case-studies/cassi':       '/src/pages/case-studies/cassi.html',
+            '/case-studies/community':   '/src/pages/case-studies/community.html',
+            '/stories/design-systems-and-portfolio-sites': '/src/pages/stories/design-systems-and-portfolio-sites.html',
+          }
+          if (rewrites[req.url]) req.url = rewrites[req.url]
+          next()
+        })
+      },
+    },
   ],
 
   build: {

@@ -1,3 +1,14 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/work",    "destination": "/src/pages/work.html" },
+    { "source": "/about",   "destination": "/src/pages/about.html" },
+    { "source": "/cv",      "destination": "/src/pages/cv.html" },
+    { "source": "/stories", "destination": "/src/pages/stories/index.html" },
+    { "source": "/contact", "destination": "/src/pages/contact.html" },
+    { "source": "/case-studies/i-exchange",  "destination": "/src/pages/case-studies/i-exchange.html" },
+    { "source": "/case-studies/cassi",       "destination": "/src/pages/case-studies/cassi.html" },
+    { "source": "/case-studies/community",   "destination": "/src/pages/case-studies/community.html" },
+    { "source": "/stories/design-systems-and-portfolio-sites", "destination": "/src/pages/stories/design-systems-and-portfolio-sites.html" }
+  ]
 }
