@@ -23,6 +23,18 @@
 }
 
 
+/* Name — h2 element size from _typography.css; no font-size override */
+.hero__name {
+  font-family:         var(--font-heading);
+  font-weight:         var(--font-weight-semibold);
+  font-optical-sizing: auto;
+  color:               var(--color-accent-accessible);
+  letter-spacing:      -0.02em;
+  margin-bottom:       var(--space-3);
+  line-height:         var(--leading-tight);
+}
+
+
 /* -------------------------------------------------------------------------
    SECTION WRAPPER
    ------------------------------------------------------------------------- */
@@ -61,38 +73,20 @@
   width:          100%;
 }
 
-@media (min-width: 1440px) {
-  .hero__content {
-    max-width:     var(--hero-content-max-width);
-    margin-inline: 0; /* left-align within the container — no centering */
-  }
-}
 
-/* Stagger children — 5 elements enter at 80ms steps (ANIM-02) */
-.hero__eyebrow,
+/* Stagger children — 4 elements enter at 80ms steps (ANIM-02) */
+.hero__name,
 .hero__headline,
 .hero__typewriter,
-.hero__subheadline,
 .hero__actions {
   animation: hero-enter 600ms var(--ease-out-quint) both;
 }
 
-.hero__eyebrow    { animation-delay:   0ms; }
+.hero__name       { animation-delay:   0ms; }
 .hero__headline   { animation-delay:  80ms; }
 .hero__typewriter { animation-delay: 160ms; }
-.hero__subheadline{ animation-delay: 240ms; }
-.hero__actions    { animation-delay: 320ms; }
+.hero__actions    { animation-delay: 240ms; }
 
-
-/* Eyebrow */
-.hero__eyebrow {
-  font-size:      var(--text-sm);
-  font-weight:    var(--font-weight-semibold);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color:          var(--color-accent-accessible);
-  margin-bottom:  var(--space-4);
-}
 
 
 /* Headline — font-size from h1 element rule in _typography.css */
@@ -104,20 +98,6 @@
   color:          var(--color-text-primary);
   margin-bottom:  var(--space-6);
 }
-
-
-/* Subheadline */
-.hero__subheadline {
-  font-size:     var(--text-lg);
-  line-height:   var(--leading-body);
-  color:         var(--color-text-secondary);
-  margin-bottom: var(--space-8);
-}
-
-@media (min-width: 905px) {
-  .hero__subheadline { font-size: var(--text-xl); }
-}
-
 
 
 
