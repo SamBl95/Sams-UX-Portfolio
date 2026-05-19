@@ -23,6 +23,33 @@
   margin:         0;
 }
 
+/* Story card — horizontal layout: copy left, thumbnail right */
+.stories__item .card {
+  flex-direction: row;
+  align-items:    stretch;
+}
+
+.stories__item .card__content {
+  display:        flex;
+  flex-direction: column;
+  flex:           1;
+}
+
+.stories__item .card__body {
+  flex: 1;
+}
+
+.stories__item .card__thumbnail {
+  flex:             0 0 160px;
+  background-color: var(--color-surface);
+}
+
+@media (min-width: 905px) {
+  .stories__item .card__thumbnail {
+    flex-basis: 240px;
+  }
+}
+
 
 /* ---------------------------------------------------------------------------
    STORIES POST
