@@ -51,6 +51,12 @@
   }
 }
 
+/* When .card is used as an <a> element — strip link defaults */
+a.card {
+  text-decoration: none;
+  color:           inherit;
+}
+
 /* Reduced motion — disable all transitions on card and overlay (COMP-02, COMP-05) */
 @media (prefers-reduced-motion: reduce) {
   .card,
