@@ -23,12 +23,7 @@
   margin:         0;
 }
 
-/* Story card — horizontal layout: copy left, thumbnail right */
-.stories__item .card {
-  flex-direction: row;
-  align-items:    stretch;
-}
-
+/* Story card — stacked on mobile, horizontal at 600px+ */
 .stories__item .card__content {
   display:        flex;
   flex-direction: column;
@@ -40,9 +35,21 @@
 }
 
 .stories__item .card__thumbnail {
-  flex:             0 0 50%;
-  background-color: var(--color-accent-light);
-  border-left:      1px solid var(--color-border);
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .stories__item .card {
+    flex-direction: row;
+    align-items:    stretch;
+  }
+
+  .stories__item .card__thumbnail {
+    display:          block;
+    flex:             0 0 50%;
+    background-color: var(--color-accent-light);
+    border-left:      1px solid var(--color-border);
+  }
 }
 
 
