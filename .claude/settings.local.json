@@ -66,7 +66,15 @@
       "Bash(/c/WINDOWS/System32/WindowsPowerShell/v1.0/powershell.exe *)",
       "Skill(gsd:verify-work)",
       "PowerShell(New-Item *)",
-      "Bash(npx vite *)"
+      "Bash(npx vite *)",
+      "Bash(npx gsd-sdk *)",
+      "PowerShell(Invoke-WebRequest -Uri \"https://cdn.prod.website-files.com/685151b1ced1885ded310707/6853174d2f696b7539a2e86e_d18732f5a6117b222f8ef4b59707b2bc_i-EX%20home.png\" -OutFile \"C:\\\\Users\\\\sambl\\\\OneDrive\\\\Documents\\\\my-portfolio-v2\\\\public\\\\assets\\\\images\\\\i-exchange-preview.png\")",
+      "PowerShell(Invoke-WebRequest -Uri \"https://cdn.prod.website-files.com/685151b1ced1885ded310707/688bd798678b2573079d7749_feb417d7bff539ef8dcd7321bef8ee22_Screenshot_2025-07-31_215110-removebg-preview%20%281%29.png\" -OutFile \"C:\\\\Users\\\\sambl\\\\OneDrive\\\\Documents\\\\my-portfolio-v2\\\\public\\\\assets\\\\images\\\\cassi-preview.png\")",
+      "PowerShell(Invoke-WebRequest -Uri \"https://cdn.prod.website-files.com/685151b1ced1885ded310707/688a342c9c532933d177b899_5f6f003f16ef98eb6e82cda6bffdadac_Community%20home%20mock%20up.png\" -OutFile \"C:\\\\Users\\\\sambl\\\\OneDrive\\\\Documents\\\\my-portfolio-v2\\\\public\\\\assets\\\\images\\\\community-preview.png\")",
+      "WebFetch(domain:cdn.prod.website-files.com)",
+      "Bash(curl -s -L \"https://cdn.prod.website-files.com/685151b1ced1885ded310707/687df94daba125d7dc2f1959_Cassi%20Large.svg\" -o /tmp/cassi-original.svg)",
+      "Bash(grep -E \"\\\\.\\(png|jpg|jpeg|svg|webp\\)$\")",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\sambl\\\\OneDrive\\\\Documents\\\\my-portfolio-v2\\\\public\\\\assets\\\\images\" | Select-Object Name, @{n='KB';e={[math]::Round\\($_.Length/1KB,0\\)}})"
     ]
   }
 }
