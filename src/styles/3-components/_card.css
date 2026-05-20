@@ -67,6 +67,25 @@ a.card {
 
 
 /* -------------------------------------------------------------------------
+   CARD IMAGE — thumbnail at top of card, above the metric chip
+   ------------------------------------------------------------------------- */
+
+.card__image {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: var(--color-surface);
+}
+
+.card__image img {
+  width:      100%;
+  height:     100%;
+  object-fit: cover;
+  display:    block;
+}
+
+
+/* -------------------------------------------------------------------------
    METRIC CHIP — headline outcome, pulled out visually at the top of the card
    Teal top accent border makes the number land before the title is read.
    ------------------------------------------------------------------------- */
