@@ -155,14 +155,18 @@
 }
 
 .about-timeline__list-item {
-  font-size:   var(--text-base);
-  line-height: var(--leading-body);
-  color:       var(--color-text-secondary);
+  font-size:    var(--text-base);
+  line-height:  var(--leading-body);
+  color:        var(--color-text-secondary);
+  padding-left: var(--space-4);
+  position:     relative;
 }
 
 .about-timeline__list-item::before {
-  content: '– ';
-  color: var(--color-accent-accessible);
+  content:  '–';
+  position: absolute;
+  left:     0;
+  color:    var(--color-accent-accessible);
 }
 
 
