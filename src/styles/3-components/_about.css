@@ -157,7 +157,7 @@
 .about-timeline__list-item {
   font-size:    var(--text-base);
   line-height:  var(--leading-body);
-  color:        var(--color-text-secondary);
+  color:        var(--color-text-primary);
   padding-left: var(--space-4);
   position:     relative;
   margin:       0;
