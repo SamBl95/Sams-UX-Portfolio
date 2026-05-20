@@ -38,6 +38,13 @@
   font-style:  italic;
 }
 
+.about-hero__actions {
+  display:    flex;
+  gap:        var(--space-3);
+  flex-wrap:  wrap;
+  margin-top: var(--space-6);
+}
+
 @media (min-width: 905px) {
   .about-hero__lede {
     font-size: var(--text-xl);
