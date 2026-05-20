@@ -1,0 +1,12 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" fill="#0d1f1a"/>
+  <!-- Left person (back layer) -->
+  <path d="M168 340 C168 210 328 210 328 340 L328 450 L168 450 Z" fill="#4fd1a5"/>
+  <circle cx="248" cy="172" r="38" fill="#4fd1a5"/>
+  <!-- Right person (back layer) -->
+  <path d="M472 340 C472 210 632 210 632 340 L632 450 L472 450 Z" fill="#4fd1a5"/>
+  <circle cx="552" cy="172" r="38" fill="#4fd1a5"/>
+  <!-- Center person (front layer, overlaps sides) -->
+  <path d="M285 320 C285 195 515 195 515 320 L515 450 L285 450 Z" fill="#4fd1a5"/>
+  <circle cx="400" cy="148" r="52" fill="#4fd1a5"/>
+</svg>
