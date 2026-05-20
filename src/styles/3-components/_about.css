@@ -158,7 +158,7 @@
   font-size:   var(--text-base);
   line-height: var(--leading-body);
   color:       var(--color-text-secondary);
-  padding-left: var(--space-4);
+  padding-left: var(--space-2);
   position: relative;
 }
 
