@@ -158,14 +158,10 @@
   font-size:   var(--text-base);
   line-height: var(--leading-body);
   color:       var(--color-text-secondary);
-  padding-left: var(--space-2);
-  position: relative;
 }
 
 .about-timeline__list-item::before {
-  content: '–';
-  position: absolute;
-  left: 0;
+  content: '– ';
   color: var(--color-accent-accessible);
 }
 
