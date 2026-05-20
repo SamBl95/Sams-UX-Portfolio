@@ -42,7 +42,7 @@
 
 **Milestone Goal:** Fill the remaining content gaps — CV copy, PDF download buttons, and real images across every visual placeholder in the site.
 
-- [ ] **Phase 12: CV Page** — Work history complete, education updated, PDF download wired on CV and About pages
+- [x] **Phase 12: CV Page** — Work history complete, education updated, PDF download wired on CV and About pages
 - [ ] **Phase 13: Above-Fold Images** — Homepage cards and /work feature rows display real images
 - [ ] **Phase 14: Case Study Image Depth** — I-Exchange, CASSI, and Community visual components filled with real images
 
@@ -119,7 +119,7 @@ Plans:
   5. Clicking "Download CV" on the About page CTA opens or downloads /Samuel-Blake-CV.pdf
 **Plans**: 1 plan
 Plans:
-- [ ] 12-01-PLAN.md — Update cv.html (work history, education, Download CV button) and about.html (Download CV button)
+- [x] 12-01-PLAN.md — Update cv.html (work history, education, Download CV button) and about.html (Download CV button)
 **UI hint**: yes
 
 ### Phase 13: Above-Fold Images
@@ -130,7 +130,10 @@ Plans:
   1. Homepage case study cards each display a real thumbnail image — no placeholder or empty image slot visible
   2. /work page feature rows each display a real case study image — no placeholder or empty image slot visible
   3. All images render at correct aspect ratios across mobile (375px), tablet (600px), and desktop (1240px+) breakpoints
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 13-01-PLAN.md — Download images + /work feature row wiring (IMG-02)
+- [ ] 13-02-PLAN.md — Homepage card images: .card__image HTML + CSS (IMG-01)
 **UI hint**: yes
 
 ### Phase 14: Case Study Image Depth
@@ -160,6 +163,6 @@ Plans:
 | 9. Content | v3.0 | 2/2 | Complete | 2026-05-19 |
 | 10. Contact Form | v3.0 | 2/2 | Complete | 2026-05-19 |
 | 11. SEO | v3.0 | 2/2 | Complete | 2026-05-19 |
-| 12. CV Page | v4.0 | 0/1 | Not started | - |
-| 13. Above-Fold Images | v4.0 | 0/TBD | Not started | - |
+| 12. CV Page | v4.0 | 1/1 | Complete | 2026-05-20 |
+| 13. Above-Fold Images | v4.0 | 0/2 | Not started | - |
 | 14. Case Study Image Depth | v4.0 | 0/TBD | Not started | - |
