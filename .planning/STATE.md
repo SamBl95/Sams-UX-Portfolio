@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v4.0
 milestone_name: Content & Visuals
 status: executing
-stopped_at: Phase 13 planned
-last_updated: "2026-05-20T00:00:00.000Z"
-last_activity: 2026-05-20 -- Phase 13 planning complete
+stopped_at: Phase 14 not yet planned
+last_updated: "2026-05-21T00:00:00.000Z"
+last_activity: 2026-05-21 -- Phase 13 complete
 progress:
   total_phases: 7
-  completed_phases: 1
-  total_plans: 3
-  completed_plans: 1
-  percent: 33
+  completed_phases: 2
+  total_plans: 5
+  completed_plans: 3
+  percent: 67
 ---
 
 # Project State
@@ -21,13 +21,13 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-19)
 
 **Core value:** A recruiter or hiring manager can understand Sam's work and reach out — every page exists, every link works, and every component is polished enough that adding content is the only remaining task.
-**Current focus:** v4.0 — roadmap complete, ready to plan Phase 12
+**Current focus:** v4.0 — Phase 13 complete, ready to plan Phase 14
 
 ## Current Position
 
-Phase: 13 (Above-Fold Images) — planned, ready to execute
+Phase: 14 (Case Study Image Depth) — not yet planned
 Plan: —
-Status: Ready to execute
+Status: Ready to plan
 Last activity: 2026-05-20 -- Phase 13 planning complete
 
 ```
