@@ -109,10 +109,14 @@ a.card {
 .card__body {
   display:        flex;
   flex-direction: column;
-  gap:            var(--space-3);
-  padding:        var(--space-6);
+  gap:            var(--space-2);
+  padding:        var(--space-4);
   flex:           1;
   border-top:     3px solid var(--color-accent);
+}
+
+@media (min-width: 905px) {
+  .card__body { padding: var(--space-5); }
 }
 
 .card__title {
@@ -137,4 +141,5 @@ a.card {
 .card__cta {
   width:           100%;
   justify-content: space-between;
+  margin-top:      auto;
 }
