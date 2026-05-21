@@ -1,10 +1,10 @@
 {
   "rewrites": [
-    { "source": "/work",    "destination": "/src/pages/work.html" },
-    { "source": "/about",   "destination": "/src/pages/about.html" },
-    { "source": "/cv",      "destination": "/src/pages/cv.html" },
-    { "source": "/stories", "destination": "/src/pages/stories/index.html" },
-    { "source": "/contact", "destination": "/src/pages/contact.html" },
+    { "source": "/case-studies", "destination": "/src/pages/case-studies.html" },
+    { "source": "/about",        "destination": "/src/pages/about.html" },
+    { "source": "/cv",           "destination": "/src/pages/cv.html" },
+    { "source": "/stories",      "destination": "/src/pages/stories/index.html" },
+    { "source": "/get-in-touch", "destination": "/src/pages/get-in-touch.html" },
     { "source": "/case-studies/i-exchange",  "destination": "/src/pages/case-studies/i-exchange.html" },
     { "source": "/case-studies/cassi",       "destination": "/src/pages/case-studies/cassi.html" },
     { "source": "/case-studies/community",   "destination": "/src/pages/case-studies/community.html" },
