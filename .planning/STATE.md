@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v4.0
 milestone_name: Content & Visuals
 status: executing
-stopped_at: Phase 14 not yet planned
+stopped_at: Phase 14 executed, pending image upload
 last_updated: "2026-05-21T00:00:00.000Z"
-last_activity: 2026-05-21 -- Phase 13 complete
+last_activity: 2026-05-21 -- Phase 14 image slots added to all 3 case studies
 progress:
   total_phases: 7
   completed_phases: 2
-  total_plans: 5
-  completed_plans: 3
-  percent: 67
+  total_plans: 8
+  completed_plans: 6
+  percent: 86
 ---
 
 # Project State
