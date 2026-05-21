@@ -18,11 +18,11 @@ export default defineConfig({
       configureServer(server) {
         server.middlewares.use((req, _res, next) => {
           const rewrites = {
-            '/work':    '/src/pages/work.html',
+            '/case-studies': '/src/pages/case-studies.html',
             '/about':   '/src/pages/about.html',
             '/cv':      '/src/pages/cv.html',
             '/stories': '/src/pages/stories/index.html',
-            '/contact': '/src/pages/contact.html',
+            '/get-in-touch': '/src/pages/get-in-touch.html',
             '/case-studies/i-exchange':  '/src/pages/case-studies/i-exchange.html',
             '/case-studies/cassi':       '/src/pages/case-studies/cassi.html',
             '/case-studies/community':   '/src/pages/case-studies/community.html',
@@ -42,13 +42,13 @@ export default defineConfig({
       input: {
         main:        r('./index.html'),
         about:       r('./src/pages/about.html'),
-        contact:     r('./src/pages/contact.html'),
+        getInTouch:  r('./src/pages/get-in-touch.html'),
         iexchange:   r('./src/pages/case-studies/i-exchange.html'),
         cassi:       r('./src/pages/case-studies/cassi.html'),
         community:   r('./src/pages/case-studies/community.html'),
         storiesIndex: r('./src/pages/stories/index.html'),
         storiesPost:  r('./src/pages/stories/design-systems-and-portfolio-sites.html'),
-        work:         r('./src/pages/work.html'),
+        caseStudies:  r('./src/pages/case-studies.html'),
         cv:           r('./src/pages/cv.html'),
       },
     },

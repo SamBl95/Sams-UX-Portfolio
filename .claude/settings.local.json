@@ -74,7 +74,12 @@
       "WebFetch(domain:cdn.prod.website-files.com)",
       "Bash(curl -s -L \"https://cdn.prod.website-files.com/685151b1ced1885ded310707/687df94daba125d7dc2f1959_Cassi%20Large.svg\" -o /tmp/cassi-original.svg)",
       "Bash(grep -E \"\\\\.\\(png|jpg|jpeg|svg|webp\\)$\")",
-      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\sambl\\\\OneDrive\\\\Documents\\\\my-portfolio-v2\\\\public\\\\assets\\\\images\" | Select-Object Name, @{n='KB';e={[math]::Round\\($_.Length/1KB,0\\)}})"
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\sambl\\\\OneDrive\\\\Documents\\\\my-portfolio-v2\\\\public\\\\assets\\\\images\" | Select-Object Name, @{n='KB';e={[math]::Round\\($_.Length/1KB,0\\)}})",
+      "Bash(git mv *)",
+      "Bash(sed -i 's|href=\"/contact\"|href=\"/get-in-touch\"|g' src/components/footer.html src/pages/cv.html)",
+      "Bash(sed -i 's|Back to work|Back to case studies|g' src/pages/case-studies/i-exchange.html src/pages/case-studies/cassi.html src/pages/case-studies/community.html)",
+      "Bash(sed -i 's|samsux.co.uk/work|samsux.co.uk/case-studies|g' src/pages/case-studies.html)",
+      "Bash(sed -i 's|samsux.co.uk/contact|samsux.co.uk/get-in-touch|g' src/pages/get-in-touch.html)"
     ]
   }
 }
