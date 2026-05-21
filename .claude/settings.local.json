@@ -79,7 +79,12 @@
       "Bash(sed -i 's|href=\"/contact\"|href=\"/get-in-touch\"|g' src/components/footer.html src/pages/cv.html)",
       "Bash(sed -i 's|Back to work|Back to case studies|g' src/pages/case-studies/i-exchange.html src/pages/case-studies/cassi.html src/pages/case-studies/community.html)",
       "Bash(sed -i 's|samsux.co.uk/work|samsux.co.uk/case-studies|g' src/pages/case-studies.html)",
-      "Bash(sed -i 's|samsux.co.uk/contact|samsux.co.uk/get-in-touch|g' src/pages/get-in-touch.html)"
+      "Bash(sed -i 's|samsux.co.uk/contact|samsux.co.uk/get-in-touch|g' src/pages/get-in-touch.html)",
+      "Bash(sed -i 's|href=\"./cassi.html\"|href=\"/case-studies/cassi\"|g' C:/Users/sambl/OneDrive/Documents/my-portfolio-v2/src/pages/case-studies/i-exchange.html)",
+      "Bash(sed -i 's|href=\"./community.html\"|href=\"/case-studies/community\"|g' C:/Users/sambl/OneDrive/Documents/my-portfolio-v2/src/pages/case-studies/cassi.html)",
+      "Bash(sed -i 's|href=\"./i-exchange.html\"|href=\"/case-studies/i-exchange\"|g' C:/Users/sambl/OneDrive/Documents/my-portfolio-v2/src/pages/case-studies/community.html)",
+      "Bash(sed -i 's|href=\"./index.html\"|href=\"/stories\"|g' C:/Users/sambl/OneDrive/Documents/my-portfolio-v2/src/pages/stories/design-systems-and-portfolio-sites.html)",
+      "Bash(sed -i 's|href=\"./design-systems-and-portfolio-sites.html\"|href=\"/stories/design-systems-and-portfolio-sites\"|g' C:/Users/sambl/OneDrive/Documents/my-portfolio-v2/src/pages/stories/index.html)"
     ]
   }
 }
