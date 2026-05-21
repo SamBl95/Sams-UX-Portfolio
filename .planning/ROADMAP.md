@@ -43,7 +43,7 @@
 **Milestone Goal:** Fill the remaining content gaps — CV copy, PDF download buttons, and real images across every visual placeholder in the site.
 
 - [x] **Phase 12: CV Page** — Work history complete, education updated, PDF download wired on CV and About pages
-- [ ] **Phase 13: Above-Fold Images** — Homepage cards and /work feature rows display real images
+- [x] **Phase 13: Above-Fold Images** — Homepage cards and /work feature rows display real images
 - [ ] **Phase 14: Case Study Image Depth** — I-Exchange, CASSI, and Community visual components filled with real images
 
 ## Phase Details
@@ -145,7 +145,11 @@ Plans:
   2. CASSI case study page has real images in every image-block, before-after, and/or process-steps component that was previously empty
   3. Community case study page has real images in every image-block, before-after, and/or process-steps component that was previously empty
   4. No empty or broken image slots remain across all three case study pages
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [ ] 14-01-PLAN.md — i-Exchange: image-block, before-after, and process-steps across Empathise/Define/Test/Solution phases (IMG-03)
+- [ ] 14-02-PLAN.md — Cassi: image-block and before-after across Empathise/Define/Solution phases (IMG-04)
+- [ ] 14-03-PLAN.md — Community: process-steps, image-block, and before-after across Background/Empathise/Solution phases (IMG-05)
 **UI hint**: yes
 
 ## Progress
@@ -165,4 +169,4 @@ Plans:
 | 11. SEO | v3.0 | 2/2 | Complete | 2026-05-19 |
 | 12. CV Page | v4.0 | 1/1 | Complete | 2026-05-20 |
 | 13. Above-Fold Images | v4.0 | 0/2 | Not started | - |
-| 14. Case Study Image Depth | v4.0 | 0/TBD | Not started | - |
+| 14. Case Study Image Depth | v4.0 | 0/3 | Not started | - |
