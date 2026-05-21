@@ -85,35 +85,19 @@ a.card {
 
 
 /* -------------------------------------------------------------------------
-   METRIC CHIP — headline outcome, pulled out visually at the top of the card
-   Teal top accent border makes the number land before the title is read.
+   METRIC CHIP — compact pill inside .card__body, above the title
    ------------------------------------------------------------------------- */
 
 .card__metric-chip {
-  display:          flex;
-  flex-direction:   column;
-  gap:              var(--space-1);
+  display:          inline-flex;
+  align-self:       flex-start;
   background-color: var(--color-accent-light);
-  border-top:       3px solid var(--color-accent);
-  border-bottom:    1px solid var(--color-border);
-  padding:          var(--space-5) var(--space-6);
-}
-
-.card__metric-value {
-  font-family:    var(--font-heading);
-  font-size:      var(--text-3xl);
-  font-weight:    var(--font-weight-bold);
-  line-height:    var(--leading-tight);
-  letter-spacing: -0.02em;
-  color:          var(--color-accent-accessible);
-}
-
-.card__metric-label {
-  font-size:   var(--text-xs);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--leading-normal);
-  color:       var(--color-text-secondary);
-  max-width:   24ch;
+  border-radius:    var(--radius-full);
+  padding:          var(--space-1) var(--space-2);
+  font-size:        var(--text-xs);
+  font-weight:      var(--font-weight-semibold);
+  color:            var(--color-accent-accessible);
+  line-height:      var(--leading-normal);
 }
 
 
@@ -126,7 +110,8 @@ a.card {
   flex-direction: column;
   gap:            var(--space-3);
   padding:        var(--space-6);
-  flex:           1; /* push footer to bottom */
+  flex:           1;
+  border-top:     3px solid var(--color-accent);
 }
 
 .card__title {
