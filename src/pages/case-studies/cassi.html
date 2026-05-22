@@ -105,7 +105,7 @@
           <div class="cs-summary__item">
             <dt class="cs-summary__label">What's Colleague Assist?</dt>
             <dd class="cs-summary__answer">
-              Colleague Assist — later renamed Cassi — is an AI chatbot that provides Santander
+              Colleague Assist (later renamed Cassi) is an AI chatbot that provides Santander
               colleagues with guidance on how to serve customers. It's a bit like ChatGPT for
               banking, using i-Exchange as its source of truth to answer colleague queries in real time.
             </dd>
@@ -142,8 +142,7 @@
           <div class="cs-summary__item">
             <dt class="cs-summary__label">What did I do?</dt>
             <dd class="cs-summary__answer">
-              Within the constraints — no development budget, three weeks before a change
-              freeze — I improved feedback signalling, repositioned the audience filter,
+              Within the constraints (no development budget, three weeks before a change freeze) I improved feedback signalling, repositioned the audience filter,
               added a tooltip for new users, opened a dedicated Community forum for
               long-form feedback, and ran an internal rebrand competition.
             </dd>
@@ -182,22 +181,19 @@
           <div class="cs-phase__body">
             <p>
               After delivering the main updates for i-Exchange, I was looking for the next
-              problem worth solving. I found it by accident — while conducting user research
-              with a frontline colleague, I noticed them switching between i-Exchange and
+              problem worth solving. I found it by accident. While conducting user research with a frontline colleague, I noticed them switching between i-Exchange and
               a tool called Colleague Assist: an AI chatbot that answered colleague questions
               using i-Exchange content as its source.
             </p>
             <p>
               The product looked interesting and clearly underserved. I introduced myself to
-              the Product Owner and offered to help. They were glad of it — two problems were
-              stalling the tool's rollout: colleagues weren't selecting their business area
+              the Product Owner and offered to help. They were glad of it: two problems were stalling the tool's rollout: colleagues weren't selecting their business area
               before querying, and almost nobody was leaving feedback. Both were essential
               for the data science team to improve the model's responses.
             </p>
             <p>
               There was one significant constraint: no money left in the project budget.
-              The development team agreed that front-end changes — copy, styles, layout —
-              counted as business as usual and could ship without additional cost. But any
+              The development team agreed that front-end changes (copy, styles, layout) counted as business as usual and could ship without additional cost. But any
               back-end functionality was off the table. On top of that, a change freeze was
               coming in three weeks. Whatever I was going to do, it had to ship within that window.
             </p>
@@ -218,25 +214,23 @@
               There was no time for workshops or a formal research plan. But there were
               plenty of colleagues already using the tool who I could speak to quickly.
               I organised a town hall meeting to understand why users weren't leaving
-              feedback or selecting their audience — and what came back was clear and consistent.
+              feedback or selecting their audience, and what came back was clear and consistent.
             </p>
 
             <h3>What the town hall revealed</h3>
             <ul>
-              <li><strong>Feedback options were too vague</strong> — Only three discrete choices were available. Users found them too broad to accurately describe their experience, so they gave up and left nothing at all.</li>
-              <li><strong>Users didn't understand the model</strong> — Nobody had told colleagues that their feedback directly trained and improved Cassi's responses. Once they knew, they were far more motivated to contribute.</li>
-              <li><strong>The audience filter was easy to miss</strong> — It sat at the top of the screen, far from the query input at the bottom. With no prompt or guidance, most users simply forgot it existed.</li>
+              <li><strong>Feedback options were too vague</strong>: Only three discrete choices were available. Users found them too broad to accurately describe their experience, so they gave up and left nothing at all.</li>
+              <li><strong>Users didn't understand the model</strong>: Nobody had told colleagues that their feedback directly trained and improved Cassi's responses. Once they knew, they were far more motivated to contribute.</li>
+              <li><strong>The audience filter was easy to miss</strong>: It sat at the top of the screen, far from the query input at the bottom. With no prompt or guidance, most users simply forgot it existed.</li>
             </ul>
 
             <h3>Heuristic analysis</h3>
             <p>
               A quick pass against usability principles confirmed what the town hall surfaced.
-              There was no onboarding guidance — colleagues joining through training might retain
-              the basics initially, but knowledge fade was inevitable. The audience filter was
+              There was no onboarding guidance. Colleagues joining through training might know the basics initially, but nothing kept that knowledge fresh. The audience filter was
               poorly positioned with no supporting prompt. The feedback icons were squeezed
               between responses without enough visual separation to read as clearly interactive.
-              The UI felt like a prototype that had never been handed to a designer — functional,
-              but not ready for the scale of rollout being planned.
+              The UI felt like a prototype that had never been handed to a designer, functional but not ready for the scale of rollout being planned.
             </p>
 
             <figure class="image-block image-block--contained">
@@ -272,32 +266,30 @@
           </blockquote>
 
           <div class="cs-phase__body">
-            <h3>Problem 1 — The feedback journey</h3>
+            <h3>Problem 1: The feedback journey</h3>
             <p>
               Users wanted to leave feedback when Cassi got something wrong, but the three
               available options were too broad to capture what they actually meant. Faced with
               choices that didn't fit their experience, they abandoned the journey entirely.
               Because Cassi uses negative feedback to guard-rail poor responses, low feedback
-              rates had a direct impact on model safety — not just data quality.
+              rates had a direct impact on model safety, not just data quality.
             </p>
             <p>
               The feedback entry point was also poorly signalled. The thumbs up and down icons
               were visually buried between responses, easy to overlook entirely.
             </p>
 
-            <h3>Problem 2 — The understanding gap</h3>
+            <h3>Problem 2: The understanding gap</h3>
             <p>
               Users had no mental model of how Cassi actually worked. They didn't know that
-              their feedback directly trained the model's responses — for themselves and every
-              colleague using the tool. Once that connection was made explicit in the town hall,
+              their feedback directly trained the model's responses, for themselves and every colleague using the tool. Once that connection was made explicit in the town hall,
               motivation to leave feedback increased immediately. This was a communication
               failure, not a missing feature.
             </p>
 
-            <h3>Problem 3 — Audience selection</h3>
+            <h3>Problem 3: Audience selection</h3>
             <p>
-              Prior to the update, 1-in-3 guard-railed responses had no audience selected —
-              meaning the model was being penalised for giving the right answer to the wrong
+              Prior to the update, 1-in-3 guard-railed responses had no audience selected, meaning the model was being penalised for giving the right answer to the wrong
               person, rather than a genuinely bad response. The audience filter needed
               repositioning, prompting, and making impossible to miss.
             </p>
@@ -329,17 +321,17 @@
           <div class="cs-phase__body">
             <p>
               With three days before designs needed to go to developers, I moved quickly.
-              No back-end changes, no new user journeys — front-end only. Each solution
+              No back-end changes, no new user journeys: front-end only. Each solution
               had to solve a real problem without adding development cost.
             </p>
 
-            <h3>Solving feedback — the Community forum</h3>
+            <h3>Solving feedback: the Community forum</h3>
             <p>
               The three vague feedback options couldn't be replaced with a richer form without
               back-end work. But I had an existing relationship with the team running Santander's
               internal Community forum from my work on i-Exchange. I asked if they could open
               a dedicated Cassi channel where colleagues could leave longer-form feedback.
-              They said yes — and it was free.
+              They said yes, and it was free.
             </p>
             <p>
               Community moderators would triage submissions to the Cassi team. The discrete
@@ -347,38 +339,34 @@
               at zero additional cost.
             </p>
 
-            <h3>Closing the understanding gap — tooltip and introduction screen</h3>
+            <h3>Closing the understanding gap: tooltip and introduction screen</h3>
             <p>
               When a colleague first opens Cassi, the chat window is empty. That blank space
               was an opportunity. I proposed using it for a brief introduction: what Cassi is
-              for, how to get the best results, and — critically — that their feedback directly
-              improves the model's responses for everyone on the platform.
+              for, how to get the best results, and, critically, that their feedback directly improves the model's responses for everyone on the platform.
             </p>
             <p>
               A persistent tooltip would also keep key guidance accessible without interrupting
               experienced users who already knew what they were doing.
             </p>
 
-            <h3>Fixing audience selection — the law of proximity</h3>
+            <h3>Fixing audience selection: the law of proximity</h3>
             <p>
               The audience filter sat at the top of the screen. The query input was at the
               bottom. That physical distance was enough for users to forget the filter
-              existed. Moving the selector directly above the query box — where the user's
-              attention already was — applied a basic principle: related elements belong
-              close together.
+              existed. Moving the selector directly above the query box (where the user's attention already was) applied a basic principle: related elements belong close together.
             </p>
             <p>
               As a fallback, a prompt would appear if a user submitted a query without
               selecting an audience first.
             </p>
 
-            <h3>Driving engagement — the rebrand competition</h3>
+            <h3>Driving engagement: the rebrand competition</h3>
             <p>
               Alongside the UX fixes, I ran an internal competition inviting colleagues
               to design a new logo and suggest a new name. The goal: give colleagues a
               reason to care about the tool before they'd even experienced the improvements.
-              Dozens of submissions came in. The winning design — by Aishat Arowosegbe —
-              gave the tool a visual identity closer to the customer-facing systems
+              Dozens of submissions came in. The winning design by Aishat Arowosegbe gave the tool a visual identity closer to the customer-facing systems
               colleagues already knew. Colleague Assist became Cassi.
             </p>
           </div>
@@ -396,17 +384,14 @@
           <div class="cs-phase__body">
             <p>
               With one day left before handover, I ran group calls with users to pressure-test
-              the design decisions. The reaction was positive — the upgrade felt like a
-              significant improvement to people who'd been using the original daily.
+              the design decisions. The reaction was positive, and the upgrade felt like a significant improvement to people who'd been using the original daily.
             </p>
 
             <h3>The responsive breakpoint catch</h3>
             <p>
               Testing surfaced something I hadn't designed for: many colleagues run Cassi as
               a narrow side panel so they can use other windows while serving a customer.
-              The layout broke at that width. I introduced a tighter breakpoint — reducing
-              the logo and tightening spacing at the bottom — to keep the chat window
-              functional in the reduced view without affecting larger screens.
+              The layout broke at that width. I introduced a tighter breakpoint, reducing the logo and tightening spacing at the bottom, to keep the chat window functional in the reduced view without affecting larger screens.
               It went to the wire, but it shipped.
             </p>
 
@@ -420,7 +405,7 @@
 
           <blockquote class="cs-callout">
             <p class="cs-callout__text">
-              "I'd have much preferred the overlay — but when colleagues explained that a modal
+              "I'd have much preferred the overlay, but when colleagues explained that a modal
               blocking their screen mid-customer-call would genuinely get in the way of their
               work, it was an easy choice."
             </p>
@@ -463,15 +448,13 @@
             <p>
               A persistent tooltip holds key guidance for new users without cluttering
               the experience for experienced ones. The empty opening screen now provides
-              a brief introduction to best practice — including the explicit statement that
-              feedback improves Cassi's responses for everyone.
+              a brief introduction to best practice, including the explicit statement that feedback improves Cassi's responses for everyone.
             </p>
 
             <h3>Feedback journey</h3>
             <p>
               Thumbs up and down redesigned to read clearly as interactive elements.
-              Selecting one triggers a toast notification — brief, unobtrusive, and
-              surfaced without interrupting a live customer interaction. The toast links
+              Selecting one triggers a toast notification: brief, unobtrusive, and surfaced without interrupting a live customer interaction. The toast links
               to the dedicated Community forum for colleagues who want to leave
               more detailed context.
             </p>
@@ -499,7 +482,7 @@
             <figure class="image-block image-block--contained">
               <!-- IMAGE: /assets/images/cassi/cassi-rebrand.svg -->
               <img src="/assets/images/cassi/cassi-rebrand.svg" alt="New Cassi logo and visual identity designed by Aishat Arowosegbe, winner of the internal rebrand competition" loading="lazy" />
-              <figcaption class="image-block__caption">Winning rebrand by Aishat Arowosegbe — a visual identity that matched the maturity of the redesigned product.</figcaption>
+              <figcaption class="image-block__caption">Winning rebrand by Aishat Arowosegbe, a visual identity that matched the maturity of the redesigned product.</figcaption>
             </figure>
           </div>
         </section>
@@ -532,15 +515,13 @@
             <p>
               The changes shipped just before the change freeze and received immediate
               positive feedback via the new Community forum. In the first month after launch,
-              there were 30 guard-railed responses — and in every single case the user had
-              selected their audience. Before the update, 1-in-3 had not.
+              there were 30 guard-railed responses, and in every single case the user had selected their audience. Before the update, 1-in-3 had not.
             </p>
             <p>
               The Community forum added a dimension the original feedback mechanism never
               had: context. Colleagues started explaining <em>why</em> a response was wrong,
               not just that it was. Experienced colleagues began helping newer ones. And a
-              recurring pattern emerged — many "bad" Cassi responses were actually accurate
-              answers based on outdated i-Exchange articles, giving the content team a
+              recurring pattern emerged: many "bad" Cassi responses were actually accurate answers based on outdated i-Exchange articles, giving the content team a
               new stream of actionable improvement signals.
             </p>
             <p>
@@ -570,19 +551,14 @@
           <li class="cs-retro__item">
             <h3 class="cs-retro__item-title">Being adaptable</h3>
             <p class="cs-retro__item-body">
-              This project reinforced that good outcomes don't require a perfect process.
-              Given more time I'd have run proper research and structured testing — but the
-              constraints were real, and working within them delivered genuine value quickly.
-              Knowing when to adapt rather than wait for ideal conditions is a skill in itself,
-              and one worth practising deliberately.
+              Given more time I'd have run proper research and structured testing, but the constraints were real, and working within them delivered genuine value quickly. Knowing when to adapt is something I want to get more deliberate about.
             </p>
           </li>
 
           <li class="cs-retro__item">
             <h3 class="cs-retro__item-title">Design for every viewport from the start</h3>
             <p class="cs-retro__item-body">
-              I assumed Cassi was a full-width web product. It wasn't — many colleagues run
-              it as a narrow side panel alongside other windows. Finding that out on the final
+              I assumed Cassi was a full-width web product. It wasn't. Many colleagues run it as a narrow side panel alongside other windows. Finding that out on the final
               day before handover nearly caused a problem. Going forward: always understand
               how a product is actually used before designing, not after. Real usage patterns
               matter more than standard device breakpoints.
@@ -592,11 +568,7 @@
           <li class="cs-retro__item">
             <h3 class="cs-retro__item-title">Putting my bias aside</h3>
             <p class="cs-retro__item-body">
-              I personally preferred the overlay for the feedback journey — it felt more
-              deliberate and harder to miss. But colleagues explained that a modal blocking
-              their screen mid-customer-call was genuinely disruptive to their work.
-              The right call was obvious. The best design works for the user's actual
-              context, not the designer's preference.
+              I personally preferred the overlay for the feedback journey. It felt more deliberate and harder to miss. But colleagues explained that a modal blocking their screen mid-customer-call was genuinely disruptive to their work. The right call was obvious once I heard that.
             </p>
           </li>
 

@@ -107,7 +107,7 @@
             <dd class="cs-summary__answer">
               i-Exchange (information exchange) is a process knowledge base used by frontline
               colleagues at Santander during every customer interaction. It's a big instruction
-              manual for banking processes — 6,000 articles covering everything from fraud
+              manual for banking processes, with 6,000 articles covering everything from fraud
               procedures to product information.
             </dd>
           </div>
@@ -117,7 +117,7 @@
             <dd class="cs-summary__answer">
               I used i-Exchange daily in a previous fraud prevention role. It was full of bugs
               and usability problems. Rather than accept it, I pitched my ideas directly to the
-              Product Owner — who offered me a UX Designer / Business Analyst role on the team.
+              Product Owner, who offered me a UX Designer / Business Analyst role on the team.
             </dd>
           </div>
 
@@ -181,20 +181,18 @@
             <p>
               i-Exchange is the central knowledge base for Santander UK's frontline colleagues.
               During every customer call or branch interaction, colleagues rely on it to look up
-              the correct processes — from handling a disputed payment to opening a new account.
+              the correct processes, from handling a disputed payment to opening a new account.
               It handles around 5 million searches a year.
             </p>
             <p>
               Before joining the product team, I used i-Exchange daily as a fraud prevention
               colleague. The system was slow, buggy, and routinely failed me at the worst
-              possible moment — mid-call with a customer waiting. I knew it could be better,
+              possible moment, mid-call with a customer waiting. I knew it could be better,
               so I approached the Product Owner directly, pitched my observations, and was
               brought in as a UX Designer and Business Analyst.
             </p>
             <p>
-              This gave me an unusual advantage: genuine user empathy built from first-hand
-              frustration, rather than a secondhand account. I wasn't parachuted in — I lived
-              the problem before I solved it.
+              It gave me first-hand knowledge of the problem before I was asked to solve it.
             </p>
           </div>
         </section>
@@ -212,20 +210,19 @@
             <p>
               Despite having first-hand experience, I didn't let my own assumptions drive the
               work. I teamed up with a UX researcher and built a formal research plan to
-              understand the full picture — covering users, content, constraints, and
-              competing knowledge base platforms.
+              understand the full picture, covering users, content, constraints, and competing knowledge base platforms.
             </p>
 
             <h3>Research methods</h3>
             <ul>
-              <li><strong>Surveys</strong> — Quantified colleague experience with the current system at scale</li>
-              <li><strong>Interviews</strong> — In-depth conversations to surface pain points beneath survey data</li>
-              <li><strong>Shadowing</strong> — Observed colleagues in live interactions to understand real-world usage</li>
-              <li><strong>Workshops</strong> — Facilitated sessions to generate user-led ideas for improvement</li>
-              <li><strong>Competitor analysis</strong> — Audited other knowledge base platforms for best practices</li>
-              <li><strong>Journey mapping</strong> — Mapped the full site to understand where users lost confidence</li>
-              <li><strong>Content audit</strong> — Reviewed all 6,000+ articles to understand structure and gaps</li>
-              <li><strong>Heuristic analysis</strong> — Evaluated the existing UI against usability principles</li>
+              <li><strong>Surveys</strong>: Quantified colleague experience with the current system at scale</li>
+              <li><strong>Interviews</strong>: In-depth conversations to surface pain points beneath survey data</li>
+              <li><strong>Shadowing</strong>: Observed colleagues in live interactions to understand real-world usage</li>
+              <li><strong>Workshops</strong>: Facilitated sessions to generate user-led ideas for improvement</li>
+              <li><strong>Competitor analysis</strong>: Audited other knowledge base platforms for best practices</li>
+              <li><strong>Journey mapping</strong>: Mapped the full site to understand where users lost confidence</li>
+              <li><strong>Content audit</strong>: Reviewed all 6,000+ articles to understand structure and gaps</li>
+              <li><strong>Heuristic analysis</strong>: Evaluated the existing UI against usability principles</li>
             </ul>
 
             <h3>What the heuristic analysis found</h3>
@@ -233,13 +230,13 @@
               The heuristic review surfaced problems across every major area of the product.
               On the homepage: a cluttered navigation bar, no audience filters, a wasted hero
               section used only for decoration, and a communications list that mixed incident
-              alerts with general updates — making both harder to read.
+              alerts with general updates, making both harder to read.
             </p>
             <p>
               In search: the engine used exact-match logic with no tolerance for spelling errors,
               no natural language interpretation, and no autocorrect. A single typo returned zero
               results with no suggestions. Article metadata in search results was limited to
-              title and ID — not enough to judge relevance before clicking.
+              title and ID, not enough to judge relevance before clicking.
             </p>
             <p>
               Within articles: there was no version history, no feedback mechanism, broken
@@ -287,7 +284,7 @@
           </blockquote>
 
           <div class="cs-phase__body">
-            <h3>Pain point 1 — Trouble searching</h3>
+            <h3>Pain point 1: Trouble searching</h3>
             <p>
               The search engine was the most reported problem. It used outdated exact-match
               logic: one spelling mistake voided the search entirely, returning no results and
@@ -303,16 +300,14 @@
           </blockquote>
 
           <div class="cs-phase__body">
-            <h3>Pain point 2 — Finding relevant information</h3>
+            <h3>Pain point 2: Finding relevant information</h3>
             <p>
-              i-Exchange held over 6,000 articles across multiple audience groups — branch,
-              contact centre, specialist teams. The majority of content was irrelevant to any
+              i-Exchange held over 6,000 articles across multiple audience groups: branch, contact centre, and specialist teams. The majority of content was irrelevant to any
               given colleague, but audience filters weren't available from the homepage where
               most searches started.
             </p>
             <p>
-              Less than 10% of colleagues were applying audience filters. That wasn't laziness
-              — it was a design failure. The filters were buried, inconsistent, and required
+              Less than 10% of colleagues were applying audience filters. That wasn't laziness, it was a design failure. The filters were buried, inconsistent, and required
               manual reapplication after every search. As I dug deeper, it became clear the
               navigation problem was really a personalisation problem: if the system knew who
               you were and what team you worked in, it could filter content automatically.
@@ -336,11 +331,11 @@
           <h2 id="phase-ideate" class="cs-phase__heading">Finding the right solutions</h2>
 
           <div class="cs-phase__body">
-            <h3>Solving search — AI already in the building</h3>
+            <h3>Solving search: AI already in the building</h3>
             <p>
               The search problem couldn't be fixed by rewriting content or tweaking metadata.
               I dived into ServiceNow's technical documentation and discovered that Santander
-              was already paying for an AI-powered search engine — it just hadn't been deployed.
+              was already paying for an AI-powered search engine. It just hadn't been deployed.
             </p>
             <p>
               The AI search offered machine learning, natural language interpretation,
@@ -351,15 +346,14 @@
               The catch: any change to how ServiceNow works globally required a vote from all
               Santander countries using the platform. I built a business case, secured alignment
               from IT, HR, and Customer Interactions teams, and submitted the ideation request
-              to the international forum — offering to make the UK the pilot country.
+              to the international forum, offering to make the UK the pilot country.
               It passed the vote.
             </p>
 
-            <h3>Solving relevance — workshops and personalisation</h3>
+            <h3>Solving relevance: workshops and personalisation</h3>
             <p>
               For the navigation and relevance problem, I ran workshops with contact centre and
-              branch colleagues. I started each session with a simple exercise — how do you
-              make toast? — to warm people up to the idea that we all do things differently,
+              branch colleagues. I started each session with a simple exercise (how do you make toast?) to warm people up to the idea that we all do things differently,
               before asking what frustrated them about finding information on i-Exchange.
             </p>
             <p>
@@ -395,15 +389,13 @@
             <h3>Search testing at scale</h3>
             <p>
               Before committing to the AI search deployment, I needed hard evidence that it
-              would genuinely outperform the existing engine — not just in theory, but on
-              the real queries Santander colleagues were typing.
+              would genuinely outperform the existing engine, not just in theory, but on the real queries Santander colleagues were typing.
             </p>
             <p>
               I set up a team of business analysts to run 4,000 manual searches in the test
               environment. Each query was tested on both search engines, with and without
               audience filters applied. Results were graded as promoter (top 3), neutral
-              (positions 4–5), or detractor (position 6 and beyond) — the same NPS framing
-              used to measure the live system.
+              (positions 4–5), or detractor (position 6 and beyond), using the same NPS framing used to measure the live system.
             </p>
           </div>
 
@@ -411,21 +403,20 @@
             <p class="cs-callout__text">
               AI search improved NPS by 5% on day one, without any machine learning optimisation.
               Applying an audience filter cut failed searches by a third and delivered a top-3
-              result 66–70% of the time — regardless of which search engine was used.
+              result 66–70% of the time, regardless of which search engine was used.
             </p>
           </blockquote>
 
           <figure class="image-block image-block--contained">
             <!-- IMAGE: /assets/images/i-exchange/search-test-results.png -->
             <img src="/assets/images/i-exchange/search-test-results.png" alt="Table comparing old search engine vs AI search NPS scores across 4,000 test queries, with and without audience filter" loading="lazy" />
-            <figcaption class="image-block__caption">4,000 manual test searches graded as promoter, neutral, or detractor — same NPS framing as the live system.</figcaption>
+            <figcaption class="image-block__caption">4,000 manual test searches graded as promoter, neutral, or detractor, using the same NPS framing as the live system.</figcaption>
           </figure>
 
           <div class="cs-phase__body">
             <p>
               The data confirmed two things: the AI engine was meaningfully better, and the
-              audience filter was the single highest-impact change available — even before
-              any machine learning kicked in.
+              audience filter was the single highest-impact change available, even before any machine learning kicked in.
             </p>
 
             <h3>User testing</h3>
@@ -434,8 +425,7 @@
               me refine the tab structure and footer navigation. The communications and
               incidents team confirmed the new separation of message types worked, and gave
               approval for a customisable banner space. Showing colleagues how their saved
-              audience would automatically filter their entire experience — searches,
-              communications, processes — landed well. They were enthusiastic.
+              audience would automatically filter their entire experience (searches, communications, processes) landed well. They were enthusiastic.
             </p>
             <p>
               Testing was more constrained than ideal: a required browser plug-in couldn't
@@ -457,19 +447,18 @@
 
           <div class="cs-phase__body">
             <p>
-              A key constraint shaped the whole delivery: colleagues were apprehensive about
-              change. Many had used i-Exchange for years and feared a disruptive overhaul
+              Colleagues were apprehensive about change. Many had used i-Exchange for years and feared a disruptive overhaul
               would make their jobs harder during the transition. The design had to feel
               immediately familiar, even when the functionality underneath was completely new.
             </p>
 
             <h3>Home</h3>
             <ul>
-              <li><strong>Saved audience and AI search</strong> — Audience selector surfaced on the homepage for the first time, with a temporary prompt to drive adoption at launch. All searches, communications, and content filtered automatically once set.</li>
-              <li><strong>My processes</strong> — A personalised section showing each colleague's favourite and most-viewed articles, eliminating the need to search for regularly-used content.</li>
-              <li><strong>Communications and incidents separated</strong> — Previously mixed in a single list; now colour-coded and icon-differentiated. Saved audiences apply to both lists automatically.</li>
-              <li><strong>Clickable banner space</strong> — The decorative hero section replaced with a flexible, customisable banner for internal initiatives and announcements.</li>
-              <li><strong>Simplified navigation</strong> — Cluttered "kitchen drawer" menu replaced with a clear navbar and a new footer containing frequently used system links.</li>
+              <li><strong>Saved audience and AI search</strong>: Audience selector surfaced on the homepage for the first time, with a temporary prompt to drive adoption at launch. All searches, communications, and content filtered automatically once set.</li>
+              <li><strong>My processes</strong>: A personalised section showing each colleague's favourite and most-viewed articles, eliminating the need to search for regularly-used content.</li>
+              <li><strong>Communications and incidents separated</strong>: Previously mixed in a single list; now colour-coded and icon-differentiated. Saved audiences apply to both lists automatically.</li>
+              <li><strong>Clickable banner space</strong>: The decorative hero section replaced with a flexible, customisable banner for internal initiatives and announcements.</li>
+              <li><strong>Simplified navigation</strong>: Cluttered "kitchen drawer" menu replaced with a clear navbar and a new footer containing frequently used system links.</li>
             </ul>
 
             <ol class="process-steps" aria-label="Key homepage improvements delivered">
@@ -482,7 +471,7 @@
               <li class="process-steps__item">
                 <div>
                   <p class="process-steps__heading">My Processes</p>
-                  <p class="process-steps__body">Personalised section showing each colleague's favourite and most-viewed articles — no searching for regularly-used content.</p>
+                  <p class="process-steps__body">Personalised section showing each colleague's favourite and most-viewed articles, so colleagues didn't need to search for regularly-used content.</p>
                 </div>
               </li>
               <li class="process-steps__item">
@@ -507,10 +496,10 @@
 
             <h3>Search</h3>
             <ul>
-              <li><strong>AI-powered engine</strong> — Machine learning, natural language interpretation, and full analytics reporting on top queries, knowledge gaps, and failed searches.</li>
-              <li><strong>Autocorrect and genius suggestions</strong> — Typos no longer void a search. The engine now suggests corrections and surfaces the most likely article directly.</li>
-              <li><strong>Audience filter in search</strong> — Saved audience persists into the search page and can be toggled off to see cross-audience results when needed.</li>
-              <li><strong>Richer result cards</strong> — View count, share link, and open-in-new-tab now available directly from the search results list.</li>
+              <li><strong>AI-powered engine</strong>: Machine learning, natural language interpretation, and full analytics reporting on top queries, knowledge gaps, and failed searches.</li>
+              <li><strong>Autocorrect and genius suggestions</strong>: Typos no longer void a search. The engine now suggests corrections and surfaces the most likely article directly.</li>
+              <li><strong>Audience filter in search</strong>: Saved audience persists into the search page and can be toggled off to see cross-audience results when needed.</li>
+              <li><strong>Richer result cards</strong>: View count, share link, and open-in-new-tab now available directly from the search results list.</li>
             </ul>
 
             <figure class="image-block image-block--contained">
@@ -521,10 +510,10 @@
 
             <h3>Articles</h3>
             <ul>
-              <li><strong>Version history</strong> — Full history for every article, enabling QA teams to review interactions against the version of the process that was live at that time.</li>
-              <li><strong>Feedback mechanism</strong> — Colleagues can now flag articles that need improving, giving knowledge managers a direct signal from the people using the content daily.</li>
-              <li><strong>Digital adoption banners</strong> — Processes that can be self-served digitally are flagged with a banner, supporting the business goal of reducing assisted channel demand.</li>
-              <li><strong>Fixed article features</strong> — Copy to clipboard, link sharing, expand-all accordions, and add-to-favourites all implemented consistently across the platform.</li>
+              <li><strong>Version history</strong>: Full history for every article, enabling QA teams to review interactions against the version of the process that was live at that time.</li>
+              <li><strong>Feedback mechanism</strong>: Colleagues can now flag articles that need improving, giving knowledge managers a direct signal from the people using the content daily.</li>
+              <li><strong>Digital adoption banners</strong>: Processes that can be self-served digitally are flagged with a banner, supporting the business goal of reducing assisted channel demand.</li>
+              <li><strong>Fixed article features</strong>: Copy to clipboard, link sharing, expand-all accordions, and add-to-favourites all implemented consistently across the platform.</li>
             </ul>
           </div>
         </section>
@@ -545,7 +534,7 @@
               the product moving in the meantime.
             </p>
             <p>
-              <strong>Long track — AI search.</strong> The search upgrade ran in the
+              <strong>Long track: AI search.</strong> The search upgrade ran in the
               background for close to a year, complicated by bugs discovered during
               development on the ServiceNow platform. I kept this from blocking everything
               else by shipping a minimum viable product with an interim UI on launch day,
@@ -553,7 +542,7 @@
               new AI search engine went live on i-Exchange.
             </p>
             <p>
-              <strong>Short track — UI and personalisation.</strong> Saved audiences, the
+              <strong>Short track: UI and personalisation.</strong> Saved audiences, the
               new homepage, search page, and article improvements were broken into small
               sprints with deployments every two weeks. Saved audiences shipped incrementally:
               first the data layer, then the selection UI, then the display, then the
@@ -589,21 +578,20 @@
 
           <div class="cs-phase__body">
             <p>
-              Once the AI search engine deployed, total search queries fell rapidly — a clear
+              Once the AI search engine deployed, total search queries fell rapidly, a clear
               signal that colleagues were finding what they needed on the first attempt rather
               than repeating searches. Spellcheck, genius suggestions, and machine learning
               were all working. The analytics dashboard surfaced emerging search trends and
               knowledge gaps that the content team could act on directly.
             </p>
             <p>
-              Saved audiences reached 50% adoption in the first month after launch — without
-              any mandatory training — and tripled the proportion of filtered searches almost
+              Saved audiences reached 50% adoption in the first month after launch without any mandatory training, and tripled the proportion of filtered searches almost
               immediately. Santander estimates the saved audience feature alone saves at least
               120 hours every month across the business, with the true benefit likely much
               higher when customer time, error reduction, and cognitive load are factored in.
             </p>
             <p>
-              Over the 12-month period, i-Exchange NPS increased by 11.7% — turning around
+              Over the 12-month period, i-Exchange NPS increased by 11.7%, turning around
               a long-declining trend and bringing user sentiment back on track.
             </p>
           </div>
@@ -629,7 +617,7 @@
           <li class="cs-retro__item">
             <h3 class="cs-retro__item-title">Workshop facilitation</h3>
             <p class="cs-retro__item-body">
-              My first workshop ran off track — I spent the opening half explaining context
+              My first workshop ran off track. I spent the opening half explaining context
               instead of running the session. I invalidated the findings and had to repeat it
               with a written handout to set expectations before people arrived. In future I'll
               invest in formal facilitation training to keep sessions focused and productive,
@@ -643,7 +631,7 @@
               A required browser plug-in couldn't get IT approval, which meant I was limited
               to in-person moderated testing with a smaller sample than I'd have liked. I went
               into production with less confidence than was ideal. Going forward I'll investigate
-              testing tool options and IT approval processes much earlier — before the design is
+              testing tool options and IT approval processes much earlier, before the design is
               ready to test, not after.
             </p>
           </li>
@@ -674,7 +662,7 @@
         <a href="/case-studies/cassi" class="cs-pagination__link">
           <div class="cs-pagination__text">
             <span class="cs-pagination__direction">Next case study</span>
-            <span class="cs-pagination__title">Cassi — AI Chatbot Feedback Redesign</span>
+            <span class="cs-pagination__title">Cassi: AI Chatbot Feedback Redesign</span>
           </div>
           <span class="cs-pagination__arrow" aria-hidden="true">→</span>
         </a>
