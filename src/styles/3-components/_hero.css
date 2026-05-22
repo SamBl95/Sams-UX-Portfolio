@@ -110,8 +110,19 @@
   gap:            var(--space-3);
 }
 
+.hero__actions .btn {
+  width:           100%;
+  justify-content: center;
+}
+
 @media (min-width: 600px) {
-  .hero__actions { flex-direction: row; }
+  .hero__actions {
+    flex-direction: row;
+  }
+
+  .hero__actions .btn {
+    width: auto;
+  }
 }
 
 
