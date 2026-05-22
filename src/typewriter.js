@@ -54,20 +54,25 @@ if (container && display) {
 }
 
 /**
- * Measures the rendered height of the longest phrase at the current viewport
- * and pins container.style.minHeight to that value, eliminating layout shift.
- * Full phrase length is always used — wrapping is fine, truncation is not.
+ * Measures every phrase at the current viewport and locks the container to the
+ * tallest rendered height. Uses height (not min-height) so the container is
+ * fully fixed — it cannot grow during typing even if a phrase wraps differently
+ * to what was measured. Caveat has uneven glyph widths so character-count alone
+ * is not a reliable proxy for rendered height.
  */
 function reserveHeight() {
-  const longestText = phrases.reduce((a, b) => a.length >= b.length ? a : b, '');
-
   const prev = display.textContent;
-  container.style.minHeight = '';
-  display.textContent = longestText;
-  const h = container.getBoundingClientRect().height;
-  display.textContent = prev;
+  container.style.height = '';
 
-  if (h > 0) container.style.minHeight = h + 'px';
+  let maxH = 0;
+  for (const phrase of phrases) {
+    display.textContent = phrase;
+    const h = container.getBoundingClientRect().height;
+    if (h > maxH) maxH = h;
+  }
+
+  display.textContent = prev;
+  if (maxH > 0) container.style.height = maxH + 'px';
 }
 
 function initTypewriter() {
