@@ -133,8 +133,8 @@
    ------------------------------------------------------------------------- */
 
 .hero__typewriter {
-  display:    block;
-  min-height: 2.2em; /* CSS fallback (2 lines at line-height 1.1) — JS overrides with exact measured value after fonts load */
+  display: block;
+  /* min-height set by JS in typewriter.js — no CSS fallback to avoid layout shift when Caveat loads */
 }
 
 .hero__typewriter-text {

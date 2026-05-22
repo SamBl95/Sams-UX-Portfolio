@@ -30,8 +30,14 @@ if (container && display) {
     display.textContent = phrases[0];
   }
 
-  // Wait for Caveat to load before measuring — font metrics determine line count.
-  // reserveHeight() runs sync between frames so there is no visual flicker.
+  // Reserve height immediately with whatever font is available — this runs before
+  // the first paint (module scripts are deferred but execute before paint on most
+  // browsers), preventing a layout shift when the hero fades in.
+  reserveHeight();
+
+  // Re-measure once Caveat has loaded to get the exact Caveat line metrics.
+  // By this point the hero is mid-fade-in (160ms delay + 600ms animation) so
+  // any correction happens while the element is still largely transparent.
   document.fonts.ready.then(() => {
     reserveHeight();
     if (!prefersReducedMotion) {
