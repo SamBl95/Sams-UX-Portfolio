@@ -268,7 +268,7 @@
   text-transform: uppercase;
   color:          var(--color-accent-accessible);
   border-left:    2px solid var(--color-accent);
-  padding-left:   12px;
+  padding-left:   var(--space-2);
   margin-bottom:  var(--space-6);
 }
 

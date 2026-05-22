@@ -60,15 +60,16 @@ Extended (5-breakpoint heading system):
 
 ### Colours
 ```
---color-bg:                #0d1f1a   deep forest
---color-surface:           #152b24   raised surface
---color-border:            #1e3d32   subtle border
---color-text-primary:      #f0ede6   warm white
---color-text-secondary:    #9db5ac   muted teal-grey
---color-accent:            #4fd1a5   mint teal
---color-accent-accessible: #4fd1a5   accent on dark — 9:1 contrast
---color-text-on-accent:    #071210   text ON teal — 10:1 contrast
---color-accent-light:      #1a3d30   dark teal surface tint
+--color-bg:                #f5f2ed   warm off-white
+--color-surface:           #ede9e3   light raised surface
+--color-border:            #d6d0c8   subtle warm border
+--color-text-primary:      #1a1614   dark warm brown
+--color-text-secondary:    #635e5a   muted warm grey — 4.5:1+ on surface
+--color-text-nav:          #3d3a37   nav text
+--color-accent:            #1a6b52   deep teal
+--color-accent-accessible: #1a6b52   deep teal — 4.5:1+ on light bg
+--color-text-on-accent:    #f5f2ed   text ON teal — 10:1 contrast
+--color-accent-light:      #e6f0ec   light teal surface tint
 ```
 
 ALWAYS use `--color-accent-accessible` for accent foreground text and focus outlines.
