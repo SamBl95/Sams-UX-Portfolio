@@ -142,7 +142,7 @@
   font-family:    var(--font-accent);
   font-weight:    var(--font-weight-normal);
   font-size:      0.8em; /* 80% of .hero__headline at every breakpoint */
-  color:          var(--color-accent);
+  color:          var(--color-text-primary);
   letter-spacing: normal;
 }
 
@@ -154,7 +154,7 @@
   display:          inline-block;
   width:            3px;
   height:           0.8em;
-  background-color: var(--color-accent);
+  background-color: var(--color-text-primary);
   vertical-align:   text-bottom;
   margin-left:      var(--space-1);
   animation:        cursor-blink 0.8s step-end infinite;
