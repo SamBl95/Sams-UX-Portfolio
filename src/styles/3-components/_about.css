@@ -107,7 +107,7 @@
 
 .about-timeline__item {
   position:         relative;
-  padding:          var(--space-5) var(--space-6);
+  padding-block:    var(--space-5);
   background-color: var(--color-bg);
 }
 
