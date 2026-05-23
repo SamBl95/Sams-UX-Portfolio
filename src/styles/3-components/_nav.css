@@ -1,8 +1,8 @@
 /* =============================================================================
    NAV
-   Sticky site header. Mobile-first: hamburger + hidden menu by default,
-   horizontal nav revealed at tablet+. JS (theme.js) handles:
-     - .nav--open toggle for mobile menu
+   Sticky site header. Mobile-first: hamburger + full-screen right drawer,
+   horizontal nav revealed at 905px+. JS (theme.js) handles:
+     - .nav--open toggle for mobile drawer
    ============================================================================= */
 
 
@@ -20,21 +20,46 @@
   display:     flex;
   align-items: center;
   gap:         var(--space-3);
-  height:      var(--nav-height); /* 56px — matches --nav-height token */
+  height:      var(--nav-height);
 }
 
 
-/* Hamburger toggle — mobile only */
+/* -------------------------------------------------------------------------
+   OVERLAY — dims page behind open drawer
+   ------------------------------------------------------------------------- */
+
+.nav__overlay {
+  position:       fixed;
+  inset:          0;
+  z-index:        var(--z-overlay);
+  background:     rgba(0, 0, 0, 0.4);
+  opacity:        0;
+  pointer-events: none;
+  transition:     opacity 200ms ease-in;
+}
+
+.nav--open .nav__overlay {
+  opacity:        1;
+  pointer-events: auto;
+  transition:     opacity 250ms ease-out;
+}
+
+
+/* -------------------------------------------------------------------------
+   HAMBURGER TOGGLE — mobile only
+   ------------------------------------------------------------------------- */
+
 .nav__toggle {
   display:         flex;
   flex-direction:  column;
   justify-content: center;
-  gap:             var(--space-1);
-  width:           var(--space-5);  /* 40px — minimum tap target */
-  height:          var(--space-5);
-  padding:         var(--space-1);
-  margin-left:     auto;            /* push toggle to right edge when no logo present */
-  margin-right:    calc(var(--space-1) * -1); /* flush with container edge */
+  align-items:     center;
+  gap:             6px;
+  width:           48px;
+  height:          48px;
+  padding:         0;
+  margin-left:     auto;
+  margin-right:    -4px;
   background:      none;
   border:          none;
   cursor:          pointer;
@@ -56,7 +81,7 @@
 
 .nav__toggle-bar {
   display:          block;
-  width:            100%;
+  width:            22px;
   height:           2px;
   background-color: var(--color-text-primary);
   border-radius:    var(--radius-full);
@@ -65,38 +90,8 @@
     opacity   var(--transition-base);
 }
 
-
-/* Mobile nav menu — hidden until .nav--open is added by JS */
-.nav__menu {
-  display: none;
-}
-
-@keyframes nav-menu-enter {
-  from {
-    opacity:   0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity:   1;
-    transform: translateY(0);
-  }
-}
-
-/* Open state — JS adds .nav--open to .nav */
-.nav--open .nav__menu {
-  display:          block;
-  position:         absolute;
-  top:              var(--nav-height); /* flush below nav header */
-  left:             0;
-  right:            0;
-  background-color: var(--color-bg);
-  border-bottom:    1px solid var(--color-border);
-  padding-block:    var(--space-3);
-  animation:        nav-menu-enter 200ms var(--ease-out) both;
-}
-
 .nav--open .nav__toggle-bar:nth-child(1) {
-  transform: translateY(10px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
 }
 
 .nav--open .nav__toggle-bar:nth-child(2) {
@@ -104,34 +99,97 @@
 }
 
 .nav--open .nav__toggle-bar:nth-child(3) {
-  transform: translateY(-10px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 
-/* Nav list */
+/* -------------------------------------------------------------------------
+   MOBILE DRAWER — full viewport, slides in from right
+   ------------------------------------------------------------------------- */
+
+.nav__menu {
+  position:       fixed;
+  inset:          0;
+  z-index:        var(--z-drawer);
+  background:     var(--color-bg);
+  display:        flex;
+  flex-direction: column;
+  transform:      translateX(100%);
+  visibility:     hidden;
+  transition:
+    transform  200ms ease-in,
+    visibility 0s    200ms;
+}
+
+.nav--open .nav__menu {
+  transform:  translateX(0);
+  visibility: visible;
+  transition:
+    transform  250ms ease-out,
+    visibility 0s;
+}
+
+
+/* Close button — top-right of drawer */
+.nav__close {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  position:        absolute;
+  top:             16px;
+  right:           16px;
+  width:           48px;
+  height:          48px;
+  background:      none;
+  border:          none;
+  cursor:          pointer;
+  color:           var(--color-text-primary);
+  font-size:       var(--text-xl);
+  border-radius:   var(--radius-md);
+  transition:      background-color var(--transition-fast);
+  flex-shrink:     0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav__close:hover {
+    background-color: var(--color-surface);
+  }
+}
+
+.nav__close:focus-visible {
+  outline:        2px solid var(--color-accent-accessible);
+  outline-offset: 2px;
+}
+
+
+/* Nav list — bottom half of drawer, right-aligned for thumb reach */
 .nav__list {
   display:        flex;
   flex-direction: column;
+  align-items:    flex-end;
   list-style:     none;
-  padding:        0;
-  margin:         0;
+  padding:        0 var(--space-4) var(--space-10);
+  margin-top:     auto;
+  margin-bottom:  0;
+  margin-left:    0;
+  margin-right:   0;
 }
 
-/* Reset the global li + li margin-top — flex alignment handles spacing */
 .nav__item + .nav__item {
   margin-top: 0;
 }
 
 
-/* Nav links — mobile: full-width tap targets */
+/* Nav links */
 .nav__link {
   display:         block;
   position:        relative;
-  font-size:       var(--text-sm);
+  font-size:       var(--text-lg);
   font-weight:     var(--font-weight-normal);
   color:           var(--color-text-nav);
   text-decoration: none;
-  padding:         var(--space-3) var(--space-5);
+  padding-block:   var(--space-3);
+  text-align:      right;
   transition:      color var(--transition-fast);
 }
 
@@ -153,35 +211,40 @@
 }
 
 
-
 /* -------------------------------------------------------------------------
-   MEDIUM+  905px — horizontal nav, hamburger hidden
+   905px+ — horizontal nav, drawer disabled
    ------------------------------------------------------------------------- */
 
 @media (min-width: 905px) {
 
-  .nav__toggle {
-    display: none;
-  }
+  .nav__toggle  { display: none; }
+  .nav__close   { display: none; }
+  .nav__overlay { display: none; }
 
-  /* Always show nav menu, reset mobile absolute positioning */
   .nav__menu {
-    display:     flex;
-    position:    static;
-    background:  none;
-    border:      none;
-    padding:     0;
-    margin-left: auto; /* pushes nav cluster right — no logo anchor */
+    position:       static;
+    transform:      none;
+    visibility:     visible;
+    z-index:        auto;
+    background:     none;
+    display:        flex;
+    flex-direction: row;
+    transition:     none;
+    margin-left:    auto;
   }
 
   .nav__list {
     flex-direction: row;
     align-items:    center;
     gap:            var(--space-2);
+    padding:        0;
+    margin-top:     0;
   }
 
   .nav__link {
-    padding: var(--space-2) var(--space-3);
+    padding:    var(--space-2) var(--space-3);
+    text-align: left;
+    font-size:  var(--text-sm);
   }
 
   @media (hover: hover) and (pointer: fine) {
@@ -222,25 +285,19 @@
 
 }
 
+
+/* -------------------------------------------------------------------------
+   REDUCED MOTION
+   ------------------------------------------------------------------------- */
+
 @media (prefers-reduced-motion: reduce) {
-  .nav__toggle-bar {
+  .nav__toggle-bar,
+  .nav__overlay,
+  .nav__menu {
     transition: none;
   }
 
   .nav__link::after {
     transition: none;
-  }
-
-  .nav--open .nav__menu {
-    animation: none;
-  }
-
-  .nav--open .nav__toggle-bar:nth-child(1),
-  .nav--open .nav__toggle-bar:nth-child(3) {
-    transform: none;
-  }
-
-  .nav--open .nav__toggle-bar:nth-child(2) {
-    opacity: 1;
   }
 }

@@ -11,6 +11,14 @@
    --------------------------------------------------------------------------- */
 
 .stories__heading {
+  color:         var(--color-accent-accessible);
+  margin-bottom: var(--space-3);
+}
+
+.stories__intro {
+  font-size:     var(--text-lg);
+  line-height:   var(--leading-body);
+  color:         var(--color-text-secondary);
   margin-bottom: var(--space-8);
 }
 

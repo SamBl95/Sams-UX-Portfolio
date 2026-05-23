@@ -22,12 +22,12 @@
   margin-bottom:  var(--space-3);
 }
 
-/* Title font-size from h1 typography rule */
+/* Title — H1 in accent, font-size from h1 typography rule */
 .about-hero__title {
   font-weight:    var(--font-weight-bold);
   line-height:    1.1;
   letter-spacing: -0.02em;
-  color:          var(--color-text-primary);
+  color:          var(--color-accent-accessible);
   margin-bottom:  var(--space-6);
 }
 
@@ -35,7 +35,6 @@
   font-size:   var(--text-lg);
   line-height: var(--leading-body);
   color:       var(--color-text-secondary);
-  font-style:  italic;
 }
 
 .about-hero__actions {

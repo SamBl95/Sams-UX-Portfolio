@@ -90,14 +90,28 @@
 
 
 
-/* Headline — font-size from h1 element rule in _typography.css */
+/* Headline — explicit sizes at four breakpoints (overrides typography base) */
 .hero__headline {
+  font-family:    var(--font-heading);
   font-weight:    var(--font-weight-semibold);
+  font-size:      var(--text-28);   /* 28px */
   line-height:    1.1;
   letter-spacing: -0.02em;
   text-wrap:      wrap;
-  color:          var(--color-text-primary);
+  color:          var(--color-accent-accessible);
   margin-bottom:  var(--space-6);
+}
+
+@media (min-width: 480px) {
+  .hero__headline { font-size: var(--text-4xl); } /* 36px */
+}
+
+@media (min-width: 768px) {
+  .hero__headline { font-size: var(--text-5xl); } /* 48px */
+}
+
+@media (min-width: 1024px) {
+  .hero__headline { font-size: var(--text-64); }  /* 64px */
 }
 
 
@@ -140,6 +154,7 @@
 .hero__typewriter-text {
   font-family:    var(--font-accent);
   font-weight:    var(--font-weight-normal);
+  font-size:      0.8em; /* 80% of .hero__headline at every breakpoint */
   color:          var(--color-accent);
   letter-spacing: normal;
 }
