@@ -15,7 +15,9 @@
 }
 
 .contact__heading {
-  margin-bottom: var(--space-4);
+  font-family:    var(--font-heading);
+  color:          var(--color-accent-accessible);
+  margin-bottom:  var(--space-4);
 }
 
 .contact__intro {
