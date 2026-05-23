@@ -79,7 +79,7 @@
   align-items:     center;
   gap:             6px;
   position:        fixed;
-  top:             16px;
+  top:             4px;
   right:           16px;
   z-index:         calc(var(--z-overlay) - 1); /* below overlay when drawer opens */
   width:           48px;
