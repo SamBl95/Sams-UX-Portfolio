@@ -108,12 +108,7 @@
 .about-timeline__item {
   position:         relative;
   padding:          var(--space-5) var(--space-6);
-  border-top:       1px solid var(--color-border);
   background-color: var(--color-bg);
-}
-
-.about-timeline__item:first-child {
-  border-top: none;
 }
 
 .about-timeline__item:nth-child(even) {
