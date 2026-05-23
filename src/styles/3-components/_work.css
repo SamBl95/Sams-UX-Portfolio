@@ -17,11 +17,11 @@
 }
 
 
-/* Font-size from h1 element rule in _typography.css */
 .work__heading {
+  font-family:    var(--font-heading);
   font-weight:    var(--font-weight-semibold);
   letter-spacing: -0.02em;
-  color:          var(--color-text-primary);
+  color:          var(--color-accent-accessible);
   margin-bottom:  var(--space-3);
 }
 

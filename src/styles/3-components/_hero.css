@@ -23,16 +23,21 @@
 }
 
 
-/* Name — h2 element size from _typography.css; no font-size override */
+/* Name — H1, most dominant element, one size step above the headline */
 .hero__name {
   font-family:         var(--font-heading);
   font-weight:         var(--font-weight-semibold);
   font-optical-sizing: auto;
+  font-size:           var(--text-4xl);  /* 36px */
   color:               var(--color-accent-accessible);
   letter-spacing:      -0.02em;
   margin-bottom:       var(--space-3);
   line-height:         var(--leading-tight);
 }
+
+@media (min-width: 480px)  { .hero__name { font-size: var(--text-5xl); } } /* 48px */
+@media (min-width: 768px)  { .hero__name { font-size: var(--text-64); } }  /* 64px */
+@media (min-width: 1024px) { .hero__name { font-size: var(--text-80); } }  /* 80px */
 
 
 /* -------------------------------------------------------------------------
@@ -98,7 +103,7 @@
   line-height:    1.1;
   letter-spacing: -0.02em;
   text-wrap:      wrap;
-  color:          var(--color-accent-accessible);
+  color:          var(--color-text-primary);
   margin-bottom:  var(--space-6);
 }
 

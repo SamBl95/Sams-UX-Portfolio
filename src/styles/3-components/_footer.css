@@ -23,10 +23,8 @@
   .footer__inner {
     display:               grid;
     grid-template-columns: 1fr auto;
-    grid-template-areas:
-      "identity links"
-      "copyright copyright";
-    align-items:           start;
+    grid-template-areas:   "identity links";
+    align-items:           center;
     gap:                   var(--space-8) var(--space-16);
   }
 }
@@ -96,11 +94,3 @@
 }
 
 
-/* Copyright */
-.footer__copyright {
-  font-size:   var(--text-xs);
-  color:       var(--color-text-secondary);
-  grid-area:   copyright;
-  padding-top: var(--space-8);
-  border-top:  1px solid var(--color-border);
-}

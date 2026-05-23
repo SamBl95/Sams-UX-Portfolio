@@ -46,6 +46,27 @@
 
 
 /* -------------------------------------------------------------------------
+   LOGO
+   ------------------------------------------------------------------------- */
+
+.nav__logo {
+  text-decoration: none;
+  flex-shrink:     0;
+}
+
+.nav__logo-text {
+  font-family:         var(--font-heading);
+  font-weight:         var(--font-weight-semibold);
+  font-optical-sizing: auto;
+  font-size:           var(--text-xl);
+  color:               var(--color-accent-accessible);
+  letter-spacing:      -0.01em;
+  line-height:         1;
+  margin:              0;
+}
+
+
+/* -------------------------------------------------------------------------
    HAMBURGER TOGGLE — mobile only
    ------------------------------------------------------------------------- */
 
@@ -130,25 +151,35 @@
 }
 
 
-/* Close button — top-right of drawer */
+/* Close button — top-right of drawer, visually matches hamburger */
 .nav__close {
-  display:         flex;
-  align-items:     center;
+  display:      flex;
+  align-items:  center;
   justify-content: center;
-  position:        absolute;
-  top:             16px;
-  right:           16px;
-  width:           48px;
-  height:          48px;
-  background:      none;
-  border:          none;
-  cursor:          pointer;
-  color:           var(--color-text-primary);
-  font-size:       var(--text-xl);
-  border-radius:   var(--radius-md);
-  transition:      background-color var(--transition-fast);
-  flex-shrink:     0;
+  position:     absolute;
+  top:          16px;
+  right:        16px;
+  width:        48px;
+  height:       48px;
+  background:   none;
+  border:       none;
+  cursor:       pointer;
+  border-radius: var(--radius-md);
+  transition:   background-color var(--transition-fast);
+  flex-shrink:  0;
 }
+
+.nav__close-bar {
+  position:         absolute;
+  display:          block;
+  width:            22px;
+  height:           2px;
+  background-color: var(--color-text-primary);
+  border-radius:    var(--radius-full);
+}
+
+.nav__close-bar:nth-child(1) { transform: rotate(45deg); }
+.nav__close-bar:nth-child(2) { transform: rotate(-45deg); }
 
 @media (hover: hover) and (pointer: fine) {
   .nav__close:hover {
