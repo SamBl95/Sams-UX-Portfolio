@@ -76,17 +76,18 @@
   justify-content: center;
   align-items:     center;
   gap:             6px;
+  position:        fixed;
+  top:             16px;
+  right:           16px;
+  z-index:         calc(var(--z-overlay) - 1); /* below overlay when drawer opens */
   width:           48px;
   height:          48px;
   padding:         0;
-  margin-left:     auto;
-  margin-right:    -4px;
   background:      none;
   border:          none;
   cursor:          pointer;
   border-radius:   var(--radius-md);
   transition:      background-color var(--transition-fast);
-  flex-shrink:     0;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -248,7 +249,13 @@
 
 @media (min-width: 905px) {
 
-  .nav__toggle  { display: none; }
+  .nav__toggle {
+    display:   none;
+    position:  static;
+    top:       auto;
+    right:     auto;
+    z-index:   auto;
+  }
   .nav__close   { display: none; }
   .nav__overlay { display: none; }
 
