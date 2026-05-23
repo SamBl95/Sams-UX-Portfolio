@@ -23,22 +23,6 @@
 }
 
 
-/* Name — H1, most dominant element, one size step above the headline */
-.hero__name {
-  font-family:         var(--font-heading);
-  font-weight:         var(--font-weight-semibold);
-  font-optical-sizing: auto;
-  font-size:           var(--text-4xl);  /* 36px */
-  color:               var(--color-accent-accessible);
-  letter-spacing:      -0.02em;
-  margin-bottom:       var(--space-3);
-  line-height:         var(--leading-tight);
-}
-
-@media (min-width: 480px)  { .hero__name { font-size: var(--text-5xl); } } /* 48px */
-@media (min-width: 768px)  { .hero__name { font-size: var(--text-64); } }  /* 64px */
-@media (min-width: 1024px) { .hero__name { font-size: var(--text-80); } }  /* 80px */
-
 
 /* -------------------------------------------------------------------------
    SECTION WRAPPER
@@ -80,18 +64,16 @@
 }
 
 
-/* Stagger children — 4 elements enter at 80ms steps (ANIM-02) */
-.hero__name,
+/* Stagger children — 3 elements enter at 80ms steps */
 .hero__headline,
 .hero__typewriter,
 .hero__actions {
   animation: hero-enter 600ms var(--ease-out-quint) both;
 }
 
-.hero__name       { animation-delay:   0ms; }
-.hero__headline   { animation-delay:  80ms; }
-.hero__typewriter { animation-delay: 160ms; }
-.hero__actions    { animation-delay: 240ms; }
+.hero__headline   { animation-delay:   0ms; }
+.hero__typewriter { animation-delay:  80ms; }
+.hero__actions    { animation-delay: 160ms; }
 
 
 
@@ -103,7 +85,7 @@
   line-height:    1.1;
   letter-spacing: -0.02em;
   text-wrap:      wrap;
-  color:          var(--color-text-primary);
+  color:          var(--color-accent-accessible);
   margin-bottom:  var(--space-6);
 }
 
