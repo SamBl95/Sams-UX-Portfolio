@@ -16,11 +16,27 @@
   padding-block-end: var(--space-4);
 }
 
+.about-hero__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.about-hero__copy {
+  min-width: 0;
+}
+
 @media (min-width: 905px) {
   .about-hero { padding-top: var(--space-20); }
 
   .cv-hero.section-lg {
     padding-block-end: var(--space-6);
+  }
+
+  .about-hero__inner {
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+    gap: var(--space-10);
   }
 }
 
@@ -54,6 +70,27 @@
   }
 }
 
+.about-hero__portrait {
+  width: min(320px, 100%);
+  margin: 0;
+}
+
+.about-hero__portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-lg);
+}
+
+@media (min-width: 905px) {
+  .about-hero__portrait {
+    justify-self: end;
+    width: min(360px, 100%);
+  }
+}
+
 /* -------------------------------------------------------------------------
    SECTION — alternating content blocks
    Padding from .section-md in HTML.
@@ -82,25 +119,6 @@
 .about-section__intro {
   max-width:     760px;
   margin-bottom: var(--space-8);
-}
-
-@media (min-width: 905px) {
-  .about-section > .container-content:not(.about-background) {
-    display:               grid;
-    grid-template-columns: minmax(220px, 0.45fr) minmax(0, 1fr);
-    align-items:           start;
-    column-gap:            var(--space-10);
-  }
-
-  .about-section > .container-content:not(.about-background) .about-section__intro {
-    margin-bottom: 0;
-  }
-
-  .about-section > .container-content:not(.about-background) .about-principles,
-  .about-section > .container-content:not(.about-background) .about-capabilities,
-  .about-section > .container-content:not(.about-background) .about-influence {
-    grid-column: 2;
-  }
 }
 
 .about-section__eyebrow {
@@ -311,6 +329,48 @@
 
 
 /* -------------------------------------------------------------------------
+   PERSONAL
+   ------------------------------------------------------------------------- */
+
+.about-personal {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.about-personal__image {
+  width: min(360px, 100%);
+  margin: 0;
+}
+
+.about-personal__image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-lg);
+}
+
+.about-personal .about-section__intro {
+  margin-bottom: 0;
+}
+
+.about-personal .about-section__body {
+  margin-top: var(--space-4);
+  max-width: 720px;
+}
+
+@media (min-width: 905px) {
+  .about-personal {
+    grid-template-columns: minmax(280px, 0.65fr) minmax(0, 1fr);
+    gap: var(--space-10);
+  }
+}
+
+
+/* -------------------------------------------------------------------------
    TIMELINE
    ------------------------------------------------------------------------- */
 
@@ -400,6 +460,51 @@
   position: absolute;
   left:     0;
   color:    var(--color-accent-accessible);
+}
+
+
+/* -------------------------------------------------------------------------
+   CV CREDENTIAL
+   ------------------------------------------------------------------------- */
+
+.cv-credential {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  align-items: center;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.cv-credential__badge {
+  width: min(320px, 100%);
+  height: auto;
+}
+
+.cv-credential__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.cv-credential__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+}
+
+.cv-credential__meta {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 600px) {
+  .cv-credential {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
 }
 
 

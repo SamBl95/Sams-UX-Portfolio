@@ -39,6 +39,17 @@
 
 .hero__inner {
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+@media (min-width: 905px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+    gap: var(--space-10);
+  }
 }
 
 
@@ -57,13 +68,15 @@
 /* Stagger children — 3 elements enter at 80ms steps */
 .hero__headline,
 .hero__typewriter,
-.hero__actions {
+.hero__actions,
+.hero__portrait {
   animation: hero-enter 600ms var(--ease-out-quint) both;
 }
 
 .hero__headline   { animation-delay:   0ms; }
 .hero__typewriter { animation-delay:  80ms; }
 .hero__actions    { animation-delay: 160ms; }
+.hero__portrait   { animation-delay: 240ms; }
 
 
 
@@ -192,4 +205,30 @@
   clip:        rect(0, 0, 0, 0);
   white-space: nowrap;
   border:      0;
+}
+
+
+/* -------------------------------------------------------------------------
+   PORTRAIT
+   ------------------------------------------------------------------------- */
+
+.hero__portrait {
+  width: min(320px, 100%);
+  margin: 0;
+}
+
+.hero__portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-lg);
+}
+
+@media (min-width: 905px) {
+  .hero__portrait {
+    justify-self: end;
+    width: min(360px, 100%);
+  }
 }
