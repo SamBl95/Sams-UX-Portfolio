@@ -38,6 +38,7 @@ export default defineConfig({
             '/case-studies/cassi':       '/src/pages/case-studies/cassi.html',
             '/case-studies/community':   '/src/pages/case-studies/community.html',
             '/articles/design-systems-and-portfolio-sites': '/src/pages/articles/design-systems-and-portfolio-sites.html',
+            '/articles/how-i-built-my-portfolio-with-claude-code': '/src/pages/articles/how-i-built-my-portfolio-with-claude-code.html',
           }
           if (rewrites[req.url]) req.url = rewrites[req.url]
           next()
@@ -59,6 +60,7 @@ export default defineConfig({
         community:   r('./src/pages/case-studies/community.html'),
         articlesIndex: r('./src/pages/articles/index.html'),
         articlesPost:  r('./src/pages/articles/design-systems-and-portfolio-sites.html'),
+        claudeCodeArticle: r('./src/pages/articles/how-i-built-my-portfolio-with-claude-code.html'),
         caseStudies:  r('./src/pages/case-studies.html'),
         cv:           r('./src/pages/cv.html'),
       },

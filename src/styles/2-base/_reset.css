@@ -81,6 +81,11 @@ ol[role='list'] {
   list-style: none;
 }
 
+ul[role='list'] > li + li,
+ol[role='list'] > li + li {
+  margin-top: 0;
+}
+
 /* Remove default link styling — re-added in _typography.css */
 a {
   text-decoration-skip-ink: auto;

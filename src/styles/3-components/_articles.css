@@ -61,6 +61,73 @@
   }
 }
 
+.card__thumbnail--claude-code {
+  position: relative;
+  overflow: hidden;
+  min-height: var(--space-20);
+}
+
+.card__thumbnail-window,
+.card__thumbnail-brief,
+.card__thumbnail-chip {
+  position: absolute;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+}
+
+.card__thumbnail-window {
+  inset: var(--space-5) var(--space-8) auto var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+}
+
+.card__thumbnail-window span {
+  display: block;
+  height: var(--space-1);
+  background-color: var(--color-accent);
+  border-radius: var(--radius-full);
+}
+
+.card__thumbnail-window span:nth-child(2) {
+  width: 72%;
+  background-color: var(--color-text-primary);
+}
+
+.card__thumbnail-window span:nth-child(3) {
+  width: 48%;
+}
+
+.card__thumbnail-brief {
+  right: var(--space-5);
+  bottom: var(--space-6);
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-accent-accessible);
+  box-shadow: var(--shadow-accent);
+}
+
+.card__thumbnail-chip {
+  left: var(--space-5);
+  bottom: var(--space-5);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+.card__thumbnail-chip + .card__thumbnail-chip {
+  left: var(--space-12);
+}
+
+.card__thumbnail-chip + .card__thumbnail-chip + .card__thumbnail-chip {
+  left: var(--space-20);
+}
+
 
 /* ---------------------------------------------------------------------------
    ARTICLES POST
@@ -76,6 +143,14 @@
 .post__title {
   font-size:     var(--text-32);
   margin-bottom: var(--space-6);
+}
+
+.post__standfirst {
+  max-width: var(--hero-content-max-width);
+  font-size: var(--text-lg);
+  line-height: var(--leading-body);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
 }
 
 @media (min-width: 600px) {
@@ -133,7 +208,7 @@
   display:       block;
   width:         100%;
   height:        auto;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   border:        1px solid var(--color-border);
 }
 
@@ -154,6 +229,90 @@
 
   .post__media-block--reverse .post__media-block__figure {
     order: -1;
+  }
+}
+
+.article-visual {
+  min-height: var(--space-20);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-accent-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.article-visual--stack {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+}
+
+.article-visual__label,
+.article-visual__file,
+.article-visual__token {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+.article-visual__label {
+  padding: var(--space-3);
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  line-height: var(--leading-tight);
+}
+
+.article-visual__label--accent {
+  color: var(--color-accent-accessible);
+  box-shadow: var(--shadow-accent);
+}
+
+.article-visual__arrow {
+  color: var(--color-accent-accessible);
+  font-size: var(--text-2xl);
+}
+
+.article-visual__panel {
+  position: absolute;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  width: var(--space-12);
+  height: var(--space-6);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.article-visual--brief {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+  padding: var(--space-4);
+}
+
+.article-visual__file {
+  padding: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  color: var(--color-accent-accessible);
+}
+
+.article-visual__token {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 600px) {
+  .article-visual--brief {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .article-visual__file {
+    grid-column: 1 / -1;
   }
 }
 

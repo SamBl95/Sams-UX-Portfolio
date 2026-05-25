@@ -12,7 +12,7 @@ A personal portfolio site for Sam Blake, a product designer with 3 years of expe
 
 - **Tech stack**: Vanilla HTML + CSS only — no JS/CSS frameworks
 - **Build**: Every page must be declared in `vite.config.js` rollupOptions.input
-- **Design tokens**: No hex values outside `_variables.css`, no inline styles, no arbitrary spacing
+- **Design tokens**: No CSS hex values outside `_variables.css`, no inline styles, no arbitrary spacing
 - **Scope**: Foundation only — structure and navigation, not content detail
 
 <!-- GSD:project-end -->

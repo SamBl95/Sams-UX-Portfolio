@@ -11,7 +11,7 @@
 
   Mobile (< 905px): hamburger fixed top-right → bottom sheet app launcher.
   Desktop (905px+): horizontal nav links inline. Sheet + toggle hidden.
-  JS lives in /src/theme.js and /src/nav.js.
+  JS lives in /src/nav.js.
 --}}
 
 <header class="nav">
@@ -46,12 +46,10 @@
           <a href="/articles" class="nav__link{{#if navArticles}} nav__link--active{{/if}}"{{#if navArticles}} aria-current="page"{{/if}}>Articles</a>
         </li>
 
-        <li class="nav__item">
-          <a href="/get-in-touch" class="nav__link{{#if navContact}} nav__link--active{{/if}}"{{#if navContact}} aria-current="page"{{/if}}>Get in touch</a>
-        </li>
-
       </ul>
     </nav>
+
+    <a href="/get-in-touch" class="btn btn--primary nav__cta"{{#if navContact}} aria-current="page"{{/if}}>Get in touch</a>
   </div>
 
   <!-- Mobile hamburger — position: fixed top-right, morphs to X when sheet is open -->

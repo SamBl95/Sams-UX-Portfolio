@@ -71,28 +71,12 @@
 .hero__headline {
   font-family:    var(--font-heading);
   font-weight:    var(--font-weight-semibold);
-  font-size:      var(--text-28);    /* 28px */
   line-height:    1.1;
   letter-spacing: -0.02em;
   text-wrap:      wrap;
   color:          var(--color-accent-accessible);
   margin-bottom:  var(--space-2);   /* 16px — tight before typewriter */
 }
-
-@media (min-width: 600px) {
-  .hero__headline { font-size: var(--text-4xl); }  /* 36px */
-}
-
-@media (min-width: 905px) {
-  .hero__headline { font-size: var(--text-5xl); }  /* 48px */
-}
-
-@media (min-width: 1240px) {
-  .hero__headline { font-size: var(--text-64); }   /* 64px */
-}
-
-
-
 
 /* CTA group */
 .hero__actions {

@@ -8,7 +8,7 @@ Target: hybrid/remote product design roles, North West England.
 - Vite MPA — all pages declared in `rollupOptions.input`
 - Vanilla HTML + CSS only — no JS or CSS frameworks unless explicitly requested
 - BEM · CSS custom properties · ITCSS architecture
-- No inline styles · no hex values outside `_variables.css` · no arbitrary spacing
+- No inline styles · no CSS hex values outside `_variables.css` · no arbitrary spacing
 
 ## CSS architecture
 
@@ -113,7 +113,7 @@ Translate any Tailwind-specific guidance into BEM/custom properties.
 
 ### Desktop (905px+) — horizontal inline nav
 - `nav.nav__menu` > `ul.nav__list` > `li.nav__item` > `a.nav__link`. Toggle, sheet, and overlay are `display: none`.
-- Active link: `aria-current="page"` + `nav__link--active` class (set via Handlebars flags in the partial).
+- Active text links: `aria-current="page"` + `nav__link--active` class (set via Handlebars flags in the partial). The desktop `Get in touch` item is a shared `btn btn--primary` CTA; the mobile sheet keeps it as a tile.
 - Underline indicator via `::after` pseudo-element, `transform: scaleX(0→1)`.
 
 ### Hamburger morph timing
@@ -165,7 +165,6 @@ Every page in this site follows the same scaffold. To add a new page, do these f
       </section>
     </main>
     {{> footer}}
-    <script type="module" src="/src/theme.js"></script>
     <script type="module" src="/src/nav.js"></script>
   </body>
 </html>
@@ -187,7 +186,7 @@ Use `container` for all pages — consistent full-width layout across the site.
 ### What NOT to do
 
 - Don't copy nav or footer markup inline — always use the partial
-- Don't add hex values outside `_variables.css`
+- Don't add CSS hex values outside `_variables.css`; document metadata such as `theme-color` may mirror token values when CSS variables are not supported.
 - Don't use inline `style="..."` attributes
 - Don't use `../` relative paths for CSS, JS, or assets — use root-relative `/src/...`
 - Don't add a page to the filesystem without registering it in `vite.config.js`

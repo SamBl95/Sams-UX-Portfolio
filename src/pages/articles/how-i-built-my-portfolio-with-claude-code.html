@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sam Blake on rebuilding his portfolio with Claude Code, Vite and VS Code, and what the process taught him about AI native design workflows." />
+    <title>How I Built My Portfolio with Claude Code | Sam Blake</title>
+    <meta name="theme-color" content="#f5f2ed" />
+    <link rel="canonical" href="https://www.samsux.co.uk/articles/how-i-built-my-portfolio-with-claude-code" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Sam Blake | Product Designer" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:title" content="How I Built My Portfolio with Claude Code | Sam Blake" />
+    <meta property="og:description" content="What rebuilding a portfolio from scratch taught me about briefing AI, managing outputs, and working in an AI native way as a product designer." />
+    <meta property="og:url" content="https://www.samsux.co.uk/articles/how-i-built-my-portfolio-with-claude-code" />
+    <meta property="og:image" content="https://www.samsux.co.uk/og-image.png" />
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+
+    <!-- Typefaces: Fraunces (headings), Urbanist (body), Caveat (hero accent) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&family=Caveat:wght@400&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+
+    {{> nav navArticles=true}}
+
+    <main>
+
+      <article class="post section-lg" aria-labelledby="post-heading">
+        <div class="container">
+          <a href="/articles" class="post__back"><span aria-hidden="true">&larr;</span> Back to articles</a>
+          <header class="post__header js-reveal">
+            <p class="post__date">May 2026</p>
+            <h1 id="post-heading" class="post__title">How I built my portfolio with Claude Code</h1>
+            <p class="post__standfirst">And what rebuilding it from scratch taught me about AI native workflows, better briefs, and the difference between generating output and directing work.</p>
+          </header>
+
+          <div class="post__body js-reveal" data-reveal-delay="100">
+            <p>I am a product designer. I am not a developer. I know enough HTML and CSS to be dangerous, I once watched a YouTube tutorial about React before closing the tab after eleven minutes, and my previous portfolio lived comfortably on Webflow where nobody had to know any of that.</p>
+            <p>So when I decided to rebuild from scratch using Claude Code, VS Code and Vite, I was either being ambitious or foolish. Probably both.</p>
+            <p>This is the honest story of how it went.</p>
+
+            <div class="post__media-block">
+              <div>
+                <h2>Why not just use Webflow?</h2>
+                <p>My old portfolio worked fine. It looked decent. But I kept hitting the ceiling of what I could do without touching code, and every time I wanted something slightly different I was fighting the platform rather than building the thing.</p>
+                <p>More importantly, I kept hearing product teams talk about AI native workflows. Designers who could move between Figma and code fluently. Designers who understood what they were handing to engineers. I wanted to be one of those designers, and the only way to get there was to actually do it.</p>
+              </div>
+              <figure class="post__media-block__figure">
+                <div class="article-visual article-visual--stack" role="img" aria-label="A Webflow box being replaced by a code editor, design tokens, and a shipped portfolio card">
+                  <span class="article-visual__label">Webflow ceiling</span>
+                  <span class="article-visual__arrow" aria-hidden="true">&rarr;</span>
+                  <span class="article-visual__label article-visual__label--accent">Claude Code workflow</span>
+                  <span class="article-visual__panel"></span>
+                </div>
+                <figcaption class="post__media-block__figcaption">The shift was not about becoming a developer overnight. It was about learning how to direct code-based work clearly enough to make better product decisions.</figcaption>
+              </figure>
+            </div>
+
+            <h2>How it actually worked</h2>
+            <p>I want to be honest about this because I think a lot of people have the wrong idea about what building with AI actually looks like.</p>
+            <p>Claude Code did the heavy lifting on the architecture. It chose the folder structure, set up the CSS system, built the component library and made the technical decisions I would not have known to make. I did not architect this codebase. Claude Code did.</p>
+            <p>What I did was manage the outputs. I wrote the briefs. I made the design decisions. I defined the colour palette, the fonts, the spacing system, the reference sites. I reviewed everything Claude Code built, caught the things that were wrong, and refined until it was right. I wrote the copy. I placed the images. I decided what the site should feel like and communicated that clearly enough for Claude Code to execute it.</p>
+            <p>The best analogy I can think of is briefing a contractor. A good contractor will build something solid if you give them a clear brief. A vague brief produces something you spend ages fixing. The quality of what Claude Code builds is almost entirely determined by the quality of what you ask it to build.</p>
+
+            <div class="post__media-block post__media-block--reverse">
+              <div>
+                <h2>The thing that made the biggest difference</h2>
+                <p>Early on I created a CLAUDE.md file, a plain text document that lived in the project root and told Claude Code everything it needed to know before starting any task.</p>
+                <p>My colour tokens, my font choices, my spacing system, my reference sites, how I like to work. Every session started with Claude Code reading that file. The outputs were significantly better for it.</p>
+                <p>It is essentially a design brief that lives inside the codebase. I would recommend it to anyone doing the same thing.</p>
+              </div>
+              <figure class="post__media-block__figure">
+                <div class="article-visual article-visual--brief" role="img" aria-label="A CLAUDE.md document connected to colour, type, spacing, and component decisions">
+                  <span class="article-visual__file">CLAUDE.md</span>
+                  <span class="article-visual__token">colour tokens</span>
+                  <span class="article-visual__token">type scale</span>
+                  <span class="article-visual__token">spacing rules</span>
+                  <span class="article-visual__token">component logic</span>
+                </div>
+                <figcaption class="post__media-block__figcaption">The most useful AI workflow artifact was not a prompt. It was a reusable brief that lived with the work.</figcaption>
+              </figure>
+            </div>
+
+            <h2>The honest bits</h2>
+            <p>It did not always go smoothly. Claude Code occasionally ignored the brief and invented its own decisions. There were em dashes everywhere for a while. At one point it introduced something called Handlebars templating that nobody asked for. There were several incidents involving a burger menu and an X button that refused to align.</p>
+            <p>But every time something went wrong I learned something. And I got better at writing briefs. The prompts I wrote at the end of the project were significantly better than the ones I wrote at the start. Specific, scoped to one thing, referencing exact decisions I had already made. Those got clean outputs first time.</p>
+
+            <h2>What I ended up with</h2>
+            <p>A live portfolio at samsux.co.uk. Three case studies with real images and real outcomes. A mobile navigation I am genuinely proud of. An About page with a story about a Wetherspoons breakfast that people seem to remember.</p>
+            <p>And a story to tell in interviews that goes well beyond "I can use Figma."</p>
+
+            <h2>What I would tell anyone thinking about doing the same</h2>
+            <p>You do not need to be a developer. You need to be a good communicator, which if you are a designer you already are.</p>
+            <p>Write the brief before you build anything. Define what you want before Claude Code touches a file.</p>
+            <p>Manage the outputs. Review everything. Catch the things that are wrong. Refine until it is right. That is the job.</p>
+            <p>And push to GitHub constantly. Every time you are happy with something. Future you will be grateful.</p>
+          </div>
+        </div>
+      </article>
+
+    </main>
+
+
+    {{> footer}}
+
+    <script type="module" src="/src/nav.js"></script>
+    <script type="module" src="/src/reveal.js"></script>
+  </body>
+</html>

@@ -3,7 +3,7 @@
    Sticky site header.
    Mobile (< 905px): fixed hamburger toggle + bottom sheet app launcher.
    Desktop (905px+): horizontal inline nav. Sheet and toggle hidden.
-   JS (theme.js + nav.js) handles: .nav--open, focus trap, swipe dismiss.
+   JS (nav.js) handles: .nav--open, focus trap, swipe dismiss.
    ============================================================================= */
 
 
@@ -14,11 +14,6 @@
   z-index: var(--z-sticky);
   background-color: var(--color-bg);
 }
-
-.nav--scrolled {
-  box-shadow: 0 1px 0 var(--color-border);
-}
-
 
 /* Inner row */
 .nav__inner {
@@ -78,6 +73,7 @@
    ------------------------------------------------------------------------- */
 
 .nav__menu { display: none; }
+.nav__cta { display: none; }
 
 
 /* -------------------------------------------------------------------------
@@ -91,11 +87,11 @@
   justify-content: center;
   gap:             3px;
   position:        fixed;
-  top:             4px;
-  right:           16px;
+  top:             max(var(--space-1), env(safe-area-inset-top));
+  right:           max(var(--space-2), env(safe-area-inset-right));
   z-index:         var(--z-modal);
-  width:           48px;
-  height:          48px;
+  width:           var(--space-6);
+  height:          var(--space-6);
   padding:         0;
   background:      none;
   border:          none;
@@ -187,8 +183,8 @@
 .nav__grid {
   display:               grid;
   grid-template-columns: 1fr 1fr;
-  gap:                   12px;
-  padding:               20px;
+  gap:                   var(--space-2);
+  padding:               var(--space-3);
   height:                100%;
   align-content:         start;
   overflow-y:            auto;
@@ -283,6 +279,16 @@
 
 @media (min-width: 905px) {
 
+  .nav__inner {
+    display:               grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  }
+
+  .nav__logo {
+    grid-column: 1;
+    justify-self: start;
+  }
+
   .nav__toggle { display: none; }
   .nav__sheet  { display: none; }
   .nav__overlay { display: none; }
@@ -290,7 +296,14 @@
   .nav__menu {
     display:        flex;
     flex-direction: row;
-    margin-left:    auto;
+    grid-column:    2;
+    justify-self:   center;
+  }
+
+  .nav__cta {
+    display:      inline-flex;
+    grid-column:  3;
+    justify-self: end;
   }
 
   .nav__list {
@@ -301,10 +314,6 @@
     list-style:     none;
     padding:        0;
     margin:         0;
-  }
-
-  .nav__item:first-child {
-    margin-top: var(--space-2);
   }
 
   .nav__link {
