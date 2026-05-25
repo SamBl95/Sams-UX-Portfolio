@@ -5,7 +5,7 @@
     {{> nav navHome=true}}  — Home page
     {{> nav navAbout=true}} — About page
     {{> nav navCV=true}}    — CV page
-    {{> nav navStories=true}} — Stories index and post pages
+    {{> nav navArticles=true}} — Articles index and post pages
     {{> nav navContact=true}} — Contact / get-in-touch page
     {{> nav navWork=true}}  — Case studies listing page
 
@@ -26,7 +26,7 @@
     <nav class="nav__menu" aria-label="Main navigation">
       <ul class="nav__list" role="list">
 
-        <li class="nav__item">
+        <li class="nav__item" style="margin-top: var(--space-2);">
           <a href="/" class="nav__link{{#if navHome}} nav__link--active{{/if}}"{{#if navHome}} aria-current="page"{{/if}}>Home</a>
         </li>
 
@@ -43,7 +43,7 @@
         </li>
 
         <li class="nav__item">
-          <a href="/stories" class="nav__link{{#if navStories}} nav__link--active{{/if}}"{{#if navStories}} aria-current="page"{{/if}}>Stories</a>
+          <a href="/articles" class="nav__link{{#if navArticles}} nav__link--active{{/if}}"{{#if navArticles}} aria-current="page"{{/if}}>Articles</a>
         </li>
 
         <li class="nav__item">
@@ -76,10 +76,11 @@
     aria-label="Navigation menu"
     aria-modal="true"
     aria-hidden="true"
+    inert
   >
     <div class="nav__grid">
 
-      <a href="/" class="nav__tile{{#if navHome}} nav__tile--active{{/if}}" aria-label="Work — go to home page">
+      <a href="/" class="nav__tile{{#if navHome}} nav__tile--active{{/if}}" aria-label="Home — go to home page">
         <span class="nav__tile-icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="7" height="7" rx="1"/>
@@ -88,7 +89,7 @@
             <rect x="14" y="14" width="7" height="7" rx="1"/>
           </svg>
         </span>
-        <span class="nav__tile-label">Work</span>
+        <span class="nav__tile-label">Home</span>
       </a>
 
       <a href="/about" class="nav__tile{{#if navAbout}} nav__tile--active{{/if}}" aria-label="About — learn about Sam">
@@ -124,14 +125,14 @@
         <span class="nav__tile-label">CV</span>
       </a>
 
-      <a href="/stories" class="nav__tile{{#if navStories}} nav__tile--active{{/if}}" aria-label="Stories — read my writing">
+      <a href="/articles" class="nav__tile{{#if navArticles}} nav__tile--active{{/if}}" aria-label="Articles — read my writing">
         <span class="nav__tile-icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 20h9"/>
             <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
           </svg>
         </span>
-        <span class="nav__tile-label">Stories</span>
+        <span class="nav__tile-label">Articles</span>
       </a>
 
       <a href="/get-in-touch" class="nav__tile{{#if navContact}} nav__tile--active{{/if}}" aria-label="Get in touch — contact Sam">

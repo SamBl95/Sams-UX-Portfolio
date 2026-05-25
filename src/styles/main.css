@@ -34,7 +34,8 @@
 @import './3-components/_cta.css';
 @import './3-components/_contact.css';
 @import './3-components/_form.css';
-@import './3-components/_stories.css';
+@import './3-components/_credibility.css';
+@import './3-components/_articles.css';
 @import './3-components/_reveal.css';
 @import './3-components/_image-block.css';
 @import './3-components/_callout.css';
@@ -49,5 +50,3 @@
 @import './4-layouts/_container.css';
 @import './4-layouts/_grid.css';
 @import './4-layouts/_section.css';
-
-

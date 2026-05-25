@@ -50,11 +50,76 @@
           <h1 id="hero-heading" class="hero__headline">Sam Blake</h1>
           <!-- Typewriter: aria-hidden — AT reads the sr span below instead -->
           <span class="hero__typewriter" aria-hidden="true">
+            <span class="hero__typewriter-prefix">The product designer who</span>
             <span class="hero__typewriter-text"></span><span class="hero__typewriter-cursor"></span>
           </span>
           <!-- Static text for screen readers; JS updates on each completed phrase -->
-          <span class="hero__typewriter-sr">asks why so you don't have to</span>
+          <span class="hero__typewriter-sr">The product designer who asks why when everyone else asks how</span>
 
+          <div class="hero__actions" aria-label="Primary actions">
+            <a href="/case-studies" class="btn btn--primary">View case studies</a>
+            <a href="/get-in-touch" class="btn btn--secondary">Get in touch</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="credibility section-md" aria-label="Credibility">
+      <div class="container-wide">
+
+        <div class="credibility__logos" aria-label="Organisations Sam has designed with or contributed to">
+          <div class="credibility__logo-slot">
+            <img src="/logos/santander.svg" alt="Santander logo" width="180" height="48" loading="lazy" decoding="async" />
+          </div>
+          <div class="credibility__logo-slot">
+            <img src="/logos/matalan.svg" alt="Matalan logo" width="180" height="48" loading="lazy" decoding="async" />
+          </div>
+          <div class="credibility__logo-slot">
+            <img src="/logos/rentokil.svg" alt="Rentokil Initial logo" width="180" height="48" loading="lazy" decoding="async" />
+          </div>
+          <div class="credibility__logo-slot">
+            <img src="/logos/nux.svg" alt="NUX logo" width="180" height="48" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <div class="credibility__testimonials" aria-label="Testimonials">
+          <article class="testimonial-card">
+            <div class="testimonial-card__header">
+              <div class="testimonial-card__person">
+                <h3 class="testimonial-card__name">Person Name</h3>
+                <p class="testimonial-card__meta"><span>Role or title</span><span>Company</span></p>
+              </div>
+            </div>
+            <blockquote class="testimonial-card__quote">
+              <p>Placeholder quote about Sam's product design work, collaboration style, and ability to bring clarity to complex problems.</p>
+            </blockquote>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__header">
+              <div class="testimonial-card__person">
+                <h3 class="testimonial-card__name">Person Name</h3>
+                <p class="testimonial-card__meta"><span>Role or title</span><span>Company</span></p>
+              </div>
+            </div>
+            <blockquote class="testimonial-card__quote">
+              <p>Placeholder quote about stakeholder alignment, thoughtful research, and turning uncertain requirements into a product direction people could trust.</p>
+            </blockquote>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__header">
+              <div class="testimonial-card__person">
+                <h3 class="testimonial-card__name">Person Name</h3>
+                <p class="testimonial-card__meta"><span>Role or title</span><span>Company</span></p>
+              </div>
+            </div>
+            <blockquote class="testimonial-card__quote">
+              <p>Placeholder quote about systems thinking, pragmatic delivery, and designing experiences that worked for colleagues as well as the organisation.</p>
+            </blockquote>
+          </article>
         </div>
 
       </div>
@@ -111,8 +176,6 @@
         </div>
       </div>
     </section>
-
-    <!-- TESTIMONIALS: not yet built — see src/components/testimonial.html -->
 
     </main>
 

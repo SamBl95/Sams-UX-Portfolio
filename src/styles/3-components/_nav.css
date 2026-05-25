@@ -163,7 +163,6 @@
   z-index:       var(--z-drawer);
   transform:     translateY(100%);
   visibility:    hidden;
-  will-change:   transform;
   /* Close: ease-in, visibility delayed until animation completes */
   transition:
     transform  200ms ease-in,
@@ -173,6 +172,7 @@
 .nav--open .nav__sheet {
   transform:  translateY(0);
   visibility: visible;
+  will-change: transform;
   /* Open: spring easing with slight overshoot */
   transition:
     transform  300ms cubic-bezier(0.34, 1.56, 0.64, 1),

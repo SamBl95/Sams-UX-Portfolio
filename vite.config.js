@@ -16,17 +16,28 @@ export default defineConfig({
     {
       name: 'clean-url-rewrite',
       configureServer(server) {
-        server.middlewares.use((req, _res, next) => {
+        server.middlewares.use((req, res, next) => {
+          const redirects = {
+            '/stories': '/articles',
+            '/stories/design-systems-and-portfolio-sites': '/articles/design-systems-and-portfolio-sites',
+          }
+          if (redirects[req.url]) {
+            res.statusCode = 301
+            res.setHeader('Location', redirects[req.url])
+            res.end()
+            return
+          }
+
           const rewrites = {
             '/case-studies': '/src/pages/case-studies.html',
             '/about':   '/src/pages/about.html',
             '/cv':      '/src/pages/cv.html',
-            '/stories': '/src/pages/stories/index.html',
+            '/articles': '/src/pages/articles/index.html',
             '/get-in-touch': '/src/pages/get-in-touch.html',
             '/case-studies/i-exchange':  '/src/pages/case-studies/i-exchange.html',
             '/case-studies/cassi':       '/src/pages/case-studies/cassi.html',
             '/case-studies/community':   '/src/pages/case-studies/community.html',
-            '/stories/design-systems-and-portfolio-sites': '/src/pages/stories/design-systems-and-portfolio-sites.html',
+            '/articles/design-systems-and-portfolio-sites': '/src/pages/articles/design-systems-and-portfolio-sites.html',
           }
           if (rewrites[req.url]) req.url = rewrites[req.url]
           next()
@@ -46,8 +57,8 @@ export default defineConfig({
         iexchange:   r('./src/pages/case-studies/i-exchange.html'),
         cassi:       r('./src/pages/case-studies/cassi.html'),
         community:   r('./src/pages/case-studies/community.html'),
-        storiesIndex: r('./src/pages/stories/index.html'),
-        storiesPost:  r('./src/pages/stories/design-systems-and-portfolio-sites.html'),
+        articlesIndex: r('./src/pages/articles/index.html'),
+        articlesPost:  r('./src/pages/articles/design-systems-and-portfolio-sites.html'),
         caseStudies:  r('./src/pages/case-studies.html'),
         cv:           r('./src/pages/cv.html'),
       },

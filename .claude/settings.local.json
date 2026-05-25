@@ -113,7 +113,10 @@
       "Bash(python3 tmp_fix_cassi.py)",
       "Bash(python3 tmp_fix_community.py)",
       "Bash(Get-ChildItem *)",
-      "Bash(dir *)"
+      "Bash(dir *)",
+      "Skill(gsd:progress)",
+      "Skill(gsd:new-milestone)",
+      "Bash(gsd-sdk query *)"
     ]
   }
 }

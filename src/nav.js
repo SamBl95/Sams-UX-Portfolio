@@ -18,6 +18,7 @@ function initNav() {
     toggle.setAttribute('aria-expanded', 'true');
     toggle.setAttribute('aria-label', 'Close navigation menu');
     sheet.setAttribute('aria-hidden', 'false');
+    sheet.removeAttribute('inert');
     document.body.style.overflow = 'hidden';
     const firstTile = sheet.querySelector('.nav__tile');
     if (firstTile) firstTile.focus();
@@ -28,6 +29,7 @@ function initNav() {
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Open navigation menu');
     sheet.setAttribute('aria-hidden', 'true');
+    sheet.setAttribute('inert', '');
     document.body.style.overflow = '';
     toggle.focus();
   }
@@ -102,6 +104,7 @@ function initNav() {
         toggle.setAttribute('aria-expanded', 'false');
         toggle.setAttribute('aria-label', 'Open navigation menu');
         sheet.setAttribute('aria-hidden', 'true');
+        sheet.setAttribute('inert', '');
         document.body.style.overflow = '';
         toggle.focus();
       }, 200);

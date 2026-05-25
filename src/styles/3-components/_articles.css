@@ -1,28 +1,28 @@
 /* =============================================================================
-   STORIES
-   Covers both the stories index page (.stories__*) and the stories post
+   ARTICLES
+   Covers both the articles index page (.articles__*) and the article post
    article layout (.post__*). Shared in one file because the two pages are
    tightly coupled and the total rule count is small.
    ============================================================================= */
 
 
 /* ---------------------------------------------------------------------------
-   STORIES INDEX
+   ARTICLES INDEX
    --------------------------------------------------------------------------- */
 
-.stories__heading {
+.articles__heading {
   color:         var(--color-accent-accessible);
   margin-bottom: var(--space-3);
 }
 
-.stories__intro {
+.articles__intro {
   font-size:     var(--text-lg);
   line-height:   var(--leading-body);
   color:         var(--color-text-secondary);
   margin-bottom: var(--space-8);
 }
 
-.stories__list {
+.articles__list {
   display:        flex;
   flex-direction: column;
   gap:            var(--space-4);
@@ -31,29 +31,29 @@
   margin:         0;
 }
 
-/* Story card — stacked on mobile, horizontal at 600px+ */
-.stories__item .card__content {
+/* Article card — stacked on mobile, horizontal at 600px+ */
+.articles__item .card__content {
   display:        flex;
   flex-direction: column;
   flex:           1;
 }
 
-.stories__item .card__body {
+.articles__item .card__body {
   flex:       1;
   border-top: none;
 }
 
-.stories__item .card__thumbnail {
+.articles__item .card__thumbnail {
   display: none;
 }
 
 @media (min-width: 600px) {
-  .stories__item .card {
+  .articles__item .card {
     flex-direction: row;
     align-items:    stretch;
   }
 
-  .stories__item .card__thumbnail {
+  .articles__item .card__thumbnail {
     display:          block;
     flex:             0 0 50%;
     background-color: var(--color-accent-light);
@@ -63,7 +63,7 @@
 
 
 /* ---------------------------------------------------------------------------
-   STORIES POST
+   ARTICLES POST
    --------------------------------------------------------------------------- */
 
 .post__date {

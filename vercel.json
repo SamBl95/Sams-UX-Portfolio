@@ -1,13 +1,17 @@
 {
+  "redirects": [
+    { "source": "/stories", "destination": "/articles", "permanent": true },
+    { "source": "/stories/design-systems-and-portfolio-sites", "destination": "/articles/design-systems-and-portfolio-sites", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/case-studies", "destination": "/src/pages/case-studies.html" },
     { "source": "/about",        "destination": "/src/pages/about.html" },
     { "source": "/cv",           "destination": "/src/pages/cv.html" },
-    { "source": "/stories",      "destination": "/src/pages/stories/index.html" },
+    { "source": "/articles",     "destination": "/src/pages/articles/index.html" },
     { "source": "/get-in-touch", "destination": "/src/pages/get-in-touch.html" },
     { "source": "/case-studies/i-exchange",  "destination": "/src/pages/case-studies/i-exchange.html" },
     { "source": "/case-studies/cassi",       "destination": "/src/pages/case-studies/cassi.html" },
     { "source": "/case-studies/community",   "destination": "/src/pages/case-studies/community.html" },
-    { "source": "/stories/design-systems-and-portfolio-sites", "destination": "/src/pages/stories/design-systems-and-portfolio-sites.html" }
+    { "source": "/articles/design-systems-and-portfolio-sites", "destination": "/src/pages/articles/design-systems-and-portfolio-sites.html" }
   ]
 }

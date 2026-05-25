@@ -98,8 +98,9 @@
 .hero__actions {
   display:        flex;
   flex-direction: column;
-  gap:            var(--space-3);
+  gap:            var(--space-2);
   width:          100%;
+  margin-top:     var(--space-1);
 }
 
 .hero__actions .btn {
@@ -110,6 +111,8 @@
 @media (min-width: 600px) {
   .hero__actions {
     flex-direction: row;
+    align-items:    center;
+    gap:            var(--space-3);
     width:          auto;
   }
 
@@ -124,8 +127,12 @@
    ------------------------------------------------------------------------- */
 
 .hero__typewriter {
+  --typewriter-size: calc(var(--text-28) * 0.8);
   display:       block;
-  margin-bottom: var(--space-4); /* 32px — gap before buttons */
+  font-size:     var(--typewriter-size);
+  line-height:   1.08;
+  margin-bottom: var(--space-5); /* 40px — gap before buttons */
+  max-width:     min(100%, 980px);
   /* min-height set by JS in typewriter.js — no CSS fallback to avoid layout shift when Caveat loads */
 }
 
@@ -149,17 +156,52 @@
   .hero__typewriter-text { font-size: calc(var(--text-64) * 0.8); }   /* 51.2px */
 }
 
+.hero__typewriter-prefix,
+.hero__typewriter-text {
+  font-family:    var(--font-accent);
+  font-weight:    var(--font-weight-normal);
+  line-height:    1.08;
+  color:          var(--color-text-primary);
+  letter-spacing: normal;
+}
+
+.hero__typewriter-prefix {
+  display:       block;
+  margin-bottom: var(--space-1);
+  font-family:   var(--font-body);
+  font-size:     clamp(var(--text-lg), 0.5em, var(--text-28));
+  font-weight:   var(--font-weight-medium);
+  line-height:   var(--leading-tight);
+  color:         var(--color-accent-accessible);
+}
+
+.hero__typewriter-text {
+  font-size: 1em;
+}
+
+@media (min-width: 480px) {
+  .hero__typewriter { --typewriter-size: calc(var(--text-4xl) * 0.8); }
+}
+
+@media (min-width: 768px) {
+  .hero__typewriter { --typewriter-size: calc(var(--text-5xl) * 0.8); }
+}
+
+@media (min-width: 1024px) {
+  .hero__typewriter { --typewriter-size: calc(var(--text-64) * 0.8); }
+}
+
 .hero__typewriter-cursor {
   display: none;
 }
 
 .hero__typewriter--active .hero__typewriter-cursor {
   display:          inline-block;
-  width:            3px;
-  height:           0.8em;
+  width:            clamp(2px, 0.06em, 4px);
+  height:           1em;
   background-color: var(--color-text-primary);
-  vertical-align:   text-bottom;
-  margin-left:      var(--space-1);
+  vertical-align:   -0.08em;
+  margin-left:      0.12em;
   animation:        cursor-blink 0.8s step-end infinite;
 }
 

@@ -9,9 +9,11 @@
  */
 
 const phrases = [
-  "asks why so you don't have to",
-  "has a habit of fixing things without being asked",
-  "repairs the relationships between siloed teams",
+  'asks why when everyone else asks how',
+  'gets stakeholders on board, even the reluctant ones',
+  'understands the problem before defining solutions',
+  'turns messy requirements into usable products',
+  'designs for systems, not just screens',
 ];
 
 const TYPE_SPEED   = 28;
@@ -20,6 +22,7 @@ const PAUSE_AFTER  = 1500;
 
 const container = document.querySelector('.hero__typewriter');
 const display   = document.querySelector('.hero__typewriter-text');
+const prefix    = document.querySelector('.hero__typewriter-prefix');
 const sr        = document.querySelector('.hero__typewriter-sr');
 
 if (container && display) {
@@ -28,6 +31,7 @@ if (container && display) {
   if (prefersReducedMotion) {
     // Show first phrase statically, no cursor, no animation
     display.textContent = phrases[0];
+    if (sr) sr.textContent = getScreenReaderText(phrases[0]);
   }
 
   // Reserve height immediately with whatever font is available — this runs before
@@ -62,7 +66,10 @@ if (container && display) {
  */
 function reserveHeight() {
   const prev = display.textContent;
+  const wasActive = container.classList.contains('hero__typewriter--active');
+
   container.style.height = '';
+  container.classList.add('hero__typewriter--active');
 
   let maxH = 0;
   for (const phrase of phrases) {
@@ -72,6 +79,7 @@ function reserveHeight() {
   }
 
   display.textContent = prev;
+  if (!wasActive) container.classList.remove('hero__typewriter--active');
   if (maxH > 0) container.style.height = maxH + 'px';
 }
 
@@ -91,7 +99,7 @@ function initTypewriter() {
       display.textContent = phrase.slice(0, charIndex);
 
       if (charIndex === phrase.length) {
-        if (sr) sr.textContent = phrase;
+        if (sr) sr.textContent = getScreenReaderText(phrase);
         setTimeout(() => {
           isDeleting = true;
           tick();
@@ -119,4 +127,9 @@ function initTypewriter() {
 
   // Short delay before the first character appears so the page can settle
   setTimeout(tick, 800);
+}
+
+function getScreenReaderText(phrase) {
+  const prefixText = prefix ? prefix.textContent.trim() : '';
+  return prefixText ? `${prefixText} ${phrase}` : phrase;
 }
