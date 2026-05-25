@@ -303,6 +303,10 @@
     margin:         0;
   }
 
+  .nav__item:first-child {
+    margin-top: var(--space-2);
+  }
+
   .nav__link {
     display:         flex;
     align-items:     center;

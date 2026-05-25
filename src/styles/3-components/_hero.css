@@ -79,15 +79,15 @@
   margin-bottom:  var(--space-2);   /* 16px — tight before typewriter */
 }
 
-@media (min-width: 480px) {
+@media (min-width: 600px) {
   .hero__headline { font-size: var(--text-4xl); }  /* 36px */
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .hero__headline { font-size: var(--text-5xl); }  /* 48px */
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1240px) {
   .hero__headline { font-size: var(--text-64); }   /* 64px */
 }
 
@@ -136,26 +136,6 @@
   /* min-height set by JS in typewriter.js — no CSS fallback to avoid layout shift when Caveat loads */
 }
 
-.hero__typewriter-text {
-  font-family:    var(--font-accent);
-  font-weight:    var(--font-weight-normal);
-  font-size:      calc(var(--text-28) * 0.8);   /* 22.4px — 80% of 28px H1 */
-  color:          var(--color-text-primary);
-  letter-spacing: normal;
-}
-
-@media (min-width: 480px) {
-  .hero__typewriter-text { font-size: calc(var(--text-4xl) * 0.8); }  /* 28.8px */
-}
-
-@media (min-width: 768px) {
-  .hero__typewriter-text { font-size: calc(var(--text-5xl) * 0.8); }  /* 38.4px */
-}
-
-@media (min-width: 1024px) {
-  .hero__typewriter-text { font-size: calc(var(--text-64) * 0.8); }   /* 51.2px */
-}
-
 .hero__typewriter-prefix,
 .hero__typewriter-text {
   font-family:    var(--font-accent);
@@ -169,25 +149,33 @@
   display:       block;
   margin-bottom: var(--space-1);
   font-family:   var(--font-body);
-  font-size:     clamp(var(--text-lg), 0.5em, var(--text-28));
+  font-size:     var(--text-lg);
   font-weight:   var(--font-weight-medium);
   line-height:   var(--leading-tight);
   color:         var(--color-accent-accessible);
+}
+
+@media (min-width: 905px) {
+  .hero__typewriter-prefix { font-size: var(--text-xl); }
+}
+
+@media (min-width: 1240px) {
+  .hero__typewriter-prefix { font-size: var(--text-2xl); }
 }
 
 .hero__typewriter-text {
   font-size: 1em;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 600px) {
   .hero__typewriter { --typewriter-size: calc(var(--text-4xl) * 0.8); }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 905px) {
   .hero__typewriter { --typewriter-size: calc(var(--text-5xl) * 0.8); }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1240px) {
   .hero__typewriter { --typewriter-size: calc(var(--text-64) * 0.8); }
 }
 
