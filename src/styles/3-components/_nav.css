@@ -144,19 +144,6 @@
 .nav--open .nav__toggle-bar:nth-child(2) { opacity: 0; }
 .nav--open .nav__toggle-bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-.nav__toggle-label {
-  font-family: var(--font-body);
-  font-size:   var(--text-xs);
-  color:       var(--color-text-secondary);
-  line-height: 1;
-  user-select: none;
-  transition:  opacity 150ms ease;
-}
-
-.nav--open .nav__toggle-label {
-  opacity: 0;
-}
-
 
 /* -------------------------------------------------------------------------
    BOTTOM SHEET — slides up from bottom, mobile only
@@ -375,7 +362,6 @@
 @media (prefers-reduced-motion: reduce) {
 
   .nav__toggle-bar,
-  .nav__toggle-label,
   .nav__overlay,
   .nav__sheet {
     transition: none;
