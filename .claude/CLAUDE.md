@@ -101,6 +101,33 @@ For new features apply `plan-mode` before writing code.
 Translate any Tailwind-specific guidance into BEM/custom properties.
 
 
+## Nav architecture
+
+### Mobile (< 905px) — bottom sheet app launcher
+- **Toggle**: `button.nav__toggle` — `position: fixed; top: 4px; right: 16px; z-index: var(--z-modal)` (500). Contains `nav__toggle-bars` (3 bars) + `nav__toggle-label` ("Menu"). Stays in place throughout; IS the close button.
+- **Sheet**: `div#nav-sheet.nav__sheet[role=dialog]` — slides up from `translateY(100%)` to `translateY(0)` over 300ms spring easing. Height 60–70dvh, rounded top corners 24px, `--color-surface` background.
+- **Tiles**: 2×3 grid inside `.nav__grid`. Each tile is an `<a>` with inline SVG icon + label. Active tile has `.nav__tile--active`.
+- **Overlay**: `div.nav__overlay` — dims page at 50% opacity. Tap to close.
+- **JS**: `src/nav.js` — `initNav()`. Handles open/close, hamburger↔X morph, focus trap, Escape key, swipe-to-dismiss.
+- **Z-index stack**: overlay (300) → sheet (400) → toggle (500 = `--z-modal`).
+
+### Desktop (905px+) — horizontal inline nav
+- `nav.nav__menu` > `ul.nav__list` > `li.nav__item` > `a.nav__link`. Toggle, sheet, and overlay are `display: none`.
+- Active link: `aria-current="page"` + `nav__link--active` class (set via Handlebars flags in the partial).
+- Underline indicator via `::after` pseudo-element, `transform: scaleX(0→1)`.
+
+### Hamburger morph timing
+- Open (hamburger → X): `ease-out 200ms`
+- Close (X → hamburger): `ease-in 200ms`
+- Bar 1: `translateY(8px) rotate(45deg)` | Bar 2: `opacity: 0` | Bar 3: `translateY(-8px) rotate(-45deg)`
+
+### Tile stagger
+CSS `@keyframes nav-tile-in` (opacity 0→1, translateY 8px→0), triggered by `.nav--open .nav__tile:nth-child(n)`. Delays: 0, 40, 80, 120, 160, 200ms. Disabled under `prefers-reduced-motion`.
+
+### Adding a new tile destination
+If a new page is added that needs a tile in the sheet, add an `<a class="nav__tile">` entry in `src/components/nav.html` and a matching Handlebars flag (`navXxx=true`). The 2-column grid layout accommodates tiles in pairs.
+
+
 ## Adding a new page
 
 Every page in this site follows the same scaffold. To add a new page, do these four things in order, then ship.
@@ -139,6 +166,7 @@ Every page in this site follows the same scaffold. To add a new page, do these f
     </main>
     {{> footer}}
     <script type="module" src="/src/theme.js"></script>
+    <script type="module" src="/src/nav.js"></script>
   </body>
 </html>
 ```

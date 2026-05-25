@@ -8,6 +8,18 @@
   background-color: var(--color-bg);
 }
 
+/* Reduce top padding so the section heading peeks into the 64px window below the hero.
+   Two-class selector beats .section-lg (one class) regardless of ITCSS source order. */
+.case-studies.section-lg {
+  padding-block-start: var(--space-5); /* 40px — heading peeks ~24px below fold at mobile */
+}
+
+@media (min-width: 905px) {
+  .case-studies.section-lg {
+    padding-block-start: var(--space-2); /* 16px — heading clearly visible in the 64px window */
+  }
+}
+
 .case-studies__header {
   margin-bottom: var(--space-6);
 }

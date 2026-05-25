@@ -1,47 +1,29 @@
 {{!--
   NAV PARTIAL — single canonical nav, included by every page via Handlebars.
   Usage:
-    > nav                  — Homepage, all case study pages (no active item)
-    > nav navHome=true     — Home page active state (reserved, no existing page sets this)
-    > nav navAbout=true    — About page
-    > nav navCV=true       — CV page
-    > nav navStories=true  — Stories index and stories post pages
-    > nav navContact=true  — Contact page
-    > nav navWork=true     — Reserved; homepage does not currently set this flag
+    {{> nav}}               — Homepage, all case study pages (no active item)
+    {{> nav navHome=true}}  — Home page
+    {{> nav navAbout=true}} — About page
+    {{> nav navCV=true}}    — CV page
+    {{> nav navStories=true}} — Stories index and post pages
+    {{> nav navContact=true}} — Contact / get-in-touch page
+    {{> nav navWork=true}}  — Case studies listing page
 
-  Active-state rule: exactly zero or one flag may be true per page.
-  When a flag is true, the matching link receives class nav__link--active
-  AND aria-current="page". All other links receive neither.
-
-  JS for the hamburger toggle lives in /src/theme.js (unchanged).
-  Mobile menu: JS adds .nav--open to .nav and toggles aria-expanded on .nav__toggle.
+  Mobile (< 905px): hamburger fixed top-right → bottom sheet app launcher.
+  Desktop (905px+): horizontal nav links inline. Sheet + toggle hidden.
+  JS lives in /src/theme.js and /src/nav.js.
 --}}
 
 <header class="nav">
   <div class="nav__overlay" aria-hidden="true"></div>
-  <div class="nav__inner container">
 
+  <div class="nav__inner container">
     <a href="/" class="nav__logo">
       <h2 class="nav__logo-text">Sam Blake</h2>
     </a>
 
-    <!-- Hamburger — visible on mobile only. JS toggles .nav--open on .nav -->
-    <button
-      class="nav__toggle"
-      aria-expanded="false"
-      aria-controls="nav-menu"
-      aria-label="Open navigation menu"
-    >
-      <span class="nav__toggle-bar"></span>
-      <span class="nav__toggle-bar"></span>
-      <span class="nav__toggle-bar"></span>
-    </button>
-
-    <nav id="nav-menu" class="nav__menu" aria-label="Main navigation">
-      <button class="nav__close" aria-label="Close navigation menu">
-        <span class="nav__close-bar" aria-hidden="true"></span>
-        <span class="nav__close-bar" aria-hidden="true"></span>
-      </button>
+    <!-- Desktop nav — hidden on mobile, shown 905px+ -->
+    <nav class="nav__menu" aria-label="Main navigation">
       <ul class="nav__list" role="list">
 
         <li class="nav__item">
@@ -70,6 +52,100 @@
 
       </ul>
     </nav>
-
   </div>
+
+  <!-- Mobile hamburger — position: fixed top-right, morphs to X when sheet is open -->
+  <button
+    class="nav__toggle"
+    aria-expanded="false"
+    aria-controls="nav-sheet"
+    aria-label="Open navigation menu"
+  >
+    <span class="nav__toggle-bars" aria-hidden="true">
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+    </span>
+    <span class="nav__toggle-label" aria-hidden="true">Menu</span>
+  </button>
+
+  <!-- Mobile bottom sheet nav launcher -->
+  <div
+    id="nav-sheet"
+    class="nav__sheet"
+    role="dialog"
+    aria-label="Navigation menu"
+    aria-modal="true"
+    aria-hidden="true"
+  >
+    <div class="nav__grid">
+
+      <a href="/" class="nav__tile{{#if navHome}} nav__tile--active{{/if}}" aria-label="Work — go to home page">
+        <span class="nav__tile-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+        </span>
+        <span class="nav__tile-label">Work</span>
+      </a>
+
+      <a href="/about" class="nav__tile{{#if navAbout}} nav__tile--active{{/if}}" aria-label="About — learn about Sam">
+        <span class="nav__tile-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </span>
+        <span class="nav__tile-label">About</span>
+      </a>
+
+      <a href="/case-studies" class="nav__tile{{#if navWork}} nav__tile--active{{/if}}" aria-label="Case studies — view all case studies">
+        <span class="nav__tile-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+            <polyline points="2 12 12 17 22 12"/>
+            <polyline points="2 17 12 22 22 17"/>
+          </svg>
+        </span>
+        <span class="nav__tile-label">Case Studies</span>
+      </a>
+
+      <a href="/cv" class="nav__tile{{#if navCV}} nav__tile--active{{/if}}" aria-label="CV — view curriculum vitae">
+        <span class="nav__tile-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="8" y1="13" x2="16" y2="13"/>
+            <line x1="8" y1="17" x2="16" y2="17"/>
+          </svg>
+        </span>
+        <span class="nav__tile-label">CV</span>
+      </a>
+
+      <a href="/stories" class="nav__tile{{#if navStories}} nav__tile--active{{/if}}" aria-label="Stories — read my writing">
+        <span class="nav__tile-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"/>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          </svg>
+        </span>
+        <span class="nav__tile-label">Stories</span>
+      </a>
+
+      <a href="/get-in-touch" class="nav__tile{{#if navContact}} nav__tile--active{{/if}}" aria-label="Get in touch — contact Sam">
+        <span class="nav__tile-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </span>
+        <span class="nav__tile-label">Get in touch</span>
+      </a>
+
+    </div>
+  </div>
+
 </header>

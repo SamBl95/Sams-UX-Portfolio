@@ -151,4 +151,5 @@
   --z-sticky:  200;
   --z-overlay: 300;
   --z-drawer:  400;
+  --z-modal:   500;   /* mobile nav toggle — above sheet + overlay */
 }

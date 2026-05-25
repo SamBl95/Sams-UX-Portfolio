@@ -39,7 +39,8 @@
 }
 
 .stories__item .card__body {
-  flex: 1;
+  flex:       1;
+  border-top: none;
 }
 
 .stories__item .card__thumbnail {

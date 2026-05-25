@@ -1,8 +1,9 @@
 /* =============================================================================
    NAV
-   Sticky site header. Mobile-first: hamburger + full-screen right drawer,
-   horizontal nav revealed at 905px+. JS (theme.js) handles:
-     - .nav--open toggle for mobile drawer
+   Sticky site header.
+   Mobile (< 905px): fixed hamburger toggle + bottom sheet app launcher.
+   Desktop (905px+): horizontal inline nav. Sheet and toggle hidden.
+   JS (theme.js + nav.js) handles: .nav--open, focus trap, swipe dismiss.
    ============================================================================= */
 
 
@@ -12,6 +13,10 @@
   top: 0;
   z-index: var(--z-sticky);
   background-color: var(--color-bg);
+}
+
+.nav--scrolled {
+  box-shadow: 0 1px 0 var(--color-border);
 }
 
 
@@ -25,14 +30,14 @@
 
 
 /* -------------------------------------------------------------------------
-   OVERLAY — dims page behind open drawer
+   OVERLAY — dims page content behind the open sheet
    ------------------------------------------------------------------------- */
 
 .nav__overlay {
   position:       fixed;
   inset:          0;
   z-index:        var(--z-overlay);
-  background:     rgba(0, 0, 0, 0.4);
+  background:     rgba(0, 0, 0, 0.5);
   opacity:        0;
   pointer-events: none;
   transition:     opacity 200ms ease-in;
@@ -69,19 +74,26 @@
 
 
 /* -------------------------------------------------------------------------
-   HAMBURGER TOGGLE — mobile only
+   DESKTOP NAV — hidden on mobile, shown 905px+
+   ------------------------------------------------------------------------- */
+
+.nav__menu { display: none; }
+
+
+/* -------------------------------------------------------------------------
+   HAMBURGER TOGGLE — mobile only, position: fixed above sheet + overlay
    ------------------------------------------------------------------------- */
 
 .nav__toggle {
   display:         flex;
   flex-direction:  column;
-  justify-content: center;
   align-items:     center;
-  gap:             6px;
+  justify-content: center;
+  gap:             3px;
   position:        fixed;
   top:             4px;
   right:           16px;
-  z-index:         calc(var(--z-overlay) - 1); /* below overlay when drawer opens */
+  z-index:         var(--z-modal);
   width:           48px;
   height:          48px;
   padding:         0;
@@ -103,188 +115,217 @@
   outline-offset: 2px;
 }
 
+.nav__toggle-bars {
+  display:        flex;
+  flex-direction: column;
+  gap:            6px;
+}
+
 .nav__toggle-bar {
   display:          block;
   width:            22px;
   height:           2px;
   background-color: var(--color-text-primary);
   border-radius:    var(--radius-full);
+  /* Default: ease-in = closing direction */
   transition:
-    transform 200ms var(--ease-in-out),
-    opacity   var(--transition-base);
+    transform 200ms ease-in,
+    opacity   200ms ease-in;
 }
 
-.nav--open .nav__toggle-bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+/* Opening direction: ease-out for snap/responsiveness */
+.nav--open .nav__toggle-bar {
+  transition:
+    transform 200ms ease-out,
+    opacity   200ms ease-out;
 }
 
-.nav--open .nav__toggle-bar:nth-child(2) {
+.nav--open .nav__toggle-bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav--open .nav__toggle-bar:nth-child(2) { opacity: 0; }
+.nav--open .nav__toggle-bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+.nav__toggle-label {
+  font-family: var(--font-body);
+  font-size:   var(--text-xs);
+  color:       var(--color-text-secondary);
+  line-height: 1;
+  user-select: none;
+  transition:  opacity 150ms ease;
+}
+
+.nav--open .nav__toggle-label {
   opacity: 0;
-}
-
-.nav--open .nav__toggle-bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
 }
 
 
 /* -------------------------------------------------------------------------
-   MOBILE DRAWER — full viewport, slides in from right
+   BOTTOM SHEET — slides up from bottom, mobile only
    ------------------------------------------------------------------------- */
 
-.nav__menu {
-  position:       fixed;
-  inset:          0;
-  z-index:        var(--z-drawer);
-  background:     var(--color-bg);
-  display:        flex;
-  flex-direction: column;
-  transform:      translateX(100%);
-  visibility:     hidden;
+.nav__sheet {
+  position:      fixed;
+  left:          0;
+  right:         0;
+  bottom:        0;
+  height:        65dvh;
+  min-height:    60dvh;
+  max-height:    70dvh;
+  background:    var(--color-surface);
+  border-radius: 24px 24px 0 0;
+  box-shadow:    0 -4px 32px rgb(0 0 0 / 0.12);
+  z-index:       var(--z-drawer);
+  transform:     translateY(100%);
+  visibility:    hidden;
+  will-change:   transform;
+  /* Close: ease-in, visibility delayed until animation completes */
   transition:
     transform  200ms ease-in,
-    visibility 0s    200ms;
+    visibility 0s   200ms;
 }
 
-.nav--open .nav__menu {
-  transform:  translateX(0);
+.nav--open .nav__sheet {
+  transform:  translateY(0);
   visibility: visible;
+  /* Open: spring easing with slight overshoot */
   transition:
-    transform  250ms ease-out,
+    transform  300ms cubic-bezier(0.34, 1.56, 0.64, 1),
     visibility 0s;
 }
 
 
-/* Close button — top-right of drawer, visually matches hamburger */
-.nav__close {
-  display:      flex;
-  align-items:  center;
-  justify-content: center;
-  position:     absolute;
-  top:          16px;
-  right:        16px;
-  width:        48px;
-  height:       48px;
-  background:   none;
-  border:       none;
-  cursor:       pointer;
-  border-radius: var(--radius-md);
-  transition:   background-color var(--transition-fast);
-  flex-shrink:  0;
-}
+/* -------------------------------------------------------------------------
+   TILE GRID — 2 cols × 3 rows
+   ------------------------------------------------------------------------- */
 
-.nav__close-bar {
-  position:         absolute;
-  display:          block;
-  width:            22px;
-  height:           2px;
-  background-color: var(--color-text-primary);
-  border-radius:    var(--radius-full);
-}
-
-.nav__close-bar:nth-child(1) { transform: rotate(45deg); }
-.nav__close-bar:nth-child(2) { transform: rotate(-45deg); }
-
-@media (hover: hover) and (pointer: fine) {
-  .nav__close:hover {
-    background-color: var(--color-surface);
-  }
-}
-
-.nav__close:focus-visible {
-  outline:        2px solid var(--color-accent-accessible);
-  outline-offset: 2px;
-}
-
-
-/* Nav list — bottom half of drawer, right-aligned for thumb reach */
-.nav__list {
-  display:        flex;
-  flex-direction: column;
-  align-items:    flex-end;
-  list-style:     none;
-  padding:        0 var(--space-4) var(--space-10);
-  margin-top:     auto;
-  margin-bottom:  0;
-  margin-left:    0;
-  margin-right:   0;
-}
-
-.nav__item + .nav__item {
-  margin-top: 0;
-}
-
-
-/* Nav links */
-.nav__link {
-  display:         block;
-  position:        relative;
-  font-size:       var(--text-lg);
-  font-weight:     var(--font-weight-normal);
-  color:           var(--color-text-nav);
-  text-decoration: none;
-  padding-block:   var(--space-3);
-  text-align:      right;
-  transition:      color var(--transition-fast);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .nav__link:hover {
-    color: var(--color-text-primary);
-  }
-}
-
-.nav__link:focus-visible {
-  outline:        2px solid var(--color-accent-accessible);
-  outline-offset: 2px;
-  border-radius:  var(--radius-sm);
-}
-
-.nav__link[aria-current="page"] {
-  color:       var(--color-text-primary);
-  font-weight: var(--font-weight-semibold);
+.nav__grid {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   12px;
+  padding:               20px;
+  height:                100%;
+  align-content:         start;
+  overflow-y:            auto;
 }
 
 
 /* -------------------------------------------------------------------------
-   905px+ — horizontal nav, drawer disabled
+   TILES
+   ------------------------------------------------------------------------- */
+
+.nav__tile {
+  display:                    flex;
+  flex-direction:             column;
+  align-items:                center;
+  justify-content:            center;
+  gap:                        var(--space-1);
+  min-height:                 80px;
+  background:                 var(--color-bg);
+  border-radius:              16px;
+  box-shadow:
+    0 1px 3px 0 rgb(0 0 0 / 0.06),
+    0 1px 2px -1px rgb(0 0 0 / 0.04);
+  text-decoration:            none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color 150ms ease,
+    transform        100ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav__tile:hover {
+    background-color: var(--color-accent-light);
+  }
+}
+
+.nav__tile:active {
+  transform: scale(0.97);
+}
+
+.nav__tile--active {
+  background-color: var(--color-accent-light);
+}
+
+.nav__tile-icon {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  color:           var(--color-accent);
+}
+
+.nav__tile-label {
+  font-family: var(--font-body);
+  font-size:   var(--text-sm);
+  font-weight: var(--font-weight-normal);
+  color:       var(--color-text-primary);
+  text-align:  center;
+  line-height: var(--leading-tight);
+}
+
+.nav__tile--active .nav__tile-label {
+  font-weight: var(--font-weight-semibold);
+  color:       var(--color-accent-accessible);
+}
+
+
+/* -------------------------------------------------------------------------
+   TILE STAGGER — fade + rise on sheet open, 40ms between each
+   ------------------------------------------------------------------------- */
+
+@keyframes nav-tile-in {
+  from {
+    opacity:   0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity:   1;
+    transform: translateY(0);
+  }
+}
+
+.nav--open .nav__tile:nth-child(1) { animation: nav-tile-in 200ms ease-out both; animation-delay:   0ms; }
+.nav--open .nav__tile:nth-child(2) { animation: nav-tile-in 200ms ease-out both; animation-delay:  40ms; }
+.nav--open .nav__tile:nth-child(3) { animation: nav-tile-in 200ms ease-out both; animation-delay:  80ms; }
+.nav--open .nav__tile:nth-child(4) { animation: nav-tile-in 200ms ease-out both; animation-delay: 120ms; }
+.nav--open .nav__tile:nth-child(5) { animation: nav-tile-in 200ms ease-out both; animation-delay: 160ms; }
+.nav--open .nav__tile:nth-child(6) { animation: nav-tile-in 200ms ease-out both; animation-delay: 200ms; }
+
+
+/* -------------------------------------------------------------------------
+   905px+ — horizontal desktop nav, sheet + toggle disabled
    ------------------------------------------------------------------------- */
 
 @media (min-width: 905px) {
 
-  .nav__toggle {
-    display:   none;
-    position:  static;
-    top:       auto;
-    right:     auto;
-    z-index:   auto;
-  }
-  .nav__close   { display: none; }
+  .nav__toggle { display: none; }
+  .nav__sheet  { display: none; }
   .nav__overlay { display: none; }
 
   .nav__menu {
-    position:       static;
-    transform:      none;
-    visibility:     visible;
-    z-index:        auto;
-    background:     none;
     display:        flex;
     flex-direction: row;
-    transition:     none;
     margin-left:    auto;
   }
 
   .nav__list {
+    display:        flex;
     flex-direction: row;
     align-items:    center;
     gap:            var(--space-2);
+    list-style:     none;
     padding:        0;
-    margin-top:     0;
+    margin:         0;
   }
 
   .nav__link {
-    padding:    var(--space-2) var(--space-3);
-    text-align: left;
-    font-size:  var(--text-sm);
+    display:         block;
+    position:        relative;
+    font-size:       var(--text-sm);
+    font-weight:     var(--font-weight-normal);
+    color:           var(--color-text-nav);
+    text-decoration: none;
+    padding:         var(--space-2) var(--space-3);
+    text-align:      left;
+    transition:      color var(--transition-fast);
   }
 
   @media (hover: hover) and (pointer: fine) {
@@ -295,6 +336,12 @@
     .nav__link:hover::after {
       transform: scaleX(1);
     }
+  }
+
+  .nav__link:focus-visible {
+    outline:        2px solid var(--color-accent-accessible);
+    outline-offset: 2px;
+    border-radius:  var(--radius-sm);
   }
 
   .nav__link::after {
@@ -315,13 +362,8 @@
     }
   }
 
-  .nav__link[aria-current="page"]::after {
-    transform: scaleX(1);
-  }
-
-  .nav__link[aria-current="page"] {
-    font-weight: var(--font-weight-semibold);
-  }
+  .nav__link[aria-current="page"]::after { transform: scaleX(1); }
+  .nav__link[aria-current="page"]        { font-weight: var(--font-weight-semibold); }
 
 }
 
@@ -331,13 +373,18 @@
    ------------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
+
   .nav__toggle-bar,
+  .nav__toggle-label,
   .nav__overlay,
-  .nav__menu {
+  .nav__sheet {
     transition: none;
   }
 
-  .nav__link::after {
-    transition: none;
+  .nav--open .nav__tile {
+    animation: none;
+    opacity:   1;
+    transform: none;
   }
+
 }
