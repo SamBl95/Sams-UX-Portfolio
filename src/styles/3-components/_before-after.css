@@ -33,6 +33,13 @@
   gap:              var(--space-3);
 }
 
+.before-after__col img {
+  display:    block;
+  width:      100%;
+  height:     auto;
+  object-fit: contain;
+}
+
 
 /* Label chip — base */
 .before-after__label {
