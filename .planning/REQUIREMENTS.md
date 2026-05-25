@@ -1,69 +1,112 @@
 # Requirements: Sam Blake Portfolio v2
 
-**Defined:** 2026-05-19
-**Milestone:** v4.0 Content & Visuals
-**Core Value:** A recruiter or hiring manager can understand Sam's work and reach out — every page exists, every link works, and every component is polished enough that adding content is the only remaining task.
+**Defined:** 2026-05-25
+**Core Value:** A recruiter or hiring manager can understand Sam's work and reach out — every page exists, every link works, and the site is completely finished.
 
-## v4.0 Requirements
+## v5.0 Requirements
 
-### CV Page
+### Nav Fix
 
-- [ ] **CV-01**: User can view all 5 work history roles with correct titles, dates, and descriptions (Matalan, NUX Volunteer, Santander PD/BA, Santander UX Researcher rotation, Blake's Estates)
-- [ ] **CV-02**: CV page includes NUX Volunteer and UX Researcher (rotation) as distinct timeline entries (requires new HTML structure alongside existing 3 entries)
-- [ ] **CV-03**: User can see Google UX Professional Certificate in the education section
-- [ ] **CV-04**: User can download Sam's CV PDF via a button on the CV page (wired to `/Samuel-Blake-CV.pdf`)
-- [ ] **CV-05**: User can download Sam's CV PDF via a button on the About page CTA section (wired to `/Samuel-Blake-CV.pdf`)
+- [ ] **NAV-01**: Hero H1 sits at the same vertical position on About and CV pages as on the Case Studies page — no extra padding above the heading
 
-### Images
+### Footer
 
-- [ ] **IMG-01**: Homepage case study cards display real thumbnail images (sourced from Webflow site)
-- [ ] **IMG-02**: /work page feature rows display real images per case study (sourced from Webflow site)
-- [ ] **IMG-03**: I-Exchange case study page has visual content in image-block, before-after, and/or process-steps components
-- [ ] **IMG-04**: CASSI case study page has visual content in image-block, before-after, and/or process-steps components
-- [ ] **IMG-05**: Community case study page has visual content in image-block, before-after, and/or process-steps components
+- [ ] **FOOT-01**: Footer is visually consistent and correctly laid out across all pages
+- [ ] **FOOT-02**: Footer contains: site nav links (horizontal desktop / stacked mobile), Easter egg link at very low opacity, LinkedIn link, Get in touch link — no copyright notice, no tagline
+
+### Case Study Components
+
+- [ ] **COMP-01**: Two-column component — text left / image right; reverses via modifier class; stacks single column on mobile with image below text
+- [ ] **COMP-02**: Two-column component — heading left / body text right; stacks single column on mobile
+- [ ] **COMP-03**: Three-column person card component — avatar placeholder, name in `--font-heading`, role in `--font-body --color-text-secondary`, short contribution note; stacks single column on mobile
+- [ ] **COMP-04**: Single image with caption — max 60% width desktop, full width mobile; caption in `--color-text-secondary --text-sm`
+- [ ] **COMP-05**: Two images side-by-side with captions — 45% each desktop, stacked full width mobile
+- [ ] **COMP-06**: Full-width image — for final designs or very wide screenshots only
+- [ ] **COMP-07**: Results display — large metric in `--font-heading --color-accent`, label beneath; row of 3–4 desktop, 2×2 tablet, single column mobile
+- [ ] **COMP-08**: Pull quote — large quoted text in `--font-heading`, 2px solid `--color-accent` left border, full width all breakpoints
+- [ ] **COMP-09**: Process step row — numbered horizontal steps desktop, vertical stacked mobile; number in `--color-accent`, title in `--font-heading`, description in `--font-body`
+- [ ] **COMP-10**: Image with overlay caption — full-width image, text overlaid bottom with semi-transparent `--color-bg` background
+- [ ] **COMP-11**: All components use existing design tokens, 8pt spacing system, pass WCAG 2.2 AA, use `loading="lazy"` on images, respect `prefers-reduced-motion`
+
+### Case Study Content — i-Exchange
+
+- [ ] **CS-01**: All sections of i-exchange.html reviewed; copy shown to user and explicitly approved before any edit
+- [ ] **CS-02**: All image placements in i-exchange.html confirmed by explicit user instruction before implementation; sourced from `public/assets/images/i-exchange/`
+- [ ] **CS-03**: All image sizing follows rules: 60% centred (default), 40% portrait, 45% each side-by-side, full width for wide final designs; 2x exports at half pixel max-width; `object-fit: contain`
+
+### Case Study Content — CASSI
+
+- [ ] **CS-04**: All sections of cassi.html reviewed; copy shown to user and explicitly approved before any edit
+- [ ] **CS-05**: All image placements in cassi.html confirmed by explicit user instruction before implementation; sourced from `public/assets/images/cassi/`
+- [ ] **CS-06**: Same sizing rules as CS-03 applied throughout
+
+### Case Study Content — Community
+
+- [ ] **CS-07**: All sections of community.html reviewed; copy shown to user and explicitly approved before any edit
+- [ ] **CS-08**: Three person cards (Samantha, Lee, Bonny) built using COMP-03
+- [ ] **CS-09**: All image placements in community.html confirmed by explicit user instruction; sourced from `public/assets/images/community/`
+- [ ] **CS-10**: Same sizing rules as CS-03 applied throughout
+
+### UAT and QA
+
+- [ ] **QA-01**: All navigation links work correctly on every page
+- [ ] **QA-02**: Mobile bottom sheet nav opens, closes, and animates correctly; burger↔X morph animation works
+- [ ] **QA-03**: Typewriter animation runs correctly on homepage
+- [ ] **QA-04**: Contact form submits correctly
+- [ ] **QA-05**: CV download triggers with filename `Sam-Blake-CV.pdf`
+- [ ] **QA-06**: Easter egg link opens old portfolio in new tab
+- [ ] **QA-07**: All case study images load with no broken images
+- [ ] **QA-08**: All internal links between pages work; all external links open in new tab
+- [ ] **QA-09**: Consistent nav across all pages; consistent footer across all pages
+- [ ] **QA-10**: Consistent hero position and sizing across all pages; no orphaned borders or strokes; no layout shift; cards peek correctly on homepage; alternating backgrounds work on case studies; all fonts loading; colour tokens consistent
+- [ ] **QA-11**: All images have descriptive alt text
+- [ ] **QA-12**: All interactive elements have visible focus states; colour contrast passes WCAG 2.2 AA
+- [ ] **QA-13**: Focus trap works in mobile nav; Escape key dismisses mobile nav; `prefers-reduced-motion` respected throughout; all form inputs have associated labels
+- [ ] **QA-14**: All images use `loading="lazy"`; no console errors on any page; no broken asset paths
+- [ ] **QA-15**: QA report lists all failures with file and line reference; all failures fixed before stage marked complete
 
 ## Future Requirements
 
-### Images (deferred)
+### Content
 
-- **IMG-F01**: Per-case-study og:image thumbnails for social sharing
-- **IMG-F02**: Real photography or illustration for About page
+- **CONT-F01**: Real photography or illustration for About page
+- **CONT-F02**: Stories section with real published articles
 
-### Content (deferred)
+### SEO
 
-- **CONT-F01**: Stories section with real articles
-- **CONT-F02**: Skills section updated with AI workflow and additional tools from CV
+- **SEO-F01**: Per-case-study og:image thumbnails
+- **SEO-F02**: Google Search Console submission (manual post-deploy step)
+- **SEO-F03**: vite-plugin-sitemap auto-generation
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| PDF CV creation | Sam produces the file; already exists in public/ as Samuel-Blake-CV.pdf |
-| Copy rewrites (About, case studies) | Content phase (v3.0) locked these |
-| New page types | Foundation and structure locked from v1.0–v2.0 |
-| CMS or dynamic content | Static HTML constraint |
-| Animation or visual polish | Covered in v2.0 |
+| CMS or dynamic content | Static HTML only — Vite MPA constraint |
+| Animation library (GSAP, Framer Motion) | Vanilla CSS/JS constraint |
+| Dark mode toggle | Palette decision locked |
+| Mobile app / PWA | Web-first; post-ship consideration only |
+| Copy written by Claude | Copy is Sam's — never changed without explicit approval |
+| Images placed without instruction | Image placement requires explicit per-section approval |
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CV-01 | Phase 12 | Pending |
-| CV-02 | Phase 12 | Pending |
-| CV-03 | Phase 12 | Pending |
-| CV-04 | Phase 12 | Pending |
-| CV-05 | Phase 12 | Pending |
-| IMG-01 | Phase 13 | Pending |
-| IMG-02 | Phase 13 | Pending |
-| IMG-03 | Phase 14 | Pending |
-| IMG-04 | Phase 14 | Pending |
-| IMG-05 | Phase 14 | Pending |
+| NAV-01 | Phase 15 | Pending |
+| FOOT-01 | Phase 16 | Pending |
+| FOOT-02 | Phase 16 | Pending |
+| COMP-01–11 | Phase 17 | Pending |
+| CS-01–03 | Phase 18 | Pending |
+| CS-04–06 | Phase 19 | Pending |
+| CS-07–10 | Phase 20 | Pending |
+| QA-01–15 | Phase 21 | Pending |
 
 **Coverage:**
-- v4.0 requirements: 10 total
-- Mapped to phases: 10
+- v5.0 requirements: 36 total
+- Mapped to phases: 36
 - Unmapped: 0 ✓
 
 ---
-*Requirements defined: 2026-05-19*
-*Last updated: 2026-05-19 — traceability confirmed after roadmap creation*
+*Requirements defined: 2026-05-25*
+*Last updated: 2026-05-25 after v5.0 milestone start*

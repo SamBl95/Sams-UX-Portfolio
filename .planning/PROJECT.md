@@ -85,24 +85,45 @@ All four phases complete. The site has real content, a working contact form, and
 - ✓ JSON-LD Person schema on index.html and about.html — v3.0
 - ✓ sitemap.xml (10 clean-path entries), robots.txt, vercel.json clean URL rewrites — v3.0
 
-## Current Milestone: v4.0 Content & Visuals
+## Current Milestone: v5.0 Case Study Polish and Full Site QA
 
-**Goal:** Fill the remaining content gaps — CV copy, PDF download button, and real images across every visual placeholder in the site.
+**Goal:** Fix nav and footer consistency issues, build a reusable case study component library, fill all three case studies with approved copy and images, then run a comprehensive UAT/QA pass to ship the site complete.
 
 **Target features:**
-- CV page: 3 work history descriptions + download PDF button
-- About page: wire up existing TODO download CV button
-- /work page: real images for each feature row (sourced from Webflow)
-- Homepage: real thumbnail images on case study cards (sourced from Webflow)
-- Case study pages: images in image-block, before-after, and process-steps components
+- Nav hero padding bug fix (About + CV pages)
+- Footer audit and standardisation across all pages
+- 10-component case study component library (`_case-study-components.css`)
+- i-Exchange, CASSI, Community case studies: section-by-section copy review + image placement
+- Full site UAT: functional, visual, accessibility, and performance checks
 
-### Active (v4.0)
+### Active (v5.0)
 
-- [ ] CV-01: CV page work history descriptions — Matalan, Santander UK, Self-employed (3 roles)
-- [ ] CV-02: Download PDF button on CV page and About page CTA
-- [ ] IMG-01: Real images on homepage case study cards
-- [ ] IMG-02: Real images on /work feature rows (per case study)
-- [ ] IMG-03: Case study visual content — I-Exchange, CASSI, Community image components
+- [ ] NAV-01: Hero H1 sits at same vertical position on About and CV as on Case Studies pages
+- [ ] FOOT-01: Footer is consistent and correctly laid out across all pages
+- [ ] FOOT-02: Footer contains nav links, Easter egg, LinkedIn, Get in touch — no copyright, no tagline
+- [ ] COMP-01: Two-column layout — text left / image right with reversal modifier, stacks mobile
+- [ ] COMP-02: Two-column — heading left / body text right, stacks mobile
+- [ ] COMP-03: Three-column person cards — avatar, name in --font-heading, role, contribution note
+- [ ] COMP-04: Single image with caption — max 60% desktop, full width mobile
+- [ ] COMP-05: Two images side-by-side with captions — 45% each desktop, stacked mobile
+- [ ] COMP-06: Full-width image — for final designs / wide screenshots only
+- [ ] COMP-07: Results display — large metric in --font-heading --color-accent, 3–4 col desktop, 2×2 tablet, 1 col mobile
+- [ ] COMP-08: Pull quote — large quoted text, 2px solid --color-accent left border
+- [ ] COMP-09: Process step row — numbered horizontal desktop / vertical stacked mobile
+- [ ] COMP-10: Image with overlay caption — full-width image, text overlay bottom
+- [ ] CS-01: i-Exchange case study — all sections reviewed and copy approved
+- [ ] CS-02: i-Exchange case study — all image slots filled per explicit instruction
+- [ ] CS-03: CASSI case study — all sections reviewed and copy approved
+- [ ] CS-04: CASSI case study — all image slots filled per explicit instruction
+- [ ] CS-05: Community case study — all sections reviewed and copy approved, person cards built
+- [ ] CS-06: Community case study — all image slots filled per explicit instruction
+- [ ] QA-01: All navigation links work correctly on every page
+- [ ] QA-02: Mobile nav opens, closes, animates correctly; burger↔X morph works
+- [ ] QA-03: All functional checks pass (typewriter, contact form, CV download, Easter egg, case study images, internal/external links)
+- [ ] QA-04: All visual checks pass (nav, footer, hero, fonts, colours, cards, alternating backgrounds)
+- [ ] QA-05: All accessibility checks pass (alt text, focus states, WCAG 2.2 AA contrast, focus trap, Escape key, prefers-reduced-motion, form labels)
+- [ ] QA-06: All performance checks pass (lazy loading, no console errors, no broken asset paths)
+- [ ] QA-07: QA report produced; all failures fixed before stage marked complete
 
 ### Out of Scope
 
@@ -169,4 +190,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-19 after v4.0 milestone started*
+*Last updated: 2026-05-25 after v5.0 milestone started*

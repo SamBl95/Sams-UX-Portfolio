@@ -1,17 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v4.0
-milestone_name: Content & Visuals
-status: executing
-stopped_at: Phase 14 executed, pending image upload
-last_updated: "2026-05-21T00:00:00.000Z"
-last_activity: 2026-05-21 -- Phase 14 image slots added to all 3 case studies
+milestone: v5.0
+milestone_name: Case Study Polish and Full Site QA
+status: planning
+last_updated: "2026-05-25T13:04:21.161Z"
+last_activity: 2026-05-25
 progress:
-  total_phases: 7
-  completed_phases: 2
-  total_plans: 8
-  completed_plans: 6
-  percent: 86
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -25,14 +24,10 @@ See: .planning/PROJECT.md (updated 2026-05-19)
 
 ## Current Position
 
-Phase: 14 (Case Study Image Depth) — not yet planned
+Phase: Not started (defining requirements)
 Plan: —
-Status: Ready to plan
-Last activity: 2026-05-20 -- Phase 13 planning complete
-
-```
-v4.0 Progress: [███████░░░░░░░░░░░░░] 33% — 1/3 phases complete
-```
+Status: Defining requirements
+Last activity: 2026-05-25 — Milestone v5.0 started
 
 ## Performance Metrics
 
