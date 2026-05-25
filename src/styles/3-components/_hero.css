@@ -30,16 +30,6 @@
 
 .hero {
   background-color: var(--color-bg);
-  padding-block:    var(--space-10); /* 80px */
-  min-height:       calc(100svh - 64px); /* cards peek 64px below fold at all breakpoints */
-  display:          flex;
-  align-items:      center;
-}
-
-@media (min-width: 905px) {
-  .hero {
-    padding-block: var(--space-8); /* 64px */
-  }
 }
 
 
@@ -81,24 +71,24 @@
 .hero__headline {
   font-family:    var(--font-heading);
   font-weight:    var(--font-weight-semibold);
-  font-size:      var(--text-22);   /* 22px */
+  font-size:      var(--text-28);    /* 28px */
   line-height:    1.1;
   letter-spacing: -0.02em;
   text-wrap:      wrap;
   color:          var(--color-accent-accessible);
-  margin-bottom:  var(--space-6);
+  margin-bottom:  var(--space-2);   /* 16px — tight before typewriter */
 }
 
 @media (min-width: 480px) {
-  .hero__headline { font-size: var(--text-28); } /* 28px */
+  .hero__headline { font-size: var(--text-4xl); }  /* 36px */
 }
 
 @media (min-width: 768px) {
-  .hero__headline { font-size: var(--text-40); } /* 40px */
+  .hero__headline { font-size: var(--text-5xl); }  /* 48px */
 }
 
 @media (min-width: 1024px) {
-  .hero__headline { font-size: var(--text-56); } /* 56px */
+  .hero__headline { font-size: var(--text-64); }   /* 64px */
 }
 
 
@@ -134,20 +124,29 @@
    ------------------------------------------------------------------------- */
 
 .hero__typewriter {
-  display: block;
+  display:       block;
+  margin-bottom: var(--space-4); /* 32px — gap before buttons */
   /* min-height set by JS in typewriter.js — no CSS fallback to avoid layout shift when Caveat loads */
 }
 
 .hero__typewriter-text {
   font-family:    var(--font-accent);
   font-weight:    var(--font-weight-normal);
-  font-size:      1em; /* matches headline on mobile */
+  font-size:      calc(var(--text-28) * 0.8);   /* 22.4px — 80% of 28px H1 */
   color:          var(--color-text-primary);
   letter-spacing: normal;
 }
 
 @media (min-width: 480px) {
-  .hero__typewriter-text { font-size: 0.8em; } /* 80% of headline at wider breakpoints */
+  .hero__typewriter-text { font-size: calc(var(--text-4xl) * 0.8); }  /* 28.8px */
+}
+
+@media (min-width: 768px) {
+  .hero__typewriter-text { font-size: calc(var(--text-5xl) * 0.8); }  /* 38.4px */
+}
+
+@media (min-width: 1024px) {
+  .hero__typewriter-text { font-size: calc(var(--text-64) * 0.8); }   /* 51.2px */
 }
 
 .hero__typewriter-cursor {

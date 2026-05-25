@@ -23,9 +23,13 @@
   .footer__inner {
     display:               grid;
     grid-template-columns: 1fr auto;
-    grid-template-areas:   "identity links";
-    align-items:           center;
-    gap:                   var(--space-8) var(--space-16);
+    grid-template-areas:
+      "identity links"
+      "nav      nav"
+      "archive  archive";
+    align-items:  start;
+    row-gap:      var(--space-6);
+    column-gap:   var(--space-16);
   }
 }
 
@@ -94,3 +98,73 @@
 }
 
 
+/* -------------------------------------------------------------------------
+   SITE NAV — page links, stacked on mobile, horizontal on desktop
+   ------------------------------------------------------------------------- */
+
+.footer__nav {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-3);
+  grid-area:      nav;
+}
+
+@media (min-width: 905px) {
+  .footer__nav {
+    flex-direction: row;
+    flex-wrap:      wrap;
+    gap:            var(--space-2) var(--space-5);
+  }
+}
+
+.footer__nav-link {
+  font-size:       var(--text-sm);
+  color:           var(--color-text-secondary);
+  text-decoration: none;
+  transition:      color var(--transition-fast);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer__nav-link:hover {
+    color: var(--color-accent-accessible);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer__nav-link { transition: none; }
+}
+
+.footer__nav-link:focus-visible {
+  outline:        2px solid var(--color-accent-accessible);
+  outline-offset: 2px;
+  border-radius:  var(--radius-sm);
+}
+
+
+/* -------------------------------------------------------------------------
+   ARCHIVE LINK — discreet older-portfolio link beneath site nav
+   ------------------------------------------------------------------------- */
+
+.footer__archive {
+  grid-area:       archive;
+  font-size:       var(--text-xs);
+  color:           var(--color-text-secondary);
+  text-decoration: none;
+  opacity:         0.5;
+  transition:      opacity 150ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer__archive:hover { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer__archive { transition: none; }
+}
+
+.footer__archive:focus-visible {
+  outline:        2px solid var(--color-accent-accessible);
+  outline-offset: 2px;
+  border-radius:  var(--radius-sm);
+  opacity:        1;
+}

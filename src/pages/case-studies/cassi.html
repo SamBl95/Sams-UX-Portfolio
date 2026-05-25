@@ -589,20 +589,41 @@
 
 
     <!-- =====================================================================
-         CASE STUDY NAVIGATION
+         MORE CASE STUDIES
          ===================================================================== -->
 
-    <nav class="cs-pagination" aria-label="Case study navigation">
-      <div class="cs-pagination__inner container">
-        <a href="/case-studies/community" class="cs-pagination__link">
-          <div class="cs-pagination__text">
-            <span class="cs-pagination__direction">Next case study</span>
-            <span class="cs-pagination__title">Community Support Forum Redesign</span>
-          </div>
-          <span class="cs-pagination__arrow" aria-hidden="true">→</span>
-        </a>
+    <section class="cs-more" aria-labelledby="cs-more-heading">
+      <div class="container">
+        <h2 id="cs-more-heading" class="cs-more__heading">More case studies</h2>
+        <div class="cs-more__grid">
+
+          <a href="/case-studies/i-exchange" class="card">
+            <div class="card__image">
+              <img src="/assets/images/i-exchange-preview.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">i-Exchange Knowledge Base Overhaul</h3>
+              <span class="card__metric-chip">35% search accuracy improvement</span>
+              <p class="card__subtitle">Overhauling Santander's 6,000-article internal knowledge base to fix broken search, delivering a 35% accuracy improvement across 5 million annual searches.</p>
+              <span class="btn btn--primary card__cta"><span>8 min read</span><span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a href="/case-studies/community" class="card">
+            <div class="card__image">
+              <img src="/assets/images/community-preview.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Community Support Forum Redesign</h3>
+              <span class="card__metric-chip">97 hrs saved every month</span>
+              <p class="card__subtitle">Halving homepage load times and saving 97 hours a month by scaling Santander's internal community forum, without a complete rebuild.</p>
+              <span class="btn btn--primary card__cta"><span>6 min read</span><span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+        </div>
       </div>
-    </nav>
+    </section>
 
     </main>
 

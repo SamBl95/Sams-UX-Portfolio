@@ -2,7 +2,7 @@
   FOOTER PARTIAL — single canonical footer, included by every page via Handlebars.
   Usage: > footer
   No context flags — the footer is identical across all pages.
-  Do NOT remove rel="noopener noreferrer" from the LinkedIn link.
+  Do NOT remove rel="noopener noreferrer" from external links.
 --}}
 
 <footer class="footer">
@@ -16,6 +16,19 @@
       <a href="https://www.linkedin.com/in/samuel-blake-224605186" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="/get-in-touch" class="footer__link">Get in touch</a>
     </nav>
+
+    <nav class="footer__nav" aria-label="Site pages">
+      <a href="/" class="footer__nav-link">Home</a>
+      <a href="/case-studies" class="footer__nav-link">Case Studies</a>
+      <a href="/about" class="footer__nav-link">About</a>
+      <a href="/cv" class="footer__nav-link">CV</a>
+      <a href="/stories" class="footer__nav-link">Stories</a>
+      <a href="/get-in-touch" class="footer__nav-link">Get in touch</a>
+    </nav>
+
+    <a href="https://samsux.webflow.io" class="footer__archive" target="_blank" rel="noopener noreferrer">
+      Want to see how I've progressed? Here is the older version of this portfolio.
+    </a>
 
   </div>
 </footer>

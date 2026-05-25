@@ -112,7 +112,8 @@
       "Bash(python3 tmp_fix_iexchange.py)",
       "Bash(python3 tmp_fix_cassi.py)",
       "Bash(python3 tmp_fix_community.py)",
-      "Bash(Get-ChildItem *)"
+      "Bash(Get-ChildItem *)",
+      "Bash(dir *)"
     ]
   }
 }
