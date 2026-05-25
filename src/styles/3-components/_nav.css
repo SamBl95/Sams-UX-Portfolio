@@ -304,10 +304,12 @@
   }
 
   .nav__link {
-    display:         block;
+    display:         flex;
+    align-items:     center;
     position:        relative;
     font-size:       var(--text-sm);
     font-weight:     var(--font-weight-normal);
+    line-height:     1;
     color:           var(--color-text-nav);
     text-decoration: none;
     padding:         var(--space-2) var(--space-3);
