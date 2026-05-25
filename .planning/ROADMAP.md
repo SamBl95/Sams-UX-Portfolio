@@ -73,7 +73,7 @@
   4. Fix uses design tokens only — no arbitrary pixel values
 **Plans**: 1 plan
 Plans:
-- [ ] 15-01-PLAN.md — Audit hero section structure across all pages; identify and fix extra top padding on About and CV
+- [ ] 15-01-PLAN.md — Add padding-top override to .about-hero at mobile/desktop breakpoints; human-verify H1 alignment
 **UI hint**: yes
 
 ### Phase 16: Footer Audit and Fix
