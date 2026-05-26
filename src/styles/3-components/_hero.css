@@ -47,7 +47,7 @@
 
 @media (min-width: 905px) {
   .hero__inner {
-    grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-10);
   }
 }
@@ -214,7 +214,7 @@
 
 .hero__portrait {
   width: min(320px, 100%);
-  margin: 0;
+  margin: 0 auto;
 }
 
 .hero__portrait img {
@@ -228,7 +228,14 @@
 
 @media (min-width: 905px) {
   .hero__portrait {
-    justify-self: end;
-    width: min(360px, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  .hero__portrait img {
+    width: min(480px, 100%);
   }
 }

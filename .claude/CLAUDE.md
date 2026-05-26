@@ -92,6 +92,26 @@ Never copy nav or footer markup inline — always use the partial.
 - **Image sizing:** 60% centred (default) · 40% portrait · 45% each side-by-side · full-width for wide designs. 2x exports at half pixel max-width. `object-fit: contain`. `loading="lazy"`.
 - **Image source dirs:** `public/assets/images/i-exchange/` · `public/assets/images/cassi/` · `public/assets/images/community/`
 
+## Case study components
+
+**Annotated image system:** `src/anno-image.js` + `_annotated-image.css`
+- Markup: `anno-image > anno-image__frame > img + anno-image__callout[data-pos][--positive/--negative] > anno-image__pin + anno-image__tooltip`
+- Add `<script type="module" src="/src/anno-image.js">` to any page using this component
+- Nine positions: `top/middle/bottom` × `left/center/right`
+
+**Decorative image variants:** `_image-block.css`
+- `image-block--decorative` — standard illustrations, max 48% desktop
+- `image-block--decorative-wide` — landscape illustrations, max 65% desktop
+- Both reset to full width inside `.two-col` layouts
+- Always supply `width`, `height`, and `loading="lazy"`
+
+**Existing components already built:**
+- Pull quote: `_pull-quote.css`
+- Before and after: `_before-after.css`
+- Process steps: `_process-steps.css`
+- Results metrics: `_metrics-row.css`
+- Two column layouts: `_two-column.css`
+
 ## v5.0 — active phases
 
 Milestone: Case Study Polish and Full Site QA

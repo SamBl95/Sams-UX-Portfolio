@@ -1,0 +1,577 @@
+/* =============================================================================
+   ANNOTATED IMAGE
+   Full-width functional image with interactive numbered callout pins.
+   Positive callouts (--color-accent teal) mark improvements or strengths.
+   Negative callouts (--color-error red)  mark problems or issues.
+   Pin numbers are driven by CSS counter — no number markup needed.
+   Legend is auto-generated from tooltip content by anno-image.js.
+   ============================================================================= */
+
+
+/* -------------------------------------------------------------------------
+   FIGURE WRAPPER
+   ------------------------------------------------------------------------- */
+
+.anno-image {
+  margin-block: var(--space-8);
+}
+
+@media (min-width: 905px) {
+  .anno-image {
+    margin-block: var(--space-10);
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   FRAME — positioning context for image and callouts.
+   counter-reset here so pin numbering restarts per figure.
+   line-height: 0 removes the default gap beneath an inline-block <img>.
+   ------------------------------------------------------------------------- */
+
+.anno-image__frame {
+  position:      relative;
+  display:       block;
+  counter-reset: callout;
+  line-height:   0;
+}
+
+
+/* -------------------------------------------------------------------------
+   IMAGE — full-width, functional screenshots and wireframes
+   ------------------------------------------------------------------------- */
+
+.anno-image__img {
+  display:       block;
+  width:         100%;
+  height:        auto;
+  object-fit:    contain;
+  border-radius: var(--radius-lg);
+}
+
+
+/* -------------------------------------------------------------------------
+   CALLOUT — absolute-positioned anchor that wraps one pin + one tooltip.
+   Fixed 32 × 32 px so its dimensions never shift when the tooltip opens.
+   translate(-50%, -50%) centres the anchor exactly on its coordinate.
+   No z-index on the callout itself — only the tooltip carries z-index.
+   ------------------------------------------------------------------------- */
+
+.anno-image__callout {
+  position:  absolute;
+  width:     var(--space-4);   /* 32px */
+  height:    var(--space-4);   /* 32px */
+  transform: translate(-50%, -50%);
+}
+
+
+/* -------------------------------------------------------------------------
+   POSITION MAP — 3 × 3 grid
+   Percentage values keep pins proportional to any image width or height.
+   ------------------------------------------------------------------------- */
+
+.anno-image__callout[data-pos="top-left"]      { top: 12%; left: 12%; }
+.anno-image__callout[data-pos="top-center"]    { top: 12%; left: 50%; }
+.anno-image__callout[data-pos="top-right"]     { top: 12%; left: 88%; }
+.anno-image__callout[data-pos="middle-left"]   { top: 50%; left: 12%; }
+.anno-image__callout[data-pos="middle-center"] { top: 50%; left: 50%; }
+.anno-image__callout[data-pos="middle-right"]  { top: 50%; left: 88%; }
+.anno-image__callout[data-pos="bottom-left"]   { top: 88%; left: 12%; }
+.anno-image__callout[data-pos="bottom-center"] { top: 88%; left: 50%; }
+.anno-image__callout[data-pos="bottom-right"]  { top: 88%; left: 88%; }
+
+
+/* -------------------------------------------------------------------------
+   PIN — numbered circular button
+   counter-increment on the button so each pin in DOM order gets the
+   next number. ::before renders the number — no text markup needed.
+   ::after is a transparent expanded hit area (44px minimum touch target).
+   ------------------------------------------------------------------------- */
+
+.anno-image__pin {
+  counter-increment: callout;
+  position:          relative;
+  display:           flex;
+  align-items:       center;
+  justify-content:   center;
+  width:             100%;
+  height:            100%;
+  border:            none;
+  border-radius:     var(--radius-full);
+  cursor:            pointer;
+  font-family:       var(--font-heading);
+  font-size:         var(--text-xs);
+  font-weight:       var(--font-weight-bold);
+  line-height:       1;
+  transition:        transform var(--transition-fast);
+}
+
+.anno-image__pin::before {
+  content: counter(callout);
+}
+
+.anno-image__pin::after {
+  content:       '';
+  position:      absolute;
+  inset:         -6px;   /* 32 + 12 = 44px touch target */
+  border-radius: var(--radius-full);
+}
+
+/* Positive sentiment — teal */
+.anno-image__callout--positive .anno-image__pin {
+  background-color: var(--color-accent);
+  color:            var(--color-text-on-accent);
+}
+
+/* Negative sentiment — red */
+.anno-image__callout--negative .anno-image__pin {
+  background-color: var(--color-error);
+  color:            var(--color-text-on-accent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .anno-image__pin:hover {
+    transform: scale(1.15);
+  }
+}
+
+.anno-image__pin:active {
+  transform: scale(0.93);
+}
+
+.anno-image__pin:focus-visible {
+  outline:        2px solid var(--color-accent-accessible);
+  outline-offset: 2px;
+}
+
+
+/* -------------------------------------------------------------------------
+   PIN PULSE — one-shot animation fired when the user clicks a legend item.
+   GPU-safe (transform only). JS adds the class, removes it on animationend.
+   ------------------------------------------------------------------------- */
+
+@keyframes anno-pin-pulse {
+  0%   { transform: scale(1);   }
+  40%  { transform: scale(1.3); }
+  100% { transform: scale(1);   }
+}
+
+.anno-image__pin--pulsing {
+  animation: anno-pin-pulse 400ms var(--ease-out-quint) 1;
+}
+
+
+/* -------------------------------------------------------------------------
+   TOOLTIP — hidden base state
+   z-index: var(--z-overlay) keeps the open tooltip above all pin circles.
+   Only opacity and transform animate — both GPU-composited.
+   pointer-events: none in the hidden state prevents invisible click blocking.
+   ------------------------------------------------------------------------- */
+
+.anno-image__tooltip {
+  position:       absolute;
+  max-width:      240px;
+  padding:        var(--space-4);
+  background:     var(--color-surface);
+  border-radius:  var(--radius-lg);
+  box-shadow:     0 2px 8px var(--color-border);
+  pointer-events: none;
+  opacity:        0;
+  z-index:        var(--z-overlay);
+  transition:     opacity 150ms var(--ease-out), transform 150ms var(--ease-out);
+}
+
+@media (min-width: 768px) {
+  .anno-image__tooltip {
+    min-width: 280px;
+    max-width: 360px;
+  }
+}
+
+/* Positive — teal full border */
+.anno-image__callout--positive .anno-image__tooltip {
+  border: 2px solid var(--color-accent);
+}
+
+/* Negative — red full border */
+.anno-image__callout--negative .anno-image__tooltip {
+  border: 2px solid var(--color-error);
+}
+
+
+/* -------------------------------------------------------------------------
+   TOOLTIP POSITIONING — three column groups via attribute substring selectors
+   $="-left"   matches top-left, middle-left, bottom-left
+   $="-right"  matches top-right, middle-right, bottom-right
+   $="-center" matches top-center, middle-center, bottom-center
+   ------------------------------------------------------------------------- */
+
+.anno-image__callout[data-pos$="-left"] .anno-image__tooltip {
+  left: calc(100% + var(--space-2));
+  top:  50%;
+}
+
+.anno-image__callout[data-pos$="-right"] .anno-image__tooltip {
+  right: calc(100% + var(--space-2));
+  top:   50%;
+}
+
+.anno-image__callout[data-pos$="-center"] .anno-image__tooltip {
+  top:  calc(100% + var(--space-2));
+  left: 50%;
+}
+
+
+/* -------------------------------------------------------------------------
+   TOOLTIP TRANSFORMS — hidden and open states per column group
+   The positioning offset (translateY / translateX) must combine with the
+   scale animation in a single transform declaration. The open state is
+   driven purely by aria-expanded="true" on the sibling button — no JS
+   class toggling required for the tooltip itself.
+   ------------------------------------------------------------------------- */
+
+/* Hidden */
+.anno-image__callout[data-pos$="-left"]  .anno-image__tooltip,
+.anno-image__callout[data-pos$="-right"] .anno-image__tooltip {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.anno-image__callout[data-pos$="-center"] .anno-image__tooltip {
+  transform: translateX(-50%) scale(0.95);
+}
+
+/* Open — shared opacity and pointer-events */
+.anno-image__pin[aria-expanded="true"] + .anno-image__tooltip {
+  opacity:        1;
+  pointer-events: auto;
+}
+
+/* Open — left and right columns */
+.anno-image__callout[data-pos$="-left"]  .anno-image__pin[aria-expanded="true"] + .anno-image__tooltip,
+.anno-image__callout[data-pos$="-right"] .anno-image__pin[aria-expanded="true"] + .anno-image__tooltip {
+  transform: translateY(-50%) scale(1);
+}
+
+/* Open — center column */
+.anno-image__callout[data-pos$="-center"] .anno-image__pin[aria-expanded="true"] + .anno-image__tooltip {
+  transform: translateX(-50%) scale(1);
+}
+
+
+/* -------------------------------------------------------------------------
+   TOOLTIP CONTENT
+   Light surface — positive titles in accent teal, negative in error red.
+   Body text uses --color-text-secondary for hierarchy.
+   ------------------------------------------------------------------------- */
+
+.anno-image__tooltip-title {
+  display:     block;
+  font-family: var(--font-heading);
+  font-size:   var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  margin:      0 0 var(--space-2) 0;
+}
+
+.anno-image__callout--positive .anno-image__tooltip-title {
+  color: var(--color-accent);
+}
+
+.anno-image__callout--negative .anno-image__tooltip-title {
+  color: var(--color-error);
+}
+
+.anno-image__tooltip-body {
+  font-family: var(--font-body);
+  font-size:   var(--text-xs);
+  line-height: var(--leading-relaxed);
+  color:       var(--color-text-secondary);
+  margin:      0;
+}
+
+
+/* -------------------------------------------------------------------------
+   LEGEND — receives the auto-generated list from anno-image.js
+   ------------------------------------------------------------------------- */
+
+.anno-image__legend {
+  margin-top: var(--space-6);
+}
+
+.anno-image__legend-list {
+  list-style:     none;
+  padding:        0;
+  margin:         0;
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-3);
+}
+
+.anno-image__legend-item {
+  display:     flex;
+  align-items: flex-start;
+  gap:         var(--space-2);
+  font-size:   var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+/* Coloured dot mirrors the pin — same colour, same number */
+.anno-image__legend-dot {
+  flex-shrink:     0;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  width:           var(--space-3);   /* 24px */
+  height:          var(--space-3);
+  border-radius:   var(--radius-full);
+  font-family:     var(--font-heading);
+  font-size:       var(--text-xs);
+  font-weight:     var(--font-weight-bold);
+  line-height:     1;
+  color:           var(--color-text-on-accent);
+}
+
+.anno-image__legend-item--positive .anno-image__legend-dot {
+  background-color: var(--color-accent);
+}
+
+.anno-image__legend-item--negative .anno-image__legend-dot {
+  background-color: var(--color-error);
+}
+
+.anno-image__legend-text {
+  color: var(--color-text-secondary);
+}
+
+.anno-image__legend-text strong {
+  color:       var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* -------------------------------------------------------------------------
+   HOVER — open tooltip on pin hover for pointer devices
+   Gated behind (hover: hover) and (pointer: fine) so touch screens are
+   unaffected. Click toggle via aria-expanded still works independently.
+   ------------------------------------------------------------------------- */
+
+@media (hover: hover) and (pointer: fine) {
+  .anno-image__callout[data-pos$="-left"]:hover .anno-image__tooltip {
+    opacity:        1;
+    pointer-events: auto;
+    transform:      translateY(-50%) scale(1);
+  }
+
+  .anno-image__callout[data-pos$="-right"]:hover .anno-image__tooltip {
+    opacity:        1;
+    pointer-events: auto;
+    transform:      translateY(-50%) scale(1);
+  }
+
+  .anno-image__callout[data-pos$="-center"]:hover .anno-image__tooltip {
+    opacity:        1;
+    pointer-events: auto;
+    transform:      translateX(-50%) scale(1);
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   REDUCED MOTION
+   Tooltips still show/hide via opacity — only the scale is removed.
+   Transforms are fixed at their positioning-only values (no scale component).
+   These rules come last so equal-specificity selectors here override the
+   column-specific transform rules above.
+   ------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .anno-image__tooltip {
+    transition: opacity 150ms linear;
+  }
+
+  .anno-image__callout[data-pos$="-left"]  .anno-image__tooltip,
+  .anno-image__callout[data-pos$="-left"]  .anno-image__pin[aria-expanded="true"] + .anno-image__tooltip,
+  .anno-image__callout[data-pos$="-right"] .anno-image__tooltip,
+  .anno-image__callout[data-pos$="-right"] .anno-image__pin[aria-expanded="true"] + .anno-image__tooltip {
+    transform: translateY(-50%);
+  }
+
+  .anno-image__callout[data-pos$="-center"] .anno-image__tooltip,
+  .anno-image__callout[data-pos$="-center"] .anno-image__pin[aria-expanded="true"] + .anno-image__tooltip {
+    transform: translateX(-50%);
+  }
+
+  .anno-image__pin          { transition: none; }
+  .anno-image__pin--pulsing { animation:  none; }
+}
+
+
+/* =============================================================================
+   MOBILE MODAL
+   Centred overlay for pin annotations on touch screens (< 768px).
+   Desktop (768px+) continues to use the inline tooltip above.
+   ============================================================================= */
+
+@keyframes anno-panel-in {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
+  to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes anno-panel-out {
+  from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  to   { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
+}
+
+@keyframes anno-panel-fade-in {
+  from { opacity: 0; transform: translate(-50%, -50%); }
+  to   { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+@keyframes anno-panel-fade-out {
+  from { opacity: 1; transform: translate(-50%, -50%); }
+  to   { opacity: 0; transform: translate(-50%, -50%); }
+}
+
+@keyframes anno-backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes anno-backdrop-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.anno-modal {
+  position: fixed;
+  inset:    0;
+  z-index:  var(--z-modal);
+}
+
+.anno-modal[hidden] {
+  display: none;
+}
+
+/* Semi-transparent dark overlay — covers the full viewport behind the panel */
+.anno-modal__backdrop {
+  position:   fixed;
+  inset:      0;
+  background: color-mix(in srgb, var(--color-text-primary) 50%, transparent);
+  opacity:    0;
+  cursor:     default;
+}
+
+.anno-modal--open .anno-modal__backdrop {
+  animation: anno-backdrop-in 200ms ease-out both;
+}
+
+.anno-modal--closing .anno-modal__backdrop {
+  animation: anno-backdrop-out 150ms ease-in both;
+}
+
+/* Centred card — horizontally and vertically centred via translate */
+.anno-modal__panel {
+  position:       absolute;
+  top:            50%;
+  left:           50%;
+  width:          calc(100vw - var(--space-8));
+  max-width:      480px;
+  max-height:     calc(100vh - var(--space-8));
+  overflow-y:     auto;
+  background:     var(--color-bg);
+  border-radius:  var(--radius-lg);
+  box-shadow:     0 8px 32px rgba(0, 0, 0, 0.2);
+  padding:        var(--space-6);
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  text-align:     center;
+  opacity:        0;
+  transform:      translate(-50%, -50%) scale(0.95);
+}
+
+.anno-modal--open .anno-modal__panel {
+  animation: anno-panel-in 200ms ease-out both;
+}
+
+.anno-modal--closing .anno-modal__panel {
+  animation: anno-panel-out 150ms ease-in both;
+}
+
+.anno-modal__close {
+  position:        absolute;
+  top:             var(--space-3);
+  right:           var(--space-3);
+  min-width:       44px;
+  min-height:      44px;
+  width:           44px;
+  height:          44px;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  background:      none;
+  border:          none;
+  cursor:          pointer;
+  color:           var(--color-text-secondary);
+  font-size:       var(--text-2xl);
+  border-radius:   var(--radius-md);
+  line-height:     1;
+}
+
+.anno-modal__close:focus-visible {
+  outline:        2px solid var(--color-accent-accessible);
+  outline-offset: 2px;
+}
+
+.anno-modal__pin {
+  flex-shrink:     0;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  width:           var(--space-4);   /* 32px — matches the on-image pin */
+  height:          var(--space-4);
+  border-radius:   var(--radius-full);
+  font-family:     var(--font-heading);
+  font-size:       var(--text-xs);
+  font-weight:     var(--font-weight-bold);
+  line-height:     1;
+  color:           var(--color-text-on-accent);
+  /* close btn: top var(--space-3) + 44px tall = 68px from panel border.
+     content starts at var(--space-6) = 48px. extra margin needed: 20px. */
+  margin-top:      calc(44px + var(--space-3) - var(--space-6));
+  margin-bottom:   var(--space-4);
+}
+
+.anno-modal__pin--positive { background-color: var(--color-accent); }
+.anno-modal__pin--negative { background-color: var(--color-error); }
+
+.anno-modal__title {
+  font-family: var(--font-heading);
+  font-size:   var(--text-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-tight);
+  color:       var(--color-text-primary);
+  margin:      0 0 var(--space-3) 0;
+}
+
+.anno-modal__body {
+  font-family: var(--font-body);
+  font-size:   var(--text-base);
+  line-height: var(--leading-relaxed);
+  color:       var(--color-text-secondary);
+  margin:      0;
+  max-width:   48ch;
+}
+
+
+/* -------------------------------------------------------------------------
+   REDUCED MOTION — fade only, no scale transform
+   ------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .anno-modal--open .anno-modal__panel {
+    animation: anno-panel-fade-in 150ms linear both;
+  }
+
+  .anno-modal--closing .anno-modal__panel {
+    animation: anno-panel-fade-out 150ms linear both;
+  }
+}

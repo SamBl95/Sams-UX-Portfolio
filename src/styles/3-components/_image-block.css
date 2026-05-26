@@ -145,6 +145,39 @@
 
 
 /* -------------------------------------------------------------------------
+   PAIR — two figures side by side on desktop, stacked on mobile
+   ------------------------------------------------------------------------- */
+
+.image-pair {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-4);
+  margin-block:   var(--space-8);
+}
+
+.image-pair .image-block img {
+  aspect-ratio:  1 / 1;
+  object-fit:    cover;
+  border-radius: 0;
+}
+
+@media (min-width: 905px) {
+  .image-pair {
+    flex-direction: row;
+    align-items:    stretch;
+    gap:            var(--space-6);
+    margin-block:   var(--space-10);
+  }
+
+  .image-pair .image-block {
+    flex:      1;
+    max-width: none;
+    margin:    0;
+  }
+}
+
+
+/* -------------------------------------------------------------------------
    CAPTION — below the image in all variants
    ------------------------------------------------------------------------- */
 
@@ -155,4 +188,72 @@
   font-style:  italic;
   line-height: var(--leading-relaxed);
   color:       var(--color-text-secondary);
+}
+
+
+/* -------------------------------------------------------------------------
+   DECORATIVE — editorial illustrations and Undraw SVGs
+   No border radius so the illustration's own silhouette reads cleanly.
+   Constrained to 48% on desktop for standalone use. Inside .two-col the
+   grid column constrains width instead, so max-width is reset to none.
+   ------------------------------------------------------------------------- */
+
+.image-block--decorative {
+  margin-block:  var(--space-6);
+  margin-inline: auto;
+}
+
+.image-block--decorative img {
+  display:       block;
+  width:         100%;
+  height:        auto;
+  object-fit:    contain;
+  border-radius: 0;
+}
+
+@media (min-width: 905px) {
+  .image-block--decorative {
+    max-width:    48%;
+    margin-block: var(--space-8);
+  }
+}
+
+/* Grid column already constrains width — reset sizing but keep treatment */
+.two-col .image-block--decorative {
+  max-width:     none;
+  margin-inline: 0;
+  margin-block:  0;
+}
+
+
+/* -------------------------------------------------------------------------
+   DECORATIVE WIDE — wider horizontal illustrations (65% desktop)
+   Same treatment as --decorative; use when the illustration is landscape
+   and 48% feels too constrained.
+   ------------------------------------------------------------------------- */
+
+.image-block--decorative-wide {
+  margin-block:  var(--space-6);
+  margin-inline: auto;
+}
+
+.image-block--decorative-wide img {
+  display:       block;
+  width:         100%;
+  height:        auto;
+  object-fit:    contain;
+  border-radius: 0;
+}
+
+@media (min-width: 905px) {
+  .image-block--decorative-wide {
+    max-width:    65%;
+    margin-block: var(--space-8);
+  }
+}
+
+.two-col .image-block--decorative-wide {
+  max-width:     none;
+  margin-inline: 0;
+  margin-block:  0;
 }

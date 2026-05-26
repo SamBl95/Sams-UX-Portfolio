@@ -116,7 +116,10 @@
       "Bash(dir *)",
       "Skill(gsd:progress)",
       "Skill(gsd:new-milestone)",
-      "Bash(gsd-sdk query *)"
+      "Bash(gsd-sdk query *)",
+      "WebFetch(domain:www.samsux.co.uk)",
+      "Bash(Select-String -Path \"C:\\\\Users\\\\sambl\\\\OneDrive\\\\Documents\\\\my-portfolio-v2\\\\src\\\\pages\\\\case-studies\\\\i-exchange.html\" -Pattern \"script\")",
+      "Bash(Select-Object LineNumber, Line)"
     ]
   }
 }

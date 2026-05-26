@@ -35,7 +35,7 @@
   }
 
   .about-hero__inner {
-    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-10);
   }
 }
@@ -72,7 +72,7 @@
 
 .about-hero__portrait {
   width: min(320px, 100%);
-  margin: 0;
+  margin: 0 auto;
 }
 
 .about-hero__portrait img {
@@ -86,8 +86,15 @@
 
 @media (min-width: 905px) {
   .about-hero__portrait {
-    justify-self: end;
-    width: min(360px, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  .about-hero__portrait img {
+    width: min(480px, 100%);
   }
 }
 
@@ -178,7 +185,7 @@
   margin:                0;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 600px) {
   .about-principles {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap:                   var(--space-4);
@@ -253,7 +260,7 @@
   align-items:      center;
   min-height:       var(--space-6);
   padding:          var(--space-2) var(--space-3);
-  background-color: color-mix(in srgb, var(--color-surface) 70%, var(--color-bg));
+  background-color: var(--color-surface);
   border:           1px solid var(--color-border);
   border-left:      2px solid var(--color-accent);
   border-radius:    var(--radius-md);
@@ -318,7 +325,7 @@
     gap:                   var(--space-10);
   }
 
-.about-background .about-section__intro {
+  .about-background .about-section__intro {
     margin-bottom: 0;
   }
 
@@ -464,47 +471,73 @@
 
 
 /* -------------------------------------------------------------------------
-   CV CREDENTIAL
+   CV EDUCATION / CERTIFICATIONS GRID
    ------------------------------------------------------------------------- */
 
-.cv-credential {
-  display: grid;
+.cv-edu-grid {
+  display:        grid;
   grid-template-columns: 1fr;
-  gap: var(--space-4);
-  align-items: center;
-  margin-top: var(--space-6);
-  margin-bottom: var(--space-6);
+  gap:            var(--space-8);
+}
+
+@media (min-width: 905px) {
+  .cv-edu-grid {
+    grid-template-columns: 1fr 1fr;
+    gap:                   var(--space-10);
+  }
+}
+
+.cv-edu-grid__col {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-4);
+}
+
+.cv-edu-grid__col .about-section__heading {
+  margin-bottom: 0;
+}
+
+/* Suppress the 100vw full-bleed background and halve the padding
+   — the timeline component is designed for standalone sections,
+     not constrained grid columns */
+.cv-edu-grid__col .about-timeline__item {
+  padding-block: var(--space-3);
+}
+
+.cv-edu-grid__col .about-timeline__item::before {
+  display: none;
+}
+
+.cv-credential {
+  display:               grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap:                   var(--space-3);
+  align-items:           center;
 }
 
 .cv-credential__badge {
-  width: min(320px, 100%);
+  width:  var(--space-12); /* 96px */
   height: auto;
 }
 
 .cv-credential__body {
-  display: flex;
+  display:        flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-2);
+  align-items:    flex-start;
+  gap:            var(--space-2);
 }
 
 .cv-credential__title {
   font-family: var(--font-heading);
-  font-size: var(--text-xl);
+  font-size:   var(--text-xl);
   line-height: var(--leading-tight);
-  color: var(--color-text-primary);
+  color:       var(--color-text-primary);
 }
 
 .cv-credential__meta {
-  font-size: var(--text-base);
+  font-size:   var(--text-base);
   line-height: var(--leading-normal);
-  color: var(--color-text-secondary);
-}
-
-@media (min-width: 600px) {
-  .cv-credential {
-    grid-template-columns: auto minmax(0, 1fr);
-  }
+  color:       var(--color-text-secondary);
 }
 
 
