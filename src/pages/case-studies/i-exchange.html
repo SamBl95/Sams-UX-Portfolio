@@ -243,16 +243,22 @@
             <h3>What the heuristic analysis found</h3>
             <p>
               The heuristic review surfaced problems across every major area of the product.
-              On the homepage: a cluttered navigation bar, no audience filters, a wasted hero
-              section used only for decoration, and a communications list that mixed incident
-              alerts with general updates, making both harder to read.
+              Three patterns explained most of the friction users were describing.
             </p>
-            <p>
-              In search: the engine used exact-match logic with no tolerance for spelling errors,
-              no natural language interpretation, and no autocorrect. A single typo returned zero
-              results with no suggestions. Article metadata in search results was limited to
-              title and ID, not enough to judge relevance before clicking.
-            </p>
+            <ol class="cs-insight-list" aria-label="Heuristic analysis findings">
+              <li class="cs-insight-list__item">
+                <h4 class="cs-insight-list__title">The homepage lacked hierarchy</h4>
+                <p class="cs-insight-list__body">A cluttered navigation bar, no audience filters, a decorative hero section, and a mixed communications list made important information harder to scan than it needed to be.</p>
+              </li>
+              <li class="cs-insight-list__item">
+                <h4 class="cs-insight-list__title">Search punished small mistakes</h4>
+                <p class="cs-insight-list__body">The engine used exact-match logic with no spelling tolerance, natural language interpretation, autocorrect, suggestions, or fallback result when a query failed.</p>
+              </li>
+              <li class="cs-insight-list__item">
+                <h4 class="cs-insight-list__title">Results did not support confident decisions</h4>
+                <p class="cs-insight-list__body">Article metadata was limited to title and ID, so colleagues had to open articles before judging relevance. Role and audience context were invisible at the moment of choice.</p>
+              </li>
+            </ol>
 
             <figure class="cs-annotated-image">
               <div class="cs-annotated-image__frame">
@@ -297,15 +303,24 @@
               <figcaption class="image-block__caption">Old article page: collapsed accordions hid content from the search index, meaning users had to manually expand every section.</figcaption>
             </figure>
 
-            <h3>Research in practice</h3>
-            <p>
-              Alongside heuristics, the team ran interviews with colleagues across branch and contact centre. The notes below illustrate the depth of individual sessions — each surfacing pain points that survey data couldn't fully capture.
-            </p>
+            <div class="cs-two-col cs-two-col--flip">
+              <div class="cs-two-col__content">
+                <h3 class="cs-two-col__heading">Research in practice</h3>
+                <div class="cs-two-col__body">
+                  <p>
+                    Alongside heuristics, the team ran interviews with colleagues across branch and contact centre. The notes captured what survey data could not: where people hesitated, what they worked around, and why trust in search had eroded.
+                  </p>
+                  <p class="cs-two-col__callout">
+                    The strongest sessions exposed the cost of uncertainty mid-customer-call, not just the inconvenience of a weak search result.
+                  </p>
+                </div>
+              </div>
 
-            <figure class="image-block image-block--portrait">
-              <img src="/assets/images/i-exchange/i-Exchange%20-%20Jennifer%20notes.jpg" alt="Handwritten research interview notes from a session with Jennifer, a Santander frontline colleague, documenting her experience with i-Exchange search and navigation pain points" loading="lazy" />
-              <figcaption class="image-block__caption">Jennifer's interview: search frustrations and the cost of losing time mid-customer-call.</figcaption>
-            </figure>
+              <figure class="cs-two-col__media">
+                <img src="/assets/images/i-exchange/i-Exchange%20-%20Jennifer%20notes.jpg" alt="Handwritten research interview notes from a session with Jennifer, a Santander frontline colleague, documenting her experience with i-Exchange search and navigation pain points" loading="lazy" />
+                <figcaption class="cs-two-col__caption">Jennifer's interview: search frustrations and the cost of losing time mid-customer-call.</figcaption>
+              </figure>
+            </div>
 
             <figure class="image-block image-block--portrait">
               <img src="/assets/images/i-exchange/i-Exchange%20-%20Leah%20notes.jpg" alt="Research interview notes from a session with Leah, a Santander branch colleague, documenting her experience with audience filters and content relevance on i-Exchange" loading="lazy" />
@@ -343,10 +358,10 @@
             </p>
           </div>
 
-          <blockquote class="cs-callout" aria-label="Problem statement">
-            <p class="cs-callout__text">
-              "i-Exchange is not effectively providing colleagues with the information they need
-              to carry out their work, preventing customers from receiving the support they need."
+          <blockquote class="cs-statement" aria-label="Problem statement">
+            <p class="cs-statement__eyebrow">Problem statement</p>
+            <p class="cs-statement__text">
+              i-Exchange was not giving colleagues the information they needed to do their jobs, which meant customers were not getting the support they needed.
             </p>
           </blockquote>
 

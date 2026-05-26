@@ -1,0 +1,126 @@
+/* =============================================================================
+   CS TWO COLUMN
+   Editorial case study layout for pairing narrative copy with one supporting
+   visual. Use `cs-two-col--flip` to place media left and text right on desktop.
+
+   Example:
+   <div class="cs-two-col cs-two-col--flip">
+     <div class="cs-two-col__content">
+       <h3 class="cs-two-col__heading">Research in practice</h3>
+       <div class="cs-two-col__body">
+         <p>Short narrative copy.</p>
+       </div>
+     </div>
+     <figure class="cs-two-col__media">
+       <img src="..." alt="..." loading="lazy" />
+       <figcaption class="cs-two-col__caption">Optional caption.</figcaption>
+     </figure>
+   </div>
+   ============================================================================= */
+
+.cs-two-col {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-6);
+  margin-block:   var(--space-10);
+}
+
+.cs-two-col__content {
+  order:     1;
+  max-width: 64ch;
+}
+
+.cs-two-col__media {
+  order:  2;
+  margin: 0;
+}
+
+.cs-two-col .cs-two-col__heading {
+  font-family:   var(--font-heading);
+  font-size:     var(--text-xl);
+  font-weight:   var(--font-weight-semibold);
+  line-height:   var(--leading-tight);
+  color:         var(--color-text-primary);
+  margin:        0 0 var(--space-4) 0;
+}
+
+.cs-two-col .cs-two-col__body {
+  color: var(--color-text-secondary);
+}
+
+.cs-two-col .cs-two-col__body :where(p, ul, ol) {
+  margin-bottom: var(--space-4);
+}
+
+.cs-two-col .cs-two-col__body :where(p, li) {
+  font-size:   var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+.cs-two-col .cs-two-col__body :where(ul, ol) {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-2);
+  padding-left:   var(--space-5);
+}
+
+.cs-two-col .cs-two-col__body :last-child {
+  margin-bottom: 0;
+}
+
+.cs-two-col .cs-two-col__callout {
+  border-left:  2px solid var(--color-accent);
+  padding-left: var(--space-4);
+  color:        var(--color-text-primary);
+  font-style:   italic;
+}
+
+.cs-two-col__media img {
+  display:       block;
+  width:         100%;
+  height:        auto;
+  object-fit:    contain;
+  border-radius: var(--radius-lg);
+}
+
+.cs-two-col__caption {
+  display:     block;
+  margin-top:  var(--space-2);
+  font-size:   var(--text-sm);
+  font-style:  italic;
+  line-height: var(--leading-relaxed);
+  color:       var(--color-text-secondary);
+}
+
+@media (min-width: 905px) {
+  .cs-two-col {
+    display:               grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap:                   var(--space-10);
+    align-items:           center;
+    margin-block:          var(--space-12);
+  }
+
+  .cs-two-col__content,
+  .cs-two-col__media {
+    order: initial;
+  }
+
+  .cs-two-col--flip .cs-two-col__content {
+    order: 2;
+  }
+
+  .cs-two-col--flip .cs-two-col__media {
+    order: 1;
+  }
+
+  .cs-two-col .cs-two-col__heading {
+    font-size: var(--text-2xl);
+  }
+}
+
+@media (min-width: 1240px) {
+  .cs-two-col {
+    gap: var(--space-12);
+  }
+}
