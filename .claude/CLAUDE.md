@@ -38,6 +38,14 @@ Colours:
 Use `--color-accent-accessible` for accent foreground text and focus outlines.
 Use `--color-text-on-accent` for text on teal backgrounds.
 
+Semantic feedback tokens live in `src/styles/1-settings/_variables.css`:
+- Success: `--color-feedback-success-bg/border/text`
+- Error: `--color-feedback-error-bg/border/text`
+- Warning: `--color-feedback-warning-bg/border/text`
+- Attention: `--color-feedback-attention-bg/border/text`
+
+Use these for validation, alerts, callouts, annotations, notifications, and status UI instead of one-off colours.
+
 ## Fonts
 - `--font-heading` Fraunces — h1–h4 only, optical sizing enabled
 - `--font-body` Urbanist — all body and UI text
@@ -94,10 +102,13 @@ Never copy nav or footer markup inline — always use the partial.
 
 ## Case study components
 
-**Annotated image system:** `src/anno-image.js` + `_annotated-image.css`
-- Markup: `anno-image > anno-image__frame > img + anno-image__callout[data-pos][--positive/--negative] > anno-image__pin + anno-image__tooltip`
-- Add `<script type="module" src="/src/anno-image.js">` to any page using this component
+**Annotated image system:** `src/cs-annotated-image.js` + `_cs-annotated-image.css`
+- Markup: `figure.cs-annotated-image > .cs-annotated-image__frame > img.cs-annotated-image__img + .cs-annotated-image__callout[data-pos][--positive/--negative] > button.cs-annotated-image__pin + .cs-annotated-image__tooltip`
+- Add `<script type="module" src="/src/cs-annotated-image.js">` to any page using this component
 - Nine positions: `top/middle/bottom` × `left/center/right`
+- Desktop 905px+: inline tooltip appears on hover or keyboard focus only; click never creates sticky state
+- Mobile / burger breakpoint <905px: tap opens the shared modal, backdrop/close/Escape dismiss, focus returns to the pin
+- No generated legend/key; narrative copy should reference annotation numbers directly
 
 **Decorative image variants:** `_image-block.css`
 - `image-block--decorative` — standard illustrations, max 48% desktop

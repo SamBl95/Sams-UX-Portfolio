@@ -1,10 +1,9 @@
 /* =============================================================================
    ANNOTATED IMAGE
    Full-width functional image with interactive numbered callout pins.
-   Positive callouts (--color-accent teal) mark improvements or strengths.
-   Negative callouts (--color-error red)  mark problems or issues.
+   Positive callouts use feedback success tokens for improvements.
+   Negative callouts use feedback error tokens for problems or issues.
    Pin numbers are driven by CSS counter — no number markup needed.
-   Legend is auto-generated from tooltip content by anno-image.js.
    ============================================================================= */
 
 
@@ -12,12 +11,12 @@
    FIGURE WRAPPER
    ------------------------------------------------------------------------- */
 
-.anno-image {
+.cs-annotated-image {
   margin-block: var(--space-8);
 }
 
 @media (min-width: 905px) {
-  .anno-image {
+  .cs-annotated-image {
     margin-block: var(--space-10);
   }
 }
@@ -29,7 +28,7 @@
    line-height: 0 removes the default gap beneath an inline-block <img>.
    ------------------------------------------------------------------------- */
 
-.anno-image__frame {
+.cs-annotated-image__frame {
   position:      relative;
   display:       block;
   counter-reset: callout;
@@ -41,7 +40,7 @@
    IMAGE — full-width, functional screenshots and wireframes
    ------------------------------------------------------------------------- */
 
-.anno-image__img {
+.cs-annotated-image__img {
   display:       block;
   width:         100%;
   height:        auto;
@@ -57,7 +56,7 @@
    No z-index on the callout itself — only the tooltip carries z-index.
    ------------------------------------------------------------------------- */
 
-.anno-image__callout {
+.cs-annotated-image__callout {
   position:  absolute;
   width:     var(--space-4);   /* 32px */
   height:    var(--space-4);   /* 32px */
@@ -70,15 +69,15 @@
    Percentage values keep pins proportional to any image width or height.
    ------------------------------------------------------------------------- */
 
-.anno-image__callout[data-pos="top-left"]      { top: 12%; left: 12%; }
-.anno-image__callout[data-pos="top-center"]    { top: 12%; left: 50%; }
-.anno-image__callout[data-pos="top-right"]     { top: 12%; left: 88%; }
-.anno-image__callout[data-pos="middle-left"]   { top: 50%; left: 12%; }
-.anno-image__callout[data-pos="middle-center"] { top: 50%; left: 50%; }
-.anno-image__callout[data-pos="middle-right"]  { top: 50%; left: 88%; }
-.anno-image__callout[data-pos="bottom-left"]   { top: 88%; left: 12%; }
-.anno-image__callout[data-pos="bottom-center"] { top: 88%; left: 50%; }
-.anno-image__callout[data-pos="bottom-right"]  { top: 88%; left: 88%; }
+.cs-annotated-image__callout[data-pos="top-left"]      { top: 12%; left: 12%; }
+.cs-annotated-image__callout[data-pos="top-center"]    { top: 12%; left: 50%; }
+.cs-annotated-image__callout[data-pos="top-right"]     { top: 12%; left: 88%; }
+.cs-annotated-image__callout[data-pos="middle-left"]   { top: 50%; left: 12%; }
+.cs-annotated-image__callout[data-pos="middle-center"] { top: 50%; left: 50%; }
+.cs-annotated-image__callout[data-pos="middle-right"]  { top: 50%; left: 88%; }
+.cs-annotated-image__callout[data-pos="bottom-left"]   { top: 88%; left: 12%; }
+.cs-annotated-image__callout[data-pos="bottom-center"] { top: 88%; left: 50%; }
+.cs-annotated-image__callout[data-pos="bottom-right"]  { top: 88%; left: 88%; }
 
 
 /* -------------------------------------------------------------------------
@@ -88,7 +87,7 @@
    ::after is a transparent expanded hit area (44px minimum touch target).
    ------------------------------------------------------------------------- */
 
-.anno-image__pin {
+.cs-annotated-image__pin {
   counter-increment: callout;
   position:          relative;
   display:           flex;
@@ -106,11 +105,11 @@
   transition:        transform var(--transition-fast);
 }
 
-.anno-image__pin::before {
+.cs-annotated-image__pin::before {
   content: counter(callout);
 }
 
-.anno-image__pin::after {
+.cs-annotated-image__pin::after {
   content:       '';
   position:      absolute;
   inset:         -6px;   /* 32 + 12 = 44px touch target */
@@ -118,46 +117,30 @@
 }
 
 /* Positive sentiment — teal */
-.anno-image__callout--positive .anno-image__pin {
-  background-color: var(--color-accent);
+.cs-annotated-image__callout--positive .cs-annotated-image__pin {
+  background-color: var(--color-feedback-success-border);
   color:            var(--color-text-on-accent);
 }
 
 /* Negative sentiment — red */
-.anno-image__callout--negative .anno-image__pin {
-  background-color: var(--color-error);
+.cs-annotated-image__callout--negative .cs-annotated-image__pin {
+  background-color: var(--color-feedback-error-border);
   color:            var(--color-text-on-accent);
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .anno-image__pin:hover {
+@media (min-width: 905px) and (hover: hover) and (pointer: fine) {
+  .cs-annotated-image__pin:hover {
     transform: scale(1.15);
   }
 }
 
-.anno-image__pin:active {
+.cs-annotated-image__pin:active {
   transform: scale(0.93);
 }
 
-.anno-image__pin:focus-visible {
+.cs-annotated-image__pin:focus-visible {
   outline:        2px solid var(--color-accent-accessible);
   outline-offset: 2px;
-}
-
-
-/* -------------------------------------------------------------------------
-   PIN PULSE — one-shot animation fired when the user clicks a legend item.
-   GPU-safe (transform only). JS adds the class, removes it on animationend.
-   ------------------------------------------------------------------------- */
-
-@keyframes anno-pin-pulse {
-  0%   { transform: scale(1);   }
-  40%  { transform: scale(1.3); }
-  100% { transform: scale(1);   }
-}
-
-.anno-image__pin--pulsing {
-  animation: anno-pin-pulse 400ms var(--ease-out-quint) 1;
 }
 
 
@@ -168,11 +151,12 @@
    pointer-events: none in the hidden state prevents invisible click blocking.
    ------------------------------------------------------------------------- */
 
-.anno-image__tooltip {
+.cs-annotated-image__tooltip {
   position:       absolute;
   max-width:      240px;
   padding:        var(--space-4);
-  background:     var(--color-surface);
+  background:     var(--color-bg);
+  border:         1px solid var(--color-feedback-attention-border);
   border-radius:  var(--radius-lg);
   box-shadow:     0 2px 8px var(--color-border);
   pointer-events: none;
@@ -181,21 +165,29 @@
   transition:     opacity 150ms var(--ease-out), transform 150ms var(--ease-out);
 }
 
-@media (min-width: 768px) {
-  .anno-image__tooltip {
+@media (min-width: 905px) {
+  .cs-annotated-image__tooltip {
     min-width: 280px;
     max-width: 360px;
   }
 }
 
-/* Positive — teal full border */
-.anno-image__callout--positive .anno-image__tooltip {
-  border: 2px solid var(--color-accent);
+@media (max-width: 904px) {
+  .cs-annotated-image__tooltip {
+    display: none;
+  }
 }
 
-/* Negative — red full border */
-.anno-image__callout--negative .anno-image__tooltip {
-  border: 2px solid var(--color-error);
+/* Positive — success border */
+.cs-annotated-image__callout--positive .cs-annotated-image__tooltip {
+  background-color: var(--color-feedback-success-bg);
+  border-color:     var(--color-feedback-success-border);
+}
+
+/* Negative — error border */
+.cs-annotated-image__callout--negative .cs-annotated-image__tooltip {
+  background-color: var(--color-feedback-error-bg);
+  border-color:     var(--color-feedback-error-border);
 }
 
 
@@ -206,17 +198,17 @@
    $="-center" matches top-center, middle-center, bottom-center
    ------------------------------------------------------------------------- */
 
-.anno-image__callout[data-pos$="-left"] .anno-image__tooltip {
+.cs-annotated-image__callout[data-pos$="-left"] .cs-annotated-image__tooltip {
   left: calc(100% + var(--space-2));
   top:  50%;
 }
 
-.anno-image__callout[data-pos$="-right"] .anno-image__tooltip {
+.cs-annotated-image__callout[data-pos$="-right"] .cs-annotated-image__tooltip {
   right: calc(100% + var(--space-2));
   top:   50%;
 }
 
-.anno-image__callout[data-pos$="-center"] .anno-image__tooltip {
+.cs-annotated-image__callout[data-pos$="-center"] .cs-annotated-image__tooltip {
   top:  calc(100% + var(--space-2));
   left: 50%;
 }
@@ -225,46 +217,26 @@
 /* -------------------------------------------------------------------------
    TOOLTIP TRANSFORMS — hidden and open states per column group
    The positioning offset (translateY / translateX) must combine with the
-   scale animation in a single transform declaration. The open state is
-   driven purely by aria-expanded="true" on the sibling button — no JS
-   class toggling required for the tooltip itself.
+   scale animation in a single transform declaration.
    ------------------------------------------------------------------------- */
 
 /* Hidden */
-.anno-image__callout[data-pos$="-left"]  .anno-image__tooltip,
-.anno-image__callout[data-pos$="-right"] .anno-image__tooltip {
+.cs-annotated-image__callout[data-pos$="-left"]  .cs-annotated-image__tooltip,
+.cs-annotated-image__callout[data-pos$="-right"] .cs-annotated-image__tooltip {
   transform: translateY(-50%) scale(0.95);
 }
 
-.anno-image__callout[data-pos$="-center"] .anno-image__tooltip {
+.cs-annotated-image__callout[data-pos$="-center"] .cs-annotated-image__tooltip {
   transform: translateX(-50%) scale(0.95);
 }
 
-/* Open — shared opacity and pointer-events */
-.anno-image__pin[aria-expanded="true"] + .anno-image__tooltip {
-  opacity:        1;
-  pointer-events: auto;
-}
-
-/* Open — left and right columns */
-.anno-image__callout[data-pos$="-left"]  .anno-image__pin[aria-expanded="true"] + .anno-image__tooltip,
-.anno-image__callout[data-pos$="-right"] .anno-image__pin[aria-expanded="true"] + .anno-image__tooltip {
-  transform: translateY(-50%) scale(1);
-}
-
-/* Open — center column */
-.anno-image__callout[data-pos$="-center"] .anno-image__pin[aria-expanded="true"] + .anno-image__tooltip {
-  transform: translateX(-50%) scale(1);
-}
-
-
 /* -------------------------------------------------------------------------
    TOOLTIP CONTENT
-   Light surface — positive titles in accent teal, negative in error red.
+   Light status surfaces — titles inherit semantic feedback colours.
    Body text uses --color-text-secondary for hierarchy.
    ------------------------------------------------------------------------- */
 
-.anno-image__tooltip-title {
+.cs-annotated-image__tooltip-title {
   display:     block;
   font-family: var(--font-heading);
   font-size:   var(--text-sm);
@@ -272,15 +244,15 @@
   margin:      0 0 var(--space-2) 0;
 }
 
-.anno-image__callout--positive .anno-image__tooltip-title {
-  color: var(--color-accent);
+.cs-annotated-image__callout--positive .cs-annotated-image__tooltip-title {
+  color: var(--color-feedback-success-text);
 }
 
-.anno-image__callout--negative .anno-image__tooltip-title {
-  color: var(--color-error);
+.cs-annotated-image__callout--negative .cs-annotated-image__tooltip-title {
+  color: var(--color-feedback-error-text);
 }
 
-.anno-image__tooltip-body {
+.cs-annotated-image__tooltip-body {
   font-family: var(--font-body);
   font-size:   var(--text-xs);
   line-height: var(--leading-relaxed);
@@ -290,83 +262,58 @@
 
 
 /* -------------------------------------------------------------------------
-   LEGEND — receives the auto-generated list from anno-image.js
+   CAPTION
    ------------------------------------------------------------------------- */
 
-.anno-image__legend {
-  margin-top: var(--space-6);
-}
-
-.anno-image__legend-list {
-  list-style:     none;
-  padding:        0;
-  margin:         0;
-  display:        flex;
-  flex-direction: column;
-  gap:            var(--space-3);
-}
-
-.anno-image__legend-item {
-  display:     flex;
-  align-items: flex-start;
-  gap:         var(--space-2);
+.cs-annotated-image__caption {
+  display:     block;
+  margin-top:  var(--space-2);
   font-size:   var(--text-sm);
+  font-style:  italic;
   line-height: var(--leading-relaxed);
-}
-
-/* Coloured dot mirrors the pin — same colour, same number */
-.anno-image__legend-dot {
-  flex-shrink:     0;
-  display:         flex;
-  align-items:     center;
-  justify-content: center;
-  width:           var(--space-3);   /* 24px */
-  height:          var(--space-3);
-  border-radius:   var(--radius-full);
-  font-family:     var(--font-heading);
-  font-size:       var(--text-xs);
-  font-weight:     var(--font-weight-bold);
-  line-height:     1;
-  color:           var(--color-text-on-accent);
-}
-
-.anno-image__legend-item--positive .anno-image__legend-dot {
-  background-color: var(--color-accent);
-}
-
-.anno-image__legend-item--negative .anno-image__legend-dot {
-  background-color: var(--color-error);
-}
-
-.anno-image__legend-text {
-  color: var(--color-text-secondary);
-}
-
-.anno-image__legend-text strong {
-  color:       var(--color-text-primary);
-  font-weight: var(--font-weight-semibold);
+  color:       var(--color-text-secondary);
 }
 
 /* -------------------------------------------------------------------------
-   HOVER — open tooltip on pin hover for pointer devices
-   Gated behind (hover: hover) and (pointer: fine) so touch screens are
-   unaffected. Click toggle via aria-expanded still works independently.
+   DESKTOP TOOLTIP TRIGGERS
+   Desktop and larger screens use hover and keyboard focus-visible only.
+   Click does not create sticky tooltip state.
    ------------------------------------------------------------------------- */
 
-@media (hover: hover) and (pointer: fine) {
-  .anno-image__callout[data-pos$="-left"]:hover .anno-image__tooltip {
+@media (min-width: 905px) {
+  .cs-annotated-image__callout[data-pos$="-left"] .cs-annotated-image__pin:focus-visible + .cs-annotated-image__tooltip {
     opacity:        1;
     pointer-events: auto;
     transform:      translateY(-50%) scale(1);
   }
 
-  .anno-image__callout[data-pos$="-right"]:hover .anno-image__tooltip {
+  .cs-annotated-image__callout[data-pos$="-right"] .cs-annotated-image__pin:focus-visible + .cs-annotated-image__tooltip {
     opacity:        1;
     pointer-events: auto;
     transform:      translateY(-50%) scale(1);
   }
 
-  .anno-image__callout[data-pos$="-center"]:hover .anno-image__tooltip {
+  .cs-annotated-image__callout[data-pos$="-center"] .cs-annotated-image__pin:focus-visible + .cs-annotated-image__tooltip {
+    opacity:        1;
+    pointer-events: auto;
+    transform:      translateX(-50%) scale(1);
+  }
+}
+
+@media (min-width: 905px) and (hover: hover) and (pointer: fine) {
+  .cs-annotated-image__callout[data-pos$="-left"]:hover .cs-annotated-image__tooltip {
+    opacity:        1;
+    pointer-events: auto;
+    transform:      translateY(-50%) scale(1);
+  }
+
+  .cs-annotated-image__callout[data-pos$="-right"]:hover .cs-annotated-image__tooltip {
+    opacity:        1;
+    pointer-events: auto;
+    transform:      translateY(-50%) scale(1);
+  }
+
+  .cs-annotated-image__callout[data-pos$="-center"]:hover .cs-annotated-image__tooltip {
     opacity:        1;
     pointer-events: auto;
     transform:      translateX(-50%) scale(1);
@@ -383,75 +330,71 @@
    ------------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
-  .anno-image__tooltip {
+  .cs-annotated-image__tooltip {
     transition: opacity 150ms linear;
   }
 
-  .anno-image__callout[data-pos$="-left"]  .anno-image__tooltip,
-  .anno-image__callout[data-pos$="-left"]  .anno-image__pin[aria-expanded="true"] + .anno-image__tooltip,
-  .anno-image__callout[data-pos$="-right"] .anno-image__tooltip,
-  .anno-image__callout[data-pos$="-right"] .anno-image__pin[aria-expanded="true"] + .anno-image__tooltip {
+  .cs-annotated-image__callout[data-pos$="-left"]  .cs-annotated-image__tooltip,
+  .cs-annotated-image__callout[data-pos$="-right"] .cs-annotated-image__tooltip {
     transform: translateY(-50%);
   }
 
-  .anno-image__callout[data-pos$="-center"] .anno-image__tooltip,
-  .anno-image__callout[data-pos$="-center"] .anno-image__pin[aria-expanded="true"] + .anno-image__tooltip {
+  .cs-annotated-image__callout[data-pos$="-center"] .cs-annotated-image__tooltip {
     transform: translateX(-50%);
   }
 
-  .anno-image__pin          { transition: none; }
-  .anno-image__pin--pulsing { animation:  none; }
+  .cs-annotated-image__pin          { transition: none; }
 }
 
 
 /* =============================================================================
    MOBILE MODAL
-   Centred overlay for pin annotations on touch screens (< 768px).
-   Desktop (768px+) continues to use the inline tooltip above.
+   Centred overlay for pin annotations on burger-breakpoint screens (< 905px).
+   Desktop (905px+) uses the inline tooltip only.
    ============================================================================= */
 
-@keyframes anno-panel-in {
+@keyframes cs-annotated-image-panel-in {
   from { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
   to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
 
-@keyframes anno-panel-out {
+@keyframes cs-annotated-image-panel-out {
   from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
   to   { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
 }
 
-@keyframes anno-panel-fade-in {
+@keyframes cs-annotated-image-panel-fade-in {
   from { opacity: 0; transform: translate(-50%, -50%); }
   to   { opacity: 1; transform: translate(-50%, -50%); }
 }
 
-@keyframes anno-panel-fade-out {
+@keyframes cs-annotated-image-panel-fade-out {
   from { opacity: 1; transform: translate(-50%, -50%); }
   to   { opacity: 0; transform: translate(-50%, -50%); }
 }
 
-@keyframes anno-backdrop-in {
+@keyframes cs-annotated-image-backdrop-in {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
 
-@keyframes anno-backdrop-out {
+@keyframes cs-annotated-image-backdrop-out {
   from { opacity: 1; }
   to   { opacity: 0; }
 }
 
-.anno-modal {
+.cs-annotated-image-modal {
   position: fixed;
   inset:    0;
   z-index:  var(--z-modal);
 }
 
-.anno-modal[hidden] {
+.cs-annotated-image-modal[hidden] {
   display: none;
 }
 
 /* Semi-transparent dark overlay — covers the full viewport behind the panel */
-.anno-modal__backdrop {
+.cs-annotated-image-modal__backdrop {
   position:   fixed;
   inset:      0;
   background: color-mix(in srgb, var(--color-text-primary) 50%, transparent);
@@ -459,16 +402,16 @@
   cursor:     default;
 }
 
-.anno-modal--open .anno-modal__backdrop {
-  animation: anno-backdrop-in 200ms ease-out both;
+.cs-annotated-image-modal--open .cs-annotated-image-modal__backdrop {
+  animation: cs-annotated-image-backdrop-in 200ms var(--ease-out) both;
 }
 
-.anno-modal--closing .anno-modal__backdrop {
-  animation: anno-backdrop-out 150ms ease-in both;
+.cs-annotated-image-modal--closing .cs-annotated-image-modal__backdrop {
+  animation: cs-annotated-image-backdrop-out 150ms var(--ease-out) both;
 }
 
 /* Centred card — horizontally and vertically centred via translate */
-.anno-modal__panel {
+.cs-annotated-image-modal__panel {
   position:       absolute;
   top:            50%;
   left:           50%;
@@ -478,7 +421,7 @@
   overflow-y:     auto;
   background:     var(--color-bg);
   border-radius:  var(--radius-lg);
-  box-shadow:     0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow:     0 8px 32px color-mix(in srgb, var(--color-text-primary) 20%, transparent);
   padding:        var(--space-6);
   display:        flex;
   flex-direction: column;
@@ -488,15 +431,15 @@
   transform:      translate(-50%, -50%) scale(0.95);
 }
 
-.anno-modal--open .anno-modal__panel {
-  animation: anno-panel-in 200ms ease-out both;
+.cs-annotated-image-modal--open .cs-annotated-image-modal__panel {
+  animation: cs-annotated-image-panel-in 200ms var(--ease-out) both;
 }
 
-.anno-modal--closing .anno-modal__panel {
-  animation: anno-panel-out 150ms ease-in both;
+.cs-annotated-image-modal--closing .cs-annotated-image-modal__panel {
+  animation: cs-annotated-image-panel-out 150ms var(--ease-out) both;
 }
 
-.anno-modal__close {
+.cs-annotated-image-modal__close {
   position:        absolute;
   top:             var(--space-3);
   right:           var(--space-3);
@@ -516,12 +459,12 @@
   line-height:     1;
 }
 
-.anno-modal__close:focus-visible {
+.cs-annotated-image-modal__close:focus-visible {
   outline:        2px solid var(--color-accent-accessible);
   outline-offset: 2px;
 }
 
-.anno-modal__pin {
+.cs-annotated-image-modal__pin {
   flex-shrink:     0;
   display:         flex;
   align-items:     center;
@@ -540,10 +483,10 @@
   margin-bottom:   var(--space-4);
 }
 
-.anno-modal__pin--positive { background-color: var(--color-accent); }
-.anno-modal__pin--negative { background-color: var(--color-error); }
+.cs-annotated-image-modal__pin--positive { background-color: var(--color-feedback-success-border); }
+.cs-annotated-image-modal__pin--negative { background-color: var(--color-feedback-error-border); }
 
-.anno-modal__title {
+.cs-annotated-image-modal__title {
   font-family: var(--font-heading);
   font-size:   var(--text-2xl);
   font-weight: var(--font-weight-semibold);
@@ -552,7 +495,7 @@
   margin:      0 0 var(--space-3) 0;
 }
 
-.anno-modal__body {
+.cs-annotated-image-modal__body {
   font-family: var(--font-body);
   font-size:   var(--text-base);
   line-height: var(--leading-relaxed);
@@ -567,11 +510,11 @@
    ------------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
-  .anno-modal--open .anno-modal__panel {
-    animation: anno-panel-fade-in 150ms linear both;
+  .cs-annotated-image-modal--open .cs-annotated-image-modal__panel {
+    animation: cs-annotated-image-panel-fade-in 150ms linear both;
   }
 
-  .anno-modal--closing .anno-modal__panel {
-    animation: anno-panel-fade-out 150ms linear both;
+  .cs-annotated-image-modal--closing .cs-annotated-image-modal__panel {
+    animation: cs-annotated-image-panel-fade-out 150ms linear both;
   }
 }

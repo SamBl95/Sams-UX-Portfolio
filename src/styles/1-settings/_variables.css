@@ -31,6 +31,32 @@
 
 
   /* ---------------------------------------------------------------------------
+     FEEDBACK COLOURS — semantic status layer
+     Reusable for validation, alerts, annotations, notifications, and callouts.
+     Success inherits the portfolio teal system; error extends the existing
+     red into accessible light/dark roles; warning uses a muted warm ochre that
+     sits inside the warm editorial palette; attention uses the neutral surface
+     system for non-urgent information.
+     --------------------------------------------------------------------------- */
+
+  --color-feedback-success-bg:      var(--color-accent-light);
+  --color-feedback-success-border:  var(--color-accent);
+  --color-feedback-success-text:    var(--color-accent-accessible);
+
+  --color-feedback-error-bg:        #f4e4df;
+  --color-feedback-error-border:    var(--color-error);
+  --color-feedback-error-text:      #8f2d1f;
+
+  --color-feedback-warning-bg:      #f1e5c8;
+  --color-feedback-warning-border:  #8a6a2a;
+  --color-feedback-warning-text:    #5f4518;
+
+  --color-feedback-attention-bg:    var(--color-surface);
+  --color-feedback-attention-border: var(--color-border);
+  --color-feedback-attention-text:  var(--color-text-primary);
+
+
+  /* ---------------------------------------------------------------------------
      TYPOGRAPHY — Font family
      --------------------------------------------------------------------------- */
 
