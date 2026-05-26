@@ -25,39 +25,8 @@
 
 
 /* -------------------------------------------------------------------------
-   OVERLAY + PANEL KEYFRAMES
-   Overlay covers viewport below the nav bar. Panel fades + scales from top.
+   OVERLAY — dims page content behind the open sheet
    ------------------------------------------------------------------------- */
-
-@keyframes nav-panel-in {
-  from { opacity: 0; transform: scaleY(0.98); }
-  to   { opacity: 1; transform: scaleY(1); }
-}
-
-@keyframes nav-panel-out {
-  from { opacity: 1; transform: scaleY(1); }
-  to   { opacity: 0; transform: scaleY(0.98); }
-}
-
-@keyframes nav-panel-fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes nav-panel-fade-out {
-  from { opacity: 1; }
-  to   { opacity: 0; }
-}
-
-@keyframes nav-backdrop-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes nav-backdrop-out {
-  from { opacity: 1; }
-  to   { opacity: 0; }
-}
 
 .nav__overlay {
   position:       fixed;
@@ -66,22 +35,16 @@
   right:          0;
   bottom:         0;
   z-index:        var(--z-overlay);
-  background:     color-mix(in srgb, var(--color-text-primary) 50%, transparent);
+  background:     rgba(0, 0, 0, 0.5);
   opacity:        0;
   pointer-events: none;
-  visibility:     hidden;
+  transition:     opacity 200ms ease-in;
 }
 
 .nav--open .nav__overlay {
-  visibility:     visible;
+  opacity:        1;
   pointer-events: auto;
-  animation:      nav-backdrop-in 200ms ease-out both;
-}
-
-.nav--closing .nav__overlay {
-  visibility:     visible;
-  pointer-events: none;
-  animation:      nav-backdrop-out 150ms ease-in both;
+  transition:     opacity 250ms ease-out;
 }
 
 
@@ -182,71 +145,82 @@
 
 
 /* -------------------------------------------------------------------------
-   MODAL PANEL — covers viewport below the nav bar
+   BOTTOM SHEET — slides up from bottom, mobile only
    ------------------------------------------------------------------------- */
 
 .nav__sheet {
-  position:         fixed;
-  top:              var(--nav-height);   /* flush below the nav bar */
-  left:             0;
-  right:            0;
-  bottom:           0;
-  background:       var(--color-bg);
-  z-index:          var(--z-drawer);
-  overflow-y:       auto;
-  visibility:       hidden;
-  opacity:          0;
-  transform-origin: top center;
+  position:   fixed;
+  top:        var(--nav-height);   /* flush below the nav bar */
+  left:       0;
+  right:      0;
+  bottom:     0;
+  background: var(--color-surface);
+  z-index:    var(--z-drawer);
+  transform:  translateY(100%);
+  visibility: hidden;
+  /* Close: ease-in, visibility delayed until animation completes */
+  transition:
+    transform  200ms ease-in,
+    visibility 0s   200ms;
 }
 
 .nav--open .nav__sheet {
+  transform:  translateY(0);
   visibility: visible;
-  animation:  nav-panel-in 200ms ease-out both;
-}
-
-.nav--closing .nav__sheet {
-  visibility: visible;
-  animation:  nav-panel-out 150ms ease-in both;
+  will-change: transform;
+  /* Open: spring easing with slight overshoot */
+  transition:
+    transform  300ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    visibility 0s;
 }
 
 
 /* -------------------------------------------------------------------------
-   STACKED NAV LINKS — vertical full-width list inside the panel
+   TILE LIST — single column stack of cards
    ------------------------------------------------------------------------- */
 
 .nav__grid {
   display:        flex;
   flex-direction: column;
-  padding:        0;
-  gap:            0;
-  height:         auto;
+  gap:            var(--space-3);
+  padding:        var(--space-3);
+  height:         100%;
   align-content:  start;
+  overflow-y:     auto;
 }
 
+
+/* -------------------------------------------------------------------------
+   TILES — icon centred above label, raised card
+   ------------------------------------------------------------------------- */
+
 .nav__tile {
-  display:                     flex;
-  align-items:                 center;
-  justify-content:             center;
-  min-height:                  auto;
-  padding:                     var(--space-4);
-  background:                  none;
-  border-radius:               0;
-  box-shadow:                  none;
-  gap:                         0;
-  text-decoration:             none;
-  border-bottom:               1px solid var(--color-border);
+  display:                    flex;
+  flex-direction:             column;
+  align-items:                center;
+  justify-content:            center;
+  gap:                        var(--space-1);
+  min-height:                 80px;
+  background:                 var(--color-bg);
+  border-radius:              var(--radius-lg);
+  box-shadow:
+    0 1px 3px 0 rgb(0 0 0 / 0.06),
+    0 1px 2px -1px rgb(0 0 0 / 0.04);
+  text-decoration:            none;
   -webkit-tap-highlight-color: transparent;
-  transition:                  background-color 150ms ease;
+  transition:
+    background-color 150ms ease,
+    transform        100ms ease-out;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .nav__tile:hover {
-    background-color: var(--color-surface);
+    background-color: var(--color-accent-light);
   }
 }
 
 .nav__tile:active {
-  background-color: var(--color-surface);
+  transform: scale(0.97);
 }
 
 .nav__tile--active {
@@ -254,7 +228,10 @@
 }
 
 .nav__tile-icon {
-  display: none;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  color:           var(--color-accent);
 }
 
 .nav__tile-label {
@@ -272,30 +249,27 @@
 }
 
 
-/* Get in touch — primary button at the foot of the list */
+/* -------------------------------------------------------------------------
+   TILE STAGGER — fade + rise on sheet open, 40ms between each
+   ------------------------------------------------------------------------- */
 
-.nav__grid .nav__tile:last-child {
-  margin:           var(--space-4);
-  border-radius:    var(--radius-md);
-  background-color: var(--color-accent);
-  border-bottom:    none;
-}
-
-.nav__grid .nav__tile:last-child .nav__tile-label {
-  color:       var(--color-text-on-accent);
-  font-weight: var(--font-weight-semibold);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .nav__grid .nav__tile:last-child:hover {
-    background-color: color-mix(in srgb, var(--color-accent) 88%, white);
+@keyframes nav-tile-in {
+  from {
+    opacity:   0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity:   1;
+    transform: translateY(0);
   }
 }
 
-.nav__grid .nav__tile:last-child:active {
-  background-color: color-mix(in srgb, var(--color-accent) 85%, black);
-  transform:        scale(0.97);
-}
+.nav--open .nav__tile:nth-child(1) { animation: nav-tile-in 200ms ease-out both; animation-delay:   0ms; }
+.nav--open .nav__tile:nth-child(2) { animation: nav-tile-in 200ms ease-out both; animation-delay:  40ms; }
+.nav--open .nav__tile:nth-child(3) { animation: nav-tile-in 200ms ease-out both; animation-delay:  80ms; }
+.nav--open .nav__tile:nth-child(4) { animation: nav-tile-in 200ms ease-out both; animation-delay: 120ms; }
+.nav--open .nav__tile:nth-child(5) { animation: nav-tile-in 200ms ease-out both; animation-delay: 160ms; }
+.nav--open .nav__tile:nth-child(6) { animation: nav-tile-in 200ms ease-out both; animation-delay: 200ms; }
 
 
 /* -------------------------------------------------------------------------
@@ -401,19 +375,16 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-  .nav__toggle-bar { transition: none; }
-
-  .nav--open .nav__sheet {
-    animation: nav-panel-fade-in 150ms linear both;
+  .nav__toggle-bar,
+  .nav__overlay,
+  .nav__sheet {
+    transition: none;
   }
 
-  .nav--closing .nav__sheet {
-    animation: nav-panel-fade-out 150ms linear both;
-  }
-
-  .nav--open .nav__overlay,
-  .nav--closing .nav__overlay {
-    animation-duration: 150ms;
+  .nav--open .nav__tile {
+    animation: none;
+    opacity:   1;
+    transform: none;
   }
 
 }
