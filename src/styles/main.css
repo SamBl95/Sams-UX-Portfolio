@@ -40,13 +40,12 @@
 @import './3-components/_image-block.css';
 @import './3-components/_callout.css';
 @import './3-components/_pull-quote.css';
-@import './3-components/_process-steps.css';
-@import './3-components/_before-after.css';
-@import './3-components/_metrics-row.css';
-@import './3-components/_two-column.css';
 @import './3-components/_cs-two-col.css';
-@import './3-components/_cs-insight-list.css';
-@import './3-components/_cs-statement.css';
+@import './3-components/_cs-editorial-list.css';
+@import './3-components/_cs-emphasis.css';
+@import './3-components/_cs-artifact-grid.css';
+@import './3-components/_cs-metric-grid.css';
+@import './3-components/_cs-before-after.css';
 @import './3-components/_cs-annotated-image.css';
 
 

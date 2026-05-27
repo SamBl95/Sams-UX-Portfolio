@@ -38,7 +38,7 @@
       <div class="cs-hero__inner container">
 
         <a href="/#case-studies" class="cs-hero__back">
-          <span aria-hidden="true">←</span> Back to case studies
+          <span aria-hidden="true">&larr;</span> Back to case studies
         </a>
 
         <h1 id="cs-title" class="cs-hero__title">Community Support Forum Redesign</h1>
@@ -180,10 +180,6 @@
 
           <div class="cs-phase__body">
 
-            <figure class="image-block image-block--portrait">
-              <img src="/assets/images/community/Community%20-%20main%20hero%20image%20in%20a%20tablet.jpg" alt="Community colleague support forum displayed on a tablet device, showing the platform interface used by Santander staff to post and answer questions" loading="lazy" />
-            </figure>
-
             <p>
               Community is Santander's internal equivalent of Reddit or Quora, a place where colleagues can post edge-case questions and tap into the collective knowledge of
               the organisation. It lives within the i-Exchange knowledge base and has become
@@ -204,47 +200,35 @@
               choice: rather than take this project on alone, I'd use it as an opportunity to
               lead. I reached out to three Community moderators (Samantha, Lee, and Bonny) and assigned each a research strand matched to their strengths.
             </p>
-            <ul>
-              <li><strong>Samantha</strong>: People-focused and skilled at building rapport. Assigned to user interviews with contact centre and live chat colleagues.</li>
-              <li><strong>Lee</strong>: Analytical and technically minded. Assigned to competitor analysis, studying platforms like Reddit and ServiceNow Community.</li>
-              <li><strong>Bonny</strong>: Deep branch banking knowledge. Assigned to observational studies with branch staff, where she uncovered the true scale of the load time problem.</li>
+            <ul class="cs-editorial-list cs-editorial-list--grid" role="list" aria-label="Research team structure">
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Samantha</h4>
+                <p class="cs-editorial-list__body">User interviews with contact centre and live chat colleagues. People-focused and strong at building rapport.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Lee</h4>
+                <p class="cs-editorial-list__body">Competitor analysis across Reddit, ServiceNow Community, and other support forums. Analytical and technically minded.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Bonny</h4>
+                <p class="cs-editorial-list__body">Observational studies with branch staff, where she uncovered the true scale of the load time problem.</p>
+              </li>
             </ul>
 
-            <div class="cs-team-grid">
-              <figure>
+            <div class="cs-artifact-grid cs-artifact-grid--three" role="group" aria-label="Community research team">
+              <figure class="cs-artifact-grid__item">
                 <img src="/assets/images/community/Community%20-%20Samantha.jpg" alt="Samantha, community moderator who led user interviews with contact centre and live chat colleagues" loading="lazy" />
-                <figcaption class="image-block__caption">Samantha — User interviews</figcaption>
+                <figcaption class="cs-artifact-grid__caption">Samantha, user interviews</figcaption>
               </figure>
-              <figure>
+              <figure class="cs-artifact-grid__item">
                 <img src="/assets/images/community/Community%20-%20Lee.jpg" alt="Lee, community moderator who led competitor analysis of platforms including Reddit and ServiceNow Community" loading="lazy" />
-                <figcaption class="image-block__caption">Lee — Competitor analysis</figcaption>
+                <figcaption class="cs-artifact-grid__caption">Lee, competitor analysis</figcaption>
               </figure>
-              <figure>
+              <figure class="cs-artifact-grid__item">
                 <img src="/assets/images/community/Community%20-%20Bonny.jpg" alt="Bonny, community moderator who led observational studies with branch staff and uncovered the true scale of the load time problem" loading="lazy" />
-                <figcaption class="image-block__caption">Bonny — Observational studies</figcaption>
+                <figcaption class="cs-artifact-grid__caption">Bonny, observational studies</figcaption>
               </figure>
             </div>
-
-            <ol class="process-steps" aria-label="Research team structure">
-              <li class="process-steps__item">
-                <div>
-                  <p class="process-steps__heading">Samantha: User interviews</p>
-                  <p class="process-steps__body">Spoke with contact centre and live chat colleagues. People-focused, strong at rapport-building.</p>
-                </div>
-              </li>
-              <li class="process-steps__item">
-                <div>
-                  <p class="process-steps__heading">Lee: Competitor analysis</p>
-                  <p class="process-steps__body">Analysed Reddit, ServiceNow Community, and other forums for best practices. Analytical and technically minded.</p>
-                </div>
-              </li>
-              <li class="process-steps__item">
-                <div>
-                  <p class="process-steps__heading">Bonny: Observational studies</p>
-                  <p class="process-steps__body">Observed branch staff in situ, uncovering the true scale of the load time problem. Deep branch banking knowledge.</p>
-                </div>
-              </li>
-            </ol>
           </div>
           </div>
         </section>
@@ -267,11 +251,23 @@
             </p>
 
             <h3>Research findings</h3>
-            <ul>
-              <li><strong>Outdated content</strong>: Posts from 2021 onwards had never been removed. Older posts dominated search results, and an answer that was correct four years ago was often wrong today.</li>
-              <li><strong>Long load times</strong>: The homepage displayed live statistics for 20 forums simultaneously (question counts, comment counts, and last activity), loading up to 10 seconds in some cases. Bonny's observations showed colleagues giving up and moving on before the page finished loading.</li>
-              <li><strong>Missing recognition</strong>: The platform had gamification built in from launch: points, badges, and a leaderboard. But top contributors weren't being prominently celebrated. The leaderboard was small and easy to miss.</li>
-              <li><strong>Hidden menus</strong>: Key features ("My network", "My posts", "Achievements", notifications) all lived on a separate page called myExchange, not on Community itself. Users had no idea these existed.</li>
+            <ul class="cs-editorial-list cs-editorial-list--grid" role="list" aria-label="Community research findings">
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Outdated content</h4>
+                <p class="cs-editorial-list__body">Posts from 2021 onwards had never been removed. Older posts dominated search results, and an answer that was correct four years ago was often wrong today.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Long load times</h4>
+                <p class="cs-editorial-list__body">The homepage displayed live statistics for 20 forums simultaneously, loading up to 10 seconds in some cases.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Missing recognition</h4>
+                <p class="cs-editorial-list__body">Points, badges, and a leaderboard existed, but top contributors were not being prominently celebrated.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Hidden menus</h4>
+                <p class="cs-editorial-list__body">My network, My posts, Achievements, and notifications all lived on a separate page called myExchange.</p>
+              </li>
             </ul>
 
             <h3>Heuristic analysis</h3>
@@ -281,9 +277,35 @@
               visible on the homepage of a platform whose entire purpose was posts.
             </p>
 
-            <figure class="image-block image-block--portrait">
-              <img src="/assets/images/community/Commuity%20-%20Home%20design%20before.jpg" alt="Original Community homepage showing the dense forum data table with live statistics for 20 forums, cluttered navigation, and no posts visible on a platform whose purpose is posts" loading="lazy" />
-              <figcaption class="image-block__caption">Original homepage: loading four years of live data for 20 forums on every visit, up to 10 seconds on a branch machine.</figcaption>
+            <figure class="cs-annotated-image">
+              <div class="cs-annotated-image__frame">
+                <img class="cs-annotated-image__img" src="/assets/images/community/Commuity%20-%20Home%20design%20before.jpg" alt="Original Community homepage showing the dense forum data table with live statistics for 20 forums, cluttered navigation, and no posts visible on a platform whose purpose is posts" loading="lazy" />
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="top-right">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Too much live data</strong>
+                    <p class="cs-annotated-image__tooltip-body">Forum counts, comment counts, and last activity loaded for all 20 forums on every visit.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-left">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">No posts visible</strong>
+                    <p class="cs-annotated-image__tooltip-body">The homepage of a support forum did not show any questions or useful posts.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="bottom-center">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Weak structure</strong>
+                    <p class="cs-annotated-image__tooltip-body">The page did not follow an F-shaped reading pattern, and forum groupings were not meaningful enough.</p>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="cs-annotated-image__caption">Original homepage: four years of live data for 20 forums loaded on every visit, up to 10 seconds on a branch machine.</figcaption>
             </figure>
 
             <p>
@@ -310,8 +332,8 @@
             <h3>The old post problem</h3>
           </div>
 
-          <blockquote class="cs-callout">
-            <p class="cs-callout__text">
+          <blockquote class="cs-emphasis cs-emphasis--quote">
+            <p class="cs-emphasis__text">
               "The search list is full of posts from years ago. The answers provided then
               don't help me today."
             </p>
@@ -327,14 +349,14 @@
 
             <figure class="image-block image-block--default">
               <img src="/assets/images/community/Community%20-%20Old%20post%20problem%20thrown%20in%20bin.jpg" alt="Visualisation of the outdated post problem on Community, representing old posts from 2021 onwards that had never been removed and were polluting search results" loading="lazy" />
-              <figcaption class="image-block__caption">Four years of posts with no expiry mechanism — old answers dominated search results regardless of how outdated they were.</figcaption>
+              <figcaption class="image-block__caption">Four years of posts with no expiry mechanism, old answers dominated search results regardless of how outdated they were.</figcaption>
             </figure>
 
             <h3>The loading problem</h3>
           </div>
 
-          <blockquote class="cs-callout">
-            <p class="cs-callout__text">
+          <blockquote class="cs-emphasis cs-emphasis--quote">
+            <p class="cs-emphasis__text">
               "When users come to Community they wait an age for content to load, and when it finally loads, they've moved on to something else."
             </p>
           </blockquote>
@@ -346,9 +368,35 @@
               but users weren't finding it useful. The trade-off needed to be made explicit.
             </p>
 
-            <figure class="image-block image-block--contained">
-              <img src="/assets/images/community/Community%20-%20Loading%20problem.jpg" alt="Screenshot illustrating the Community homepage loading problem, showing the live forum statistics table that was causing page load times of up to 10 seconds" loading="lazy" />
-              <figcaption class="image-block__caption">The homepage loaded live statistics across all 20 forums on every visit — the primary cause of the 10-second load times Bonny observed in the field.</figcaption>
+            <figure class="cs-annotated-image">
+              <div class="cs-annotated-image__frame">
+                <img class="cs-annotated-image__img" src="/assets/images/community/Community%20-%20Loading%20problem.jpg" alt="Screenshot illustrating the Community homepage loading problem, showing the live forum statistics table that was causing page load times of up to 10 seconds" loading="lazy" />
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-left">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Live counts everywhere</strong>
+                    <p class="cs-annotated-image__tooltip-body">Question counts, comment counts and last activity were calculated across every forum on each visit.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-center">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Low user value</strong>
+                    <p class="cs-annotated-image__tooltip-body">Interviews showed colleagues were not using this data to decide where to go next.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-right">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Ten-second wait</strong>
+                    <p class="cs-annotated-image__tooltip-body">Branch observations showed users giving up before the homepage finished loading.</p>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="cs-annotated-image__caption">The loading problem: expensive live statistics were consuming the homepage while adding little value for users.</figcaption>
             </figure>
 
             <h3>The recognition problem</h3>
@@ -359,16 +407,32 @@
               The data was all there. The problem was purely how it was surfaced.
             </p>
 
-            <figure class="image-block image-block--default">
-              <img src="/assets/images/community/Community%20-%20recognition%20problem.jpg" alt="Original Community leaderboard showing top contributors, but displayed in a small, low-prominence position that failed to motivate the engagement behaviour it was designed to encourage" loading="lazy" />
-              <figcaption class="image-block__caption">The leaderboard existed — it just wasn't prominent enough to drive the engagement it was built to reward.</figcaption>
-            </figure>
+            <div class="cs-two-col">
+              <div class="cs-two-col__content">
+                <h3 class="cs-two-col__heading">Recognition existed, but it did not feel like recognition</h3>
+                <div class="cs-two-col__body">
+                  <p>
+                    The product already had points, badges and leaderboard data. The opportunity
+                    was not to invent a new gamification system, but to give the existing one
+                    enough prominence to motivate behaviour.
+                  </p>
+                  <p class="cs-two-col__callout">
+                    The data was there. The product had failed to frame it as something worth competing for.
+                  </p>
+                </div>
+              </div>
+
+              <figure class="cs-two-col__media">
+                <img src="/assets/images/community/Community%20-%20recognition%20problem.jpg" alt="Original Community leaderboard showing top contributors, but displayed in a small, low-prominence position that failed to motivate the engagement behaviour it was designed to encourage" loading="lazy" />
+                <figcaption class="cs-two-col__caption">The leaderboard existed, it just was not prominent enough to drive the engagement it was built to reward.</figcaption>
+              </figure>
+            </div>
 
             <h3>The missing menus problem</h3>
           </div>
 
-          <blockquote class="cs-callout">
-            <p class="cs-callout__text">
+          <blockquote class="cs-emphasis cs-emphasis--quote">
+            <p class="cs-emphasis__text">
               "Key information for Community is held on myExchange, and when I want to give
               feedback I'm told to ask a question. None of this makes sense."
             </p>
@@ -401,66 +465,40 @@
               new. They required removing things, moving things, or showing things differently.
             </p>
 
-            <h3>Post expiry: plan A and plan B</h3>
-            <p>
-              The logical solution to outdated content was automatic post expiry after a set
-              period. We built a strong business case and submitted it to the global ServiceNow
-              ideation forum, the same governance process I'd navigated for the i-Exchange
-              AI search upgrade.
-            </p>
-            <p>
-              This time we weren't optimistic. Santander UK was the only country using
-              Community, meaning other countries had no reason to vote for a feature that
-              didn't benefit them. We prepared a plan B in parallel: a monthly bulk-update
-              process to manually expire old posts, run by the moderation team. One way or
-              another, we were going to clean up Community.
-            </p>
+            <ul class="cs-editorial-list cs-editorial-list--numbered" aria-label="Community design decisions">
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Post expiry needed a plan B</h4>
+                <p class="cs-editorial-list__body">The ideal solution was automatic post expiry, but Santander UK was the only country using Community. We submitted the global request while preparing a monthly bulk-expiry workaround in parallel.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Homepage data had to earn its weight</h4>
+                <p class="cs-editorial-list__body">Users confirmed they were not using forum statistics to make decisions, so I made the trade-off explicit and removed the live data table.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Recognition had to avoid repeating the load problem</h4>
+                <p class="cs-editorial-list__body">The leaderboard became more prominent, but the data refreshed hourly rather than recalculating points for every user on every page load.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Existing menus were moved, not rebuilt</h4>
+                <p class="cs-editorial-list__body">My network, My posts, Achievements and notifications already existed on myExchange, so I lifted them onto Community and removed options that were not adding value.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Forms were improved with low-cost changes</h4>
+                <p class="cs-editorial-list__body">The team prioritised an i-Exchange article lookup, clearer prompts for support and feedback forums, simpler instructions, and a visible attachments section.</p>
+              </li>
+            </ul>
 
-            <figure class="image-block image-block--default">
-              <img src="/assets/images/community/Community%20-%20Global%20governance.jpg" alt="Screenshot of the global ServiceNow ideation forum where the post expiry feature request was submitted, showing the governance process used across all Santander countries using the platform" loading="lazy" />
-              <figcaption class="image-block__caption">The global ideation forum — the same governance process used to secure the i-Exchange AI search upgrade, this time with lower odds of success.</figcaption>
-            </figure>
+            <div class="cs-artifact-grid" role="group" aria-label="Community implementation constraints and reused navigation">
+              <figure class="cs-artifact-grid__item">
+                <img src="/assets/images/community/Community%20-%20Global%20governance.jpg" alt="Screenshot of the global ServiceNow ideation forum where the post expiry feature request was submitted, showing the governance process used across all Santander countries using the platform" loading="lazy" />
+                <figcaption class="cs-artifact-grid__caption">Global governance: the feature request had to compete for votes from countries that did not use Community.</figcaption>
+              </figure>
 
-            <h3>Removing the homepage data</h3>
-            <p>
-              The forum statistics table on the homepage (question counts, comment counts, last activity for 20 forums) was the primary load time culprit. Users in
-              interviews confirmed they weren't using the data to make decisions. I made the
-              case to the Product Owner directly: the data wasn't earning its page weight.
-              Once the load time trade-off was clearly framed, they agreed.
-            </p>
-
-            <h3>Leaderboard with hourly refresh</h3>
-            <p>
-              Calculating total points for all users on every page load would have replicated
-              the performance problem we'd just fixed. The solution: cache leaderboard data
-              and refresh it once per hour rather than on every visit. The data was still
-              near-real-time for users, but the cost to the system was a fraction of
-              the original approach.
-            </p>
-
-            <h3>Moving the menus</h3>
-            <p>
-              The missing navigation items (My network, My posts, Achievements, notifications) already existed on myExchange. Rather than rebuild them,
-              I lifted them directly onto the Community homepage, redesigned the UI,
-              and removed the items that weren't adding value (Favourites stayed on
-              myExchange; Events were removed entirely). Iconography was added to help
-              users distinguish between options at a glance.
-            </p>
-
-            <figure class="image-block image-block--contained">
-              <img src="/assets/images/community/Community%20-%20moving%20menus%20from%20i-Exchange.jpg" alt="UI showing the navigation menu items being relocated from myExchange to the Community homepage, including My network, My posts, Achievements, and notifications with new iconography" loading="lazy" />
-              <figcaption class="image-block__caption">Rather than rebuild: lift existing menu items from myExchange and surface them directly on Community with clearer iconography.</figcaption>
-            </figure>
-
-            <h3>Form redesign</h3>
-            <p>
-              Working with the team in a focused workshop, we prioritised changes that
-              required minimal developer effort. The key additions: an i-Exchange article
-              lookup field so colleagues could reference the relevant process directly in
-              their post, clearer form prompts matched to the forum type (support forums
-              say "Ask a question"; feedback forums say "Give feedback"), simplified
-              bulleted instructions, and a dedicated attachments section.
-            </p>
+              <figure class="cs-artifact-grid__item">
+                <img src="/assets/images/community/Community%20-%20moving%20menus%20from%20i-Exchange.jpg" alt="UI showing the navigation menu items being relocated from myExchange to the Community homepage, including My network, My posts, Achievements, and notifications with new iconography" loading="lazy" />
+                <figcaption class="cs-artifact-grid__caption">Rather than rebuild, existing myExchange menu items were surfaced directly on Community.</figcaption>
+              </figure>
+            </div>
           </div>
           </div>
         </section>
@@ -476,35 +514,24 @@
           <h2 id="phase-test" class="cs-phase__heading">Validating before going to production</h2>
 
           <div class="cs-phase__body">
-            <h3>Load time testing</h3>
-            <p>
-              I set up a reduced version of the homepage in the test environment, without the forum data table, to measure the impact of removing it. Load times across
-              the team averaged 2–3 seconds. A meaningful improvement, though I was cautious:
-              test environment performance doesn't always match production, and the redesigned
-              homepage would add new content back in. Still, it was a strong directional signal.
-            </p>
-
-            <h3>Old post impact</h3>
-            <p>
-              I ran a test where I removed the majority of older posts and checked five
-              commonly searched queries. The results were noticeably more relevant with the
-              old content cleared. This validated the expiry approach before we'd committed
-              to a delivery method.
-            </p>
-
-            <h3>Form testing</h3>
-            <p>
-              A focus group on the redesigned forms found that users responded well to the
-              clearer layout. The article reference lookup was specifically welcomed. Colleagues had always wanted to link to i-Exchange processes but had no
-              structured way to do it.
-            </p>
-
-            <h3>Recognition testing</h3>
-            <p>
-              We spoke to high-scoring users and to some who had been active previously but
-              dropped off. The expanded leaderboard, particularly the per-forum breakdown that let colleagues compete within their own teams, resonated more strongly than expected. The team-level competition was something users cared about
-              that the original design hadn't surfaced at all.
-            </p>
+            <ul class="cs-editorial-list cs-editorial-list--grid" role="list" aria-label="Community validation findings">
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Load time testing</h4>
+                <p class="cs-editorial-list__body">A reduced homepage in test, without the forum data table, averaged 2 to 3 seconds. It was a directional signal, not a production guarantee.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Old post impact</h4>
+                <p class="cs-editorial-list__body">Removing the majority of older posts made five common search queries noticeably more relevant, validating the expiry approach before delivery.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Form testing</h4>
+                <p class="cs-editorial-list__body">A focus group responded well to the clearer layout, and specifically welcomed the ability to reference an i-Exchange article.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Recognition testing</h4>
+                <p class="cs-editorial-list__body">The per-forum leaderboard resonated because it let colleagues compete locally within their own teams, not just across the whole platform.</p>
+              </li>
+            </ul>
           </div>
           </div>
         </section>
@@ -521,68 +548,103 @@
 
           <div class="cs-phase__body">
 
-            <figure class="image-block image-block--contained">
-              <img src="/assets/images/community/Community%20-%20Main%20hero%20image%20in%20a%20laptop.jpg" alt="Redesigned Community colleague support forum displayed on a laptop, showing the new F-shaped homepage layout with pinned posts, leaderboard, and consolidated navigation" loading="lazy" />
-            </figure>
-
             <h3>Redesigned homepage</h3>
-            <ul>
-              <li><strong>New hero section</strong>: A welcoming header that immediately surfaces the two primary actions: post a question and search existing content.</li>
-              <li><strong>Pinned posts</strong>: Moderators can promote high-value posts to the top of the homepage, ensuring the most useful content gets maximum visibility.</li>
-              <li><strong>Menus in the right place</strong>: My network, My posts, Achievements, and notifications moved from myExchange onto Community itself. Everything a member needs, without leaving the platform.</li>
-              <li><strong>Reorganised forums</strong>: The sprawling list of 20 forums replaced with clearly grouped categories, defined through card sorting exercises with users.</li>
-              <li><strong>Expanded leaderboard</strong>: A prominent top contributors section with per-forum breakdowns, cached on an hourly refresh to avoid reintroducing load time issues.</li>
-              <li><strong>F-shaped layout</strong>: Information architecture restructured to match natural reading behaviour, with the most important content in the most-scanned positions.</li>
+            <ul class="cs-editorial-list cs-editorial-list--grid" role="list" aria-label="Community homepage improvements">
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">New hero section</h4>
+                <p class="cs-editorial-list__body">A welcoming header immediately surfaced the two primary actions: post a question and search existing content.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Pinned posts</h4>
+                <p class="cs-editorial-list__body">Moderators could promote high-value posts to the top of the homepage, ensuring useful content received more visibility.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Menus in the right place</h4>
+                <p class="cs-editorial-list__body">My network, My posts, Achievements, and notifications moved from myExchange onto Community itself.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Reorganised forums</h4>
+                <p class="cs-editorial-list__body">The sprawling list of 20 forums was replaced with clearer grouped categories, defined through card sorting with users.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Expanded leaderboard</h4>
+                <p class="cs-editorial-list__body">A prominent top contributors section added per-forum breakdowns, cached hourly to avoid reintroducing load time issues.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">F-shaped layout</h4>
+                <p class="cs-editorial-list__body">Information architecture was restructured to match natural reading behaviour, with key content in the most-scanned positions.</p>
+              </li>
             </ul>
 
-            <div class="before-after" role="img" aria-label="Community homepage: before and after redesign">
-              <div class="before-after__col before-after__col--before">
-                <span class="before-after__label">Before</span>
+            <div class="cs-before-after" role="group" aria-label="Community homepage before and after redesign">
+              <figure class="cs-before-after__item cs-before-after__item--before">
+                <span class="cs-before-after__label">Before</span>
                 <img src="/assets/images/community/Commuity%20-%20Home%20design%20before.jpg" alt="Original Community homepage with dense forum data table loading live statistics for 20 forums simultaneously, no visible posts, and cluttered navigation" loading="lazy" />
-              </div>
-              <div class="before-after__col before-after__col--after">
-                <span class="before-after__label">After</span>
+                <figcaption class="cs-before-after__caption">The original homepage prioritised a heavy forum data table over the posts people came to Community for.</figcaption>
+              </figure>
+              <figure class="cs-before-after__item cs-before-after__item--after">
+                <span class="cs-before-after__label">After</span>
                 <img src="/assets/images/community/Community%20-%20Home%20Design%20after.jpg" alt="Redesigned Community homepage with F-shaped layout, welcoming hero section, pinned posts, reorganised forum categories, expanded leaderboard, and consolidated navigation menus" loading="lazy" />
-              </div>
+                <figcaption class="cs-before-after__caption">The redesigned homepage surfaced posts, actions, navigation, and recognition in one clearer structure.</figcaption>
+              </figure>
             </div>
 
-            <figure class="image-block image-block--full">
-              <img src="/assets/images/community/Community%20-%20Pinned%20posts%20example.jpg" alt="Example of the new pinned posts feature on the redesigned Community homepage, showing a moderator-promoted post surfaced at the top of the feed for maximum visibility" loading="lazy" />
-            </figure>
+            <div class="cs-artifact-grid" role="group" aria-label="Community homepage detail improvements">
+              <figure class="cs-artifact-grid__item">
+                <img src="/assets/images/community/Community%20-%20Pinned%20posts%20example.jpg" alt="Example of the new pinned posts feature on the redesigned Community homepage, showing a moderator-promoted post surfaced at the top of the feed for maximum visibility" loading="lazy" />
+                <figcaption class="cs-artifact-grid__caption">Pinned posts gave moderators a way to surface high-value answers above the forum list.</figcaption>
+              </figure>
 
-            <figure class="image-block image-block--contained">
-              <img src="/assets/images/community/Community%20-%20Leaderboards%20new%20design.jpg" alt="Redesigned Community top contributors leaderboard with per-forum breakdown, showing gamification scores across different business areas, cached with hourly refresh" loading="lazy" />
-              <figcaption class="image-block__caption">Leaderboard with per-forum breakdown: surface the data that already existed, prominently.</figcaption>
-            </figure>
+              <figure class="cs-artifact-grid__item">
+                <img src="/assets/images/community/Community%20-%20Leaderboards%20new%20design.jpg" alt="Redesigned Community top contributors leaderboard with per-forum breakdown, showing gamification scores across different business areas, cached with hourly refresh" loading="lazy" />
+                <figcaption class="cs-artifact-grid__caption">The leaderboard made existing contribution data visible, with per-forum breakdowns and hourly refresh.</figcaption>
+              </figure>
+            </div>
 
             <h3>Redesigned post submission form</h3>
-            <ul>
-              <li><strong>Context-aware prompts</strong>: Support forums say "Ask a question". Feedback forums say "Give feedback". The right framing for each context.</li>
-              <li><strong>Article reference lookup</strong>: A search field lets colleagues link directly to the relevant i-Exchange process from within their post.</li>
-              <li><strong>Simplified instructions</strong>: Long paragraphs replaced with short bulleted guidance. Easier to read, easier to act on.</li>
-              <li><strong>Visible attachments</strong>: A dedicated section makes the attachment feature discoverable, ending the recurring complaint that it didn't exist.</li>
+            <ul class="cs-editorial-list cs-editorial-list--grid" role="list" aria-label="Community form improvements">
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Context-aware prompts</h4>
+                <p class="cs-editorial-list__body">Support forums say "Ask a question". Feedback forums say "Give feedback". The right framing for each context.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Article reference lookup</h4>
+                <p class="cs-editorial-list__body">A search field lets colleagues link directly to the relevant i-Exchange process from within their post.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Simplified instructions</h4>
+                <p class="cs-editorial-list__body">Long paragraphs were replaced with short bulleted guidance. Easier to read, easier to act on.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Visible attachments</h4>
+                <p class="cs-editorial-list__body">A dedicated section made the attachment feature discoverable, ending the recurring complaint that it did not exist.</p>
+              </li>
             </ul>
 
-            <div class="before-after" role="img" aria-label="Community post submission form: before and after redesign">
-              <div class="before-after__col before-after__col--before">
-                <span class="before-after__label">Before</span>
+            <div class="cs-before-after" role="group" aria-label="Community post submission form before and after redesign">
+              <figure class="cs-before-after__item cs-before-after__item--before">
+                <span class="cs-before-after__label">Before</span>
                 <img src="/assets/images/community/Community%20-%20Form%20design%20before.jpg" alt="Original Community post submission form with dense paragraph instructions, no article reference field, missing attachments section, and generic Ask a question prompt regardless of forum type" loading="lazy" />
-              </div>
-              <div class="before-after__col before-after__col--after">
-                <span class="before-after__label">After</span>
+                <figcaption class="cs-before-after__caption">The original form hid useful controls and used the same prompt across support and feedback forums.</figcaption>
+              </figure>
+              <figure class="cs-before-after__item cs-before-after__item--after">
+                <span class="cs-before-after__label">After</span>
                 <img src="/assets/images/community/Community%20-%20Form%20design%20after.jpg" alt="Redesigned Community post submission form with context-aware prompt, i-Exchange article lookup field, bulleted guidance, and visible attachments section" loading="lazy" />
-              </div>
+                <figcaption class="cs-before-after__caption">The redesigned form gave each forum the right framing, clearer guidance, and a structured process reference.</figcaption>
+              </figure>
             </div>
 
-            <figure class="image-block image-block--contained">
-              <img src="/assets/images/community/Community%20-%20New%20Ask%20a%20question%20header.jpg" alt="Redesigned Community post form header for support forums, showing the Ask a question prompt that replaces the previously generic and context-free form title" loading="lazy" />
-              <figcaption class="image-block__caption">Context-aware form header for support forums: the right prompt for someone trying to get help.</figcaption>
-            </figure>
+            <div class="cs-artifact-grid" role="group" aria-label="Community context-aware form prompts">
+              <figure class="cs-artifact-grid__item">
+                <img src="/assets/images/community/Community%20-%20New%20Ask%20a%20question%20header.jpg" alt="Redesigned Community post form header for support forums, showing the Ask a question prompt that replaces the previously generic and context-free form title" loading="lazy" />
+                <figcaption class="cs-artifact-grid__caption">Support forums used Ask a question, the right prompt for someone trying to get help.</figcaption>
+              </figure>
 
-            <figure class="image-block image-block--contained">
-              <img src="/assets/images/community/Community%20-%20New%20Give%20Feedback%20form%20header.jpg" alt="Redesigned Community post form header for feedback forums, showing the Give feedback prompt that correctly frames the action for colleagues reporting issues or making suggestions" loading="lazy" />
-              <figcaption class="image-block__caption">Context-aware form header for feedback forums: the right prompt for someone trying to report or suggest.</figcaption>
-            </figure>
+              <figure class="cs-artifact-grid__item">
+                <img src="/assets/images/community/Community%20-%20New%20Give%20Feedback%20form%20header.jpg" alt="Redesigned Community post form header for feedback forums, showing the Give feedback prompt that correctly frames the action for colleagues reporting issues or making suggestions" loading="lazy" />
+                <figcaption class="cs-artifact-grid__caption">Feedback forums used Give feedback, the right prompt for reporting an issue or suggestion.</figcaption>
+              </figure>
+            </div>
           </div>
           </div>
         </section>
@@ -597,18 +659,21 @@
           <p class="cs-phase__eyebrow">Results</p>
           <h2 id="phase-results" class="cs-phase__heading">What changed</h2>
 
-          <ul class="cs-results" role="list" aria-label="Outcome metrics">
-            <li class="stat-block">
-              <span class="stat-block__value">97 hrs</span>
-              <span class="stat-block__label">Saved every month</span>
+          <ul class="cs-metric-grid" role="list" aria-label="Community outcome metrics">
+            <li class="cs-metric-grid__item">
+              <p class="cs-metric-grid__value">97 hrs</p>
+              <h3 class="cs-metric-grid__label">Saved every month</h3>
+              <p class="cs-metric-grid__body">Removing the heavy homepage data reduced colleague waiting time across the operation.</p>
             </li>
-            <li class="stat-block">
-              <span class="stat-block__value">50%</span>
-              <span class="stat-block__label">Reduction in load times</span>
+            <li class="cs-metric-grid__item">
+              <p class="cs-metric-grid__value">50%</p>
+              <h3 class="cs-metric-grid__label">Reduction in load times</h3>
+              <p class="cs-metric-grid__body">The redesigned homepage avoided reloading live forum statistics on every visit.</p>
             </li>
-            <li class="stat-block">
-              <span class="stat-block__value">~3 sec</span>
-              <span class="stat-block__label">Homepage load time (was 10s)</span>
+            <li class="cs-metric-grid__item">
+              <p class="cs-metric-grid__value">~3 sec</p>
+              <h3 class="cs-metric-grid__label">Homepage load time</h3>
+              <p class="cs-metric-grid__body">Load time fell from up to 10 seconds to around 3 seconds after the main data table was removed.</p>
             </li>
           </ul>
 
@@ -635,10 +700,6 @@
           </div>
           </div>
         </section>
-
-
-    </article>
-
 
     <!-- =====================================================================
          RETROSPECTIVE
@@ -696,7 +757,7 @@
               <h3 class="card__title">i-Exchange Knowledge Base Overhaul</h3>
               <span class="card__metric-chip">35% search accuracy improvement</span>
               <p class="card__subtitle">Overhauling Santander's 6,000-article internal knowledge base to fix broken search, delivering a 35% accuracy improvement across 5 million annual searches.</p>
-              <span class="btn btn--primary card__cta"><span>8 min read</span><span aria-hidden="true">→</span></span>
+              <span class="btn btn--primary card__cta"><span>8 min read</span><span aria-hidden="true">&rarr;</span></span>
             </div>
           </a>
 
@@ -708,7 +769,7 @@
               <h3 class="card__title">Cassi: AI Chatbot Feedback Redesign</h3>
               <span class="card__metric-chip">30% increase in feedback submissions</span>
               <p class="card__subtitle">Fixing Santander's AI colleague assistant in three weeks at zero development cost, increasing feedback submission rates by 30%.</p>
-              <span class="btn btn--primary card__cta"><span>5 min read</span><span aria-hidden="true">→</span></span>
+              <span class="btn btn--primary card__cta"><span>5 min read</span><span aria-hidden="true">&rarr;</span></span>
             </div>
           </a>
 
@@ -722,5 +783,6 @@
 
     <script type="module" src="/src/nav.js"></script>
     <script type="module" src="/src/reveal.js"></script>
+    <script type="module" src="/src/cs-annotated-image.js"></script>
   </body>
 </html>

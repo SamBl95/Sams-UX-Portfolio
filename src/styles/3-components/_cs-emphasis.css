@@ -1,0 +1,89 @@
+/* =============================================================================
+   CS EMPHASIS
+   Editorial emphasis block for problem statements, strategic pivots, and quotes.
+
+   Modifiers:
+   - .cs-emphasis--statement: labelled statement with optional note
+   - .cs-emphasis--quote: larger pull quote with optional citation
+   ============================================================================= */
+
+.cs-emphasis {
+  position: relative;
+  margin-block: var(--space-8);
+  padding: var(--space-1) 0 var(--space-1) var(--space-6);
+  border-left: 2px solid var(--color-accent);
+  color: var(--color-text-primary);
+  font-style: normal;
+}
+
+.cs-emphasis--statement {
+  padding-block: var(--space-6);
+  padding-inline: var(--space-5);
+  border-left: 0;
+  border-block: 1px solid var(--color-border);
+}
+
+.cs-emphasis--statement::before {
+  content: '';
+  position: absolute;
+  inset-block: var(--space-6);
+  left: 0;
+  width: 2px;
+  background-color: var(--color-accent);
+}
+
+.cs-emphasis__eyebrow {
+  margin: 0 0 var(--space-3) 0;
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  line-height: var(--leading-normal);
+  text-transform: uppercase;
+  color: var(--color-accent-accessible);
+}
+
+.cs-emphasis__text {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+  text-wrap: balance;
+}
+
+.cs-emphasis__note,
+.cs-emphasis__cite {
+  display: block;
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  font-style: normal;
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 905px) {
+  .cs-emphasis {
+    margin-block: var(--space-12);
+    padding-left: var(--space-8);
+  }
+
+  .cs-emphasis--statement {
+    margin-block: var(--space-10);
+    padding-block: var(--space-8);
+    padding-inline: var(--space-8) var(--space-10);
+  }
+
+  .cs-emphasis--statement::before {
+    inset-block: var(--space-8);
+  }
+
+  .cs-emphasis--statement .cs-emphasis__text {
+    max-width: 36ch;
+    font-size: var(--text-3xl);
+  }
+
+  .cs-emphasis--quote .cs-emphasis__text {
+    font-size: var(--text-4xl);
+  }
+}

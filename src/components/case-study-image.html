@@ -1,0 +1,82 @@
+<!-- CASE STUDY IMAGE COMPONENTS - reference templates
+     Pick the variant by image intent, not by trial-and-error sizing.
+     All examples use real case-study assets so viewport behavior can be checked.
+-->
+
+<!-- Inline evidence image: centred and constrained on desktop -->
+<figure class="image-block image-block--default">
+  <img src="/assets/images/i-exchange/i-Exchange%20-%20job%20offer.jpg" alt="Job offer document for the UX Designer and Business Analyst role on the i-Exchange product team at Santander" loading="lazy" />
+  <figcaption class="image-block__caption">Use default for supporting evidence that should not dominate the reading column.</figcaption>
+</figure>
+
+<!-- Contained screenshot: full column width with rounded corners -->
+<figure class="image-block image-block--contained">
+  <img src="/assets/images/i-exchange/i-Exchange%20-%20Home%20final%20design.jpg" alt="Redesigned i-Exchange homepage showing saved audience, My Processes, communications, and incidents" loading="lazy" />
+  <figcaption class="image-block__caption">Use contained for primary product screenshots that need room and a clean frame.</figcaption>
+</figure>
+
+<!-- Full-width state: large UI or data view that should reach the container edge -->
+<figure class="image-block image-block--full">
+  <img src="/assets/images/cassi/Cassi%20-%20Toast%20option.jpg" alt="Cassi toast notification confirming feedback was submitted without blocking the chat interface" loading="lazy" />
+  <figcaption class="image-block__caption">Use full for wide product states, charts, and interfaces where details matter.</figcaption>
+</figure>
+
+<!-- Portrait/detail image: narrow screenshots, documents, notes, or close-ups -->
+<figure class="image-block image-block--portrait">
+  <img src="/assets/images/cassi/Cassi%20-%20new%20smaller%20breakpoint%20screen.jpg" alt="Cassi interface at a narrow side-panel viewport width" loading="lazy" />
+  <figcaption class="image-block__caption">Use portrait for narrow screenshots and details that become oversized at full width.</figcaption>
+</figure>
+
+<!-- Two-image evidence set: use artifact grid instead of a separate pair component -->
+<div class="cs-artifact-grid" role="group" aria-label="Cassi audience filter before and after">
+  <figure class="cs-artifact-grid__item">
+    <img src="/assets/images/cassi/Cassi%20-%20The%20audience%20selection%20problem.jpg" alt="Original Cassi audience selection positioned away from the query input" loading="lazy" />
+    <figcaption class="cs-artifact-grid__caption">Before: audience selection too far from the query input.</figcaption>
+  </figure>
+  <figure class="cs-artifact-grid__item">
+    <img src="/assets/images/cassi/Cassi%20-%20a%20new%20home%20for%20audience%20filters.jpg" alt="Redesigned Cassi audience filter positioned directly above the query input" loading="lazy" />
+    <figcaption class="cs-artifact-grid__caption">After: filter and input share the same visual zone.</figcaption>
+  </figure>
+</div>
+
+<!-- Artifact grid: research material, workshop outputs, notes, and evidence sets -->
+<div class="cs-artifact-grid">
+  <figure class="cs-artifact-grid__item">
+    <img src="/assets/images/i-exchange/i-Exchange%20-%20affinity%20mapping.jpg" alt="Affinity mapping notes from i-Exchange research synthesis" loading="lazy" />
+    <figcaption class="cs-artifact-grid__caption">Research synthesis artifact.</figcaption>
+  </figure>
+  <figure class="cs-artifact-grid__item">
+    <img src="/assets/images/i-exchange/i-Exchange%20-%20post%20it%20notes%20from%20workshop.jpg" alt="Post-it notes from an i-Exchange ideation workshop" loading="lazy" />
+    <figcaption class="cs-artifact-grid__caption">Workshop output artifact.</figcaption>
+  </figure>
+</div>
+
+<!-- Before/after: framed comparison with semantic labels -->
+<div class="cs-before-after" role="group" aria-label="Community form before and after redesign">
+  <figure class="cs-before-after__item cs-before-after__item--before">
+    <span class="cs-before-after__label">Before</span>
+    <img src="/assets/images/community/Community%20-%20Form%20design%20before.jpg" alt="Original Community post submission form" loading="lazy" />
+    <figcaption class="cs-before-after__caption">Original form: dense instructions and generic prompts.</figcaption>
+  </figure>
+  <figure class="cs-before-after__item cs-before-after__item--after">
+    <span class="cs-before-after__label">After</span>
+    <img src="/assets/images/community/Community%20-%20Form%20design%20after.jpg" alt="Redesigned Community post submission form" loading="lazy" />
+    <figcaption class="cs-before-after__caption">Redesigned form: clearer structure and context-aware prompts.</figcaption>
+  </figure>
+</div>
+
+<!-- Annotated image: interactive callouts for explaining problem areas or improvements -->
+<figure class="cs-annotated-image">
+  <div class="cs-annotated-image__frame">
+    <img class="cs-annotated-image__img" src="/assets/images/i-exchange/i-Exchange%20-%20old%20search%20page.jpg" alt="Original i-Exchange search page with minimal result cards and no recovery routes for failed queries" loading="lazy" />
+
+    <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="top-right">
+      <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+      <div class="cs-annotated-image__tooltip" role="tooltip">
+        <strong class="cs-annotated-image__tooltip-title">No spelling tolerance</strong>
+        <p class="cs-annotated-image__tooltip-body">A small typo returned no useful recovery route.</p>
+      </div>
+    </div>
+  </div>
+  <figcaption class="cs-annotated-image__caption">Use annotated images when the image itself needs explanation, not just illustration.</figcaption>
+</figure>

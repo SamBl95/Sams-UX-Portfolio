@@ -1,259 +1,106 @@
 /* =============================================================================
    IMAGE BLOCK
-   Figure element with three layout variants: contained, full-bleed, aside float.
-   Used in case study body prose to embed images with optional captions.
+   Reusable case-study figure system for screenshots, evidence, portraits,
+   wide UI states, decorative illustrations, and image pairs.
+
+   Use intent-based variants:
+   - .image-block--contained: full container width, rounded screenshot
+   - .image-block--default: readable inline evidence image
+   - .image-block--full: wide product/UI state, square to container edge
+   - .image-block--portrait: narrow/tall screens or close-up details
    ============================================================================= */
 
-
-/* Base figure reset */
 .image-block {
+  --image-block-max-width-sm: 100%;
+  --image-block-max-width-md: 100%;
+  --image-block-max-width-lg: 100%;
+  --image-block-margin-sm: var(--space-8);
+  --image-block-margin-lg: var(--space-10);
+  --image-block-radius: var(--radius-lg);
+  --image-block-fit: contain;
+
+  display: block;
+  max-width: var(--image-block-max-width-sm);
+  margin: 0;
+  margin-block: var(--image-block-margin-sm);
+  margin-inline: auto;
+  padding: 0;
   list-style: none;
-  margin:     0;
-  padding:    0;
-  display:    block;
 }
 
-
-/* -------------------------------------------------------------------------
-   CONTAINED — default image with rounded corners, vertical rhythm spacing
-   ------------------------------------------------------------------------- */
-
-.image-block--contained {
-  margin-block: var(--space-8);
+.image-block img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: var(--image-block-fit);
+  border-radius: var(--image-block-radius);
 }
 
-.image-block--contained img {
-  display:       block;
-  width:         100%;
-  height:        auto;
-  object-fit:    contain;
-  border-radius: var(--radius-lg);
-}
-
-@media (min-width: 905px) {
-  .image-block--contained {
-    margin-block: var(--space-10);
-  }
-}
-
-
-/* -------------------------------------------------------------------------
-   FULL — edge-to-edge within the container, no radius
-   ------------------------------------------------------------------------- */
-
-.image-block--full {
-  width:        100%;
-  margin-block: var(--space-12);
-}
-
-.image-block--full img {
-  display:       block;
-  width:         100%;
-  height:        auto;
-  object-fit:    contain;
-  border-radius: 0;
-}
-
-
-/* -------------------------------------------------------------------------
-   ASIDE — floats right at 905px+, stacks on mobile
-   ------------------------------------------------------------------------- */
-
-.image-block--aside {
-  margin-block: var(--space-8);
-}
-
-.image-block--aside img {
-  display:       block;
-  width:         100%;
-  height:        auto;
-  object-fit:    contain;
-  border-radius: var(--radius-lg);
-}
-
-.image-block--aside::after {
-  content: '';
-  display: table;
-  clear:   both;
-}
-
-@media (min-width: 905px) {
-  .image-block--aside {
-    float:        right;
-    width:        40%;
-    margin-left:  var(--space-8);
-    margin-block: var(--space-2);
-  }
-}
-
-
-/* -------------------------------------------------------------------------
-   DEFAULT — 60% centred on desktop, full-width on mobile
-   ------------------------------------------------------------------------- */
-
-.image-block--default {
-  margin-block: var(--space-8);
-}
-
-.image-block--default img {
-  display:       block;
-  width:         100%;
-  height:        auto;
-  object-fit:    contain;
-  border-radius: var(--radius-lg);
-}
-
-@media (min-width: 905px) {
-  .image-block--default {
-    max-width:     60%;
-    margin-block:  var(--space-10);
-    margin-inline: auto;
-  }
-}
-
-
-/* -------------------------------------------------------------------------
-   PORTRAIT — 40% centred on desktop, constrained on mobile
-   ------------------------------------------------------------------------- */
-
-.image-block--portrait {
-  margin-block: var(--space-8);
-}
-
-.image-block--portrait img {
-  display:       block;
-  width:         100%;
-  height:        auto;
-  object-fit:    contain;
-  border-radius: var(--radius-lg);
+.image-block__caption {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  font-style: italic;
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
 }
 
 @media (min-width: 600px) {
-  .image-block--portrait {
-    max-width:     60%;
-    margin-inline: auto;
+  .image-block {
+    max-width: var(--image-block-max-width-md);
   }
 }
 
 @media (min-width: 905px) {
-  .image-block--portrait {
-    max-width:     40%;
-    margin-block:  var(--space-10);
-    margin-inline: auto;
+  .image-block {
+    max-width: var(--image-block-max-width-lg);
+    margin-block: var(--image-block-margin-lg);
   }
 }
 
 
 /* -------------------------------------------------------------------------
-   PAIR — two figures side by side on desktop, stacked on mobile
+   CONTAINED - full-width screenshot or product state with rounded corners
    ------------------------------------------------------------------------- */
 
-.image-pair {
-  display:        flex;
-  flex-direction: column;
-  gap:            var(--space-4);
-  margin-block:   var(--space-8);
-}
-
-.image-pair .image-block img {
-  aspect-ratio:  1 / 1;
-  object-fit:    cover;
-  border-radius: 0;
-}
-
-@media (min-width: 905px) {
-  .image-pair {
-    flex-direction: row;
-    align-items:    stretch;
-    gap:            var(--space-6);
-    margin-block:   var(--space-10);
-  }
-
-  .image-pair .image-block {
-    flex:      1;
-    max-width: none;
-    margin:    0;
-  }
+.image-block--contained {
+  --image-block-max-width-sm: 100%;
+  --image-block-max-width-md: 100%;
+  --image-block-max-width-lg: 100%;
 }
 
 
 /* -------------------------------------------------------------------------
-   CAPTION — below the image in all variants
+   FULL - large UI state that should use the full reading column
    ------------------------------------------------------------------------- */
 
-.image-block__caption {
-  display:     block;
-  margin-top:  var(--space-2);
-  font-size:   var(--text-sm);
-  font-style:  italic;
-  line-height: var(--leading-relaxed);
-  color:       var(--color-text-secondary);
+.image-block--full {
+  --image-block-radius: 0;
+  --image-block-margin-sm: var(--space-10);
+  --image-block-margin-lg: var(--space-12);
+  width: 100%;
 }
 
 
 /* -------------------------------------------------------------------------
-   DECORATIVE — editorial illustrations and Undraw SVGs
-   No border radius so the illustration's own silhouette reads cleanly.
-   Constrained to 48% on desktop for standalone use. Inside .two-col the
-   grid column constrains width instead, so max-width is reset to none.
+   DEFAULT - inline evidence image, centred and constrained on desktop
    ------------------------------------------------------------------------- */
 
-.image-block--decorative {
-  margin-block:  var(--space-6);
-  margin-inline: auto;
-}
-
-.image-block--decorative img {
-  display:       block;
-  width:         100%;
-  height:        auto;
-  object-fit:    contain;
-  border-radius: 0;
-}
-
-@media (min-width: 905px) {
-  .image-block--decorative {
-    max-width:    48%;
-    margin-block: var(--space-8);
-  }
-}
-
-/* Grid column already constrains width — reset sizing but keep treatment */
-.two-col .image-block--decorative {
-  max-width:     none;
-  margin-inline: 0;
-  margin-block:  0;
+.image-block--default {
+  --image-block-max-width-sm: 100%;
+  --image-block-max-width-md: 72%;
+  --image-block-max-width-lg: 60%;
 }
 
 
 /* -------------------------------------------------------------------------
-   DECORATIVE WIDE — wider horizontal illustrations (65% desktop)
-   Same treatment as --decorative; use when the illustration is landscape
-   and 48% feels too constrained.
+   PORTRAIT - narrow screens, documents, notes, and close-up details
    ------------------------------------------------------------------------- */
 
-.image-block--decorative-wide {
-  margin-block:  var(--space-6);
-  margin-inline: auto;
+.image-block--portrait {
+  --image-block-max-width-sm: 100%;
+  --image-block-max-width-md: 60%;
+  --image-block-max-width-lg: 40%;
 }
 
-.image-block--decorative-wide img {
-  display:       block;
-  width:         100%;
-  height:        auto;
-  object-fit:    contain;
-  border-radius: 0;
-}
-
-@media (min-width: 905px) {
-  .image-block--decorative-wide {
-    max-width:    65%;
-    margin-block: var(--space-8);
-  }
-}
-
-.two-col .image-block--decorative-wide {
-  max-width:     none;
-  margin-inline: 0;
-  margin-block:  0;
-}

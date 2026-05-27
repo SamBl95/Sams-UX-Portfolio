@@ -38,15 +38,13 @@
       <div class="cs-hero__inner container">
 
         <a href="/#case-studies" class="cs-hero__back">
-          <span aria-hidden="true">←</span> Back to case studies
+          <span aria-hidden="true">&larr;</span> Back to case studies
         </a>
 
         <h1 id="cs-title" class="cs-hero__title">Cassi: AI Chatbot Feedback Redesign</h1>
 
         <p class="cs-hero__lede">
-          "Three weeks, zero budget and a graphic design competition later, I improved
-          feedback submissions by 30% and took audience filter adherence from 1-in-3
-          to near 100% on Santander's AI colleague assistant."
+          "Three weeks, zero budget and a graphic design competition later, I improved feedback form submissions by 30% on an AI colleague assistant."
         </p>
 
         <ul class="cs-hero__metrics" role="list" aria-label="Key outcomes">
@@ -63,7 +61,7 @@
             <span class="cs-hero__metric-label">Delivery window</span>
           </li>
           <li class="cs-hero__metric">
-            <span class="cs-hero__metric-value">£0</span>
+            <span class="cs-hero__metric-value">&pound;0</span>
             <span class="cs-hero__metric-label">Additional development cost</span>
           </li>
         </ul>
@@ -97,8 +95,7 @@
 
     <section class="cs-summary" aria-labelledby="cs-summary-heading">
       <div class="container">
-
-        <h2 id="cs-summary-heading" class="cs-summary__heading">Project summary</h2>
+        <h2 id="cs-summary-heading" class="cs-summary__heading">Summary</h2>
       </div>
 
       <dl class="cs-summary__list">
@@ -106,55 +103,62 @@
           <div class="cs-summary__item">
             <dt class="cs-summary__label">What's Colleague Assist?</dt>
             <dd class="cs-summary__answer">
-              Colleague Assist (later renamed Cassi) is an AI chatbot that provides Santander
-              colleagues with guidance on how to serve customers. It's a bit like ChatGPT for
-              banking, using i-Exchange as its source of truth to answer colleague queries in real time.
+              Colleague Assist is an AI chatbot that provides Santander colleagues with guidance
+              on how to serve customers. It uses i-Exchange as its source of information to
+              provide answers.
             </dd>
           </div>
 
           <div class="cs-summary__item">
             <dt class="cs-summary__label">How did I get involved?</dt>
             <dd class="cs-summary__answer">
-              I spotted the tool while conducting user research with a frontline colleague.
-              It looked underserved and I was looking for a new challenge after i-Exchange,
-              so I approached the Product Owner directly and offered to help.
+              While conducting user research with a frontline colleague, I noticed they were using
+              Colleague Assist. The project looked really interesting and I was looking for a new
+              challenge, so I offered my help to improve it.
             </dd>
           </div>
 
           <div class="cs-summary__item">
-            <dt class="cs-summary__label">Problem statement</dt>
+            <dt class="cs-summary__label">What was the problem statement?</dt>
             <dd class="cs-summary__answer">
-              Colleagues were not selecting their business area when querying Cassi, and
-              feedback rates were extremely low. This made responses less accurate and
-              prevented the data science team from improving the model.
+              "Colleagues are not selecting their business area (audience) when querying Colleague
+              Assist and the feedback rates are really low. This causes Colleague Assist's
+              responses to be less accurate and prevents the data science team from improving the model."
             </dd>
           </div>
 
           <div class="cs-summary__item">
-            <dt class="cs-summary__label">What did research show?</dt>
+            <dt class="cs-summary__label">What did my research show?</dt>
             <dd class="cs-summary__answer">
-              Users didn't know their feedback directly improved Cassi's responses.
-              The feedback journey offered only three vague options causing drop-off.
-              The audience filter was positioned far from the query input, so most
-              colleagues ignored it entirely.
+              The feedback journey only allowed discrete feedback with three vague options, causing
+              users to drop off. The start of the feedback journey and the filter mechanism were
+              poorly signalled, and users did not know why filters or feedback mattered.
+            </dd>
+          </div>
+
+          <div class="cs-summary__item">
+            <dt class="cs-summary__label">Why does this matter?</dt>
+            <dd class="cs-summary__answer">
+              Colleague Assist is the strategic AI tool of choice for Santander UK. It was rolling
+              out across Customer Interactions teams and needed to support thousands of colleagues daily.
             </dd>
           </div>
 
           <div class="cs-summary__item">
             <dt class="cs-summary__label">What did I do?</dt>
             <dd class="cs-summary__answer">
-              Within the constraints (no development budget, three weeks before a change freeze) I improved feedback signalling, repositioned the audience filter,
-              added a tooltip for new users, opened a dedicated Community forum for
-              long-form feedback, and ran an internal rebrand competition.
+              I opened a dedicated Cassi forum, improved the signalling for filters and feedback,
+              added guidance through an introduction and tooltip, and ran a competition to give the
+              tool a new name and logo.
             </dd>
           </div>
 
           <div class="cs-summary__item">
             <dt class="cs-summary__label">What was the result?</dt>
             <dd class="cs-summary__answer">
-              Cassi launched with a new name, logo, and improved UX. Audience filter adherence
-              reached near 100% in month one. Feedback submissions increased by 30%.
-              All delivered at zero additional development cost.
+              Cassi was born. Filter adherence moved close to 100%, feedback responses increased
+              by 30%, and the changes were delivered within a strict three week window at no
+              additional development cost.
             </dd>
           </div>
 
@@ -166,8 +170,6 @@
          CASE STUDY BODY
          ===================================================================== -->
 
-    
-
         <!-- -----------------------------------------------------------------
              BACKGROUND
              ----------------------------------------------------------------- -->
@@ -175,37 +177,76 @@
         <section class="cs-phase" aria-labelledby="phase-background">
           <div class="container">
           <p class="cs-phase__eyebrow">Background</p>
-          <h2 id="phase-background" class="cs-phase__heading">A new problem, tight constraints</h2>
+          <h2 id="phase-background" class="cs-phase__heading">A new problem to solve</h2>
 
           <div class="cs-phase__body">
             <p>
-              After delivering the main updates for i-Exchange, I was looking for the next
-              problem worth solving. I found it by accident. While conducting user research with a frontline colleague, I noticed them switching between i-Exchange and
-              a tool called Colleague Assist: an AI chatbot that answered colleague questions
-              using i-Exchange content as its source.
-            </p>
-
-            <figure class="image-block image-block--default">
-              <img src="/assets/images/cassi/Cassi%20-%20thumnail%20and%20main%20hero.jpg" alt="Cassi colleague assistant interface showing the AI chatbot that helps Santander colleagues with customer queries using i-Exchange as its source of truth" loading="lazy" />
-              <figcaption class="image-block__caption">Colleague Assist: the AI chatbot I noticed during user research, using i-Exchange content to answer colleague queries in real time.</figcaption>
-            </figure>
-
-            <p>
-              The product looked interesting and underserved. I introduced myself to
-              the Product Owner and offered to help. They were glad of it: two problems were stalling the tool's rollout: colleagues weren't selecting their business area
-              before querying, and almost nobody was leaving feedback, and both were essential
-              for the data science team to improve the model's responses.
+              After delivering the main updates for i-Exchange, I was on the hunt for new problems
+              to solve. While conducting user research with a frontline colleague, I noticed they
+              were using a tool called Colleague Assist.
             </p>
             <p>
-              There was one significant constraint: no money left in the project budget.
-              The development team agreed that front-end changes (copy, styles, layout) counted as business as usual and could ship without additional cost. But any
-              back-end functionality was off the table. On top of that, a change freeze was
-              coming in three weeks. Whatever I was going to do, it had to ship within that window.
+              Colleague Assist is an AI chatbot that provides Santander colleagues with guidance
+              on how to serve customers. It's a bit like ChatGPT for banking. It uses i-Exchange,
+              Santander's internal knowledge base, as its source of information to provide answers.
             </p>
 
-            <figure class="image-block image-block--contained">
-              <img src="/assets/images/cassi/Cassi%20-%20Joining%20the%20team.svg" alt="Illustration representing Sam joining the Cassi product team to tackle the feedback and audience filter problems before the change freeze" loading="lazy" />
+            <figure class="cs-annotated-image">
+              <div class="cs-annotated-image__frame">
+                <img class="cs-annotated-image__img" src="/assets/images/cassi/Cassi%20homescreen.jpg" alt="Original Colleague Assist homescreen before the Cassi redesign" loading="lazy" />
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="top-right">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Audience was easy to miss</strong>
+                    <p class="cs-annotated-image__tooltip-body">The audience selector sat away from the query moment, so users often forgot to choose it.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-center">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Empty state wasted</strong>
+                    <p class="cs-annotated-image__tooltip-body">The opening screen had space to teach the model, but gave colleagues little guidance.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="bottom-center">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Feedback was not signalled</strong>
+                    <p class="cs-annotated-image__tooltip-body">The product needed feedback to improve, but the interface did not explain why or where to start.</p>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="cs-annotated-image__caption">Colleague Assist before the redesign: useful technology, but weak prompts around audience, guidance and feedback.</figcaption>
             </figure>
+
+            <h3>Joining the team</h3>
+            <p>
+              After speaking to the Product Owner, I found out they were having trouble getting
+              users to select their business area, or audience, and only a fraction of responses
+              were receiving feedback. They were happy for me to join the team. However, there was
+              a big problem. There was no money left.
+            </p>
+            <p>
+              Developers agreed that front end changes such as copy and styles would count as
+              business as usual and not incur additional costs. That helped, but it limited my
+              options. There was also a long change freeze coming up in three weeks, so it was a
+              race against time.
+            </p>
+
+            <h3>Do what you can</h3>
+            <p>
+              Functional changes in the back end were out of the question, so I focused on what we
+              could do. My knowledge of front end development was enough to understand the low cost
+              changes I could make, so I focused on the UI instead of trying to create new journeys
+              or improve the quality of responses directly.
+            </p>
+            <p>
+              In a bid to drive engagement with colleagues, I also announced a competition to design
+              a new logo and posted a banner on i-Exchange to promote it.
+            </p>
           </div>
           </div>
         </section>
@@ -218,54 +259,74 @@
         <section class="cs-phase" aria-labelledby="phase-empathise">
           <div class="container">
           <p class="cs-phase__eyebrow">Empathise</p>
-          <h2 id="phase-empathise" class="cs-phase__heading">Quick research, clear findings</h2>
+          <h2 id="phase-empathise" class="cs-phase__heading">There's always time for research</h2>
 
           <div class="cs-phase__body">
             <p>
-              There was no time for workshops or a formal research plan. But there were
-              plenty of colleagues already using the tool who I could speak to quickly.
-              I organised a town hall meeting to understand why users weren't leaving
-              feedback or selecting their audience, and what came back was clear and consistent.
+              There was no time to plan workshops, or even build a proper research plan, but there
+              were plenty of colleagues using the platform who I could speak to. I set up a town
+              hall meeting to understand why users were not giving feedback or selecting their audience.
             </p>
 
-            <h3>What the town hall revealed</h3>
-            <ol class="cs-insight-list" aria-label="Town hall research findings">
-              <li class="cs-insight-list__item">
-                <h4 class="cs-insight-list__title">Feedback options were too vague</h4>
-                <p class="cs-insight-list__body">Only three discrete choices were available. Users found them too broad to accurately describe their experience, so they gave up and left nothing at all.</p>
+            <h3>Town hall meeting</h3>
+            <ol class="cs-editorial-list cs-editorial-list--numbered" aria-label="Town hall findings">
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Feedback</h4>
+                <p class="cs-editorial-list__body">There were only three feedback options, which did not always describe the user's thoughts. These discrete options were potentially causing high drop off rates.</p>
               </li>
-              <li class="cs-insight-list__item">
-                <h4 class="cs-insight-list__title">Users didn't understand the model</h4>
-                <p class="cs-insight-list__body">Nobody had told colleagues that their feedback directly trained and improved Cassi's responses. Once they knew, they were far more motivated to contribute.</p>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Understanding</h4>
+                <p class="cs-editorial-list__body">Users were not aware that the model learns directly from their feedback. Once this was clear, they felt far more inclined to leave feedback.</p>
               </li>
-              <li class="cs-insight-list__item">
-                <h4 class="cs-insight-list__title">The audience filter was easy to miss</h4>
-                <p class="cs-insight-list__body">It sat at the top of the screen, far from the query input at the bottom. With no prompt or guidance, most users simply forgot it existed.</p>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Audiences</h4>
+                <p class="cs-editorial-list__body">The audience selection menu was at the top of the screen, but the query was entered at the bottom. There were no prompts to select audience, so users often forgot.</p>
               </li>
             </ol>
 
             <h3>Heuristic analysis</h3>
-            <p>
-              A quick pass against usability principles confirmed what the town hall surfaced.
-              There was no onboarding guidance. Colleagues joining through training might know the basics initially, but nothing kept that knowledge fresh. The audience filter was
-              poorly positioned with no supporting prompt. The feedback icons were squeezed
-              between responses without enough visual separation to read as clearly interactive.
-              The UI felt like a prototype that had never been handed to a designer, functional but not ready for the scale of rollout being planned.
-            </p>
+            <ul class="cs-editorial-list cs-editorial-list--grid" role="list" aria-label="Heuristic analysis findings">
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">No guidance</h4>
+                <p class="cs-editorial-list__body">It was not clear that users should select an audience or how important it was to give feedback.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Simple errors</h4>
+                <p class="cs-editorial-list__body">The audience selection was out of place, the feedback icons were wedged between responses, and the colour contrast needed attention.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Dated UI</h4>
+                <p class="cs-editorial-list__body">The tool was in pilot, but it only needed a few focused tweaks to make it feel more ready for scale.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h4 class="cs-editorial-list__title">Unclear feedback journey</h4>
+                <p class="cs-editorial-list__body">The icons were there, but users were not clicking them. The start of the feedback journey was not clear enough.</p>
+              </li>
+            </ul>
 
-            <figure class="image-block image-block--default">
-              <img src="/assets/images/cassi/Cassi%20homescreen.jpg" alt="Original Colleague Assist homescreen showing the AI chat interface before redesign, with no onboarding guidance and the audience filter positioned away from the query input" loading="lazy" />
-              <figcaption class="image-block__caption">The original homescreen: functional but unfinished — no guidance, no visual hierarchy, not ready for scale.</figcaption>
-            </figure>
+            <div class="cs-two-col cs-two-col--flip">
+              <div class="cs-two-col__content">
+                <h3 class="cs-two-col__heading">The feedback entry point was technically there</h3>
+                <div class="cs-two-col__body">
+                  <p>
+                    The thumbs up and down controls existed, but they were visually quiet and
+                    appeared between responses with no explanation of why feedback mattered.
+                  </p>
+                  <p class="cs-two-col__callout">
+                    The problem was not only the feedback form. It was the complete lack of signalling around the start of the journey.
+                  </p>
+                </div>
+              </div>
+
+              <figure class="cs-two-col__media">
+                <img src="/assets/images/cassi/Cassi%20-%20Chat%20window%20before.png" alt="Original Cassi chat window before redesign" loading="lazy" />
+                <figcaption class="cs-two-col__caption">The original chat window: the feedback entry point was there, but with nothing to draw the eye to it.</figcaption>
+              </figure>
+            </div>
 
             <figure class="image-block image-block--portrait">
-              <img src="/assets/images/cassi/Cassi%20-%20example%20of%20how%20tiny%20the%20feedback%20prompt%20was.jpg" alt="Close-up showing how small and visually buried the original Cassi feedback thumbs were, squeezed between chat responses with minimal visual separation" loading="lazy" />
-              <figcaption class="image-block__caption">The feedback prompt at actual size — easy to miss between responses, especially mid-customer-call.</figcaption>
-            </figure>
-
-            <figure class="image-block image-block--default">
-              <img src="/assets/images/cassi/Cassi%20-%20Chat%20window%20before.png" alt="Original Cassi chat window showing the full conversation interface before redesign, with feedback thumbs buried between responses and no clear visual hierarchy" loading="lazy" />
-              <figcaption class="image-block__caption">The original chat window: the feedback entry point was there, but with nothing to draw the eye to it.</figcaption>
+              <img src="/assets/images/cassi/Cassi%20-%20example%20of%20how%20tiny%20the%20feedback%20prompt%20was.jpg" alt="Tiny original feedback prompt between Cassi responses" loading="lazy" />
+              <figcaption class="image-block__caption">The feedback prompt at actual size, easy to miss between responses, especially mid-customer-call.</figcaption>
             </figure>
           </div>
           </div>
@@ -279,63 +340,77 @@
         <section class="cs-phase" aria-labelledby="phase-define">
           <div class="container">
           <p class="cs-phase__eyebrow">Define</p>
-          <h2 id="phase-define" class="cs-phase__heading">Three distinct problems</h2>
+          <h2 id="phase-define" class="cs-phase__heading">Three problems to solve</h2>
 
-          <div class="cs-phase__body">
-            <p>
-              The research consolidated around a clear problem statement and three
-              distinct failure modes beneath it.
-            </p>
-          </div>
-
-          <blockquote class="cs-callout" aria-label="Problem statement">
-            <p class="cs-callout__text">
-              "Colleagues are not selecting their business area when querying Colleague Assist
-              and feedback rates are really low. This causes responses to be less accurate and
-              prevents the data science team from improving the model."
+          <blockquote class="cs-emphasis cs-emphasis--statement" aria-label="Problem statement">
+            <p class="cs-emphasis__text">
+              Colleagues are not selecting their business area (audience) when querying Colleague
+              Assist and the feedback rates are really low. This causes Colleague Assist's responses
+              to be less accurate and prevents the data science team from improving the model.
             </p>
           </blockquote>
 
           <div class="cs-phase__body">
-            <h3>Problem 1: The feedback journey</h3>
+            <h3>The feedback problem</h3>
             <p>
-              Users wanted to leave feedback when Cassi got something wrong, but the three
-              available options were too broad to capture what they actually meant. Faced with
-              choices that didn't fit their experience, they abandoned the journey entirely.
-              Because Cassi uses negative feedback to guard-rail poor responses, low feedback
-              rates had a direct impact on model safety, not just data quality.
+              Users wanted to leave feedback about why the chatbot was wrong, but they only had
+              three options which were too broad. This meant they did not get to share their true
+              thoughts and feelings, so they dropped off the journey.
             </p>
             <p>
-              The feedback entry point was also poorly signalled. The thumbs up and down icons
-              were visually buried between responses, easy to overlook entirely.
-            </p>
-
-            <h3>Problem 2: The understanding gap</h3>
-            <p>
-              Users had no mental model of how Cassi actually worked. They didn't know that
-              their feedback directly trained the model's responses, for themselves and every colleague using the tool. Once that connection was made explicit in the town hall,
-              motivation to leave feedback increased immediately. This was a communication
-              failure, not a missing feature.
+              Cassi uses feedback to improve its responses, guard railing those that receive
+              multiple thumbs down. This is really important to reduce risk, so feedback is vital.
+              I needed to look at how we received feedback to inform the model. The thumbs up and
+              down were also not clearly signalled, so people were likely missing the start of the journey.
             </p>
 
-            <h3>Problem 3: Audience selection</h3>
+            <h3>The understanding problem</h3>
             <p>
-              Prior to the update, 1-in-3 guard-railed responses had no audience selected, meaning the model was being penalised for giving the right answer to the wrong
-              person, rather than a genuinely bad response. The audience filter needed
-              repositioning, prompting, and making impossible to miss.
+              Users did not have a good mental model of Colleague Assist. They did not understand
+              the value in reviewing responses or realise that this could improve the model for
+              their benefit. It was obvious from the town hall meeting that there was a knowledge
+              gap I needed to address to get buy in from users.
             </p>
 
-            <div class="before-after" role="img" aria-label="Cassi audience filter: before and after repositioning">
-              <div class="before-after__col before-after__col--before">
-                <span class="before-after__label">Before</span>
-                <img src="/assets/images/cassi/Cassi%20-%20The%20audience%20selection%20problem.jpg" alt="Original Cassi interface showing the audience selection filter positioned at the top of the screen, far from the query input at the bottom where users focused" loading="lazy" />
+            <h3>The audience problem</h3>
+            <p>
+              Users were not selecting their audience regularly enough. This meant responses could
+              be guard railed for being wrong when really they were just shown to the wrong audience.
+              The layout did not make sense, there were no prompts to choose an audience and no
+              guidance for new users.
+            </p>
+          </div>
+
+          <figure class="cs-annotated-image">
+            <div class="cs-annotated-image__frame">
+              <img class="cs-annotated-image__img" src="/assets/images/cassi/Cassi%20-%20The%20audience%20selection%20problem.jpg" alt="Original Cassi audience selection positioned away from the query input" loading="lazy" />
+
+              <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-left">
+                <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                <div class="cs-annotated-image__tooltip" role="tooltip">
+                  <strong class="cs-annotated-image__tooltip-title">Disconnected from intent</strong>
+                  <p class="cs-annotated-image__tooltip-body">The selector was positioned away from the place where users formed and submitted their query.</p>
+                </div>
               </div>
-              <div class="before-after__col before-after__col--after">
-                <span class="before-after__label">After</span>
-                <img src="/assets/images/cassi/Cassi%20-%20a%20new%20home%20for%20audience%20filters.jpg" alt="Redesigned Cassi interface with audience filter repositioned directly above the query input field, applying the law of proximity" loading="lazy" />
+
+              <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-center">
+                <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                <div class="cs-annotated-image__tooltip" role="tooltip">
+                  <strong class="cs-annotated-image__tooltip-title">No prompt</strong>
+                  <p class="cs-annotated-image__tooltip-body">Nothing explained that audience selection affected answer quality and review accuracy.</p>
+                </div>
+              </div>
+
+              <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-right">
+                <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                <div class="cs-annotated-image__tooltip" role="tooltip">
+                  <strong class="cs-annotated-image__tooltip-title">Wrong data risk</strong>
+                  <p class="cs-annotated-image__tooltip-body">A missing audience could make a good answer look wrong to the data science team.</p>
+                </div>
               </div>
             </div>
-          </div>
+            <figcaption class="cs-annotated-image__caption">The audience filter problem: the control was present, but detached from the moment it mattered.</figcaption>
+          </figure>
           </div>
         </section>
 
@@ -347,63 +422,110 @@
         <section class="cs-phase" aria-labelledby="phase-ideate">
           <div class="container">
           <p class="cs-phase__eyebrow">Ideate</p>
-          <h2 id="phase-ideate" class="cs-phase__heading">Working within the constraints</h2>
+          <h2 id="phase-ideate" class="cs-phase__heading">Three days to hand over designs</h2>
 
           <div class="cs-phase__body">
             <p>
-              With three days before designs needed to go to developers, I moved quickly.
-              No back-end changes, no new user journeys: front-end only. Each solution
-              had to solve a real problem without adding development cost.
+              I was riding solo for this ideation phase. There were only three days before I
+              needed to hand over designs to developers, so I had to move quickly and get mock ups
+              ready super fast.
             </p>
 
-            <h3>Solving feedback: the Community forum</h3>
+            <h3>If only I had somewhere users could leave their feedback</h3>
             <p>
-              The three vague feedback options couldn't be replaced with a richer form without
-              back-end work. But I had an existing relationship with the team running Santander's
-              internal Community forum from my work on i-Exchange. I asked if they could open
-              a dedicated Cassi channel where colleagues could leave longer-form feedback.
-              They said yes, and it was free.
-            </p>
-            <p>
-              Community moderators would triage submissions to the Cassi team. The discrete
-              feedback options were replaced with a direct route to the forum. Problem solved
-              at zero additional cost.
+              I had built a good relationship with the Community Forum team, so I asked about
+              creating a new feedback forum for Colleague Assist. They said yes. Community
+              moderators would monitor the forum and triage feedback to the Colleague Assist team.
+              The discrete feedback options were gone, and even better, the Community forum was free.
             </p>
 
-            <h3>Closing the understanding gap: tooltip and introduction screen</h3>
+            <div class="cs-before-after" role="group" aria-label="Cassi feedback options before and after redesign">
+              <figure class="cs-before-after__item cs-before-after__item--before">
+                <span class="cs-before-after__label">Before</span>
+                <img src="/assets/images/cassi/Cassi%20-%20Fixed%20feedback%20options%20before.jpg" alt="Original Cassi feedback options with vague choices" loading="lazy" />
+                <figcaption class="cs-before-after__caption">Three vague feedback options made it hard for users to explain what had gone wrong.</figcaption>
+              </figure>
+              <figure class="cs-before-after__item cs-before-after__item--after">
+                <span class="cs-before-after__label">After</span>
+                <img src="/assets/images/cassi/Cassi%20-%20The%20new%20feedback%20options.jpg" alt="New Cassi feedback options and route to Community forum" loading="lazy" />
+                <figcaption class="cs-before-after__caption">A clearer feedback entry point routed richer comments into the dedicated forum.</figcaption>
+              </figure>
+            </div>
+
+            <h3>Plugging the knowledge gap</h3>
             <p>
-              When a colleague first opens Cassi, the chat window is empty. That blank space
-              was an opportunity. I proposed using it for a brief introduction: what Cassi is
-              for, how to get the best results, and, critically, that their feedback directly improves the model's responses for everyone on the platform.
+              I noticed a complete lack of guidance on the tool. When colleagues were onboarded
+              they were given training, but due to knowledge fade some might not recall the basics.
+              Tooltips are commonly used to provide context where a user needs support, so I used
+              one to keep things concise and provide key information.
             </p>
             <p>
-              A persistent tooltip would also keep key guidance accessible without interrupting
-              experienced users who already knew what they were doing.
+              When users first opened the tool there was a big empty space in the window. I used
+              it to provide some initial guidance.
             </p>
 
-            <h3>Fixing audience selection: the law of proximity</h3>
+            <div class="cs-two-col">
+              <div class="cs-two-col__content">
+                <h3 class="cs-two-col__heading">Guidance without a new journey</h3>
+                <div class="cs-two-col__body">
+                  <p>
+                    With no budget for back end changes, I used the opening state and a tooltip
+                    to explain how to query Cassi, why audience mattered, and how feedback improved
+                    the model.
+                  </p>
+                  <p class="cs-two-col__callout">
+                    The guidance had to be visible for new users, but not heavy enough to slow down experienced colleagues.
+                  </p>
+                </div>
+              </div>
+
+              <figure class="cs-two-col__media">
+                <img src="/assets/images/cassi/Cassi%20-%20a%20new%20introduction.jpg" alt="New Cassi introduction screen explaining how to use the tool" loading="lazy" />
+                <figcaption class="cs-two-col__caption">The empty opening state became useful guidance for new users.</figcaption>
+              </figure>
+            </div>
+
+            <div class="cs-artifact-grid" role="group" aria-label="Cassi tooltip guidance">
+              <figure class="cs-artifact-grid__item">
+                <img src="/assets/images/cassi/Cassi%20-%20the%20new%20tooltip%20to%20help%20understanding.jpg" alt="New Cassi tooltip entry point" loading="lazy" />
+                <figcaption class="cs-artifact-grid__caption">A tooltip entry point kept guidance available without taking over the interface.</figcaption>
+              </figure>
+
+              <figure class="cs-artifact-grid__item">
+                <img src="/assets/images/cassi/Cassi%20-%20new%20tooltip%20opened%20overlay.jpg" alt="Expanded Cassi tooltip guidance overlay" loading="lazy" />
+                <figcaption class="cs-artifact-grid__caption">The expanded tooltip covered queries, audiences and leaving feedback.</figcaption>
+              </figure>
+            </div>
+
+            <h3>What about the audience filters?</h3>
             <p>
-              The audience filter sat at the top of the screen. The query input was at the
-              bottom. That physical distance was enough for users to forget the filter
-              existed. Moving the selector directly above the query box (where the user's attention already was) applied a basic principle: related elements belong close together.
-            </p>
-            <p>
-              As a fallback, a prompt would appear if a user submitted a query without
-              selecting an audience first.
+              The audience filter menu was positioned at the top of the screen, far away from
+              where users entered their query. Would moving it closer be enough? The law of
+              proximity would indicate yes, so I tried it out.
             </p>
 
-            <h3>Driving engagement: the rebrand competition</h3>
+            <div class="cs-artifact-grid" role="group" aria-label="Cassi audience filter design direction">
+              <figure class="cs-artifact-grid__item">
+                <img src="/assets/images/cassi/Cassi%20-%20a%20new%20home%20for%20audience%20filters.jpg" alt="Cassi audience filter moved directly above the query box" loading="lazy" />
+                <figcaption class="cs-artifact-grid__caption">A new home for audience filters: directly above the query box, where users were already focused.</figcaption>
+              </figure>
+
+              <figure class="cs-artifact-grid__item">
+                <img src="/assets/images/cassi/Cassi%20-%20fall%20bck%20prompt%20if%20user%20doesn%27t%20select%20audience.jpg" alt="Fallback prompt if Cassi user does not select audience" loading="lazy" />
+                <figcaption class="cs-artifact-grid__caption">A fallback prompt appeared if users entered a query without selecting an audience.</figcaption>
+              </figure>
+            </div>
+
+            <h3>A new name and logo</h3>
             <p>
-              Alongside the UX fixes, I ran an internal competition inviting colleagues
-              to design a new logo and suggest a new name. The goal: give colleagues a
-              reason to care about the tool before they'd even experienced the improvements.
-              Dozens of submissions came in. The winning design by Aishat Arowosegbe gave the tool a visual identity closer to the customer-facing systems
-              colleagues already knew. Colleague Assist became Cassi.
+              Alongside the product fixes, I ran a competition to design a new logo and give the
+              tool a new name. It helped promote the tool, drive engagement and make the product
+              feel more mature.
             </p>
 
-            <figure class="image-block image-block--full">
-              <img src="/assets/images/cassi/Cassi%20-%20competition%20banner%20commuincation%20for%20new%20logo.jpg" alt="Internal competition banner announcing the Colleague Assist rebrand competition, inviting colleagues to design a new logo and suggest a new name for the tool" loading="lazy" />
-              <figcaption class="image-block__caption">The competition banner: a way to build colleague investment in the product before they'd even used the improved version.</figcaption>
+            <figure class="image-block image-block--contained">
+              <img src="/assets/images/cassi/Cassi%20-%20competition%20banner%20commuincation%20for%20new%20logo.jpg" alt="Internal competition banner for the Colleague Assist logo and naming competition" loading="lazy" />
+              <figcaption class="image-block__caption">The competition banner: a way to build colleague investment before they even used the improved version.</figcaption>
             </figure>
           </div>
           </div>
@@ -421,61 +543,93 @@
 
           <div class="cs-phase__body">
             <p>
-              With one day left before handover, I ran group calls with users to pressure-test
-              the design decisions. The reaction was positive, and the upgrade felt like a significant improvement to people who'd been using the original daily.
+              I was on my final day before handover, so I quickly put in some group calls with
+              users to check my design choices. Users thought it was a big upgrade and they really
+              liked the new option for feedback.
             </p>
 
-            <h3>The responsive breakpoint catch</h3>
+            <h3>Last minute changes</h3>
             <p>
-              Testing surfaced something I hadn't designed for: many colleagues run Cassi as
-              a narrow side panel so they can use other windows while serving a customer.
-              The layout broke at that width. I introduced a tighter breakpoint, reducing the logo and tightening spacing at the bottom, to keep the chat window functional in the reduced view without affecting larger screens.
-              It went to the wire, but it shipped.
+              Colleague Assist was always a web based tool, but I learned that many users minimised
+              their screen to take up a slim column on the right hand side. This meant they could
+              use other windows while serving customers.
+            </p>
+            <p>
+              The screen needed a smaller breakpoint. By reducing the size of the logo in the top
+              bar and reducing spacing lower down, there was space to fit the chat window. I made
+              sure larger screens were not impacted, but it went down to the wire.
             </p>
 
-            <figure class="image-block image-block--portrait">
-              <img src="/assets/images/cassi/Cassi%20-%20new%20smaller%20breakpoint%20screen.jpg" alt="Cassi interface at a narrow side-panel viewport width showing the tighter breakpoint design, with reduced logo size and compressed spacing to remain functional alongside other windows" loading="lazy" />
-              <figcaption class="image-block__caption">The narrow side-panel view colleagues actually used — designed on the final day after testing surfaced the use case.</figcaption>
-            </figure>
+            <div class="cs-two-col cs-two-col--flip">
+              <div class="cs-two-col__content">
+                <h3 class="cs-two-col__heading">Designing for the window users actually used</h3>
+                <div class="cs-two-col__body">
+                  <p>
+                    The testing sessions revealed that colleagues often kept Cassi in a narrow
+                    side panel while serving customers. That changed the responsive requirement
+                    at the last moment.
+                  </p>
+                  <p class="cs-two-col__callout">
+                    This was not a mobile breakpoint. It was a live-work breakpoint.
+                  </p>
+                </div>
+              </div>
+
+              <figure class="cs-two-col__media">
+                <img src="/assets/images/cassi/Cassi%20-%20new%20smaller%20breakpoint%20screen.jpg" alt="Cassi narrow side panel breakpoint design" loading="lazy" />
+                <figcaption class="cs-two-col__caption">The narrow side-panel view colleagues actually used, designed on the final day after testing surfaced the use case.</figcaption>
+              </figure>
+            </div>
 
             <h3>Toast or overlay?</h3>
             <p>
-              I'd designed two versions of the post-feedback experience: an overlay modal
-              that blocked the screen until dismissed, and a toast notification that appeared
-              briefly at the top of the chat window before fading.
+              I created two ways of displaying the feedback journey. One was an overlay that the
+              user would need to dismiss. The other was a toast that would appear for 10 seconds at
+              the top of the chat window.
+            </p>
+            <p>
+              Users were far more keen on the toast. They made an excellent point that they would
+              usually be speaking to a customer live, so overlay pop ups would get in the way of
+              providing good service.
             </p>
           </div>
 
-          <blockquote class="cs-callout">
-            <p class="cs-callout__text">
-              "I'd have much preferred the overlay, but when colleagues explained that a modal
-              blocking their screen mid-customer-call would genuinely get in the way of their
-              work, it was an easy choice."
-            </p>
+          <blockquote class="cs-emphasis cs-emphasis--quote">
+            <p class="cs-emphasis__text">Toast it is.</p>
           </blockquote>
 
           <div class="cs-phase__body">
-            <p>
-              Users were unanimous on the toast. When you're mid-call with a customer,
-              a dismissal-required modal is a real problem. The toast let colleagues
-              acknowledge the feedback prompt and carry on serving the customer without
-              any friction.
-            </p>
-
-            <figure class="image-block image-block--full">
-              <img src="/assets/images/cassi/Cassi%20-%20Toast%20option.jpg" alt="Cassi toast notification confirming feedback was submitted, appearing briefly at the top of the chat window without blocking the screen or interrupting a live customer call" loading="lazy" />
-              <figcaption class="image-block__caption">The toast: brief, unobtrusive, and gone before it could interfere with the call.</figcaption>
-            </figure>
-
-            <div class="before-after" role="img" aria-label="Cassi feedback confirmation: negative and positive overlay options">
-              <div class="before-after__col before-after__col--before">
-                <span class="before-after__label">Negative feedback</span>
-                <img src="/assets/images/cassi/Cassi%20-%20overlay%20confirming%20feedback%20provided%20negative.jpg" alt="Cassi overlay confirmation screen for negative feedback, showing the modal that would block the screen until dismissed — the option users rejected during testing" loading="lazy" />
+            <div class="cs-two-col">
+              <div class="cs-two-col__content">
+                <h3 class="cs-two-col__heading">Toast over overlay</h3>
+                <div class="cs-two-col__body">
+                  <p>
+                    The toast gave confirmation without blocking the chat. That mattered because
+                    users were often in the middle of a live customer interaction.
+                  </p>
+                  <p class="cs-two-col__callout">
+                    The less prominent pattern was the more useful one.
+                  </p>
+                </div>
               </div>
-              <div class="before-after__col before-after__col--after">
-                <span class="before-after__label">Positive feedback</span>
-                <img src="/assets/images/cassi/Cassi%20-%20overlay%20confirming%20feedback%20provided%20positive.jpg" alt="Cassi overlay confirmation screen for positive feedback, shown as an alternative to the toast approach tested with users during validation" loading="lazy" />
-              </div>
+
+              <figure class="cs-two-col__media">
+                <img src="/assets/images/cassi/Cassi%20-%20Toast%20option.jpg" alt="Cassi toast notification option for feedback confirmation" loading="lazy" />
+                <figcaption class="cs-two-col__caption">The toast was the preferred option when the user selected thumbs up or down.</figcaption>
+              </figure>
+            </div>
+
+            <div class="cs-before-after" role="group" aria-label="Cassi overlay feedback options tested and rejected">
+              <figure class="cs-before-after__item cs-before-after__item--before">
+                <span class="cs-before-after__label">Negative</span>
+                <img src="/assets/images/cassi/Cassi%20-%20overlay%20confirming%20feedback%20provided%20negative.jpg" alt="Cassi negative feedback overlay option" loading="lazy" />
+                <figcaption class="cs-before-after__caption">Overlay option for negative feedback, rejected because it interrupted live customer work.</figcaption>
+              </figure>
+              <figure class="cs-before-after__item cs-before-after__item--after">
+                <span class="cs-before-after__label">Positive</span>
+                <img src="/assets/images/cassi/Cassi%20-%20overlay%20confirming%20feedback%20provided%20positive.jpg" alt="Cassi positive feedback overlay option" loading="lazy" />
+                <figcaption class="cs-before-after__caption">Maybe next time overlays. For this context, they were too intrusive.</figcaption>
+              </figure>
             </div>
           </div>
           </div>
@@ -483,94 +637,114 @@
 
 
         <!-- -----------------------------------------------------------------
-             SOLUTION
+             FINAL PRODUCT
              ----------------------------------------------------------------- -->
 
         <section class="cs-phase" aria-labelledby="phase-solution">
           <div class="container">
-          <p class="cs-phase__eyebrow">Solution</p>
-          <h2 id="phase-solution" class="cs-phase__heading">The final product</h2>
+          <p class="cs-phase__eyebrow">Final product</p>
+          <h2 id="phase-solution" class="cs-phase__heading">Cassi</h2>
 
           <div class="cs-phase__body">
-            <h3>Audience filter</h3>
-            <p>
-              Moved directly above the query input field, with a prompt appearing if a query
-              is submitted without a selection. Proximity does the work that instructions
-              and training never could.
-            </p>
+            <ul class="cs-editorial-list cs-editorial-list--grid" role="list" aria-label="Final Cassi improvements">
+              <li class="cs-editorial-list__item">
+                <h3 class="cs-editorial-list__title">Audience</h3>
+                <p class="cs-editorial-list__body">Moving the audience field and adding a prompt made it much clearer that it needed to be selected.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h3 class="cs-editorial-list__title">Tooltip</h3>
+                <p class="cs-editorial-list__body">A simple tooltip held guidance for new users without getting in the way of colleagues who knew what they were doing.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h3 class="cs-editorial-list__title">Feedback</h3>
+                <p class="cs-editorial-list__body">Users had a clearer path to mark responses and share their thoughts. The new toast went down a treat.</p>
+              </li>
+              <li class="cs-editorial-list__item">
+                <h3 class="cs-editorial-list__title">Rebrand</h3>
+                <p class="cs-editorial-list__body">By engaging with our community, we had a new logo, new name and better brand for Cassi.</p>
+              </li>
+            </ul>
 
-            <figure class="image-block image-block--full">
-              <img src="/assets/images/cassi/Cassi%20-%20a%20new%20home%20for%20audience%20filters.jpg" alt="Redesigned Cassi interface with audience filter repositioned directly above the query input field, so users cannot miss it before submitting a query" loading="lazy" />
-              <figcaption class="image-block__caption">Law of proximity at work: filter and input share the same visual zone.</figcaption>
-            </figure>
-
-            <figure class="image-block image-block--full">
-              <img src="/assets/images/cassi/Cassi%20-%20fall%20bck%20prompt%20if%20user%20doesn%27t%20select%20audience.jpg" alt="Cassi fallback prompt appearing when a user submits a query without selecting their audience, nudging them to complete the filter before getting a response" loading="lazy" />
-              <figcaption class="image-block__caption">The fallback prompt: a safety net for users who still miss the filter on first use.</figcaption>
-            </figure>
-
-            <h3>Tooltip and introduction screen</h3>
-            <p>
-              A persistent tooltip holds key guidance for new users without cluttering
-              the experience for experienced ones. The empty opening screen now provides
-              a brief introduction to best practice, including the explicit statement that feedback improves Cassi's responses for everyone.
-            </p>
-
-            <figure class="image-block image-block--contained">
-              <img src="/assets/images/cassi/Cassi%20-%20a%20new%20introduction.jpg" alt="Redesigned Cassi opening screen showing the new introduction content that explains what Cassi is for, how to get the best results, and that user feedback improves the model for everyone" loading="lazy" />
-              <figcaption class="image-block__caption">The opening screen: the empty chat window turned into a brief, useful introduction for every new user.</figcaption>
-            </figure>
-
-            <figure class="image-block image-block--full">
-              <img src="/assets/images/cassi/Cassi%20-%20the%20new%20tooltip%20to%20help%20understanding.jpg" alt="Cassi tooltip strip showing the persistent help icon that surfaces key guidance for new users without cluttering the experience for experienced ones" loading="lazy" />
-              <figcaption class="image-block__caption">The tooltip: persistent guidance that stays accessible without interrupting experienced users.</figcaption>
-            </figure>
-
-            <figure class="image-block image-block--full">
-              <img src="/assets/images/cassi/Cassi%20-%20new%20tooltip%20opened%20overlay.jpg" alt="Cassi tooltip opened showing the expanded guidance overlay with key information about how to use Cassi effectively and how feedback improves responses" loading="lazy" />
-              <figcaption class="image-block__caption">Tooltip expanded: the full guidance available to any user at any point in their session.</figcaption>
-            </figure>
-
-            <h3>Feedback journey</h3>
-            <p>
-              Thumbs up and down redesigned to read clearly as interactive elements.
-              Selecting one triggers a toast notification: brief, unobtrusive, and surfaced without interrupting a live customer interaction. The toast links
-              to the dedicated Community forum for colleagues who want to leave
-              more detailed context.
-            </p>
-
-            <div class="before-after" role="img" aria-label="Cassi feedback UI: before and after redesign">
-              <div class="before-after__col before-after__col--before">
-                <span class="before-after__label">Before</span>
-                <img src="/assets/images/cassi/Cassi%20-%20Fixed%20feedback%20options%20before.jpg" alt="Original Cassi feedback options showing three vague discrete choices that users found too broad to accurately describe their experience, causing them to abandon the journey" loading="lazy" />
+            <div class="cs-two-col">
+              <div class="cs-two-col__content">
+                <h3 class="cs-two-col__heading">Cassi was born</h3>
+                <div class="cs-two-col__body">
+                  <p>
+                    The naming competition was not decoration. It gave colleagues a reason to
+                    engage with the product while the practical changes were being prepared.
+                  </p>
+                  <p class="cs-two-col__callout">
+                    Aishat Arowosegbe won the competition by designing the Cassi logo.
+                  </p>
+                </div>
               </div>
-              <div class="before-after__col before-after__col--after">
-                <span class="before-after__label">After</span>
-                <img src="/assets/images/cassi/Cassi%20-%20The%20new%20feedback%20options.jpg" alt="Redesigned Cassi feedback options with clear thumbs up and down icons, improved visual prominence, and a link to the dedicated Community forum for detailed feedback" loading="lazy" />
-              </div>
+
+              <figure class="cs-two-col__media">
+                <img src="/assets/images/cassi/cassi-red%20version%20for%20final%20design%20section.svg" alt="Winning Cassi logo and visual identity" loading="lazy" />
+                <figcaption class="cs-two-col__caption">The new identity made the product feel less like a pilot and more like a tool colleagues could recognise.</figcaption>
+              </figure>
             </div>
 
-            <h3>Cassi rebrand</h3>
-            <p>
-              New name, new logo, visual identity aligned with customer-facing systems.
-              The rebrand gave Cassi credibility with colleagues who'd previously
-              dismissed it as an unfinished internal tool.
-            </p>
+            <figure class="cs-annotated-image">
+              <div class="cs-annotated-image__frame">
+                <img class="cs-annotated-image__img" src="/assets/images/cassi/Cassi%20-%20Final%20design%201st%20screen.jpg" alt="Cassi final design first screen" loading="lazy" />
 
-            <figure class="image-block image-block--contained">
-              <img src="/assets/images/cassi/cassi-red%20version%20for%20final%20design%20section.svg" alt="New Cassi logo and visual identity designed by Aishat Arowosegbe, winner of the internal rebrand competition, giving the tool a name and identity aligned with Santander's customer-facing systems" loading="lazy" />
-              <figcaption class="image-block__caption">Winning rebrand by Aishat Arowosegbe: a visual identity that matched the maturity of the redesigned product.</figcaption>
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="top-left">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Audience near the query</strong>
+                    <p class="cs-annotated-image__tooltip-body">The audience selector moved into the area users naturally reviewed before asking a question.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="middle-center">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Opening guidance</strong>
+                    <p class="cs-annotated-image__tooltip-body">The empty chat state now explained how to get a better answer and why feedback mattered.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="bottom-right">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Fallback prompt ready</strong>
+                    <p class="cs-annotated-image__tooltip-body">If users skipped audience selection, the interface had a recovery prompt instead of silently accepting bad context.</p>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="cs-annotated-image__caption">Final design, first screen: audience selection, guidance and brand all support the query moment.</figcaption>
             </figure>
 
-            <h3>Final designs</h3>
-            <figure class="image-block image-block--contained">
-              <img src="/assets/images/cassi/Cassi%20-%20Final%20design%201st%20screen.jpg" alt="Cassi final design showing the redesigned chat interface with repositioned audience filter, new introduction screen, and improved feedback options" loading="lazy" />
-              <figcaption class="image-block__caption">Final design — first screen: audience filter in position, introduction content, new visual identity.</figcaption>
-            </figure>
+            <figure class="cs-annotated-image">
+              <div class="cs-annotated-image__frame">
+                <img class="cs-annotated-image__img" src="/assets/images/cassi/Cassi%20-%20final%20design%202nd%20screen.jpg" alt="Cassi final design second screen" loading="lazy" />
 
-            <figure class="image-block image-block--contained">
-              <img src="/assets/images/cassi/Cassi%20-%20final%20design%202nd%20screen.jpg" alt="Cassi final design showing the second screen of the redesigned interface with the new tooltip, feedback options, and updated visual styling" loading="lazy" />
-              <figcaption class="image-block__caption">Final design — second screen: tooltip accessible, feedback clear, toast ready to fire.</figcaption>
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="top-right">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Tooltip stays available</strong>
+                    <p class="cs-annotated-image__tooltip-body">Guidance could be reopened without interrupting colleagues who already knew what they were doing.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="middle-left">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Feedback is clearer</strong>
+                    <p class="cs-annotated-image__tooltip-body">The path to mark responses and explain issues was easier to spot from inside the conversation.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="bottom-center">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Toast pattern selected</strong>
+                    <p class="cs-annotated-image__tooltip-body">Confirmation could appear without forcing a modal decision during customer service work.</p>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="cs-annotated-image__caption">Final design, second screen: tooltip accessible, feedback clearer, and confirmation handled without blocking the user.</figcaption>
             </figure>
           </div>
           </div>
@@ -584,46 +758,61 @@
         <section class="cs-phase" aria-labelledby="phase-results">
           <div class="container">
           <p class="cs-phase__eyebrow">Results</p>
-          <h2 id="phase-results" class="cs-phase__heading">Delivered in three weeks, at zero cost</h2>
+          <h2 id="phase-results" class="cs-phase__heading">Right on time</h2>
 
-          <ul class="cs-results" role="list" aria-label="Outcome metrics">
-            <li class="stat-block">
-              <span class="stat-block__value">~100%</span>
-              <span class="stat-block__label">Filter adherence in month one</span>
+          <ul class="cs-metric-grid" role="list" aria-label="Cassi outcome metrics">
+            <li class="cs-metric-grid__item">
+              <p class="cs-metric-grid__value">~100%</p>
+              <h3 class="cs-metric-grid__label">Audience adherence</h3>
+              <p class="cs-metric-grid__body">In the first month following deployment, every guard railed response had an audience selected.</p>
             </li>
-            <li class="stat-block">
-              <span class="stat-block__value">+30%</span>
-              <span class="stat-block__label">Feedback submissions</span>
+            <li class="cs-metric-grid__item">
+              <p class="cs-metric-grid__value">+30%</p>
+              <h3 class="cs-metric-grid__label">Feedback responses</h3>
+              <p class="cs-metric-grid__body">The clearer feedback journey and new forum increased feedback engagement.</p>
             </li>
-            <li class="stat-block">
-              <span class="stat-block__value">£0</span>
-              <span class="stat-block__label">Additional development cost</span>
+            <li class="cs-metric-grid__item">
+              <p class="cs-metric-grid__value">&pound;0</p>
+              <h3 class="cs-metric-grid__label">Additional cost</h3>
+              <p class="cs-metric-grid__body">Front end changes were delivered as business as usual before the change freeze.</p>
             </li>
           </ul>
 
           <div class="cs-phase__body">
+            <h3>Did I deliver in three weeks?</h3>
             <p>
-              The changes shipped just before the change freeze and received immediate
-              positive feedback via the new Community forum. In the first month after launch,
-              there were 30 guard-railed responses, and in every single case the user had selected their audience. Before the update, 1-in-3 had not.
+              Right on time. The changes were delivered just before the change freeze and received
+              plenty of positive feedback on the new Community forum page. A month after release,
+              audience selections were close to 100% adherence and the feedback count was higher
+              than ever. Best of all, I achieved this with no additional development cost.
             </p>
+
+            <h3>Community support</h3>
             <p>
-              The Community forum added a dimension the original feedback mechanism never
-              had: context. Colleagues started explaining <em>why</em> a response was wrong,
-              not just that it was. Experienced colleagues began helping newer ones. And a
-              recurring pattern emerged: many "bad" Cassi responses were actually accurate answers based on outdated i-Exchange articles, giving the content team a
-              new stream of actionable improvement signals.
+              By providing a dedicated forum for colleagues, they started sharing their thoughts
+              and we were able to increase feedback engagement. Experienced colleagues were helping
+              new starters and we gained more context for bad responses. Often, the feedback was
+              about a process on i-Exchange, so i-Exchange managers had the information they needed
+              to improve processes.
             </p>
+
+            <h3>The message was clear</h3>
             <p>
-              Combined with improved signalling, the repositioned filter, and the new
-              tooltip and toast, feedback submissions increased 30% in the weeks following launch.
+              The new thumbs up and down UI clearly signalled the start of the feedback journey.
+              The tooltip and toast provided colleagues with the guidance they needed. Combined
+              with the new forum, these changes meant that feedback rates increased by 30%.
+            </p>
+
+            <h3>Adherence improved</h3>
+            <p>
+              Prior to the update, 1 in 3 guard railed responses did not have an audience selected.
+              In the first month following Cassi's deployment, there were 30 guard railed responses.
+              In all cases, the user had selected their audience. This meant the team spent more
+              time reviewing the responses that really needed their attention.
             </p>
           </div>
           </div>
         </section>
-
-
-    </article>
 
 
     <!-- =====================================================================
@@ -641,24 +830,28 @@
           <li class="cs-retro__item">
             <h3 class="cs-retro__item-title">Being adaptable</h3>
             <p class="cs-retro__item-body">
-              Given more time I'd have run proper research and structured testing, but the constraints were real, and working within them delivered genuine value quickly. Knowing when to adapt is something I want to get more deliberate about.
+              This project highlighted that you can still create great products without going by
+              the book. I would have preferred comprehensive research and better testing, but
+              constraints often prevent this. Having the adaptability to go off track to deliver
+              value sooner was the right choice here.
             </p>
           </li>
 
           <li class="cs-retro__item">
-            <h3 class="cs-retro__item-title">Design for every viewport from the start</h3>
+            <h3 class="cs-retro__item-title">Make everything responsive</h3>
             <p class="cs-retro__item-body">
-              I assumed Cassi was a full-width web product. It wasn't. Many colleagues run it as a narrow side panel alongside other windows. Finding that out on the final
-              day before handover nearly caused a problem. Going forward: always understand
-              how a product is actually used before designing, not after. Real usage patterns
-              matter more than standard device breakpoints.
+              I assumed I was building for a web screen. That was a bad assumption. Finding out
+              about the minimised view so close to handover was almost a big problem. This taught
+              me to set up designs to be responsive for web, tablet, mobile and narrow working views.
             </p>
           </li>
 
           <li class="cs-retro__item">
             <h3 class="cs-retro__item-title">Putting my bias aside</h3>
             <p class="cs-retro__item-body">
-              I personally preferred the overlay for the feedback journey. It felt more deliberate and harder to miss. But colleagues explained that a modal blocking their screen mid-customer-call was genuinely disruptive to their work. The right call was obvious once I heard that.
+              I had my own thoughts about the overlay versus toast decision. I would have preferred
+              the overlay, but when colleagues made it clear that it could hamper their ability to
+              serve a customer, it was an easy choice.
             </p>
           </li>
 
@@ -684,7 +877,7 @@
               <h3 class="card__title">i-Exchange Knowledge Base Overhaul</h3>
               <span class="card__metric-chip">35% search accuracy improvement</span>
               <p class="card__subtitle">Overhauling Santander's 6,000-article internal knowledge base to fix broken search, delivering a 35% accuracy improvement across 5 million annual searches.</p>
-              <span class="btn btn--primary card__cta"><span>8 min read</span><span aria-hidden="true">→</span></span>
+              <span class="btn btn--primary card__cta"><span>8 min read</span><span aria-hidden="true">&rarr;</span></span>
             </div>
           </a>
 
@@ -696,7 +889,7 @@
               <h3 class="card__title">Community Support Forum Redesign</h3>
               <span class="card__metric-chip">97 hrs saved every month</span>
               <p class="card__subtitle">Halving homepage load times and saving 97 hours a month by scaling Santander's internal community forum, without a complete rebuild.</p>
-              <span class="btn btn--primary card__cta"><span>6 min read</span><span aria-hidden="true">→</span></span>
+              <span class="btn btn--primary card__cta"><span>6 min read</span><span aria-hidden="true">&rarr;</span></span>
             </div>
           </a>
 
@@ -710,5 +903,6 @@
 
     <script type="module" src="/src/nav.js"></script>
     <script type="module" src="/src/reveal.js"></script>
+    <script type="module" src="/src/cs-annotated-image.js"></script>
   </body>
 </html>

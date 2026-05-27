@@ -1,40 +1,46 @@
-<!-- CASE STUDY CARD COMPONENT — reference template for one card
-     Three instances of this component are used in index.html.
-     Sector tag classes (.card__sector) are card-scoped BEM elements for now.
-     When _badge.css is built, refactor to use .badge instead.
+<!-- CASE STUDY CARD COMPONENT - reference templates
+     These examples mirror the live card pattern used on the homepage,
+     case studies index, and "More case studies" sections.
 -->
 
-<article class="card">
-
-  <div class="card__metric-chip">
-    <span class="card__metric-value">35%</span>
-    <span class="card__metric-label">Search accuracy improvement</span>
+<!-- i-Exchange -->
+<a href="/case-studies/i-exchange" class="card">
+  <div class="card__image">
+    <img src="/assets/images/i-exchange-preview.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
   </div>
 
   <div class="card__body">
-    <!-- COPY: Project title — specific, not generic -->
     <h3 class="card__title">i-Exchange Knowledge Base Overhaul</h3>
+    <span class="card__metric-chip">35% search accuracy improvement</span>
+    <p class="card__subtitle">Overhauling Santander's 6,000-article internal knowledge base to fix broken search, delivering a 35% accuracy improvement across 5 million annual searches.</p>
+    <span class="btn btn--primary card__cta"><span>8 min read</span><span aria-hidden="true">&rarr;</span></span>
+  </div>
+</a>
 
-    <!-- COPY: Outcome-led subtitle — lead with what changed, not what was done -->
-    <p class="card__subtitle">
-      Overhauling Santander's 6,000-article internal knowledge base to fix broken search —
-      delivering a 35% accuracy improvement across 5 million annual searches.
-    </p>
+<!-- Cassi -->
+<a href="/case-studies/cassi" class="card">
+  <div class="card__image">
+    <img src="/assets/images/cassi-preview.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
   </div>
 
-  <footer class="card__footer">
-    <ul class="card__sectors" role="list" aria-label="Sectors">
-      <li class="card__sector">Financial Services</li>
-      <li class="card__sector">Internal Tooling</li>
-    </ul>
+  <div class="card__body">
+    <h3 class="card__title">Cassi: AI Chatbot Feedback Redesign</h3>
+    <span class="card__metric-chip">30% increase in feedback submissions</span>
+    <p class="card__subtitle">Fixing Santander's AI colleague assistant in three weeks at zero development cost, increasing feedback submission rates by 30%.</p>
+    <span class="btn btn--primary card__cta"><span>5 min read</span><span aria-hidden="true">&rarr;</span></span>
+  </div>
+</a>
 
-    <div class="card__meta">
-      <span class="card__read-time">8 min read</span>
-      <a href="/case-studies/i-exchange" class="card__link">
-        Read case study
-        <span class="card__link-arrow" aria-hidden="true">→</span>
-      </a>
-    </div>
-  </footer>
+<!-- Community -->
+<a href="/case-studies/community" class="card">
+  <div class="card__image">
+    <img src="/assets/images/community-preview.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+  </div>
 
-</article>
+  <div class="card__body">
+    <h3 class="card__title">Community Support Forum Redesign</h3>
+    <span class="card__metric-chip">97 hrs saved every month</span>
+    <p class="card__subtitle">Halving homepage load times and saving 97 hours a month by scaling Santander's internal community forum, without a complete rebuild.</p>
+    <span class="btn btn--primary card__cta"><span>6 min read</span><span aria-hidden="true">&rarr;</span></span>
+  </div>
+</a>

@@ -1,0 +1,54 @@
+/* =============================================================================
+   CS ARTIFACT GRID
+   Editorial grid for research artefacts, workshop outputs, notes, diagrams,
+   and lightweight supporting evidence.
+
+   Example:
+   <div class="cs-artifact-grid">
+     <figure class="cs-artifact-grid__item">
+       <img src="..." alt="..." loading="lazy" />
+       <figcaption class="cs-artifact-grid__caption">Caption.</figcaption>
+     </figure>
+   </div>
+   ============================================================================= */
+
+.cs-artifact-grid {
+  display:               grid;
+  grid-template-columns: 1fr;
+  gap:                   var(--space-6);
+  margin-block:          var(--space-8);
+}
+
+.cs-artifact-grid__item {
+  margin: 0;
+}
+
+.cs-artifact-grid__item img {
+  display:       block;
+  width:         100%;
+  height:        auto;
+  object-fit:    contain;
+  border-radius: var(--radius-lg);
+}
+
+.cs-artifact-grid__caption {
+  display:     block;
+  margin-top:  var(--space-2);
+  font-size:   var(--text-sm);
+  font-style:  italic;
+  line-height: var(--leading-relaxed);
+  color:       var(--color-text-secondary);
+}
+
+@media (min-width: 905px) {
+  .cs-artifact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items:           start;
+    gap:                   var(--space-8);
+    margin-block:          var(--space-10);
+  }
+
+  .cs-artifact-grid--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

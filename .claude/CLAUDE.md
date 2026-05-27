@@ -125,6 +125,36 @@ Never copy nav or footer markup inline — always use the partial.
 - Use for problem statements, challenge framing, constraints, and strategic design-direction pivots
 - Optional `.cs-statement__note` supports attribution or context without weakening the main statement
 
+**Feature list system:** `_cs-feature-list.css`
+- Markup: `ul.cs-feature-list > li.cs-feature-list__item > h4.cs-feature-list__title + p.cs-feature-list__body`
+- Use for solution sections and delivered changes where a plain bullet list feels too flat
+- Two-column at 905px+, single-column on mobile; keep items concise
+
+**Artifact grid system:** `_cs-artifact-grid.css`
+- Markup: `.cs-artifact-grid > figure.cs-artifact-grid__item > img + figcaption.cs-artifact-grid__caption`
+- Use for grouped research artefacts, workshop outputs, notes, diagrams, and supporting evidence
+- One column on mobile, two columns at 905px+; keep related artefacts in the same grid
+
+**Results grid system:** `_cs-results-grid.css`
+- Markup: `ul.cs-results-grid > li.cs-results-grid__item > .cs-results-grid__value + .cs-results-grid__label + .cs-results-grid__body`
+- Use for case study outcomes where metrics need supporting context, not just a number and label
+- Single column on mobile, 2x2 at 600px+, three columns at 905px+; add `.cs-results-grid--four` for four-up desktop layouts
+
+**Process row system:** `_cs-process-row.css`
+- Markup: `ol.cs-process-row > li.cs-process-row__item > .cs-process-row__content > h3.cs-process-row__title + p.cs-process-row__body`
+- Use for short numbered flows, delivery sequences, design phases, or grouped solution steps
+- Vertical connected list on mobile, horizontal connected row at 905px+; add `.cs-process-row--three` for three-step flows
+
+**Pull quote system:** `_cs-pull-quote.css`
+- Markup: `blockquote.cs-pull-quote > p.cs-pull-quote__text + optional cite.cs-pull-quote__cite`
+- Use for high-impact narrative statements or stakeholder quotes that should interrupt the reading rhythm
+- Full-width editorial quote with accent left rule; keep concise so it remains scannable
+
+**Before/after system:** `_cs-before-after.css`
+- Markup: `.cs-before-after > figure.cs-before-after__item.cs-before-after__item--before|--after > .cs-before-after__label + img + optional figcaption`
+- Use for redesign comparisons, iterations, and clear state changes where both visuals need equal weight
+- Stacks on mobile, two equal columns at 905px+; use descriptive image alt text and captions when context matters
+
 **Decorative image variants:** `_image-block.css`
 - `image-block--decorative` — standard illustrations, max 48% desktop
 - `image-block--decorative-wide` — landscape illustrations, max 65% desktop
