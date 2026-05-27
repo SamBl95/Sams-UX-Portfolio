@@ -10,6 +10,8 @@
  */
 
 (function initReveal() {
+  document.documentElement.classList.add('js-reveal-enhanced');
+
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const elements = document.querySelectorAll('.js-reveal');

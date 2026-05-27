@@ -35,11 +35,13 @@
           <div class="contact__column js-reveal">
             <h1 id="contact-heading" class="contact__heading">Get in touch</h1>
             <p class="contact__intro">I'm open to hybrid and remote product design roles in the North West of England. Also happy to talk mentorship, community events, or swap notes on design.</p>
+            <p class="contact__availability">Liverpool. Open to hybrid and remote roles.</p>
             <div class="contact__links">
               <a href="https://www.linkedin.com/in/samuel-blake-224605186" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
             </div>
             <p class="contact__form-label">Complete the contact form below if you'd like to get in touch.</p>
-            <form id="contact-form" class="form" novalidate aria-busy="false">
+            <form id="contact-form" class="form" action="https://api.web3forms.com/submit" method="POST" novalidate aria-busy="false">
+              <input type="hidden" name="access_key" value="8ac60d13-9d2a-42f1-ae11-d82c6bb32c8c" />
               <input type="text" name="_honey" id="contact-honey" class="form__honeypot" tabindex="-1" aria-hidden="true" autocomplete="off" />
 
               <div class="form__field">
@@ -68,7 +70,7 @@
               </div>
 
               <div class="form__error" role="alert" tabindex="-1" hidden>
-                <p>Something went wrong. Please check your connection and try again.</p>
+                <p>Something went wrong on our end. You can reach me directly at sam.blake@outlook.com</p>
               </div>
             </form>
 

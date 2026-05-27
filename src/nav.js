@@ -92,7 +92,7 @@ function initNav() {
 
     if (deltaY > 60 || velocity > 0.4) {
       // Animate sheet to bottom edge, then clean up state
-      sheet.style.transition = 'transform 200ms ease-in';
+      sheet.style.transition = 'transform 180ms ease-in';
       sheet.style.transform  = 'translateY(100%)';
       setTimeout(() => {
         // Suppress the CSS close transition — animation already done
@@ -107,14 +107,14 @@ function initNav() {
         sheet.setAttribute('inert', '');
         document.body.style.overflow = '';
         toggle.focus();
-      }, 200);
+      }, 180);
     } else {
-      // Snap back with spring easing
-      sheet.style.transition = 'transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1)';
+      // Snap back to the open position
+      sheet.style.transition = 'transform 220ms ease-out';
       sheet.style.transform  = '';
       setTimeout(() => {
         sheet.style.transition = '';
-      }, 350);
+      }, 220);
     }
     isDragging = false;
   });

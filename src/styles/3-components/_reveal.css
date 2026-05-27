@@ -22,12 +22,21 @@
 
 /* Hidden before JS fires — prevents flash of un-animated content */
 .js-reveal {
+  opacity: 1;
+}
+
+/* Hidden only after JS confirms the reveal enhancement is available. */
+.js-reveal-enhanced .js-reveal {
   opacity: 0;
 }
 
 /* Triggered by IntersectionObserver in reveal.js */
 .js-reveal--visible {
   animation: reveal-enter 500ms var(--ease-out-quint) both;
+}
+
+.js-reveal-enhanced .js-reveal.js-reveal--visible {
+  opacity: 1;
 }
 
 /* Stagger delays — apply via data-reveal-delay attribute */
