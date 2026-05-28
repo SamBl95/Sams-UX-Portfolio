@@ -124,3 +124,9 @@
     gap: var(--space-12);
   }
 }
+
+@media (min-width: 905px) {
+  .cs-two-col--narrow-media {
+    grid-template-columns: minmax(0, 2.33fr) minmax(0, 1fr);
+  }
+}

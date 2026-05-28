@@ -104,3 +104,38 @@
   --image-block-max-width-lg: 40%;
 }
 
+
+/* -------------------------------------------------------------------------
+   HALF - medium evidence image, capped at 50% on desktop
+   ------------------------------------------------------------------------- */
+
+.image-block--half {
+  --image-block-max-width-sm: 100%;
+  --image-block-max-width-md: 100%;
+  --image-block-max-width-lg: 50%;
+}
+
+
+/* -------------------------------------------------------------------------
+   DECORATIVE - illustrations and SVGs that support narrative, never dominant
+   ------------------------------------------------------------------------- */
+
+.image-block--decorative {
+  --image-block-max-width-sm: 100%;
+  --image-block-max-width-md: 48%;
+  --image-block-max-width-lg: 48%;
+  --image-block-radius: 0;
+}
+
+
+/* -------------------------------------------------------------------------
+   DECORATIVE WIDE - landscape illustrations, max 65% on desktop
+   ------------------------------------------------------------------------- */
+
+.image-block--decorative-wide {
+  --image-block-max-width-sm: 100%;
+  --image-block-max-width-md: 65%;
+  --image-block-max-width-lg: 65%;
+  --image-block-radius: 0;
+}
+

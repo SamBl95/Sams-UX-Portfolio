@@ -52,3 +52,36 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+/* Balanced pair: forces both items to the same aspect-ratio box so images align at equal size */
+
+.cs-artifact-grid--balanced .cs-artifact-grid__item img {
+  aspect-ratio: 3 / 2;
+  object-fit:   contain;
+}
+
+/* Story grid: 3-col from tablet up, captions centred */
+
+.cs-artifact-grid--story .cs-artifact-grid__caption {
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .cs-artifact-grid--story {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cs-artifact-grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 905px) {
+  .cs-artifact-grid--story {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cs-artifact-grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
