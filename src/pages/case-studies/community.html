@@ -215,18 +215,18 @@
               </li>
             </ul>
 
-            <div class="cs-team-grid" role="group" aria-label="Community research team">
-              <figure>
+            <div class="cs-artifact-grid cs-artifact-grid--story cs-artifact-grid--balanced" role="group" aria-label="Community research team">
+              <figure class="cs-artifact-grid__item">
                 <img width="500" height="500" src="/assets/images/community/community-emp-ev-samantha.jpg" alt="Samantha, community moderator who led user interviews with contact centre and live chat colleagues" loading="lazy" />
-                <figcaption class="cs-artifact-grid__caption">Samantha, user interviews</figcaption>
+                <figcaption class="cs-artifact-grid__caption">Samantha is great with people. She led our user interviews.</figcaption>
               </figure>
-              <figure>
+              <figure class="cs-artifact-grid__item">
                 <img width="500" height="500" src="/assets/images/community/community-emp-ev-lee.jpg" alt="Lee, community moderator who led competitor analysis of platforms including Reddit and ServiceNow Community" loading="lazy" />
-                <figcaption class="cs-artifact-grid__caption">Lee, competitor analysis</figcaption>
+                <figcaption class="cs-artifact-grid__caption">Lee loves to analyse. He took on the competitor analysis.</figcaption>
               </figure>
-              <figure>
+              <figure class="cs-artifact-grid__item">
                 <img width="500" height="500" src="/assets/images/community/community-emp-ev-bonny.jpg" alt="Bonny, community moderator who led observational studies with branch staff and uncovered the true scale of the load time problem" loading="lazy" />
-                <figcaption class="cs-artifact-grid__caption">Bonny, observational studies</figcaption>
+                <figcaption class="cs-artifact-grid__caption">Bonny understands branch banking inside out. She ran our observational studies.</figcaption>
               </figure>
             </div>
           </div>
@@ -271,49 +271,100 @@
             </ul>
 
             <h3>Heuristic analysis</h3>
-            <p>
-              The homepage had too much information, poor information architecture, and
-              didn't follow an F-shaped reading pattern. Forum groupings were vague: a "General" category isn't meaningful navigation. There were no posts
-              visible on the homepage of a platform whose entire purpose was posts.
-            </p>
 
             <figure class="cs-annotated-image">
               <div class="cs-annotated-image__frame">
-                <img width="1372" height="1596" class="cs-annotated-image__img" src="/assets/images/community/community-emp-before-home-design.jpg" alt="Original Community homepage showing the dense forum data table with live statistics for 20 forums, cluttered navigation, and no posts visible on a platform whose purpose is posts" loading="lazy" />
+                <img width="1372" height="1596" class="cs-annotated-image__img" src="/assets/images/community/community-def-before-home-design.jpg" alt="Old Community homepage showing excessive forum data and poor layout" loading="lazy" />
 
                 <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="top-right">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
-                    <strong class="cs-annotated-image__tooltip-title">Too much live data</strong>
-                    <p class="cs-annotated-image__tooltip-body">Forum counts, comment counts, and last activity loaded for all 20 forums on every visit.</p>
+                    <strong class="cs-annotated-image__tooltip-title">Too much information</strong>
+                    <p class="cs-annotated-image__tooltip-body">The information on each forum, recent discussions and live leader boards were causing excessive load times.</p>
                   </div>
                 </div>
 
                 <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-left">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
-                    <strong class="cs-annotated-image__tooltip-title">No posts visible</strong>
-                    <p class="cs-annotated-image__tooltip-body">The homepage of a support forum did not show any questions or useful posts.</p>
+                    <strong class="cs-annotated-image__tooltip-title">Missing menus</strong>
+                    <p class="cs-annotated-image__tooltip-body">Key menus like 'My network', 'My posts' and 'Achievements,&nbsp;were held on a separate page on the website. Why weren't they shown on Community?</p>
                   </div>
                 </div>
 
                 <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="bottom-center">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
-                    <strong class="cs-annotated-image__tooltip-title">Weak structure</strong>
-                    <p class="cs-annotated-image__tooltip-body">The page did not follow an F-shaped reading pattern, and forum groupings were not meaningful enough.</p>
+                    <strong class="cs-annotated-image__tooltip-title">Hidden leader board</strong>
+                    <p class="cs-annotated-image__tooltip-body">One of our biggest drivers for engagement was users collecting their points, why do we only give them a tiny portion of the home page? </p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-center">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">No questions</strong>
+                    <p class="cs-annotated-image__tooltip-body">This is a support forum, but there are no questinos on the home page?&nbsp;Our competitor anaysis revealed this major flaw.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="bottom-left">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Poor use of space</strong>
+                    <p class="cs-annotated-image__tooltip-body">There was a lack of direction with the home page. The page doesn't match 'F' shaped reading and the information architecture was poorly designed.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="bottom-right">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Forums galore</strong>
+                    <p class="cs-annotated-image__tooltip-body">Each forum had a purpose, but we needed to find a better way to display them. A 'General' category doesn't count as effective grouping.</p>
                   </div>
                 </div>
               </div>
               <figcaption class="cs-annotated-image__caption">Original homepage: four years of live data for 20 forums loaded on every visit, up to 10 seconds on a branch machine.</figcaption>
             </figure>
 
-            <p>
-              The "Ask a question" form had its own issues: no way to reference an
-              i-Exchange article (despite most posts relating to one), attachments that
-              existed but weren't discoverable, instructions that were too long and too
-              small to read, and feedback forums labelled "Ask a question", the wrong prompt for someone trying to give feedback.
-            </p>
+            <figure class="cs-annotated-image">
+              <div class="cs-annotated-image__frame">
+                <img width="1630" height="1300" class="cs-annotated-image__img" src="/assets/images/community/community-final-before-form-design.jpg" alt="Old Ask a question form showing poor signalling and excessive copy" loading="lazy" />
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="top-left">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Missing references</strong>
+                    <p class="cs-annotated-image__tooltip-body">Most Community posts relate to a process on i-Exchange, but the reference for the process was often missing.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-left">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Ignored displays</strong>
+                    <p class="cs-annotated-image__tooltip-body">The 'Recently viewed articles' on the right were supposed to prompt getting the i-Exchange reference, but these were often ignored.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-right">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Poor signalling and discoverability</strong>
+                    <p class="cs-annotated-image__tooltip-body">Users are able to add attachments, but it's not well signalled. There are often complain that they can't do this, but really they just can't find it.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="bottom-center">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Excessive explanation</strong>
+                    <p class="cs-annotated-image__tooltip-body">The instructions were too long to read and the text was tiny!&nbsp;This copy needed to be simplified.</p>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="cs-annotated-image__caption">Original Ask a question form: useful controls were hidden inside a dense, poorly signalled posting flow.</figcaption>
+            </figure>
           </div>
           </div>
         </section>
@@ -347,7 +398,7 @@
               useful knowledge that had stood the test of time.
             </p>
 
-            <figure class="image-block image-block--default">
+            <figure class="image-block image-block--decorative">
               <img width="1841" height="1031" src="/assets/images/community/community-def-dec-old-post-problem.jpg" alt="Visualisation of the outdated post problem on Community, representing old posts from 2021 onwards that had never been removed and were polluting search results" loading="lazy" />
               <figcaption class="image-block__caption">Four years of posts with no expiry mechanism, old answers dominated search results regardless of how outdated they were.</figcaption>
             </figure>
@@ -368,35 +419,9 @@
               but users weren't finding it useful. The trade-off needed to be made explicit.
             </p>
 
-            <figure class="cs-annotated-image">
-              <div class="cs-annotated-image__frame">
-                <img width="1986" height="410" class="cs-annotated-image__img" src="/assets/images/community/community-def-before-loading-problem.jpg" alt="Screenshot illustrating the Community homepage loading problem, showing the live forum statistics table that was causing page load times of up to 10 seconds" loading="lazy" />
-
-                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-left">
-                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
-                  <div class="cs-annotated-image__tooltip" role="tooltip">
-                    <strong class="cs-annotated-image__tooltip-title">Live counts everywhere</strong>
-                    <p class="cs-annotated-image__tooltip-body">Question counts, comment counts and last activity were calculated across every forum on each visit.</p>
-                  </div>
-                </div>
-
-                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-center">
-                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
-                  <div class="cs-annotated-image__tooltip" role="tooltip">
-                    <strong class="cs-annotated-image__tooltip-title">Low user value</strong>
-                    <p class="cs-annotated-image__tooltip-body">Interviews showed colleagues were not using this data to decide where to go next.</p>
-                  </div>
-                </div>
-
-                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-right">
-                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
-                  <div class="cs-annotated-image__tooltip" role="tooltip">
-                    <strong class="cs-annotated-image__tooltip-title">Ten-second wait</strong>
-                    <p class="cs-annotated-image__tooltip-body">Branch observations showed users giving up before the homepage finished loading.</p>
-                  </div>
-                </div>
-              </div>
-              <figcaption class="cs-annotated-image__caption">The loading problem: expensive live statistics were consuming the homepage while adding little value for users.</figcaption>
+            <figure class="image-block image-block--decorative">
+              <img width="1986" height="410" src="/assets/images/community/community-def-before-loading-problem.jpg" alt="Community forum statistics table that caused slow homepage loading" loading="lazy" />
+              <figcaption class="image-block__caption">The loading problem: expensive live statistics were consuming the homepage while adding little value for users.</figcaption>
             </figure>
 
             <h3>The recognition problem</h3>
@@ -407,26 +432,10 @@
               The data was all there. The problem was purely how it was surfaced.
             </p>
 
-            <div class="cs-two-col">
-              <div class="cs-two-col__content">
-                <h3 class="cs-two-col__heading">Recognition existed, but it did not feel like recognition</h3>
-                <div class="cs-two-col__body">
-                  <p>
-                    The product already had points, badges and leaderboard data. The opportunity
-                    was not to invent a new gamification system, but to give the existing one
-                    enough prominence to motivate behaviour.
-                  </p>
-                  <p class="cs-two-col__callout">
-                    The data was there. The product had failed to frame it as something worth competing for.
-                  </p>
-                </div>
-              </div>
-
-              <figure class="cs-two-col__media">
-                <img width="2216" height="830" src="/assets/images/community/community-def-before-recognition-problem.jpg" alt="Original Community leaderboard showing top contributors, but displayed in a small, low-prominence position that failed to motivate the engagement behaviour it was designed to encourage" loading="lazy" />
-                <figcaption class="cs-two-col__caption">The leaderboard existed, it just was not prominent enough to drive the engagement it was built to reward.</figcaption>
-              </figure>
-            </div>
+            <figure class="image-block image-block--decorative">
+              <img width="2216" height="830" src="/assets/images/community/community-def-before-recognition-problem.jpg" alt="Original Community leaderboard displayed with low visual prominence" loading="lazy" />
+              <figcaption class="image-block__caption">The leaderboard existed, it just was not prominent enough to drive the engagement it was built to reward.</figcaption>
+            </figure>
 
             <h3>The missing menus problem</h3>
           </div>
@@ -488,17 +497,57 @@
               </li>
             </ul>
 
-            <div class="cs-artifact-grid" role="group" aria-label="Community implementation constraints and reused navigation">
+            <figure class="image-block image-block--decorative">
+              <img width="1601" height="1045" src="/assets/images/community/community-ide-dec-global-governance.jpg" alt="Global ServiceNow ideation forum where the post expiry feature request was submitted" loading="lazy" />
+              <figcaption class="image-block__caption">Global governance: the feature request had to compete for votes from countries that did not use Community.</figcaption>
+            </figure>
+
+            <figure class="image-block image-block--half">
+              <img width="2390" height="296" src="/assets/images/community/community-ide-des-moving-menus-from-i-exchange.jpg" alt="Navigation menu items being relocated from myExchange to the Community homepage" loading="lazy" />
+              <figcaption class="image-block__caption">Rather than rebuild, existing myExchange menu items were surfaced directly on Community.</figcaption>
+            </figure>
+
+            <div class="cs-artifact-grid" role="group" aria-label="Community context-aware form prompt iterations">
               <figure class="cs-artifact-grid__item">
-                <img width="1601" height="1045" src="/assets/images/community/community-ide-ev-global-governance.jpg" alt="Screenshot of the global ServiceNow ideation forum where the post expiry feature request was submitted, showing the governance process used across all Santander countries using the platform" loading="lazy" />
-                <figcaption class="cs-artifact-grid__caption">Global governance: the feature request had to compete for votes from countries that did not use Community.</figcaption>
+                <img width="2880" height="504" src="/assets/images/community/community-final-des-give-feedback-header.jpg" alt="Community post form header iteration showing a Give feedback prompt for feedback forums" loading="lazy" />
+                <figcaption class="cs-artifact-grid__caption">Feedback forums used Give feedback, the right prompt for reporting an issue or suggestion.</figcaption>
               </figure>
 
               <figure class="cs-artifact-grid__item">
-                <img width="2390" height="296" src="/assets/images/community/community-ide-des-moving-menus-from-i-exchange.jpg" alt="UI showing the navigation menu items being relocated from myExchange to the Community homepage, including My network, My posts, Achievements, and notifications with new iconography" loading="lazy" />
-                <figcaption class="cs-artifact-grid__caption">Rather than rebuild, existing myExchange menu items were surfaced directly on Community.</figcaption>
+                <img width="2880" height="438" src="/assets/images/community/community-final-des-ask-question-header.jpg" alt="Community post form header iteration showing an Ask a question prompt for support forums" loading="lazy" />
+                <figcaption class="cs-artifact-grid__caption">Support forums used Ask a question, the right prompt for someone trying to get help.</figcaption>
               </figure>
             </div>
+          </div>
+          </div>
+        </section>
+
+
+        <!-- -----------------------------------------------------------------
+             PROTOTYPE
+             ----------------------------------------------------------------- -->
+
+        <section class="cs-phase" aria-labelledby="phase-prototype">
+          <div class="container">
+          <p class="cs-phase__eyebrow">Prototype</p>
+          <h2 id="phase-prototype" class="cs-phase__heading">Turning the direction into screens</h2>
+
+          <div class="cs-phase__body">
+            <p>
+              The prototype focused on proving the two biggest homepage changes: giving moderators
+              a stronger place to promote content, and making contributor recognition visible
+              without recreating the slow live-data problem.
+            </p>
+
+            <figure class="image-block image-block--default">
+              <img width="2880" height="1008" src="/assets/images/community/community-final-after-leaderboards-design.jpg" alt="Community leaderboard prototype giving top contributors more prominent recognition" loading="lazy" />
+              <figcaption class="image-block__caption">New leaderboard section giving top contributors the recognition they deserved.</figcaption>
+            </figure>
+
+            <figure class="image-block image-block--default">
+              <img width="2880" height="716" src="/assets/images/community/community-final-after-pinned-posts-example.jpg" alt="Community pinned posts prototype showing a moderator-promoted post" loading="lazy" />
+              <figcaption class="image-block__caption">New pinned posts section giving moderators a space to promote key content.</figcaption>
+            </figure>
           </div>
           </div>
         </section>
@@ -543,108 +592,108 @@
 
         <section class="cs-phase" aria-labelledby="phase-solution">
           <div class="container">
-          <p class="cs-phase__eyebrow">Solution</p>
+          <p class="cs-phase__eyebrow">Final product</p>
           <h2 id="phase-solution" class="cs-phase__heading">The final product</h2>
 
           <div class="cs-phase__body">
 
             <h3>Redesigned homepage</h3>
-            <ul class="cs-editorial-list cs-editorial-list--grid" role="list" aria-label="Community homepage improvements">
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">New hero section</h4>
-                <p class="cs-editorial-list__body">A welcoming header immediately surfaced the two primary actions: post a question and search existing content.</p>
-              </li>
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Pinned posts</h4>
-                <p class="cs-editorial-list__body">Moderators could promote high-value posts to the top of the homepage, ensuring useful content received more visibility.</p>
-              </li>
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Menus in the right place</h4>
-                <p class="cs-editorial-list__body">My network, My posts, Achievements, and notifications moved from myExchange onto Community itself.</p>
-              </li>
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Reorganised forums</h4>
-                <p class="cs-editorial-list__body">The sprawling list of 20 forums was replaced with clearer grouped categories, defined through card sorting with users.</p>
-              </li>
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Expanded leaderboard</h4>
-                <p class="cs-editorial-list__body">A prominent top contributors section added per-forum breakdowns, cached hourly to avoid reintroducing load time issues.</p>
-              </li>
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">F-shaped layout</h4>
-                <p class="cs-editorial-list__body">Information architecture was restructured to match natural reading behaviour, with key content in the most-scanned positions.</p>
-              </li>
-            </ul>
 
-            <div class="cs-before-after" role="group" aria-label="Community homepage before and after redesign">
-              <figure class="cs-before-after__item cs-before-after__item--before">
-                <span class="cs-before-after__label">Before</span>
-                <img width="1372" height="1596" src="/assets/images/community/community-emp-before-home-design.jpg" alt="Original Community homepage with dense forum data table loading live statistics for 20 forums simultaneously, no visible posts, and cluttered navigation" loading="lazy" />
-                <figcaption class="cs-before-after__caption">The original homepage prioritised a heavy forum data table over the posts people came to Community for.</figcaption>
-              </figure>
-              <figure class="cs-before-after__item cs-before-after__item--after">
-                <span class="cs-before-after__label">After</span>
-                <img width="2880" height="4474" src="/assets/images/community/community-final-after-home-design.jpg" alt="Redesigned Community homepage with F-shaped layout, welcoming hero section, pinned posts, reorganised forum categories, expanded leaderboard, and consolidated navigation menus" loading="lazy" />
-                <figcaption class="cs-before-after__caption">The redesigned homepage surfaced posts, actions, navigation, and recognition in one clearer structure.</figcaption>
-              </figure>
-            </div>
+            <figure class="cs-annotated-image">
+              <div class="cs-annotated-image__frame">
+                <img width="2880" height="4474" class="cs-annotated-image__img" src="/assets/images/community/community-final-after-home-design.jpg" alt="Redesigned Community homepage" loading="lazy" />
 
-            <div class="cs-artifact-grid" role="group" aria-label="Community homepage detail improvements">
-              <figure class="cs-artifact-grid__item">
-                <img width="2880" height="716" src="/assets/images/community/community-final-after-pinned-posts-example.jpg" alt="Example of the new pinned posts feature on the redesigned Community homepage, showing a moderator-promoted post surfaced at the top of the feed for maximum visibility" loading="lazy" />
-                <figcaption class="cs-artifact-grid__caption">Pinned posts gave moderators a way to surface high-value answers above the forum list.</figcaption>
-              </figure>
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="top-center">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">New hero section</strong>
+                    <p class="cs-annotated-image__tooltip-body">A brighter hero section welcomes the user and immediately offers the key journeys of posting and searching.</p>
+                  </div>
+                </div>
 
-              <figure class="cs-artifact-grid__item">
-                <img width="2880" height="1008" src="/assets/images/community/community-final-after-leaderboards-design.jpg" alt="Redesigned Community top contributors leaderboard with per-forum breakdown, showing gamification scores across different business areas, cached with hourly refresh" loading="lazy" />
-                <figcaption class="cs-artifact-grid__caption">The leaderboard made existing contribution data visible, with per-forum breakdowns and hourly refresh.</figcaption>
-              </figure>
-            </div>
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="middle-left">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Pinned posts</strong>
+                    <p class="cs-annotated-image__tooltip-body">Making some posts front and centre meant getting more eyes on the biggest posts.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="top-right">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">We found the menus!</strong>
+                    <p class="cs-annotated-image__tooltip-body">Missing menus had a new home. Now Community members had everything they need in one place.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="middle-center">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">New forum display</strong>
+                    <p class="cs-annotated-image__tooltip-body">We threw out the big list, and replaced with clearly organised forums. We used card sorting with users to define these.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="bottom-center">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Top contributors</strong>
+                    <p class="cs-annotated-image__tooltip-body">I expanded the leader board section, including the ability to see the highest scoring users on each forum.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="bottom-right">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">New structure</strong>
+                    <p class="cs-annotated-image__tooltip-body">We changed the structure to match an F shaped reading pattern and improved our information architecture.</p>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="cs-annotated-image__caption">The redesigned homepage surfaced posts, actions, navigation, and recognition in one clearer structure.</figcaption>
+            </figure>
 
             <h3>Redesigned post submission form</h3>
-            <ul class="cs-editorial-list cs-editorial-list--grid" role="list" aria-label="Community form improvements">
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Context-aware prompts</h4>
-                <p class="cs-editorial-list__body">Support forums say "Ask a question". Feedback forums say "Give feedback". The right framing for each context.</p>
-              </li>
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Article reference lookup</h4>
-                <p class="cs-editorial-list__body">A search field lets colleagues link directly to the relevant i-Exchange process from within their post.</p>
-              </li>
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Simplified instructions</h4>
-                <p class="cs-editorial-list__body">Long paragraphs were replaced with short bulleted guidance. Easier to read, easier to act on.</p>
-              </li>
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Visible attachments</h4>
-                <p class="cs-editorial-list__body">A dedicated section made the attachment feature discoverable, ending the recurring complaint that it did not exist.</p>
-              </li>
-            </ul>
 
-            <div class="cs-before-after" role="group" aria-label="Community post submission form before and after redesign">
-              <figure class="cs-before-after__item cs-before-after__item--before">
-                <span class="cs-before-after__label">Before</span>
-                <img width="1630" height="1300" src="/assets/images/community/community-final-before-form-design.jpg" alt="Original Community post submission form with dense paragraph instructions, no article reference field, missing attachments section, and generic Ask a question prompt regardless of forum type" loading="lazy" />
-                <figcaption class="cs-before-after__caption">The original form hid useful controls and used the same prompt across support and feedback forums.</figcaption>
-              </figure>
-              <figure class="cs-before-after__item cs-before-after__item--after">
-                <span class="cs-before-after__label">After</span>
-                <img width="1630" height="2474" src="/assets/images/community/community-final-after-form-design.jpg" alt="Redesigned Community post submission form with context-aware prompt, i-Exchange article lookup field, bulleted guidance, and visible attachments section" loading="lazy" />
-                <figcaption class="cs-before-after__caption">The redesigned form gave each forum the right framing, clearer guidance, and a structured process reference.</figcaption>
-              </figure>
-            </div>
+            <figure class="cs-annotated-image">
+              <div class="cs-annotated-image__frame">
+                <img width="1630" height="2474" class="cs-annotated-image__img" src="/assets/images/community/community-final-after-form-design.jpg" alt="Redesigned Ask a question form" loading="lazy" />
 
-            <div class="cs-artifact-grid" role="group" aria-label="Community context-aware form prompts">
-              <figure class="cs-artifact-grid__item">
-                <img width="2880" height="438" src="/assets/images/community/community-final-des-ask-question-header.jpg" alt="Redesigned Community post form header for support forums, showing the Ask a question prompt that replaces the previously generic and context-free form title" loading="lazy" />
-                <figcaption class="cs-artifact-grid__caption">Support forums used Ask a question, the right prompt for someone trying to get help.</figcaption>
-              </figure>
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="top-center">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">New intro</strong>
+                    <p class="cs-annotated-image__tooltip-body">The new intro section gave the correct context and could be switched to give feedback depending on the forum.</p>
+                  </div>
+                </div>
 
-              <figure class="cs-artifact-grid__item">
-                <img width="2880" height="504" src="/assets/images/community/community-final-des-give-feedback-header.jpg" alt="Redesigned Community post form header for feedback forums, showing the Give feedback prompt that correctly frames the action for colleagues reporting issues or making suggestions" loading="lazy" />
-                <figcaption class="cs-artifact-grid__caption">Feedback forums used Give feedback, the right prompt for reporting an issue or suggestion.</figcaption>
-              </figure>
-            </div>
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="middle-left">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Related articles</strong>
+                    <p class="cs-annotated-image__tooltip-body">A simple look up menu allowed users to reference processes from i-Exchange.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="middle-right">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Clear instructions</strong>
+                    <p class="cs-annotated-image__tooltip-body">Instructions for writing a post were reduced and bulleted. This made it easier for users to do what they came here to do!&nbsp;</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="bottom-center">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Signalled attachments</strong>
+                    <p class="cs-annotated-image__tooltip-body">Providing a new section for attachments meant that users could easily share files when they needed to.</p>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="cs-annotated-image__caption">The redesigned form gave each forum the right framing, clearer guidance, and a structured process reference.</figcaption>
+            </figure>
           </div>
           </div>
         </section>

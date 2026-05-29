@@ -171,22 +171,29 @@
 
 .cs-annotated-image__tooltip {
   position:       absolute;
-  max-width:      240px;
-  padding:        var(--space-4);
+  --tooltip-gap:  var(--space-3);
+  --tooltip-x:    0;
+  --tooltip-y:    -50%;
+  --tooltip-scale: 0.96;
+  width:          clamp(320px, 34vw, 400px);
+  padding:        var(--space-3);
   background:     var(--color-bg);
   border:         1px solid var(--color-feedback-attention-border);
   border-radius:  var(--radius-lg);
   box-shadow:     0 2px 8px var(--color-border);
+  line-height:    var(--leading-normal);
   pointer-events: none;
   opacity:        0;
   z-index:        var(--z-overlay);
+  transform:      translate(var(--tooltip-x), var(--tooltip-y)) scale(var(--tooltip-scale));
+  transform-origin: center;
   transition:     opacity 150ms var(--ease-out), transform 150ms var(--ease-out);
 }
 
 @media (min-width: 905px) {
   .cs-annotated-image__tooltip {
-    min-width: 280px;
-    max-width: 360px;
+    min-width: 320px;
+    max-width: 400px;
   }
 }
 
@@ -217,18 +224,42 @@
    ------------------------------------------------------------------------- */
 
 .cs-annotated-image__callout[data-pos$="-left"] .cs-annotated-image__tooltip {
-  left: calc(100% + var(--space-2));
+  left: calc(100% + var(--tooltip-gap));
   top:  50%;
+  transform-origin: left center;
 }
 
 .cs-annotated-image__callout[data-pos$="-right"] .cs-annotated-image__tooltip {
-  right: calc(100% + var(--space-2));
+  right: calc(100% + var(--tooltip-gap));
   top:   50%;
+  transform-origin: right center;
 }
 
 .cs-annotated-image__callout[data-pos$="-center"] .cs-annotated-image__tooltip {
-  top:  calc(100% + var(--space-2));
+  top:  calc(100% + var(--tooltip-gap));
   left: 50%;
+  --tooltip-x: -50%;
+  --tooltip-y: 0;
+  transform-origin: top center;
+}
+
+.cs-annotated-image__callout[data-pos^="top-"][data-pos$="-left"] .cs-annotated-image__tooltip,
+.cs-annotated-image__callout[data-pos^="top-"][data-pos$="-right"] .cs-annotated-image__tooltip {
+  top: 0;
+  --tooltip-y: 0;
+}
+
+.cs-annotated-image__callout[data-pos^="bottom-"][data-pos$="-left"] .cs-annotated-image__tooltip,
+.cs-annotated-image__callout[data-pos^="bottom-"][data-pos$="-right"] .cs-annotated-image__tooltip {
+  top:    auto;
+  bottom: 0;
+  --tooltip-y: 0;
+}
+
+.cs-annotated-image__callout[data-pos^="bottom-"][data-pos$="-center"] .cs-annotated-image__tooltip {
+  top:    auto;
+  bottom: calc(100% + var(--tooltip-gap));
+  transform-origin: bottom center;
 }
 
 
@@ -237,16 +268,6 @@
    The positioning offset (translateY / translateX) must combine with the
    scale animation in a single transform declaration.
    ------------------------------------------------------------------------- */
-
-/* Hidden */
-.cs-annotated-image__callout[data-pos$="-left"]  .cs-annotated-image__tooltip,
-.cs-annotated-image__callout[data-pos$="-right"] .cs-annotated-image__tooltip {
-  transform: translateY(-50%) scale(0.95);
-}
-
-.cs-annotated-image__callout[data-pos$="-center"] .cs-annotated-image__tooltip {
-  transform: translateX(-50%) scale(0.95);
-}
 
 /* -------------------------------------------------------------------------
    TOOLTIP CONTENT
@@ -257,9 +278,11 @@
 .cs-annotated-image__tooltip-title {
   display:     block;
   font-family: var(--font-heading);
-  font-size:   var(--text-sm);
+  font-size:   var(--text-base);
   font-weight: var(--font-weight-semibold);
-  margin:      0 0 var(--space-2) 0;
+  line-height: var(--leading-tight);
+  margin:      0 0 var(--space-1) 0;
+  text-wrap:   balance;
 }
 
 .cs-annotated-image__callout--positive .cs-annotated-image__tooltip-title {
@@ -272,10 +295,12 @@
 
 .cs-annotated-image__tooltip-body {
   font-family: var(--font-body);
-  font-size:   var(--text-xs);
+  font-size:   var(--text-sm);
   line-height: var(--leading-relaxed);
   color:       var(--color-text-secondary);
   margin:      0;
+  max-width:   46ch;
+  text-wrap:   pretty;
 }
 
 
@@ -302,19 +327,19 @@
   .cs-annotated-image__callout[data-pos$="-left"] .cs-annotated-image__pin:focus-visible + .cs-annotated-image__tooltip {
     opacity:        1;
     pointer-events: auto;
-    transform:      translateY(-50%) scale(1);
+    --tooltip-scale: 1;
   }
 
   .cs-annotated-image__callout[data-pos$="-right"] .cs-annotated-image__pin:focus-visible + .cs-annotated-image__tooltip {
     opacity:        1;
     pointer-events: auto;
-    transform:      translateY(-50%) scale(1);
+    --tooltip-scale: 1;
   }
 
   .cs-annotated-image__callout[data-pos$="-center"] .cs-annotated-image__pin:focus-visible + .cs-annotated-image__tooltip {
     opacity:        1;
     pointer-events: auto;
-    transform:      translateX(-50%) scale(1);
+    --tooltip-scale: 1;
   }
 }
 
@@ -322,19 +347,19 @@
   .cs-annotated-image__callout[data-pos$="-left"]:hover .cs-annotated-image__tooltip {
     opacity:        1;
     pointer-events: auto;
-    transform:      translateY(-50%) scale(1);
+    --tooltip-scale: 1;
   }
 
   .cs-annotated-image__callout[data-pos$="-right"]:hover .cs-annotated-image__tooltip {
     opacity:        1;
     pointer-events: auto;
-    transform:      translateY(-50%) scale(1);
+    --tooltip-scale: 1;
   }
 
   .cs-annotated-image__callout[data-pos$="-center"]:hover .cs-annotated-image__tooltip {
     opacity:        1;
     pointer-events: auto;
-    transform:      translateX(-50%) scale(1);
+    --tooltip-scale: 1;
   }
 }
 
@@ -350,15 +375,7 @@
 @media (prefers-reduced-motion: reduce) {
   .cs-annotated-image__tooltip {
     transition: opacity 150ms linear;
-  }
-
-  .cs-annotated-image__callout[data-pos$="-left"]  .cs-annotated-image__tooltip,
-  .cs-annotated-image__callout[data-pos$="-right"] .cs-annotated-image__tooltip {
-    transform: translateY(-50%);
-  }
-
-  .cs-annotated-image__callout[data-pos$="-center"] .cs-annotated-image__tooltip {
-    transform: translateX(-50%);
+    --tooltip-scale: 1;
   }
 
   .cs-annotated-image__pin          { transition: none; }
