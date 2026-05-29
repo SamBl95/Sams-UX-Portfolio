@@ -64,6 +64,9 @@ result: medium to large, readable, clean caption explaining the data
 4 item evidence grid: 4 columns desktop, 2 columns tablet, stacked full width mobile. Used for interview notes and research artifacts.
 2 item side by side: 50% each desktop, stacked full width mobile. Used for design iteration pairs.
 
+**Case study layout modifiers:**
+cs-two-col--narrow-media: use with `.cs-two-col` when the supporting media should be narrower than the text column on desktop.
+
 **General rules:**
 Always use loading='lazy'
 Always use object-fit contain unless explicitly specified

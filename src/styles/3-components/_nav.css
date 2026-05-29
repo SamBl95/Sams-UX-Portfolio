@@ -8,6 +8,26 @@
 
 
 /* Header wrapper — sticky, full-width */
+.skip-link {
+  position: fixed;
+  top: var(--space-1);
+  left: var(--space-1);
+  z-index: var(--z-modal);
+  padding: var(--space-1) var(--space-2);
+  color: var(--color-text-on-accent);
+  background-color: var(--color-accent-accessible);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transform: translateY(calc(-100% - var(--space-2)));
+  transition: transform var(--transition-fast);
+}
+
+.skip-link:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 2px;
+  transform: translateY(0);
+}
+
 .nav {
   position: sticky;
   top: 0;

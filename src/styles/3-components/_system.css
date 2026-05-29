@@ -2,6 +2,8 @@
    SYSTEM PAGE
    Hidden craft showcase: design tokens, component library, architecture.
    Route: /system — linked only from a discreet footer link.
+   This noindex dev page uses a few literal px values intentionally for
+   token demos, rulers, swatches, badges, and fixed-format component previews.
    ============================================================================= */
 
 

@@ -122,8 +122,8 @@
 
 .image-block--decorative {
   --image-block-max-width-sm: 100%;
-  --image-block-max-width-md: 48%;
-  --image-block-max-width-lg: 48%;
+  --image-block-max-width-md: 40%;
+  --image-block-max-width-lg: 40%;
   --image-block-radius: 0;
 }
 
@@ -138,4 +138,3 @@
   --image-block-max-width-lg: 65%;
   --image-block-radius: 0;
 }
-

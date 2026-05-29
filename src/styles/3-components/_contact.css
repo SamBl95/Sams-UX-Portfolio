@@ -10,7 +10,7 @@
 
 @media (min-width: 905px) {
   .contact__column {
-    max-width: 600px;
+    max-width: var(--content-measure);
   }
 }
 

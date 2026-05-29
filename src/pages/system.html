@@ -10,10 +10,10 @@
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="apple-touch-icon" href="/favicon.png">
 
-    <!-- Typefaces: Fraunces (headings), Urbanist (body), Caveat (hero accent) -->
+    <!-- Typefaces: Fraunces (headings), Urbanist (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&family=Caveat:wght@400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
@@ -21,7 +21,7 @@
 
     {{> nav}}
 
-    <main>
+    <main id="main-content">
 
       <!-- =================================================================
            1. INTRO
@@ -518,7 +518,7 @@
                 <h4 class="sys-component__name">Case Study Card</h4>
                 <code class="sys-component__class">.card</code>
                 <div class="sys-component__demo">
-                  <a href="#" class="card">
+                  <article class="card">
                     <div class="card__image">
                       <div class="sys-placeholder" role="img" aria-label="Case study preview image"></div>
                     </div>
@@ -526,9 +526,9 @@
                       <h4 class="card__title">Project Name</h4>
                       <span class="card__metric-chip">40% improvement</span>
                       <p class="card__subtitle">Short outcome-led description of what was achieved and for whom.</p>
-                      <span class="btn btn--primary card__cta"><span>6 min read</span><span aria-hidden="true">→</span></span>
+                      <a href="#" class="btn btn--primary card__cta"><span>6 min read</span><span aria-hidden="true">→</span></a>
                     </div>
-                  </a>
+                  </article>
                 </div>
                 <p class="sys-component__desc">Case study card with metric chip, outcome subtitle, and read-time CTA. Lifts on hover with teal accent border and shadow.</p>
                 <div class="sys-component__meta">
@@ -665,7 +665,7 @@
                 <div class="sys-component__demo">
                   <figure class="image-block image-block--decorative">
                     <div class="sys-placeholder sys-placeholder--wide" role="img" aria-label="Decorative illustration placeholder"></div>
-                    <figcaption class="image-block__caption">Decorative — max 48% desktop, full width mobile</figcaption>
+                    <figcaption class="image-block__caption">Decorative — max 40% desktop, full width mobile</figcaption>
                   </figure>
                 </div>
                 <p class="sys-component__desc">Illustrations and SVGs that support narrative without dominating. Never stretched, never annotated, always object-fit contain.</p>

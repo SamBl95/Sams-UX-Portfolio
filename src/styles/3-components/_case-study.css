@@ -14,6 +14,11 @@
   padding-bottom: var(--space-16);
 }
 
+.cs-hero__inner {
+  display:        flex;
+  flex-direction: column;
+}
+
 @media (min-width: 905px) {
   .cs-hero {
     padding-top:    var(--space-16);

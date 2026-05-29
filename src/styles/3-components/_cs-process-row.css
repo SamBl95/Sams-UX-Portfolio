@@ -1,0 +1,95 @@
+/* =============================================================================
+   CS PROCESS ROW
+   Connected sequence for 3-4 case-study process steps.
+   ============================================================================= */
+
+.cs-process-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: 0;
+  margin: var(--space-10) 0;
+  list-style: none;
+  counter-reset: cs-process-row;
+}
+
+.cs-process-row__item {
+  position: relative;
+  counter-increment: cs-process-row;
+  padding-left: var(--space-6);
+}
+
+.cs-process-row__item::before {
+  content: counter(cs-process-row, decimal-leading-zero);
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-tight);
+  color: var(--color-accent-accessible);
+}
+
+.cs-process-row__item + .cs-process-row__item {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+}
+
+.cs-process-row__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.cs-process-row__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+}
+
+.cs-process-row__body {
+  margin: 0;
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 905px) {
+  .cs-process-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    border-block: 1px solid var(--color-border);
+  }
+
+  .cs-process-row__item {
+    padding: var(--space-5);
+    padding-top: var(--space-8);
+  }
+
+  .cs-process-row__item:first-child {
+    padding-left: 0;
+  }
+
+  .cs-process-row__item:last-child {
+    padding-right: 0;
+  }
+
+  .cs-process-row__item + .cs-process-row__item {
+    border-top: 0;
+    border-left: 1px solid var(--color-border);
+  }
+
+  .cs-process-row__item::before {
+    top: var(--space-5);
+    left: var(--space-5);
+  }
+
+  .cs-process-row__item:first-child::before {
+    left: 0;
+  }
+}

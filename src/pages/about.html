@@ -17,10 +17,10 @@
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="apple-touch-icon" href="/favicon.png">
 
-    <!-- Typefaces: Fraunces (headings), Urbanist (body), Caveat (hero accent) -->
+    <!-- Typefaces: Fraunces (headings), Urbanist (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&family=Caveat:wght@400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="/src/styles/main.css" />
     <script type="application/ld+json">
@@ -41,7 +41,7 @@
 
     {{> nav navAbout=true}}
 
-    <main>
+    <main id="main-content">
 
       <section class="about-hero section-lg js-reveal" aria-labelledby="about-heading">
         <div class="container-content about-hero__inner">
@@ -52,7 +52,7 @@
             </p>
           </div>
           <figure class="about-hero__portrait js-reveal" data-reveal-delay="150">
-            <img src="/Sam/Professional%20HS.png" alt="Sam Blake" width="473" height="454" decoding="async" />
+          <img src="/Sam/Professional%20HS.png" alt="Sam Blake" width="473" height="454" loading="eager" fetchpriority="high" decoding="async" />
           </figure>
         </div>
       </section>
@@ -164,7 +164,7 @@
       <section class="about-section about-section--surface section-md" aria-labelledby="about-personal-heading">
         <div class="container-content about-personal">
           <figure class="about-personal__image">
-            <img src="/Sam/Picture%20with%20Pax.png" alt="Sam Blake holding Pax" width="473" height="556" decoding="async" />
+            <img src="/Sam/Picture%20with%20Pax.png" alt="Sam Blake holding Pax" width="473" height="556" loading="lazy" decoding="async" />
           </figure>
           <div class="about-section__intro">
             <p class="about-section__eyebrow">Outside the work</p>

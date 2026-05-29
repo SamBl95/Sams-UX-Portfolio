@@ -17,10 +17,10 @@
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="apple-touch-icon" href="/favicon.png">
 
-    <!-- Typefaces: Fraunces (headings), Urbanist (body), Caveat (hero accent) -->
+    <!-- Typefaces: Fraunces (headings), Urbanist (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&family=Caveat:wght@400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
@@ -28,21 +28,21 @@
 
     {{> nav navArticles=true}}
 
-    <main>
+    <main id="main-content">
 
       <section class="articles section-lg" aria-labelledby="articles-heading">
         <div class="container">
           <h1 id="articles-heading" class="articles__heading js-reveal">Articles</h1>
-          <p class="articles__intro js-reveal" data-reveal-delay="50">Articles on product design, craft, and the decisions behind the work.</p>
+          <p class="articles__intro js-reveal" data-reveal-delay="50">Placeholder article drafts for product design, craft, and the decisions behind the work.</p>
           <ul class="articles__list js-reveal" role="list" data-reveal-delay="100">
             <li class="articles__item">
-              <a href="/articles/how-i-built-my-portfolio-with-claude-code" class="card">
+              <article class="card">
                 <div class="card__content">
                   <div class="card__body">
-                    <span class="card__metric-chip">AI Workflows</span>
+                    <span class="card__metric-chip">Placeholder draft</span>
                     <h2 class="card__title">How I built my portfolio with Claude Code</h2>
-                    <p class="card__subtitle">What rebuilding from scratch taught me about briefing AI, managing outputs, and working more fluently between design and code.</p>
-                    <span class="btn btn--primary card__cta"><span>5 min read</span><span aria-hidden="true">&rarr;</span></span>
+                    <p class="card__subtitle">Placeholder draft for a future article on briefing AI, managing outputs, and working more fluently between design and code.</p>
+                    <a href="/articles/how-i-built-my-portfolio-with-claude-code" class="btn btn--primary card__cta"><span>View placeholder</span><span aria-hidden="true">&rarr;</span></a>
                   </div>
                 </div>
                 <div class="card__thumbnail card__thumbnail--claude-code" aria-hidden="true">
@@ -56,21 +56,20 @@
                   <span class="card__thumbnail-chip">Vite</span>
                   <span class="card__thumbnail-chip">ship</span>
                 </div>
-              </a>
+              </article>
             </li>
             <li class="articles__item">
-              <a href="/articles/design-systems-and-portfolio-sites" class="card">
+              <article class="card">
                 <div class="card__content">
                   <div class="card__body">
-                    <span class="card__metric-chip">Design Systems</span>
+                    <span class="card__metric-chip">Placeholder draft</span>
                     <h2 class="card__title">Design systems and portfolio sites</h2>
-                    <p class="card__subtitle">What building this portfolio taught me about design systems in miniature.</p>
-                    <span class="btn btn--primary card__cta"><span>2 min read</span><span aria-hidden="true">→</span></span>
+                    <p class="card__subtitle">Placeholder draft for a future article on what building this portfolio taught me about design systems in miniature.</p>
+                    <a href="/articles/design-systems-and-portfolio-sites" class="btn btn--primary card__cta"><span>View placeholder</span><span aria-hidden="true">→</span></a>
                   </div>
                 </div>
-                <!-- TODO: replace with real article image -->
                 <div class="card__thumbnail" aria-hidden="true"></div>
-              </a>
+              </article>
             </li>
           </ul>
         </div>

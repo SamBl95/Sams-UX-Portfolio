@@ -17,10 +17,10 @@
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="apple-touch-icon" href="/favicon.png">
 
-    <!-- Typefaces: Fraunces (headings), Urbanist (body), Caveat (hero accent) -->
+    <!-- Typefaces: Fraunces (headings), Urbanist (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&family=Caveat:wght@400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
@@ -28,7 +28,7 @@
 
     {{> nav}}
 
-    <main>
+    <main id="main-content">
 
     <!-- =====================================================================
          CASE STUDY HERO
@@ -215,17 +215,17 @@
               </li>
             </ul>
 
-            <div class="cs-artifact-grid cs-artifact-grid--three" role="group" aria-label="Community research team">
-              <figure class="cs-artifact-grid__item">
-                <img src="/assets/images/community/Community%20-%20Samantha.jpg" alt="Samantha, community moderator who led user interviews with contact centre and live chat colleagues" loading="lazy" />
+            <div class="cs-team-grid" role="group" aria-label="Community research team">
+              <figure>
+                <img width="500" height="500" src="/assets/images/community/community-emp-ev-samantha.jpg" alt="Samantha, community moderator who led user interviews with contact centre and live chat colleagues" loading="lazy" />
                 <figcaption class="cs-artifact-grid__caption">Samantha, user interviews</figcaption>
               </figure>
-              <figure class="cs-artifact-grid__item">
-                <img src="/assets/images/community/Community%20-%20Lee.jpg" alt="Lee, community moderator who led competitor analysis of platforms including Reddit and ServiceNow Community" loading="lazy" />
+              <figure>
+                <img width="500" height="500" src="/assets/images/community/community-emp-ev-lee.jpg" alt="Lee, community moderator who led competitor analysis of platforms including Reddit and ServiceNow Community" loading="lazy" />
                 <figcaption class="cs-artifact-grid__caption">Lee, competitor analysis</figcaption>
               </figure>
-              <figure class="cs-artifact-grid__item">
-                <img src="/assets/images/community/Community%20-%20Bonny.jpg" alt="Bonny, community moderator who led observational studies with branch staff and uncovered the true scale of the load time problem" loading="lazy" />
+              <figure>
+                <img width="500" height="500" src="/assets/images/community/community-emp-ev-bonny.jpg" alt="Bonny, community moderator who led observational studies with branch staff and uncovered the true scale of the load time problem" loading="lazy" />
                 <figcaption class="cs-artifact-grid__caption">Bonny, observational studies</figcaption>
               </figure>
             </div>
@@ -279,7 +279,7 @@
 
             <figure class="cs-annotated-image">
               <div class="cs-annotated-image__frame">
-                <img class="cs-annotated-image__img" src="/assets/images/community/Commuity%20-%20Home%20design%20before.jpg" alt="Original Community homepage showing the dense forum data table with live statistics for 20 forums, cluttered navigation, and no posts visible on a platform whose purpose is posts" loading="lazy" />
+                <img width="1372" height="1596" class="cs-annotated-image__img" src="/assets/images/community/community-emp-before-home-design.jpg" alt="Original Community homepage showing the dense forum data table with live statistics for 20 forums, cluttered navigation, and no posts visible on a platform whose purpose is posts" loading="lazy" />
 
                 <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="top-right">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
@@ -348,7 +348,7 @@
             </p>
 
             <figure class="image-block image-block--default">
-              <img src="/assets/images/community/Community%20-%20Old%20post%20problem%20thrown%20in%20bin.jpg" alt="Visualisation of the outdated post problem on Community, representing old posts from 2021 onwards that had never been removed and were polluting search results" loading="lazy" />
+              <img width="1841" height="1031" src="/assets/images/community/community-def-dec-old-post-problem.jpg" alt="Visualisation of the outdated post problem on Community, representing old posts from 2021 onwards that had never been removed and were polluting search results" loading="lazy" />
               <figcaption class="image-block__caption">Four years of posts with no expiry mechanism, old answers dominated search results regardless of how outdated they were.</figcaption>
             </figure>
 
@@ -370,7 +370,7 @@
 
             <figure class="cs-annotated-image">
               <div class="cs-annotated-image__frame">
-                <img class="cs-annotated-image__img" src="/assets/images/community/Community%20-%20Loading%20problem.jpg" alt="Screenshot illustrating the Community homepage loading problem, showing the live forum statistics table that was causing page load times of up to 10 seconds" loading="lazy" />
+                <img width="1986" height="410" class="cs-annotated-image__img" src="/assets/images/community/community-def-before-loading-problem.jpg" alt="Screenshot illustrating the Community homepage loading problem, showing the live forum statistics table that was causing page load times of up to 10 seconds" loading="lazy" />
 
                 <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-left">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
@@ -423,7 +423,7 @@
               </div>
 
               <figure class="cs-two-col__media">
-                <img src="/assets/images/community/Community%20-%20recognition%20problem.jpg" alt="Original Community leaderboard showing top contributors, but displayed in a small, low-prominence position that failed to motivate the engagement behaviour it was designed to encourage" loading="lazy" />
+                <img width="2216" height="830" src="/assets/images/community/community-def-before-recognition-problem.jpg" alt="Original Community leaderboard showing top contributors, but displayed in a small, low-prominence position that failed to motivate the engagement behaviour it was designed to encourage" loading="lazy" />
                 <figcaption class="cs-two-col__caption">The leaderboard existed, it just was not prominent enough to drive the engagement it was built to reward.</figcaption>
               </figure>
             </div>
@@ -490,12 +490,12 @@
 
             <div class="cs-artifact-grid" role="group" aria-label="Community implementation constraints and reused navigation">
               <figure class="cs-artifact-grid__item">
-                <img src="/assets/images/community/Community%20-%20Global%20governance.jpg" alt="Screenshot of the global ServiceNow ideation forum where the post expiry feature request was submitted, showing the governance process used across all Santander countries using the platform" loading="lazy" />
+                <img width="1601" height="1045" src="/assets/images/community/community-ide-ev-global-governance.jpg" alt="Screenshot of the global ServiceNow ideation forum where the post expiry feature request was submitted, showing the governance process used across all Santander countries using the platform" loading="lazy" />
                 <figcaption class="cs-artifact-grid__caption">Global governance: the feature request had to compete for votes from countries that did not use Community.</figcaption>
               </figure>
 
               <figure class="cs-artifact-grid__item">
-                <img src="/assets/images/community/Community%20-%20moving%20menus%20from%20i-Exchange.jpg" alt="UI showing the navigation menu items being relocated from myExchange to the Community homepage, including My network, My posts, Achievements, and notifications with new iconography" loading="lazy" />
+                <img width="2390" height="296" src="/assets/images/community/community-ide-des-moving-menus-from-i-exchange.jpg" alt="UI showing the navigation menu items being relocated from myExchange to the Community homepage, including My network, My posts, Achievements, and notifications with new iconography" loading="lazy" />
                 <figcaption class="cs-artifact-grid__caption">Rather than rebuild, existing myExchange menu items were surfaced directly on Community.</figcaption>
               </figure>
             </div>
@@ -579,24 +579,24 @@
             <div class="cs-before-after" role="group" aria-label="Community homepage before and after redesign">
               <figure class="cs-before-after__item cs-before-after__item--before">
                 <span class="cs-before-after__label">Before</span>
-                <img src="/assets/images/community/Commuity%20-%20Home%20design%20before.jpg" alt="Original Community homepage with dense forum data table loading live statistics for 20 forums simultaneously, no visible posts, and cluttered navigation" loading="lazy" />
+                <img width="1372" height="1596" src="/assets/images/community/community-emp-before-home-design.jpg" alt="Original Community homepage with dense forum data table loading live statistics for 20 forums simultaneously, no visible posts, and cluttered navigation" loading="lazy" />
                 <figcaption class="cs-before-after__caption">The original homepage prioritised a heavy forum data table over the posts people came to Community for.</figcaption>
               </figure>
               <figure class="cs-before-after__item cs-before-after__item--after">
                 <span class="cs-before-after__label">After</span>
-                <img src="/assets/images/community/Community%20-%20Home%20Design%20after.jpg" alt="Redesigned Community homepage with F-shaped layout, welcoming hero section, pinned posts, reorganised forum categories, expanded leaderboard, and consolidated navigation menus" loading="lazy" />
+                <img width="2880" height="4474" src="/assets/images/community/community-final-after-home-design.jpg" alt="Redesigned Community homepage with F-shaped layout, welcoming hero section, pinned posts, reorganised forum categories, expanded leaderboard, and consolidated navigation menus" loading="lazy" />
                 <figcaption class="cs-before-after__caption">The redesigned homepage surfaced posts, actions, navigation, and recognition in one clearer structure.</figcaption>
               </figure>
             </div>
 
             <div class="cs-artifact-grid" role="group" aria-label="Community homepage detail improvements">
               <figure class="cs-artifact-grid__item">
-                <img src="/assets/images/community/Community%20-%20Pinned%20posts%20example.jpg" alt="Example of the new pinned posts feature on the redesigned Community homepage, showing a moderator-promoted post surfaced at the top of the feed for maximum visibility" loading="lazy" />
+                <img width="2880" height="716" src="/assets/images/community/community-final-after-pinned-posts-example.jpg" alt="Example of the new pinned posts feature on the redesigned Community homepage, showing a moderator-promoted post surfaced at the top of the feed for maximum visibility" loading="lazy" />
                 <figcaption class="cs-artifact-grid__caption">Pinned posts gave moderators a way to surface high-value answers above the forum list.</figcaption>
               </figure>
 
               <figure class="cs-artifact-grid__item">
-                <img src="/assets/images/community/Community%20-%20Leaderboards%20new%20design.jpg" alt="Redesigned Community top contributors leaderboard with per-forum breakdown, showing gamification scores across different business areas, cached with hourly refresh" loading="lazy" />
+                <img width="2880" height="1008" src="/assets/images/community/community-final-after-leaderboards-design.jpg" alt="Redesigned Community top contributors leaderboard with per-forum breakdown, showing gamification scores across different business areas, cached with hourly refresh" loading="lazy" />
                 <figcaption class="cs-artifact-grid__caption">The leaderboard made existing contribution data visible, with per-forum breakdowns and hourly refresh.</figcaption>
               </figure>
             </div>
@@ -624,24 +624,24 @@
             <div class="cs-before-after" role="group" aria-label="Community post submission form before and after redesign">
               <figure class="cs-before-after__item cs-before-after__item--before">
                 <span class="cs-before-after__label">Before</span>
-                <img src="/assets/images/community/Community%20-%20Form%20design%20before.jpg" alt="Original Community post submission form with dense paragraph instructions, no article reference field, missing attachments section, and generic Ask a question prompt regardless of forum type" loading="lazy" />
+                <img width="1630" height="1300" src="/assets/images/community/community-final-before-form-design.jpg" alt="Original Community post submission form with dense paragraph instructions, no article reference field, missing attachments section, and generic Ask a question prompt regardless of forum type" loading="lazy" />
                 <figcaption class="cs-before-after__caption">The original form hid useful controls and used the same prompt across support and feedback forums.</figcaption>
               </figure>
               <figure class="cs-before-after__item cs-before-after__item--after">
                 <span class="cs-before-after__label">After</span>
-                <img src="/assets/images/community/Community%20-%20Form%20design%20after.jpg" alt="Redesigned Community post submission form with context-aware prompt, i-Exchange article lookup field, bulleted guidance, and visible attachments section" loading="lazy" />
+                <img width="1630" height="2474" src="/assets/images/community/community-final-after-form-design.jpg" alt="Redesigned Community post submission form with context-aware prompt, i-Exchange article lookup field, bulleted guidance, and visible attachments section" loading="lazy" />
                 <figcaption class="cs-before-after__caption">The redesigned form gave each forum the right framing, clearer guidance, and a structured process reference.</figcaption>
               </figure>
             </div>
 
             <div class="cs-artifact-grid" role="group" aria-label="Community context-aware form prompts">
               <figure class="cs-artifact-grid__item">
-                <img src="/assets/images/community/Community%20-%20New%20Ask%20a%20question%20header.jpg" alt="Redesigned Community post form header for support forums, showing the Ask a question prompt that replaces the previously generic and context-free form title" loading="lazy" />
+                <img width="2880" height="438" src="/assets/images/community/community-final-des-ask-question-header.jpg" alt="Redesigned Community post form header for support forums, showing the Ask a question prompt that replaces the previously generic and context-free form title" loading="lazy" />
                 <figcaption class="cs-artifact-grid__caption">Support forums used Ask a question, the right prompt for someone trying to get help.</figcaption>
               </figure>
 
               <figure class="cs-artifact-grid__item">
-                <img src="/assets/images/community/Community%20-%20New%20Give%20Feedback%20form%20header.jpg" alt="Redesigned Community post form header for feedback forums, showing the Give feedback prompt that correctly frames the action for colleagues reporting issues or making suggestions" loading="lazy" />
+                <img width="2880" height="504" src="/assets/images/community/community-final-des-give-feedback-header.jpg" alt="Redesigned Community post form header for feedback forums, showing the Give feedback prompt that correctly frames the action for colleagues reporting issues or making suggestions" loading="lazy" />
                 <figcaption class="cs-artifact-grid__caption">Feedback forums used Give feedback, the right prompt for reporting an issue or suggestion.</figcaption>
               </figure>
             </div>
@@ -749,29 +749,29 @@
         <h2 id="cs-more-heading" class="cs-more__heading">More case studies</h2>
         <div class="cs-more__grid">
 
-          <a href="/case-studies/i-exchange" class="card">
+          <article class="card">
             <div class="card__image">
-              <img src="/assets/images/i-exchange-preview.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+              <img src="/assets/images/i-exchange-preview.jpg" alt="" aria-hidden="true" width="800" height="450" loading="lazy" decoding="async" />
             </div>
             <div class="card__body">
               <h3 class="card__title">i-Exchange Knowledge Base Overhaul</h3>
               <span class="card__metric-chip">35% search accuracy improvement</span>
               <p class="card__subtitle">Overhauling Santander's 6,000-article internal knowledge base to fix broken search, delivering a 35% accuracy improvement across 5 million annual searches.</p>
-              <span class="btn btn--primary card__cta"><span>8 min read</span><span aria-hidden="true">&rarr;</span></span>
+              <a href="/case-studies/i-exchange" class="btn btn--primary card__cta"><span>8 min read</span><span aria-hidden="true">&rarr;</span></a>
             </div>
-          </a>
+          </article>
 
-          <a href="/case-studies/cassi" class="card">
+          <article class="card">
             <div class="card__image">
-              <img src="/assets/images/cassi-preview.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+              <img src="/assets/images/cassi-preview.jpg" alt="" aria-hidden="true" width="800" height="450" loading="lazy" decoding="async" />
             </div>
             <div class="card__body">
               <h3 class="card__title">Cassi: AI Chatbot Feedback Redesign</h3>
               <span class="card__metric-chip">30% increase in feedback submissions</span>
               <p class="card__subtitle">Fixing Santander's AI colleague assistant in three weeks at zero development cost, increasing feedback submission rates by 30%.</p>
-              <span class="btn btn--primary card__cta"><span>5 min read</span><span aria-hidden="true">&rarr;</span></span>
+              <a href="/case-studies/cassi" class="btn btn--primary card__cta"><span>5 min read</span><span aria-hidden="true">&rarr;</span></a>
             </div>
-          </a>
+          </article>
 
         </div>
       </div>
