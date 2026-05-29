@@ -125,19 +125,24 @@
 
 .hero__typewriter {
   --typewriter-size: calc(var(--text-28) * 0.8);
-  display:       block;
-  font-size:     var(--typewriter-size);
-  line-height:   1.08;
-  margin-bottom: var(--space-5); /* 40px — gap before buttons */
-  max-width:     min(100%, 980px);
-  /* min-height set by JS in typewriter.js — no CSS fallback to avoid layout shift when Caveat loads */
+  --typewriter-line-height: 1.08;
+  --typewriter-line-box: calc(var(--typewriter-size) * var(--typewriter-line-height));
+  --typewriter-prefix-size: var(--text-lg);
+  --typewriter-prefix-line-box: calc(var(--typewriter-prefix-size) * var(--leading-tight));
+  --typewriter-text-lines: 2;
+  display:        block;
+  font-size:      var(--typewriter-size);
+  line-height:    var(--typewriter-line-height);
+  margin-bottom:  var(--space-5); /* 40px — gap before buttons */
+  max-width:      min(100%, 980px);
+  min-height:     calc(var(--typewriter-prefix-line-box) + var(--space-1) + (var(--typewriter-line-box) * var(--typewriter-text-lines)));
 }
 
 .hero__typewriter-prefix,
 .hero__typewriter-text {
   font-family:    var(--font-accent);
   font-weight:    var(--font-weight-normal);
-  line-height:    1.08;
+  line-height:    var(--typewriter-line-height);
   color:          var(--color-text-primary);
   letter-spacing: normal;
 }
@@ -146,18 +151,18 @@
   display:       block;
   margin-bottom: var(--space-1);
   font-family:   var(--font-body);
-  font-size:     var(--text-lg);
+  font-size:     var(--typewriter-prefix-size);
   font-weight:   var(--font-weight-medium);
   line-height:   var(--leading-tight);
   color:         var(--color-accent-accessible);
 }
 
 @media (min-width: 905px) {
-  .hero__typewriter-prefix { font-size: var(--text-xl); }
+  .hero__typewriter { --typewriter-prefix-size: var(--text-xl); }
 }
 
 @media (min-width: 1240px) {
-  .hero__typewriter-prefix { font-size: var(--text-2xl); }
+  .hero__typewriter { --typewriter-prefix-size: var(--text-2xl); }
 }
 
 .hero__typewriter-text {
@@ -184,6 +189,9 @@
   display:          inline-block;
   width:            clamp(2px, 0.06em, 4px);
   height:           1em;
+  max-height:       var(--typewriter-line-box);
+  line-height:      1;
+  overflow:         hidden;
   background-color: var(--color-text-primary);
   vertical-align:   -0.08em;
   margin-left:      0.12em;

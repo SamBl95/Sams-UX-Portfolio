@@ -207,31 +207,7 @@
   display:        flex;
   flex-direction: column;
   gap:            var(--space-8);
-  padding-inline: var(--space-2);
-}
-
-@media (min-width: 600px) {
-  .cs-summary__list {
-    padding-inline: var(--space-3);
-  }
-}
-
-@media (min-width: 905px) {
-  .cs-summary__list {
-    padding-inline: var(--space-4);
-  }
-}
-
-@media (min-width: 1240px) {
-  .cs-summary__list {
-    padding-inline: var(--space-6);
-  }
-}
-
-@media (min-width: 1440px) {
-  .cs-summary__list {
-    padding-inline: var(--space-10);
-  }
+  padding-inline: 0;
 }
 
 .cs-summary__item {
