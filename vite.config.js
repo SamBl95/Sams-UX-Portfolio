@@ -39,6 +39,7 @@ export default defineConfig({
             '/case-studies/community':   '/src/pages/case-studies/community.html',
             '/articles/design-systems-and-portfolio-sites': '/src/pages/articles/design-systems-and-portfolio-sites.html',
             '/articles/how-i-built-my-portfolio-with-claude-code': '/src/pages/articles/how-i-built-my-portfolio-with-claude-code.html',
+            '/system': '/src/pages/system.html',
           }
           if (rewrites[req.url]) req.url = rewrites[req.url]
           next()
@@ -63,6 +64,7 @@ export default defineConfig({
         claudeCodeArticle: r('./src/pages/articles/how-i-built-my-portfolio-with-claude-code.html'),
         caseStudies:  r('./src/pages/case-studies.html'),
         cv:           r('./src/pages/cv.html'),
+        system:       r('./src/pages/system.html'),
       },
     },
   },

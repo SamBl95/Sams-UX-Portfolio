@@ -277,7 +277,6 @@
               </li>
             </ul>
 
-            <h3>The feedback entry point was technically there</h3>
             <p>
               The thumbs up and down controls existed, but they were visually quiet and
               appeared between responses with no explanation of why feedback mattered.
@@ -350,27 +349,9 @@
               <figcaption class="image-block__caption">The feedback prompt at actual size, easy to miss between responses, especially mid-customer-call.</figcaption>
             </figure>
 
-            <figure class="cs-annotated-image">
-              <div class="cs-annotated-image__frame">
-                <img class="cs-annotated-image__img" src="/assets/images/cassi/cassi-define-before-feedback-options.jpg" alt="Original Cassi feedback options with vague choices" loading="lazy" />
-
-                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-left">
-                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
-                  <div class="cs-annotated-image__tooltip" role="tooltip">
-                    <strong class="cs-annotated-image__tooltip-title">Vague options</strong>
-                    <p class="cs-annotated-image__tooltip-body">Three broad labels did not let users describe what had actually gone wrong.</p>
-                  </div>
-                </div>
-
-                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="bottom-center">
-                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
-                  <div class="cs-annotated-image__tooltip" role="tooltip">
-                    <strong class="cs-annotated-image__tooltip-title">No route for detail</strong>
-                    <p class="cs-annotated-image__tooltip-body">Users with complex feedback had nowhere to go, so most dropped off the journey.</p>
-                  </div>
-                </div>
-              </div>
-              <figcaption class="cs-annotated-image__caption">The original feedback options: three choices that were too broad to capture what users actually thought.</figcaption>
+            <figure class="image-block image-block--contained">
+              <img src="/assets/images/cassi/cassi-define-before-feedback-options.jpg" alt="Original Cassi feedback options with vague choices" loading="lazy" />
+              <figcaption class="image-block__caption">The original feedback options: three choices that were too broad to capture what users actually thought.</figcaption>
             </figure>
 
             <h3>The understanding problem</h3>
@@ -386,40 +367,16 @@
               Users were not selecting their audience regularly enough. This meant responses could
               be guard railed for being wrong when really they were just shown to the wrong audience.
               The layout did not make sense, there were no prompts to choose an audience and no
-              guidance for new users.
+              guidance for new users. There needed to be a clearer journey and guidance for users to
+              select their audience. Audience selection should become second nature, as all queries
+              should be filtered by audience.
             </p>
+
+            <figure class="image-block image-block--contained">
+              <img src="/assets/images/cassi/cassi-define-ev-audience-selection-problem.jpg" alt="Original Cassi audience selection positioned away from the query input" loading="lazy" />
+              <figcaption class="image-block__caption">The audience filter problem: the control was present, but detached from the moment it mattered.</figcaption>
+            </figure>
           </div>
-
-          <figure class="cs-annotated-image">
-            <div class="cs-annotated-image__frame">
-              <img class="cs-annotated-image__img" src="/assets/images/cassi/cassi-define-ev-audience-selection-problem.jpg" alt="Original Cassi audience selection positioned away from the query input" loading="lazy" />
-
-              <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-left">
-                <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
-                <div class="cs-annotated-image__tooltip" role="tooltip">
-                  <strong class="cs-annotated-image__tooltip-title">Disconnected from intent</strong>
-                  <p class="cs-annotated-image__tooltip-body">The selector was positioned away from the place where users formed and submitted their query.</p>
-                </div>
-              </div>
-
-              <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-center">
-                <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
-                <div class="cs-annotated-image__tooltip" role="tooltip">
-                  <strong class="cs-annotated-image__tooltip-title">No prompt</strong>
-                  <p class="cs-annotated-image__tooltip-body">Nothing explained that audience selection affected answer quality and review accuracy.</p>
-                </div>
-              </div>
-
-              <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-right">
-                <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
-                <div class="cs-annotated-image__tooltip" role="tooltip">
-                  <strong class="cs-annotated-image__tooltip-title">Wrong data risk</strong>
-                  <p class="cs-annotated-image__tooltip-body">A missing audience could make a good answer look wrong to the data science team.</p>
-                </div>
-              </div>
-            </div>
-            <figcaption class="cs-annotated-image__caption">The audience filter problem: the control was present, but detached from the moment it mattered.</figcaption>
-          </figure>
           </div>
         </section>
 
@@ -465,6 +422,11 @@
               it to provide some initial guidance.
             </p>
 
+            <figure class="image-block image-block--default">
+              <img src="/assets/images/cassi/cassi-prototype-des-tooltip-guidance.jpg" alt="New Cassi tooltip entry point" loading="lazy" />
+              <figcaption class="image-block__caption">A tooltip entry point kept guidance available without taking over the interface.</figcaption>
+            </figure>
+
             <div class="cs-two-col">
               <div class="cs-two-col__content">
                 <h3 class="cs-two-col__heading">Guidance without a new journey</h3>
@@ -485,11 +447,6 @@
                 <figcaption class="cs-two-col__caption">The empty opening state became useful guidance for new users.</figcaption>
               </figure>
             </div>
-
-            <figure class="image-block image-block--default">
-              <img src="/assets/images/cassi/cassi-prototype-des-tooltip-guidance.jpg" alt="New Cassi tooltip entry point" loading="lazy" />
-              <figcaption class="image-block__caption">A tooltip entry point kept guidance available without taking over the interface.</figcaption>
-            </figure>
 
             <h3>What about the audience filters?</h3>
             <p>

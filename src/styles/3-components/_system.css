@@ -1,0 +1,928 @@
+/* =============================================================================
+   SYSTEM PAGE
+   Hidden craft showcase: design tokens, component library, architecture.
+   Route: /system — linked only from a discreet footer link.
+   ============================================================================= */
+
+
+/* -------------------------------------------------------------------------
+   SECTION HEADER
+   ------------------------------------------------------------------------- */
+
+.sys-section__header {
+  max-width: 64ch;
+  margin-bottom: var(--space-10);
+}
+
+@media (min-width: 905px) {
+  .sys-section__header {
+    margin-bottom: var(--space-12);
+  }
+}
+
+.sys-section__eyebrow {
+  display:        block;
+  margin-bottom:  var(--space-2);
+  font-size:      var(--text-xs);
+  font-weight:    var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color:          var(--color-accent-accessible);
+}
+
+.sys-section__heading {
+  font-family:    var(--font-heading);
+  font-size:      var(--text-3xl);
+  font-weight:    var(--font-weight-semibold);
+  line-height:    var(--leading-tight);
+  letter-spacing: -0.02em;
+  color:          var(--color-text-primary);
+  margin:         0 0 var(--space-4) 0;
+  text-wrap:      balance;
+}
+
+@media (min-width: 905px) {
+  .sys-section__heading {
+    font-size: var(--text-4xl);
+  }
+}
+
+.sys-section__body {
+  font-size:   var(--text-base);
+  line-height: var(--leading-body);
+  color:       var(--color-text-secondary);
+  margin:      0;
+  max-width:   64ch;
+  text-wrap:   pretty;
+}
+
+
+/* -------------------------------------------------------------------------
+   SUBSECTION — groups within the token showcase
+   ------------------------------------------------------------------------- */
+
+.sys-subsection {
+  margin-bottom: var(--space-12);
+}
+
+.sys-subsection__heading {
+  font-family:   var(--font-heading);
+  font-size:     var(--text-xl);
+  font-weight:   var(--font-weight-semibold);
+  line-height:   var(--leading-tight);
+  color:         var(--color-text-primary);
+  margin:        0 0 var(--space-3) 0;
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+@media (min-width: 905px) {
+  .sys-subsection__heading {
+    font-size: var(--text-2xl);
+  }
+}
+
+.sys-subsection__desc {
+  font-size:   var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color:       var(--color-text-secondary);
+  margin:      var(--space-3) 0 var(--space-6);
+  max-width:   56ch;
+  text-wrap:   pretty;
+}
+
+
+/* -------------------------------------------------------------------------
+   COLOUR SWATCHES
+   ------------------------------------------------------------------------- */
+
+.sys-swatch-grid {
+  display:               grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:                   var(--space-3);
+  margin-bottom:         var(--space-6);
+}
+
+@media (min-width: 600px) {
+  .sys-swatch-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 905px) {
+  .sys-swatch-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap:                   var(--space-4);
+  }
+}
+
+.sys-swatch {
+  display:       flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  overflow:      hidden;
+  border:        1px solid var(--color-border);
+}
+
+.sys-swatch__chip {
+  height:          72px;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  flex-shrink:     0;
+}
+
+@media (min-width: 905px) {
+  .sys-swatch__chip {
+    height: 88px;
+  }
+}
+
+.sys-swatch__info {
+  padding:          var(--space-2) var(--space-3);
+  background-color: var(--color-bg);
+  display:          flex;
+  flex-direction:   column;
+  gap:              3px;
+  flex:             1;
+}
+
+.sys-swatch__name {
+  font-size:   var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  color:       var(--color-text-primary);
+  word-break:  break-all;
+  line-height: var(--leading-normal);
+}
+
+.sys-swatch__hex {
+  font-family: var(--font-mono);
+  font-size:   var(--text-xs);
+  color:       var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+.sys-swatch__contrast {
+  display:          inline-flex;
+  align-self:       flex-start;
+  margin-top:       2px;
+  padding:          1px var(--space-1);
+  background-color: var(--color-accent-light);
+  border-radius:    var(--radius-sm);
+  font-size:        10px;
+  font-weight:      var(--font-weight-semibold);
+  color:            var(--color-accent-accessible);
+  line-height:      var(--leading-normal);
+}
+
+/* Base */
+.sys-swatch--bg .sys-swatch__chip          { background-color: var(--color-bg); border-bottom: 1px solid var(--color-border); }
+.sys-swatch--surface .sys-swatch__chip     { background-color: var(--color-surface); border-bottom: 1px solid var(--color-border); }
+.sys-swatch--border .sys-swatch__chip      { background-color: var(--color-border); }
+
+/* Text */
+.sys-swatch--text-primary .sys-swatch__chip   { background-color: var(--color-text-primary); }
+.sys-swatch--text-secondary .sys-swatch__chip { background-color: var(--color-text-secondary); }
+.sys-swatch--text-nav .sys-swatch__chip       { background-color: var(--color-text-nav); }
+
+/* Accent */
+.sys-swatch--accent .sys-swatch__chip         { background-color: var(--color-accent); }
+.sys-swatch--accent-light .sys-swatch__chip   { background-color: var(--color-accent-light); border-bottom: 1px solid var(--color-border); }
+.sys-swatch--error .sys-swatch__chip          { background-color: var(--color-error); }
+
+/* text-on-accent: shown as a warm-white square on a teal field */
+.sys-swatch--text-on-accent .sys-swatch__chip {
+  background-color: var(--color-accent);
+}
+.sys-swatch--text-on-accent .sys-swatch__chip::after {
+  content:          '';
+  display:          block;
+  width:            36px;
+  height:           36px;
+  background-color: var(--color-text-on-accent);
+  border-radius:    var(--radius-md);
+}
+
+/* Feedback — success */
+.sys-swatch--success-bg .sys-swatch__chip     { background-color: var(--color-feedback-success-bg); border-bottom: 1px solid var(--color-border); }
+.sys-swatch--success-border .sys-swatch__chip { background-color: var(--color-feedback-success-border); }
+.sys-swatch--success-text .sys-swatch__chip   { background-color: var(--color-feedback-success-text); }
+
+/* Feedback — error */
+.sys-swatch--error-bg .sys-swatch__chip     { background-color: var(--color-feedback-error-bg); border-bottom: 1px solid var(--color-border); }
+.sys-swatch--error-border .sys-swatch__chip { background-color: var(--color-feedback-error-border); }
+.sys-swatch--error-text .sys-swatch__chip   { background-color: var(--color-feedback-error-text); }
+
+/* Feedback — warning */
+.sys-swatch--warning-bg .sys-swatch__chip     { background-color: var(--color-feedback-warning-bg); border-bottom: 1px solid var(--color-border); }
+.sys-swatch--warning-border .sys-swatch__chip { background-color: var(--color-feedback-warning-border); }
+.sys-swatch--warning-text .sys-swatch__chip   { background-color: var(--color-feedback-warning-text); }
+
+/* Feedback — attention */
+.sys-swatch--attention-bg .sys-swatch__chip     { background-color: var(--color-feedback-attention-bg); border-bottom: 1px solid var(--color-border); }
+.sys-swatch--attention-border .sys-swatch__chip { background-color: var(--color-feedback-attention-border); }
+.sys-swatch--attention-text .sys-swatch__chip   { background-color: var(--color-feedback-attention-text); }
+
+
+/* -------------------------------------------------------------------------
+   TYPOGRAPHY — font families
+   ------------------------------------------------------------------------- */
+
+.sys-font-grid {
+  display:               grid;
+  grid-template-columns: 1fr;
+  gap:                   var(--space-4);
+  margin-bottom:         var(--space-8);
+}
+
+@media (min-width: 600px) {
+  .sys-font-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.sys-font-card {
+  padding:          var(--space-5);
+  border:           1px solid var(--color-border);
+  border-radius:    var(--radius-lg);
+  background-color: var(--color-bg);
+  display:          flex;
+  flex-direction:   column;
+  gap:              var(--space-3);
+}
+
+.sys-font-card__sample {
+  display:     block;
+  font-size:   var(--text-3xl);
+  line-height: var(--leading-tight);
+  color:       var(--color-text-primary);
+  flex:        1;
+}
+
+.sys-font-card--heading .sys-font-card__sample { font-family: var(--font-heading); font-weight: var(--font-weight-semibold); }
+.sys-font-card--body .sys-font-card__sample    { font-family: var(--font-body); font-weight: var(--font-weight-normal); }
+.sys-font-card--accent .sys-font-card__sample  { font-family: var(--font-accent); font-weight: var(--font-weight-normal); }
+.sys-font-card--mono .sys-font-card__sample    { font-family: var(--font-mono); font-size: var(--text-xl); }
+
+.sys-font-card__label {
+  font-size:      var(--text-xs);
+  font-weight:    var(--font-weight-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color:          var(--color-text-secondary);
+}
+
+.sys-font-card__token {
+  display:     block;
+  font-family: var(--font-mono);
+  font-size:   var(--text-xs);
+  color:       var(--color-accent-accessible);
+  margin-top:  2px;
+}
+
+
+/* -------------------------------------------------------------------------
+   TYPOGRAPHY — type scale
+   ------------------------------------------------------------------------- */
+
+.sys-type-scale {
+  display:        flex;
+  flex-direction: column;
+  border-top:     1px solid var(--color-border);
+}
+
+.sys-type-row {
+  display:         flex;
+  align-items:     baseline;
+  justify-content: space-between;
+  gap:             var(--space-4);
+  padding-block:   var(--space-3);
+  border-bottom:   1px solid var(--color-border);
+  min-width:       0;
+}
+
+.sys-type-row__sample {
+  font-family:    var(--font-heading);
+  color:          var(--color-text-primary);
+  line-height:    1.2;
+  white-space:    nowrap;
+  overflow:       hidden;
+  text-overflow:  ellipsis;
+  min-width:      0;
+  flex:           1;
+}
+
+.sys-type-row__meta {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size:   var(--text-xs);
+  color:       var(--color-text-secondary);
+  text-align:  right;
+  line-height: var(--leading-normal);
+}
+
+.sys-type-row--xs .sys-type-row__sample   { font-size: var(--text-xs); }
+.sys-type-row--sm .sys-type-row__sample   { font-size: var(--text-sm); }
+.sys-type-row--base .sys-type-row__sample { font-size: var(--text-base); }
+.sys-type-row--lg .sys-type-row__sample   { font-size: var(--text-lg); }
+.sys-type-row--xl .sys-type-row__sample   { font-size: var(--text-xl); }
+.sys-type-row--2xl .sys-type-row__sample  { font-size: var(--text-2xl); }
+.sys-type-row--3xl .sys-type-row__sample  { font-size: var(--text-3xl); }
+.sys-type-row--4xl .sys-type-row__sample  { font-size: var(--text-4xl); }
+.sys-type-row--5xl .sys-type-row__sample  { font-size: var(--text-5xl); }
+
+
+/* -------------------------------------------------------------------------
+   SPACING SCALE
+   ------------------------------------------------------------------------- */
+
+.sys-spacing-scale {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-3);
+}
+
+.sys-spacing-row {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-4);
+}
+
+.sys-spacing-row__bar {
+  height:           8px;
+  background-color: var(--color-accent);
+  border-radius:    var(--radius-full);
+  flex-shrink:      0;
+  opacity:          0.65;
+}
+
+.sys-spacing-row__label {
+  font-family: var(--font-mono);
+  font-size:   var(--text-xs);
+  color:       var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.sys-spacing-row--1  .sys-spacing-row__bar { width: var(--space-1);  }
+.sys-spacing-row--2  .sys-spacing-row__bar { width: var(--space-2);  }
+.sys-spacing-row--3  .sys-spacing-row__bar { width: var(--space-3);  }
+.sys-spacing-row--4  .sys-spacing-row__bar { width: var(--space-4);  }
+.sys-spacing-row--5  .sys-spacing-row__bar { width: var(--space-5);  }
+.sys-spacing-row--6  .sys-spacing-row__bar { width: var(--space-6);  }
+.sys-spacing-row--8  .sys-spacing-row__bar { width: var(--space-8);  }
+.sys-spacing-row--10 .sys-spacing-row__bar { width: var(--space-10); }
+.sys-spacing-row--12 .sys-spacing-row__bar { width: var(--space-12); }
+.sys-spacing-row--16 .sys-spacing-row__bar { width: var(--space-16); }
+.sys-spacing-row--20 .sys-spacing-row__bar { width: var(--space-20); }
+.sys-spacing-row--24 .sys-spacing-row__bar { width: var(--space-24); }
+
+
+/* -------------------------------------------------------------------------
+   BORDER RADIUS
+   ------------------------------------------------------------------------- */
+
+.sys-radius-grid {
+  display:     flex;
+  flex-wrap:   wrap;
+  gap:         var(--space-6) var(--space-8);
+  align-items: flex-end;
+}
+
+.sys-radius-demo {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:            var(--space-3);
+}
+
+.sys-radius-demo__box {
+  width:            64px;
+  height:           64px;
+  background-color: var(--color-accent-light);
+  border:           2px solid var(--color-accent);
+}
+
+.sys-radius-demo--sm   .sys-radius-demo__box { border-radius: var(--radius-sm); }
+.sys-radius-demo--md   .sys-radius-demo__box { border-radius: var(--radius-md); }
+.sys-radius-demo--lg   .sys-radius-demo__box { border-radius: var(--radius-lg); }
+.sys-radius-demo--xl   .sys-radius-demo__box { border-radius: var(--radius-xl); }
+.sys-radius-demo--full .sys-radius-demo__box { border-radius: var(--radius-full); }
+
+.sys-radius-demo__label {
+  font-family: var(--font-mono);
+  font-size:   var(--text-xs);
+  color:       var(--color-text-secondary);
+  text-align:  center;
+  line-height: var(--leading-relaxed);
+}
+
+
+/* -------------------------------------------------------------------------
+   MOTION — easing demos
+   Each fill bar uses scaleX(0→1) animated with its own easing curve,
+   staggered so they don't all sync. Reduced motion shows a static state.
+   ------------------------------------------------------------------------- */
+
+.sys-easing-grid {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-5);
+}
+
+.sys-easing-demo {
+  display:     grid;
+  gap:         var(--space-3);
+  align-items: center;
+}
+
+@media (min-width: 600px) {
+  .sys-easing-demo {
+    grid-template-columns: 220px 1fr;
+    gap:                   var(--space-5);
+  }
+}
+
+.sys-easing-demo__meta {
+  display:        flex;
+  flex-direction: column;
+  gap:            2px;
+}
+
+.sys-easing-demo__name {
+  font-family: var(--font-mono);
+  font-size:   var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color:       var(--color-text-primary);
+}
+
+.sys-easing-demo__curve {
+  font-family: var(--font-mono);
+  font-size:   var(--text-xs);
+  color:       var(--color-text-secondary);
+  word-break:  break-all;
+}
+
+.sys-easing-demo__track {
+  position:         relative;
+  height:           8px;
+  background-color: var(--color-surface);
+  border:           1px solid var(--color-border);
+  border-radius:    var(--radius-full);
+  overflow:         hidden;
+}
+
+@keyframes sys-fill {
+  0%, 8%    { transform: scaleX(0); }
+  42%, 58%  { transform: scaleX(1); }
+  92%, 100% { transform: scaleX(0); }
+}
+
+.sys-easing-demo__fill {
+  position:          absolute;
+  inset:             0;
+  background-color:  var(--color-accent);
+  border-radius:     var(--radius-full);
+  transform-origin:  left;
+  transform:         scaleX(0);
+  animation:         sys-fill 2s linear infinite;
+}
+
+.sys-easing-demo--ease-out        .sys-easing-demo__fill { animation-timing-function: var(--ease-out); }
+.sys-easing-demo--ease-in-out     .sys-easing-demo__fill { animation-timing-function: var(--ease-in-out); }
+.sys-easing-demo--ease-out-quint  .sys-easing-demo__fill { animation-timing-function: var(--ease-out-quint); }
+.sys-easing-demo--ease-in-out-quart .sys-easing-demo__fill { animation-timing-function: var(--ease-in-out-quart); }
+.sys-easing-demo--ease-emphasized .sys-easing-demo__fill { animation-timing-function: var(--ease-emphasized); }
+
+/* Stagger so demos are out of phase with each other */
+.sys-easing-demo:nth-child(1) .sys-easing-demo__fill { animation-delay:   0s; }
+.sys-easing-demo:nth-child(2) .sys-easing-demo__fill { animation-delay: -0.4s; }
+.sys-easing-demo:nth-child(3) .sys-easing-demo__fill { animation-delay: -0.8s; }
+.sys-easing-demo:nth-child(4) .sys-easing-demo__fill { animation-delay: -1.2s; }
+.sys-easing-demo:nth-child(5) .sys-easing-demo__fill { animation-delay: -1.6s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sys-easing-demo__fill {
+    animation:  none;
+    transform:  scaleX(0.5);
+    opacity:    0.5;
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   BREAKPOINTS RULER
+   Scrollable on narrow screens so the ruler never wraps.
+   ------------------------------------------------------------------------- */
+
+.sys-breakpoints-scroll {
+  overflow-x:                auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sys-breakpoints-ruler {
+  display:      flex;
+  align-items:  stretch;
+  min-width:    520px;
+  border-radius: var(--radius-lg);
+  overflow:     hidden;
+  border:       1px solid var(--color-border);
+}
+
+.sys-breakpoints-segment {
+  flex:           1;
+  display:        flex;
+  flex-direction: column;
+  border-right:   1px solid var(--color-border);
+}
+
+.sys-breakpoints-segment:last-child {
+  border-right: none;
+}
+
+.sys-breakpoints-segment__header {
+  padding:       var(--space-2) var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sys-breakpoints-segment__value {
+  display:     block;
+  font-family: var(--font-mono);
+  font-size:   var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  color:       var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.sys-breakpoints-segment__name {
+  display:     block;
+  font-size:   var(--text-xs);
+  color:       var(--color-text-secondary);
+  white-space: nowrap;
+  margin-top:  2px;
+}
+
+.sys-breakpoints-segment__range {
+  padding:     var(--space-3) var(--space-2);
+  font-size:   var(--text-xs);
+  color:       var(--color-text-secondary);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  flex:        1;
+}
+
+/* Progressive tint — lightest at compact, full accent-light at ultra */
+.sys-breakpoints-segment--compact  { flex: 3;   background-color: color-mix(in srgb, var(--color-accent-light) 30%, var(--color-bg)); }
+.sys-breakpoints-segment--medium   { flex: 1.8; background-color: color-mix(in srgb, var(--color-accent-light) 50%, var(--color-bg)); }
+.sys-breakpoints-segment--expanded { flex: 2;   background-color: color-mix(in srgb, var(--color-accent-light) 68%, var(--color-bg)); }
+.sys-breakpoints-segment--large    { flex: 1.2; background-color: color-mix(in srgb, var(--color-accent-light) 84%, var(--color-bg)); }
+.sys-breakpoints-segment--ultra    { flex: 3.5; background-color: var(--color-accent-light); }
+
+
+/* -------------------------------------------------------------------------
+   COMPONENT SHOWCASE
+   ------------------------------------------------------------------------- */
+
+.sys-component-group {
+  margin-bottom: var(--space-12);
+}
+
+.sys-component-group__heading {
+  font-family:  var(--font-heading);
+  font-size:    var(--text-xl);
+  font-weight:  var(--font-weight-semibold);
+  color:        var(--color-text-primary);
+  margin:       0 0 var(--space-6) 0;
+  padding-top:  var(--space-6);
+  border-top:   1px solid var(--color-border);
+}
+
+@media (min-width: 905px) {
+  .sys-component-group__heading {
+    font-size: var(--text-2xl);
+  }
+}
+
+.sys-component-grid {
+  display:               grid;
+  grid-template-columns: 1fr;
+  gap:                   var(--space-6);
+}
+
+@media (min-width: 905px) {
+  .sys-component-grid {
+    gap: var(--space-8);
+  }
+}
+
+.sys-component {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-3);
+}
+
+.sys-component__demo {
+  padding:          var(--space-5);
+  background-color: var(--color-surface);
+  border:           1px solid var(--color-border);
+  border-radius:    var(--radius-lg);
+  overflow:         hidden;
+}
+
+.sys-component__label {
+  font-size:   var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color:       var(--color-text-primary);
+  margin:      0 0 var(--space-3) 0;
+}
+
+.sys-component__desc {
+  font-size:   var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color:       var(--color-text-secondary);
+  margin:      0;
+  text-wrap:   pretty;
+}
+
+.sys-component__name {
+  font-family:  var(--font-heading);
+  font-size:    var(--text-lg);
+  font-weight:  var(--font-weight-semibold);
+  line-height:  var(--leading-tight);
+  color:        var(--color-text-primary);
+  margin:       0;
+}
+
+.sys-component__meta {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-2);
+  align-items:    flex-start;
+}
+
+.sys-component__class {
+  display:          inline-block;
+  font-family:      var(--font-mono);
+  font-size:        var(--text-xs);
+  padding:          2px var(--space-1);
+  background-color: var(--color-bg);
+  border:           1px solid var(--color-border);
+  border-radius:    var(--radius-sm);
+  color:            var(--color-accent-accessible);
+  align-self:       flex-start;
+}
+
+.sys-component__variants {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       var(--space-1);
+}
+
+.sys-component__variant {
+  display:          inline-block;
+  font-family:      var(--font-mono);
+  font-size:        var(--text-xs);
+  padding:          2px var(--space-1);
+  background-color: var(--color-surface);
+  border:           1px solid var(--color-border);
+  border-radius:    var(--radius-sm);
+  color:            var(--color-text-secondary);
+}
+
+/* Strip demo margin overrides */
+.sys-component__demo .cs-annotated-image { margin-block: 0; }
+.sys-component__demo .cs-before-after    { margin-block: 0; }
+.sys-component__demo .cs-two-col         { margin-block: 0; }
+.sys-component__demo .pull-quote         { margin-block: 0; }
+.sys-component__demo .cs-emphasis        { margin-block: 0; }
+.sys-component__demo .cs-metric-grid     { margin: 0; }
+.sys-component__demo .cs-editorial-list  { margin-block: 0; }
+.sys-component__demo .image-block        { margin-block: var(--space-4); }
+
+
+/* -------------------------------------------------------------------------
+   BUTTON ROW — renders all btn variants side by side
+   ------------------------------------------------------------------------- */
+
+.sys-btn-row {
+  display:     flex;
+  flex-wrap:   wrap;
+  gap:         var(--space-3);
+  align-items: center;
+}
+
+
+/* -------------------------------------------------------------------------
+   NAV LINK PREVIEW — static representation of the desktop nav link style
+   ------------------------------------------------------------------------- */
+
+.sys-nav-preview {
+  display:     flex;
+  gap:         var(--space-5);
+  align-items: center;
+  flex-wrap:   wrap;
+}
+
+.sys-nav-preview__link {
+  font-family:   var(--font-body);
+  font-size:     var(--text-sm);
+  font-weight:   var(--font-weight-medium);
+  color:         var(--color-text-nav);
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition:    color 150ms ease, border-color 150ms ease;
+}
+
+.sys-nav-preview__link--active {
+  color:              var(--color-accent-accessible);
+  border-bottom-color: var(--color-accent-accessible);
+}
+
+.sys-nav-preview__note {
+  display:     block;
+  margin-top:  var(--space-4);
+  font-size:   var(--text-xs);
+  color:       var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  max-width:   48ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sys-nav-preview__link { transition: none; }
+}
+
+
+/* -------------------------------------------------------------------------
+   PLACEHOLDER — CSS-only image stub used inside component demos
+   ------------------------------------------------------------------------- */
+
+.sys-placeholder {
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  background-color: var(--color-surface);
+  border:           2px dashed var(--color-border);
+  border-radius:    var(--radius-lg);
+  color:            var(--color-text-secondary);
+  font-size:        var(--text-sm);
+  text-align:       center;
+  width:            100%;
+}
+
+.sys-placeholder--wide   { aspect-ratio: 16 / 9; }
+.sys-placeholder--square { aspect-ratio: 1 / 1; }
+.sys-placeholder--tall   { aspect-ratio: 3 / 4; }
+
+
+/* -------------------------------------------------------------------------
+   ARCHITECTURE GRID
+   ------------------------------------------------------------------------- */
+
+.sys-arch-grid {
+  display:               grid;
+  grid-template-columns: 1fr;
+  gap:                   var(--space-4);
+}
+
+@media (min-width: 905px) {
+  .sys-arch-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap:                   var(--space-6);
+  }
+}
+
+.sys-arch-item {
+  padding:          var(--space-5);
+  border:           1px solid var(--color-border);
+  border-radius:    var(--radius-lg);
+  background-color: var(--color-bg);
+}
+
+.sys-arch-item__heading {
+  font-family:  var(--font-heading);
+  font-size:    var(--text-lg);
+  font-weight:  var(--font-weight-semibold);
+  line-height:  var(--leading-tight);
+  color:        var(--color-text-primary);
+  margin:       0 0 var(--space-2) 0;
+}
+
+.sys-arch-item__body {
+  font-size:   var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color:       var(--color-text-secondary);
+  margin:      0;
+  text-wrap:   pretty;
+}
+
+
+/* -------------------------------------------------------------------------
+   DESIGN PRINCIPLES
+   ------------------------------------------------------------------------- */
+
+.sys-principles {
+  display:        flex;
+  flex-direction: column;
+  border-top:     1px solid var(--color-border);
+}
+
+.sys-principle {
+  display:      flex;
+  gap:          var(--space-5);
+  align-items:  flex-start;
+  padding-block: var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+
+@media (min-width: 905px) {
+  .sys-principle {
+    gap:          var(--space-8);
+    padding-block: var(--space-6);
+  }
+}
+
+.sys-principle__number {
+  font-family:  var(--font-heading);
+  font-size:    var(--text-sm);
+  font-weight:  var(--font-weight-semibold);
+  color:        var(--color-accent-accessible);
+  padding-top:  2px;
+  min-width:    2ch;
+  flex-shrink:  0;
+}
+
+.sys-principle__content {
+  flex:    1;
+  min-width: 0;
+}
+
+.sys-principle__title {
+  font-family:  var(--font-heading);
+  font-size:    var(--text-xl);
+  font-weight:  var(--font-weight-semibold);
+  line-height:  var(--leading-tight);
+  color:        var(--color-text-primary);
+  margin:       0 0 var(--space-2) 0;
+  text-wrap:    balance;
+}
+
+@media (min-width: 905px) {
+  .sys-principle__title {
+    font-size: var(--text-2xl);
+  }
+}
+
+.sys-principle__body {
+  font-size:   var(--text-base);
+  line-height: var(--leading-relaxed);
+  color:       var(--color-text-secondary);
+  margin:      0;
+  text-wrap:   pretty;
+}
+
+
+/* -------------------------------------------------------------------------
+   PLACEHOLDER CONTEXT OVERRIDES
+   Adjust sys-placeholder dimensions and radius when used inside existing
+   component CSS that expects an <img> element.
+   ------------------------------------------------------------------------- */
+
+/* card__image expects img filling the 16:9 overflow-hidden container */
+.card__image .sys-placeholder {
+  width:        100%;
+  height:       100%;
+  aspect-ratio: unset;
+  border-radius: 0;
+}
+
+/* image-block expects the image to use --image-block-radius */
+.image-block .sys-placeholder {
+  width:         100%;
+  border-radius: var(--image-block-radius, var(--radius-lg));
+}
+
+/* cs-before-after item: image fills the figure width */
+.cs-before-after__item .sys-placeholder {
+  width:        100%;
+  border-radius: var(--radius-md);
+}
+
+/* cs-two-col media: fill the media column */
+.cs-two-col__media .sys-placeholder {
+  width:         100%;
+  border-radius: var(--radius-lg);
+}
+
+/* cs-artifact-grid: fill grid cell */
+.cs-artifact-grid__item .sys-placeholder {
+  width:         100%;
+  border-radius: var(--radius-lg);
+}
+
+/* cs-annotated-image: div placeholder acts as the image surface */
+.cs-annotated-image__frame .sys-placeholder {
+  display:       block;
+  width:         100%;
+  aspect-ratio:  16 / 9;
+  border-radius: var(--radius-lg);
+}

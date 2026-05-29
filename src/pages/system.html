@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The design system, component library, and architecture behind Sam Blake's portfolio." />
+    <title>Under the Hood | Sam Blake</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#f5f2ed" />
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+
+    <!-- Typefaces: Fraunces (headings), Urbanist (body), Caveat (hero accent) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Urbanist:wght@300;400;500&family=Caveat:wght@400&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+
+    {{> nav}}
+
+    <main>
+
+      <!-- =================================================================
+           1. INTRO
+           ================================================================= -->
+      <section class="section-xl" aria-labelledby="sys-intro-heading">
+        <div class="container-reading">
+          <span class="sys-section__eyebrow">Under the hood</span>
+          <h1 id="sys-intro-heading" class="sys-section__heading">This portfolio is also a product.</h1>
+          <p class="sys-section__body">Building it felt like a design project from the start. Every colour, typeface, and spacing value is a named decision stored in a single token file. The CSS follows ITCSS — specificity only increases where it has to. Components have one job and a consistent naming convention. JavaScript is an enhancement, not a dependency. If you've landed here, you're probably the kind of person who checks the source before closing the tab.</p>
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           2. DESIGN TOKENS
+           ================================================================= -->
+      <section class="section--subtle section-lg" aria-labelledby="sys-tokens-heading">
+        <div class="container">
+
+          <div class="sys-section__header">
+            <span class="sys-section__eyebrow">Design tokens</span>
+            <h2 id="sys-tokens-heading" class="sys-section__heading">The building blocks of every decision.</h2>
+            <p class="sys-section__body">85 named custom properties in one file. No hex values, hardcoded sizes, or magic numbers anywhere else in the codebase.</p>
+          </div>
+
+
+          <!-- COLOUR PALETTE -->
+          <div class="sys-subsection">
+            <h3 class="sys-subsection__heading">Colour palette</h3>
+            <p class="sys-subsection__desc">Base, text, accent, and semantic feedback tokens. Contrast ratios shown where the token is used as foreground text.</p>
+
+            <p class="sys-subsection__desc">Base</p>
+            <div class="sys-swatch-grid">
+              <div class="sys-swatch sys-swatch--bg">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info">
+                  <span class="sys-swatch__name">--color-bg</span>
+                  <span class="sys-swatch__hex">#f5f2ed</span>
+                </div>
+              </div>
+              <div class="sys-swatch sys-swatch--surface">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info">
+                  <span class="sys-swatch__name">--color-surface</span>
+                  <span class="sys-swatch__hex">#ede9e3</span>
+                </div>
+              </div>
+              <div class="sys-swatch sys-swatch--border">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info">
+                  <span class="sys-swatch__name">--color-border</span>
+                  <span class="sys-swatch__hex">#d6d0c8</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="sys-subsection__desc">Text</p>
+            <div class="sys-swatch-grid">
+              <div class="sys-swatch sys-swatch--text-primary">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info">
+                  <span class="sys-swatch__name">--color-text-primary</span>
+                  <span class="sys-swatch__hex">#1a1614</span>
+                  <span class="sys-swatch__contrast">16:1 AAA on bg</span>
+                </div>
+              </div>
+              <div class="sys-swatch sys-swatch--text-secondary">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info">
+                  <span class="sys-swatch__name">--color-text-secondary</span>
+                  <span class="sys-swatch__hex">#635e5a</span>
+                  <span class="sys-swatch__contrast">4.5:1 AA on surface</span>
+                </div>
+              </div>
+              <div class="sys-swatch sys-swatch--text-nav">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info">
+                  <span class="sys-swatch__name">--color-text-nav</span>
+                  <span class="sys-swatch__hex">#3d3a37</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="sys-subsection__desc">Accent</p>
+            <div class="sys-swatch-grid">
+              <div class="sys-swatch sys-swatch--accent">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info">
+                  <span class="sys-swatch__name">--color-accent</span>
+                  <span class="sys-swatch__hex">#1a6b52</span>
+                  <span class="sys-swatch__contrast">4.5:1 AA on bg</span>
+                </div>
+              </div>
+              <div class="sys-swatch sys-swatch--text-on-accent">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info">
+                  <span class="sys-swatch__name">--color-text-on-accent</span>
+                  <span class="sys-swatch__hex">#f5f2ed</span>
+                  <span class="sys-swatch__contrast">10:1 AAA on teal</span>
+                </div>
+              </div>
+              <div class="sys-swatch sys-swatch--accent-light">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info">
+                  <span class="sys-swatch__name">--color-accent-light</span>
+                  <span class="sys-swatch__hex">#e6f0ec</span>
+                </div>
+              </div>
+              <div class="sys-swatch sys-swatch--error">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info">
+                  <span class="sys-swatch__name">--color-error</span>
+                  <span class="sys-swatch__hex">#b83c28</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="sys-subsection__desc">Feedback — four semantic statuses, each with bg / border / text roles</p>
+            <div class="sys-swatch-grid">
+              <div class="sys-swatch sys-swatch--success-bg">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info"><span class="sys-swatch__name">--color-feedback-success-bg</span></div>
+              </div>
+              <div class="sys-swatch sys-swatch--success-border">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info"><span class="sys-swatch__name">--color-feedback-success-border</span></div>
+              </div>
+              <div class="sys-swatch sys-swatch--success-text">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info"><span class="sys-swatch__name">--color-feedback-success-text</span></div>
+              </div>
+            </div>
+            <div class="sys-swatch-grid">
+              <div class="sys-swatch sys-swatch--error-bg">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info"><span class="sys-swatch__name">--color-feedback-error-bg</span></div>
+              </div>
+              <div class="sys-swatch sys-swatch--error-border">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info"><span class="sys-swatch__name">--color-feedback-error-border</span></div>
+              </div>
+              <div class="sys-swatch sys-swatch--error-text">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info"><span class="sys-swatch__name">--color-feedback-error-text</span></div>
+              </div>
+            </div>
+            <div class="sys-swatch-grid">
+              <div class="sys-swatch sys-swatch--warning-bg">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info"><span class="sys-swatch__name">--color-feedback-warning-bg</span></div>
+              </div>
+              <div class="sys-swatch sys-swatch--warning-border">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info"><span class="sys-swatch__name">--color-feedback-warning-border</span></div>
+              </div>
+              <div class="sys-swatch sys-swatch--warning-text">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info"><span class="sys-swatch__name">--color-feedback-warning-text</span></div>
+              </div>
+            </div>
+            <div class="sys-swatch-grid">
+              <div class="sys-swatch sys-swatch--attention-bg">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info"><span class="sys-swatch__name">--color-feedback-attention-bg</span></div>
+              </div>
+              <div class="sys-swatch sys-swatch--attention-border">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info"><span class="sys-swatch__name">--color-feedback-attention-border</span></div>
+              </div>
+              <div class="sys-swatch sys-swatch--attention-text">
+                <div class="sys-swatch__chip" aria-hidden="true"></div>
+                <div class="sys-swatch__info"><span class="sys-swatch__name">--color-feedback-attention-text</span></div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- TYPOGRAPHY -->
+          <div class="sys-subsection">
+            <h3 class="sys-subsection__heading">Typography</h3>
+
+            <p class="sys-subsection__desc">Four font families, each with a specific role.</p>
+            <div class="sys-font-grid">
+              <div class="sys-font-card sys-font-card--heading">
+                <span class="sys-font-card__sample">The long view</span>
+                <span class="sys-font-card__label">Fraunces
+                  <span class="sys-font-card__token">--font-heading</span>
+                </span>
+              </div>
+              <div class="sys-font-card sys-font-card--body">
+                <span class="sys-font-card__sample">Designed with care</span>
+                <span class="sys-font-card__label">Urbanist
+                  <span class="sys-font-card__token">--font-body</span>
+                </span>
+              </div>
+              <div class="sys-font-card sys-font-card--accent">
+                <span class="sys-font-card__sample">asks why</span>
+                <span class="sys-font-card__label">Caveat
+                  <span class="sys-font-card__token">--font-accent</span>
+                </span>
+              </div>
+              <div class="sys-font-card sys-font-card--mono">
+                <span class="sys-font-card__sample">--color-accent</span>
+                <span class="sys-font-card__label">Cascadia Code
+                  <span class="sys-font-card__token">--font-mono</span>
+                </span>
+              </div>
+            </div>
+
+            <p class="sys-subsection__desc">Type scale — core nine sizes, rendered in Fraunces.</p>
+            <div class="sys-type-scale">
+              <div class="sys-type-row sys-type-row--5xl">
+                <span class="sys-type-row__sample">Type scale</span>
+                <span class="sys-type-row__meta">--text-5xl · 48px</span>
+              </div>
+              <div class="sys-type-row sys-type-row--4xl">
+                <span class="sys-type-row__sample">Type scale</span>
+                <span class="sys-type-row__meta">--text-4xl · 36px</span>
+              </div>
+              <div class="sys-type-row sys-type-row--3xl">
+                <span class="sys-type-row__sample">Type scale</span>
+                <span class="sys-type-row__meta">--text-3xl · 30px</span>
+              </div>
+              <div class="sys-type-row sys-type-row--2xl">
+                <span class="sys-type-row__sample">Type scale</span>
+                <span class="sys-type-row__meta">--text-2xl · 24px</span>
+              </div>
+              <div class="sys-type-row sys-type-row--xl">
+                <span class="sys-type-row__sample">Type scale</span>
+                <span class="sys-type-row__meta">--text-xl · 20px</span>
+              </div>
+              <div class="sys-type-row sys-type-row--lg">
+                <span class="sys-type-row__sample">Type scale</span>
+                <span class="sys-type-row__meta">--text-lg · 18px</span>
+              </div>
+              <div class="sys-type-row sys-type-row--base">
+                <span class="sys-type-row__sample">Type scale</span>
+                <span class="sys-type-row__meta">--text-base · 16px</span>
+              </div>
+              <div class="sys-type-row sys-type-row--sm">
+                <span class="sys-type-row__sample">Type scale</span>
+                <span class="sys-type-row__meta">--text-sm · 14px</span>
+              </div>
+              <div class="sys-type-row sys-type-row--xs">
+                <span class="sys-type-row__sample">Type scale</span>
+                <span class="sys-type-row__meta">--text-xs · 12px</span>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- SPACING -->
+          <div class="sys-subsection">
+            <h3 class="sys-subsection__heading">Spacing scale</h3>
+            <p class="sys-subsection__desc">8pt scale — every margin, padding, and gap is a multiple of 8px. Bar width equals the exact token value.</p>
+            <div class="sys-spacing-scale">
+              <div class="sys-spacing-row sys-spacing-row--1">
+                <div class="sys-spacing-row__bar" aria-hidden="true"></div>
+                <span class="sys-spacing-row__label">--space-1 · 8px</span>
+              </div>
+              <div class="sys-spacing-row sys-spacing-row--2">
+                <div class="sys-spacing-row__bar" aria-hidden="true"></div>
+                <span class="sys-spacing-row__label">--space-2 · 16px</span>
+              </div>
+              <div class="sys-spacing-row sys-spacing-row--3">
+                <div class="sys-spacing-row__bar" aria-hidden="true"></div>
+                <span class="sys-spacing-row__label">--space-3 · 24px</span>
+              </div>
+              <div class="sys-spacing-row sys-spacing-row--4">
+                <div class="sys-spacing-row__bar" aria-hidden="true"></div>
+                <span class="sys-spacing-row__label">--space-4 · 32px</span>
+              </div>
+              <div class="sys-spacing-row sys-spacing-row--5">
+                <div class="sys-spacing-row__bar" aria-hidden="true"></div>
+                <span class="sys-spacing-row__label">--space-5 · 40px</span>
+              </div>
+              <div class="sys-spacing-row sys-spacing-row--6">
+                <div class="sys-spacing-row__bar" aria-hidden="true"></div>
+                <span class="sys-spacing-row__label">--space-6 · 48px</span>
+              </div>
+              <div class="sys-spacing-row sys-spacing-row--8">
+                <div class="sys-spacing-row__bar" aria-hidden="true"></div>
+                <span class="sys-spacing-row__label">--space-8 · 64px</span>
+              </div>
+              <div class="sys-spacing-row sys-spacing-row--10">
+                <div class="sys-spacing-row__bar" aria-hidden="true"></div>
+                <span class="sys-spacing-row__label">--space-10 · 80px</span>
+              </div>
+              <div class="sys-spacing-row sys-spacing-row--12">
+                <div class="sys-spacing-row__bar" aria-hidden="true"></div>
+                <span class="sys-spacing-row__label">--space-12 · 96px</span>
+              </div>
+              <div class="sys-spacing-row sys-spacing-row--16">
+                <div class="sys-spacing-row__bar" aria-hidden="true"></div>
+                <span class="sys-spacing-row__label">--space-16 · 128px</span>
+              </div>
+              <div class="sys-spacing-row sys-spacing-row--20">
+                <div class="sys-spacing-row__bar" aria-hidden="true"></div>
+                <span class="sys-spacing-row__label">--space-20 · 160px</span>
+              </div>
+              <div class="sys-spacing-row sys-spacing-row--24">
+                <div class="sys-spacing-row__bar" aria-hidden="true"></div>
+                <span class="sys-spacing-row__label">--space-24 · 192px</span>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- BORDER RADIUS -->
+          <div class="sys-subsection">
+            <h3 class="sys-subsection__heading">Border radius</h3>
+            <p class="sys-subsection__desc">Five steps from tight corners to full pill.</p>
+            <div class="sys-radius-grid">
+              <div class="sys-radius-demo sys-radius-demo--sm">
+                <div class="sys-radius-demo__box" aria-hidden="true"></div>
+                <span class="sys-radius-demo__label">--radius-sm<br>4px</span>
+              </div>
+              <div class="sys-radius-demo sys-radius-demo--md">
+                <div class="sys-radius-demo__box" aria-hidden="true"></div>
+                <span class="sys-radius-demo__label">--radius-md<br>6px</span>
+              </div>
+              <div class="sys-radius-demo sys-radius-demo--lg">
+                <div class="sys-radius-demo__box" aria-hidden="true"></div>
+                <span class="sys-radius-demo__label">--radius-lg<br>8px</span>
+              </div>
+              <div class="sys-radius-demo sys-radius-demo--xl">
+                <div class="sys-radius-demo__box" aria-hidden="true"></div>
+                <span class="sys-radius-demo__label">--radius-xl<br>12px</span>
+              </div>
+              <div class="sys-radius-demo sys-radius-demo--full">
+                <div class="sys-radius-demo__box" aria-hidden="true"></div>
+                <span class="sys-radius-demo__label">--radius-full<br>9999px</span>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- MOTION -->
+          <div class="sys-subsection">
+            <h3 class="sys-subsection__heading">Motion and easing</h3>
+            <p class="sys-subsection__desc">Five named easing curves. Each bar fills with its own curve — the acceleration character is the point. Paused if you prefer reduced motion.</p>
+            <div class="sys-easing-grid">
+              <div class="sys-easing-demo sys-easing-demo--ease-out">
+                <div class="sys-easing-demo__meta">
+                  <span class="sys-easing-demo__name">--ease-out</span>
+                  <span class="sys-easing-demo__curve">cubic-bezier(0.23, 1, 0.32, 1)</span>
+                </div>
+                <div class="sys-easing-demo__track" aria-hidden="true"><div class="sys-easing-demo__fill"></div></div>
+              </div>
+              <div class="sys-easing-demo sys-easing-demo--ease-in-out">
+                <div class="sys-easing-demo__meta">
+                  <span class="sys-easing-demo__name">--ease-in-out</span>
+                  <span class="sys-easing-demo__curve">cubic-bezier(0.645, 0.045, 0.355, 1)</span>
+                </div>
+                <div class="sys-easing-demo__track" aria-hidden="true"><div class="sys-easing-demo__fill"></div></div>
+              </div>
+              <div class="sys-easing-demo sys-easing-demo--ease-out-quint">
+                <div class="sys-easing-demo__meta">
+                  <span class="sys-easing-demo__name">--ease-out-quint</span>
+                  <span class="sys-easing-demo__curve">cubic-bezier(0.22, 1, 0.36, 1)</span>
+                </div>
+                <div class="sys-easing-demo__track" aria-hidden="true"><div class="sys-easing-demo__fill"></div></div>
+              </div>
+              <div class="sys-easing-demo sys-easing-demo--ease-in-out-quart">
+                <div class="sys-easing-demo__meta">
+                  <span class="sys-easing-demo__name">--ease-in-out-quart</span>
+                  <span class="sys-easing-demo__curve">cubic-bezier(0.76, 0, 0.24, 1)</span>
+                </div>
+                <div class="sys-easing-demo__track" aria-hidden="true"><div class="sys-easing-demo__fill"></div></div>
+              </div>
+              <div class="sys-easing-demo sys-easing-demo--ease-emphasized">
+                <div class="sys-easing-demo__meta">
+                  <span class="sys-easing-demo__name">--ease-emphasized</span>
+                  <span class="sys-easing-demo__curve">cubic-bezier(0.2, 0, 0, 1)</span>
+                </div>
+                <div class="sys-easing-demo__track" aria-hidden="true"><div class="sys-easing-demo__fill"></div></div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- BREAKPOINTS -->
+          <div class="sys-subsection">
+            <h3 class="sys-subsection__heading">Breakpoints</h3>
+            <p class="sys-subsection__desc">Four breakpoints, five window size classes. Band widths are proportional to the pixel ranges. Scroll on narrow screens.</p>
+            <div class="sys-breakpoints-scroll">
+              <div class="sys-breakpoints-ruler" role="img" aria-label="Breakpoint ranges: Compact 0–599px, Medium 600–904px, Expanded 905–1239px, Large 1240–1439px, Ultra 1440px and up">
+                <div class="sys-breakpoints-segment sys-breakpoints-segment--compact">
+                  <div class="sys-breakpoints-segment__header">
+                    <span class="sys-breakpoints-segment__value">0px</span>
+                    <span class="sys-breakpoints-segment__name">Compact</span>
+                  </div>
+                  <span class="sys-breakpoints-segment__range">0–599px</span>
+                </div>
+                <div class="sys-breakpoints-segment sys-breakpoints-segment--medium">
+                  <div class="sys-breakpoints-segment__header">
+                    <span class="sys-breakpoints-segment__value">600px</span>
+                    <span class="sys-breakpoints-segment__name">Medium</span>
+                  </div>
+                  <span class="sys-breakpoints-segment__range">600–904px</span>
+                </div>
+                <div class="sys-breakpoints-segment sys-breakpoints-segment--expanded">
+                  <div class="sys-breakpoints-segment__header">
+                    <span class="sys-breakpoints-segment__value">905px</span>
+                    <span class="sys-breakpoints-segment__name">Expanded</span>
+                  </div>
+                  <span class="sys-breakpoints-segment__range">905–1239px</span>
+                </div>
+                <div class="sys-breakpoints-segment sys-breakpoints-segment--large">
+                  <div class="sys-breakpoints-segment__header">
+                    <span class="sys-breakpoints-segment__value">1240px</span>
+                    <span class="sys-breakpoints-segment__name">Large</span>
+                  </div>
+                  <span class="sys-breakpoints-segment__range">1240–1439px</span>
+                </div>
+                <div class="sys-breakpoints-segment sys-breakpoints-segment--ultra">
+                  <div class="sys-breakpoints-segment__header">
+                    <span class="sys-breakpoints-segment__value">1440px</span>
+                    <span class="sys-breakpoints-segment__name">Ultra</span>
+                  </div>
+                  <span class="sys-breakpoints-segment__range">1440px+</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           3. COMPONENT LIBRARY
+           ================================================================= -->
+      <section class="section-lg" aria-labelledby="sys-components-heading">
+        <div class="container">
+
+          <div class="sys-section__header">
+            <span class="sys-section__eyebrow">Component library</span>
+            <h2 id="sys-components-heading" class="sys-section__heading">Reusable pieces with one job each.</h2>
+            <p class="sys-section__body">26 component CSS files. Each is self-contained, named by role rather than appearance, and works without JavaScript unless stated.</p>
+          </div>
+
+
+          <!-- GENERAL UI -->
+          <div class="sys-component-group">
+            <h3 class="sys-component-group__heading">General UI</h3>
+            <div class="sys-component-grid">
+
+              <!-- Buttons -->
+              <div class="sys-component">
+                <h4 class="sys-component__name">Button</h4>
+                <div class="sys-component__demo">
+                  <div class="sys-btn-row">
+                    <a href="#" class="btn btn--primary">Primary</a>
+                    <a href="#" class="btn btn--secondary">Secondary</a>
+                    <a href="#" class="btn btn--ghost">Ghost</a>
+                  </div>
+                </div>
+                <p class="sys-component__desc">Three variants covering the full range of visual emphasis. 44px minimum touch target on mobile, 40px desktop, scale(0.97) on active.</p>
+                <div class="sys-component__meta">
+                  <code class="sys-component__class">.btn</code>
+                  <div class="sys-component__variants">
+                    <code class="sys-component__variant">.btn--primary</code>
+                    <code class="sys-component__variant">.btn--secondary</code>
+                    <code class="sys-component__variant">.btn--ghost</code>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Navigation -->
+              <div class="sys-component">
+                <h4 class="sys-component__name">Navigation</h4>
+                <div class="sys-component__demo">
+                  <nav class="sys-nav-preview" aria-label="Navigation preview">
+                    <a href="#" class="sys-nav-preview__link">Work</a>
+                    <a href="#" class="sys-nav-preview__link sys-nav-preview__link--active" aria-current="page">Case Studies</a>
+                    <a href="#" class="sys-nav-preview__link">About</a>
+                    <a href="#" class="sys-nav-preview__link">Contact</a>
+                  </nav>
+                  <p class="sys-nav-preview__note">Desktop: underline scaleX(0→1) on active. Mobile: bottom sheet at translateY(100%), backdrop at 50% opacity — z-stack: overlay 300 / sheet 400 / toggle 500.</p>
+                </div>
+                <p class="sys-component__desc">Desktop inline nav and mobile bottom sheet in one component. Initialised progressively from nav.js — works without JS as plain links.</p>
+                <div class="sys-component__meta">
+                  <code class="sys-component__class">.nav__link</code>
+                  <div class="sys-component__variants">
+                    <code class="sys-component__variant">.nav__link--active</code>
+                    <code class="sys-component__variant">.nav__sheet</code>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Case study card -->
+              <div class="sys-component">
+                <h4 class="sys-component__name">Case Study Card</h4>
+                <div class="sys-component__demo">
+                  <a href="#" class="card">
+                    <div class="card__image">
+                      <div class="sys-placeholder" role="img" aria-label="Case study preview image"></div>
+                    </div>
+                    <div class="card__body">
+                      <h4 class="card__title">Project Name</h4>
+                      <span class="card__metric-chip">40% improvement</span>
+                      <p class="card__subtitle">Short outcome-led description of what was achieved and for whom.</p>
+                      <span class="btn btn--primary card__cta"><span>6 min read</span><span aria-hidden="true">→</span></span>
+                    </div>
+                  </a>
+                </div>
+                <p class="sys-component__desc">Case study card with metric chip, outcome subtitle, and read-time CTA. Lifts on hover with teal accent border and shadow.</p>
+                <div class="sys-component__meta">
+                  <code class="sys-component__class">.card</code>
+                  <div class="sys-component__variants">
+                    <code class="sys-component__variant">.card__metric-chip</code>
+                    <code class="sys-component__variant">.card__cta</code>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <!-- CASE STUDY SYSTEM -->
+          <div class="sys-component-group">
+            <h3 class="sys-component-group__heading">Case study system</h3>
+
+            <div class="sys-component-grid sys-component-grid--single">
+
+              <!-- cs-annotated-image -->
+              <div class="sys-component">
+                <h4 class="sys-component__name">Annotated Image</h4>
+                <div class="sys-component__demo">
+                  <figure class="cs-annotated-image">
+                    <div class="cs-annotated-image__frame">
+                      <div class="sys-placeholder sys-placeholder--wide"
+                           role="img"
+                           aria-label="Example product screenshot with two annotation pins"></div>
+                      <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="top-left">
+                        <button class="cs-annotated-image__pin" type="button" aria-label="Open annotation 1"></button>
+                        <div class="cs-annotated-image__tooltip" role="tooltip">
+                          <strong class="cs-annotated-image__tooltip-title">Clear primary action</strong>
+                          <p class="cs-annotated-image__tooltip-body">The CTA is visually prominent and immediately scannable on first view.</p>
+                        </div>
+                      </div>
+                      <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-right">
+                        <button class="cs-annotated-image__pin" type="button" aria-label="Open annotation 2"></button>
+                        <div class="cs-annotated-image__tooltip" role="tooltip">
+                          <strong class="cs-annotated-image__tooltip-title">Unclear hierarchy</strong>
+                          <p class="cs-annotated-image__tooltip-body">Secondary content competes with the primary action for visual weight.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <figcaption class="cs-annotated-image__caption">Desktop: hover or focus a pin to see its annotation. Mobile: tap a pin to open the modal.</figcaption>
+                  </figure>
+                </div>
+                <p class="sys-component__desc">Full-width image with interactive numbered callout pins. Green pins mark improvements; red mark problems. Desktop shows inline tooltips on hover; mobile uses a centred modal on tap.</p>
+                <div class="sys-component__meta">
+                  <code class="sys-component__class">.cs-annotated-image</code>
+                  <div class="sys-component__variants">
+                    <code class="sys-component__variant">.cs-annotated-image__callout--positive</code>
+                    <code class="sys-component__variant">.cs-annotated-image__callout--negative</code>
+                  </div>
+                </div>
+              </div>
+
+              <!-- cs-two-col — both variants -->
+              <div class="sys-component">
+                <h4 class="sys-component__name">Two-Column Editorial</h4>
+                <p class="sys-component__label">Default — text left, media right</p>
+                <div class="sys-component__demo">
+                  <div class="cs-two-col">
+                    <div class="cs-two-col__content">
+                      <h4 class="cs-two-col__heading">Research in practice</h4>
+                      <div class="cs-two-col__body">
+                        <p>Short narrative copy alongside a supporting visual. Used for pairing context with evidence, prototypes, or research artefacts.</p>
+                      </div>
+                    </div>
+                    <figure class="cs-two-col__media">
+                      <div class="sys-placeholder sys-placeholder--square" role="img" aria-label="Supporting visual placeholder"></div>
+                      <figcaption class="cs-two-col__caption">Optional caption for the supporting visual.</figcaption>
+                    </figure>
+                  </div>
+                </div>
+                <p class="sys-component__label">Flipped — media left, text right</p>
+                <div class="sys-component__demo">
+                  <div class="cs-two-col cs-two-col--flip">
+                    <div class="cs-two-col__content">
+                      <h4 class="cs-two-col__heading">Iteration in context</h4>
+                      <div class="cs-two-col__body">
+                        <p>The <code>--flip</code> modifier reverses the layout on desktop. Mobile always stacks text first, then media, regardless of variant.</p>
+                      </div>
+                    </div>
+                    <figure class="cs-two-col__media">
+                      <div class="sys-placeholder sys-placeholder--square" role="img" aria-label="Supporting visual placeholder"></div>
+                    </figure>
+                  </div>
+                </div>
+                <p class="sys-component__desc">Editorial two-column layout for pairing narrative copy with a supporting visual. Two-column on desktop, stacked on mobile.</p>
+                <div class="sys-component__meta">
+                  <code class="sys-component__class">.cs-two-col</code>
+                  <div class="sys-component__variants">
+                    <code class="sys-component__variant">.cs-two-col--flip</code>
+                  </div>
+                </div>
+              </div>
+
+              <!-- cs-before-after -->
+              <div class="sys-component">
+                <h4 class="sys-component__name">Before / After</h4>
+                <div class="sys-component__demo">
+                  <div class="cs-before-after" role="group" aria-label="Before and after comparison">
+                    <figure class="cs-before-after__item cs-before-after__item--before">
+                      <span class="cs-before-after__label">Before</span>
+                      <div class="sys-placeholder sys-placeholder--wide" role="img" aria-label="Design before the change"></div>
+                      <figcaption class="cs-before-after__caption">Original design showing the problem state.</figcaption>
+                    </figure>
+                    <figure class="cs-before-after__item cs-before-after__item--after">
+                      <span class="cs-before-after__label">After</span>
+                      <div class="sys-placeholder sys-placeholder--wide" role="img" aria-label="Design after the change"></div>
+                      <figcaption class="cs-before-after__caption">Redesigned state showing the improvement.</figcaption>
+                    </figure>
+                  </div>
+                </div>
+                <p class="sys-component__desc">Side-by-side comparison for redesigns and iterations. Semantic label badges use feedback error and success tokens. Two columns at 905px, stacked below.</p>
+                <div class="sys-component__meta">
+                  <code class="sys-component__class">.cs-before-after</code>
+                  <div class="sys-component__variants">
+                    <code class="sys-component__variant">.cs-before-after__item--before</code>
+                    <code class="sys-component__variant">.cs-before-after__item--after</code>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="sys-component-grid">
+
+              <!-- image-block--decorative -->
+              <div class="sys-component">
+                <h4 class="sys-component__name">Decorative Image</h4>
+                <div class="sys-component__demo">
+                  <figure class="image-block image-block--decorative">
+                    <div class="sys-placeholder sys-placeholder--wide" role="img" aria-label="Decorative illustration placeholder"></div>
+                    <figcaption class="image-block__caption">Decorative — max 48% desktop, full width mobile</figcaption>
+                  </figure>
+                </div>
+                <p class="sys-component__desc">Illustrations and SVGs that support narrative without dominating. Never stretched, never annotated, always object-fit contain.</p>
+                <div class="sys-component__meta">
+                  <code class="sys-component__class">.image-block</code>
+                  <div class="sys-component__variants">
+                    <code class="sys-component__variant">.image-block--decorative</code>
+                  </div>
+                </div>
+              </div>
+
+              <!-- image-block--decorative-wide -->
+              <div class="sys-component">
+                <h4 class="sys-component__name">Decorative Image Wide</h4>
+                <div class="sys-component__demo">
+                  <figure class="image-block image-block--decorative-wide">
+                    <div class="sys-placeholder sys-placeholder--wide" role="img" aria-label="Wide decorative illustration placeholder"></div>
+                    <figcaption class="image-block__caption">Decorative wide — max 65% desktop, full width mobile</figcaption>
+                  </figure>
+                </div>
+                <p class="sys-component__desc">Wider landscape variant for panoramic illustrations that need more horizontal breathing room.</p>
+                <div class="sys-component__meta">
+                  <code class="sys-component__class">.image-block</code>
+                  <div class="sys-component__variants">
+                    <code class="sys-component__variant">.image-block--decorative-wide</code>
+                  </div>
+                </div>
+              </div>
+
+              <!-- cs-editorial-list--numbered (process steps) -->
+              <div class="sys-component">
+                <h4 class="sys-component__name">Editorial List</h4>
+                <div class="sys-component__demo">
+                  <ol class="cs-editorial-list cs-editorial-list--numbered">
+                    <li class="cs-editorial-list__item">
+                      <h4 class="cs-editorial-list__title">Discover</h4>
+                      <p class="cs-editorial-list__body">Research, interviews, and problem framing to understand what matters and why.</p>
+                    </li>
+                    <li class="cs-editorial-list__item">
+                      <h4 class="cs-editorial-list__title">Define</h4>
+                      <p class="cs-editorial-list__body">Synthesise findings into a clear problem statement and design direction.</p>
+                    </li>
+                    <li class="cs-editorial-list__item">
+                      <h4 class="cs-editorial-list__title">Deliver</h4>
+                      <p class="cs-editorial-list__body">Iterate through prototypes and validation, shipping what solves the real problem.</p>
+                    </li>
+                  </ol>
+                </div>
+                <p class="sys-component__desc">Numbered list for findings, process phases, or ranked themes. Number generated by CSS counter — no number markup needed.</p>
+                <div class="sys-component__meta">
+                  <code class="sys-component__class">.cs-editorial-list</code>
+                  <div class="sys-component__variants">
+                    <code class="sys-component__variant">.cs-editorial-list--numbered</code>
+                  </div>
+                </div>
+              </div>
+
+              <!-- cs-metric-grid -->
+              <div class="sys-component">
+                <h4 class="sys-component__name">Metric Grid</h4>
+                <div class="sys-component__demo">
+                  <ul class="cs-metric-grid" role="list">
+                    <li class="cs-metric-grid__item">
+                      <p class="cs-metric-grid__value">35%</p>
+                      <h4 class="cs-metric-grid__label">Search accuracy</h4>
+                      <p class="cs-metric-grid__body">Improvement across 5 million annual searches.</p>
+                    </li>
+                    <li class="cs-metric-grid__item">
+                      <p class="cs-metric-grid__value">30%</p>
+                      <h4 class="cs-metric-grid__label">Feedback rate</h4>
+                      <p class="cs-metric-grid__body">More users completing the feedback flow at zero dev cost.</p>
+                    </li>
+                    <li class="cs-metric-grid__item">
+                      <p class="cs-metric-grid__value">97 hrs</p>
+                      <h4 class="cs-metric-grid__label">Saved monthly</h4>
+                      <p class="cs-metric-grid__body">Freed from the support team by better platform design.</p>
+                    </li>
+                  </ul>
+                </div>
+                <p class="sys-component__desc">Outcome metrics with value, label, and supporting body text. Teal accent underline on each value. Responsive from 1 to 3 columns.</p>
+                <div class="sys-component__meta">
+                  <code class="sys-component__class">.cs-metric-grid</code>
+                  <div class="sys-component__variants">
+                    <code class="sys-component__variant">.cs-metric-grid--four</code>
+                  </div>
+                </div>
+              </div>
+
+              <!-- pull-quote -->
+              <div class="sys-component">
+                <h4 class="sys-component__name">Pull Quote</h4>
+                <div class="sys-component__demo">
+                  <blockquote class="pull-quote">
+                    <p class="pull-quote__text">Good defaults are worth more than a hundred options.</p>
+                    <cite class="pull-quote__cite">— Sam Blake</cite>
+                  </blockquote>
+                </div>
+                <p class="sys-component__desc">High-impact statement that interrupts the reading rhythm. 3px teal left accent bar, Fraunces display type at 30–36px.</p>
+                <div class="sys-component__meta">
+                  <code class="sys-component__class">.pull-quote</code>
+                  <div class="sys-component__variants">
+                    <code class="sys-component__variant">.pull-quote__text</code>
+                    <code class="sys-component__variant">.pull-quote__cite</code>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           4. ARCHITECTURE
+           ================================================================= -->
+      <section class="section--subtle section-lg" aria-labelledby="sys-arch-heading">
+        <div class="container">
+
+          <div class="sys-section__header">
+            <span class="sys-section__eyebrow">Architecture</span>
+            <h2 id="sys-arch-heading" class="sys-section__heading">How the site holds together.</h2>
+            <p class="sys-section__body">Six structural decisions that keep the codebase coherent as it grows.</p>
+          </div>
+
+          <div class="sys-arch-grid">
+
+            <div class="sys-arch-item">
+              <h3 class="sys-arch-item__heading">CSS architecture — ITCSS</h3>
+              <p class="sys-arch-item__body">Styles are layered from abstract to specific. Settings and variables sit at the foundation. Components build on them. Layouts use both. Specificity flows in one direction and never fights itself.</p>
+            </div>
+
+            <div class="sys-arch-item">
+              <h3 class="sys-arch-item__heading">Design tokens</h3>
+              <p class="sys-arch-item__body">Every visual decision is a named CSS custom property in <code>_variables.css</code>. No hex values, hardcoded sizes, or arbitrary spacing exist anywhere else in the codebase. One file to update; the whole site responds.</p>
+            </div>
+
+            <div class="sys-arch-item">
+              <h3 class="sys-arch-item__heading">Vanilla HTML and Vite</h3>
+              <p class="sys-arch-item__body">No framework overhead. Vite handles multi-page entry points, fingerprinted asset paths, and fast dev server rewrites. Each page is a straightforward HTML file registered in <code>rollupOptions.input</code>.</p>
+            </div>
+
+            <div class="sys-arch-item">
+              <h3 class="sys-arch-item__heading">Progressive enhancement</h3>
+              <p class="sys-arch-item__body">Content renders and works before JavaScript loads. Navigation functions as pure HTML. The typewriter, annotated image interactions, and scroll reveals are layered on top — remove them and the page degrades gracefully.</p>
+            </div>
+
+            <div class="sys-arch-item">
+              <h3 class="sys-arch-item__heading">Accessibility patterns</h3>
+              <p class="sys-arch-item__body">Every interactive element is keyboard-navigable with a visible focus ring. Touch targets meet the WCAG 2.2 44px minimum. <code>aria-current</code>, <code>aria-label</code>, and screen-reader text are part of every component from day one.</p>
+            </div>
+
+            <div class="sys-arch-item">
+              <h3 class="sys-arch-item__heading">Responsive design</h3>
+              <p class="sys-arch-item__body">Mobile-first breakpoints at 600, 905, 1240, and 1440px — chosen for real device densities, not round numbers. Hover states are gated behind <code>(hover: hover) and (pointer: fine)</code> to prevent false activation on touch screens.</p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           5. DESIGN PRINCIPLES
+           ================================================================= -->
+      <section class="section-lg" aria-labelledby="sys-principles-heading">
+        <div class="container-reading">
+
+          <div class="sys-section__header">
+            <span class="sys-section__eyebrow">Design principles</span>
+            <h2 id="sys-principles-heading" class="sys-section__heading">The rules behind the decisions.</h2>
+            <p class="sys-section__body">Six principles that shaped every component, layout, and interaction on this site.</p>
+          </div>
+
+          <ol class="sys-principles" role="list">
+
+            <li class="sys-principle">
+              <span class="sys-principle__number" aria-hidden="true">01</span>
+              <div class="sys-principle__content">
+                <h3 class="sys-principle__title">Content first</h3>
+                <p class="sys-principle__body">Layout serves content, never the other way around. Every structural decision starts with what needs to be communicated, not what looks interesting.</p>
+              </div>
+            </li>
+
+            <li class="sys-principle">
+              <span class="sys-principle__number" aria-hidden="true">02</span>
+              <div class="sys-principle__content">
+                <h3 class="sys-principle__title">Semantic HTML</h3>
+                <p class="sys-principle__body">Heading levels reflect document hierarchy. Lists are lists. Quotes are blockquotes. Markup describes what things are, not how they look.</p>
+              </div>
+            </li>
+
+            <li class="sys-principle">
+              <span class="sys-principle__number" aria-hidden="true">03</span>
+              <div class="sys-principle__content">
+                <h3 class="sys-principle__title">Progressive enhancement</h3>
+                <p class="sys-principle__body">The page renders and works before JavaScript arrives. Scripts add behaviour; they do not create it.</p>
+              </div>
+            </li>
+
+            <li class="sys-principle">
+              <span class="sys-principle__number" aria-hidden="true">04</span>
+              <div class="sys-principle__content">
+                <h3 class="sys-principle__title">Reduced motion support</h3>
+                <p class="sys-principle__body">Every animation has a reduced-motion counterpart. User preference is respected at the system level, not worked around at the component level.</p>
+              </div>
+            </li>
+
+            <li class="sys-principle">
+              <span class="sys-principle__number" aria-hidden="true">05</span>
+              <div class="sys-principle__content">
+                <h3 class="sys-principle__title">Accessibility by default</h3>
+                <p class="sys-principle__body">WCAG 2.2 AA is a constraint, not a milestone. Contrast ratios, focus states, and ARIA labels are part of every component from the first commit.</p>
+              </div>
+            </li>
+
+            <li class="sys-principle">
+              <span class="sys-principle__number" aria-hidden="true">06</span>
+              <div class="sys-principle__content">
+                <h3 class="sys-principle__title">Lean systems</h3>
+                <p class="sys-principle__body">Reuse earns its keep or it does not happen. Three similar elements share one component when the abstraction is genuinely simpler. Otherwise, write the thing twice.</p>
+              </div>
+            </li>
+
+          </ol>
+
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           6. BUILD STATS
+           ================================================================= -->
+      <section class="section--subtle section-md" aria-labelledby="sys-stats-heading">
+        <div class="container">
+
+          <div class="sys-section__header">
+            <span class="sys-section__eyebrow">By the numbers</span>
+            <h2 id="sys-stats-heading" class="sys-section__heading">Built lean, on purpose.</h2>
+          </div>
+
+          <ul class="cs-metric-grid cs-metric-grid--four" role="list">
+            <li class="cs-metric-grid__item">
+              <p class="cs-metric-grid__value">85</p>
+              <h3 class="cs-metric-grid__label">Design tokens</h3>
+              <p class="cs-metric-grid__body">Every colour, spacing value, radius, and easing curve named in one file.</p>
+            </li>
+            <li class="cs-metric-grid__item">
+              <p class="cs-metric-grid__value">26</p>
+              <h3 class="cs-metric-grid__label">Components</h3>
+              <p class="cs-metric-grid__body">Purpose-built CSS components with one responsibility each.</p>
+            </li>
+            <li class="cs-metric-grid__item">
+              <p class="cs-metric-grid__value">12</p>
+              <h3 class="cs-metric-grid__label">Pages</h3>
+              <p class="cs-metric-grid__body">From the home page through three case studies to this one.</p>
+            </li>
+            <li class="cs-metric-grid__item">
+              <p class="cs-metric-grid__value">0</p>
+              <h3 class="cs-metric-grid__label">JS frameworks</h3>
+              <p class="cs-metric-grid__body">Vanilla HTML, CSS custom properties, and progressive enhancement only.</p>
+            </li>
+          </ul>
+
+        </div>
+      </section>
+
+    </main>
+
+    {{> footer}}
+
+    <script type="module" src="/src/nav.js"></script>
+    <script type="module" src="/src/reveal.js"></script>
+    <script type="module" src="/src/cs-annotated-image.js"></script>
+
+  </body>
+</html>
