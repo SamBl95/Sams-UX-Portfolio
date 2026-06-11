@@ -52,6 +52,15 @@
   text-wrap: balance;
 }
 
+.cs-emphasis--cassi-problem .cs-emphasis__text {
+  max-width: none;
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--leading-relaxed);
+  text-wrap: pretty;
+}
+
 .cs-emphasis__note,
 .cs-emphasis__cite {
   display: block;
@@ -81,6 +90,11 @@
   .cs-emphasis--statement .cs-emphasis__text {
     max-width: 36ch;
     font-size: var(--text-3xl);
+  }
+
+  .cs-emphasis--statement.cs-emphasis--cassi-problem .cs-emphasis__text {
+    max-width: none;
+    font-size: var(--text-xl);
   }
 
   .cs-emphasis--quote .cs-emphasis__text {

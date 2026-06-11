@@ -138,3 +138,12 @@
   --image-block-max-width-lg: 65%;
   --image-block-radius: 0;
 }
+
+
+/* -------------------------------------------------------------------------
+   DESKTOP 75 - larger desktop treatment while keeping mobile full width
+   ------------------------------------------------------------------------- */
+
+.image-block--desktop-75 {
+  --image-block-max-width-lg: 75%;
+}

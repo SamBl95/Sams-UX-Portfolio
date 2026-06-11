@@ -187,7 +187,7 @@
             <p>Functional changes in the back end were out of the question, so I focused on what we could do. My knowledge of front end development was enough to understand what low cost changes I could make, so I focused on the UI instead of trying to create new journeys or improve the quality of responses directly.</p>
             <p>In a bid to drive engagement with colleagues, I announced a competition to design a new logo and posted a banner on i-Exchange to promote it.</p>
 
-            <figure class="image-block image-block--decorative">
+            <figure class="image-block image-block--decorative image-block--desktop-75">
               <img src="/assets/images/cassi/cassi-ideate-dec-competition-banner.jpg" alt="Internal competition banner for the Colleague Assist logo and naming competition" loading="lazy" />
               <figcaption class="image-block__caption">The competition banner, a way to build colleague investment before they even used the improved version.</figcaption>
             </figure>
@@ -227,46 +227,35 @@
             </ol>
 
             <h3>Heuristic analysis</h3>
-            <ul class="cs-editorial-list cs-editorial-list--grid" role="list" aria-label="Heuristic analysis findings">
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">No guidance</h4>
-                <p class="cs-editorial-list__body">It wasn't clear that users should select an audience or how important it was to give feedback.</p>
-              </li>
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Simple errors</h4>
-                <p class="cs-editorial-list__body">The audience selection was out of place, the feedback icons were wedged between responses, and don't get me started on colour contrast.</p>
-              </li>
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Dated UI</h4>
-                <p class="cs-editorial-list__body">Internal projects never seem to get UI designers involved, and it showed. This tool was in pilot, but it only needed a few tweaks to improve it.</p>
-              </li>
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Unclear feedback journey</h4>
-                <p class="cs-editorial-list__body">The icons were there, but users weren't clicking them. The start of the feedback journey wasn't clear enough.</p>
-              </li>
-            </ul>
-
             <figure class="cs-annotated-image">
               <div class="cs-annotated-image__frame">
-                <img class="cs-annotated-image__img" src="/assets/images/cassi/cassi-heuristics-before-chat-window.png" alt="Original Cassi chat window before redesign showing quiet feedback icons and no guidance" loading="lazy" />
+                <img class="cs-annotated-image__img" src="/assets/images/cassi/cassi-heuristics-before-chat-window.png" alt="Original Cassi chat window before redesign showing unclear audience selection and quiet feedback icons" loading="lazy" />
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="top-center">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">No guidance</strong>
+                    <p class="cs-annotated-image__tooltip-body">It wasn't clear that users should select an audience or how important it was to give feedback.</p>
+                  </div>
+                </div>
 
                 <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="top-right">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
-                    <strong class="cs-annotated-image__tooltip-title">Feedback icons were quiet</strong>
-                    <p class="cs-annotated-image__tooltip-body">The thumbs up and down controls existed but drew no attention and carried no explanation.</p>
+                    <strong class="cs-annotated-image__tooltip-title">Simple errors</strong>
+                    <p class="cs-annotated-image__tooltip-body">The audience selection was out of place, the feedback icons were wedged between responses, and don't get me started on colour contrast.</p>
                   </div>
                 </div>
 
-                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="middle-center">
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="bottom-right">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
-                    <strong class="cs-annotated-image__tooltip-title">No context for why feedback mattered</strong>
-                    <p class="cs-annotated-image__tooltip-body">Nothing told users why their feedback improved the model or where to start the journey.</p>
+                    <strong class="cs-annotated-image__tooltip-title">Unclear feedback journey</strong>
+                    <p class="cs-annotated-image__tooltip-body">The icons were there, but users weren't clicking them. The start of the feedback journey wasn't clear enough.</p>
                   </div>
                 </div>
               </div>
-              <figcaption class="cs-annotated-image__caption">The original chat window, the feedback entry point was there but with nothing to draw the eye to it.</figcaption>
+              <figcaption class="cs-annotated-image__caption">The original chat window had audience and feedback controls, but their placement and guidance made the journey easy to miss.</figcaption>
             </figure>
           </div>
           </div>
@@ -280,13 +269,11 @@
         <section class="cs-phase" aria-labelledby="phase-define">
           <div class="container">
           <p class="cs-phase__eyebrow">Define</p>
-          <h2 id="phase-define" class="cs-phase__heading">Three problems to solve</h2>
-
-          <blockquote class="pull-quote" aria-label="Problem statement">
-            <p class="pull-quote__text">Colleagues are not selecting their business area (audience) when querying Colleague Assist and the feedback rates are really low. This causes Colleague Assist's responses to be less accurate and prevents the data science team from improving the model.</p>
-          </blockquote>
+          <h2 id="phase-define" class="cs-phase__heading">Two problems, one root cause</h2>
 
           <div class="cs-phase__body">
+            <p>The feedback journey only allowed discrete feedback with three vague options, causing users to drop off. The audience selection was poorly positioned and carried no explanation of why it mattered. Neither problem existed in isolation. At the root of both was a complete lack of guidance and context within the tool itself. Users didn't know why feedback mattered, didn't understand what audience selection did, and had no reason to engage with either.</p>
+
             <h3>The feedback problem</h3>
             <p>Users wanted to leave feedback about why the chatbot was wrong, but they only had three options which were too broad. This meant they didn't get to share their true thoughts and feelings, so they dropped off the journey.</p>
             <p>Cassi uses feedback to improve its responses, guard railing those that receive multiple thumbs down. This is really important to reduce risk, so feedback is vital. I needed to look at how we received feedback to inform the model.</p>
@@ -303,10 +290,6 @@
 
             <p>Additionally, the thumbs up and down were not clearly signalled, so people were likely missing the start of the feedback journey.</p>
 
-            <h3>The understanding problem</h3>
-            <p>Users did not have a good mental model of Colleague Assist. They didn't understand the value in reviewing responses or realise that this could improve the model for their benefit.</p>
-            <p>It was obvious from the town hall meeting that users did not know their feedback would directly improve Cassi's responses. There was a knowledge gap that I needed to address to get buy in from users.</p>
-
             <h3>The audience problem</h3>
             <p>Users were not selecting their audience regularly enough. This caused responses to be guard railed for being wrong when really they were just shown to the wrong audience. The layout of the tool did not make sense, there were no prompts to choose an audience and no guidance for new users.</p>
 
@@ -316,7 +299,13 @@
             </figure>
 
             <p>There needed to be a clearer journey and guidance for users to select their audience. Audience selection needed to become second nature, as all queries should be filtered by audience.</p>
+
+            <h3>The root cause</h3>
           </div>
+
+          <blockquote class="cs-emphasis cs-emphasis--statement cs-emphasis--cassi-problem" aria-label="Root cause">
+            <p class="cs-emphasis__text">Users did not have a good mental model of Colleague Assist. They didn't understand the value in reviewing responses or realise that this could improve the model for their benefit. Address the knowledge gap and both problems become easier to solve.</p>
+          </blockquote>
           </div>
         </section>
 
@@ -463,85 +452,48 @@
           <h2 id="phase-solution" class="cs-phase__heading">Cassi</h2>
 
           <div class="cs-phase__body">
-            <ul class="cs-editorial-list cs-editorial-list--grid" role="list" aria-label="Final Cassi improvements">
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Audience</h4>
-                <p class="cs-editorial-list__body">Moving the audience field and adding a prompt made it much clearer that it needed to be selected.</p>
-              </li>
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Tooltip</h4>
-                <p class="cs-editorial-list__body">A simple tooltip held guidance for new users without getting in the way of colleagues who knew what they were doing.</p>
-              </li>
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Feedback</h4>
-                <p class="cs-editorial-list__body">Users had a clearer path to mark responses and share their thoughts. The new toast went down a treat!</p>
-              </li>
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Rebrand</h4>
-                <p class="cs-editorial-list__body">By engaging with our community, we had a new logo, new name and better brand for Cassi.</p>
-              </li>
-            </ul>
-
             <figure class="cs-annotated-image">
               <div class="cs-annotated-image__frame">
                 <img class="cs-annotated-image__img" src="/assets/images/cassi/cassi-final-after-home-screen.jpg" alt="Cassi final design first screen" loading="lazy" />
 
-                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="top-left">
-                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
-                  <div class="cs-annotated-image__tooltip" role="tooltip">
-                    <strong class="cs-annotated-image__tooltip-title">Audience near the query</strong>
-                    <p class="cs-annotated-image__tooltip-body">The audience selector moved into the area users naturally reviewed before asking a question.</p>
-                  </div>
-                </div>
-
-                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="middle-center">
-                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
-                  <div class="cs-annotated-image__tooltip" role="tooltip">
-                    <strong class="cs-annotated-image__tooltip-title">Opening guidance</strong>
-                    <p class="cs-annotated-image__tooltip-body">The empty chat state now explained how to get a better answer and why feedback mattered.</p>
-                  </div>
-                </div>
-
-                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="bottom-right">
-                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
-                  <div class="cs-annotated-image__tooltip" role="tooltip">
-                    <strong class="cs-annotated-image__tooltip-title">Fallback prompt ready</strong>
-                    <p class="cs-annotated-image__tooltip-body">If users skipped audience selection the interface had a recovery prompt instead of silently accepting bad context.</p>
-                  </div>
-                </div>
-              </div>
-              <figcaption class="cs-annotated-image__caption">Final design, first screen, audience selection, guidance and brand all support the query moment.</figcaption>
-            </figure>
-
-            <figure class="cs-annotated-image">
-              <div class="cs-annotated-image__frame">
-                <img class="cs-annotated-image__img" src="/assets/images/cassi/cassi-final-after-conversation-screen.jpg" alt="Cassi final design second screen" loading="lazy" />
-
                 <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="top-right">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
-                    <strong class="cs-annotated-image__tooltip-title">Tooltip stays available</strong>
-                    <p class="cs-annotated-image__tooltip-body">Guidance could be reopened without interrupting colleagues who already knew what they were doing.</p>
+                    <strong class="cs-annotated-image__tooltip-title">Feedback</strong>
+                    <p class="cs-annotated-image__tooltip-body">Users had a clearer path to mark responses and share their thoughts. The new toast went down a treat!</p>
                   </div>
                 </div>
 
                 <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="middle-center">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
-                    <strong class="cs-annotated-image__tooltip-title">Feedback is clearer</strong>
-                    <p class="cs-annotated-image__tooltip-body">The path to mark responses and explain issues was easier to spot from inside the conversation.</p>
+                    <strong class="cs-annotated-image__tooltip-title">Rebrand</strong>
+                    <p class="cs-annotated-image__tooltip-body">By engaging with our community, we had a new logo, new name and better brand for Cassi.</p>
+                  </div>
+                </div>
+
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="bottom-left">
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <div class="cs-annotated-image__tooltip" role="tooltip">
+                    <strong class="cs-annotated-image__tooltip-title">Tooltip</strong>
+                    <p class="cs-annotated-image__tooltip-body">A simple tooltip held guidance for new users without getting in the way of colleagues who knew what they were doing.</p>
                   </div>
                 </div>
 
                 <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="bottom-center">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
-                    <strong class="cs-annotated-image__tooltip-title">Toast pattern selected</strong>
-                    <p class="cs-annotated-image__tooltip-body">Confirmation could appear without forcing a modal decision during customer service work.</p>
+                    <strong class="cs-annotated-image__tooltip-title">Audience</strong>
+                    <p class="cs-annotated-image__tooltip-body">Moving the audience field and adding a prompt made it much clearer that it needed to be selected.</p>
                   </div>
                 </div>
               </div>
-              <figcaption class="cs-annotated-image__caption">Final design, second screen, tooltip accessible, feedback clearer, and confirmation handled without blocking the user.</figcaption>
+              <figcaption class="cs-annotated-image__caption">Final design, first screen.</figcaption>
+            </figure>
+
+            <figure class="image-block image-block--default" style="--image-block-max-width-md: 100%; --image-block-max-width-lg: 100%;">
+              <img src="/assets/images/cassi/cassi-final-after-conversation-screen.jpg" alt="Cassi final design second screen" loading="lazy" />
+              <figcaption class="image-block__caption">Final design, second screen.</figcaption>
             </figure>
           </div>
           </div>
