@@ -13,6 +13,7 @@
     { "source": "/case-studies/cassi",       "destination": "/src/pages/case-studies/cassi.html" },
     { "source": "/case-studies/community",   "destination": "/src/pages/case-studies/community.html" },
     { "source": "/articles/design-systems-and-portfolio-sites", "destination": "/src/pages/articles/design-systems-and-portfolio-sites.html" },
-    { "source": "/articles/how-i-built-my-portfolio-with-claude-code", "destination": "/src/pages/articles/how-i-built-my-portfolio-with-claude-code.html" }
+    { "source": "/articles/how-i-built-my-portfolio-with-claude-code", "destination": "/src/pages/articles/how-i-built-my-portfolio-with-claude-code.html" },
+    { "source": "/system", "destination": "/src/pages/system.html" }
   ]
 }
