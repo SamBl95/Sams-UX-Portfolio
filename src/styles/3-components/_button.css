@@ -1,6 +1,6 @@
 /* =============================================================================
    BUTTON
-   Three variants: primary · secondary · ghost.
+   Four variants: primary · secondary · tertiary · ghost.
    Apply to <button> or <a> via .btn + modifier.
 
    Touch targets: 44px min-height on mobile (WCAG 2.2 §2.5.8)
@@ -127,6 +127,29 @@
 .btn--secondary:active {
   background-color: color-mix(in srgb, var(--color-accent-light) 70%, black);
   transform:        scale(0.97);
+}
+
+
+/* -------------------------------------------------------------------------
+   TERTIARY — quiet text button for low-emphasis card affordances
+   ------------------------------------------------------------------------- */
+
+.btn--tertiary {
+  background-color: transparent;
+  color:            var(--color-accent-accessible);
+  border-color:     transparent;
+  padding-inline:   0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn--tertiary:hover {
+    color: var(--color-text-primary);
+  }
+}
+
+.btn--tertiary:active {
+  color:     var(--color-text-primary);
+  transform: none;
 }
 
 
