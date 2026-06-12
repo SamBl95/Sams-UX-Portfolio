@@ -33,7 +33,7 @@
   font-size:      var(--text-3xl);
   font-weight:    var(--font-weight-semibold);
   line-height:    var(--leading-tight);
-  letter-spacing: -0.02em;
+  letter-spacing:  0;
   color:          var(--color-text-primary);
   margin:         0;
 }

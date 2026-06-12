@@ -211,20 +211,24 @@
             <h3>Town hall meeting</h3>
             <p>I wanted to understand why users weren't giving feedback or selecting their audience. By putting a town hall meeting in place, I quickly understood user needs and learned more about their pain points.</p>
 
-            <ol class="cs-editorial-list cs-editorial-list--numbered" aria-label="Town hall findings">
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Feedback</h4>
-                <p class="cs-editorial-list__body">There were only three feedback options, which didn't always describe the user's thoughts. These discrete options were potentially causing the high drop off rates.</p>
-              </li>
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Understanding</h4>
-                <p class="cs-editorial-list__body">Users were not aware that the model learns directly from their feedback. Once this was clear, they felt far more inclined to leave feedback.</p>
-              </li>
-              <li class="cs-editorial-list__item">
-                <h4 class="cs-editorial-list__title">Audiences</h4>
-                <p class="cs-editorial-list__body">The audience selection menu was at the top of the screen, but the query was entered at the bottom. There were no prompts to select an audience, so users often forgot.</p>
-              </li>
-            </ol>
+            <h3>What did the town hall reveal?</h3>
+
+            <div class="cs-finding-grid" role="list" aria-label="Town hall findings">
+              <article class="cs-finding-grid__item" role="listitem">
+                <h4>Feedback</h4>
+                <p>There were only three feedback options, which didn't always describe the user's thoughts. These discrete options were potentially causing the high drop off rates.</p>
+              </article>
+
+              <article class="cs-finding-grid__item" role="listitem">
+                <h4>Understanding</h4>
+                <p>Users were not aware that the model learns directly from their feedback. Once this was clear, they felt far more inclined to leave feedback.</p>
+              </article>
+
+              <article class="cs-finding-grid__item" role="listitem">
+                <h4>Audiences</h4>
+                <p>The audience selection menu was at the top of the screen, but the query was entered at the bottom. There were no prompts to select an audience, so users often forgot.</p>
+              </article>
+            </div>
 
             <h3>Heuristic analysis</h3>
             <figure class="cs-annotated-image">
@@ -232,7 +236,7 @@
                 <img class="cs-annotated-image__img" src="/assets/images/cassi/cassi-heuristics-before-chat-window.png" alt="Original Cassi chat window before redesign showing unclear audience selection and quiet feedback icons" loading="lazy" />
 
                 <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="top-center">
-                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false" aria-label="Annotation 1: No guidance"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
                     <strong class="cs-annotated-image__tooltip-title">No guidance</strong>
                     <p class="cs-annotated-image__tooltip-body">It wasn't clear that users should select an audience or how important it was to give feedback.</p>
@@ -240,7 +244,7 @@
                 </div>
 
                 <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="top-right">
-                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false" aria-label="Annotation 2: Simple errors"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
                     <strong class="cs-annotated-image__tooltip-title">Simple errors</strong>
                     <p class="cs-annotated-image__tooltip-body">The audience selection was out of place, the feedback icons were wedged between responses, and don't get me started on colour contrast.</p>
@@ -248,7 +252,7 @@
                 </div>
 
                 <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="bottom-right">
-                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false" aria-label="Annotation 3: Unclear feedback journey"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
                     <strong class="cs-annotated-image__tooltip-title">Unclear feedback journey</strong>
                     <p class="cs-annotated-image__tooltip-body">The icons were there, but users weren't clicking them. The start of the feedback journey wasn't clear enough.</p>
@@ -300,7 +304,7 @@
 
             <p>There needed to be a clearer journey and guidance for users to select their audience. Audience selection needed to become second nature, as all queries should be filtered by audience.</p>
 
-            <h3>The root cause</h3>
+            <h3>The Root Cause: Understanding</h3>
           </div>
 
           <blockquote class="cs-emphasis cs-emphasis--statement cs-emphasis--cassi-problem" aria-label="Root cause">
@@ -411,33 +415,32 @@
 
             <h3>Toast or overlay?</h3>
             <p>I created two ways of displaying the feedback journey. One was an overlay that the user would need to dismiss. The other was a toast that would appear for 10 seconds at the top of the chat window.</p>
+
+            <div class="cs-two-col cs-two-col--media-pair" role="group" aria-label="Cassi overlay feedback journeys">
+              <figure class="cs-two-col__media">
+                <h3 class="cs-two-col__heading">Negative feedback overlay</h3>
+                <img src="/assets/images/cassi/cassi-test-des-feedback-overlay-negative.jpg" alt="Cassi overlay option for negative feedback" loading="lazy" />
+                <figcaption class="cs-two-col__caption">The negative feedback journey asked users to explain what was wrong.</figcaption>
+              </figure>
+
+              <figure class="cs-two-col__media">
+                <h3 class="cs-two-col__heading">Positive feedback overlay</h3>
+                <img src="/assets/images/cassi/cassi-test-des-feedback-overlay-positive.jpg" alt="Cassi overlay option for positive feedback" loading="lazy" />
+                <figcaption class="cs-two-col__caption">The positive feedback journey confirmed the response was useful.</figcaption>
+              </figure>
+            </div>
+
             <p>Users were far more keen on the toast. They made an excellent point that they would usually be speaking to a customer live, so overlay pop ups would really get in the way of providing good service.</p>
+
+            <figure class="image-block image-block--default">
+              <img src="/assets/images/cassi/cassi-test-des-feedback-toast.jpg" alt="Cassi toast notification option for feedback confirmation" loading="lazy" />
+              <figcaption class="image-block__caption">The toast was the preferred option when the user selected thumbs up or down.</figcaption>
+            </figure>
           </div>
 
           <blockquote class="pull-quote">
             <p class="pull-quote__text">Toast it is.</p>
           </blockquote>
-
-          <div class="cs-phase__body">
-            <figure class="image-block image-block--default">
-              <img src="/assets/images/cassi/cassi-test-des-feedback-toast.jpg" alt="Cassi toast notification option for feedback confirmation" loading="lazy" />
-              <figcaption class="image-block__caption">The toast was the preferred option when the user selected thumbs up or down.</figcaption>
-            </figure>
-
-            <div class="cs-two-col" role="group" aria-label="Cassi feedback display options">
-              <figure class="cs-two-col__media">
-                <h3 class="cs-two-col__heading">Overlay option</h3>
-                <img src="/assets/images/cassi/cassi-test-des-feedback-overlay-negative.jpg" alt="Cassi overlay option for negative feedback" loading="lazy" />
-                <figcaption class="cs-two-col__caption">Rejected because it interrupted live customer work.</figcaption>
-              </figure>
-
-              <figure class="cs-two-col__media">
-                <h3 class="cs-two-col__heading">Toast option</h3>
-                <img src="/assets/images/cassi/cassi-test-des-feedback-overlay-positive.jpg" alt="Cassi toast option for feedback confirmation" loading="lazy" />
-                <figcaption class="cs-two-col__caption">Confirmation without blocking the conversation.</figcaption>
-              </figure>
-            </div>
-          </div>
           </div>
         </section>
 
@@ -457,7 +460,7 @@
                 <img class="cs-annotated-image__img" src="/assets/images/cassi/cassi-final-after-home-screen.jpg" alt="Cassi final design first screen" loading="lazy" />
 
                 <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="top-right">
-                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false" aria-label="Annotation 1: Feedback"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
                     <strong class="cs-annotated-image__tooltip-title">Feedback</strong>
                     <p class="cs-annotated-image__tooltip-body">Users had a clearer path to mark responses and share their thoughts. The new toast went down a treat!</p>
@@ -465,7 +468,7 @@
                 </div>
 
                 <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="middle-center">
-                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false" aria-label="Annotation 2: Rebrand"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
                     <strong class="cs-annotated-image__tooltip-title">Rebrand</strong>
                     <p class="cs-annotated-image__tooltip-body">By engaging with our community, we had a new logo, new name and better brand for Cassi.</p>
@@ -473,7 +476,7 @@
                 </div>
 
                 <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="bottom-left">
-                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false" aria-label="Annotation 3: Tooltip"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
                     <strong class="cs-annotated-image__tooltip-title">Tooltip</strong>
                     <p class="cs-annotated-image__tooltip-body">A simple tooltip held guidance for new users without getting in the way of colleagues who knew what they were doing.</p>
@@ -481,7 +484,7 @@
                 </div>
 
                 <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="bottom-center">
-                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false"></button>
+                  <button class="cs-annotated-image__pin" type="button" aria-expanded="false" aria-label="Annotation 4: Audience"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
                     <strong class="cs-annotated-image__tooltip-title">Audience</strong>
                     <p class="cs-annotated-image__tooltip-body">Moving the audience field and adding a prompt made it much clearer that it needed to be selected.</p>
@@ -491,7 +494,7 @@
               <figcaption class="cs-annotated-image__caption">Final design, first screen.</figcaption>
             </figure>
 
-            <figure class="image-block image-block--default" style="--image-block-max-width-md: 100%; --image-block-max-width-lg: 100%;">
+            <figure class="image-block image-block--default image-block--default-full">
               <img src="/assets/images/cassi/cassi-final-after-conversation-screen.jpg" alt="Cassi final design second screen" loading="lazy" />
               <figcaption class="image-block__caption">Final design, second screen.</figcaption>
             </figure>

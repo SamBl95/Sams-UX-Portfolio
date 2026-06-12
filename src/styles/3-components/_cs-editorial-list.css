@@ -4,7 +4,7 @@
    and compact observations.
 
    Modifiers:
-   - .cs-editorial-list--numbered: numbered research findings or ranked themes
+   - .cs-editorial-list--numbered: stacked research findings or ranked themes
    - .cs-editorial-list--grid: two-column feature/change list on desktop
    ============================================================================= */
 
@@ -42,25 +42,6 @@
   text-wrap: pretty;
 }
 
-.cs-editorial-list--numbered {
-  counter-reset: cs-editorial-list;
-}
-
-.cs-editorial-list--numbered .cs-editorial-list__item {
-  counter-increment: cs-editorial-list;
-}
-
-.cs-editorial-list--numbered .cs-editorial-list__item::before {
-  content: counter(cs-editorial-list, decimal-leading-zero);
-  display: block;
-  margin-bottom: var(--space-3);
-  font-family: var(--font-heading);
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-semibold);
-  line-height: 1;
-  color: var(--color-accent-accessible);
-}
-
 .cs-editorial-list--grid .cs-editorial-list__item::before {
   content: '';
   display: block;
@@ -77,20 +58,7 @@
   }
 
   .cs-editorial-list--numbered .cs-editorial-list__item {
-    display: grid;
-    grid-template-columns: minmax(3rem, 0.18fr) minmax(0, 0.82fr);
-    column-gap: var(--space-6);
     padding-block: var(--space-6);
-  }
-
-  .cs-editorial-list--numbered .cs-editorial-list__item::before {
-    margin-bottom: 0;
-    padding-top: var(--space-1);
-  }
-
-  .cs-editorial-list--numbered .cs-editorial-list__title,
-  .cs-editorial-list--numbered .cs-editorial-list__body {
-    grid-column: 2;
   }
 
   .cs-editorial-list--grid {

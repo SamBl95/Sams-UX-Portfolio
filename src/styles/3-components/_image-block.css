@@ -6,6 +6,7 @@
    Use intent-based variants:
    - .image-block--contained: full container width, rounded screenshot
    - .image-block--default: readable inline evidence image
+   - .image-block--default-full: default image treatment using full container width
    - .image-block--full: wide product/UI state, square to container edge
    - .image-block--portrait: narrow/tall screens or close-up details
    ============================================================================= */
@@ -91,6 +92,12 @@
   --image-block-max-width-sm: 100%;
   --image-block-max-width-md: 72%;
   --image-block-max-width-lg: 60%;
+}
+
+.image-block--default-full {
+  --image-block-max-width-sm: 100%;
+  --image-block-max-width-md: 100%;
+  --image-block-max-width-lg: 100%;
 }
 
 

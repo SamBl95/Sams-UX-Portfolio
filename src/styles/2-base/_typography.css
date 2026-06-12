@@ -23,7 +23,7 @@ h1 {
   font-size:           var(--text-40);      /* 40px — mobile */
   font-weight:         var(--font-weight-semibold);
   line-height:         1.1;
-  letter-spacing:      -0.02em;
+  letter-spacing:       0;
   font-optical-sizing: auto;
   color:               var(--color-text-primary);
 }
@@ -33,7 +33,7 @@ h2 {
   font-size:           var(--text-28);      /* 28px — mobile */
   font-weight:         var(--font-weight-semibold);
   line-height:         1.1;
-  letter-spacing:      -0.015em;
+  letter-spacing:       0;
   font-optical-sizing: auto;
   color:               var(--color-text-primary);
 }
@@ -43,7 +43,7 @@ h3 {
   font-size:           var(--text-22);      /* 22px — mobile */
   font-weight:         var(--font-weight-semibold);
   line-height:         1.1;
-  letter-spacing:      -0.01em;
+  letter-spacing:       0;
   font-optical-sizing: auto;
   color:               var(--color-text-primary);
 }

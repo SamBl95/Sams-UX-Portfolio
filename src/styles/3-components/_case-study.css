@@ -53,7 +53,7 @@
 .cs-hero__title {
   font-weight:    var(--font-weight-bold);
   line-height:    var(--leading-tight);
-  letter-spacing: -0.02em;
+  letter-spacing:  0;
   color:          var(--color-accent-accessible);
   margin-bottom:  var(--space-6);
 }
@@ -128,7 +128,7 @@
   font-size:      var(--text-3xl);
   font-weight:    var(--font-weight-bold);
   line-height:    1;
-  letter-spacing: -0.02em;
+  letter-spacing:  0;
   color:          var(--color-accent-accessible);
 }
 
@@ -198,7 +198,7 @@
   font-size:      var(--text-2xl);
   font-weight:    var(--font-weight-bold);
   line-height:    var(--leading-tight);
-  letter-spacing: -0.01em;
+  letter-spacing:  0;
   color:          var(--color-text-primary);
   margin-bottom:  var(--space-8);
 }
@@ -266,7 +266,7 @@
 
 .cs-phase__eyebrow {
   font-family:    var(--font-heading);
-  font-size:      clamp(13px, 1.5vw, 15px);
+  font-size:      var(--text-sm);
   font-weight:    var(--font-weight-normal);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -280,7 +280,7 @@
   font-size:      var(--text-3xl);
   font-weight:    var(--font-weight-bold);
   line-height:    var(--leading-tight);
-  letter-spacing: -0.015em;
+  letter-spacing:  0;
   color:          var(--color-text-primary);
   margin-bottom:  var(--space-8);
 }
@@ -305,6 +305,15 @@
   margin-bottom: var(--space-3);
 }
 
+.cs-phase__body h4 {
+  font-size:     var(--text-base);
+  font-weight:   var(--font-weight-semibold);
+  line-height:   var(--leading-normal);
+  color:         var(--color-text-primary);
+  margin-top:    var(--space-6);
+  margin-bottom: var(--space-2);
+}
+
 .cs-phase__body ul,
 .cs-phase__body ol {
   display:       flex;
@@ -322,6 +331,39 @@
 
 .cs-phase__body li:last-child {
   margin-bottom: 0;
+}
+
+
+/* -------------------------------------------------------------------------
+   FINDING GRID — compact research findings with theme-colour icons
+   ------------------------------------------------------------------------- */
+
+.cs-finding-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-block: var(--space-6) var(--space-8);
+}
+
+.cs-finding-grid__item {
+  min-width: 0;
+  padding-top: var(--space-4);
+  border-top: 2px solid var(--color-accent);
+}
+
+.cs-finding-grid__item h4 {
+  margin-top: 0;
+}
+
+.cs-phase__body .cs-finding-grid__item p {
+  margin-bottom: 0;
+}
+
+@media (min-width: 905px) {
+  .cs-finding-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-8);
+  }
 }
 
 
@@ -406,7 +448,7 @@
   font-size:      var(--text-3xl);
   font-weight:    var(--font-weight-bold);
   line-height:    var(--leading-tight);
-  letter-spacing: -0.015em;
+  letter-spacing:  0;
   color:          var(--color-text-primary);
   margin-bottom:  var(--space-10);
 }

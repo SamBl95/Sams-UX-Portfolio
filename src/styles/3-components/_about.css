@@ -45,7 +45,7 @@
 .about-hero__title {
   font-weight:    var(--font-weight-bold);
   line-height:    1.1;
-  letter-spacing: -0.02em;
+  letter-spacing:  0;
   color:          var(--color-accent-accessible);
   margin-bottom:  var(--space-6);
 }
@@ -141,7 +141,7 @@
 .about-section__heading {
   font-weight:    var(--font-weight-bold);
   line-height:    1.1;
-  letter-spacing: -0.01em;
+  letter-spacing:  0;
   color:          var(--color-text-primary);
   margin-bottom:  0;
 }

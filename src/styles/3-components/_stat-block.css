@@ -87,7 +87,7 @@
   font-size:      var(--text-4xl);
   font-weight:    var(--font-weight-bold);
   line-height:    1;
-  letter-spacing: -0.02em;
+  letter-spacing:  0;
   color:          var(--color-accent-accessible);
   position:       relative;
   padding-bottom: var(--space-3);

@@ -45,7 +45,7 @@
   font-size:      var(--text-base);
   font-weight:    var(--font-weight-semibold);
   color:          var(--color-accent-accessible);
-  letter-spacing: -0.01em;
+  letter-spacing:  0;
 }
 
 /* Links: primary contact action */

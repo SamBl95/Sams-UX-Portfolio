@@ -35,7 +35,7 @@
 .case-studies__heading {
   font-weight:    var(--font-weight-bold);
   line-height:    1.1;
-  letter-spacing: -0.01em;
+  letter-spacing:  0;
   color:          var(--color-text-primary);
   margin-bottom:  var(--space-3);
 }

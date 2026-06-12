@@ -20,7 +20,7 @@
 .work__heading {
   font-family:    var(--font-heading);
   font-weight:    var(--font-weight-semibold);
-  letter-spacing: -0.02em;
+  letter-spacing:  0;
   color:          var(--color-accent-accessible);
   margin-bottom:  var(--space-3);
 }
@@ -135,7 +135,7 @@
   font-family:         var(--font-heading);
   font-weight:         var(--font-weight-semibold);
   font-optical-sizing: auto;
-  letter-spacing:      -0.015em;
+  letter-spacing:       0;
   color:               var(--color-text-primary);
   line-height:         var(--leading-tight);
   font-size:           var(--text-2xl);
