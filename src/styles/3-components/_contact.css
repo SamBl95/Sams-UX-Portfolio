@@ -5,12 +5,9 @@
    ============================================================================= */
 
 
-.contact__column {
-}
-
 @media (min-width: 905px) {
-  .contact__column {
-    max-width: var(--content-measure);
+  .cs-two-col.contact__columns {
+    align-items: start;
   }
 }
 
@@ -36,6 +33,12 @@
   font-size:     var(--text-sm);
   color:         var(--color-text-secondary);
   margin-bottom: var(--space-3);
+}
+
+.contact__form-note {
+  font-size:   var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color:       var(--color-text-secondary);
 }
 
 .contact__links {
