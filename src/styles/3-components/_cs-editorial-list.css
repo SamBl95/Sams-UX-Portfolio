@@ -6,6 +6,7 @@
    Modifiers:
    - .cs-editorial-list--numbered: stacked research findings or ranked themes
    - .cs-editorial-list--grid: two-column feature/change list on desktop
+   - .cs-editorial-list--card-grid: two-column card grid for compact findings
    ============================================================================= */
 
 .cs-editorial-list {
@@ -50,6 +51,52 @@
   margin-bottom: var(--space-3);
   background-color: var(--color-accent);
   border-radius: var(--radius-full);
+}
+
+.cs-editorial-list--card-grid,
+.cs-phase__body .cs-editorial-list--card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  padding-left: 0;
+  margin-block: var(--space-6) var(--space-10);
+  border-top: 0;
+}
+
+.cs-editorial-list--card-grid .cs-editorial-list__item,
+.cs-phase__body .cs-editorial-list--card-grid .cs-editorial-list__item {
+  padding: var(--space-5);
+  background-color: var(--color-surface);
+  border-top: 2px solid var(--color-accent);
+  border-bottom: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-accent);
+}
+
+.cs-editorial-list--card-grid .cs-editorial-list__title {
+  margin-top: var(--space-3);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+}
+
+.cs-editorial-list--card-grid .cs-editorial-list__label {
+  margin: 0 0 var(--space-1) 0;
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.cs-editorial-list--card-grid .cs-editorial-list__body {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+}
+
+@media (min-width: 768px) {
+  .cs-editorial-list--card-grid,
+  .cs-phase__body .cs-editorial-list--card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 905px) {

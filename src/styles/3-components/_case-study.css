@@ -488,33 +488,59 @@
 
 
 /* -------------------------------------------------------------------------
-   TEAM GRID — 3-up portrait photo grid for research team members
+   TEAM GRID — static profile cards for research team members
    ------------------------------------------------------------------------- */
 
-.cs-team-grid {
+.cs-phase__body .team-grid {
   display:               grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap:                   var(--space-4);
   margin-block:          var(--space-6);
+  padding:               0;
+  padding-left:          0;
+  list-style:            none;
 }
 
 @media (min-width: 905px) {
-  .cs-team-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap:                   var(--space-5);
+  .cs-phase__body .team-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-.cs-team-grid figure {
-  margin: 0;
+.cs-team-card {
+  display:          flex;
+  flex-direction:   column;
+  align-items:      center;
+  gap:              var(--space-4);
+  padding:          var(--space-6);
+  background-color: var(--color-surface);
+  border-radius:    var(--radius-lg);
+  box-shadow:       var(--shadow-accent);
 }
 
-.cs-team-grid img {
+.cs-team-card__name {
+  font-family: var(--font-heading);
+  font-size:   var(--text-base);
+  color:       var(--color-accent);
+  text-align:  center;
+  margin:      0;
+}
+
+.cs-team-card__avatar {
   display:       block;
-  width:         100%;
-  aspect-ratio:  1 / 1;
-  object-fit:    contain;
-  border-radius: var(--radius-lg);
+  width:         120px;
+  height:        120px;
+  object-fit:    cover;
+  border-radius: var(--radius-full);
+}
+
+.cs-team-card__description {
+  font-family: var(--font-body);
+  font-size:   var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color:       var(--color-text-secondary);
+  text-align:  center;
+  margin:      0;
 }
 
 
