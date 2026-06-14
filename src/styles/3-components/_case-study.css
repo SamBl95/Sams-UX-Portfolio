@@ -503,7 +503,7 @@
 
 @media (min-width: 905px) {
   .cs-phase__body .team-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -518,12 +518,13 @@
   box-shadow:       var(--shadow-accent);
 }
 
-.cs-team-card__name {
+.cs-phase__body .cs-team-card__name {
   font-family: var(--font-heading);
   font-size:   var(--text-base);
   color:       var(--color-accent);
   text-align:  center;
   margin:      0;
+  padding:     0;
 }
 
 .cs-team-card__avatar {

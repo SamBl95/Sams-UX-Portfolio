@@ -23,6 +23,11 @@
   border-block: 1px solid var(--color-border);
 }
 
+.cs-emphasis--evidence {
+  margin-block: var(--space-4) var(--space-8);
+  padding: var(--space-4) 0 var(--space-4) var(--space-5);
+}
+
 .cs-emphasis--statement::before {
   content: '';
   position: absolute;
@@ -50,6 +55,15 @@
   line-height: var(--leading-tight);
   color: var(--color-text-primary);
   text-wrap: balance;
+}
+
+.cs-emphasis--evidence .cs-emphasis__text {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  text-wrap: pretty;
 }
 
 .cs-emphasis--cassi-problem .cs-emphasis__text {
@@ -99,5 +113,15 @@
 
   .cs-emphasis--quote .cs-emphasis__text {
     font-size: var(--text-4xl);
+  }
+
+  .cs-emphasis--evidence {
+    margin-block: var(--space-5) var(--space-10);
+    padding-left: var(--space-6);
+  }
+
+  .cs-emphasis--evidence .cs-emphasis__text {
+    max-width: 66ch;
+    font-size: var(--text-lg);
   }
 }

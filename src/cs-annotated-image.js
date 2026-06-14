@@ -3,7 +3,7 @@
  * Wires accessible annotation pins and mobile modal behaviour.
  *
  * Mobile / burger breakpoint (< 905px): pin tap opens a centred modal.
- * Desktop (905px+): CSS-only hover and keyboard focus show inline tooltip.
+ * Desktop (905px+): hover and keyboard focus show inline tooltip.
  * Desktop clicks do not create sticky state.
  */
 
@@ -89,6 +89,8 @@
 
     if (modalLastPin && modalLastPin !== pin) {
       modalLastPin.setAttribute('aria-expanded', 'false');
+      var previousCallout = modalLastPin.closest('.cs-annotated-image__callout');
+      if (previousCallout) previousCallout.style.zIndex = '';
     }
 
     var isNegative = callout.classList.contains('cs-annotated-image__callout--negative');
@@ -110,6 +112,7 @@
     modal.setAttribute('aria-label', titleText || 'Annotation detail');
 
     modalLastPin = pin;
+    callout.style.zIndex = '100';
     pin.setAttribute('aria-expanded', 'true');
     modal.hidden = false;
     void modal.offsetWidth;
@@ -135,6 +138,8 @@
       modalLastPin = null;
       if (pin) {
         pin.setAttribute('aria-expanded', 'false');
+        var callout = pin.closest('.cs-annotated-image__callout');
+        if (callout) callout.style.zIndex = '';
         pin.focus();
       }
     };
@@ -172,16 +177,33 @@
       tooltip.id = id;
       pin.setAttribute('aria-describedby', id);
       pin.setAttribute('aria-expanded', 'false');
+      positionCallout(callout, tooltip);
 
       if (title) {
         pin.setAttribute('aria-label', 'Annotation ' + (index + 1) + ': ' + title.textContent.trim());
       }
 
+      pin.addEventListener('mouseenter', function () {
+        if (!isMobile()) openPin(figure, pin);
+      });
+
+      pin.addEventListener('focus', function () {
+        if (!isMobile()) openPin(figure, pin);
+      });
+
+      callout.addEventListener('mouseleave', function () {
+        if (!isMobile()) closeAll(figure);
+      });
+
+      pin.addEventListener('blur', function () {
+        if (!isMobile()) closeAll(figure);
+      });
+
       pin.addEventListener('click', function () {
         if (isMobile()) {
           doOpenModal(pin, callout);
         } else {
-          pin.setAttribute('aria-expanded', 'false');
+          openPin(figure, pin);
         }
       });
     });
@@ -189,6 +211,42 @@
     figure.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && !modal.hidden) doCloseModal();
     });
+  }
+
+  function openPin(figure, pin) {
+    closeAll(figure);
+    pin.setAttribute('aria-expanded', 'true');
+
+    var callout = pin.closest('.cs-annotated-image__callout');
+    if (callout) callout.style.zIndex = '100';
+  }
+
+  function closeAll(figure) {
+    figure.querySelectorAll('.cs-annotated-image__pin').forEach(function (pin) {
+      pin.setAttribute('aria-expanded', 'false');
+    });
+
+    figure.querySelectorAll('.cs-annotated-image__callout').forEach(function (callout) {
+      callout.style.zIndex = '';
+    });
+  }
+
+  function positionCallout(callout, tooltip) {
+    var x = parseFloat(callout.dataset.x);
+    var y = parseFloat(callout.dataset.y);
+
+    if (!Number.isNaN(x)) callout.style.left = callout.dataset.x + '%';
+    if (!Number.isNaN(y)) callout.style.top = callout.dataset.y + '%';
+
+    tooltip.classList.remove(
+      'cs-annotated-image__tooltip--left',
+      'cs-annotated-image__tooltip--right',
+      'cs-annotated-image__tooltip--above',
+      'cs-annotated-image__tooltip--below'
+    );
+
+    tooltip.classList.add(x > 60 ? 'cs-annotated-image__tooltip--left' : 'cs-annotated-image__tooltip--right');
+    tooltip.classList.add(y > 60 ? 'cs-annotated-image__tooltip--above' : 'cs-annotated-image__tooltip--below');
   }
 
   function getPinNumber(callout) {

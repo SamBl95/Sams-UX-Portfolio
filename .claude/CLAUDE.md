@@ -114,6 +114,7 @@ Never copy nav or footer markup inline — always use the partial.
 - Markup: `.cs-two-col > .cs-two-col__content + figure.cs-two-col__media`
 - Use `.cs-two-col--flip` for media-left/text-right on desktop; mobile always stacks text first, media second
 - Content supports `.cs-two-col__heading`, `.cs-two-col__body`, optional `.cs-two-col__callout`; media supports image plus `.cs-two-col__caption`
+- Use `.cs-two-col--media-pair` when both columns contain media (equal 50/50 columns at 905px+, images locked to a fixed 824×676 aspect ratio with `object-fit: contain`)
 
 **Insight list system:** `_cs-insight-list.css`
 - Markup: `ol.cs-insight-list > li.cs-insight-list__item > h4.cs-insight-list__title + p.cs-insight-list__body`
@@ -145,8 +146,8 @@ Never copy nav or footer markup inline — always use the partial.
 - Use for short numbered flows, delivery sequences, design phases, or grouped solution steps
 - Vertical connected list on mobile, horizontal connected row at 905px+; add `.cs-process-row--three` for three-step flows
 
-**Pull quote system:** `_cs-pull-quote.css`
-- Markup: `blockquote.cs-pull-quote > p.cs-pull-quote__text + optional cite.cs-pull-quote__cite`
+**Pull quote system:** `_pull-quote.css`
+- Markup: `blockquote.pull-quote > p.pull-quote__text + optional cite.pull-quote__cite`
 - Use for high-impact narrative statements or stakeholder quotes that should interrupt the reading rhythm
 - Full-width editorial quote with accent left rule; keep concise so it remains scannable
 

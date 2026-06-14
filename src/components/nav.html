@@ -20,7 +20,7 @@
 
   <div class="nav__inner container">
     <a href="/" class="nav__logo">
-      <h2 class="nav__logo-text">Sam Blake</h2>
+      <span class="nav__logo-text">Sam Blake</span>
     </a>
 
     <!-- Desktop nav — hidden on mobile, shown 905px+ -->
@@ -86,16 +86,6 @@
         <span class="nav__tile-label">Home</span>
       </a>
 
-      <a href="/about" class="nav__tile{{#if navAbout}} nav__tile--active{{/if}}" aria-label="About — learn about Sam">
-        <span class="nav__tile-icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="8" r="4"/>
-            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-          </svg>
-        </span>
-        <span class="nav__tile-label">About</span>
-      </a>
-
       <a href="/case-studies" class="nav__tile{{#if navWork}} nav__tile--active{{/if}}" aria-label="Case studies — view all case studies">
         <span class="nav__tile-icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -105,6 +95,16 @@
           </svg>
         </span>
         <span class="nav__tile-label">Case Studies</span>
+      </a>
+
+      <a href="/about" class="nav__tile{{#if navAbout}} nav__tile--active{{/if}}" aria-label="About — learn about Sam">
+        <span class="nav__tile-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </span>
+        <span class="nav__tile-label">About</span>
       </a>
 
       <a href="/cv" class="nav__tile{{#if navCV}} nav__tile--active{{/if}}" aria-label="CV — view curriculum vitae">

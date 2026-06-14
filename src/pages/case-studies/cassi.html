@@ -174,7 +174,7 @@
             <p>Colleague Assist is an AI chatbot that provides Santander colleagues with guidance on how to serve customers. It's a bit like ChatGPT for banking. It uses i-Exchange, Santander's internal knowledge base, as its source of information to provide answers.</p>
 
             <figure class="image-block image-block--decorative">
-              <img src="/assets/images/cassi/cassi-background-dec-joining-the-team.svg" alt="Illustration of joining the Colleague Assist product team" loading="lazy" />
+              <img src="/assets/images/cassi/cassi-background-dec-joining-the-team.svg" alt="Illustration of joining the Colleague Assist product team" width="480" height="343" loading="lazy" />
             </figure>
 
             <h3>Joining the team</h3>
@@ -187,8 +187,8 @@
             <p>Functional changes in the back end were out of the question, so I focused on what we could do. My knowledge of front end development was enough to understand what low cost changes I could make, so I focused on the UI instead of trying to create new journeys or improve the quality of responses directly.</p>
             <p>In a bid to drive engagement with colleagues, I announced a competition to design a new logo and posted a banner on i-Exchange to promote it.</p>
 
-            <figure class="image-block image-block--decorative image-block--desktop-75">
-              <img src="/assets/images/cassi/cassi-ideate-dec-competition-banner.jpg" alt="Internal competition banner for the Colleague Assist logo and naming competition" loading="lazy" />
+            <figure class="image-block image-block--decorative-wide">
+              <img src="/assets/images/cassi/cassi-ideate-dec-competition-banner.jpg" alt="Internal competition banner for the Colleague Assist logo and naming competition" width="1068" height="254" loading="lazy" />
               <figcaption class="image-block__caption">The competition banner, a way to build colleague investment before they even used the improved version.</figcaption>
             </figure>
           </div>
@@ -235,7 +235,7 @@
               <div class="cs-annotated-image__frame">
                 <img class="cs-annotated-image__img" src="/assets/images/cassi/cassi-heuristics-before-chat-window.png" alt="Original Cassi chat window before redesign showing unclear audience selection and quiet feedback icons" loading="lazy" />
 
-                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="top-center">
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-x="50" data-y="12">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false" aria-label="Annotation 1: No guidance"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
                     <strong class="cs-annotated-image__tooltip-title">No guidance</strong>
@@ -243,7 +243,7 @@
                   </div>
                 </div>
 
-                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="top-right">
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-x="88" data-y="12">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false" aria-label="Annotation 2: Simple errors"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
                     <strong class="cs-annotated-image__tooltip-title">Simple errors</strong>
@@ -251,7 +251,7 @@
                   </div>
                 </div>
 
-                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-pos="bottom-right">
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--negative" data-x="88" data-y="88">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false" aria-label="Annotation 3: Unclear feedback journey"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
                     <strong class="cs-annotated-image__tooltip-title">Unclear feedback journey</strong>
@@ -283,12 +283,12 @@
             <p>Cassi uses feedback to improve its responses, guard railing those that receive multiple thumbs down. This is really important to reduce risk, so feedback is vital. I needed to look at how we received feedback to inform the model.</p>
 
             <figure class="image-block image-block--decorative">
-              <img src="/assets/images/cassi/cassi-define-ev-feedback-prompt-problem.jpg" alt="Tiny original feedback prompt between Cassi responses" loading="lazy" />
+              <img src="/assets/images/cassi/cassi-define-ev-feedback-prompt-problem.jpg" alt="Tiny original feedback prompt between Cassi responses" width="135" height="49" loading="lazy" />
               <figcaption class="image-block__caption">The feedback prompt at actual size, easy to miss between responses, especially mid-customer-call.</figcaption>
             </figure>
 
             <figure class="image-block image-block--default">
-              <img src="/assets/images/cassi/cassi-define-before-feedback-options.jpg" alt="Original Cassi feedback options with vague choices" loading="lazy" />
+              <img src="/assets/images/cassi/cassi-define-before-feedback-options.jpg" alt="Original Cassi feedback options with vague choices" width="870" height="434" loading="lazy" />
               <figcaption class="image-block__caption">The original feedback options, three choices that were too broad to capture what users actually thought.</figcaption>
             </figure>
 
@@ -298,7 +298,7 @@
             <p>Users were not selecting their audience regularly enough. This caused responses to be guard railed for being wrong when really they were just shown to the wrong audience. The layout of the tool did not make sense, there were no prompts to choose an audience and no guidance for new users.</p>
 
             <figure class="image-block image-block--decorative">
-              <img src="/assets/images/cassi/cassi-define-ev-audience-selection-problem.jpg" alt="Original Cassi audience selection positioned away from the query input" loading="lazy" />
+              <img src="/assets/images/cassi/cassi-define-ev-audience-selection-problem.jpg" alt="Original Cassi audience selection positioned away from the query input" width="711" height="96" loading="lazy" />
               <figcaption class="image-block__caption">The audience filter problem, the control was present but detached from the moment it mattered.</figcaption>
             </figure>
 
@@ -353,34 +353,34 @@
             <h3>A clearer starting point for feedback</h3>
             <p>Adjustments to the thumbs up and down UI made the feedback journey stand out more.</p>
             <figure class="image-block image-block--default">
-              <img src="/assets/images/cassi/cassi-prototype-des-feedback-options.jpg" alt="New Cassi feedback options and route to Community forum" loading="lazy" />
+              <img src="/assets/images/cassi/cassi-prototype-des-feedback-options.jpg" alt="New Cassi feedback options and route to Community forum" width="976" height="167" loading="lazy" />
               <figcaption class="image-block__caption">A clearer feedback entry point routed richer comments into the dedicated Community forum.</figcaption>
             </figure>
 
             <h3>A new tooltip</h3>
             <p>By providing key information in a tooltip, colleagues always had what they needed to use Colleague Assist effectively.</p>
             <figure class="image-block image-block--default">
-              <img src="/assets/images/cassi/cassi-prototype-des-tooltip-guidance.jpg" alt="New Cassi tooltip entry point" loading="lazy" />
+              <img src="/assets/images/cassi/cassi-prototype-des-tooltip-guidance.jpg" alt="New Cassi tooltip entry point" width="733" height="55" loading="lazy" />
               <figcaption class="image-block__caption">A tooltip entry point kept guidance available without taking over the interface.</figcaption>
             </figure>
 
             <h3>A new introduction</h3>
             <p>The empty space was now welcoming and provided quick guidance on best practice when opening the tool.</p>
             <figure class="image-block image-block--default">
-              <img src="/assets/images/cassi/cassi-prototype-des-new-introduction.jpg" alt="New Cassi introduction screen explaining how to use the tool" loading="lazy" />
+              <img src="/assets/images/cassi/cassi-prototype-des-new-introduction.jpg" alt="New Cassi introduction screen explaining how to use the tool" width="980" height="529" loading="lazy" />
               <figcaption class="image-block__caption">The empty opening state became useful guidance for new users.</figcaption>
             </figure>
 
             <h3>A new home for audience filters</h3>
             <p>Putting the audience selection directly above the query box made it more obvious that the user should select their audience before entering a query.</p>
             <figure class="image-block image-block--default">
-              <img src="/assets/images/cassi/cassi-prototype-des-new-audience-home.jpg" alt="Cassi audience filter moved directly above the query box" loading="lazy" />
+              <img src="/assets/images/cassi/cassi-prototype-des-new-audience-home.jpg" alt="Cassi audience filter moved directly above the query box" width="1000" height="192" loading="lazy" />
               <figcaption class="image-block__caption">Directly above the query box, where users were already focused.</figcaption>
             </figure>
 
             <p>Just in case, I provided a fallback prompt if users entered a query without selecting an audience.</p>
             <figure class="image-block image-block--default">
-              <img src="/assets/images/cassi/cassi-prototype-des-fallback-prompt.jpg" alt="Fallback prompt if Cassi user does not select audience" loading="lazy" />
+              <img src="/assets/images/cassi/cassi-prototype-des-fallback-prompt.jpg" alt="Fallback prompt if Cassi user does not select audience" width="946" height="76" loading="lazy" />
               <figcaption class="image-block__caption">A fallback prompt appeared if users entered a query without selecting an audience.</figcaption>
             </figure>
           </div>
@@ -401,7 +401,7 @@
             <p>I was on my final day before handover, so I quickly put in some group calls with users to check my design choices. Users thought it was a big upgrade and they really liked the new option for feedback.</p>
 
             <figure class="image-block image-block--default">
-              <img src="/assets/images/cassi/cassi-test-des-tooltip-overlay.jpg" alt="Expanded Cassi tooltip guidance overlay" loading="lazy" />
+              <img src="/assets/images/cassi/cassi-test-des-tooltip-overlay.jpg" alt="Expanded Cassi tooltip guidance overlay" width="695" height="210" loading="lazy" />
               <figcaption class="image-block__caption">The expanded tooltip covered queries, audiences and leaving feedback.</figcaption>
             </figure>
 
@@ -409,7 +409,7 @@
             <p>Colleague Assist was always a web based tool, but I learned that many users were minimising their screen to take up a slim column on the right hand side. This meant they could use other windows while serving customers. The screen needed a smaller breakpoint. By reducing the size of the logo in the top bar and reducing spacing lower down, there was space to fit the chat window. I made sure larger screens were not impacted, but it went down to the wire.</p>
 
             <figure class="image-block image-block--default">
-              <img src="/assets/images/cassi/cassi-test-des-responsive-breakpoint.jpg" alt="Cassi narrow side panel breakpoint design" loading="lazy" />
+              <img src="/assets/images/cassi/cassi-test-des-responsive-breakpoint.jpg" alt="Cassi narrow side panel breakpoint design" width="472" height="842" loading="lazy" />
               <figcaption class="image-block__caption">The narrow side-panel view colleagues actually used, designed on the final day after testing surfaced the use case.</figcaption>
             </figure>
 
@@ -419,13 +419,13 @@
             <div class="cs-two-col cs-two-col--media-pair" role="group" aria-label="Cassi overlay feedback journeys">
               <figure class="cs-two-col__media">
                 <h3 class="cs-two-col__heading">Negative feedback overlay</h3>
-                <img src="/assets/images/cassi/cassi-test-des-feedback-overlay-negative.jpg" alt="Cassi overlay option for negative feedback" loading="lazy" />
+                <img src="/assets/images/cassi/cassi-test-des-feedback-overlay-negative.jpg" alt="Cassi overlay option for negative feedback" width="412" height="338" loading="lazy" />
                 <figcaption class="cs-two-col__caption">The negative feedback journey asked users to explain what was wrong.</figcaption>
               </figure>
 
               <figure class="cs-two-col__media">
                 <h3 class="cs-two-col__heading">Positive feedback overlay</h3>
-                <img src="/assets/images/cassi/cassi-test-des-feedback-overlay-positive.jpg" alt="Cassi overlay option for positive feedback" loading="lazy" />
+                <img src="/assets/images/cassi/cassi-test-des-feedback-overlay-positive.jpg" alt="Cassi overlay option for positive feedback" width="412" height="338" loading="lazy" />
                 <figcaption class="cs-two-col__caption">The positive feedback journey confirmed the response was useful.</figcaption>
               </figure>
             </div>
@@ -433,7 +433,7 @@
             <p>Users were far more keen on the toast. They made an excellent point that they would usually be speaking to a customer live, so overlay pop ups would really get in the way of providing good service.</p>
 
             <figure class="image-block image-block--default">
-              <img src="/assets/images/cassi/cassi-test-des-feedback-toast.jpg" alt="Cassi toast notification option for feedback confirmation" loading="lazy" />
+              <img src="/assets/images/cassi/cassi-test-des-feedback-toast.jpg" alt="Cassi toast notification option for feedback confirmation" width="695" height="90" loading="lazy" />
               <figcaption class="image-block__caption">The toast was the preferred option when the user selected thumbs up or down.</figcaption>
             </figure>
           </div>
@@ -459,7 +459,7 @@
               <div class="cs-annotated-image__frame">
                 <img class="cs-annotated-image__img" src="/assets/images/cassi/cassi-final-after-home-screen.jpg" alt="Cassi final design first screen" loading="lazy" />
 
-                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="top-right">
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-x="88" data-y="12">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false" aria-label="Annotation 1: Feedback"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
                     <strong class="cs-annotated-image__tooltip-title">Feedback</strong>
@@ -467,7 +467,7 @@
                   </div>
                 </div>
 
-                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="middle-center">
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-x="50" data-y="50">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false" aria-label="Annotation 2: Rebrand"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
                     <strong class="cs-annotated-image__tooltip-title">Rebrand</strong>
@@ -475,7 +475,7 @@
                   </div>
                 </div>
 
-                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="bottom-left">
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-x="12" data-y="88">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false" aria-label="Annotation 3: Tooltip"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
                     <strong class="cs-annotated-image__tooltip-title">Tooltip</strong>
@@ -483,7 +483,7 @@
                   </div>
                 </div>
 
-                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-pos="bottom-center">
+                <div class="cs-annotated-image__callout cs-annotated-image__callout--positive" data-x="50" data-y="88">
                   <button class="cs-annotated-image__pin" type="button" aria-expanded="false" aria-label="Annotation 4: Audience"></button>
                   <div class="cs-annotated-image__tooltip" role="tooltip">
                     <strong class="cs-annotated-image__tooltip-title">Audience</strong>
@@ -495,7 +495,7 @@
             </figure>
 
             <figure class="image-block image-block--default image-block--default-full">
-              <img src="/assets/images/cassi/cassi-final-after-conversation-screen.jpg" alt="Cassi final design second screen" loading="lazy" />
+              <img src="/assets/images/cassi/cassi-final-after-conversation-screen.jpg" alt="Cassi final design second screen" width="980" height="781" loading="lazy" />
               <figcaption class="image-block__caption">Final design, second screen.</figcaption>
             </figure>
           </div>
@@ -528,7 +528,7 @@
             <p>The competition to design a new logo went down a hit. We received dozens of submissions and even a new name suggestion! The designs were shown to a panel of judges. Aishat Arowosegbe won the competition by designing the Cassi logo.</p>
 
             <figure class="image-block image-block--decorative">
-              <img src="/assets/images/cassi/cassi-results-dec-rebrand-logo.svg" alt="Winning Cassi logo and visual identity designed by Aishat Arowosegbe" loading="lazy" />
+              <img src="/assets/images/cassi/cassi-results-dec-rebrand-logo.svg" alt="Winning Cassi logo and visual identity designed by Aishat Arowosegbe" width="100" height="146" loading="lazy" />
             </figure>
           </div>
           </div>
