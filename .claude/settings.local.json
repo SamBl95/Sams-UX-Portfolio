@@ -121,7 +121,8 @@
       "Bash(Select-String -Path \"C:\\\\Users\\\\sambl\\\\OneDrive\\\\Documents\\\\my-portfolio-v2\\\\src\\\\pages\\\\case-studies\\\\i-exchange.html\" -Pattern \"script\")",
       "Bash(Select-Object LineNumber, Line)",
       "Bash(git checkout *)",
-      "PowerShell(Rename-Item *)"
+      "PowerShell(Rename-Item *)",
+      "PowerShell(git push *)"
     ]
   }
 }
